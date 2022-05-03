@@ -2,9 +2,9 @@
 
 class Recensione
 {
-    private $testo; /* contenuto del recensione*/
-    private $data; /* data di pubblicazione del recensione */
-    private $idProdotto; /* il prodotto recensione */
+    private $testo; /* contenuto della recensione*/
+    private $data; /* data di pubblicazione della recensione */
+    private $idProdotto; /* il prodotto della recensione */
     private $idRecensione; /* identificativo della recensione */
     private $idUser; /* idetificativo dell'utente che ha commentato*/
     /**

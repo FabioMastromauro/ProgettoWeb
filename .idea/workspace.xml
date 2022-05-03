@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione package Control">
-      <change afterPath="$PROJECT_DIR$/Foundation/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione User">
+      <change afterPath="$PROJECT_DIR$/Entity/Utente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/Recensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/Recensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/User.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +185,7 @@
     <MESSAGE value="prova3" />
     <MESSAGE value="Creazione package Entity" />
     <MESSAGE value="Creazione package Control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione package Control" />
+    <MESSAGE value="Creazione User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione User" />
   </component>
 </project>
