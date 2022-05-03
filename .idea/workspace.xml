@@ -72,7 +72,7 @@
       <updated>1650905617580</updated>
       <workItem from="1650905617743" duration="30000" />
       <workItem from="1651561464572" duration="1755000" />
-      <workItem from="1651563238517" duration="338000" />
+      <workItem from="1651563238517" duration="553000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -123,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651563532302</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="prova3">
+      <created>1651563593385</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651563593385</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +165,7 @@
     <MESSAGE value="Test2" />
     <MESSAGE value="Test3" />
     <MESSAGE value="prova2" />
-    <option name="LAST_COMMIT_MESSAGE" value="prova2" />
+    <MESSAGE value="prova3" />
+    <option name="LAST_COMMIT_MESSAGE" value="prova3" />
   </component>
 </project>
