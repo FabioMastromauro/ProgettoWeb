@@ -1,0 +1,11 @@
+Index: prova.php
+===================================================================
+diff --git a/prova.php b/prova.php
+deleted file mode 100644
+--- a/prova.php	(revision fd23042e5b8da688c742dbb4db4057e7fdc3b111)
++++ /dev/null	(revision fd23042e5b8da688c742dbb4db4057e7fdc3b111)
+@@ -1,4 +0,0 @@
+-<?php
+-echo "Ciao";
+-
+-?>
