@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione package Control">
+      <change afterPath="$PROJECT_DIR$/Foundation/Test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +56,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.prova.php" />
+        <item itemvalue="JavaScript Debug.prova.php" />
         <item itemvalue="PHP Script.prova.php" />
         <item itemvalue="JavaScript Debug.prova.php" />
       </list>
