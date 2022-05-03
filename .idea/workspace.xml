@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione package Entity" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione package Control">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +71,7 @@
       <workItem from="1650905617743" duration="30000" />
       <workItem from="1651561464572" duration="1755000" />
       <workItem from="1651563238517" duration="553000" />
-      <workItem from="1651569642452" duration="393000" />
+      <workItem from="1651569642452" duration="801000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -134,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651569734648</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Creazione package Control">
+      <created>1651570107018</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651570107018</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +180,7 @@
     <MESSAGE value="prova2" />
     <MESSAGE value="prova3" />
     <MESSAGE value="Creazione package Entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione package Entity" />
+    <MESSAGE value="Creazione package Control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione package Control" />
   </component>
 </project>
