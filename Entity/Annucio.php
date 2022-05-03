@@ -7,6 +7,7 @@ class Annucio
     private float $prezzo;
     private Foto $foto;
     private Date $data;
+    private int $idAnnuncio;
 
     /**
      * @param string $titolo
@@ -15,6 +16,7 @@ class Annucio
      * @param Foto $foto
      * @param Date $data
      */
+
     public function __construct(string $titolo, string $descrizione, float $prezzo, Foto $foto, Date $data)
     {
         $this->titolo = $titolo;
@@ -103,6 +105,23 @@ class Annucio
     {
         $this->titolo = $titolo;
     }
+
+    /**
+     * @return int
+     */
+    public function getIdAnnuncio(): int
+    {
+        return $this->idAnnuncio;
+    }
+
+    /**
+     * @param int $idAnnuncio
+     */
+    public function setIdAnnuncio(int $idAnnuncio): void
+    {
+        $this->idAnnuncio = $idAnnuncio;
+    }
+
 
 
 

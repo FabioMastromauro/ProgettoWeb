@@ -121,8 +121,7 @@ class Recensione
 
     public function __toString(): string
     {
-
-     $print= "IDUtente: ".$this->idUser."Prdotto: ".$this->idRecensione."idProdotto: ".$this->data."IDProdotto: ".$this->idRecensione."Testo: ".$this->testo ;
+     $print= "IDUtente: ".$this->idUser."Prodotto: ".$this->idRecensione."idProdotto: ".$this->data."IDProdotto: ".$this->idRecensione."Testo: ".$this->testo ;
        return $print;
     }
 

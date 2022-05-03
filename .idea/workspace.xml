@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione User">
-      <change afterPath="$PROJECT_DIR$/Entity/Utente.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione Utente.php">
+      <change beforePath="$PROJECT_DIR$/Entity/Annucio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/Annucio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/Recensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/Recensione.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/Utente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/Utente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651570107018</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Creazione Utente.php">
+      <created>1651598447517</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651598447517</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +193,7 @@
     <MESSAGE value="Creazione package Entity" />
     <MESSAGE value="Creazione package Control" />
     <MESSAGE value="Creazione User" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione User" />
+    <MESSAGE value="Creazione Utente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione Utente.php" />
   </component>
 </project>
