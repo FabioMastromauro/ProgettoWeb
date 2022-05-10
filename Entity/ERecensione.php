@@ -1,6 +1,6 @@
 <?php
 
-class Recensione
+class ERecensione
 {
     private $testo; /* contenuto della recensione*/
     private $data; /* data di pubblicazione della recensione */

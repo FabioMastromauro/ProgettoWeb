@@ -1,6 +1,6 @@
 <?php
 
-class Annucio
+class EAnnucio
 {
     private string $titolo;
     private string $descrizione;

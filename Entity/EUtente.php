@@ -1,6 +1,6 @@
 <?php
 
-class Utente
+class EUtente
 {
     private string $nome;
     private string $cognome;
