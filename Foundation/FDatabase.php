@@ -10,7 +10,6 @@ class FDatabase
 
     /* nome della classe da mettere nel database */
     protected $class;
-
     /* valori da mettere nel database */
     protected $values;
 }

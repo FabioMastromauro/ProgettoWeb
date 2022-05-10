@@ -8,5 +8,6 @@ public function __construct(){
     $this->valori='(:$nome, :$cognome, :$username, :$password, :$email)';
     $this->class='FUtente';
 
+
     }
 }
