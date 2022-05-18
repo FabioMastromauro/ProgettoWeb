@@ -8,7 +8,8 @@ class EAnnucio
     private Foto $foto;
     private Date $data;
     private int $idAnnuncio;
-    private int $idUser;
+    private int $idVenditore;
+    private int $idCompratore;
     /**
      * @param string $titolo
      * @param string $descrizione

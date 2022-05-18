@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Rinominazione classi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunta id">
+      <change afterPath="$PROJECT_DIR$/Entity/EFoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EAnnucio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnucio.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <workItem from="1651563238517" duration="553000" />
       <workItem from="1651569642452" duration="801000" />
       <workItem from="1652178743680" duration="757000" />
-      <workItem from="1652888559432" duration="2056000" />
+      <workItem from="1652888559432" duration="4479000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -170,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652178916762</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="aggiunta id">
+      <created>1652891687163</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652891687164</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +218,7 @@
     <MESSAGE value="Creazione Utente.php" />
     <MESSAGE value="Aggiunta metodi e correzioni" />
     <MESSAGE value="Rinominazione classi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rinominazione classi" />
+    <MESSAGE value="aggiunta id" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta id" />
   </component>
 </project>
