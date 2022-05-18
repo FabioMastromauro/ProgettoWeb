@@ -5,11 +5,12 @@ class EAnnucio
     private string $titolo;
     private string $descrizione;
     private float $prezzo;
-    private Foto $foto;
+    private EFoto $foto;
     private Date $data;
     private int $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
+    private array $arrayFoto;
     /**
      * @param string $titolo
      * @param string $descrizione

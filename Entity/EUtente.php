@@ -11,6 +11,7 @@ class EUtente
     private array $recensioni;
     private array $storico;
     private int $idUser;
+    private EFoto $fotoUtente;
     /**
      * @param string $nome
      * @param string $cognome
