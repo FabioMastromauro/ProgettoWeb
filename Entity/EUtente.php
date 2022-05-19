@@ -10,7 +10,8 @@ class EUtente
     private array $annunci;
     private array $recensioni;
     private array $storico;
-
+    private int $idUser;
+    private EFoto $fotoUtente;
     /**
      * @param string $nome
      * @param string $cognome
@@ -191,6 +192,5 @@ class EUtente
             }
         }
     }
-
 
 }
