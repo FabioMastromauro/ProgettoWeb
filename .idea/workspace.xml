@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiornamenti attr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EAnnucio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnucio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFoto.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652895624216</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="aggiornamenti attr">
+      <created>1653232506228</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653232506228</updated>
+    </task>
+    <task id="LOCAL-00018" summary="aggiornamenti attr">
+      <created>1653232528207</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1653232528207</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
