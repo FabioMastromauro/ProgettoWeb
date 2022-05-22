@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta metodi e correzioni" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiornamenti attr">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,33 +26,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="a149db3a-b5d9-4688-98d6-a90ed8d0c800" />
-        <option name="url" value="https://github.com/FabioMastromauro/ProgettoWeb.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28IYY2HQdsY95Qc6neDvkUMvlyg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Uni/myRecipes-Web&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager" selected="PHP Script.prova.php">
     <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -84,10 +74,9 @@
       <workItem from="1651561464572" duration="1755000" />
       <workItem from="1651563238517" duration="553000" />
       <workItem from="1651569642452" duration="801000" />
-      <workItem from="1652882992329" duration="2927000" />
-      <workItem from="1652952399901" duration="237000" />
-      <workItem from="1652952816900" duration="137000" />
-      <workItem from="1652974370969" duration="304000" />
+      <workItem from="1652178743680" duration="757000" />
+      <workItem from="1652888559432" duration="6189000" />
+      <workItem from="1652974471642" duration="1099000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -173,7 +162,49 @@
       <option name="project" value="LOCAL" />
       <updated>1651600903444</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Rinominazione classi">
+      <created>1652178916762</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652178916762</updated>
+    </task>
+    <task id="LOCAL-00014" summary="aggiunta id">
+      <created>1652891687163</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652891687164</updated>
+    </task>
+    <task id="LOCAL-00015" summary="creazione foto">
+      <created>1652894066925</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652894066925</updated>
+    </task>
+    <task id="LOCAL-00016" summary="aggiornamenti attr">
+      <created>1652895624216</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652895624216</updated>
+    </task>
+    <task id="LOCAL-00017" summary="aggiornamenti attr">
+      <created>1653232506228</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653232506228</updated>
+    </task>
+    <task id="LOCAL-00018" summary="aggiornamenti attr">
+      <created>1653232528207</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1653232528207</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +245,10 @@
     <MESSAGE value="Creazione User" />
     <MESSAGE value="Creazione Utente.php" />
     <MESSAGE value="Aggiunta metodi e correzioni" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta metodi e correzioni" />
+    <MESSAGE value="Rinominazione classi" />
+    <MESSAGE value="aggiunta id" />
+    <MESSAGE value="creazione foto" />
+    <MESSAGE value="aggiornamenti attr" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiornamenti attr" />
   </component>
 </project>
