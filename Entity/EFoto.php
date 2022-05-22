@@ -8,40 +8,6 @@ class EFoto
     private int $larghezza;
     private $tipo;
     private $data;
-    private $idAnnuncio;
-    private $idUser;
-
-    /**
-     * @return mixed
-     */
-    public function getIdAnnuncio()
-    {
-        return $this->idAnnuncio;
-    }
-
-    /**
-     * @param mixed $idAnnuncio
-     */
-    public function setIdAnnuncio($idAnnuncio): void
-    {
-        $this->idAnnuncio = $idAnnuncio;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * @param mixed $idUser
-     */
-    public function setIdUser($idUser): void
-    {
-        $this->idUser = $idUser;
-    }
 
     /**
      * @return int

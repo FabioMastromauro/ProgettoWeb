@@ -5,44 +5,12 @@ class EAnnucio
     private string $titolo;
     private string $descrizione;
     private float $prezzo;
-    private int $idFoto;
+    private EFoto $foto;
     private Date $data;
     private int $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
     private array $arrayFoto;
-
-    /**
-     * @return int
-     */
-    public function getIdVenditore(): int
-    {
-        return $this->idVenditore;
-    }
-
-    /**
-     * @param int $idVenditore
-     */
-    public function setIdVenditore(int $idVenditore): void
-    {
-        $this->idVenditore = $idVenditore;
-    }
-
-    /**
-     * @return int
-     */
-    public function getIdCompratore(): int
-    {
-        return $this->idCompratore;
-    }
-
-    /**
-     * @param int $idCompratore
-     */
-    public function setIdCompratore(int $idCompratore): void
-    {
-        $this->idCompratore = $idCompratore;
-    }
     /**
      * @param string $titolo
      * @param string $descrizione
@@ -154,18 +122,6 @@ class EAnnucio
     public function setIdAnnuncio(int $idAnnuncio): void
     {
         $this->idAnnuncio = $idAnnuncio;
-    }
-
-    public function addFoto($f): void{
-        array_push($this->arrayFoto, $f);
-    }
-
-    public function remFoto($id): void{
-        foreach ($this->arrayFoto as $f => $foto){
-            if ($foto->getIdFoto()==$id){
-                unset($this->arrayFoto[$f]);
-            }
-        }
     }
 
 
