@@ -6,6 +6,7 @@ class FDatabase
     private $connection;
     private $result;
     private $table;
+    private $values;
     private $key;
     private $return;
 
@@ -27,10 +28,11 @@ class FDatabase
        try{
            $this->connection->beginTransaction(); //inizio transazione per evitare errori
            $stmt =$this->connection->prepare($q); //elaborazione query
+           $this->Closure::bind($stmt,null,$obj); //prende il i $stmt bind della calsse figli $obj
+           $stmt->execute();//Salvataggio dati
            $this->connection->commit(); //fine transaction
 
 
-           $stmt->execute();//Salvataggio dati
        }
        catch(PDOException $e){
            $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
