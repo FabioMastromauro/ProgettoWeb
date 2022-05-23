@@ -28,7 +28,7 @@ class FDatabase
        try{
            $this->connection->beginTransaction(); //inizio transazione per evitare errori
            $stmt =$this->connection->prepare($q); //elaborazione query
-           $this->Closure::bind($stmt,null,$obj); //prende il i $stmt bind della calsse figli $obj
+           $this->className::bind($stmt,null,$obj); //Class::bind prende la funzione bind della classe che chiama la funzione
            $stmt->execute();//Salvataggio dati
            $this->connection->commit(); //fine transaction
 
