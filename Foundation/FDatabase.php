@@ -28,7 +28,7 @@ class FDatabase
        try{
            $this->connection->beginTransaction(); //inizio transazione per evitare errori
            $stmt =$this->connection->prepare($q); //elaborazione query
-           $this->className::bind($stmt,null,$obj); //Class::bind prende la funzione bind della classe che chiama la funzione
+           $this->className::bind($stmt,$obj); //Class::bind prende la funzione bind della classe che chiama la funzione
            $stmt->execute();//Salvataggio dati
            $this->connection->commit(); //fine transaction
 
@@ -37,7 +37,6 @@ class FDatabase
        catch(PDOException $e){
            $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
            echo 'errore' . $e->getMessage(); //printa il messaggio di errore
-           $this->connection->rollBack(); //ripristina i valori precendeti alla richiesta
 
        }
 
