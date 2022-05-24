@@ -90,22 +90,6 @@ class ERecensione
     /**
      * @return mixed
      */
-    public function getIdCommento()
-    {
-        return $this->idCommento;
-    }
-
-    /**
-     * @param mixed $idCommento
-     */
-    public function setIdCommento($idCommento): void
-    {
-        $this->idCommento = $idCommento;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getIdUser()
     {
             return $this->idUser;

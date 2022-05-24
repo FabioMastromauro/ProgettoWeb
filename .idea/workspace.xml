@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="creazione Config.inc.php">
-      <change afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__09_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__09_52__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__11_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__11_31__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_33__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_50__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ChangesTree.GroupingKeys" value="" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager" selected="PHP Script.prova.php">
     <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -81,6 +84,8 @@
       <workItem from="1652178743680" duration="757000" />
       <workItem from="1652888559432" duration="6189000" />
       <workItem from="1652974471642" duration="1099000" />
+      <workItem from="1653231074562" duration="642000" />
+      <workItem from="1653397352793" duration="2828000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
