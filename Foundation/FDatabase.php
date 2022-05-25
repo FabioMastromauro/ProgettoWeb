@@ -3,12 +3,13 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 class FDatabase
 {
-    private $connection;
-    private $result;
-    private $table;
-    private $values;
-    private $key;
-    private $return;
+    protected $connection;
+    protected $result;
+    protected $table;
+    protected $values;
+    protected $key;
+    protected $return;
+    protected $class;
 
 
     public function __construct()
@@ -28,7 +29,7 @@ class FDatabase
         try {
             $this->connection->beginTransaction(); //inizio transazione per evitare errori
             $stmt = $this->connection->prepare($q); //elaborazione query
-            $this->className::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
+            $this->class::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
             $stmt->execute();//Salvataggio dati
             $Lid = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
             $this->connection->commit(); //fine transaction
