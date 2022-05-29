@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="creazione Config.inc.php">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__09_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__09_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__11_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__11_31__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_33__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_50__Changes_.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione di FRecensione.php, senza metodi load!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +80,9 @@
       <workItem from="1652888559432" duration="6189000" />
       <workItem from="1652974471642" duration="1099000" />
       <workItem from="1653231074562" duration="642000" />
-      <workItem from="1653397352793" duration="2828000" />
+      <workItem from="1653397352793" duration="4766000" />
+      <workItem from="1653832989158" duration="755000" />
+      <workItem from="1653833868119" duration="3054000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -199,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652895624216</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Creazione di FRecensione.php, senza metodi load!">
+      <created>1653400919980</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653400919980</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +248,7 @@
     <MESSAGE value="aggiunta id" />
     <MESSAGE value="creazione foto" />
     <MESSAGE value="aggiornamenti attr" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiornamenti attr" />
+    <MESSAGE value="Creazione di FRecensione.php, senza metodi load!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione di FRecensione.php, senza metodi load!" />
   </component>
 </project>
