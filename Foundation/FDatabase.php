@@ -82,20 +82,20 @@ class FDatabase
 
     }
 
-    public function search($attributo,$valore){
-        $q ="SELECT * from ".$this->table." WHERE ".$attributo." = ".$valore;
+    public function search($attributo, $valore)
+    {
+        $q = "SELECT * from " . $this->table . " WHERE " . $attributo . " = " . $valore;
 
 
-        try{
+        try {
             $this->connection->beginTransaction(); //inizio transazione per evitare errori
-            $stmt =$this->connection->prepare($q); //elaborazione query
+            $stmt = $this->connection->prepare($q); //elaborazione query
             $stmt->execute();//Salvataggio dati
             $found = $stmt->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC mi da un output chiave-valore di tutta la $table con i valori $attributo uguali a $valore
             $this->connection->commit(); //fine transaction
             return $found;
 
-        }
-        catch(PDOException $e){
+        } catch (PDOException $e) {
             $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
             echo 'errore' . $e->getMessage(); //printa il messaggio di errore
 
@@ -104,5 +104,62 @@ class FDatabase
 
     }
 
+    public function loadById($id)
+    {
+        $query = "SELECT * FROM " . $this->table . " WHERE id=" . $id;
+        try {
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->connection->commit();
+            return $row;
+        } catch (PDOException $e) {
+            $this->connection->rollBack();
+            echo "errore" . $e->getMessage();
+            return null;
+        }
+    }
+
+
+    public function loadAllByIds($ids)
+    {
+
+        $s = implode(", ", $ids);
+        $s = "(" . $s . ")";
+        $query = "SELECT * FROM " . $this->table . " WHERE id IN " . $s . ";";
+        try {
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->connection->commit();
+            return $rows;
+        } catch (PDOException $e) {
+            $this->connection->rollBack();
+            echo "errore" . $e->getMessage();
+            return null;
+        }
+    }
+
+
+    public function loadAll($attr)
+    {
+        $orderby = " ORDER BY " . $attr;
+        $query = "SELECT * FROM " . $this->table . $orderby . ";";
+        try {
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            return $rows;
+        } catch (PDOException $e) {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+
+    }
 
 }
