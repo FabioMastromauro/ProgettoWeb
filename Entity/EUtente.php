@@ -29,6 +29,38 @@ class EUtente
     }
 
     /**
+     * @return int
+     */
+    public function getIdUser(): int
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param int $idUser
+     */
+    public function setIdUser(int $idUser): void
+    {
+        $this->idUser = $idUser;
+    }
+
+    /**
+     * @return EFoto
+     */
+    public function getFotoUtente(): EFoto
+    {
+        return $this->fotoUtente;
+    }
+
+    /**
+     * @param EFoto $fotoUtente
+     */
+    public function setFotoUtente(EFoto $fotoUtente): void
+    {
+        $this->fotoUtente = $fotoUtente;
+    }
+
+    /**
      * @return string
      */
     public function getNome(): string
