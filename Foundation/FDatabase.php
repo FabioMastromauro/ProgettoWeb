@@ -12,6 +12,7 @@ class FDatabase
     protected $class;
 
 
+
     public function __construct()
     {
         try {
@@ -138,6 +139,22 @@ class FDatabase
         } catch (PDOException $e) {
             $this->connection->rollBack();
             echo "errore" . $e->getMessage();
+            return null;
+        }
+    }
+
+    public function existDB ($field, $id)
+    {
+        try {
+            $query = "SELECT * FROM " .$this->table . " WHERE " . $field . "='" . $id . "'";
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) == 1) return $result[0];  //rimane solo l'array interno
+            else if (count($result) > 1) return $result;  //resituisce array di array
+            $this->closeDbConnection();
+        } catch (PDOException $e) {
+            echo "Errore: " . $e->getMessage();
             return null;
         }
     }
