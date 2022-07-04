@@ -45,6 +45,50 @@ public function loadByAllIds($ids){
         }
         else return null;
 }
+// metodo che trova le recensioni relative a un prodotto
+public function loadByIdProdotto($idprodotto){
+        $query = "SELECT * FROM ".$this->table." WHERE idProdotto =".$idprodotto.";";
+        try{
+            $this->localmp->beginTransaction();
+            $stmt = $this->localmp->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->localmp->commit();
+            $arrayrece=array();
+            foreach ($rows as $row){
+                $rece = $this->getFromRow($row);
+                array_push($arrayrece,$rece);
+            }
+            return $arrayrece;
+        }
+        catch(PDOException $e){
+            $this->localmp->rollback();
+            echo "Attenzione, errore: ".$e->getMessage();
+            return null;
+        }
+}
+// metodo che trova le recensioni relativi a un utente
+public function loadByIdUser($iduser){
+        $query = "SELECT * FROM ".$this->table." WHERE idUser=".$iduser.";";
+        try{
+            $this->localmp->beginTransaction();
+            $stmt = $this->localmp->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->local->commit();
+            $arrayrece=array();
+            foreach ($rows as $row){
+                $rece = $this->getFromRow($row);
+                array_push($arrayrece,$rece);
+            }
+            return $arrayrece;
+        }
+        catch (PDOException $e){
+            $this->localmp->rollback();
+            echo "Attenzione, errore: ".$e->getMessage();
+            return null;
+        }
+}
 public function search($attributo, $valore){
     $array = parent::search($attributo, $valore);
     $arrayobj = array();
