@@ -32,9 +32,9 @@ class FDatabase
             $stmt = $this->connection->prepare($q); //elaborazione query
             $this->class::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
             $stmt->execute();//Salvataggio dati
-            $Lid = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
+            $lid = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
             $this->connection->commit(); //fine transaction
-            return $Lid;
+            return $lid;
 
         } catch (PDOException $e) {
             $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
@@ -45,10 +45,10 @@ class FDatabase
 
     }
 
-    public function update($Lid, $attributo, $valore)
+    public function update($lid, $attributo, $valore)
     {
 
-        $q = "UPDATE" . $this->table . "SET" . $attributo . "=" . $valore . "WHERE id=" . $Lid; //update di un valore di una $table aggiorna un $attributo in un nuovo $valore
+        $q = "UPDATE" . $this->table . "SET" . $attributo . "=" . $valore . "WHERE id=" . $lid; //update di un valore di una $table aggiorna un $attributo in un nuovo $valore
 
 
         try {
@@ -65,9 +65,9 @@ class FDatabase
 
     }
 
-    public function delete($Lid)
+    public function delete($lid)
     {
-        $q = "DELETE FROM" . $this->table . "WHERE id=" . $Lid; // DELETE nella $table dell'$id
+        $q = "DELETE FROM" . $this->table . "WHERE id=" . $lid; // DELETE nella $table dell'$id
 
         try {
             $this->connection->beginTransaction(); //inizio transazione per evitare errori
