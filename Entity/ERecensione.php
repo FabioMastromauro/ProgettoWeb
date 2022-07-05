@@ -109,12 +109,6 @@ class ERecensione implements JsonSerializable
        return $print;
     }
 
-    private $testo; /* contenuto della recensione*/
-    private $data; /* data di pubblicazione della recensione */
-    private $idProdotto; /* il prodotto della recensione */
-    private $idRecensione; /* identificativo della recensione */
-    private $idUser; /* idetificativo dell'utente che ha commentato*/
-
     public function jsonSerialize()
     {
         return
