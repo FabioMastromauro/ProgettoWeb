@@ -6,7 +6,7 @@ public function __construct(){
 
     parent::__construct();
     $this->table = 'annuncio';
-    $this->values = '(:titolo,:descrizione,:prezzo,:idfoto,:data,:idAnnuncio,:idVenditore,:idCompratore,:arrayfoto)';
+    $this->values = '(:titolo,:descrizione,:prezzo,:idFoto,:data,:idAnnuncio,:idVenditore,:idCompratore,:arrayFoto)';
     $this->class = 'FAnnuncio';
 
     }
@@ -15,7 +15,7 @@ public function __construct(){
     $stmt->bindParam(':titolo',$annuncio->getTitolo(), PDO::PARAM_STR);
     $stmt->bindParam(':descrizone',$annuncio->getDescrizione(), PDO::PARAM_STR);
     $stmt->bindParam(':prezzo',$annuncio->getPrezzo(), PDO::PARAM_STR);
-    $stmt->bindParam(':idfoto',$annuncio->getIdFoto(), PDO::PARAM_INT);
+    $stmt->bindParam(':idFoto',$annuncio->getIdFoto(), PDO::PARAM_INT);
     $stmt->bindParam(':data',$annuncio->getData(), PDO::PARAM_STR);
     $stmt->bindParam(':idAnnuncio',$annuncio->getIdAnnuncio(), PDO::PARAM_INT);
     $stmt->bindParam(':idVenditore',$annuncio->getIdVenditore(), PDO::PARAM_INT);
@@ -36,7 +36,7 @@ public function __construct(){
         $tab = new EAnnuncio ($row['titolo'], $row['descrizione'], $row['prezzo'], $row['idfoto'],$row['idAnnuncio'],$row['idVenditore'], $row['idCompratore'], $row['arrayfoto']);
 
         return $tab;
-    } //Crea un array con tutti gli elemnti dell'Annuncio
+    } //Crea un array con tutti gli elementi dell'Annuncio
 
 
     public function search($attributo, $valore){
