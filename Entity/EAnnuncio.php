@@ -1,6 +1,6 @@
 <?php
 
-class EAnnucio implements JsonSerializable
+class EAnnuncio implements JsonSerializable
 {
     private string $titolo;
     private string $descrizione;

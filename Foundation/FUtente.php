@@ -21,7 +21,7 @@ class FUtente extends FDatabase
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
     }
 
-// metodo che crea un oggetto EUtente a partie dalla tupla della tabella utente
+// metodo che crea un oggetto EUtente a partire dalla tupla della tabella utente
     public function getFromRow($row)
     {
         $utObj = new EUtente($row['nome'], $row['cognome'], $row['username'], $row['password'], $row['email']);
@@ -39,7 +39,7 @@ class FUtente extends FDatabase
         //caricamento recensioni dell'utente
         $frece = new FRecensione();
         $arrayrece = $frece->loadByIdUser($row['idUser']);
-        $row['recesione'] = $arrayrece;
+        $row['recensione'] = $arrayrece;
         // da completare con preferiti
         return $row;
     }
