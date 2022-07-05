@@ -1,28 +1,13 @@
 <?php
-/**La classe ERecensione contiene gli attributi e i metodi relativi alle recensioni degli utenti.
- *Sono presenti i seguenti attributi e i relativi metodi get e set:
- * - idUser: id dell'utente
- * - idRecensione: id della recensione
- * - idProdotto: id prodotto della recensito
- * - data: data della recensione
- * - testo: testo della recensione
- * @author Gruppo 7
- * @package Entity
- */
-class ERecensione
+
+class ERecensione implements JsonSerializable
 {
-    /**testo della recensione */
-    private $testo;
-    /**data della recensione */
-    private $data;
-    /**id del prodotto recensito */
-    private $idProdotto;
-    /**id della recensione */
-    private $idRecensione;
-    /**id dell'utente */
-    private $idUser;
+    private $testo; /* contenuto della recensione*/
+    private $data; /* data di pubblicazione della recensione */
+    private $idProdotto; /* il prodotto della recensione */
+    private $idRecensione; /* identificativo della recensione */
+    private $idUser; /* idetificativo dell'utente che ha commentato*/
     /**
-     * COSTRUTTORE
      * @param $testo
      * @param $data
      * @param $idProdotto
@@ -39,7 +24,7 @@ class ERecensione
     }
 
     /**
-     * @return mixed testo della recensione
+     * @return mixed
      */
     public function getTesto()
     {
@@ -47,7 +32,7 @@ class ERecensione
     }
 
     /**
-     * @return mixed id recensione
+     * @return mixed
      */
     public function getIdRecensione()
     {
@@ -55,7 +40,7 @@ class ERecensione
     }
 
     /**
-     * @param mixed $idRecensione id recensione
+     * @param mixed $idRecensione
      */
     public function setIdRecensione($idRecensione): void
     {
@@ -63,7 +48,7 @@ class ERecensione
     }
 
     /**
-     * @param mixed $testo testo della recensione
+     * @param mixed $testo
      */
     public function setTesto($testo): void
     {
@@ -71,7 +56,7 @@ class ERecensione
     }
 
     /**
-     * @return mixed data recensione
+     * @return mixed
      */
     public function getData()
     {
@@ -79,7 +64,7 @@ class ERecensione
     }
 
     /**
-     * @param mixed $data data recensione
+     * @param mixed $data
      */
     public function setData($data): void
     {
@@ -87,7 +72,7 @@ class ERecensione
     }
 
     /**
-     * @return mixed id prodotto
+     * @return mixed
      */
     public function getIdProdotto()
     {
@@ -95,7 +80,7 @@ class ERecensione
     }
 
     /**
-     * @param mixed $idProdotto id prodotto
+     * @param mixed $idProdotto
      */
     public function setIdProdotto($idProdotto): void
     {
@@ -103,7 +88,7 @@ class ERecensione
     }
 
     /**
-     * @return mixed id utente
+     * @return mixed
      */
     public function getIdUser()
     {
@@ -111,21 +96,34 @@ class ERecensione
     }
 
     /**
-     * @param mixed $idUser id utente
+     * @param mixed $idUser
      */
     public function setIdUser($idUser): void
     {
         $this->idUser = $idUser;
     }
 
-    /**
-     metodo to string per convertire tutto in stringa
-     */
     public function __toString(): string
     {
      $print= "IDUtente: ".$this->idUser."Prodotto: ".$this->idRecensione."idProdotto: ".$this->data."IDProdotto: ".$this->idRecensione."Testo: ".$this->testo ;
        return $print;
     }
 
+    private $testo; /* contenuto della recensione*/
+    private $data; /* data di pubblicazione della recensione */
+    private $idProdotto; /* il prodotto della recensione */
+    private $idRecensione; /* identificativo della recensione */
+    private $idUser; /* idetificativo dell'utente che ha commentato*/
 
+    public function jsonSerialize()
+    {
+        return
+            [
+                'testo'   => $this->getTesto(),
+                'data' => $this->getData(),
+                'idProdotto'   => $this->getIdProdotto(),
+                'idRecensione'   => $this->getIdRecensione(),
+                'idUser'   => $this->getIdUser()
+            ];
+    }
 }

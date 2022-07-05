@@ -1,22 +1,6 @@
 <?php
 
-/**
- * La classe EUtente contiene tutti gli attributi e i metodi relativi agli utenti
- * Contiene i seguenti attributi e i relativi metodi get e set:
- * - nome: nome dell'utente
- * - cognome: cognome dell'utente
- * - username: username dell'utente
- * - password: password dell'utente
- * - email: email dell'utente
- * - annunci: annunci dell'utente
- * - recensioni: recensioni dell'utente
- * - storico: storico degli acquisti dell'utente
- * - idUser: id dell'utente
- * - fotoUtente: foto dell'utente
- * @author Gruppo 7
- * @package Entity
- */
-class EUtente
+class EUtente implements JsonSerializable
 {
     private string $nome;
     private string $cognome;
@@ -29,7 +13,6 @@ class EUtente
     private int $idUser;
     private EFoto $fotoUtente;
     /**
-     * COSTRUTTORE
      * @param string $nome
      * @param string $cognome
      * @param string $username
@@ -46,7 +29,7 @@ class EUtente
     }
 
     /**
-     * @return int id utente
+     * @return int
      */
     public function getIdUser(): int
     {
@@ -54,7 +37,7 @@ class EUtente
     }
 
     /**
-     * @param int $idUser id utente
+     * @param int $idUser
      */
     public function setIdUser(int $idUser): void
     {
@@ -62,7 +45,7 @@ class EUtente
     }
 
     /**
-     * @return EFoto foto utente
+     * @return EFoto
      */
     public function getFotoUtente(): EFoto
     {
@@ -70,7 +53,7 @@ class EUtente
     }
 
     /**
-     * @param EFoto $fotoUtente foto utente
+     * @param EFoto $fotoUtente
      */
     public function setFotoUtente(EFoto $fotoUtente): void
     {
@@ -78,7 +61,7 @@ class EUtente
     }
 
     /**
-     * @return string nome utente
+     * @return string
      */
     public function getNome(): string
     {
@@ -86,7 +69,7 @@ class EUtente
     }
 
     /**
-     * @param string $nome nome utente
+     * @param string $nome
      */
     public function setNome(string $nome): void
     {
@@ -94,7 +77,7 @@ class EUtente
     }
 
     /**
-     * @return string cognome utente
+     * @return string
      */
     public function getCognome(): string
     {
@@ -102,7 +85,7 @@ class EUtente
     }
 
     /**
-     * @param string $cognome cognome utente
+     * @param string $cognome
      */
     public function setCognome(string $cognome): void
     {
@@ -110,7 +93,7 @@ class EUtente
     }
 
     /**
-     * @return string username utente
+     * @return string
      */
     public function getUsername(): string
     {
@@ -118,7 +101,7 @@ class EUtente
     }
 
     /**
-     * @param string $username username utente
+     * @param string $username
      */
     public function setUsername(string $username): void
     {
@@ -126,7 +109,7 @@ class EUtente
     }
 
     /**
-     * @return string password utente
+     * @return string
      */
     public function getPassword(): string
     {
@@ -134,7 +117,7 @@ class EUtente
     }
 
     /**
-     * @param string $password password utente
+     * @param string $password
      */
     public function setPassword(string $password): void
     {
@@ -142,7 +125,7 @@ class EUtente
     }
 
     /**
-     * @return string email utente
+     * @return string
      */
     public function getEmail(): string
     {
@@ -150,7 +133,7 @@ class EUtente
     }
 
     /**
-     * @param string $email email utente
+     * @param string $email
      */
     public function setEmail(string $email): void
     {
@@ -158,7 +141,7 @@ class EUtente
     }
 
     /**
-     * @return array annunci utente
+     * @return array
      */
     public function getAnnunci(): array
     {
@@ -166,7 +149,7 @@ class EUtente
     }
 
     /**
-     * @param array $annunci annunci utente
+     * @param array $annunci
      */
     public function setAnnunci(array $annunci): void
     {
@@ -174,7 +157,7 @@ class EUtente
     }
 
     /**
-     * @return array recensioni utente
+     * @return array
      */
     public function getRecensioni(): array
     {
@@ -182,7 +165,7 @@ class EUtente
     }
 
     /**
-     * @param array $recensioni recensioni utente
+     * @param array $recensioni
      */
     public function setRecensioni(array $recensioni): void
     {
@@ -190,7 +173,7 @@ class EUtente
     }
 
     /**
-     * @return array storico degli acquisti
+     * @return array
      */
     public function getStorico(): array
     {
@@ -198,7 +181,7 @@ class EUtente
     }
 
     /**
-     * @param array $storico storico degli acquisti
+     * @param array $storico
      */
     public function setStorico(array $storico): void
     {
@@ -213,7 +196,7 @@ class EUtente
     }
 
     /**
-     * Aggiunge un nuovo annuncio all'utente
+     * Aggiunge una nuova annuncio all'utente
      */
     public function addAnnuncio($a): void{
         array_push($this->annunci, $a);
@@ -226,9 +209,6 @@ class EUtente
         array_push($this->storico, $a);
     }
 
-    /**
-     * rimuove una recensione
-     */
     public function remRecensione($id): void{
         foreach ($this->recensioni as $r => $recensione){
             if ($recensione->getIdRecensione()==$id){
@@ -237,9 +217,6 @@ class EUtente
         }
     }
 
-    /**
-     * rimuove un annuncio
-     */
     public function remAnnuncio($id): void{
         foreach ($this->annunci as $a => $annuncio){
             if ($annuncio->getIdAnnuncio()==$id){
@@ -248,4 +225,20 @@ class EUtente
         }
     }
 
+    public function jsonSerialize()
+    {
+        return
+            [
+                'nome'   => $this->getNome(),
+                'cognome' => $this->getCognome(),
+                'username'   => $this->getUsername(),
+                'password'   => $this->getPassword(),
+                'email'   => $this->getEmail(),
+                'annunciA'   => $this->getAnnunci(),
+                'recensioniA'   => $this->getRecensioni(),
+                'storicoA'   => $this->getStorico(),
+                'idUser'   => $this->getIdUser(),
+                'fotoutente'   => $this->getFotoUtente()
+            ];
+    }
 }

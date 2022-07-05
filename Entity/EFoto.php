@@ -1,45 +1,18 @@
 <?php
-/**La classe EFoto contiene i dati relativi alle foto
- * @author Gruppo 7
- *@package Entity
- * **/
-class EFoto
+
+class EFoto implements JsonSerializable
 {
-    /**id della foto */
     private int $idFoto;
-    /**nome della foto */
     private string $nomeFoto;
-    /**altezza foto */
     private int $altezza;
-    /**larghezza foto */
     private int $larghezza;
-    /**mime tipe della foto */
     private $tipo;
-    /**data di caricamento della foto */
     private $data;
 
-    /**
-     * COSTRUTTORE
-     * @param int $idFoto
-     * @param string $nomeFoto
-     * @param int $altezza
-     * @param int $larghezza
-     * @param $tipo
-     * @param $data
-     */
-    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data)
-    {
-        $this->idFoto = $idFoto;
-        $this->nomeFoto = $nomeFoto;
-        $this->altezza = $altezza;
-        $this->larghezza = $larghezza;
-        $this->tipo = $tipo;
-        $this->data = $data;
-    }
 
-
+//get e set
     /**
-     * @return int id foto
+     * @return int
      */
     public function getIdFoto(): int
     {
@@ -47,7 +20,7 @@ class EFoto
     }
 
     /**
-     * @param int $idFoto id foto
+     * @param int $idFoto
      */
     public function setIdFoto(int $idFoto): void
     {
@@ -55,7 +28,7 @@ class EFoto
     }
 
     /**
-     * @return string nome foto
+     * @return string
      */
     public function getNomeFoto(): string
     {
@@ -63,7 +36,7 @@ class EFoto
     }
 
     /**
-     * @param string $nomeFoto nome foto
+     * @param string $nomeFoto
      */
     public function setNomeFoto(string $nomeFoto): void
     {
@@ -71,7 +44,7 @@ class EFoto
     }
 
     /**
-     * @return int altezza foto
+     * @return int
      */
     public function getAltezza(): int
     {
@@ -79,7 +52,7 @@ class EFoto
     }
 
     /**
-     * @param int $altezza altezza foto
+     * @param int $altezza
      */
     public function setAltezza(int $altezza): void
     {
@@ -87,7 +60,7 @@ class EFoto
     }
 
     /**
-     * @return int larghezza foto
+     * @return int
      */
     public function getLarghezza(): int
     {
@@ -95,7 +68,7 @@ class EFoto
     }
 
     /**
-     * @param int $larghezza larghezza foto
+     * @param int $larghezza
      */
     public function setLarghezza(int $larghezza): void
     {
@@ -103,7 +76,7 @@ class EFoto
     }
 
     /**
-     * @return mixed mime type
+     * @return mixed
      */
     public function getTipo()
     {
@@ -111,7 +84,7 @@ class EFoto
     }
 
     /**
-     * @param mixed $tipo mime type
+     * @param mixed $tipo
      */
     public function setTipo($tipo): void
     {
@@ -119,7 +92,7 @@ class EFoto
     }
 
     /**
-     * @return mixed data foto
+     * @return mixed
      */
     public function getData()
     {
@@ -127,10 +100,40 @@ class EFoto
     }
 
     /**
-     * @param mixed $data data foto
+     * @param mixed $data
      */
     public function setData($data): void
     {
         $this->data = $data;
     }
+    
+    //funzioni 
+    /**
+     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
+     * @param $tipo valore inserito
+     * @return bool
+     */
+    public function valPic($tipo) {
+        if($tipo=="image/jpeg" || $tipo=="image/png")
+            return true;
+        else
+            return false;
+    }
+
+    public function jsonSerialize ()
+    {
+        return
+            [
+                'id'   => $this->getIdFoto(),
+                'nFoto' => $this->getNomeFoto(),
+                'altezza'   => $this->getAltezza(),
+                'larghezza'   => $this->getLarghezza(),
+                'tipo'  =>  $this->getTipo(),
+                'data'  =>  $this->getData()
+            ];
+    }
+
+
+
+
 }

@@ -56,6 +56,7 @@ class FDatabase
             $stmt = $this->connection->prepare($q); //elaborazione query
             $stmt->execute();//Salvataggio dati
             $this->connection->commit(); //fine transaction
+            return null;
 
         } catch (PDOException $e) {
             $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
@@ -165,18 +166,42 @@ class FDatabase
         $orderby = " ORDER BY " . $attr;
         $query = "SELECT * FROM " . $this->table . $orderby . ";";
         try {
-            $this->db->beginTransaction();
-            $stmt = $this->db->prepare($query);
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->db->commit();
+            $this->connection->commit();
             return $rows;
         } catch (PDOException $e) {
-            $this->db->rollBack();
+            $this->connection->rollBack();
             echo "Attenzione, errore: " . $e->getMessage();
             return null;
         }
 
+    }
+
+    /**  Metodo chr permette il salvataggio du un media di un oggetto passato come parametro alla funzione
+     *@param $class, classe di cui si vuole salvare il media
+     * @param obj oggetto interessato
+     * @nome_file, nome del media da salvare
+     */
+    public function storeMedia ($obj,$nome_file) {
+        try {
+            $this->connection->beginTransaction();
+            $query = "INSERT INTO ".$this->class." VALUES ".$this->values;
+            $stmt = $this->connection->prepare($query);
+            $this->class::bind($stmt,$obj,$nome_file);
+            $stmt->execute();
+            $id=$this->connection->lastInsertId();
+            $this->connection->commit();
+            $this->closeDbConnection();
+            return $id;
+        }
+        catch(PDOException $e) {
+            echo "Attenzione errore: ".$e->getMessage();
+            $this->connection->rollBack();
+            return null;
+        }
     }
 
 }
