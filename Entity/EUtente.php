@@ -1,6 +1,6 @@
 <?php
 
-class EUtente
+class EUtente implements JsonSerializable
 {
     private string $nome;
     private string $cognome;
@@ -225,4 +225,20 @@ class EUtente
         }
     }
 
+    public function jsonSerialize()
+    {
+        return
+            [
+                'nome'   => $this->getNome(),
+                'cognome' => $this->getCognome(),
+                'username'   => $this->getUsername(),
+                'password'   => $this->getPassword(),
+                'email'   => $this->getEmail(),
+                'annunciA'   => $this->getAnnunci(),
+                'recensioniA'   => $this->getRecensioni(),
+                'storicoA'   => $this->getStorico(),
+                'idUser'   => $this->getIdUser(),
+                'fotoutente'   => $this->getFotoUtente()
+            ];
+    }
 }

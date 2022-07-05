@@ -1,6 +1,6 @@
 <?php
 
-class EFoto
+class EFoto implements JsonSerializable
 {
     private int $idFoto;
     private string $nomeFoto;
@@ -9,6 +9,8 @@ class EFoto
     private $tipo;
     private $data;
 
+
+//get e set
     /**
      * @return int
      */
@@ -104,4 +106,34 @@ class EFoto
     {
         $this->data = $data;
     }
+    
+    //funzioni 
+    /**
+     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
+     * @param $tipo valore inserito
+     * @return bool
+     */
+    public function valPic($tipo) {
+        if($tipo=="image/jpeg" || $tipo=="image/png")
+            return true;
+        else
+            return false;
+    }
+
+    public function jsonSerialize ()
+    {
+        return
+            [
+                'id'   => $this->getIdFoto(),
+                'nFoto' => $this->getNomeFoto(),
+                'altezza'   => $this->getAltezza(),
+                'larghezza'   => $this->getLarghezza(),
+                'tipo'  =>  $this->getTipo(),
+                'data'  =>  $this->getData()
+            ];
+    }
+
+
+
+
 }
