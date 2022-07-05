@@ -13,7 +13,7 @@ public static function bind($stmt,ERecensione $recensione){
         $stmt->bindValue(':data',$recensione->getData(),PDO::PARAM_STR);
         $stmt->bindValue(':idProdotto',$recensione->getIdProdotto(),PDO::PARAM_INT);
         $stmt->bindValue(':idRecensione',$recensione->getIdRecensione(),PDO::PARAM_INT);
-        $stmt->bindValur(':idUser',$recensione->getIdUser());
+        $stmt->bindValue(':idUser',$recensione->getIdUser());
 }
 // metodo che crea un oggetto da una riga della tabella recensione
 public function getFromRow($row)
