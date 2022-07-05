@@ -1,6 +1,6 @@
 <?php
 
-class EAnnucio
+class EAnnucio implements JsonSerializable
 {
     private string $titolo;
     private string $descrizione;
@@ -202,8 +202,21 @@ class EAnnucio
     }
 
 
+    public function jsonSerialize()
+    {
+        return
+            [
+                'titolo'   => $this->getTitolo(),
+                'descrizione' => $this->getDescrizione(),
+                'prezzo'   => $this->getPrezzo(),
+                'idFoto'   => $this->getIdFoto(),
+                'data'   => $this->getData(),
+                'idAnnuncio'   => $this->getIdAnnuncio(),
+                'idVenditore'   => $this->getIdVenditore(),
+                'idCompratore'   => $this->getIdCompratore(),
+                'foto'   => $this->getArrayFoto()
+            ];
 
-
-
-
+    }
 }
+
