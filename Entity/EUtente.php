@@ -1,5 +1,21 @@
 <?php
 
+/**
+ * La classe EUtente contiene tutti gli attributi e i metodi relativi agli utenti
+ * Contiene i seguenti attributi e i relativi metodi get e set:
+ * - nome: nome dell'utente
+ * - cognome: cognome dell'utente
+ * - username: username dell'utente
+ * - password: password dell'utente
+ * - email: email dell'utente
+ * - annunci: annunci dell'utente
+ * - recensioni: recensioni dell'utente
+ * - storico: storico degli acquisti dell'utente
+ * - idUser: id dell'utente
+ * - fotoUtente: foto dell'utente
+ * @author Gruppo 7
+ * @package Entity
+ */
 class EUtente
 {
     private string $nome;
@@ -13,6 +29,7 @@ class EUtente
     private int $idUser;
     private EFoto $fotoUtente;
     /**
+     * COSTRUTTORE
      * @param string $nome
      * @param string $cognome
      * @param string $username
@@ -29,7 +46,7 @@ class EUtente
     }
 
     /**
-     * @return int
+     * @return int id utente
      */
     public function getIdUser(): int
     {
@@ -37,7 +54,7 @@ class EUtente
     }
 
     /**
-     * @param int $idUser
+     * @param int $idUser id utente
      */
     public function setIdUser(int $idUser): void
     {
@@ -45,7 +62,7 @@ class EUtente
     }
 
     /**
-     * @return EFoto
+     * @return EFoto foto utente
      */
     public function getFotoUtente(): EFoto
     {
@@ -53,7 +70,7 @@ class EUtente
     }
 
     /**
-     * @param EFoto $fotoUtente
+     * @param EFoto $fotoUtente foto utente
      */
     public function setFotoUtente(EFoto $fotoUtente): void
     {
@@ -61,7 +78,7 @@ class EUtente
     }
 
     /**
-     * @return string
+     * @return string nome utente
      */
     public function getNome(): string
     {
@@ -69,7 +86,7 @@ class EUtente
     }
 
     /**
-     * @param string $nome
+     * @param string $nome nome utente
      */
     public function setNome(string $nome): void
     {
@@ -77,7 +94,7 @@ class EUtente
     }
 
     /**
-     * @return string
+     * @return string cognome utente
      */
     public function getCognome(): string
     {
@@ -85,7 +102,7 @@ class EUtente
     }
 
     /**
-     * @param string $cognome
+     * @param string $cognome cognome utente
      */
     public function setCognome(string $cognome): void
     {
@@ -93,7 +110,7 @@ class EUtente
     }
 
     /**
-     * @return string
+     * @return string username utente
      */
     public function getUsername(): string
     {
@@ -101,7 +118,7 @@ class EUtente
     }
 
     /**
-     * @param string $username
+     * @param string $username username utente
      */
     public function setUsername(string $username): void
     {
@@ -109,7 +126,7 @@ class EUtente
     }
 
     /**
-     * @return string
+     * @return string password utente
      */
     public function getPassword(): string
     {
@@ -117,7 +134,7 @@ class EUtente
     }
 
     /**
-     * @param string $password
+     * @param string $password password utente
      */
     public function setPassword(string $password): void
     {
@@ -125,7 +142,7 @@ class EUtente
     }
 
     /**
-     * @return string
+     * @return string email utente
      */
     public function getEmail(): string
     {
@@ -133,7 +150,7 @@ class EUtente
     }
 
     /**
-     * @param string $email
+     * @param string $email email utente
      */
     public function setEmail(string $email): void
     {
@@ -141,7 +158,7 @@ class EUtente
     }
 
     /**
-     * @return array
+     * @return array annunci utente
      */
     public function getAnnunci(): array
     {
@@ -149,7 +166,7 @@ class EUtente
     }
 
     /**
-     * @param array $annunci
+     * @param array $annunci annunci utente
      */
     public function setAnnunci(array $annunci): void
     {
@@ -157,7 +174,7 @@ class EUtente
     }
 
     /**
-     * @return array
+     * @return array recensioni utente
      */
     public function getRecensioni(): array
     {
@@ -165,7 +182,7 @@ class EUtente
     }
 
     /**
-     * @param array $recensioni
+     * @param array $recensioni recensioni utente
      */
     public function setRecensioni(array $recensioni): void
     {
@@ -173,7 +190,7 @@ class EUtente
     }
 
     /**
-     * @return array
+     * @return array storico degli acquisti
      */
     public function getStorico(): array
     {
@@ -181,7 +198,7 @@ class EUtente
     }
 
     /**
-     * @param array $storico
+     * @param array $storico storico degli acquisti
      */
     public function setStorico(array $storico): void
     {
@@ -196,7 +213,7 @@ class EUtente
     }
 
     /**
-     * Aggiunge una nuova annuncio all'utente
+     * Aggiunge un nuovo annuncio all'utente
      */
     public function addAnnuncio($a): void{
         array_push($this->annunci, $a);
@@ -209,6 +226,9 @@ class EUtente
         array_push($this->storico, $a);
     }
 
+    /**
+     * rimuove una recensione
+     */
     public function remRecensione($id): void{
         foreach ($this->recensioni as $r => $recensione){
             if ($recensione->getIdRecensione()==$id){
@@ -217,6 +237,9 @@ class EUtente
         }
     }
 
+    /**
+     * rimuove un annuncio
+     */
     public function remAnnuncio($id): void{
         foreach ($this->annunci as $a => $annuncio){
             if ($annuncio->getIdAnnuncio()==$id){

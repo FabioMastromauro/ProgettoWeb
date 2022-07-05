@@ -1,16 +1,45 @@
 <?php
-
+/**La classe EFoto contiene i dati relativi alle foto
+ * @author Gruppo 7
+ *@package Entity
+ * **/
 class EFoto
 {
+    /**id della foto */
     private int $idFoto;
+    /**nome della foto */
     private string $nomeFoto;
+    /**altezza foto */
     private int $altezza;
+    /**larghezza foto */
     private int $larghezza;
+    /**mime tipe della foto */
     private $tipo;
+    /**data di caricamento della foto */
     private $data;
 
     /**
-     * @return int
+     * COSTRUTTORE
+     * @param int $idFoto
+     * @param string $nomeFoto
+     * @param int $altezza
+     * @param int $larghezza
+     * @param $tipo
+     * @param $data
+     */
+    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data)
+    {
+        $this->idFoto = $idFoto;
+        $this->nomeFoto = $nomeFoto;
+        $this->altezza = $altezza;
+        $this->larghezza = $larghezza;
+        $this->tipo = $tipo;
+        $this->data = $data;
+    }
+
+
+    /**
+     * @return int id foto
      */
     public function getIdFoto(): int
     {
@@ -18,7 +47,7 @@ class EFoto
     }
 
     /**
-     * @param int $idFoto
+     * @param int $idFoto id foto
      */
     public function setIdFoto(int $idFoto): void
     {
@@ -26,7 +55,7 @@ class EFoto
     }
 
     /**
-     * @return string
+     * @return string nome foto
      */
     public function getNomeFoto(): string
     {
@@ -34,7 +63,7 @@ class EFoto
     }
 
     /**
-     * @param string $nomeFoto
+     * @param string $nomeFoto nome foto
      */
     public function setNomeFoto(string $nomeFoto): void
     {
@@ -42,7 +71,7 @@ class EFoto
     }
 
     /**
-     * @return int
+     * @return int altezza foto
      */
     public function getAltezza(): int
     {
@@ -50,7 +79,7 @@ class EFoto
     }
 
     /**
-     * @param int $altezza
+     * @param int $altezza altezza foto
      */
     public function setAltezza(int $altezza): void
     {
@@ -58,7 +87,7 @@ class EFoto
     }
 
     /**
-     * @return int
+     * @return int larghezza foto
      */
     public function getLarghezza(): int
     {
@@ -66,7 +95,7 @@ class EFoto
     }
 
     /**
-     * @param int $larghezza
+     * @param int $larghezza larghezza foto
      */
     public function setLarghezza(int $larghezza): void
     {
@@ -74,7 +103,7 @@ class EFoto
     }
 
     /**
-     * @return mixed
+     * @return mixed mime type
      */
     public function getTipo()
     {
@@ -82,7 +111,7 @@ class EFoto
     }
 
     /**
-     * @param mixed $tipo
+     * @param mixed $tipo mime type
      */
     public function setTipo($tipo): void
     {
@@ -90,7 +119,7 @@ class EFoto
     }
 
     /**
-     * @return mixed
+     * @return mixed data foto
      */
     public function getData()
     {
@@ -98,7 +127,7 @@ class EFoto
     }
 
     /**
-     * @param mixed $data
+     * @param mixed $data data foto
      */
     public function setData($data): void
     {
