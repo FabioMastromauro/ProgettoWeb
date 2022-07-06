@@ -8,8 +8,6 @@ class EFoto implements JsonSerializable
     protected int $larghezza;
     protected $tipo;
     protected $data;
-    protected $idAnn;
-    protected $idUser;
 
     /**
      * @param int $idFoto
@@ -34,38 +32,6 @@ class EFoto implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getIdAnn()
-    {
-        return $this->idAnn;
-    }
-
-    /**
-     * @param mixed $idAnn
-     */
-    public function setIdAnn($idAnn): void
-    {
-        $this->idAnn = $idAnn;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * @param mixed $idUser
-     */
-    public function setIdUser($idUser): void
-    {
-        $this->idUser = $idUser;
-    }
-
-
-
-
 //get e set
     /**
      * @return int
