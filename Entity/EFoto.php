@@ -11,6 +11,27 @@ class EFoto implements JsonSerializable
     private $idEst;
 
     /**
+     * @param int $idFoto
+     * @param string $nomeFoto
+     * @param int $altezza
+     * @param int $larghezza
+     * @param $tipo
+     * @param $data
+     * @param $idEst
+     */
+    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data, $idEst)
+    {
+        $this->idFoto = $idFoto;
+        $this->nomeFoto = $nomeFoto;
+        $this->altezza = $altezza;
+        $this->larghezza = $larghezza;
+        $this->tipo = $tipo;
+        $this->data = $data;
+        $this->idEst = $idEst;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getIdEst()
