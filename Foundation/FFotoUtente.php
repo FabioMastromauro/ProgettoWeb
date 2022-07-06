@@ -10,7 +10,7 @@ class FFotoUtente extends FDatabase
         $this->values = "(:id, :altezza, :larghezza, :tipo, :data, :nomeU)";
     }
 
-    public static function store(EMediaUtente $media, $nome_file){
+    public function storeMedia($media, $nome_file){
        parent::store($media, $nome_file);
 
     }
@@ -20,7 +20,7 @@ class FFotoUtente extends FDatabase
      * @param int $id del media (dell utente)
      * @return bool
      */
-    public static function delete($field, $id){
+    public function delete($field, $id){
       parent::delete($field,$id);
     }
 
