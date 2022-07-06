@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione bindValur">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta search e findUserById in FAnnuncio.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EAnnucio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFoto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
     </list>
@@ -88,7 +87,8 @@
       <workItem from="1653833868119" duration="3197000" />
       <workItem from="1653914683507" duration="6666000" />
       <workItem from="1654010862124" duration="4702000" />
-      <workItem from="1657013771518" duration="12407000" />
+      <workItem from="1657013771518" duration="12540000" />
+      <workItem from="1657097518842" duration="6519000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -251,7 +251,35 @@
       <option name="project" value="LOCAL" />
       <updated>1657036889208</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fetFromRow FAnnuncio.php">
+      <created>1657042169341</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1657042169341</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fetFromRow FAnnuncio.php">
+      <created>1657060881001</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1657060881001</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Modifica existDB">
+      <created>1657098463108</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1657098463108</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Aggiunta search e findUserById in FAnnuncio.php">
+      <created>1657102176783</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1657102176783</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +331,9 @@
     <MESSAGE value="Correzioni grammaticali" />
     <MESSAGE value="store FAnnuncio.php" />
     <MESSAGE value="Correzione bindValur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correzione bindValur" />
+    <MESSAGE value="fetFromRow FAnnuncio.php" />
+    <MESSAGE value="Modifica existDB" />
+    <MESSAGE value="Aggiunta search e findUserById in FAnnuncio.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta search e findUserById in FAnnuncio.php" />
   </component>
 </project>

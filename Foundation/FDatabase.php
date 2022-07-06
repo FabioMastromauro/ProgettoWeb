@@ -66,9 +66,9 @@ class FDatabase
 
     }
 
-    public function delete($lid)
+    public function delete($id)
     {
-        $q = "DELETE FROM" . $this->table . "WHERE id=" . $lid; // DELETE nella $table dell'$id
+        $q = "DELETE FROM" . $this->table . "WHERE id=" . $id; // DELETE nella $table dell'$id
 
         try {
             $this->connection->beginTransaction(); //inizio transazione per evitare errori
@@ -86,7 +86,7 @@ class FDatabase
 
     public function search($attributo, $valore)
     {
-        $q = "SELECT * from " . $this->table . " WHERE " . $attributo . " = " . $valore;
+        $q = "SELECT * from " . $this->table . " WHERE " . $attributo . " LIKE '%" . $valore . "%';";
 
 
         try {
@@ -148,13 +148,15 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM " .$this->table . " WHERE " . $field . "='" . $id . "'";
+            $this->connection->beginTransaction();
             $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) == 1) return $result[0];  //rimane solo l'array interno
             else if (count($result) > 1) return $result;  //resituisce array di array
-            $this->closeDbConnection();
+            $this->connection->commit();
         } catch (PDOException $e) {
+            $this->connection->rollBack();
             echo "Errore: " . $e->getMessage();
             return null;
         }

@@ -49,11 +49,11 @@ public function loadByAllIds($ids){
 public function loadByIdProdotto($idprodotto){
         $query = "SELECT * FROM ".$this->table." WHERE idProdotto =".$idprodotto.";";
         try{
-            $this->localmp->beginTransaction();
-            $stmt = $this->localmp->prepare($query);
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->localmp->commit();
+            $this->connection->commit();
             $arrayrece=array();
             foreach ($rows as $row){
                 $rece = $this->getFromRow($row);
@@ -62,7 +62,7 @@ public function loadByIdProdotto($idprodotto){
             return $arrayrece;
         }
         catch(PDOException $e){
-            $this->localmp->rollback();
+            $this->connection->rollback();
             echo "Attenzione, errore: ".$e->getMessage();
             return null;
         }
@@ -71,11 +71,11 @@ public function loadByIdProdotto($idprodotto){
 public function loadByIdUser($iduser){
         $query = "SELECT * FROM ".$this->table." WHERE idUser=".$iduser.";";
         try{
-            $this->localmp->beginTransaction();
-            $stmt = $this->localmp->prepare($query);
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->local->commit();
+            $this->connection->commit();
             $arrayrece=array();
             foreach ($rows as $row){
                 $rece = $this->getFromRow($row);
@@ -84,20 +84,20 @@ public function loadByIdUser($iduser){
             return $arrayrece;
         }
         catch (PDOException $e){
-            $this->localmp->rollback();
+            $this->connection->rollback();
             echo "Attenzione, errore: ".$e->getMessage();
             return null;
         }
 }
 public function search($attributo, $valore){
     $array = parent::search($attributo, $valore);
-    $arrayobj = array();
+    $arrayRece = array();
     if(($array!=null)&&(count($array)>0)){
         foreach ($array as $i){
             $rece = $this->getFromRow($i);
-            array_push($arrayobj,$rece);
+            array_push($arrayRece,$rece);
         }
-        return $arrayobj;
+        return $arrayRece;
     }
     else return null;
 }
@@ -105,16 +105,16 @@ public function search($attributo, $valore){
     public function contaRece(){
     $query ="SELECT COUNT(idRecensione) AS n FROM ".$this->table.";";
     try{
-        $this->localmp->beginTransaction();
-        $stmt = $this->localmp->prepare($query);
+        $this->connection->beginTransaction();
+        $stmt = $this->connection->prepare($query);
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $this->localmp->commit();
+        $this->connection->commit();
         return $row[0]['n'];
     }
     catch (PDOException $e)
     {
-        $this->localmp->rollBack();
+        $this->connection->rollBack();
         echo "Attenzione, errore: " . $e->getMessage();
         return null;
     }
