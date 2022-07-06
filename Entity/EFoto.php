@@ -8,6 +8,23 @@ class EFoto implements JsonSerializable
     private int $larghezza;
     private $tipo;
     private $data;
+    private $idEst;
+
+    /**
+     * @return mixed
+     */
+    public function getIdEst()
+    {
+        return $this->idEst;
+    }
+
+    /**
+     * @param mixed $idEst
+     */
+    public function setIdEst($idEst): void
+    {
+        $this->idEst = $idEst;
+    }
 
 
 //get e set

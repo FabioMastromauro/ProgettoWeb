@@ -160,6 +160,18 @@ class FUtente extends FDatabase
 
     public  function store($utente){
         $id=parent::store($utente);
+        if ($id) {
+
+            $foto = file_get_contents('./pics/profile.png');
+            $fotoObj = new EFoto($foto, 'pic/png');
+            $fotoObj->setIdEst($id);
+            $fotoUt = new FFotoUtente();
+            $fotoUt->store($fotoObj);
+            return $id;
+        }
+        else {
+            return false;
+        }
 
     }
 
