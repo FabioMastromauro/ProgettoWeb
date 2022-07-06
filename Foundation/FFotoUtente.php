@@ -11,7 +11,7 @@ class FFotoUtente extends FDatabase
     }
 
     public function storeMedia($media, $nome_file){
-       parent::store($media, $nome_file);
+       parent::storeMedia($media, $nome_file);
 
     }
 
