@@ -148,13 +148,15 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM " .$this->table . " WHERE " . $field . "='" . $id . "'";
+            $this->connection->beginTransaction();
             $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) == 1) return $result[0];  //rimane solo l'array interno
             else if (count($result) > 1) return $result;  //resituisce array di array
-            $this->closeDbConnection();
+            $this->connection->commit();
         } catch (PDOException $e) {
+            $this->connection->rollBack();
             echo "Errore: " . $e->getMessage();
             return null;
         }
