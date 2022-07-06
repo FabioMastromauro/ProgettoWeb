@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="fetFromRow FAnnuncio.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifica existDB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +89,7 @@
       <workItem from="1653914683507" duration="6666000" />
       <workItem from="1654010862124" duration="4702000" />
       <workItem from="1657013771518" duration="12540000" />
-      <workItem from="1657097518842" duration="930000" />
+      <workItem from="1657097518842" duration="4482000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -263,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657060881001</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Modifica existDB">
+      <created>1657098463108</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1657098463108</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +326,7 @@
     <MESSAGE value="store FAnnuncio.php" />
     <MESSAGE value="Correzione bindValur" />
     <MESSAGE value="fetFromRow FAnnuncio.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="fetFromRow FAnnuncio.php" />
+    <MESSAGE value="Modifica existDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifica existDB" />
   </component>
 </project>

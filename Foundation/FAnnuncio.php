@@ -40,8 +40,8 @@ public function __construct(){
         $arrayAnnunci = array();
         if(($array!=null) && (count($array)>0)){
             foreach($array as $i){
-                $tab = $this->getObjectFromRow($i);
-                array_push($arrayAnnunci, $tab);
+                $ann = $this->getFromRow($i);
+                array_push($arrayAnnunci, $ann);
             }
             return $arrayAnnunci;
         }
@@ -74,6 +74,29 @@ public function __construct(){
             return $ann;
         }
         else return null;{
+        }
+    }
+
+    // metodo che trova le recensioni relativi a un utente
+    public function loadByIdUser($iduser){
+        $query = "SELECT * FROM ".$this->table." WHERE idUser=".$iduser.";";
+        try{
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->connection->commit();
+            $arrayann=array();
+            foreach ($rows as $row){
+                $ann = $this->getFromRow($row);
+                array_push($arrayann,$ann);
+            }
+            return $arrayann;
+        }
+        catch (PDOException $e){
+            $this->localmp->rollback();
+            echo "Attenzione, errore: ".$e->getMessage();
+            return null;
         }
     }
 

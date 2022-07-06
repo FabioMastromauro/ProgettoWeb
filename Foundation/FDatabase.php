@@ -86,7 +86,7 @@ class FDatabase
 
     public function search($attributo, $valore)
     {
-        $q = "SELECT * from " . $this->table . " WHERE " . $attributo . " = " . $valore;
+        $q = "SELECT * from " . $this->table . " WHERE " . $attributo . " LIKE '%" . $valore . "%';";
 
 
         try {
