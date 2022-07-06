@@ -66,9 +66,9 @@ class FDatabase
 
     }
 
-    public function delete($lid)
+    public function delete($id)
     {
-        $q = "DELETE FROM" . $this->table . "WHERE id=" . $lid; // DELETE nella $table dell'$id
+        $q = "DELETE FROM" . $this->table . "WHERE id=" . $id; // DELETE nella $table dell'$id
 
         try {
             $this->connection->beginTransaction(); //inizio transazione per evitare errori

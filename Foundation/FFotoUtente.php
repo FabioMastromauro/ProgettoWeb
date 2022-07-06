@@ -20,8 +20,8 @@ class FFotoUtente extends FDatabase
      * @param int $id del media (dell utente)
      * @return bool
      */
-    public function delete($field, $id){
-      parent::delete($field,$id);
+    public function delete($id){
+      parent::delete($id);
     }
 
     public static function bind($stmt, EFotoUtente $fotoUtente){
