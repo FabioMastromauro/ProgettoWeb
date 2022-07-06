@@ -94,7 +94,7 @@ public function __construct(){
             return $arrayann;
         }
         catch (PDOException $e){
-            $this->localmp->rollback();
+            $this->connection->rollback();
             echo "Attenzione, errore: ".$e->getMessage();
             return null;
         }
