@@ -2,13 +2,14 @@
 
 class EFoto implements JsonSerializable
 {
-    private int $idFoto;
-    private string $nomeFoto;
-    private int $altezza;
-    private int $larghezza;
-    private $tipo;
-    private $data;
-    private $idEst;
+    protected int $idFoto;
+    protected string $nomeFoto;
+    protected int $altezza;
+    protected int $larghezza;
+    protected $tipo;
+    protected $data;
+    protected $idAnn;
+    protected $idUser;
 
     /**
      * @param int $idFoto
@@ -17,9 +18,10 @@ class EFoto implements JsonSerializable
      * @param int $larghezza
      * @param $tipo
      * @param $data
-     * @param $idEst
+     * @param $idAnn
+     * @param $idUser
      */
-    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data, $idEst)
+    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data)
     {
         $this->idFoto = $idFoto;
         $this->nomeFoto = $nomeFoto;
@@ -27,25 +29,41 @@ class EFoto implements JsonSerializable
         $this->larghezza = $larghezza;
         $this->tipo = $tipo;
         $this->data = $data;
-        $this->idEst = $idEst;
     }
-
 
     /**
      * @return mixed
      */
-    public function getIdEst()
+    public function getIdAnn()
     {
-        return $this->idEst;
+        return $this->idAnn;
     }
 
     /**
-     * @param mixed $idEst
+     * @param mixed $idAnn
      */
-    public function setIdEst($idEst): void
+    public function setIdAnn($idAnn): void
     {
-        $this->idEst = $idEst;
+        $this->idAnn = $idAnn;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param mixed $idUser
+     */
+    public function setIdUser($idUser): void
+    {
+        $this->idUser = $idUser;
+    }
+
+
 
 
 //get e set

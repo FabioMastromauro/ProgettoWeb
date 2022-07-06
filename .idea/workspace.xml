@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta search e findUserById in FAnnuncio.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifica store FUtente.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entity/EFoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFotoUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -279,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657102176783</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Modifica store FUtente.php">
+      <created>1657105809874</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1657105809874</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +317,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="File di prova per git" />
     <MESSAGE value="Test" />
     <MESSAGE value="Test2" />
     <MESSAGE value="Test3" />
@@ -334,6 +341,7 @@
     <MESSAGE value="fetFromRow FAnnuncio.php" />
     <MESSAGE value="Modifica existDB" />
     <MESSAGE value="Aggiunta search e findUserById in FAnnuncio.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta search e findUserById in FAnnuncio.php" />
+    <MESSAGE value="Modifica store FUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifica store FUtente.php" />
   </component>
 </project>

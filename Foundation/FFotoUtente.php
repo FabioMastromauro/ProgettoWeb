@@ -30,7 +30,7 @@ class FFotoUtente extends FDatabase
         $stmt->bindValue(':larghezza', $fotoUtente->getLarghezza(), PDO::PARAM_INT);
         $stmt->bindValue(':tipo', $fotoUtente->getTipo(), PDO::PARAM_STR);
         $stmt->bindValue(':data', $fotoUtente->getData(), PDO::PARAM_LOB);
-        $stmt->bindValue(':nomeU', $fotoUtente->getNomeU(), PDO::PARAM_STR);
+        $stmt->bindValue(':nomeU', $fotoUtente->getIdUser(), PDO::PARAM_STR);
 
     }
 
