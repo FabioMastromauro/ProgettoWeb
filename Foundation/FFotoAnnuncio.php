@@ -21,8 +21,8 @@ class FFotoAnnuncio extends FDatabase{
 
     public function getFromRow($row){
 
-        $img = new EFoto($row['data'], $row['tipo'], $row['altezza'], $row['larghezza'], $row['nFoto']);
-        $img->setIdesterno($row['idAnn']);
+        $img = new EFotoAnnuncio($row['data'], $row['tipo'], $row['altezza'], $row['larghezza'], $row['nFoto']);
+        $img->setIdAnn($row['idAnn']);
         $img->setIdFoto($row['id']);
         return $img;
     }

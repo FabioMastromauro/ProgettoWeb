@@ -43,8 +43,8 @@ class FFotoUtente extends FDatabase
 
     public function getFromRow($row){
 
-        $img = new EFoto($row['data'], $row['tipo'], $row['altezza'], $row['larghezza']);
-        $img->setIdesterno($row['idUser']);
+        $img = new EFotoUtente($row['data'], $row['tipo'], $row['altezza'], $row['larghezza'], $row['nFoto']);
+        $img->setIdUser($row['idUser']);
         $img->setIdFoto($row['id']);
         return $img;
     }
