@@ -6,7 +6,7 @@ class FRecensione extends FDatabase{
         parent::__construct(); //richiama il costruttore di FDatababse
         $this->table = 'recensione';
         $this->class = 'FRecensione';
-        $this->valori = "(:testo, :data, :idProdotto, :idRecensione, :idUser )";
+        $this->values = "(:testo, :data, :idProdotto, :idRecensione, :idUser )";
     }
 
     /**
@@ -44,17 +44,17 @@ class FRecensione extends FDatabase{
     /**
      * @return string
      */
-    public function getValori(): string
+    public function getValues(): string
     {
-        return $this->valori;
+        return $this->values;
     }
 
     /**
-     * @param string $valori
+     * @param string $values
      */
-    public function setValori(string $valori): void
+    public function setValues(string $values): void
     {
-        $this->valori = $valori;
+        $this->values = $values;
     }
 
 
@@ -79,7 +79,7 @@ class FRecensione extends FDatabase{
         return $ris;
     }
 
-    public  function deleteDB($field, $id) {
+    public static function delete($field, $id) {
         $db = FDatabase::getInstance();
         $result = $db->deleteDB($field, $id);
         if($result)
