@@ -10,6 +10,56 @@ class FUtente extends FDatabase
         $this->class = 'FUtente';
     }
 
+    /**
+     * @return string
+     */
+    public function getClass(): string
+    {
+        return $this->class;
+    }
+
+    /**
+     * @param string $class
+     */
+    public function setClass(string $class): void
+    {
+        $this->class = $class;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTable(): string
+    {
+        return $this->table;
+    }
+
+    /**
+     * @param string $table
+     */
+    public function setTable(string $table): void
+    {
+        $this->table = $table;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValori(): string
+    {
+        return $this->valori;
+    }
+
+    /**
+     * @param string $valori
+     */
+    public function setValori(string $valori): void
+    {
+        $this->valori = $valori;
+    }
+
+
+
 // metodo che lega gli attributi dell'utente che si vogliono inserire con i parametri della INSERT
     public static function bind($stmt, EUtente $user)
     {
@@ -181,7 +231,7 @@ class FUtente extends FDatabase
             $query = "SELECT * FROM utente where name = '" . $array[0] . "' OR surname = '" . $array[0] . "';";
         else
             $query = "SELECT * FROM utente where name = '" . $array[0] . "' AND surname = '" . $array[1] . "' OR name = '" . $array[1] . "' AND surname = '" . $array[0] . "';";
-        $stmt = $this->db->prepare($query);
+        $stmt = $this->connection->prepare($query);
         $stmt->execute();
         $num = $stmt->rowCount();
         if ($num == 0)
@@ -198,7 +248,7 @@ class FUtente extends FDatabase
     }
 
 
-    public static function loadUtentiByString($string){
+    public  function loadUtentiByString($string){
         $utente = null;
         $toSearch = null;
         $pieces = explode(" ", $string);
@@ -206,7 +256,7 @@ class FUtente extends FDatabase
         if ($pieces[0] == $lastElement) {
             $toSearch = 'nome';
         }
-        list ($result, $rows_number)=utentiByString($pieces, $toSearch);
+        list ($result, $rows_number)=FUtente::utentiByString($pieces, $toSearch);
         if(($result!=null) && ($rows_number == 1)) {
             $utente=new EUtente($result['name'],$result['surname'], $result['email'], $result['password']);
         }
