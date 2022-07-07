@@ -3,7 +3,7 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 class FDatabase
 {
-    private $connection;
+    private $db;
     private static $table;
     private static $values;
     private static $class = "FDatabase";
@@ -14,8 +14,8 @@ class FDatabase
     public function __construct()
     {
         try {
-            $this->connection = new PDO ("mysql:dbname=" . $GLOBALS['database'] . ";host=127.0.0.1", $GLOBALS['username'], $GLOBALS['password']);
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //per gestire errori ed eccezioni
+            $this->db = new PDO ("mysql:dbname=" . $GLOBALS['database'] . ";host=127.0.0.1", $GLOBALS['username'], $GLOBALS['password']);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //per gestire errori ed eccezioni
 
         } catch (PDOException $e) {
             echo 'errore' . $e->getMessage();
@@ -33,16 +33,16 @@ class FDatabase
     {
         $q = "INSERT INTO " . $this->table . " VALUES " . $this->values . ";";
         try {
-            $this->connection->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->connection->prepare($q); //elaborazione query
+            $this->db->beginTransaction(); //inizio transazione per evitare errori
+            $stmt = $this->db->prepare($q); //elaborazione query
             $this->class::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
             $stmt->execute();//Salvataggio dati
-            $id = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
-            $this->connection->commit(); //fine transaction
+            $id = $this->db->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
+            $this->db->commit(); //fine transaction
             return $id;
 
         } catch (PDOException $e) {
-            $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
+            $this->db->rollBack();//in caso di errore ripristina lo stato precedente del db
             echo 'errore' . $e->getMessage(); //printa il messaggio di errore
 
         }
@@ -53,9 +53,9 @@ class FDatabase
     public function loadDB($field, $id)
     {
         try {
-            $this->connection->beginTransaction();
+            $this->db->beginTransaction();
             $query = "SELECT * FROM " . $this->table . " WHERE " . $field . "='" . $id . "';";
-            $stmt = $this->connection->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -72,7 +72,7 @@ class FDatabase
             return $result;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->connection->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -84,14 +84,14 @@ class FDatabase
 
 
         try {
-            $this->connection->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->connection->prepare($q); //elaborazione query
+            $this->db->beginTransaction(); //inizio transazione per evitare errori
+            $stmt = $this->db->prepare($q); //elaborazione query
             $stmt->execute();//Salvataggio dati
-            $this->connection->commit(); //fine transaction
+            $this->db->commit(); //fine transaction
             return null;
 
         } catch (PDOException $e) {
-            $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
+            $this->db->rollBack();//in caso di errore ripristina lo stato precedente del db
             echo 'errore' . $e->getMessage(); //printa il messaggio di errore
 
         }
@@ -103,13 +103,13 @@ class FDatabase
         $q = "DELETE FROM" . $this->table . "WHERE id=" . $id; // DELETE nella $table dell'$id
 
         try {
-            $this->connection->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->connection->prepare($q); //elaborazione query
+            $this->db->beginTransaction(); //inizio transazione per evitare errori
+            $stmt = $this->db->prepare($q); //elaborazione query
             $stmt->execute();//Salvataggio dati
-            $this->connection->commit(); //fine transaction
+            $this->db->commit(); //fine transaction
 
         } catch (PDOException $e) {
-            $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
+            $this->db->rollBack();//in caso di errore ripristina lo stato precedente del db
             echo 'errore' . $e->getMessage(); //printa il messaggio di errore
 
         }
@@ -124,19 +124,19 @@ class FDatabase
     {
         try {
             $result = null;
-            $this->connection->beginTransaction();
+            $this->db->beginTransaction();
             $esiste = $this->existDB($field, $id);
             if ($esiste) {
                 $query = "DELETE FROM " . $this->table . " WHERE " . $field . "='" . $id . "';";
-                $stmt = $this->connection->prepare($query);
+                $stmt = $this->db->prepare($query);
                 $stmt->execute();
-                $this->connection->commit();
+                $this->db->commit();
                 $this->closeDbConnection();
                 $result = true;
             }
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->connection->rollBack();
+            $this->db->rollBack();
             return false;
         }
         return $result;
@@ -145,9 +145,9 @@ class FDatabase
     public function search ($input, $campo)
     {
         try {
-           $this->connection->beginTransaction();
+           $this->db->beginTransaction();
             $query = "SELECT * FROM " . $this->table . " WHERE " . $campo . " LIKE '%" . $input . "%';";
-            $stmt = $this->connection->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -160,12 +160,12 @@ class FDatabase
                 while ($row = $stmt->fetch())
                     $result[] = $row;                    //ritorna un array di righe.
             }
-            $this->connection->commit();
+            $this->db->commit();
             $this->closeDbConnection();
             return array($result, $num);
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->connection->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -175,14 +175,14 @@ class FDatabase
     {
         $query = "SELECT * FROM " . $this->table . " WHERE id=" . $id;
         try {
-            $this->connection->beginTransaction();
-            $stmt = $this->connection->prepare($query);
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->connection->commit();
+            $this->db->commit();
             return $row;
         } catch (PDOException $e) {
-            $this->connection->rollBack();
+            $this->db->rollBack();
             echo "errore" . $e->getMessage();
             return null;
         }
@@ -196,14 +196,14 @@ class FDatabase
         $s = "(" . $s . ")";
         $query = "SELECT * FROM " . $this->table . " WHERE id IN " . $s . ";";
         try {
-            $this->connection->beginTransaction();
-            $stmt = $this->connection->prepare($query);
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->connection->commit();
+            $this->db->commit();
             return $rows;
         } catch (PDOException $e) {
-            $this->connection->rollBack();
+            $this->db->rollBack();
             echo "errore" . $e->getMessage();
             return null;
         }
@@ -213,15 +213,15 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM " .$this->table . " WHERE " . $field . "='" . $id . "'";
-            $this->connection->beginTransaction();
-            $stmt = $this->connection->prepare($query);
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) == 1) return $result[0];  //rimane solo l'array interno
             else if (count($result) > 1) return $result;  //resituisce array di array
-            $this->connection->commit();
+            $this->db->commit();
         } catch (PDOException $e) {
-            $this->connection->rollBack();
+            $this->db->rollBack();
             echo "Errore: " . $e->getMessage();
             return null;
         }
@@ -230,7 +230,7 @@ class FDatabase
     public function accessoUtente($email, $pass){
         try {
             $query = 'SELECT * FROM ' . FUtente::getTable() . " WHERE email ='" . $email . "' AND password ='" . $pass . "';";
-            $stmt = $this->connection->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -241,7 +241,7 @@ class FDatabase
             return $result;
         } catch (PDOException $e){
             echo "Attenzione errore: " . $e->getMessage();
-            $this->connection->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -252,14 +252,14 @@ class FDatabase
         $orderby = " ORDER BY " . $attr;
         $query = "SELECT * FROM " . $this->table . $orderby . ";";
         try {
-            $this->connection->beginTransaction();
-            $stmt = $this->connection->prepare($query);
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->connection->commit();
+            $this->db->commit();
             return $rows;
         } catch (PDOException $e) {
-            $this->connection->rollBack();
+            $this->db->rollBack();
             echo "Attenzione, errore: " . $e->getMessage();
             return null;
         }
@@ -273,19 +273,19 @@ class FDatabase
      */
     public function storeMedia ($obj,$nome_file) {
         try {
-            $this->connection->beginTransaction();
+            $this->db->beginTransaction();
             $query = "INSERT INTO ".$this->class." VALUES ".$this->values;
-            $stmt = $this->connection->prepare($query);
+            $stmt = $this->db->prepare($query);
             $this->class::bind($stmt,$obj,$nome_file);
             $stmt->execute();
-            $id=$this->connection->lastInsertId();
-            $this->connection->commit();
+            $id=$this->db->lastInsertId();
+            $this->db->commit();
             $this->closeDbConnection();
             return $id;
         }
         catch(PDOException $e) {
             echo "Attenzione errore: ".$e->getMessage();
-            $this->connection->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -299,7 +299,7 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM recensione;";
-            $stmt = $this->connection->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -315,7 +315,7 @@ class FDatabase
             return array($result, $num);
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->connection->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -326,7 +326,7 @@ class FDatabase
             $query = "SELECT * FROM utente where nome = '" . $array[0] . "' OR cognome = '" . $array[0] . "';";
         else
             $query = "SELECT * FROM utente where nome = '" . $array[0] . "' AND cognome = '" . $array[1] . "' OR nome = '" . $array[1] . "' AND cognome = '" . $array[0] . "';";
-        $stmt = $this->connection->prepare($query);
+        $stmt = $this->db->prepare($query);
         $stmt->execute();
         $num = $stmt->rowCount();
         if ($num == 0)
