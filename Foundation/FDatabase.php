@@ -9,7 +9,7 @@ class FDatabase
     protected $values;
     protected $key;
     protected $return;
-    protected $class;
+    protected $class = "FDatabase";
 
 
 

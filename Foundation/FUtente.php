@@ -6,7 +6,7 @@ class FUtente extends FDatabase
     {
         parent::__construct(); //richiama il costruttore di FDatabase
         $this->table = 'utente';
-        $this->valori = '(:$nome, :$cognome, :$username, :$password, :$email)';
+        $this->values = '(:$nome, :$cognome, :$username, :$password, :$email)';
         $this->class = 'FUtente';
     }
 
@@ -45,17 +45,17 @@ class FUtente extends FDatabase
     /**
      * @return string
      */
-    public function getValori(): string
+    public function getValues(): string
     {
-        return $this->valori;
+        return $this->values;
     }
 
     /**
-     * @param string $valori
+     * @param string $values
      */
-    public function setValori(string $valori): void
+    public function setValues(string $values): void
     {
-        $this->valori = $valori;
+        $this->values = $values;
     }
 
 
