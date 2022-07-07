@@ -98,7 +98,7 @@ class FUtente extends FDatabase
                 return $id;
             } else return false;
         } catch (PDOException $e) {
-            $this->localmp->rollback();
+            $this->connection->rollback();
             echo "Attenzione, errore: " . $e->getMessage();
             return null;
         }
@@ -124,16 +124,16 @@ class FUtente extends FDatabase
     {
         $query = "SELECT * FROM " . $this->table . " WHERE username= '" . $username . "';";
         try {
-            $this->localmp->beginTransaction();
-            $stmt = $this->localmp->prepare($query);
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->localmp->commit();
+            $this->connection->commit();
             if (($row != null) && (count($row) > 0)) {
                 return true;
             } else return false;
         } catch (PDOException $e) {
-            $this->localmp->rollback();
+            $this->connection->rollback();
             echo "Attenzione, errore: " . $e->getMessage();
             return null;
         }
@@ -143,16 +143,16 @@ class FUtente extends FDatabase
     {
         $query = "SELECT COUNT(idUser) AS n FROM " . $this->table . ";";
         try {
-            $this->localmp->beginTransaction();
-            $stmt = $this->localmp->prepare($query);
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare($query);
             $stmt->execute();
             $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->localmp->commit();
+            $this->connection->commit();
             return $row[0]['n'];
 
 
         } catch (PDOException $e) {
-            $this->localmp->rollBack();
+            $this->connection->rollBack();
             echo "Attenzione, errore: " . $e->getMessage();
             return null;
         }
@@ -163,8 +163,8 @@ class FUtente extends FDatabase
         if ($id) {
 
             $foto = file_get_contents('./pics/profile.png');
-            $fotoObj = new EFoto($foto, 'pic/png');
-            $fotoObj->setIdEst($id);
+            $fotoObj = new EFotoUtente($foto, 'pic/png');
+            $fotoObj->setIdUser($id);
             $fotoUt = new FFotoUtente();
             $fotoUt->store($fotoObj);
             return $id;
