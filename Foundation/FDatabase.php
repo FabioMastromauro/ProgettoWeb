@@ -24,6 +24,13 @@ class FDatabase
         }
     }
 
+    public static function getInstance() {
+        if (USingleton::getInstance(self::$class) == null) {
+            USingleton::getInstance(self::$class);
+        }
+        return USingleton::getInstance(self::$class);
+    }
+
     public function store($obj)
     {
         $q = "INSERT INTO " . $this->table . " VALUES " . $this->values . ";";
