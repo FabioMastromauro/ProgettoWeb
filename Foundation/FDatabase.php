@@ -3,13 +3,11 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 class FDatabase
 {
-    protected $connection;
-    protected $result;
-    protected $table;
-    protected $values;
-    protected $key;
-    protected $return;
-    protected $class = "FDatabase";
+    private static $connection;
+    private static $table;
+    private static $values;
+    private static $class = "FDatabase";
+
 
 
 
@@ -39,9 +37,9 @@ class FDatabase
             $stmt = $this->connection->prepare($q); //elaborazione query
             $this->class::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
             $stmt->execute();//Salvataggio dati
-            $lid = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
+            $id = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
             $this->connection->commit(); //fine transaction
-            return $lid;
+            return $id;
 
         } catch (PDOException $e) {
             $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
@@ -147,7 +145,7 @@ class FDatabase
     public function search ($input, $campo)
     {
         try {
-            // $this->db->beginTransaction();
+           $this->connection->beginTransaction();
             $query = "SELECT * FROM " . $this->table . " WHERE " . $campo . " LIKE '%" . $input . "%';";
             $stmt = $this->connection->prepare($query);
             $stmt->execute();
@@ -162,7 +160,8 @@ class FDatabase
                 while ($row = $stmt->fetch())
                     $result[] = $row;                    //ritorna un array di righe.
             }
-            //  $this->closeDbConnection();
+            $this->connection->commit();
+            $this->closeDbConnection();
             return array($result, $num);
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
