@@ -46,6 +46,25 @@ class FPersistantManager
         return $ris;
     }
 
+    /* Metodo che permette la ricerca per categoria */
+    public static function filterByCategoria($class, $categoria) {
+        if ($class == "FAnnuncio") {
+            $ris = $class::filterByCategoria($categoria);
+        }
+        return $ris;
+    }
+
+    /* Metodo che permette la ricerca secondo determinati parametri */
+    public static function search($Fclass, $parametri = array(), string $ordinamento, string $limite) {
+        $ris = $Fclass::search($parametri, $ordinamento, $limite);
+        return $ris;
+    }
+
+    /* Metooo */
+    public static function getRows($class, $parametri = array(), string $ordinamento, string $limite) {
+        $ris = $class::getRows($parametri, $ordinamento, $limite);
+        return $ris;
+    }
 
 
 }
