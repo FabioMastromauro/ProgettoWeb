@@ -3,7 +3,7 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 class FDatabase
 {
-    private static $connection;
+    private $connection;
     private static $table;
     private static $values;
     private static $class = "FDatabase";
