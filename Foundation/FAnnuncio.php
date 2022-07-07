@@ -15,7 +15,7 @@ public function __construct(){
     {
         $stmt->bindParam(':titolo', $annuncio->getTitolo(), PDO::PARAM_STR);
         $stmt->bindParam(':descrizone', $annuncio->getDescrizione(), PDO::PARAM_STR);
-        $stmt->bindParam(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_STR);
+        $stmt->bindParam(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_INT);
         $stmt->bindParam(':idFoto', $annuncio->getIdFoto(), PDO::PARAM_INT);
         $stmt->bindParam(':data', $annuncio->getData(), PDO::PARAM_STR);
         $stmt->bindParam(':idAnnuncio', $annuncio->getIdAnnuncio(), PDO::PARAM_INT);
@@ -51,19 +51,7 @@ public function __construct(){
 
     public function store($annuncio)
     {
-        $id = parent::store($annuncio);
-        if ($id) {
-
-            $foto = file_get_contents('./pics/annunci.png');
-            $fotoObj = new EFotoAnnuncio($foto, 'pic/png');
-            $fotoObj->setIdAnn($id);
-            $fotoAnn = new FFotoAnnuncio();
-            $fotoAnn->store($fotoObj);
-            return $id;
-        }
-        else {
-            return false;
-        }
+        parent::store($annuncio);
     }
 
     private function buildRow($row)
