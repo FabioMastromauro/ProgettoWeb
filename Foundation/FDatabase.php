@@ -3,13 +3,11 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 class FDatabase
 {
-    protected $connection;
-    protected $result;
-    protected $table;
-    protected $values;
-    protected $key;
-    protected $return;
-    protected $class;
+    private $connection;
+    private static $table;
+    private static $values;
+    private static $class = "FDatabase";
+
 
 
 
@@ -24,6 +22,13 @@ class FDatabase
         }
     }
 
+    public static function getInstance() {
+        if (USingleton::getInstance(self::$class) == null) {
+            USingleton::getInstance(self::$class);
+        }
+        return USingleton::getInstance(self::$class);
+    }
+
     public function store($obj)
     {
         $q = "INSERT INTO " . $this->table . " VALUES " . $this->values . ";";
@@ -32,9 +37,9 @@ class FDatabase
             $stmt = $this->connection->prepare($q); //elaborazione query
             $this->class::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
             $stmt->execute();//Salvataggio dati
-            $lid = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
+            $id = $this->connection->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
             $this->connection->commit(); //fine transaction
-            return $lid;
+            return $id;
 
         } catch (PDOException $e) {
             $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
@@ -45,10 +50,37 @@ class FDatabase
 
     }
 
-    public function update($lid, $attributo, $valore)
+    public function loadDB($field, $id)
+    {
+        try {
+            $this->connection->beginTransaction();
+            $query = "SELECT * FROM " . $this->table . " WHERE " . $field . "='" . $id . "';";
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $num = $stmt->rowCount();
+            if ($num == 0) {
+                $result = null;        //nessuna riga interessata. return null
+            } elseif ($num == 1) {                          //nel caso in cui una sola riga fosse interessata
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);   //ritorna una sola riga
+            } else {
+                $result = array();                         //nel caso in cui piu' righe fossero interessate
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);   //imposta la modalità di fetch come array associativo
+                while ($row = $stmt->fetch())
+                    $result[] = $row;                    //ritorna un array di righe.
+            }
+
+            return $result;
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->connection->rollBack();
+            return null;
+        }
+    }
+
+    public function update($id, $attributo, $valore)
     {
 
-        $q = "UPDATE" . $this->table . "SET" . $attributo . "=" . $valore . "WHERE id=" . $lid; //update di un valore di una $table aggiorna un $attributo in un nuovo $valore
+        $q = "UPDATE" . $this->table . "SET" . $attributo . "=" . $valore . "WHERE id=" . $id; //update di un valore di una $table aggiorna un $attributo in un nuovo $valore
 
 
         try {
@@ -84,27 +116,60 @@ class FDatabase
 
     }
 
-    public function search($attributo, $valore)
+/** Metodo che permette di eliminare un'istanza di una classe nel db
+ *@param field campo usato per la cancellazione
+ *@param id ,id usato per la cancellazione
+ */
+	public function deleteDB($field, $id)
     {
-        $q = "SELECT * from " . $this->table . " WHERE " . $attributo . " LIKE '%" . $valore . "%';";
-
-
         try {
-            $this->connection->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->connection->prepare($q); //elaborazione query
-            $stmt->execute();//Salvataggio dati
-            $found = $stmt->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC mi da un output chiave-valore di tutta la $table con i valori $attributo uguali a $valore
-            $this->connection->commit(); //fine transaction
-            return $found;
-
+            $result = null;
+            $this->connection->beginTransaction();
+            $esiste = $this->existDB($field, $id);
+            if ($esiste) {
+                $query = "DELETE FROM " . $this->table . " WHERE " . $field . "='" . $id . "';";
+                $stmt = $this->connection->prepare($query);
+                $stmt->execute();
+                $this->connection->commit();
+                $this->closeDbConnection();
+                $result = true;
+            }
         } catch (PDOException $e) {
-            $this->connection->rollBack();//in caso di errore ripristina lo stato precedente del db
-            echo 'errore' . $e->getMessage(); //printa il messaggio di errore
-
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->connection->rollBack();
+            return false;
         }
-
-
+        return $result;
     }
+    
+    public function search ($input, $campo)
+    {
+        try {
+           $this->connection->beginTransaction();
+            $query = "SELECT * FROM " . $this->table . " WHERE " . $campo . " LIKE '%" . $input . "%';";
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $num = $stmt->rowCount();
+            if ($num == 0) {
+                $result = null;        //nessuna riga interessata. return null
+            } elseif ($num == 1) {                          //nel caso in cui una sola riga fosse interessata
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);   //ritorna una sola riga
+            } else {
+                $result = array();                         //nel caso in cui piu' righe fossero interessate
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);   //imposta la modalità di fetch come array associativo
+                while ($row = $stmt->fetch())
+                    $result[] = $row;                    //ritorna un array di righe.
+            }
+            $this->connection->commit();
+            $this->closeDbConnection();
+            return array($result, $num);
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->connection->rollBack();
+            return null;
+        }
+    }
+
 
     public function loadById($id)
     {
@@ -162,6 +227,25 @@ class FDatabase
         }
     }
 
+    public function accessoUtente($email, $pass){
+        try {
+            $query = 'SELECT * FROM ' . FUtente::getTable() . " WHERE email ='" . $email . "' AND password ='" . $pass . "';";
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $num = $stmt->rowCount();
+            if ($num == 0) {
+                $result = null;
+            } else {
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+            return $result;
+        } catch (PDOException $e){
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->connection->rollBack();
+            return null;
+        }
+    }
+
 
     public function loadAll($attr)
     {
@@ -205,5 +289,58 @@ class FDatabase
             return null;
         }
     }
+
+    /**
+     * Funzione utilizzata per ritornare tutte le recensioni presenti sul database
+     * Utilizzata nella pagina admin
+     * @param $query query da eseguire
+     */
+    public function getAllRev ()
+    {
+        try {
+            $query = "SELECT * FROM recensione;";
+            $stmt = $this->connection->prepare($query);
+            $stmt->execute();
+            $num = $stmt->rowCount();
+            if ($num == 0) {
+                $result = null;
+            } elseif ($num == 1) {
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            } else {
+                $result = array();
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                while ($row = $stmt->fetch())
+                    $result[] = $row;
+            }
+            return array($result, $num);
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->connection->rollBack();
+            return null;
+        }
+    }
+
+    public function utentiByString ($array, $toSearch)
+    {
+        if ($toSearch == 'nome')
+            $query = "SELECT * FROM utente where nome = '" . $array[0] . "' OR cognome = '" . $array[0] . "';";
+        else
+            $query = "SELECT * FROM utente where nome = '" . $array[0] . "' AND cognome = '" . $array[1] . "' OR nome = '" . $array[1] . "' AND cognome = '" . $array[0] . "';";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        $num = $stmt->rowCount();
+        if ($num == 0)
+            $result = null;
+        elseif ($num == 1)
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        else {
+            $result = array();
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            while ($row = $stmt->fetch())
+                $result[] = $row;
+        }
+        return array($result, $num);
+    }
+
 
 }

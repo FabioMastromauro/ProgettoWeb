@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifica costruttore EFotoAnnuncio.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione valori -&gt; values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FPersistantManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistantManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +35,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="PHP Script.prova.php">
     <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -89,6 +88,7 @@
       <workItem from="1654010862124" duration="4702000" />
       <workItem from="1657013771518" duration="12540000" />
       <workItem from="1657097518842" duration="6519000" />
+      <workItem from="1657200943294" duration="8620000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -300,7 +300,56 @@
       <option name="project" value="LOCAL" />
       <updated>1657119239695</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Modifica metodi FFotoUtente.php e FFotoAnnuncio.php">
+      <created>1657120462238</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1657120462238</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Modifica metodi FUtente.php e FAnnuncio.php">
+      <created>1657121155532</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1657121155532</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Creazione classi Control">
+      <created>1657124908857</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1657124908857</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Creazione FPersistantManager.php">
+      <created>1657203691268</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1657203691268</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Creazione USingleton.php">
+      <created>1657205166067</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1657205166067</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Aggiunta getInstance in FDatabase.php">
+      <created>1657205861032</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1657205861032</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Correzione valori -&gt; values">
+      <created>1657206448583</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1657206448583</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,13 +379,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test3" />
-    <MESSAGE value="prova2" />
-    <MESSAGE value="prova3" />
-    <MESSAGE value="Creazione package Entity" />
-    <MESSAGE value="Creazione package Control" />
-    <MESSAGE value="Creazione User" />
-    <MESSAGE value="Creazione Utente.php" />
     <MESSAGE value="Aggiunta metodi e correzioni" />
     <MESSAGE value="Rinominazione classi" />
     <MESSAGE value="aggiunta id" />
@@ -355,6 +397,13 @@
     <MESSAGE value="Modifica store FUtente.php" />
     <MESSAGE value="Modifica costruttore EFotoUtente.php" />
     <MESSAGE value="Modifica costruttore EFotoAnnuncio.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifica costruttore EFotoAnnuncio.php" />
+    <MESSAGE value="Modifica metodi FFotoUtente.php e FFotoAnnuncio.php" />
+    <MESSAGE value="Modifica metodi FUtente.php e FAnnuncio.php" />
+    <MESSAGE value="Creazione classi Control" />
+    <MESSAGE value="Creazione FPersistantManager.php" />
+    <MESSAGE value="Creazione USingleton.php" />
+    <MESSAGE value="Aggiunta getInstance in FDatabase.php" />
+    <MESSAGE value="Correzione valori -&gt; values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione valori -&gt; values" />
   </component>
 </project>
