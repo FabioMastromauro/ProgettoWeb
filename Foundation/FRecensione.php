@@ -128,7 +128,7 @@ class FRecensione extends FDatabase{
     public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
         $recensione = null;
         $db = parent::getInstance();
-        $result = $db->searchDb(static::getClass(), $parametri, $ordinamento, $limite);
+        $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         //var_dump($result);
         if (sizeof($parametri) > 0) {
             $rows_number = $db->getRowNum(static::getClass(), $parametri);
@@ -157,16 +157,6 @@ class FRecensione extends FDatabase{
         return $result;
     }
 
-    public function loadById($id){
-            $row = parent::loadbyId($id);//attraverso il metodo della classe padre restituisco la riga
-            $arrece = $row[0];
-            if(($row!=null) && (count($row)>0)){
-                $rece = $this->getFromRow($arrece);
-                return $rece;
-        }
-            else return null;{
-        }
-    }
     /** Metodo che carica tutte le recensioni */
     public static function loadAll() {
         $rec = null;

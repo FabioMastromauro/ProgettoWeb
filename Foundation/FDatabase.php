@@ -4,7 +4,7 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 class FDatabase
 {
     /** @var $db PDO variabile che stabilisce ls connessione con il db */
-    private $_conn;
+    private $db;
     /** @var string classe foundation */
     private static $class = "FDatabase";
     /** unica istanza della classe */
@@ -16,7 +16,7 @@ class FDatabase
     {
         if (!$this->existConn()) {
             try {
-                $this->_conn = new PDO("mysql:host=127.0.0.1;dbname=chefskiss", 'root', 'pippo');
+                $this->db = new PDO("mysql:host=127.0.0.1;dbname=" . $GLOBALS['database'], $GLOBALS['username'], $GLOBALS['password']);
             } catch (PDOException $e) {
                 print 'Attenzione errore: '. $e->getMessage();
             }
@@ -37,7 +37,7 @@ class FDatabase
      * @return bool
      */
     public function existConn(): bool {
-        if($this->_conn != null){
+        if($this->db != null){
             return true;
         } else
             return false;
@@ -65,7 +65,7 @@ class FDatabase
                 $query = "SELECT * FROM " . $class::getTable() . " WHERE " . $field . $criterio . "'" . $id . "';";
             }
 
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -83,7 +83,7 @@ class FDatabase
             return $result;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -97,7 +97,7 @@ class FDatabase
         try {
             $class = 'FUtente';
             $query = 'SELECT * FROM ' . $class::getTable() . " WHERE email ='" . $email . "' AND password ='" . $pass . "';";
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -108,7 +108,7 @@ class FDatabase
             return $result;
         } catch (PDOException $e){
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -120,52 +120,52 @@ class FDatabase
     public function storeDB($class, $object){
 
         try {
-            $this->_conn->beginTransaction();
+            $this->db->beginTransaction();
             $query = "INSERT INTO `" . $class::getTable() . "` " . str_replace(array(':', ',', ')'), array('`', '`,', '`)'), $class::getValues()) . " VALUES " . $class::getValues();
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $class::bind($stmt, $object);
             $stmt->execute();
-            $id = $this->_conn->lastInsertId();
-            $this->_conn->commit();
+            $id = $this->db->lastInsertId();
+            $this->db->commit();
             $this->closeConn();
             return $id;
         } catch (PDOException $e) {
             echo $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
     public function storeMedia($class , $obj,$nome_file) {
         try {
-            $this->_conn->beginTransaction();
+            $this->db->beginTransaction();
             $query = "INSERT INTO `" . $class::getTable() . "` " . str_replace(array(':', ',', ')'), array('`', '`,', '`)'), $class::getValues()) . " VALUES " . $class::getValues();
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $class::bind($stmt, $obj, $nome_file);
             $stmt->execute();
-            $id = $this->_conn->lastInsertId();
-            $this->_conn->commit();
+            $id = $this->db->lastInsertId();
+            $this->db->commit();
             $this->closeConn();
             return $id;
         } catch (PDOException $e) {
             echo $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
     public function updateDB ($class, $field, $newvalue, $pk, $id)
     {
         try {
-            $this->_conn->beginTransaction();
+            $this->db->beginTransaction();
             $query = "UPDATE " . $class::getTable() . ' SET ' . $field . '="' . addslashes($newvalue) . '" WHERE ' . $pk . '="' . $id . '";';
             //var_dump($query);
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
-            $this->_conn->commit();
+            $this->db->commit();
             $this->closeConn();
             return true;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return false;
         }
     }
@@ -178,19 +178,19 @@ class FDatabase
     {
         try {
             $result = null;
-            $this->_conn->beginTransaction();
+            $this->db->beginTransaction();
             $esiste = $this->existDB($class, $field, $id);
             if ($esiste) {
                 $query = "DELETE FROM " . $class::getTable() . " WHERE " . $field . "='" . $id . "';";
-                $stmt = $this->_conn->prepare($query);
+                $stmt = $this->db->prepare($query);
                 $stmt->execute();
-                $this->_conn->commit();
+                $this->db->commit();
                 $this->closeConn();
                 $result = true;
             }
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             //return false;
         }
         return $result;
@@ -204,7 +204,7 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM " . $class::getTable() . " WHERE " . $field . "='" . $id . "'";
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($result) == 1) return $result[0];  //rimane solo l'array interno
@@ -237,7 +237,7 @@ class FDatabase
                 $query .= 'ORDER BY ' . $ordinamento . ' ' . 'DESC ';
             if ($limite != '')
                 $query .= 'LIMIT ' . $limite . ' ';
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $numRow = $stmt->rowCount();
             if ($numRow == 0){
@@ -252,7 +252,7 @@ class FDatabase
             return $result;
         } catch (PDOException $e){
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -279,14 +279,14 @@ class FDatabase
                 $query .= 'ORDER BY ' . $ordinamento . ' ';
             if ($limite != '')
                 $query .= 'LIMIT ' . $limite . ' ';
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             $this->closeConn();
             return $num;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
@@ -299,7 +299,7 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM recensione;";
-            $stmt = $this->_conn->prepare($query);
+            $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -315,7 +315,7 @@ class FDatabase
             return array($result, $num);
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->_conn->rollBack();
+            $this->db->rollBack();
             return null;
         }
     }
