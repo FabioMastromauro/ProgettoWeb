@@ -1,66 +1,40 @@
 <?php
 
 class FRecensione extends FDatabase{
-    public function __construct()
+
+    private static $table = "recensione";
+    private static $class = "FRecensione";
+    private static $values = "(:testo, :data, :idProdotto, :idRecensione, :idUser )";
+
+    public function __construct() {}
+
+    /**
+     * @return string
+     */
+    public static function getClass(): string
     {
-        parent::__construct(); //richiama il costruttore di FDatababse
-        $this->table = 'recensione';
-        $this->class = 'FRecensione';
-        $this->values = "(:testo, :data, :idProdotto, :idRecensione, :idUser )";
+        return self::$class;
     }
 
     /**
      * @return string
      */
-    public function getClass(): string
+    public static function getTable(): string
     {
-        return $this->class;
-    }
-
-    /**
-     * @param string $class
-     */
-    public function setClass(string $class): void
-    {
-        $this->class = $class;
+        return self::$table;
     }
 
     /**
      * @return string
      */
-    public function getTable(): string
+    public static function getValues(): string
     {
-        return $this->table;
+        return self::$values;
     }
 
-    /**
-     * @param string $table
-     */
-    public function setTable(string $table): void
-    {
-        $this->table = $table;
-    }
-
-    /**
-     * @return string
-     */
-    public function getValues(): string
-    {
-        return $this->values;
-    }
-
-    /**
-     * @param string $values
-     */
-    public function setValues(string $values): void
-    {
-        $this->values = $values;
-    }
-
-
-    public function store($rec) {
+    public static function store($rec) {
         $db = FDatabase::getInstance();
-        $id = $db->store($rec);
+        $id = $db->storeDB($rec);
         if($id)
             return $id;
         else
