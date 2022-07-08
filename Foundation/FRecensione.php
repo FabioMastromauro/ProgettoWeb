@@ -31,41 +31,82 @@ class FRecensione extends FDatabase{
     {
         return self::$values;
     }
-
+    public static function bind($stmt,ERecensione $recensione){
+        $stmt->bindValue(':testo',$recensione->getTesto(),PDO::PARAM_STR);
+        $stmt->bindValue(':data',$recensione->getData(),PDO::PARAM_STR);
+        $stmt->bindValue(':idProdotto',$recensione->getIdProdotto(),PDO::PARAM_INT);
+        $stmt->bindValue(':idRecensione',$recensione->getIdRecensione(),PDO::PARAM_INT);
+        $stmt->bindValue(':idUser',$recensione->getIdUser());
+    }
+    /**
+     * Metodo che permette di salvare una Recensione
+     * @param $rec Recensione da salvare
+     * @return $id della Recensione salvata
+     */
     public static function store($rec) {
-        $db = FDatabase::getInstance();
-        $id = $db->storeDB($rec);
+        $db = parent::getInstance();
+        $id = $db->storeDB(self::class,$rec);
         if($id)
             return $id;
         else
             return null;
     }
-
+    /**
+     * Funzione che permette di verificare se esiste una Recensione nel database
+     * @param  $id valore della riga di cui si vuol verificare l'esistenza
+     * @param  string $field colonna su cui eseguire la verifica
+     * @return bool $ris
+     */
     public static function exist($field, $id) {
         $ris = false;
-        $db = FDatabase::getInstance();
-        $result = $db->existDB($field, $id);
+        $db = parent::getInstance();
+        $result = $db->existDB(self::$class,$field, $id);
         if($result!=null)
             $ris = true;
-        else
-            $ris=false;
-
         return $ris;
     }
-
+    /**
+     * Permette la delete sul DB in base all'id
+     * @param int l'id dell'oggetto da eliminare dal db
+     * @return bool
+     */
     public static function delete($field, $id) {
-        $db = FDatabase::getInstance();
-        $result = $db->deleteDB($field, $id);
+        $db = parent::getInstance();
+        $result = $db->deleteDB(self::$class,$field, $id);
         if($result)
             return true;
         else
             return false;
     }
-
+    /** metodo che cerca una recensione nel DB
+     * @param
+     */
+    public static function search($parametri=array(), $ordinamento='', $limite=''){
+        $db = parent::getInstance();
+        $result = $db->searchDb(self::$class, $parametri, $ordinamento, $limite);
+        return $result;
+    }
+    /** metodo che può aggiornare i campi di una recensione
+     *@param $field campo da aggiornare
+     *@param  $primkey primary key
+     * @param $newvalue nuovo valore da assegnare
+     * @return true se esiste il mezzo, altrimenti false
+     */
+    public static function update($field, $newvalue, $primkey, $val){
+        $db = parent::getInstance();
+        $result = $db->updateDB(self::getClass(), $field, $newvalue, $primkey, $val);
+        if ($result) return true;
+        else return false;
+    }
+    /**
+     * Metodo ch carica su DB in base a una parola
+     * @param $parola valore da ricercare all'interno del campo text
+     * @return object $rec Recensione
+     */
     public static function loadByParola($parola) {
         $rec = null;
-        $db = FDatabase::getInstance();
-        list ($result, $rows_number)=$db->search($parola, "testo");
+        $db = parent::getInstance();
+        list ($result, $rows_number)=$db->search(self::$class,$parola, "testo");
         if(($result != null) && ($rows_number == 1)) {
             $rec = new ERecensione($result['testo'],$result['data'],$result['idProdotto'],$result['idRecensione'], $result['idUser']);
             $rec->setId($result['id']);
@@ -81,21 +122,39 @@ class FRecensione extends FDatabase{
         }
         return $rec;
     }
-
-    public static function bind($stmt,ERecensione $recensione){
-            $stmt->bindValue(':testo',$recensione->getTesto(),PDO::PARAM_STR);
-            $stmt->bindValue(':data',$recensione->getData(),PDO::PARAM_STR);
-            $stmt->bindValue(':idProdotto',$recensione->getIdProdotto(),PDO::PARAM_INT);
-            $stmt->bindValue(':idRecensione',$recensione->getIdRecensione(),PDO::PARAM_INT);
-            $stmt->bindValue(':idUser',$recensione->getIdUser());
+    /** Metodo che permette la load su db
+     * @return object $recensione recensione da caricare
+     */
+    public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
+        $recensione = null;
+        $db = parent::getInstance();
+        $result = $db->searchDb(static::getClass(), $parametri, $ordinamento, $limite);
+        //var_dump($result);
+        if (sizeof($parametri) > 0) {
+            $rows_number = $db->getRowNum(static::getClass(), $parametri);
+        } else {
+            $rows_number = $db->getRowNum(static::getClass());
+        }
+        if(($result != null) && ($rows_number == 1)) {
+            $recensione = new ERecensione($result['commento'], $result['valutazione'], $result['id_ricetta'], $result['data'], $result['autore']);
+            $recensione->setId($result['id']);
+        }
+        else {
+            if(($result != null) && ($rows_number > 1)){
+                $recensione = array();
+                for($i = 0; $i < sizeof($result); $i++){
+                    $recensione[$i] = new ERecensione($result[$i]['commento'], $result[$i]['valutazione'], $result[$i]['id_ricetta'], $result[$i]['data'], $result[$i]['autore']);
+                    $recensione[$i]->setId($result[$i]['id']);
+                }
+            }
+        }
+        return $recensione;
     }
-
-    // metodo che crea un oggetto da una riga della tabella recensione
-    public function getFromRow($row)
-    {
-            $rece = new ERecensione($row['testo'],$row['data'],$row['idProdotto'],$row['idRecensione'],$row['idUser']);
-            $rece->setIdRecensione($row['idRecensione']);
-            return $rece; // ci vorrebbe anche un setBanato per le recensioni
+    /** Metodo che prende determinate righe dal DB */
+    public static function getRows($parametri = array(), $ordinamento = '', $limite = ''){
+        $db = parent::getInstance();
+        $result = $db->getRowNum(self::$class, $parametri, $ordinamento, $limite);
+        return $result;
     }
 
     public function loadById($id){
@@ -108,83 +167,8 @@ class FRecensione extends FDatabase{
             else return null;{
         }
     }
-
-    // metodo load di recensioni dal db dato un gruppo di id
-    public function loadByAllIds($ids){
-            $array = parent:: loadbyallIds($ids);
-            $arrayObj = array();
-            if (($array=!null)&&(count($array)>0)){
-                foreach ($array as $i){
-                    $rece = $this->getFromRow($i);
-                    array_push($arrayObj,$rece);
-                }
-                return $arrayObj;
-            }
-            else return null;
-    }
-
-
-    // metodo che trova le recensioni relativi a un utente
-    public function loadByIdUser($iduser){
-            $query = "SELECT * FROM ".$this->table." WHERE idUser=".$iduser.";";
-            try{
-                $connection = parent::getInstance();
-                $connection->beginTransaction();
-                $stmt = $connection->prepare($query);
-                $stmt->execute();
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                $connection->commit();
-                $arrayrece=array();
-                foreach ($rows as $row){
-                    $rece = $this->getFromRow($row);
-                    array_push($arrayrece,$rece);
-                }
-                return $arrayrece;
-            }
-            catch (PDOException $e){
-                $connection->rollback();
-                echo "Attenzione, errore: ".$e->getMessage();
-                return null;
-            }
-    }
-
-
-    public function search($attributo, $valore){
-        $array = parent::search($attributo, $valore);
-        $arrayRece = array();
-        if(($array!=null)&&(count($array)>0)){
-            foreach ($array as $i){
-                $rece = $this->getFromRow($i);
-                array_push($arrayRece,$rece);
-            }
-            return $arrayRece;
-        }
-        else return null;
-    }
-
-    //conte il numero delle recensioni totali
-    public function numeroRece(){
-        $query ="SELECT COUNT(idRecensione) AS n FROM ".$this->table.";";
-        try{
-            $connection= parent::getInstance();
-            $connection->beginTransaction();
-            $stmt = $connection->prepare($query);
-            $stmt->execute();
-            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $connection->commit();
-            return $row[0]['n'];
-        }
-        catch (PDOException $e)
-        {
-            $connection->rollBack();
-            echo "Attenzione, errore: " . $e->getMessage();
-            return null;
-        }
-
-    }
-
-    //carica tutte le recensioni
-    public function loadAllRec() {
+    /** Metodo che carica tutte le recensioni */
+    public static function loadAll() {
         $rec = null;
         $db = FDatabase::getInstance();
         list ($result, $rows_number)=$db->getAllRev();
@@ -203,8 +187,4 @@ class FRecensione extends FDatabase{
         }
         return $rec;
     }
-
-
-
-
 }
