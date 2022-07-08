@@ -121,13 +121,13 @@ class FUtente extends FDatabase
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number > 1)){
-            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'],['email'],$result['idUser']); // idFoto
+            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'], $result['email'], $result['annunci'], $result['recensioni'], $result['storico'], $result['idUser']); // idFoto
         }
         else{
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
                 for($i = 0; count($result);$i++){
-                    $utente[] = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'],['email'],$result['idUser']);
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['username'],$result[$i]['password'],$result[$i]['email'], $result[$i]['annunci'], $result[$i]['recensioni'], $result[$i]['storico'],$result[$i]['idUser']);
                 }
             }
         }

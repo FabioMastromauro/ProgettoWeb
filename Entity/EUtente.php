@@ -11,22 +11,31 @@ class EUtente implements JsonSerializable
     private array $recensioni;
     private array $storico;
     private int $idUser;
-    private EFoto $fotoUtente;
+
     /**
      * @param string $nome
      * @param string $cognome
      * @param string $username
      * @param string $password
      * @param string $email
+     * @param array $annunci
+     * @param array $recensioni
+     * @param array $storico
+     * @param int $idUser
      */
-    public function __construct(string $nome, string $cognome, string $username, string $password, string $email)
+    public function __construct(string $nome, string $cognome, string $username, string $password, string $email, array $annunci, array $recensioni, array $storico, int $idUser)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
         $this->username = $username;
         $this->password = $password;
         $this->email = $email;
+        $this->annunci = $annunci;
+        $this->recensioni = $recensioni;
+        $this->storico = $storico;
+        $this->idUser = $idUser;
     }
+
 
     /**
      * @return int
