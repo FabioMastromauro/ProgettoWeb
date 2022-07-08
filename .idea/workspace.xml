@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifica id -&gt; idCate">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Tolti i set">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FCategoria.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,7 @@
       <workItem from="1657013771518" duration="12540000" />
       <workItem from="1657097518842" duration="6519000" />
       <workItem from="1657200943294" duration="12611000" />
-      <workItem from="1657273723511" duration="1831000" />
+      <workItem from="1657273723511" duration="4274000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -399,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657274856856</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Tolti i set">
+      <created>1657275566021</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1657275566021</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creazione di FRecensione.php,con tutti i metodi load" />
     <MESSAGE value="Lid -&gt; lid" />
     <MESSAGE value="Correzioni grammaticali" />
     <MESSAGE value="store FAnnuncio.php" />
@@ -454,6 +460,7 @@
     <MESSAGE value="Creazione USession.php" />
     <MESSAGE value="Creazione ECategoria.php" />
     <MESSAGE value="Modifica id -&gt; idCate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifica id -&gt; idCate" />
+    <MESSAGE value="Tolti i set" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tolti i set" />
   </component>
 </project>
