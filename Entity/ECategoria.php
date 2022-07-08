@@ -3,7 +3,7 @@
 class ECategoria
 {
     private $categoria;
-    private $id;
+    private $idCate;
 
     /**
      * @param $categoria
@@ -12,7 +12,7 @@ class ECategoria
     public function __construct($categoria, $id)
     {
         $this->categoria = $categoria;
-        $this->id = $id;
+        $this->idCate = $id;
     }
 
     /**
@@ -34,17 +34,17 @@ class ECategoria
     /**
      * @return mixed
      */
-    public function getId()
+    public function getIdCate()
     {
-        return $this->id;
+        return $this->idCate;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $idCate
      */
-    public function setId($id): void
+    public function setIdCate($idCate): void
     {
-        $this->id = $id;
+        $this->idCate = $idCate;
     }
 
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione USession.php">
-      <change afterPath="$PROJECT_DIR$/Entity/ECategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione ECategoria.php">
+      <change afterPath="$PROJECT_DIR$/Foundation/FCategoria.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +88,7 @@
       <workItem from="1657013771518" duration="12540000" />
       <workItem from="1657097518842" duration="6519000" />
       <workItem from="1657200943294" duration="12611000" />
-      <workItem from="1657273723511" duration="623000" />
+      <workItem from="1657273723511" duration="962000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -385,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657216156484</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Creazione ECategoria.php">
+      <created>1657274527273</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1657274527273</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +421,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creazione di FRecensione.php, senza metodi load!" />
     <MESSAGE value="Creazione di FRecensione.php,con metodi load, mancano metodi admin" />
     <MESSAGE value="Creazione di FRecensione.php,con tutti i metodi load" />
     <MESSAGE value="Lid -&gt; lid" />
@@ -440,6 +445,7 @@
     <MESSAGE value="connection -&gt; db" />
     <MESSAGE value="Correzione FRecensione.php" />
     <MESSAGE value="Creazione USession.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione USession.php" />
+    <MESSAGE value="Creazione ECategoria.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione ECategoria.php" />
   </component>
 </project>
