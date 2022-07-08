@@ -135,7 +135,7 @@ class FDatabase
             return null;
         }
     }
-    public function storeMedia($class , $obj,$nome_file) {
+    public function storeMediaDB($class , $obj,$nome_file) {
         try {
             $this->db->beginTransaction();
             $query = "INSERT INTO `" . $class::getTable() . "` " . str_replace(array(':', ',', ')'), array('`', '`,', '`)'), $class::getValues()) . " VALUES " . $class::getValues();
