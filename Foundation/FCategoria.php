@@ -4,7 +4,7 @@ class FCategoria extends FDatabase
 {
     private static $table = "categoria";
     private static $class = "FCategoria";
-    private static $values = "(:categoria, :id)";
+    private static $values = "(:categoria, :idCate)";
 
     public function __construct() {}
 
@@ -34,7 +34,7 @@ class FCategoria extends FDatabase
 
     public static function bind($stmt, ECategoria $categoria) {
         $stmt->bindValue(":categoria", $categoria->getCategoria(), PDO::PARAM_STR);
-        $stmt->bindValue(":id", $categoria->getIdCate(), PDO::PARAM_INT);
+        $stmt->bindValue(":idCate", $categoria->getIdCate(), PDO::PARAM_INT);
     }
 
     public static function store($categoria) {
@@ -82,5 +82,22 @@ class FCategoria extends FDatabase
             return null;
     }
 
-    // manca loadbyidfield
+    public static function loadByField($parametri = array(), string $ordinamento, string $limite) {
+        $categoria = null;
+        $db = parent::getInstance();
+        $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
+        $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
+        if (($result != null) && ($rows_number = 1)) {
+            $categoria = new ECategoria($result['cate'], $result['idCate']);
+        }
+        else {
+            if (($result != null) && ($rows_number > 1)) {
+                $categoria = array();
+                for ($i = 0; $i < count($result); $i++) {
+                    $categoria[] = new ECategoria($result[$i]['cate'], $result[$i]['idCate']);
+                }
+            }
+        }
+        return $categoria;
+    }
 }

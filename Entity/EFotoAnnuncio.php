@@ -40,6 +40,8 @@ public function jsonSerialize()
 
 }
 
+// forse il toString
+
 
 
 }

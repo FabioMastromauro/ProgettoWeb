@@ -32,7 +32,7 @@ class FFotoUtente extends FDatabase
         return self::$values;
     }
 
-    public function store(EFotoUtente $fotoUtente, $nome_file){
+    public function store(ECategoria $fotoUtente, $nome_file){
        $db = parent::getInstance();
         $db->storeMediaDB(static::getClass(), $fotoUtente, $nome_file);
     }
@@ -63,7 +63,7 @@ class FFotoUtente extends FDatabase
      * @param $fotoUtente immagine da salvare
      * @param $nome_file
      */
-    public static function bind($stmt, EFotoUtente $fotoUtente, $nome_file){
+    public static function bind($stmt, ECategoria $fotoUtente, $nome_file){
         $path = $_FILES[$nome_file]['tmp_name'];
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
         $stmt->bindValue(':id', NULL, PDO::PARAM_INT);
