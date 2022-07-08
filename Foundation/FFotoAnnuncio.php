@@ -32,11 +32,18 @@ class FFotoAnnuncio extends FDatabase{
         return self::$values;
     }
 
+    /**
+     * Metodo che effettua il bind degli attributi di
+     * EFotoAnnuncio, con i valori contenuti nella tabella foto
+     * @param $stmt
+     * @param $fotoAnnuncio immagine da salvare
+     * @param $nome_file
+     */
     public static function bind($stmt, EFotoAnnuncio $fotoAnnuncio, $nome_file){
         $path = $_FILES[$nome_file]['tmp_name'];
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
-        $stmt->bindValue(':id', NULL, PDO::PARAM_INT);
-        $stmt->bindValue(':nFoto', $fotoAnnuncio->getNomeFoto(), PDO::PARAM_STR);
+        $stmt->bindValue(':idFoto', NULL, PDO::PARAM_INT);
+        $stmt->bindValue(':nomeFoto', $fotoAnnuncio->getNomeFoto(), PDO::PARAM_STR);
         $stmt->bindValue(':altezza', $fotoAnnuncio->getAltezza(), PDO::PARAM_INT);
         $stmt->bindValue(':larghezza', $fotoAnnuncio->getLarghezza(), PDO::PARAM_INT);
         $stmt->bindValue(':tipo', $fotoAnnuncio->getTipo(), PDO::PARAM_STR);
@@ -69,6 +76,18 @@ class FFotoAnnuncio extends FDatabase{
         $foto = null;
         $db = parent::getInstance();
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
-        if (count())
+        $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
+        if (($result != null) && ($rows_number = 1)) {
+            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['altezza'], $result['larghezza'], $result['tipo'], $result['data'], $result['idAnn']);
+        }
+        else {
+            if (($result != null) && ($rows_number > 1)) {
+                $foto = array();
+                for ($i = 0; $i < count($result); $i++) {
+                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['altezza'], $result[$i]['larghezza'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idAnn']);
+                }
+            }
+        }
+        return $foto;
     }
 }
