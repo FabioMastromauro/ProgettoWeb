@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione FDatabase.php">
-      <change afterPath="$PROJECT_DIR$/Foundation/FFoto.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creazione FFoto.php e correzione FDatabase.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <workItem from="1657013771518" duration="12540000" />
       <workItem from="1657097518842" duration="6519000" />
       <workItem from="1657200943294" duration="12611000" />
-      <workItem from="1657273723511" duration="9943000" />
+      <workItem from="1657273723511" duration="12490000" />
     </task>
     <task id="LOCAL-00001" summary="File di prova per git">
       <created>1651561730069</created>
@@ -421,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657292698805</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Creazione FFoto.php e correzione FDatabase.php">
+      <created>1657296270652</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1657296270652</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +458,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="store FAnnuncio.php" />
     <MESSAGE value="Correzione bindValur" />
     <MESSAGE value="fetFromRow FAnnuncio.php" />
     <MESSAGE value="Modifica existDB" />
@@ -476,6 +482,7 @@
     <MESSAGE value="Tolti i set" />
     <MESSAGE value="Quasi finito FCategoria.php" />
     <MESSAGE value="Correzione FDatabase.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correzione FDatabase.php" />
+    <MESSAGE value="Creazione FFoto.php e correzione FDatabase.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione FFoto.php e correzione FDatabase.php" />
   </component>
 </project>
