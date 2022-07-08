@@ -3,234 +3,101 @@ if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 class FDatabase
 {
-    private $db;
-    private static $table;
-    private static $values;
+    /** @var $db PDO variabile che stabilisce ls connessione con il db */
+    private $_conn;
+    /** @var string classe foundation */
     private static $class = "FDatabase";
+    /** unica istanza della classe */
+    private static $instance; // se usiamo singleton non serve
 
 
-
-
+    /** Costruttore privato, accessibile solo con il metodo getInstance() */
     public function __construct()
     {
-        try {
-            $this->db = new PDO ("mysql:dbname=" . $GLOBALS['database'] . ";host=127.0.0.1", $GLOBALS['username'], $GLOBALS['password']);
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //per gestire errori ed eccezioni
-
-        } catch (PDOException $e) {
-            echo 'errore' . $e->getMessage();
+        if (!$this->existConn()) {
+            try {
+                $this->_conn = new PDO("mysql:host=127.0.0.1;dbname=chefskiss", 'root', 'pippo');
+            } catch (PDOException $e) {
+                print 'Attenzione errore: '. $e->getMessage();
+            }
         }
     }
-
-    public static function getInstance() {
+    /**
+     * Metodo che restituisce l'unica istanza dell'oggetto.
+     * @return FDataBase l'istanza dell'oggetto.
+     */
+    public static function getInstance(){
         if (USingleton::getInstance(self::$class) == null) {
             USingleton::getInstance(self::$class);
         }
         return USingleton::getInstance(self::$class);
     }
-
-    public function store($obj)
-    {
-        $q = "INSERT INTO " . $this->table . " VALUES " . $this->values . ";";
-        try {
-            $this->db->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->db->prepare($q); //elaborazione query
-            $this->class::bind($stmt, $obj); //Class::bind prende la funzione bind della classe che chiama la funzione
-            $stmt->execute();//Salvataggio dati
-            $id = $this->db->lastInsertId();// valore numerico per idendificare l'ultimo elemnto aggiunto
-            $this->db->commit(); //fine transaction
-            return $id;
-
-        } catch (PDOException $e) {
-            $this->db->rollBack();//in caso di errore ripristina lo stato precedente del db
-            echo 'errore' . $e->getMessage(); //printa il messaggio di errore
-
-        }
-
-
+    /**
+     * Verifica l'esistenza della connessione con il database
+     * @return bool
+     */
+    public function existConn(): bool {
+        if($this->_conn != null){
+            return true;
+        } else
+            return false;
     }
-
-    public function loadDB($field, $id)
+    /**
+     * Chiude la connessione con il database
+     */
+    public function closeConn(){
+        USingleton::stopInstance(self::$class);
+    }
+    /**
+     * Questa funzione carica in $result il risultato di una query. Può produrre sia risultati singoli
+     * che array di risultati (se le righe prodotte sono maggiori di una)
+     * @param $class
+     * @param $field
+     * @param $id
+     * @return array|mixed|null
+     */
+    public function loadDB($class, $field='', $criterio='', $id='')
     {
         try {
-            $this->db->beginTransaction();
-            $query = "SELECT * FROM " . $this->table . " WHERE " . $field . "='" . $id . "';";
-            $stmt = $this->db->prepare($query);
+            if ($field == '' || $id == '' || $criterio == ''){
+                $query = "SELECT * FROM `" . $class::getTable() . '` ';
+            } else {
+                $query = "SELECT * FROM " . $class::getTable() . " WHERE " . $field . $criterio . "'" . $id . "';";
+            }
+
+            $stmt = $this->_conn->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
                 $result = null;        //nessuna riga interessata. return null
             } elseif ($num == 1) {                          //nel caso in cui una sola riga fosse interessata
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);   //ritorna una sola riga
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                echo 'sono quA';//ritorna una sola riga
             } else {
                 $result = array();                         //nel caso in cui piu' righe fossero interessate
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);   //imposta la modalità di fetch come array associativo
                 while ($row = $stmt->fetch())
-                    $result[] = $row;                    //ritorna un array di righe.
+                    $result[] = $row;
             }
-
+            // $this->closeDbConnection();
             return $result;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->db->rollBack();
+            $this->_conn->rollBack();
             return null;
         }
     }
-
-    public function update($id, $attributo, $valore)
-    {
-
-        $q = "UPDATE" . $this->table . "SET" . $attributo . "=" . $valore . "WHERE id=" . $id; //update di un valore di una $table aggiorna un $attributo in un nuovo $valore
-
-
+    /**
+     * Verifica l'accesso di un utente, controllando le email e password siano presenti nel DB
+     * @param $email
+     * @param $pass
+     * @return mixed|null
+     */
+    public function checkIfLogged($email, $pass){
         try {
-            $this->db->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->db->prepare($q); //elaborazione query
-            $stmt->execute();//Salvataggio dati
-            $this->db->commit(); //fine transaction
-            return null;
-
-        } catch (PDOException $e) {
-            $this->db->rollBack();//in caso di errore ripristina lo stato precedente del db
-            echo 'errore' . $e->getMessage(); //printa il messaggio di errore
-
-        }
-
-    }
-
-    public function delete($id)
-    {
-        $q = "DELETE FROM" . $this->table . "WHERE id=" . $id; // DELETE nella $table dell'$id
-
-        try {
-            $this->db->beginTransaction(); //inizio transazione per evitare errori
-            $stmt = $this->db->prepare($q); //elaborazione query
-            $stmt->execute();//Salvataggio dati
-            $this->db->commit(); //fine transaction
-
-        } catch (PDOException $e) {
-            $this->db->rollBack();//in caso di errore ripristina lo stato precedente del db
-            echo 'errore' . $e->getMessage(); //printa il messaggio di errore
-
-        }
-
-    }
-
-/** Metodo che permette di eliminare un'istanza di una classe nel db
- *@param field campo usato per la cancellazione
- *@param id ,id usato per la cancellazione
- */
-	public function deleteDB($field, $id)
-    {
-        try {
-            $result = null;
-            $this->db->beginTransaction();
-            $esiste = $this->existDB($field, $id);
-            if ($esiste) {
-                $query = "DELETE FROM " . $this->table . " WHERE " . $field . "='" . $id . "';";
-                $stmt = $this->db->prepare($query);
-                $stmt->execute();
-                $this->db->commit();
-                $this->closeDbConnection();
-                $result = true;
-            }
-        } catch (PDOException $e) {
-            echo "Attenzione errore: " . $e->getMessage();
-            $this->db->rollBack();
-            return false;
-        }
-        return $result;
-    }
-    
-    public function search ($input, $campo)
-    {
-        try {
-           $this->db->beginTransaction();
-            $query = "SELECT * FROM " . $this->table . " WHERE " . $campo . " LIKE '%" . $input . "%';";
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            $num = $stmt->rowCount();
-            if ($num == 0) {
-                $result = null;        //nessuna riga interessata. return null
-            } elseif ($num == 1) {                          //nel caso in cui una sola riga fosse interessata
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);   //ritorna una sola riga
-            } else {
-                $result = array();                         //nel caso in cui piu' righe fossero interessate
-                $stmt->setFetchMode(PDO::FETCH_ASSOC);   //imposta la modalità di fetch come array associativo
-                while ($row = $stmt->fetch())
-                    $result[] = $row;                    //ritorna un array di righe.
-            }
-            $this->db->commit();
-            $this->closeDbConnection();
-            return array($result, $num);
-        } catch (PDOException $e) {
-            echo "Attenzione errore: " . $e->getMessage();
-            $this->db->rollBack();
-            return null;
-        }
-    }
-
-
-    public function loadById($id)
-    {
-        $query = "SELECT * FROM " . $this->table . " WHERE id=" . $id;
-        try {
-            $this->db->beginTransaction();
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->db->commit();
-            return $row;
-        } catch (PDOException $e) {
-            $this->db->rollBack();
-            echo "errore" . $e->getMessage();
-            return null;
-        }
-    }
-
-
-    public function loadAllByIds($ids)
-    {
-
-        $s = implode(", ", $ids);
-        $s = "(" . $s . ")";
-        $query = "SELECT * FROM " . $this->table . " WHERE id IN " . $s . ";";
-        try {
-            $this->db->beginTransaction();
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->db->commit();
-            return $rows;
-        } catch (PDOException $e) {
-            $this->db->rollBack();
-            echo "errore" . $e->getMessage();
-            return null;
-        }
-    }
-
-    public function existDB ($field, $id)
-    {
-        try {
-            $query = "SELECT * FROM " .$this->table . " WHERE " . $field . "='" . $id . "'";
-            $this->db->beginTransaction();
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (count($result) == 1) return $result[0];  //rimane solo l'array interno
-            else if (count($result) > 1) return $result;  //resituisce array di array
-            $this->db->commit();
-        } catch (PDOException $e) {
-            $this->db->rollBack();
-            echo "Errore: " . $e->getMessage();
-            return null;
-        }
-    }
-
-    public function accessoUtente($email, $pass){
-        try {
-            $query = 'SELECT * FROM ' . FUtente::getTable() . " WHERE email ='" . $email . "' AND password ='" . $pass . "';";
-            $stmt = $this->db->prepare($query);
+            $class = 'FUtente';
+            $query = 'SELECT * FROM ' . $class::getTable() . " WHERE email ='" . $email . "' AND password ='" . $pass . "';";
+            $stmt = $this->_conn->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -241,55 +108,188 @@ class FDatabase
             return $result;
         } catch (PDOException $e){
             echo "Attenzione errore: " . $e->getMessage();
-            $this->db->rollBack();
+            $this->_conn->rollBack();
             return null;
         }
     }
-
-
-    public function loadAll($attr)
-    {
-        $orderby = " ORDER BY " . $attr;
-        $query = "SELECT * FROM " . $this->table . $orderby . ";";
-        try {
-            $this->db->beginTransaction();
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->db->commit();
-            return $rows;
-        } catch (PDOException $e) {
-            $this->db->rollBack();
-            echo "Attenzione, errore: " . $e->getMessage();
-            return null;
-        }
-
-    }
-
-    /**  Metodo chr permette il salvataggio du un media di un oggetto passato come parametro alla funzione
-     *@param $class, classe di cui si vuole salvare il media
-     * @param obj oggetto interessato
-     * @nome_file, nome del media da salvare
+    /**
+     * @param $object
+     * @param $class
+     * @return bool|mixed
      */
-    public function storeMedia ($obj,$nome_file) {
+    public function storeDB($class, $object){
+
         try {
-            $this->db->beginTransaction();
-            $query = "INSERT INTO ".$this->class." VALUES ".$this->values;
-            $stmt = $this->db->prepare($query);
-            $this->class::bind($stmt,$obj,$nome_file);
+            $this->_conn->beginTransaction();
+            $query = "INSERT INTO `" . $class::getTable() . "` " . str_replace(array(':', ',', ')'), array('`', '`,', '`)'), $class::getValues()) . " VALUES " . $class::getValues();
+            $stmt = $this->_conn->prepare($query);
+            $class::bind($stmt, $object);
             $stmt->execute();
-            $id=$this->db->lastInsertId();
-            $this->db->commit();
-            $this->closeDbConnection();
+            $id = $this->_conn->lastInsertId();
+            $this->_conn->commit();
+            $this->closeConn();
             return $id;
-        }
-        catch(PDOException $e) {
-            echo "Attenzione errore: ".$e->getMessage();
-            $this->db->rollBack();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            $this->_conn->rollBack();
             return null;
         }
     }
+    public function storeMedia($class , $obj,$nome_file) {
+        try {
+            $this->_conn->beginTransaction();
+            $query = "INSERT INTO `" . $class::getTable() . "` " . str_replace(array(':', ',', ')'), array('`', '`,', '`)'), $class::getValues()) . " VALUES " . $class::getValues();
+            $stmt = $this->_conn->prepare($query);
+            $class::bind($stmt, $obj, $nome_file);
+            $stmt->execute();
+            $id = $this->_conn->lastInsertId();
+            $this->_conn->commit();
+            $this->closeConn();
+            return $id;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            $this->_conn->rollBack();
+            return null;
+        }
+    }
+    public function updateDB ($class, $field, $newvalue, $pk, $id)
+    {
+        try {
+            $this->_conn->beginTransaction();
+            $query = "UPDATE " . $class::getTable() . ' SET ' . $field . '="' . addslashes($newvalue) . '" WHERE ' . $pk . '="' . $id . '";';
+            //var_dump($query);
+            $stmt = $this->_conn->prepare($query);
+            $stmt->execute();
+            $this->_conn->commit();
+            $this->closeConn();
+            return true;
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->_conn->rollBack();
+            return false;
+        }
+    }
+    /**
+     * Questa funzione serve a rimuovere i dati di una determinata istanza di un oggetto dal database
+     * @param $object
+     * @return bool
+     */
+    public function deleteDB ($class, $field, $id)
+    {
+        try {
+            $result = null;
+            $this->_conn->beginTransaction();
+            $esiste = $this->existDB($class, $field, $id);
+            if ($esiste) {
+                $query = "DELETE FROM " . $class::getTable() . " WHERE " . $field . "='" . $id . "';";
+                $stmt = $this->_conn->prepare($query);
+                $stmt->execute();
+                $this->_conn->commit();
+                $this->closeConn();
+                $result = true;
+            }
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->_conn->rollBack();
+            //return false;
+        }
+        return $result;
+    }
+    /**
+     * Funzione che esegue la query precedentemente istanziata
+     * @return bool
+     */
 
+    public function existDB ($class, $field, $id)
+    {
+        try {
+            $query = "SELECT * FROM " . $class::getTable() . " WHERE " . $field . "='" . $id . "'";
+            $stmt = $this->_conn->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) == 1) return $result[0];  //rimane solo l'array interno
+            else if (count($result) > 1) return $result;  //resituisce array di array
+            $this->closeConn();
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            return null;
+        }
+    }
+    /**
+     * Cerca all'interno del database
+     * @param array $parametri
+     * @param string $ordinamento
+     * @param string $limite
+     * @return array|false
+     */
+    public function searchDB ($class, $parametri = array(), $ordinamento = '', $limite = ''){
+        $filtro = '';
+        try {
+            for ($i = 0; $i < sizeof($parametri); $i++) {
+                if ($i > 0) $filtro .= ' AND';
+                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
+            }
+            $query = 'SELECT * ' .
+                'FROM `' . $class::getTable() . '` ';
+            if ($filtro != '')
+                $query .= 'WHERE ' . $filtro . ' ';
+            if ($ordinamento != '')
+                $query .= 'ORDER BY ' . $ordinamento . ' ' . 'DESC ';
+            if ($limite != '')
+                $query .= 'LIMIT ' . $limite . ' ';
+            $stmt = $this->_conn->prepare($query);
+            $stmt->execute();
+            $numRow = $stmt->rowCount();
+            if ($numRow == 0){
+                $result = null;
+            } elseif ($numRow == 1) {
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            } else {
+                $result = array();
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                while ($row = $stmt->fetch()) $result[] = $row;
+            }
+            return $result;
+        } catch (PDOException $e){
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->_conn->rollBack();
+            return null;
+        }
+    }
+    /**
+     * Questo metodo verifica quante righe sono state prodotte da una determinata query
+     * @param $class
+     * @param $field
+     * @param $id
+     * @return int|null
+     */
+    public function getRowNum($class, $parametri = array(), $ordinamento = '', $limite = ''){
+        $filtro = '';
+        try {
+            //$this->_conn->beginTransaction();
+            for ($i = 0; $i < sizeof($parametri); $i++) {
+                if ($i > 0) $filtro .= ' AND';
+                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
+            }
+            $query = 'SELECT * ' .
+                'FROM `' . $class::getTable() . '` ';
+            if ($filtro != '')
+                $query .= 'WHERE ' . $filtro . ' ';
+            if ($ordinamento != '')
+                $query .= 'ORDER BY ' . $ordinamento . ' ';
+            if ($limite != '')
+                $query .= 'LIMIT ' . $limite . ' ';
+            $stmt = $this->_conn->prepare($query);
+            $stmt->execute();
+            $num = $stmt->rowCount();
+            $this->closeConn();
+            return $num;
+        } catch (PDOException $e) {
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->_conn->rollBack();
+            return null;
+        }
+    }
     /**
      * Funzione utilizzata per ritornare tutte le recensioni presenti sul database
      * Utilizzata nella pagina admin
@@ -299,7 +299,7 @@ class FDatabase
     {
         try {
             $query = "SELECT * FROM recensione;";
-            $stmt = $this->db->prepare($query);
+            $stmt = $this->_conn->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             if ($num == 0) {
@@ -315,31 +315,9 @@ class FDatabase
             return array($result, $num);
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
-            $this->db->rollBack();
+            $this->_conn->rollBack();
             return null;
         }
-    }
-
-    public function utentiByString ($array, $toSearch)
-    {
-        if ($toSearch == 'nome')
-            $query = "SELECT * FROM utente where nome = '" . $array[0] . "' OR cognome = '" . $array[0] . "';";
-        else
-            $query = "SELECT * FROM utente where nome = '" . $array[0] . "' AND cognome = '" . $array[1] . "' OR nome = '" . $array[1] . "' AND cognome = '" . $array[0] . "';";
-        $stmt = $this->db->prepare($query);
-        $stmt->execute();
-        $num = $stmt->rowCount();
-        if ($num == 0)
-            $result = null;
-        elseif ($num == 1)
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        else {
-            $result = array();
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            while ($row = $stmt->fetch())
-                $result[] = $row;
-        }
-        return array($result, $num);
     }
 
 

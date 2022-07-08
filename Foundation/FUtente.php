@@ -11,6 +11,7 @@ class FUtente extends FDatabase
     private static $class = "FUtente";
     /** valori della tabella */
     private static $values = '(:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser)';
+
     public function __construct(){}
 
 
