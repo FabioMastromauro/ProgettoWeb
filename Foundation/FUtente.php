@@ -104,6 +104,7 @@ class FUtente extends FDatabase
         if(isset($result)){
             $utente = self::loadByField(array(['email', '=', $result['email']]));
         }
+        return $utente;
     }
     /** Metodo che prende determinate righe dal DB */
     public static function getRows($parametri = array(),$ordinamento = '',$limite = ''){

@@ -8,6 +8,29 @@ class FAnnuncio extends FDatabase{
 
 public function __construct(){}
 
+    /**
+     * @return string
+     */
+    public static function getTable(): string
+    {
+        return self::$table;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getClass(): string
+    {
+        return self::$class;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getValues(): string
+    {
+        return self::$values;
+    }
 
     public function bind($stmt, EAnnuncio $annuncio)
     {
@@ -23,14 +46,14 @@ public function __construct(){}
     /** Metodo che salva una recensione nel DB */
     public static function store($object){
         $db = parent::getInstance();
-        $id = $db->storeDB()(self::$class, $object);
-        $object->setId($id);
+        $id = $db->storeDB(self::$class, $object);
+        $object->setIdAnnuncio($id);
     }
 
     public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
         $annuncio = null;
         $db = parent::getInstance();
-        $result = $db->searchDb(static::getClass(), $parametri, $ordinamento, $limite);
+        $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         if (sizeof($parametri) > 0) {
             $rows_number = $db->getRowNum(static::getClass(), $parametri);
         } else {
@@ -39,7 +62,7 @@ public function __construct(){}
         if(($result != null) && ($rows_number == 1)) {
             $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
             $result['idAnnuncio'],$result['idVenditore'],$result['idCompratore']);
-            $annuncio->setId($result['id']);
+            $annuncio->setIdAnnuncio($result['id']);
         }
         else {
             if(($result != null) && ($rows_number > 1)){
@@ -47,7 +70,7 @@ public function __construct(){}
                 for($i = 0; $i < count($result); $i++){
                     $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
                         $result['idAnnuncio'],$result['idVenditore'],$result['idCompratore']);
-                    $annuncio[$i]->setId($result[$i]['id']);
+                    $annuncio[$i]->setIdAnnuncio($result[$i]['id']);
                 }
             }
         }

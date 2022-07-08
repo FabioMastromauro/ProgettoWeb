@@ -10,7 +10,29 @@ class EAnnuncio implements JsonSerializable
     private int $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
-    private array $arrayFoto;
+
+    /**
+     * @param string $titolo
+     * @param string $descrizione
+     * @param float $prezzo
+     * @param int $idFoto
+     * @param Date $data
+     * @param int $idAnnuncio
+     * @param int $idVenditore
+     * @param int $idCompratore
+     * @param array $arrayFoto
+     */
+    public function __construct(string $titolo, string $descrizione, float $prezzo, int $idFoto, Date $data, int $idAnnuncio, int $idVenditore, int $idCompratore)
+    {
+        $this->titolo = $titolo;
+        $this->descrizione = $descrizione;
+        $this->prezzo = $prezzo;
+        $this->idFoto = $idFoto;
+        $this->data = $data;
+        $this->idAnnuncio = $idAnnuncio;
+        $this->idVenditore = $idVenditore;
+        $this->idCompratore = $idCompratore;
+    }
 
     /**
      * @return int
@@ -75,22 +97,6 @@ class EAnnuncio implements JsonSerializable
     public function setIdCompratore(int $idCompratore): void
     {
         $this->idCompratore = $idCompratore;
-    }
-    /**
-     * @param string $titolo
-     * @param string $descrizione
-     * @param float $prezzo
-     * @param Foto $foto
-     * @param Date $data
-     */
-
-    public function __construct(string $titolo, string $descrizione, float $prezzo, Foto $foto, Date $data)
-    {
-        $this->titolo = $titolo;
-        $this->descrizione = $descrizione;
-        $this->prezzo = $prezzo;
-        $this->foto = $foto;
-        $this->data = $data;
     }
 
     /**

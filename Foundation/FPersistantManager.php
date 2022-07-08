@@ -14,7 +14,7 @@ class FPersistantManager
     public static function storeMedia($obj, $nome_file) {
         $Eclass = get_class($obj);
         $Fclass = str_replace("E", "F", $Eclass);
-        $Fclass::store($obj, $nome_file);
+        $Fclass::storeMedia($obj, $nome_file);
     }
 
     /* Metodo che permette di caricare il valore di un campo come parametro */
