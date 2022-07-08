@@ -27,6 +27,9 @@ class FUtente extends FDatabase
         $stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
+        $stmt->bindValue(':annunci', $user->getAnnunci(), PDO::PARAM_STR);
+        $stmt->bindValue(':recensioni', $user->getRecensioni(), PDO::PARAM_STR);
+        $stmt->bindValue(':storico', $user->getStorico(), PDO::PARAM_STR);
     }
     /** Questo metodo restituisce il nome della tabella per la costruzione della Query
      *@return string $table nome della tabella

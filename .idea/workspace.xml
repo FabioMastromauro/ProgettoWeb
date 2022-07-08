@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Un po' di cose">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Implementazione search e getRows">
       <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,14 +88,7 @@
       <workItem from="1657013771518" duration="12540000" />
       <workItem from="1657097518842" duration="6519000" />
       <workItem from="1657200943294" duration="12611000" />
-      <workItem from="1657273723511" duration="18414000" />
-    </task>
-    <task id="LOCAL-00003" summary="Test2">
-      <created>1651562359079</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1651562359079</updated>
+      <workItem from="1657273723511" duration="18823000" />
     </task>
     <task id="LOCAL-00004" summary="Test2">
       <created>1651562420144</created>
@@ -437,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657304066179</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Implementazione search e getRows">
+      <created>1657308924545</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1657308924545</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +463,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fetFromRow FAnnuncio.php" />
     <MESSAGE value="Modifica existDB" />
     <MESSAGE value="Aggiunta search e findUserById in FAnnuncio.php" />
     <MESSAGE value="Modifica store FUtente.php" />
@@ -492,6 +487,7 @@
     <MESSAGE value="Correzione FDatabase.php" />
     <MESSAGE value="Creazione FFoto.php e correzione FDatabase.php" />
     <MESSAGE value="Un po' di cose" />
-    <option name="LAST_COMMIT_MESSAGE" value="Un po' di cose" />
+    <MESSAGE value="Implementazione search e getRows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementazione search e getRows" />
   </component>
 </project>
