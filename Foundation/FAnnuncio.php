@@ -2,14 +2,12 @@
 
 class FAnnuncio extends FDatabase{
 
-public function __construct(){
+    private static $table = 'annuncio';
+    private static $class = 'FPost';
+    private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore)';
 
-    parent::__construct();
-    $this->table = 'annuncio';
-    $this->values = '(:titolo,:descrizione,:prezzo,:idFoto,:data,:idAnnuncio,:idVenditore,:idCompratore,:arrayFoto)';
-    $this->class = 'FAnnuncio';
+public function __construct(){}
 
-    }
 
     public function bind($stmt, EAnnuncio $annuncio)
     {
@@ -21,84 +19,81 @@ public function __construct(){
         $stmt->bindParam(':idAnnuncio', $annuncio->getIdAnnuncio(), PDO::PARAM_INT);
         $stmt->bindParam(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
         $stmt->bindParam(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
-        //arrayfoto???
-    }//per caricare tutti i dati nel database
+    }
+    /** Metodo che salva una recensione nel DB */
+    public static function store($object){
+        $db = parent::getInstance();
+        $id = $db->storeDB()(self::$class, $object);
+        $object->setId($id);
+    }
 
-    public  function getFromRow($row)
-    {
-        $ann = new EAnnuncio ($row['titolo'], $row['descrizione'], $row['prezzo'], $row['idfoto'],$row['idAnnuncio'],$row['idVenditore'], $row['idCompratore'], $row['arrayfoto']);
-        $ann->setIdAnnuncio($row['idAnnuncio']);
-        $ann->setIdVenditore($row['idVenditore']);
-        $ann->setIdCompratore($row['idCompratore']);
-        $ann->setData($row['data']);
-        return $ann;
-    } //Crea un array con tutti gli elementi dell'Annuncio
-
-
-    public function search($attributo, $valore){
-        $array = parent::search($attributo,$valore);
-        $arrayAnnunci = array();
-        if(($array!=null) && (count($array)>0)){
-            foreach($array as $i){
-                $ann = $this->getFromRow($i);
-                array_push($arrayAnnunci, $ann);
+    public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
+        $annuncio = null;
+        $db = parent::getInstance();
+        $result = $db->searchDb(static::getClass(), $parametri, $ordinamento, $limite);
+        if (sizeof($parametri) > 0) {
+            $rows_number = $db->getRowNum(static::getClass(), $parametri);
+        } else {
+            $rows_number = $db->getRowNum(static::getClass());
+        }
+        if(($result != null) && ($rows_number == 1)) {
+            $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
+            $result['idAnnuncio'],$result['idVenditore'],$result['idCompratore']);
+            $annuncio->setId($result['id']);
+        }
+        else {
+            if(($result != null) && ($rows_number > 1)){
+                $annuncio = array();
+                for($i = 0; $i < count($result); $i++){
+                    $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
+                        $result['idAnnuncio'],$result['idVenditore'],$result['idCompratore']);
+                    $annuncio[$i]->setId($result[$i]['id']);
+                }
             }
-            return $arrayAnnunci;
         }
-        else return null;
-
-    } //Cerco un annuncio attraverso un paramentro chiave-valore
-
-    public function store($annuncio)
-    {
-        parent::store($annuncio);
+        return $annuncio;
+    }
+    /** Metodo che aggiorna un determinato campo di un annuncio nel DB */
+    public static function update($field, $newvalue, $pk, $val){
+        $db = parent::getInstance();
+        $result = $db->updateDB(self::getClass(), $field, $newvalue, $pk, $val);
+        if ($result) return true;
+        else return false;
+    }
+    /** Metodo che elimina un annuncio dato il suo id */
+    public static function delete($field, $id){
+        $db = parent::getInstance();
+        $result = $db->deleteDB(self::getClass(), $field, $id);;
+        if ($result) return true;
+        else return false;
     }
 
-    private function buildRow($row)
-    {
-        //caricamento annunci dell'utente
-        $fAnn = new FAnnuncio();
-        $arrayAnn = $fAnn->loadByIdUser($row['idUser']);
-        $row['annuncio'] = $arrayAnn;
-        // da completare con preferiti
-        return $row;
+    /** Metodo che verifica se esiste un determinato annuncio dati il campo e l'id */
+    public static function exist($field, $id){
+        $db = parent::getInstance();
+        $result = $db->existDB(self::getClass(), $field, $id);
+        if ($result != null) return true;
+        else return false;
+    }
+
+    /** Metodo che cerca un determinato annuncio nel DB */
+    public static function search($parametri=array(), $ordinamento='', $limite=''){
+        $db = parent::getInstance();
+        $result = $db->searchDB(self::$class, $parametri, $ordinamento, $limite);
+        return $result;
+    }
+
+    public static function getRows($parametri = array(), $ordinamento = '', $limite = ''){
+        $db = parent::getInstance();
+        $result = $db->getRowNum(self::$class, $parametri, $ordinamento, $limite);
+        return $result;
     }
 
 
-    public function loadById($id)
-    {
-        $row = parent::loadbyId($id);//attraverso il metodo della classe padre restituisco la riga
-        $arAnn = $row[0];
-        if(($row!=null) && (count($row)>0)){
-            $ann = $this->getFromRow($arAnn);
-            return $ann;
-        }
-        else return null;{
-        }
-    }
 
-    // metodo che trova le recensioni relativi a un utente
-    public function loadByIdUser($iduser){
-        $query = "SELECT * FROM ".$this->table." WHERE idUser=".$iduser.";";
-        try{
-            $this->connection->beginTransaction();
-            $stmt = $this->connection->prepare($query);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $this->connection->commit();
-            $arrayann=array();
-            foreach ($rows as $row){
-                $ann = $this->getFromRow($row);
-                array_push($arrayann,$ann);
-            }
-            return $arrayann;
-        }
-        catch (PDOException $e){
-            $this->connection->rollback();
-            echo "Attenzione, errore: ".$e->getMessage();
-            return null;
-        }
-    }
+
+
+
 
 
 }
