@@ -10,7 +10,7 @@ class FUtente extends FDatabase
     /** classe foundation  */
     private static $class = "FUtente";
     /** valori della tabella */
-    private static $values = '(:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser)';
+    private static $values = '(:idUser,:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser,:fotoUtente)';
 
     public function __construct(){}
 
@@ -27,6 +27,12 @@ class FUtente extends FDatabase
         $stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
+        $stmt->bindValue(':annunci', $user->getAnnunci(), PDO::PARAM_STR);
+        $stmt->bindValue(':recensioni', $user->getRecensioni(), PDO::PARAM_STR);
+        $stmt->bindValue(':storico', $user->getStorico(), PDO::PARAM_STR);
+        $stmt->bindValue(':fotoUtente', $user->getFotoUtente(), PDO::PARAM_LOB);
+
+
     }
     /** Questo metodo restituisce il nome della tabella per la costruzione della Query
      *@return string $table nome della tabella
@@ -38,7 +44,7 @@ class FUtente extends FDatabase
      *@return string $class nome della classe
      */
     public static function getClass(): string {
-        return self::$table;
+        return self::$class;
     }
     /** Questo metodo restituisce l'insieme dei valori per la costruzione della Query */
     public static function getValues() :string {
@@ -50,7 +56,7 @@ class FUtente extends FDatabase
     public static function store($utente){
         $db = parent::getInstance();
         $id = $db->storeDb(self::$class, $utente);
-        $utente->setId($id);
+        $utente->setidUser($id);
     }
     /** Metodo che può aggiornare i campi di un utente
      * @param $val valore della primary key da usare come riferimento per la riga
@@ -99,7 +105,7 @@ class FUtente extends FDatabase
         $db = FDatabase::getInstance();
         $result = $db->checkIfLogged($user,$pass);
         if(isset($result)){
-            $utente = self::loadByField(array(['email', '=', $result['email']]));
+           return $utente = self::loadByField(array('email = '. "'". $result['email'] . "'"));
         }
     }
     /** Metodo che prende determinate righe dal DB */
@@ -111,24 +117,37 @@ class FUtente extends FDatabase
     /** Metodo che permette la load su db
      * @return object $utente utente loggato
      */
-    public static function loadByField($parametri = array(),$ordinamento = '',$limite = ''){
+    public static function loadByField($parametri = array(),$attr = array(),$ordinamento = '',$limite = ''){
         $utente = null;
         $db = parent::getInstance();
-        $result = $db->searchDB(static::getClass(),$parametri,$ordinamento,$limite);
+        $result = $db->searchDB(static::getClass(),$parametri,$attr, $ordinamento,$limite);
         if(count($parametri)>0){
-            $rows_number = $db->getRowNum(static::getClass(), $parametri);
+             $rows_number = $db->getRowNum(static::getClass(), $parametri,$attr,$ordinamento,$limite);
         } else{
             $rows_number = $db->getRowNum(static::getClass());
         }
-        if(($result != null) && ($rows_number > 1)){
-            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'],['email'],$result['idUser']); // idFoto
+        if(($result != null) && ($rows_number == 1)){
+            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'], $result['email'], $result['annunci'], $result['recensioni'], $result['storico'], $result['fotoUtente'];
         }
         else{
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
-                for($i = 0; count($result);$i++){
-                    $utente[] = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'],['email'],$result['idUser']);
+                for($i = 0; $i < count($result) ;$i++){
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['username'],$result[$i]['password'],$result[$i]['email'], $result[$i]['annunci'], $result[$i]['recensioni'], $result[$i]['storico'],$result[$i]['fotoUtente']);
                 }
+            }
+        }
+        return $utente;
+    }
+}
+
+
+
+
+
+
+
+}
             }
         }
         return $utente;

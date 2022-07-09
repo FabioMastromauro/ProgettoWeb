@@ -12,6 +12,32 @@ class EUtente implements JsonSerializable
     private array $storico;
     private int $idUser;
     private EFoto $fotoUtente;
+
+    /**
+     * @param string $nome
+     * @param string $cognome
+     * @param string $username
+     * @param string $password
+     * @param string $email
+     * @param array $annunci
+     * @param array $recensioni
+     * @param array $storico
+     * @param int $idUser
+     * @param EFoto $fotoUtente
+     */
+    public function __construct(string $nome, string $cognome, string $username, string $password, string $email, array $annunci, array $recensioni, array $storico, EFoto $fotoUtente)
+    {
+        $this->nome = $nome;
+        $this->cognome = $cognome;
+        $this->username = $username;
+        $this->password = $password;
+        $this->email = $email;
+        $this->annunci = $annunci;
+        $this->recensioni = $recensioni;
+        $this->storico = $storico;
+        $this->idUser = null;
+        $this->fotoUtente = $fotoUtente;
+    }
     /**
      * @param string $nome
      * @param string $cognome
@@ -19,14 +45,7 @@ class EUtente implements JsonSerializable
      * @param string $password
      * @param string $email
      */
-    public function __construct(string $nome, string $cognome, string $username, string $password, string $email)
-    {
-        $this->nome = $nome;
-        $this->cognome = $cognome;
-        $this->username = $username;
-        $this->password = $password;
-        $this->email = $email;
-    }
+
 
     /**
      * @return int
@@ -39,7 +58,7 @@ class EUtente implements JsonSerializable
     /**
      * @param int $idUser
      */
-    public function setIdUser(int $idUser): void
+    public function setIdUser (int $idUser): void
     {
         $this->idUser = $idUser;
     }
