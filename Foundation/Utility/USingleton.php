@@ -13,7 +13,7 @@ final class USingleton
             trigger_error("La classe " . $class_name . "non esiste", E_USER_ERROR);
         }
         /* Converte una stringa in minuscolo */
-        $class_name =strtolower($class_name);
+        $class_name = strtolower($class_name);
         if (!array_key_exists($class_name, self::$instances)) {
             self::$instances[$class_name] = new $class_name;
         }

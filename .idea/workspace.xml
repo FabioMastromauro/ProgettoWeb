@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="FUtente.php bind">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Cose">
+      <change afterPath="$PROJECT_DIR$/Control/CFrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FPersistantManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistantManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/Utility/USingleton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/Utility/USingleton.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,14 +91,8 @@
       <workItem from="1657013771518" duration="12540000" />
       <workItem from="1657097518842" duration="6519000" />
       <workItem from="1657200943294" duration="12611000" />
-      <workItem from="1657273723511" duration="20514000" />
-    </task>
-    <task id="LOCAL-00005" summary="Test3">
-      <created>1651562501830</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1651562501830</updated>
+      <workItem from="1657273723511" duration="23872000" />
+      <workItem from="1657382803956" duration="7426000" />
     </task>
     <task id="LOCAL-00006" summary="Test3">
       <created>1651562932317</created>
@@ -437,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657309329943</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Cose">
+      <created>1657311020270</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1657311020270</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Aggiunta search e findUserById in FAnnuncio.php" />
     <MESSAGE value="Modifica store FUtente.php" />
     <MESSAGE value="Modifica costruttore EFotoUtente.php" />
     <MESSAGE value="Modifica costruttore EFotoAnnuncio.php" />
@@ -492,6 +491,7 @@
     <MESSAGE value="Un po' di cose" />
     <MESSAGE value="Implementazione search e getRows" />
     <MESSAGE value="FUtente.php bind" />
-    <option name="LAST_COMMIT_MESSAGE" value="FUtente.php bind" />
+    <MESSAGE value="Cose" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cose" />
   </component>
 </project>
