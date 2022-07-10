@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta admin in EUtente.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,14 +94,7 @@
       <workItem from="1657200943294" duration="12611000" />
       <workItem from="1657273723511" duration="23872000" />
       <workItem from="1657382803956" duration="8056000" />
-      <workItem from="1657446440790" duration="3479000" />
-    </task>
-    <task id="LOCAL-00011" summary="Creazione Utente.php">
-      <created>1651598447517</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1651598447517</updated>
+      <workItem from="1657446440790" duration="4578000" />
     </task>
     <task id="LOCAL-00012" summary="Aggiunta metodi e correzioni">
       <created>1651600903444</created>
@@ -438,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657449293889</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Aggiunta admin in EUtente.php">
+      <created>1657449927737</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1657449927737</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

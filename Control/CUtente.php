@@ -26,7 +26,17 @@ class CUtente
         $utente = $pm->loadLogin($_POST["email"], $_POST["password"]);
         if ($utente != null) {
             if (USession::sessionStatus() == PHP_SESSION_NONE) {
-                USession::__construct();
+                $session = USingleton::getInstance("USession");
+                $salvare = serialize($utente);
+                $admin = $utente->isAdmin();
+                $session->setValue("admin", $admin);
+                $session->setValue("utente", $salvare);
+                if ($admin == 1) {
+                    header("Location: /localmp/Admin/homepage");
+                }
+                else {
+                    header("Location: /localmp");
+                }
             }
         }
     }
