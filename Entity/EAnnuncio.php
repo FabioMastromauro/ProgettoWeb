@@ -10,6 +10,7 @@ class EAnnuncio implements JsonSerializable
     private int $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
+    private array $arrayFoto;
 
     /**
      * @param string $titolo
@@ -195,13 +196,13 @@ class EAnnuncio implements JsonSerializable
         $this->idAnnuncio = $idAnnuncio;
     }
 
-    public function addFoto($f): void{
-        array_push($this->arrayFoto, $f);
+    public function addFoto($id): void{
+        array_push($this->arrayFoto);
     }
 
     public function remFoto($id): void{
         foreach ($this->arrayFoto as $f => $foto){
-            if ($foto->getIdFoto()==$id){
+            if ($foto == $id){
                 unset($this->arrayFoto[$f]);
             }
         }
