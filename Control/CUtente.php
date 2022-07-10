@@ -6,7 +6,7 @@ class CUtente
     static function login () {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (static::isLogged()) {
-                $pm = new FPersistantManager(); // da verificare
+                $pm = USingleton::getInstance("FPersistantManager"); // da verificare
                 $view = new VUtente();
                 $view->loginOk();
             }
@@ -24,5 +24,10 @@ class CUtente
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistantManager");
         $utente = $pm->loadLogin($_POST["email"], $_POST["password"]);
+        if ($utente != null) {
+            if (USession::sessionStatus() == PHP_SESSION_NONE) {
+                session_start()
+            }
+        }
     }
 }

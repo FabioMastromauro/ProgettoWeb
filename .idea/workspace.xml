@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creati CUtente.php e CFrontController.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione EAnnuncio.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,21 +92,7 @@
       <workItem from="1657200943294" duration="12611000" />
       <workItem from="1657273723511" duration="23872000" />
       <workItem from="1657382803956" duration="8056000" />
-      <workItem from="1657446440790" duration="495000" />
-    </task>
-    <task id="LOCAL-00007" summary="prova2">
-      <created>1651563532301</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1651563532302</updated>
-    </task>
-    <task id="LOCAL-00008" summary="prova3">
-      <created>1651563593385</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1651563593385</updated>
+      <workItem from="1657446440790" duration="2142000" />
     </task>
     <task id="LOCAL-00009" summary="Creazione package Entity">
       <created>1651569734648</created>
@@ -436,7 +423,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657390345544</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Correzione EAnnuncio.php">
+      <created>1657446951904</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1657446951905</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Correzione EAnnuncio.php">
+      <created>1657447032664</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1657447032664</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modifica costruttore EFotoUtente.php" />
     <MESSAGE value="Modifica costruttore EFotoAnnuncio.php" />
     <MESSAGE value="Modifica metodi FFotoUtente.php e FFotoAnnuncio.php" />
     <MESSAGE value="Modifica metodi FUtente.php e FAnnuncio.php" />
@@ -491,6 +491,7 @@
     <MESSAGE value="FUtente.php bind" />
     <MESSAGE value="Cose" />
     <MESSAGE value="Creati CUtente.php e CFrontController.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creati CUtente.php e CFrontController.php" />
+    <MESSAGE value="Correzione EAnnuncio.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione EAnnuncio.php" />
   </component>
 </project>

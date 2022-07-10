@@ -11,6 +11,7 @@ class EUtente implements JsonSerializable
     private array $recensioni;
     private array $storico;
     private int $idUser;
+    private bool $admin;
 
     /**
      * @param string $nome
@@ -22,8 +23,9 @@ class EUtente implements JsonSerializable
      * @param array $recensioni
      * @param array $storico
      * @param int $idUser
+     * @param bool $admin
      */
-    public function __construct(string $nome, string $cognome, string $username, string $password, string $email, array $annunci, array $recensioni, array $storico, int $idUser)
+    public function __construct(string $nome, string $cognome, string $username, string $password, string $email, array $annunci, array $recensioni, array $storico, int $idUser, bool $admin)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
@@ -34,6 +36,7 @@ class EUtente implements JsonSerializable
         $this->recensioni = $recensioni;
         $this->storico = $storico;
         $this->idUser = $idUser;
+        $this->admin = $admin;
     }
 
 
@@ -233,6 +236,24 @@ class EUtente implements JsonSerializable
             }
         }
     }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin(): bool
+    {
+        return $this->admin;
+    }
+
+    /**
+     * @param bool $admin
+     */
+    public function setAdmin(bool $admin): void
+    {
+        $this->admin = $admin;
+    }
+
+
 
     public function jsonSerialize()
     {
