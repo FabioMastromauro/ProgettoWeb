@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta admin in EUtente.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta CUtente.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
     </list>
@@ -94,14 +94,7 @@
       <workItem from="1657200943294" duration="12611000" />
       <workItem from="1657273723511" duration="23872000" />
       <workItem from="1657382803956" duration="8056000" />
-      <workItem from="1657446440790" duration="4578000" />
-    </task>
-    <task id="LOCAL-00012" summary="Aggiunta metodi e correzioni">
-      <created>1651600903444</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1651600903444</updated>
+      <workItem from="1657446440790" duration="7585000" />
     </task>
     <task id="LOCAL-00013" summary="Rinominazione classi">
       <created>1652178916762</created>
@@ -439,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657449927737</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Aggiunta CUtente.php">
+      <created>1657451036878</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1657451036879</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modifica metodi FFotoUtente.php e FFotoAnnuncio.php" />
     <MESSAGE value="Modifica metodi FUtente.php e FAnnuncio.php" />
     <MESSAGE value="Creazione classi Control" />
     <MESSAGE value="Creazione FPersistantManager.php" />
@@ -494,6 +493,7 @@
     <MESSAGE value="Creati CUtente.php e CFrontController.php" />
     <MESSAGE value="Correzione EAnnuncio.php" />
     <MESSAGE value="Aggiunta admin in EUtente.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta admin in EUtente.php" />
+    <MESSAGE value="Aggiunta CUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta CUtente.php" />
   </component>
 </project>
