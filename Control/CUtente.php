@@ -39,5 +39,42 @@ class CUtente
                 }
             }
         }
+        else {
+            $view->loginError();
+        }
     }
+
+    static function isLogged() {
+        $identified = false;
+        if (isset($_COOKIE['PHPSESSID'])) {
+            if (USession::sessionStatus() == PHP_SESSION_NONE) {
+                USingleton::getInstance("USession");
+            }
+        }
+        if (isset($_SESSION['utente'])) {
+            $identified = true;
+        }
+        return $identified;
+    }
+
+    static function logout() {
+        $session = USingleton::getInstance("USession");
+        $session->unsetSession();
+        $session->destroySession();
+        setcookie("PHPSESSID", ""); // da capire perché
+        header("Location: /localmp/login");
+    }
+
+    static function profile() {
+        $view = new VUtente();
+        $session = USingleton::getInstance("USession");
+        $pm = USingleton::getInstance("FPersistantManager");
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            if (CUtente::isLogged()) {
+                $utente = unserialize($session->readValue("utente"));
+            }
+        }
+
+    }
+
 }
