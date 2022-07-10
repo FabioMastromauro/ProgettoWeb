@@ -10,7 +10,7 @@ class FUtente extends FDatabase
     /** classe foundation  */
     private static $class = "FUtente";
     /** valori della tabella */
-    private static $values = '(:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser)';
+    private static $values = '(:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser, :admin)';
 
     public function __construct(){}
 
@@ -30,6 +30,7 @@ class FUtente extends FDatabase
         $stmt->bindValue(':annunci', $user->getAnnunci(), PDO::PARAM_STR);
         $stmt->bindValue(':recensioni', $user->getRecensioni(), PDO::PARAM_STR);
         $stmt->bindValue(':storico', $user->getStorico(), PDO::PARAM_STR);
+        $stmt->bindValue(':admin', $user->isAdmin(), PDO::PARAM_BOOL);
     }
     /** Questo metodo restituisce il nome della tabella per la costruzione della Query
      *@return string $table nome della tabella
@@ -125,13 +126,15 @@ class FUtente extends FDatabase
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number > 1)){
-            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'], $result['email'], $result['annunci'], $result['recensioni'], $result['storico'], $result['idUser']); // idFoto
+            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'], $result['email'],
+                $result['annunci'], $result['recensioni'], $result['storico'], $result['idUser'], $result['admin']); // idFoto
         }
         else{
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
                 for($i = 0; count($result);$i++){
-                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['username'],$result[$i]['password'],$result[$i]['email'], $result[$i]['annunci'], $result[$i]['recensioni'], $result[$i]['storico'],$result[$i]['idUser']);
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['username'],$result[$i]['password'],$result[$i]['email'],
+                        $result[$i]['annunci'], $result[$i]['recensioni'], $result[$i]['storico'],$result[$i]['idUser'], $result[$i]['admin']);
                 }
             }
         }

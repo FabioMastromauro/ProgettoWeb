@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione EAnnuncio.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EUtente.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta admin in EUtente.php">
+      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,14 +90,7 @@
       <workItem from="1657200943294" duration="12611000" />
       <workItem from="1657273723511" duration="23872000" />
       <workItem from="1657382803956" duration="8056000" />
-      <workItem from="1657446440790" duration="2142000" />
-    </task>
-    <task id="LOCAL-00009" summary="Creazione package Entity">
-      <created>1651569734648</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1651569734648</updated>
+      <workItem from="1657446440790" duration="2845000" />
     </task>
     <task id="LOCAL-00010" summary="Creazione package Control">
       <created>1651570107018</created>
@@ -437,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657447032664</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Aggiunta admin in EUtente.php">
+      <created>1657448637099</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1657448637099</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modifica costruttore EFotoAnnuncio.php" />
     <MESSAGE value="Modifica metodi FFotoUtente.php e FFotoAnnuncio.php" />
     <MESSAGE value="Modifica metodi FUtente.php e FAnnuncio.php" />
     <MESSAGE value="Creazione classi Control" />
@@ -492,6 +489,7 @@
     <MESSAGE value="Cose" />
     <MESSAGE value="Creati CUtente.php e CFrontController.php" />
     <MESSAGE value="Correzione EAnnuncio.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correzione EAnnuncio.php" />
+    <MESSAGE value="Aggiunta admin in EUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta admin in EUtente.php" />
   </component>
 </project>
