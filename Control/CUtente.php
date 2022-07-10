@@ -26,7 +26,7 @@ class CUtente
         $utente = $pm->loadLogin($_POST["email"], $_POST["password"]);
         if ($utente != null) {
             if (USession::sessionStatus() == PHP_SESSION_NONE) {
-                session_start()
+                USession::__construct();
             }
         }
     }
