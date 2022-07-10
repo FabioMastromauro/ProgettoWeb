@@ -23,7 +23,7 @@ class EAnnuncio implements JsonSerializable
      * @param int $idCompratore
      * @param array $arrayFoto
      */
-    public function __construct(string $titolo, string $descrizione, float $prezzo, int $idFoto, Date $data, int $idAnnuncio, int $idVenditore, int $idCompratore)
+    public function __construct(string $titolo, string $descrizione, float $prezzo, int $idFoto, Date $data, int $idAnnuncio, int $idVenditore, int $idCompratore, array $arrayFoto)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -33,6 +33,7 @@ class EAnnuncio implements JsonSerializable
         $this->idAnnuncio = $idAnnuncio;
         $this->idVenditore = $idVenditore;
         $this->idCompratore = $idCompratore;
+        $this->arrayFoto = $arrayFoto;
     }
 
     /**
