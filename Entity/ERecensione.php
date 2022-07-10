@@ -2,11 +2,11 @@
 
 class ERecensione implements JsonSerializable
 {
-    private $testo; /* contenuto della recensione*/
-    private $data; /* data di pubblicazione della recensione */
-    private $idProdotto; /* il prodotto della recensione */
-    private $idRecensione; /* identificativo della recensione */
-    private $idUser; /* idetificativo dell'utente che ha commentato*/
+    private string $testo; /* contenuto della recensione*/
+    private DateTime $data; /* data di pubblicazione della recensione */
+    private string $idProdotto; /* il prodotto della recensione */
+    private string $idRecensione; /* identificativo della recensione */
+    private string $idUser; /* idetificativo dell'utente che ha commentato*/
     /**
      * @param $testo
      * @param $data
@@ -24,23 +24,23 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getTesto()
+    public function getTesto() :string
     {
         return $this->testo;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getIdRecensione()
+    public function getIdRecensione() :string
     {
         return $this->idRecensione;
     }
 
     /**
-     * @param mixed $idRecensione
+     * @param string $idRecensione
      */
     public function setIdRecensione($idRecensione): void
     {
@@ -48,7 +48,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param mixed $testo
+     * @param string $testo
      */
     public function setTesto($testo): void
     {
@@ -56,56 +56,56 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getData()
+    public function getData() : string
     {
-        return $this->data;
+        return $this->data->format('d/m/y');
     }
 
     /**
-     * @param mixed $data
+     * @param DateTime $data
      */
-    public function setData($data): void
+    public function setData(DateTime $data): void
     {
         $this->data = $data;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getIdProdotto()
+    public function getIdProdotto() :string
     {
         return $this->idProdotto;
     }
 
     /**
-     * @param mixed $idProdotto
+     * @param string $idProdotto
      */
-    public function setIdProdotto($idProdotto): void
+    public function setIdProdotto(string $idProdotto): void
     {
         $this->idProdotto = $idProdotto;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getIdUser()
+    public function getIdUser() :string
     {
             return $this->idUser;
     }
 
     /**
-     * @param mixed $idUser
+     * @param string $idUser
      */
-    public function setIdUser($idUser): void
+    public function setIdUser(string $idUser): void
     {
         $this->idUser = $idUser;
     }
 
     public function __toString(): string
     {
-     $print= "IDUtente: ".$this->idUser."Prodotto: ".$this->idRecensione."idProdotto: ".$this->data."IDProdotto: ".$this->idRecensione."Testo: ".$this->testo ;
+     $print= "IDUtente: ".$this->idUser."Prodotto: ".$this->idRecensione."idProdotto: ".$this->data->format('d/m/y')."IDProdotto: ".$this->idRecensione."Testo: ".$this->testo ;
        return $print;
     }
 

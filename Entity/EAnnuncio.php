@@ -6,7 +6,7 @@ class EAnnuncio implements JsonSerializable
     private string $descrizione;
     private float $prezzo;
     private int $idFoto;
-    private Date $data;
+    private DateTime $data;
     private int $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
@@ -17,7 +17,7 @@ class EAnnuncio implements JsonSerializable
      * @param string $descrizione
      * @param float $prezzo
      * @param int $idFoto
-     * @param Date $data
+     * @param DateTime $data
      * @param int $idAnnuncio
      * @param int $idVenditore
      * @param int $idCompratore
@@ -132,35 +132,18 @@ class EAnnuncio implements JsonSerializable
     {
         $this->prezzo = $prezzo;
     }
-
     /**
-     * @return Foto
+     * @return DateTime
      */
-    public function getFoto(): Foto
+    public function getData(): string
     {
-        return $this->foto;
+        return $this->data->format('d/m/y');
     }
 
     /**
-     * @param Foto $foto
+     * @param DateTime $data
      */
-    public function setFoto(Foto $foto): void
-    {
-        $this->foto = $foto;
-    }
-
-    /**
-     * @return Date
-     */
-    public function getData(): Date
-    {
-        return $this->data;
-    }
-
-    /**
-     * @param Date $data
-     */
-    public function setData(Date $data): void
+    public function setData(DateTime $data): void
     {
         $this->data = $data;
     }
