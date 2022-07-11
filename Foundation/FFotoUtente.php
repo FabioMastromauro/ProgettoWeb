@@ -4,7 +4,7 @@ class FFotoUtente extends FDatabase
 {
     private static $table = "fotoUtente";
     private static $class = "FFotoUtente";
-    private static $values = "(:idFoto, :nomeFoto, :altezza, :larghezza, :tipo, :data, :idUser)";
+    private static $values = "(:idFoto, :nomeFoto, :size, :tipo, :data, :idUser)";
 
     public function __construct() {}
 
@@ -63,17 +63,15 @@ class FFotoUtente extends FDatabase
      * @param $fotoUtente immagine da salvare
      * @param $nome_file
      */
-    public static function bind($stmt, ECategoria $fotoUtente, $nome_file){
+    public static function bind($stmt, EFotoUtente $fotoUtente, $nome_file){
         $path = $_FILES[$nome_file]['tmp_name'];
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
         $stmt->bindValue(':id', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nomeFoto', $fotoUtente->getNomeFoto(), PDO::PARAM_STR);
-        $stmt->bindValue(':altezza', $fotoUtente->getAltezza(), PDO::PARAM_INT);
-        $stmt->bindValue(':larghezza', $fotoUtente->getLarghezza(), PDO::PARAM_INT);
+        $stmt->bindValue(':size', $fotoUtente->getSize(), PDO::PARAM_STR);
         $stmt->bindValue(':tipo', $fotoUtente->getTipo(), PDO::PARAM_STR);
         $stmt->bindValue(':data', fread($file, filesize($path)), PDO::PARAM_LOB);
         $stmt->bindValue(':idUser', $fotoUtente->getIdUser(), PDO::PARAM_INT);
-
     }
 
     public static function loadByField($parametri = array(), string $ordinamento, string $limite) {
@@ -82,13 +80,13 @@ class FFotoUtente extends FDatabase
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
         if (($result != null) && ($rows_number = 1)) {
-            $foto = new EFotoUtente($result['idFoto'], $result['nomeFoto'], $result['altezza'], $result['larghezza'], $result['tipo'], $result['data'], $result['idUser']);
+            $foto = new EFotoUtente($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['data'], $result['idUser']);
         }
         else {
             if (($result != null) && ($rows_number > 1)) {
                 $foto = array();
                 for ($i = 0; $i < count($result); $i++) {
-                    $foto[] = new EFotoUtente($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['altezza'], $result[$i]['larghezza'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idUser']);
+                    $foto[] = new EFotoUtente($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idUser']);
                 }
             }
         }

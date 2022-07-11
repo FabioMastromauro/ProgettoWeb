@@ -4,7 +4,7 @@ class FFotoAnnuncio extends FDatabase{
 
     private static $table = "fotoAnnuncio";
     private static $class = "FFotoAnnuncio";
-    private static $values = "(:idFoto, :nomeFoto, :altezza, :larghezza, :tipo, :data, :idAnn)";
+    private static $values = "(:idFoto, :nomeFoto, :size, :tipo, :data, :idAnn)";
 
     public function __construct() {}
 
@@ -36,7 +36,7 @@ class FFotoAnnuncio extends FDatabase{
      * Metodo che effettua il bind degli attributi di
      * EFotoAnnuncio, con i valori contenuti nella tabella foto
      * @param $stmt
-     * @param $fotoAnnuncio immagine da salvare
+     * @param $fotoAnnuncio EFotoAnnuncio da salvare
      * @param $nome_file
      */
     public static function bind($stmt, EFotoAnnuncio $fotoAnnuncio, $nome_file){
@@ -44,8 +44,7 @@ class FFotoAnnuncio extends FDatabase{
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
         $stmt->bindValue(':idFoto', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nomeFoto', $fotoAnnuncio->getNomeFoto(), PDO::PARAM_STR);
-        $stmt->bindValue(':altezza', $fotoAnnuncio->getAltezza(), PDO::PARAM_INT);
-        $stmt->bindValue(':larghezza', $fotoAnnuncio->getLarghezza(), PDO::PARAM_INT);
+        $stmt->bindValue(':size', $fotoAnnuncio->getSize(), PDO::PARAM_STR);
         $stmt->bindValue(':tipo', $fotoAnnuncio->getTipo(), PDO::PARAM_STR);
         $stmt->bindValue(':data', fread($file, filesize($path)), PDO::PARAM_LOB);
         $stmt->bindValue(':idAnn', $fotoAnnuncio->getIdAnn(), PDO::PARAM_INT);
