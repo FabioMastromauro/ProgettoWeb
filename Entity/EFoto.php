@@ -4,8 +4,7 @@ class EFoto implements JsonSerializable
 {
     protected int $idFoto;
     protected string $nomeFoto;
-    protected int $altezza;
-    protected int $larghezza;
+    protected string $size;
     protected $tipo;
     protected $data;
 
@@ -19,12 +18,11 @@ class EFoto implements JsonSerializable
      * @param $idAnn
      * @param $idUser
      */
-    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data)
+    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $data)
     {
         $this->idFoto = $idFoto;
         $this->nomeFoto = $nomeFoto;
-        $this->altezza = $altezza;
-        $this->larghezza = $larghezza;
+        $this->size = $size;
         $this->tipo = $tipo;
         $this->data = $data;
     }
@@ -66,35 +64,19 @@ class EFoto implements JsonSerializable
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getAltezza(): int
+    public function getSize(): string
     {
-        return $this->altezza;
+        return $this->size;
     }
 
     /**
-     * @param int $altezza
+     * @param string $size
      */
-    public function setAltezza(int $altezza): void
+    public function setSize(string $size): void
     {
-        $this->altezza = $altezza;
-    }
-
-    /**
-     * @return int
-     */
-    public function getLarghezza(): int
-    {
-        return $this->larghezza;
-    }
-
-    /**
-     * @param int $larghezza
-     */
-    public function setLarghezza(int $larghezza): void
-    {
-        $this->larghezza = $larghezza;
+        $this->size = $size;
     }
 
     /**

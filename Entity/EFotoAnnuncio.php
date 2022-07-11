@@ -5,9 +5,9 @@ class EFotoAnnuncio extends EFoto implements JsonSerializable
 
    private $idAnn;
 
-    public function __construct(int $idFoto, string $nomeFoto, int $altezza, int $larghezza, $tipo, $data, $idAnn)
+    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $data, $idAnn)
     {
-        parent::__construct($idFoto, $nomeFoto, $altezza, $larghezza, $tipo, $data);
+        parent::__construct($idFoto, $nomeFoto, $size, $tipo, $data);
         $this->idAnn = $idAnn;
     }
 
@@ -31,8 +31,7 @@ public function jsonSerialize()
         [
             'id'   => $this->getIdFoto(),
             'nFoto' => $this->getNomeFoto(),
-            'altezza'   => $this->getAltezza(),
-            'larghezza'   => $this->getLarghezza(),
+            'size'   => $this->getSize(),
             'tipo'  =>  $this->getTipo(),
             'data'  =>  $this->getData(),
             'idAnn' => $this->getIdAnn()
