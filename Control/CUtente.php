@@ -72,9 +72,48 @@ class CUtente
         if ($_SERVER['REQUEST_METHOD'] == "GET") {
             if (CUtente::isLogged()) {
                 $utente = unserialize($session->readValue("utente"));
+                $foto = $pm::load($utente->getIdFoto, "FFotoUtente");
+                $annunci = $pm::load($utente->get);
             }
         }
 
     }
+
+    static function modificaProfilo() {
+        $pm = USingleton::getInstance("FPersistantManager");
+        $view = new VUtente();
+        $session = USingleton::getInstance("USession");
+        // if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if (CUtente::isLogged()) {
+                $utente = unserialize($session->readValue("utente"));
+                $foto = $pm::load($utente->getIdFoto, "FFotoUtente");
+                $view->modificaProfilo($utente, $foto);
+            }
+            else {
+                header("Location: /localmp/Utente/login");
+        /* }*/}
+    }
+
+    static function upload() {
+        $pm = USingleton::getInstance("FPersistantManager");
+        $ris = false;
+        $maxSize = 300000;
+        $risultato = is_uploaded_file($_FILES["file"]["tmp_name"]);
+        $size = $_FILES["file"]["size"];
+        $type = $_FILES["file"]["type"];
+        $nome = $_FILES["file"]["nome"];
+        if (!$risultato) {
+            return $ris; // upload fallito
+        } elseif ($size > $maxSize) {
+            return $ris; // il file è troppo grande
+        }
+        $foto = file_get_contents($_FILES["file"]["tmp_name"]);
+        $foto = addslashes($foto);
+        $newFoto = new EFotoUtente($idFoto, $nomeFoto, $size, $tipo, $foto);
+        $pm::storeMedia($newFoto, "file");
+        $ris = true;
+        return $ris;
+    }
+
 
 }

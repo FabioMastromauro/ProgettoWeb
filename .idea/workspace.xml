@@ -4,6 +4,7 @@
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta CUtente.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,14 +95,8 @@
       <workItem from="1657200943294" duration="12611000" />
       <workItem from="1657273723511" duration="23872000" />
       <workItem from="1657382803956" duration="8056000" />
-      <workItem from="1657446440790" duration="7585000" />
-    </task>
-    <task id="LOCAL-00013" summary="Rinominazione classi">
-      <created>1652178916762</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1652178916762</updated>
+      <workItem from="1657446440790" duration="8193000" />
+      <workItem from="1657528966016" duration="7937000" />
     </task>
     <task id="LOCAL-00014" summary="aggiunta id">
       <created>1652891687163</created>
@@ -439,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657451036879</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Aggiunta CUtente.php">
+      <created>1657461139202</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1657461139203</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
