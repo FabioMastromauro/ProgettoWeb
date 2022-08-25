@@ -2,33 +2,36 @@
 
 class ERecensione implements JsonSerializable
 {
-    private string $testo; /* contenuto della recensione*/
-    private DateTime $data; /* data di pubblicazione della recensione */
-    private string $idProdotto; /* il prodotto della recensione */
+    private string $commento; /* contenuto della recensione*/
+    private $valutazione;
     private string $idRecensione; /* identificativo della recensione */
-    private string $idUser; /* idetificativo dell'utente che ha commentato*/
+    private $idAnnuncio;
+    private DateTime $dataPubblicazione; /* data di pubblicazione della recensione */
+    private $autore;
     /**
-     * @param $testo
-     * @param $data
-     * @param $idProdotto
+     * @param $commento
+     * @param $valutazione
      * @param $idRecensione
-     * @param $idUser
+     * @param $idAnnuncio
+     * @param $dataPubblicazione
+     * @param $autore
      */
-    public function __construct($testo, $data, $idProdotto, $idRecensione, $idUser)
+    public function __construct($commento, $valutazione, $idRecensione, $idAnnuncio, $dataPubblicazione, $autore)
     {
-        $this->testo = $testo;
-        $this->data = $data;
-        $this->idProdotto = $idProdotto;
+        $this->commento = $commento;
+        $this->valutazione = $valutazione;
         $this->idRecensione = $idRecensione;
-        $this->idUser = $idUser;
+        $this->idAnnuncio = $idAnnuncio;
+        $this->dataPubblicazione = $dataPubblicazione;
+        $this->autore = $autore;
     }
 
     /**
      * @return string
      */
-    public function getTesto() :string
+    public function getCommento() :string
     {
-        return $this->testo;
+        return $this->commento;
     }
 
     /**
@@ -48,76 +51,86 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param string $testo
+     * @param string $commento
      */
-    public function setTesto($testo): void
+    public function setCommento(string $commento): void
     {
-        $this->testo = $testo;
+        $this->commento = $commento;
     }
 
     /**
-     * @return string
+     * @return DateTime|string
      */
-    public function getData() : string
+    public function getDataPubb()
     {
-        return $this->data->format('d/m/y');
+        return $this->dataPubblicazione->format('y-m-d');
     }
 
     /**
      * @param DateTime $data
      */
-    public function setData(DateTime $data): void
+    public function setDataPubb(DateTime $dataPubblicazione): void
     {
-        $this->data = $data;
+        $this->dataPubblicazione = $dataPubblicazione;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getIdProdotto() :string
+    public function getIdAnnuncio() : mixed
     {
-        return $this->idProdotto;
+        return $this->idAnnuncio;
     }
 
     /**
-     * @param string $idProdotto
+     * @param string $idAnnuncio
      */
-    public function setIdProdotto(string $idProdotto): void
+    public function setIdAnnuncio(string $idAnnuncio): void
     {
-        $this->idProdotto = $idProdotto;
+        $this->idAnnuncio = $idAnnuncio;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getIdUser() :string
-    {
-            return $this->idUser;
+    public function getValutazione(){
+        return $this->valutazione;
     }
 
     /**
-     * @param string $idUser
+     * @param mixed $valutazione
      */
-    public function setIdUser(string $idUser): void
+    public function setValutazione($valutazione): void
     {
-        $this->idUser = $idUser;
+        $this->valutazione = $valutazione;
     }
 
-    public function __toString(): string
+    /**
+     * @return mixed
+     */
+    public function getAutore()
     {
-     $print= "IDUtente: ".$this->idUser."Prodotto: ".$this->idRecensione."idProdotto: ".$this->data->format('d/m/y')."IDProdotto: ".$this->idRecensione."Testo: ".$this->testo ;
-       return $print;
+        return $this->autore;
+    }
+
+    /**
+     * @param mixed $autore
+     */
+    public function setAutore($autore): void
+    {
+        $this->autore = $autore;
     }
 
     public function jsonSerialize()
     {
         return
             [
-                'testo'   => $this->getTesto(),
-                'data' => $this->getData(),
-                'idProdotto'   => $this->getIdProdotto(),
+                'commento'   => $this->getCommento(),
+                'valutazione' => $this->getValutazione(),
                 'idRecensione'   => $this->getIdRecensione(),
-                'idUser'   => $this->getIdUser()
+                'idAnnuncio'   => $this->getIdAnnuncio(),
+                'dataPubblicazione' => $this->getDataPubb(),
+                'autore'   => $this->getAutore()
             ];
     }
 }
