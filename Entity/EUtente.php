@@ -205,14 +205,14 @@ class EUtente implements JsonSerializable
             [
                 'nome'   => $this->getNome(),
                 'cognome' => $this->getCognome(),
-                'username'   => $this->getUsername(),
-                'password'   => $this->getPassword(),
-                'email'   => $this->getEmail(),
-                'annunciA'   => $this->getAnnunci(),
-                'recensioniA'   => $this->getRecensioni(),
-                'storicoA'   => $this->getStorico(),
                 'idUser'   => $this->getIdUser(),
-                'fotoutente'   => $this->getFotoUtente()
+                'email'   => $this->getEmail(),
+                'password'   => $this->getPassword(),
+                'idImmagine'   => $this->getIdImmagine(),
+                'dataIscrizione'   => $this->getDataIscrizione(),
+                'dataFineBan'   => $this->getDataFineBan(),
+                'ban'   => $this->getBan(),
+                'admin' => $this->getAdmin()
             ];
     }
 }
