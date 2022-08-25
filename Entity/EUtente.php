@@ -124,7 +124,7 @@ class EUtente implements JsonSerializable
      */
     public function getIdImmagine(): int
     {
-        return $this->Idimmagine;
+        return $this->idImmagine;
     }
 
     /**
