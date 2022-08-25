@@ -4,27 +4,24 @@ class EFoto implements JsonSerializable
 {
     protected int $idFoto;
     protected string $nomeFoto;
-    protected string $size;
+    protected $size;
     protected $tipo;
-    protected $data;
+    protected $foto;
 
     /**
      * @param int $idFoto
      * @param string $nomeFoto
-     * @param int $altezza
-     * @param int $larghezza
+     * @param  $size
      * @param $tipo
-     * @param $data
-     * @param $idAnn
-     * @param $idUser
+     * @param $foto
      */
-    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $data)
+    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
     {
         $this->idFoto = $idFoto;
         $this->nomeFoto = $nomeFoto;
         $this->size = $size;
         $this->tipo = $tipo;
-        $this->data = $data;
+        $this->foto = $foto;
     }
 
     /**
@@ -98,17 +95,17 @@ class EFoto implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getData()
+    public function getFoto()
     {
-        return $this->data;
+        return $this->foto;
     }
 
     /**
-     * @param mixed $data
+     * @param mixed $foto
      */
-    public function setData($data): void
+    public function setFoto($foto): void
     {
-        $this->data = $data;
+        $this->foto = $foto;
     }
     
     //funzioni 
@@ -128,12 +125,11 @@ class EFoto implements JsonSerializable
     {
         return
             [
-                'id'   => $this->getIdFoto(),
-                'nFoto' => $this->getNomeFoto(),
-                'altezza'   => $this->getAltezza(),
-                'larghezza'   => $this->getLarghezza(),
+                'idFoto'   => $this->getIdFoto(),
+                'nomeFoto' => $this->getNomeFoto(),
+                'size' => $this->getSize(),
                 'tipo'  =>  $this->getTipo(),
-                'data'  =>  $this->getData()
+                'foto'  =>  $this->getFoto()
             ];
     }
 
