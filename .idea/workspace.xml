@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiustamenti EFoto.php">
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/ECategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ECategoria.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,14 +96,8 @@
       <workItem from="1657273723511" duration="23872000" />
       <workItem from="1657382803956" duration="8056000" />
       <workItem from="1657446440790" duration="8193000" />
-      <workItem from="1657528966016" duration="12361000" />
-    </task>
-    <task id="LOCAL-00016" summary="aggiornamenti attr">
-      <created>1652895624216</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1652895624216</updated>
+      <workItem from="1657528966016" duration="13280000" />
+      <workItem from="1661437190587" duration="1474000" />
     </task>
     <task id="LOCAL-00017" summary="Creazione di FRecensione.php, senza metodi load!">
       <created>1653400919980</created>
@@ -439,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657553371048</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php">
+      <created>1657553694302</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1657553694302</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creazione FPersistantManager.php" />
     <MESSAGE value="Creazione USingleton.php" />
     <MESSAGE value="Aggiunta getInstance in FDatabase.php" />
     <MESSAGE value="Correzione valori -&gt; values" />
@@ -494,6 +496,7 @@
     <MESSAGE value="Aggiunta CUtente.php" />
     <MESSAGE value="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php" />
     <MESSAGE value="Aggiustamenti EFoto.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiustamenti EFoto.php" />
+    <MESSAGE value="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php" />
   </component>
 </project>

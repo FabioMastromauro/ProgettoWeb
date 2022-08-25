@@ -10,7 +10,7 @@ class EAnnuncio implements JsonSerializable
     private int $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
-    private array $arrayFoto;
+    private string $categoria;
 
     /**
      * @param string $titolo
@@ -21,9 +21,9 @@ class EAnnuncio implements JsonSerializable
      * @param int $idAnnuncio
      * @param int $idVenditore
      * @param int $idCompratore
-     * @param array $arrayFoto
+     * @param string $categoria
      */
-    public function __construct(string $titolo, string $descrizione, float $prezzo, int $idFoto, string $data, int $idAnnuncio, int $idVenditore, int $idCompratore, array $arrayFoto)
+    public function __construct(string $titolo, string $descrizione, float $prezzo, int $idFoto, string $data, int $idAnnuncio, int $idVenditore, int $idCompratore, string $categoria)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -33,7 +33,7 @@ class EAnnuncio implements JsonSerializable
         $this->idAnnuncio = $idAnnuncio;
         $this->idVenditore = $idVenditore;
         $this->idCompratore = $idCompratore;
-        $this->arrayFoto = $arrayFoto;
+        $this->categoria = $categoria;
     }
 
     /**
@@ -180,6 +180,22 @@ class EAnnuncio implements JsonSerializable
         $this->idAnnuncio = $idAnnuncio;
     }
 
+    /**
+     * @return string
+     */
+    public function getCategoria(): string
+    {
+        return $this->categoria;
+    }
+
+    /**
+     * @param string $categoria
+     */
+    public function setCategoria(string $categoria): void
+    {
+        $this->categoria = $categoria;
+    }
+    /**
     public function addFoto($id): void{
         array_push($this->arrayFoto);
     }
@@ -191,6 +207,7 @@ class EAnnuncio implements JsonSerializable
             }
         }
     }
+    */
 
 
     public function jsonSerialize()
@@ -205,7 +222,7 @@ class EAnnuncio implements JsonSerializable
                 'idAnnuncio'   => $this->getIdAnnuncio(),
                 'idVenditore'   => $this->getIdVenditore(),
                 'idCompratore'   => $this->getIdCompratore(),
-                'foto'   => $this->getArrayFoto()
+                'categoria'   => $this->getCategoria()
             ];
 
     }

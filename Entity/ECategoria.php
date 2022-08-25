@@ -1,6 +1,6 @@
 <?php
 
-class ECategoria
+class ECategoria implements JsonSerializable
 {
     private $categoria;
     private $idCate;
@@ -47,5 +47,13 @@ class ECategoria
         $this->idCate = $idCate;
     }
 
+    public function jsonSerialize()
+    {
+        return
+            [
+                'categoria' => $this->getCategoria(),
+                'idCate' => $this->getIdCate()
+            ];
+    }
 
 }
