@@ -4,38 +4,38 @@ class EUtente implements JsonSerializable
 {
     private string $nome;
     private string $cognome;
-    private string $username;
-    private string $password;
-    private string $email;
-    private array $annunci;
-    private array $recensioni;
-    private array $storico;
     private int $idUser;
+    private string $email;
+    private string $password;
+    private $idImmagine;
+    private DateTime $dataIscrizione;
+    private DateTime $dataFineBan;
+    private $ban;
     private bool $admin;
 
     /**
      * @param string $nome
      * @param string $cognome
-     * @param string $username
-     * @param string $password
-     * @param string $email
-     * @param array $annunci
-     * @param array $recensioni
-     * @param array $storico
      * @param int $idUser
+     * @param string $email
+     * @param string $password
+     * @param $idImmagine
+     * @param $dataIscrizione
+     * @param $dataFineBan
+     * @param $ban
      * @param bool $admin
      */
-    public function __construct(string $nome, string $cognome, string $username, string $password, string $email, array $annunci, array $recensioni, array $storico, int $idUser, bool $admin)
+    public function __construct(string $nome, string $cognome, int $idUser, string $email, $idImmagine, $dataIscrizione, $dataFineBan, $ban, string $password, bool $admin)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
-        $this->username = $username;
-        $this->password = $password;
-        $this->email = $email;
-        $this->annunci = $annunci;
-        $this->recensioni = $recensioni;
-        $this->storico = $storico;
         $this->idUser = $idUser;
+        $this->email = $email;
+        $this->password = $password;
+        $this->idImmagine = $idImmagine;
+        $this->dataIscrizione = $dataIscrizione;
+        $this->dataFineBan = $dataFineBan;
+        $this->ban = $ban;
         $this->admin = $admin;
     }
 
@@ -55,23 +55,6 @@ class EUtente implements JsonSerializable
     {
         $this->idUser = $idUser;
     }
-
-    /**
-     * @return EFoto
-     */
-    public function getFotoUtente(): EFoto
-    {
-        return $this->fotoUtente;
-    }
-
-    /**
-     * @param EFoto $fotoUtente
-     */
-    public function setFotoUtente(EFoto $fotoUtente): void
-    {
-        $this->fotoUtente = $fotoUtente;
-    }
-
     /**
      * @return string
      */
@@ -107,22 +90,6 @@ class EUtente implements JsonSerializable
     /**
      * @return string
      */
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-
-    /**
-     * @param string $username
-     */
-    public function setUsername(string $username): void
-    {
-        $this->username = $username;
-    }
-
-    /**
-     * @return string
-     */
     public function getPassword(): string
     {
         return $this->password;
@@ -153,94 +120,71 @@ class EUtente implements JsonSerializable
     }
 
     /**
-     * @return array
+     * @return int
      */
-    public function getAnnunci(): array
+    public function getIdImmagine(): int
     {
-        return $this->annunci;
+        return $this->Idimmagine;
     }
 
     /**
-     * @param array $annunci
+     * @param int $idImmagine
      */
-    public function setAnnunci(array $annunci): void
+    public function setIdImmagine(int $idImmagine): void
     {
-        $this->annunci = $annunci;
+        $this->idImmagine = $idImmagine;
     }
 
     /**
-     * @return array
+     * @return DateTime
      */
-    public function getRecensioni(): array
+    public function getDataIscrizione(): DateTime
     {
-        return $this->recensioni;
+        return $this->dataIscrizione;
     }
 
     /**
-     * @param array $recensioni
+     * @param DateTime $dataIscrizione
      */
-    public function setRecensioni(array $recensioni): void
+    public function setDataIscrizione(DateTime $dataIscrizione): void
     {
-        $this->recensioni = $recensioni;
+        $this->dataIscrizione = $dataIscrizione;
     }
 
     /**
-     * @return array
+     * @return DateTime
      */
-    public function getStorico(): array
+    public function getDataFineBan(): DateTime
     {
-        return $this->storico;
+        return $this->dataFineBan;
     }
 
     /**
-     * @param array $storico
+     * @param DateTime $dataFineBan
      */
-    public function setStorico(array $storico): void
+    public function setDataFineBan(DateTime $dataFineBan): void
     {
-        $this->storico = $storico;
+        $this->dataFineBan = $dataFineBan;
+    }
+    /**
+     * @return  mixed $ban
+     */
+    public function getBan(): bool
+    {
+        return $this->ban;
     }
 
     /**
-     * Aggiunge una nuova recensione all'utente
+     * @param mixed $ban
      */
-    public function addRecensione($r): void{
-        array_push($this->recensioni, $r);
+    public function setBan($ban): void
+    {
+        $this->ban = $ban;
     }
-
-    /**
-     * Aggiunge una nuova annuncio all'utente
-     */
-    public function addAnnuncio($a): void{
-        array_push($this->annunci, $a);
-    }
-
-    /**
-     * Aggiunge un nuovo acquisto allo storico
-     */
-    public function addStorico($a): void{
-        array_push($this->storico, $a);
-    }
-
-    public function remRecensione($id): void{
-        foreach ($this->recensioni as $r => $recensione){
-            if ($recensione->getIdRecensione()==$id){
-                unset($this->recensioni[$r]);
-            }
-        }
-    }
-
-    public function remAnnuncio($id): void{
-        foreach ($this->annunci as $a => $annuncio){
-            if ($annuncio->getIdAnnuncio()==$id){
-                unset($this->annunci[$a]);
-            }
-        }
-    }
-
     /**
      * @return bool
      */
-    public function isAdmin(): bool
+    public function getAdmin(): bool
     {
         return $this->admin;
     }
