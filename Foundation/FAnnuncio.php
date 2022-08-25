@@ -4,7 +4,7 @@ class FAnnuncio extends FDatabase{
 
     private static $table = 'annuncio';
     private static $class = 'FPost';
-    private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore)';
+    private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore, :categoria)';
 
 public function __construct(){}
 
@@ -42,6 +42,7 @@ public function __construct(){}
         $stmt->bindParam(':idAnnuncio', $annuncio->getIdAnnuncio(), PDO::PARAM_INT);
         $stmt->bindParam(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
         $stmt->bindParam(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
+        $stmt->bindParam(':categoria', $annuncio->getCategoria(), PDO::PARAM_STR);
     }
     /** Metodo che salva una recensione nel DB */
     public static function store($object){
@@ -61,7 +62,7 @@ public function __construct(){}
         }
         if(($result != null) && ($rows_number == 1)) {
             $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
-            $result['idAnnuncio'],$result['idVenditore'],$result['idCompratore']);
+            $result['idAnnuncio'], $result['idVenditore'], $result['idCompratore'], $result['categoria']);
             $annuncio->setIdAnnuncio($result['id']);
         }
         else {
@@ -69,7 +70,7 @@ public function __construct(){}
                 $annuncio = array();
                 for($i = 0; $i < count($result); $i++){
                     $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
-                        $result['idAnnuncio'],$result['idVenditore'],$result['idCompratore']);
+                        $result['idAnnuncio'], $result['idVenditore'], $result['idCompratore'], $result['categoria']);
                     $annuncio[$i]->setIdAnnuncio($result[$i]['id']);
                 }
             }
