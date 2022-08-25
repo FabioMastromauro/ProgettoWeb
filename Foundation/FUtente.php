@@ -10,7 +10,7 @@ class FUtente extends FDatabase
     /** classe foundation  */
     private static $class = "FUtente";
     /** valori della tabella */
-    private static $values = '(:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser, :admin)';
+    private static $values = '(:nome, :cognome, :idUser, :email, :password, :idImmagine, :dataIscrizione, :dataFineBan, :ban, :admin)';
 
     public function __construct(){}
 
@@ -24,13 +24,13 @@ class FUtente extends FDatabase
         $stmt->bindValue(':idUser', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nome', $user->getNome(), PDO::PARAM_STR);
         $stmt->bindValue(':cognome', $user->getCognome(), PDO::PARAM_STR);
-        $stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
+        $stmt->bindValue(':idImmagine', $user->getIdImmagine(), PDO::PARAM_INT);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
-        $stmt->bindValue(':annunci', $user->getAnnunci(), PDO::PARAM_STR);
-        $stmt->bindValue(':recensioni', $user->getRecensioni(), PDO::PARAM_STR);
-        $stmt->bindValue(':storico', $user->getStorico(), PDO::PARAM_STR);
-        $stmt->bindValue(':admin', $user->isAdmin(), PDO::PARAM_BOOL);
+        $stmt->bindValue(':dataIscrizione', $user->getDataIscrizione(), PDO::PARAM_STR);
+        $stmt->bindValue(':dataFineBan', $user->getDataFineBan(), PDO::PARAM_STR);
+        $stmt->bindValue(':ban', $user->getBan(), PDO::PARAM_STR);
+        $stmt->bindValue(':admin', $user->getAdmin(), PDO::PARAM_BOOL);
     }
     /** Questo metodo restituisce il nome della tabella per la costruzione della Query
      *@return string $table nome della tabella
@@ -42,7 +42,7 @@ class FUtente extends FDatabase
      *@return string $class nome della classe
      */
     public static function getClass(): string {
-        return self::$table;
+        return self::$class;
     }
     /** Questo metodo restituisce l'insieme dei valori per la costruzione della Query */
     public static function getValues() :string {
@@ -54,7 +54,7 @@ class FUtente extends FDatabase
     public static function store($utente){
         $db = parent::getInstance();
         $id = $db->storeDb(self::$class, $utente);
-        $utente->setId($id);
+        $utente->setIdUser($id);
     }
     /** Metodo che può aggiornare i campi di un utente
      * @param $val valore della primary key da usare come riferimento per la riga
@@ -126,15 +126,15 @@ class FUtente extends FDatabase
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number > 1)){
-            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'], $result['email'],
-                $result['annunci'], $result['recensioni'], $result['storico'], $result['idUser'], $result['admin']); // idFoto
+            $utente = new EUtente($result['nome'],$result['cognome'],$result['IdUser'],$result['email'], $result['password'],
+                $result['idImmagine'], $result['dataIscrizione'], $result['dataFineBan'], $result['ban'], $result['admin']);
         }
         else{
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
                 for($i = 0; count($result);$i++){
-                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['username'],$result[$i]['password'],$result[$i]['email'],
-                        $result[$i]['annunci'], $result[$i]['recensioni'], $result[$i]['storico'],$result[$i]['idUser'], $result[$i]['admin']);
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['IdUser'],$result[$i]['email'], $result[$i]['password'],
+                        $result[$i]['idImmagine'], $result[$i]['dataIscrizione'], $result[$i]['dataFineBan'], $result[$i]['ban'], $result[$i]['admin']);
                 }
             }
         }
