@@ -4,7 +4,7 @@ class FRecensione extends FDatabase{
 
     private static $table = "recensione";
     private static $class = "FRecensione";
-    private static $values = "(:testo, :data, :idProdotto, :idRecensione, :idUser )";
+    private static $values = "(:commento, :valutazione, :idRecensione, :idAnnuncio, :dataPubblicazione, :autore )";
 
     public function __construct() {}
 
@@ -32,11 +32,12 @@ class FRecensione extends FDatabase{
         return self::$values;
     }
     public static function bind($stmt,ERecensione $recensione){
-        $stmt->bindValue(':testo',$recensione->getTesto(),PDO::PARAM_STR);
-        $stmt->bindValue(':data',$recensione->getData(),PDO::PARAM_STR);
-        $stmt->bindValue(':idProdotto',$recensione->getIdProdotto(),PDO::PARAM_INT);
+        $stmt->bindValue(':commento',$recensione->getCommento(),PDO::PARAM_STR);
+        $stmt->bindValue(':valutazione',$recensione->getValutazione(),PDO::PARAM_STR);
         $stmt->bindValue(':idRecensione',$recensione->getIdRecensione(),PDO::PARAM_INT);
-        $stmt->bindValue(':idUser',$recensione->getIdUser());
+        $stmt->bindValue(':idAnnuncio',$recensione->getIdAnnuncio(),PDO::PARAM_INT);
+        $stmt->bindValue(':dataPubblicazione',$recensione->getDataPubb(),PDO::PARAM_STR);
+        $stmt->bindValue(':autore',$recensione->getAutore(),PDO::PARAM_INT);
     }
     /**
      * Metodo che permette di salvare una Recensione
@@ -108,15 +109,15 @@ class FRecensione extends FDatabase{
         $db = parent::getInstance();
         list ($result, $rows_number)=$db->search(self::$class,$parola, "testo");
         if(($result != null) && ($rows_number == 1)) {
-            $rec = new ERecensione($result['testo'],$result['data'],$result['idProdotto'],$result['idRecensione'], $result['idUser']);
-            $rec->setId($result['id']);
+            $rec = new ERecensione($result['commento'], $result['valutazione'], $result['idAnnuncio'], $result['dataPubblicazione'], $result['autore']);
+            $rec->setIdRecensione($result['id']);
         }
         else {
             if(($result != null) && ($rows_number > 1)){
                 $rec = array();
                 for($i = 0; $i < count($result); $i++){
-                    $rec[] = new ERecensione($result['testo'],$result['data'],$result['idProdotto'],$result['idRecensione'], $result['idUser']);
-                    $rec[$i]->setId($result[$i]['id']);
+                    $rec[] = new ERecensione($result[$i]['commento'], $result[$i]['valutazione'], $result[$i]['idAnnuncio'], $result[$i]['dataPubblicazione'],$result[$i]['autore']);
+                    $rec[$i]->setIdRecensione($result[$i]['id']);
                 }
             }
         }
@@ -136,15 +137,15 @@ class FRecensione extends FDatabase{
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number == 1)) {
-            $recensione = new ERecensione($result['commento'], $result['valutazione'], $result['id_ricetta'], $result['data'], $result['autore']);
-            $recensione->setId($result['id']);
+            $recensione = new ERecensione($result['commento'], $result['valutazione'], $result['idAnnuncio'], $result['dataPubblicazione'], $result['autore']);
+            $recensione->setIdRecensione($result['id']);
         }
         else {
             if(($result != null) && ($rows_number > 1)){
                 $recensione = array();
                 for($i = 0; $i < sizeof($result); $i++){
-                    $recensione[$i] = new ERecensione($result[$i]['commento'], $result[$i]['valutazione'], $result[$i]['id_ricetta'], $result[$i]['data'], $result[$i]['autore']);
-                    $recensione[$i]->setId($result[$i]['id']);
+                    $recensione[$i] = new ERecensione($result[$i]['commento'], $result[$i]['valutazione'], $result[$i]['idAnnuncio'], $result[$i]['dataPubblicazione'],$result[$i]['autore']);
+                    $recensione[$i]->setIdRecensione($result[$i]['id']);
                 }
             }
         }
@@ -163,15 +164,15 @@ class FRecensione extends FDatabase{
         $db = FDatabase::getInstance();
         list ($result, $rows_number)=$db->getAllRev();
         if(($result != null) && ($rows_number == 1)) {
-            $rec = new ERecensione($result['testo'],$result['data'],$result['idProdotto'],$result['idRecensione'],$result['idUser']);
-            $rec->setId($result['id']);
+            $rec = new ERecensione($result['commento'], $result['valutazione'], $result['idAnnuncio'], $result['dataPubblicazione'], $result['autore']);
+            $rec->setIdRecensione($result['id']);
         }
         else {
             if(($result != null) && ($rows_number > 1)){
                 $rec = array();
                 for($i = 0; $i < count($result); $i++){
-                    $rec[] = new ERecensione($result[$i]['testo'],$result[$i]['data'],$result[$i]['idProdotto'],$result[$i]['idRecensione'],$result[$i]['idUser']);
-                    $rec[$i]->setId($result[$i]['id']);
+                    $rec[] = new ERecensione($result[$i]['commento'], $result[$i]['valutazione'], $result[$i]['idAnnuncio'], $result[$i]['dataPubblicazione'],$result[$i]['autore']);
+                    $rec[$i]->setIdRecensione($result[$i]['id']);
                 }
             }
         }

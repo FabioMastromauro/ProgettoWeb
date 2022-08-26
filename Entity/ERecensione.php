@@ -16,7 +16,7 @@ class ERecensione implements JsonSerializable
      * @param $dataPubblicazione
      * @param $autore
      */
-    public function __construct($commento, $valutazione, $idRecensione, $idAnnuncio, $dataPubblicazione, $autore)
+    public function __construct($commento=null, $valutazione=null, $idRecensione=null, $idAnnuncio=null, $dataPubblicazione=null, $autore=null)
     {
         $this->commento = $commento;
         $this->valutazione = $valutazione;
