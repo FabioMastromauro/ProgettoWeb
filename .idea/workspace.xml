@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta categoria a EAnnuncio.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifiche FAnnuncio.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CFrontController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,14 +96,11 @@
       <workItem from="1657382803956" duration="8056000" />
       <workItem from="1657446440790" duration="8193000" />
       <workItem from="1657528966016" duration="13280000" />
-      <workItem from="1661437190587" duration="3139000" />
-    </task>
-    <task id="LOCAL-00018" summary="Creazione di FRecensione.php,con metodi load, mancano metodi admin">
-      <created>1653837055677</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1653837055677</updated>
+      <workItem from="1661437190587" duration="3966000" />
+      <workItem from="1661529039365" duration="123000" />
+      <workItem from="1661529181519" duration="233000" />
+      <workItem from="1661529462742" duration="1605000" />
+      <workItem from="1661534105764" duration="1698000" />
     </task>
     <task id="LOCAL-00019" summary="Creazione di FRecensione.php,con tutti i metodi load">
       <created>1653916031442</created>
@@ -441,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661438942218</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Modifiche FAnnuncio.php">
+      <created>1661440347682</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1661440347682</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Aggiunta getInstance in FDatabase.php" />
     <MESSAGE value="Correzione valori -&gt; values" />
     <MESSAGE value="Aggiunte search e getRows in FPersistantManager.php" />
     <MESSAGE value="Creazione UCookie.php" />
@@ -496,6 +499,7 @@
     <MESSAGE value="Aggiustamenti EFoto.php" />
     <MESSAGE value="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php" />
     <MESSAGE value="Aggiunta categoria a EAnnuncio.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta categoria a EAnnuncio.php" />
+    <MESSAGE value="Modifiche FAnnuncio.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiche FAnnuncio.php" />
   </component>
 </project>
