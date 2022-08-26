@@ -25,7 +25,7 @@ class EUtente implements JsonSerializable
      * @param $ban
      * @param bool $admin
      */
-    public function __construct(string $nome, string $cognome, int $idUser, string $email, $idImmagine, $dataIscrizione, $dataFineBan, $ban, string $password, bool $admin)
+    public function __construct(string $nome = null, string $cognome=null, int $idUser=null, string $email=null, $idImmagine=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null, bool $admin=null)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
