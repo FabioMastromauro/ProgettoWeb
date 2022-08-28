@@ -40,7 +40,7 @@ class CRicerca
             }
 
             $post_id = $pm::loadDefCol('FPost', array('id'));
-            $post_home[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));
+            $post_home[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));  // $post_home[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));
             $post_author[] = $pm::load('FUtente', array(['id', '=', $post_home[$i]->getAutore()]));
             $post_immagini[] = $pm::load('FImmagine', array(['id', '=', $post_home[$i]->getId_immagine()]));
             $immagini_autori[] = $pm::load('FImmagine', array(['id', '=', $post_author[$i]->getid_immagine()]));

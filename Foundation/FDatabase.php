@@ -262,27 +262,26 @@ class FDatabase
      * @param $id
      * @return int|null
      */
-    public function getRowNum($class, $parametri = array(), $ordinamento = '', $limite = ''){
+    public function getRowNum($class, $parametri = array(),$attr=array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
-            //$this->_conn->beginTransaction();
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
+                $filtro .= ' '  . $attr[$i] . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
             }
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
             if ($filtro != '')
                 $query .= 'WHERE ' . $filtro . ' ';
             if ($ordinamento != '')
-                $query .= 'ORDER BY ' . $ordinamento . ' ';
+                $query .= 'ORDER BY ' . $ordinamento . ' ' ;
             if ($limite != '')
-                $query .= 'LIMIT ' . $limite . ' ';
+                   $query .= 'LIMIT ' . $limite . ' ';
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             $this->closeConn();
-            return $num;
+             return $num;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             $this->db->rollBack();

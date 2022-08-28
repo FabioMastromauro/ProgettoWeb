@@ -4,7 +4,7 @@ class FFotoUtente extends FDatabase
 {
     private static $table = "fotoUtente";
     private static $class = "FFotoUtente";
-    private static $values = "(:idFoto, :nomeFoto, :size, :tipo, :data, :idUser)";
+    private static $values = "(:idFoto, :nomeFoto, :altezza, :larghezza, :tipo, :data, :idUser)";
 
     public function __construct() {}
 
@@ -63,12 +63,13 @@ class FFotoUtente extends FDatabase
      * @param $fotoUtente immagine da salvare
      * @param $nome_file
      */
-    public static function bind($stmt, EFotoUtente $fotoUtente, $nome_file){
+    public static function bind($stmt, ECategoria $fotoUtente, $nome_file){
         $path = $_FILES[$nome_file]['tmp_name'];
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
         $stmt->bindValue(':id', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nomeFoto', $fotoUtente->getNomeFoto(), PDO::PARAM_STR);
-        $stmt->bindValue(':size', $fotoUtente->getSize(), PDO::PARAM_STR);
+        $stmt->bindValue(':altezza', $fotoUtente->getAltezza(), PDO::PARAM_INT);
+        $stmt->bindValue(':larghezza', $fotoUtente->getLarghezza(), PDO::PARAM_INT);
         $stmt->bindValue(':tipo', $fotoUtente->getTipo(), PDO::PARAM_STR);
         $stmt->bindValue(':data', fread($file, filesize($path)), PDO::PARAM_LOB);
         $stmt->bindValue(':idUser', $fotoUtente->getIdUser(), PDO::PARAM_INT);
