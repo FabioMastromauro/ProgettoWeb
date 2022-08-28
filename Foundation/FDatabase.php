@@ -221,12 +221,12 @@ class FDatabase
      * @param string $limite
      * @return array|false
      */
-    public function searchDB ($class, $parametri = array(), $ordinamento = '', $limite = ''){
+    public function searchDB ($class, $parametri = array(), $attr = array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
+                $filtro .= ' '  . $attr[$i]  . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
             }
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
@@ -238,7 +238,7 @@ class FDatabase
                 $query .= 'LIMIT ' . $limite . ' ';
             $stmt = $this->db->prepare($query);
             $stmt->execute();
-            $numRow = $stmt->rowCount();
+              $numRow = $stmt->rowCount();
             if ($numRow == 0){
                 $result = null;
             } elseif ($numRow == 1) {
