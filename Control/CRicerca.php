@@ -40,6 +40,6 @@ class CRicerca
             $check = 0;
         }
 
-        $vSearch->showHome($annunci_home, $autore_annuncio, $immagini, $post_home, $post_author, $post_immagini);// $immagini_autori); //??
+        $vSearch->showHome($annunci_home, $autore_annuncio, $immagini, $post_home, $post_author);//, $post_immagini);// $immagini_autori); //??
     }
 }
