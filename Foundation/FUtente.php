@@ -10,8 +10,7 @@ class FUtente extends FDatabase
     /** classe foundation  */
     private static $class = "FUtente";
     /** valori della tabella */
-    private static $values = '(:idUser,:nome, :cognome, :username, :password, :email, :annunci, :recensioni, :storico, :idUser,:fotoUtente)';
-
+    private static $values = '(:nome, :cognome, :idUser, :email, :password, :idImmagine, :dataIscrizione, :dataFineBan, :ban, :admin)';
     public function __construct(){}
 
 
@@ -24,13 +23,13 @@ class FUtente extends FDatabase
         $stmt->bindValue(':idUser', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nome', $user->getNome(), PDO::PARAM_STR);
         $stmt->bindValue(':cognome', $user->getCognome(), PDO::PARAM_STR);
-        $stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
+        $stmt->bindValue(':idImmagine', $user->getIdImmagine(), PDO::PARAM_INT);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
-        $stmt->bindValue(':annunci', $user->getAnnunci(), PDO::PARAM_STR);
-        $stmt->bindValue(':recensioni', $user->getRecensioni(), PDO::PARAM_STR);
-        $stmt->bindValue(':storico', $user->getStorico(), PDO::PARAM_STR);
-        $stmt->bindValue(':fotoUtente', $user->getFotoUtente(), PDO::PARAM_LOB);
+        $stmt->bindValue(':dataIscrizione', $user->getDataIscrizione()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $stmt->bindValue(':dataFineBan', $user->getDataFineBan()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $stmt->bindValue(':ban', $user->getBan(), PDO::PARAM_STR);
+        $stmt->bindValue(':admin', $user->getAdmin(), PDO::PARAM_BOOL);
 
 
     }
@@ -54,9 +53,10 @@ class FUtente extends FDatabase
      *@param $utente utente da salvare
      */
     public static function store($utente){
+
         $db = parent::getInstance();
-        $id = $db->storeDb(self::$class, $utente);
-        $utente->setidUser($id);
+        $id = $db->storeDB(self::$class, $utente);
+        $utente->setIdUser($id);
     }
     /** Metodo che può aggiornare i campi di un utente
      * @param $val valore della primary key da usare come riferimento per la riga
@@ -91,9 +91,9 @@ class FUtente extends FDatabase
         else return false;
     }
     /** Metodo che cerca un determinato oggetto nel DB */
-    public static function search($parametri=array(),$ordinamento='',$limite=''){
+    public static function search($attr = array(),$parametri=array(),$ordinamento='',$limite=''){
         $db = parent::getInstance();
-        $result = $db->searchDB(self::$class,$parametri,$ordinamento,$limite);
+        $result = $db->searchDB(self::$class,$parametri,$attr,$ordinamento,$limite);
         return $result;
     }
     /** Metodo che permette il caricamento del login di un utente, passati la sua email e password
@@ -105,7 +105,7 @@ class FUtente extends FDatabase
         $db = FDatabase::getInstance();
         $result = $db->checkIfLogged($user,$pass);
         if(isset($result)){
-           return $utente = self::loadByField(array('email = '. "'". $result['email'] . "'"));
+            $utente = self::loadByField(array(['email', '=', $result['email']]));
         }
     }
     /** Metodo che prende determinate righe dal DB */
@@ -127,13 +127,13 @@ class FUtente extends FDatabase
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number == 1)){
-            $utente = new EUtente($result['nome'],$result['cognome'],$result['username'],$result['password'], $result['email'], $result['annunci'], $result['recensioni'], $result['storico'], $result['fotoUtente'];
+            $utente = new EUtente($result['nome'],$result['cognome'],$result['password'], $result['email'], $result['idImmagine'], $result['dataIscrizione'], $result['DataFineBan'],$result['ban'],$result['admin']);
         }
         else{
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
                 for($i = 0; $i < count($result) ;$i++){
-                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['username'],$result[$i]['password'],$result[$i]['email'], $result[$i]['annunci'], $result[$i]['recensioni'], $result[$i]['storico'],$result[$i]['fotoUtente']);
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'],$result[$i]['password'], $result[$i]['idUser'], $result[$i]['idImmagine'], $result[$i]['dataIscrizione'], $result[$i]['DataFineBan'],$result[$i]['ban'],$result[$i]['admin']);
                 }
             }
         }

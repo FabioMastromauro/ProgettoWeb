@@ -187,10 +187,10 @@ class FDatabase
                 $this->closeConn();
                 $result = true;
             }
+
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             $this->db->rollBack();
-            //return false;
         }
         return $result;
     }
@@ -209,6 +209,7 @@ class FDatabase
             if (count($result) == 1) return $result[0];  //rimane solo l'array interno
             else if (count($result) > 1) return $result;  //resituisce array di array
             $this->closeConn();
+
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             return null;

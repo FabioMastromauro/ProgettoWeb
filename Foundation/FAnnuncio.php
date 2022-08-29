@@ -3,7 +3,7 @@
 class FAnnuncio extends FDatabase{
 
     private static $table = 'annuncio';
-    private static $class = 'FPost';
+    private static $class = 'FAnnuncio';
     private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore, :categoria)';
 
 public function __construct(){}
@@ -32,17 +32,17 @@ public function __construct(){}
         return self::$values;
     }
 
-    public function bind($stmt, EAnnuncio $annuncio)
+    public static function bind($stmt, EAnnuncio $annuncio)
     {
-        $stmt->bindParam(':titolo', $annuncio->getTitolo(), PDO::PARAM_STR);
-        $stmt->bindParam(':descrizone', $annuncio->getDescrizione(), PDO::PARAM_STR);
-        $stmt->bindParam(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_INT);
-        $stmt->bindParam(':idFoto', $annuncio->getIdFoto(), PDO::PARAM_INT);
-        $stmt->bindParam(':data', $annuncio->getData(), PDO::PARAM_STR);
-        $stmt->bindParam(':idAnnuncio', $annuncio->getIdAnnuncio(), PDO::PARAM_INT);
-        $stmt->bindParam(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
-        $stmt->bindParam(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
-        $stmt->bindParam(':categoria', $annuncio->getCategoria(), PDO::PARAM_STR);
+        $stmt->bindValue(':titolo', $annuncio->getTitolo(), PDO::PARAM_STR);
+        $stmt->bindValue(':descrizione', $annuncio->getDescrizione(), PDO::PARAM_STR);
+        $stmt->bindValue(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_INT);
+        $stmt->bindValue(':idFoto', $annuncio->getIdFoto(), PDO::PARAM_INT);
+        $stmt->bindValue(':data', $annuncio->getData()->format('Y-m-d H:i:s') , PDO::PARAM_STR);
+        $stmt->bindValue(':idAnnuncio', NULL, PDO::PARAM_INT);
+        $stmt->bindValue(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
+        $stmt->bindValue(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
+        $stmt->bindValue(':categoria', $annuncio->getCategoria(), PDO::PARAM_STR);
     }
     /** Metodo che salva una recensione nel DB */
     public static function store($object){
