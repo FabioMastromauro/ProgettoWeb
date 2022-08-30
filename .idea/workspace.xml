@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Download Smarty e creazione classe da richiamare">
-      <change beforePath="$PROJECT_DIR$/StartSmarty.php" beforeDir="false" afterPath="$PROJECT_DIR$/StartSmarty.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifiche StartSmarty.php">
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/home.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -29,6 +44,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -43,14 +63,24 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/civita/Scrivania/PhpProg/ProgettoWeb/smarty/libs/html",
     "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="PHP Script.prova.php">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/smarty/libs/html" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.home.html">
+    <configuration name="home.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/home.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -104,14 +134,8 @@
       <workItem from="1661529181519" duration="233000" />
       <workItem from="1661529462742" duration="1605000" />
       <workItem from="1661534105764" duration="3668000" />
-      <workItem from="1661693288515" duration="2822000" />
-    </task>
-    <task id="LOCAL-00021" summary="Correzioni grammaticali">
-      <created>1657033007511</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1657033007511</updated>
+      <workItem from="1661693288515" duration="3653000" />
+      <workItem from="1661780956787" duration="5040000" />
     </task>
     <task id="LOCAL-00022" summary="store FAnnuncio.php">
       <created>1657036008683</created>
@@ -449,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661697527354</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Modifiche StartSmarty.php">
+      <created>1661698561275</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1661698561275</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creazione UCookie.php" />
     <MESSAGE value="connection -&gt; db" />
     <MESSAGE value="Correzione FRecensione.php" />
     <MESSAGE value="Creazione USession.php" />
@@ -505,6 +535,11 @@
     <MESSAGE value="Modifiche FAnnuncio.php" />
     <MESSAGE value="Finito CFrontController.php, manca un ultimo pezzo da fare insieme" />
     <MESSAGE value="Download Smarty e creazione classe da richiamare" />
-    <option name="LAST_COMMIT_MESSAGE" value="Download Smarty e creazione classe da richiamare" />
+    <MESSAGE value="Modifiche StartSmarty.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiche StartSmarty.php" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
