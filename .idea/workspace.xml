@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta index.php">
-      <change afterPath="$PROJECT_DIR$/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta autoload.php">
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +128,7 @@
       <workItem from="1661529462742" duration="1605000" />
       <workItem from="1661534105764" duration="3668000" />
       <workItem from="1661693288515" duration="3653000" />
-      <workItem from="1661780956787" duration="6083000" />
-    </task>
-    <task id="LOCAL-00023" summary="Correzione bindValur">
-      <created>1657036889208</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1657036889208</updated>
+      <workItem from="1661780956787" duration="6633000" />
     </task>
     <task id="LOCAL-00024" summary="fetFromRow FAnnuncio.php">
       <created>1657042169341</created>
@@ -474,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661869152408</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Aggiunta autoload.php">
+      <created>1661870094748</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1661870094748</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +504,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzione FRecensione.php" />
     <MESSAGE value="Creazione USession.php" />
     <MESSAGE value="Creazione ECategoria.php" />
     <MESSAGE value="Modifica id -&gt; idCate" />
@@ -530,7 +528,8 @@
     <MESSAGE value="Download Smarty e creazione classe da richiamare" />
     <MESSAGE value="Modifiche StartSmarty.php" />
     <MESSAGE value="Aggiunta index.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta index.php" />
+    <MESSAGE value="Aggiunta autoload.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta autoload.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
