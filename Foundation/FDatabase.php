@@ -187,10 +187,10 @@ class FDatabase
                 $this->closeConn();
                 $result = true;
             }
+
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             $this->db->rollBack();
-            //return false;
         }
         return $result;
     }
@@ -209,6 +209,7 @@ class FDatabase
             if (count($result) == 1) return $result[0];  //rimane solo l'array interno
             else if (count($result) > 1) return $result;  //resituisce array di array
             $this->closeConn();
+
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             return null;
@@ -221,12 +222,12 @@ class FDatabase
      * @param string $limite
      * @return array|false
      */
-    public function searchDB ($class, $parametri = array(), $ordinamento = '', $limite = ''){
+    public function searchDB ($class, $parametri = array(), $attr = array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
+                $filtro .= ' '  . $attr[$i]  . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
             }
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
@@ -238,7 +239,7 @@ class FDatabase
                 $query .= 'LIMIT ' . $limite . ' ';
             $stmt = $this->db->prepare($query);
             $stmt->execute();
-            $numRow = $stmt->rowCount();
+              $numRow = $stmt->rowCount();
             if ($numRow == 0){
                 $result = null;
             } elseif ($numRow == 1) {
@@ -262,27 +263,26 @@ class FDatabase
      * @param $id
      * @return int|null
      */
-    public function getRowNum($class, $parametri = array(), $ordinamento = '', $limite = ''){
+    public function getRowNum($class, $parametri = array(),$attr=array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
-            //$this->_conn->beginTransaction();
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
+                $filtro .= ' '  . $attr[$i] . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
             }
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
             if ($filtro != '')
                 $query .= 'WHERE ' . $filtro . ' ';
             if ($ordinamento != '')
-                $query .= 'ORDER BY ' . $ordinamento . ' ';
+                $query .= 'ORDER BY ' . $ordinamento . ' ' ;
             if ($limite != '')
-                $query .= 'LIMIT ' . $limite . ' ';
+                   $query .= 'LIMIT ' . $limite . ' ';
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             $this->closeConn();
-            return $num;
+             return $num;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             $this->db->rollBack();

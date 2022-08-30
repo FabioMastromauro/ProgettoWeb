@@ -4,10 +4,10 @@ class EAnnuncio implements JsonSerializable
 {
     private string $titolo;
     private string $descrizione;
-    private float $prezzo;
+    private  $prezzo;
     private int $idFoto;
     private DateTime $data;
-    private int $idAnnuncio;
+    private  $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
     private string $categoria;
@@ -23,14 +23,13 @@ class EAnnuncio implements JsonSerializable
      * @param int $idCompratore
      * @param string $categoria
      */
-    public function __construct(string $titolo, string $descrizione, float $prezzo, int $idFoto, string $data, int $idAnnuncio, int $idVenditore, int $idCompratore, string $categoria)
+    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore, int $idCompratore, string $categoria)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
         $this->prezzo = $prezzo;
         $this->idFoto = $idFoto;
         $this->data = $data;
-        $this->idAnnuncio = $idAnnuncio;
         $this->idVenditore = $idVenditore;
         $this->idCompratore = $idCompratore;
         $this->categoria = $categoria;
@@ -120,7 +119,7 @@ class EAnnuncio implements JsonSerializable
     /**
      * @return float
      */
-    public function getPrezzo(): float
+    public function getPrezzo()
     {
         return $this->prezzo;
     }
@@ -128,16 +127,16 @@ class EAnnuncio implements JsonSerializable
     /**
      * @param float $prezzo
      */
-    public function setPrezzo(float $prezzo): void
+    public function setPrezzo($prezzo): void
     {
         $this->prezzo = $prezzo;
     }
     /**
      * @return DateTime
      */
-    public function getData(): string
+    public function getData(): DateTime
     {
-        return $this->data->format('d/m/y');
+        return $this->data;
     }
 
     /**
@@ -167,7 +166,7 @@ class EAnnuncio implements JsonSerializable
     /**
      * @return int
      */
-    public function getIdAnnuncio(): int
+    public function getIdAnnuncio()
     {
         return $this->idAnnuncio;
     }
@@ -175,7 +174,7 @@ class EAnnuncio implements JsonSerializable
     /**
      * @param int $idAnnuncio
      */
-    public function setIdAnnuncio(int $idAnnuncio): void
+    public function setIdAnnuncio($idAnnuncio): void
     {
         $this->idAnnuncio = $idAnnuncio;
     }

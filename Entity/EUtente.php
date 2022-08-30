@@ -4,7 +4,7 @@ class EUtente implements JsonSerializable
 {
     private string $nome;
     private string $cognome;
-    private int $idUser;
+    private  $idUser;
     private string $email;
     private string $password;
     private $idImmagine;
@@ -25,11 +25,10 @@ class EUtente implements JsonSerializable
      * @param $ban
      * @param bool $admin
      */
-    public function __construct(string $nome = null, string $cognome=null, int $idUser=null, string $email=null, $idImmagine=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null, bool $admin=null)
+    public function __construct(string $nome = null, string $cognome=null, string $email=null, $idImmagine=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null, bool $admin=null)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
-        $this->idUser = $idUser;
         $this->email = $email;
         $this->password = $password;
         $this->idImmagine = $idImmagine;
@@ -51,7 +50,7 @@ class EUtente implements JsonSerializable
     /**
      * @param int $idUser
      */
-    public function setIdUser(int $idUser): void
+    public function setIdUser( $idUser): void
     {
         $this->idUser = $idUser;
     }

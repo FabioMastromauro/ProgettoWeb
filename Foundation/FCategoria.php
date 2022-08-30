@@ -34,16 +34,13 @@ class FCategoria extends FDatabase
 
     public static function bind($stmt, ECategoria $categoria) {
         $stmt->bindValue(":categoria", $categoria->getCategoria(), PDO::PARAM_STR);
-        $stmt->bindValue(":idCate", $categoria->getIdCate(), PDO::PARAM_INT);
+        $stmt->bindValue(":idCate", null, PDO::PARAM_INT);
     }
 
     public static function store($categoria) {
         $db = parent::getInstance();
         $id = $db->storeDB(self::getClass(), $categoria);
-        if ($id)
-            return $id;
-        else
-            return null;
+        $categoria->setIdCate($id);
     }
 
     public static function update($field, $newvalue, $pk, $val) {
