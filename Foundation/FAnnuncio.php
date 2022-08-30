@@ -36,10 +36,10 @@ public function __construct(){}
     {
         $stmt->bindValue(':titolo', $annuncio->getTitolo(), PDO::PARAM_STR);
         $stmt->bindValue(':descrizione', $annuncio->getDescrizione(), PDO::PARAM_STR);
-        $stmt->bindValue(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_INT);
+        $stmt->bindValue(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_STR);
         $stmt->bindValue(':idFoto', $annuncio->getIdFoto(), PDO::PARAM_INT);
-        $stmt->bindValue(':data', $annuncio->getData()->format('Y-m-d H:i:s') , PDO::PARAM_STR);
-        $stmt->bindValue(':idAnnuncio', NULL, PDO::PARAM_INT);
+        $stmt->bindValue(':data', $annuncio->getData()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $stmt->bindValue(':idAnnuncio', null, PDO::PARAM_INT);
         $stmt->bindValue(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
         $stmt->bindValue(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
         $stmt->bindValue(':categoria', $annuncio->getCategoria(), PDO::PARAM_STR);

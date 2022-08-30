@@ -4,9 +4,9 @@ class ERecensione implements JsonSerializable
 {
     private string $commento; /* contenuto della recensione*/
     private $valutazione;
-    private string $idRecensione; /* identificativo della recensione */
+    private  $idRecensione; /* identificativo della recensione */
     private $idAnnuncio;
-    private DateTime $dataPubblicazione; /* data di pubblicazione della recensione */
+    private  $dataPubblicazione; /* data di pubblicazione della recensione */
     private $autore;
     /**
      * @param $commento
@@ -16,7 +16,7 @@ class ERecensione implements JsonSerializable
      * @param $dataPubblicazione
      * @param $autore
      */
-    public function __construct($commento=null, $valutazione=null, $idRecensione=null, $idAnnuncio=null, $dataPubblicazione=null, $autore=null)
+    public function __construct($commento=null, $valutazione=null, $idRecensione=null, $idAnnuncio=null,  $dataPubblicazione=null, $autore=null)
     {
         $this->commento = $commento;
         $this->valutazione = $valutazione;
@@ -37,7 +37,7 @@ class ERecensione implements JsonSerializable
     /**
      * @return string
      */
-    public function getIdRecensione() :string
+    public function getIdRecensione()
     {
         return $this->idRecensione;
     }
@@ -63,7 +63,7 @@ class ERecensione implements JsonSerializable
      */
     public function getDataPubb()
     {
-        return $this->dataPubblicazione->format('y-m-d');
+        return $this->dataPubblicazione->format('Y-m-d H:i:s');
     }
 
     /**

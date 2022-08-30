@@ -9,10 +9,9 @@ class ECategoria implements JsonSerializable
      * @param $categoria
      * @param $id
      */
-    public function __construct($categoria, $id)
+    public function __construct($categoria)
     {
         $this->categoria = $categoria;
-        $this->idCate = $id;
     }
 
     /**
