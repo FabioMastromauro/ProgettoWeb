@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifiche StartSmarty.php">
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/home.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta index.php">
+      <change afterPath="$PROJECT_DIR$/autoload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,14 +129,7 @@
       <workItem from="1661529462742" duration="1605000" />
       <workItem from="1661534105764" duration="3668000" />
       <workItem from="1661693288515" duration="3653000" />
-      <workItem from="1661780956787" duration="5040000" />
-    </task>
-    <task id="LOCAL-00022" summary="store FAnnuncio.php">
-      <created>1657036008683</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1657036008683</updated>
+      <workItem from="1661780956787" duration="6083000" />
     </task>
     <task id="LOCAL-00023" summary="Correzione bindValur">
       <created>1657036889208</created>
@@ -480,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661698561275</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Aggiunta index.php">
+      <created>1661869152408</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1661869152408</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +505,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="connection -&gt; db" />
     <MESSAGE value="Correzione FRecensione.php" />
     <MESSAGE value="Creazione USession.php" />
     <MESSAGE value="Creazione ECategoria.php" />
@@ -536,7 +529,8 @@
     <MESSAGE value="Finito CFrontController.php, manca un ultimo pezzo da fare insieme" />
     <MESSAGE value="Download Smarty e creazione classe da richiamare" />
     <MESSAGE value="Modifiche StartSmarty.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifiche StartSmarty.php" />
+    <MESSAGE value="Aggiunta index.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta index.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
