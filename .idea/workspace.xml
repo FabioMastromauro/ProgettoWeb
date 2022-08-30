@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta autoload.php">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto .htaccess">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,14 +130,7 @@
       <workItem from="1661529462742" duration="1605000" />
       <workItem from="1661534105764" duration="3668000" />
       <workItem from="1661693288515" duration="3653000" />
-      <workItem from="1661780956787" duration="6633000" />
-    </task>
-    <task id="LOCAL-00024" summary="fetFromRow FAnnuncio.php">
-      <created>1657042169341</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1657042169341</updated>
+      <workItem from="1661780956787" duration="11836000" />
     </task>
     <task id="LOCAL-00025" summary="fetFromRow FAnnuncio.php">
       <created>1657060881001</created>
@@ -473,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661870094748</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Aggiunto .htaccess">
+      <created>1661870646158</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1661870646158</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +506,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creazione USession.php" />
     <MESSAGE value="Creazione ECategoria.php" />
     <MESSAGE value="Modifica id -&gt; idCate" />
     <MESSAGE value="Tolti i set" />
@@ -529,7 +530,8 @@
     <MESSAGE value="Modifiche StartSmarty.php" />
     <MESSAGE value="Aggiunta index.php" />
     <MESSAGE value="Aggiunta autoload.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta autoload.php" />
+    <MESSAGE value="Aggiunto .htaccess" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto .htaccess" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
