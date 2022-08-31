@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Eliminato Profilo-localmp.html" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunti index e chi siamo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/Chi siamo.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/chi_siamo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/Homepage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,14 +133,7 @@
       <workItem from="1661534105764" duration="3668000" />
       <workItem from="1661693288515" duration="3653000" />
       <workItem from="1661780956787" duration="13016000" />
-      <workItem from="1661951650272" duration="4228000" />
-    </task>
-    <task id="LOCAL-00031" summary="Modifica metodi FFotoUtente.php e FFotoAnnuncio.php">
-      <created>1657120462238</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1657120462238</updated>
+      <workItem from="1661951650272" duration="5975000" />
     </task>
     <task id="LOCAL-00032" summary="Modifica metodi FUtente.php e FAnnuncio.php">
       <created>1657121155532</created>
@@ -472,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661961879632</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Aggiunti index e chi siamo">
+      <created>1661962077937</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1661962077937</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +509,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzione FDatabase.php" />
     <MESSAGE value="Creazione FFoto.php e correzione FDatabase.php" />
     <MESSAGE value="Un po' di cose" />
     <MESSAGE value="Implementazione search e getRows" />
@@ -528,7 +533,8 @@
     <MESSAGE value="modifiche login.html" />
     <MESSAGE value="Work email -&gt; email" />
     <MESSAGE value="Eliminato Profilo-localmp.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminato Profilo-localmp.html" />
+    <MESSAGE value="Aggiunti index e chi siamo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti index e chi siamo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
