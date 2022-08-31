@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<script> function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}</script>
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Accedi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+
     <style>
     body {
         background-image: url("background.png");
@@ -33,14 +46,15 @@
         <form class="Form-sc-fxzfx4-0 gurOhE">
         <div class="styles__FormGroup-sc-jw0h8y-0 haFrBN">
             <div class="styles__Text-sc-1sr2h2a-0 bQFSMF">Email</div>
-            <input type="text" name="email" placeholder="Work Email" data-testid="auth-login-email" class="styles__Input-sc-1sks8it-0 dQJkwz" value="">
+            <input type="text" name="email" placeholder="Email" data-testid="auth-login-email" class="styles__Input-sc-1sks8it-0 dQJkwz" value="">
         </div>
         <div class="styles__FormGroup-sc-jw0h8y-0 haFrBN">
             <div class="styles__Text-sc-1sr2h2a-0 bQFSMF">Password</div>
             <div class="LoginFormUIstyles__InputContainer-sc-13s6vbb-0 cDlEua">
-                <input type="password" name="password" placeholder="Password" data-testid="auth-login-password" class="styles__Input-sc-1sks8it-0 dQJkwz" value="">
+                <input type="password" name="password" id="myInput" placeholder="Password" data-testid="auth-login-password" class="styles__Input-sc-1sks8it-0 dQJkwz" value="">
                 <div class="LoginFormUIstyles__IconContainer-sc-13s6vbb-1 iLLqmK">
-                    <i data-tooltip="Show" data-tooltip-delay="short" data-tooltip-uuid="Show" class="styles__StyledIcon-sc-h4nb7b-0 cSgMAn uizard-icons">v3_show_password>
+                    <i data-tooltip="Show" data-tooltip-delay="short" data-tooltip-uuid="Show" class="styles__StyledIcon-sc-h4nb7b-0 cSgMAn uizard-icons"> <input type="checkbox" onclick="myFunction()">Show Password
+
                 </i>
                 </div>
             </div>
