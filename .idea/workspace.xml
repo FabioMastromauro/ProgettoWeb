@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto style.css">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/login.jpg" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzioni VUtente.php">
+      <change afterPath="$PROJECT_DIR$/View/VAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,14 +134,7 @@
       <workItem from="1661693288515" duration="3653000" />
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
-      <workItem from="1662045909098" duration="1996000" />
-    </task>
-    <task id="LOCAL-00034" summary="Creazione FPersistantManager.php">
-      <created>1657203691268</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1657203691268</updated>
+      <workItem from="1662045909098" duration="4138000" />
     </task>
     <task id="LOCAL-00035" summary="Creazione USingleton.php">
       <created>1657205166067</created>
@@ -482,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661965748405</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Correzioni VUtente.php">
+      <created>1662047918407</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1662047918408</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +510,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implementazione search e getRows" />
     <MESSAGE value="FUtente.php bind" />
     <MESSAGE value="Cose" />
     <MESSAGE value="Creati CUtente.php e CFrontController.php" />
@@ -538,7 +534,8 @@
     <MESSAGE value="Aggiunti index e chi siamo" />
     <MESSAGE value="barra rimane in alto" />
     <MESSAGE value="Aggiunto style.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto style.css" />
+    <MESSAGE value="Correzioni VUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzioni VUtente.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
