@@ -29,5 +29,8 @@ class VAnnunci
     function showAnnunci($annunci, $array=null) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
+        if (is_array($annunci)) {
+            $numero = rand(0, count($annunci) - 1);
+        }
     }
 }

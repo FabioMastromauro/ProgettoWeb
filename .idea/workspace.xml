@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunti VAdmin.php e VAnnunci.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifiche style.css">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/login2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/VAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/html/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,14 +136,7 @@
       <workItem from="1661693288515" duration="3653000" />
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
-      <workItem from="1662045909098" duration="6433000" />
-    </task>
-    <task id="LOCAL-00036" summary="Aggiunta getInstance in FDatabase.php">
-      <created>1657205861032</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1657205861032</updated>
+      <workItem from="1662045909098" duration="8182000" />
     </task>
     <task id="LOCAL-00037" summary="Correzione valori -&gt; values">
       <created>1657206448583</created>
@@ -481,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662050090024</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Modifiche style.css">
+      <created>1662061103638</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1662061103638</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +512,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Cose" />
     <MESSAGE value="Creati CUtente.php e CFrontController.php" />
     <MESSAGE value="Correzione EAnnuncio.php" />
     <MESSAGE value="Aggiunta admin in EUtente.php" />
@@ -537,7 +536,8 @@
     <MESSAGE value="Aggiunto style.css" />
     <MESSAGE value="Correzioni VUtente.php" />
     <MESSAGE value="Aggiunti VAdmin.php e VAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti VAdmin.php e VAnnunci.php" />
+    <MESSAGE value="Modifiche style.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiche style.css" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
