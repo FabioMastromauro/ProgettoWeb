@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="barra rimane in alto">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/style.css" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto style.css">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/login.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,19 +59,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/civita/Scrivania/PhpProg/ProgettoWeb/smarty/libs/html",
-    "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/civita/Scrivania/PhpProg/ProgettoWeb/smarty/libs/html&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/smarty/libs/html" />
@@ -133,14 +136,8 @@
       <workItem from="1661534105764" duration="3668000" />
       <workItem from="1661693288515" duration="3653000" />
       <workItem from="1661780956787" duration="13016000" />
-      <workItem from="1661951650272" duration="7873000" />
-    </task>
-    <task id="LOCAL-00033" summary="Creazione classi Control">
-      <created>1657124908857</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1657124908857</updated>
+      <workItem from="1661951650272" duration="8402000" />
+      <workItem from="1662045909098" duration="1996000" />
     </task>
     <task id="LOCAL-00034" summary="Creazione FPersistantManager.php">
       <created>1657203691268</created>
@@ -478,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661963883219</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Aggiunto style.css">
+      <created>1661965748405</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1661965748405</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +513,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Un po' di cose" />
     <MESSAGE value="Implementazione search e getRows" />
     <MESSAGE value="FUtente.php bind" />
     <MESSAGE value="Cose" />
@@ -534,7 +537,8 @@
     <MESSAGE value="Eliminato Profilo-localmp.html" />
     <MESSAGE value="Aggiunti index e chi siamo" />
     <MESSAGE value="barra rimane in alto" />
-    <option name="LAST_COMMIT_MESSAGE" value="barra rimane in alto" />
+    <MESSAGE value="Aggiunto style.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto style.css" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
