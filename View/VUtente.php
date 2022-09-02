@@ -24,7 +24,7 @@ class VUtente
     }
 
     public function showFormLogin(){
-        $this->smarty->display('./smarty/libs/templates/login_registration_form.tpl');
+        $this->smarty->display('./smarty/libs/templates/login.tpl');
     }
 
     public function loginOk(){
@@ -35,6 +35,7 @@ class VUtente
         $this->smarty->assign('ban', $ban);
         $this->smarty->assign('fine_ban', $fine_ban);
         $this->smarty->assign('error', $error);
+
         $this->smarty->display('./smarty/libs/templates/login_registration_form.tpl');
     }
 
@@ -44,7 +45,7 @@ class VUtente
                 $this->smarty->assign('emailError', "errore");
                 break;
         }
-        $this->smarty->display('.smarty/libs/templates/login_registration_form.tpl');
+        $this->smarty->display('.smarty/libs/templates/login.tpl');
     }
 
     public function profilo($annunci, $utente, $immagini, $immagine_utente, $immagini_autori, $idutente){
@@ -57,7 +58,7 @@ class VUtente
         $this->smarty->assign('immagini_autori', $immagini_autori);
         $this->smarty->assign('idutente', $idutente);
 
-        $this->smarty->display('profile.tpl');
+        $this->smarty->display('profilo.tpl');
     }
 
     public function modificaProfilo($utente, $immagine_utente){

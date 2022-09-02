@@ -1,7 +1,15 @@
 form.d-flex
 {
-    position: center;
-    width: auto;
-    padding-left: 30%;
-    padding-right: 30%;
+    position: absolute;
+    min-width: 250px;
+    left: 40%;
+    right: 40%;
+    float: bottom;
 }
+
+div.card-header
+{
+    position: absolute;
+    width: auto;
+}
+
