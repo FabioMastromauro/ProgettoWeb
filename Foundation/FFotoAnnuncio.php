@@ -77,13 +77,13 @@ class FFotoAnnuncio extends FDatabase{
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
         if (($result != null) && ($rows_number = 1)) {
-            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['altezza'], $result['larghezza'], $result['tipo'], $result['data'], $result['idAnn']);
+            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['data'], $result['idAnn']);
         }
         else {
             if (($result != null) && ($rows_number > 1)) {
                 $foto = array();
                 for ($i = 0; $i < count($result); $i++) {
-                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['altezza'], $result[$i]['larghezza'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idAnn']);
+                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idAnn']);
                 }
             }
         }
