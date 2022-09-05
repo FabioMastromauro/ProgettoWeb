@@ -12,10 +12,10 @@ class EFotoUtente extends EFoto implements JsonSerializable
     /**
      * @param $idUser
      */
-    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $data, $idUser)
+    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
     {
-        parent::__construct($idFoto, $nomeFoto, $size, $tipo, $data);
-        $this->idUser = $idUser;
+        parent::__construct($idFoto, $nomeFoto, $size, $tipo, $foto);
+        // $this->idUser = $idUser;
     }
 
     /**
@@ -42,8 +42,7 @@ class EFotoUtente extends EFoto implements JsonSerializable
                 'Foto' => $this->getNomeFoto(),
                 'size'   => $this->getSize(),
                 'tipo'  =>  $this->getTipo(),
-                'data'  =>  $this->getData(),
-                'idUser' => $this->getIdUser()
+                'data'  =>  $this->getFoto(),
             ];
     }
 

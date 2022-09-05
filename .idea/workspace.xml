@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creata login2.html">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modifiche login2.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFotoAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFotoUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,14 +136,8 @@
       <workItem from="1661693288515" duration="3653000" />
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
-      <workItem from="1662045909098" duration="9474000" />
-    </task>
-    <task id="LOCAL-00038" summary="Aggiunte search e getRows in FPersistantManager.php">
-      <created>1657211017893</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1657211017893</updated>
+      <workItem from="1662045909098" duration="10085000" />
+      <workItem from="1662408427739" duration="1299000" />
     </task>
     <task id="LOCAL-00039" summary="Creazione UCookie.php">
       <created>1657211962694</created>
@@ -478,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662062881184</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Modifiche login2.html">
+      <created>1662064186043</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1662064186043</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +513,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzione EAnnuncio.php" />
     <MESSAGE value="Aggiunta admin in EUtente.php" />
     <MESSAGE value="Aggiunta CUtente.php" />
     <MESSAGE value="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php" />
@@ -534,7 +537,8 @@
     <MESSAGE value="Aggiunti VAdmin.php e VAnnunci.php" />
     <MESSAGE value="Modifiche style.css" />
     <MESSAGE value="Creata login2.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creata login2.html" />
+    <MESSAGE value="Modifiche login2.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiche login2.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
