@@ -33,8 +33,8 @@ class FRecensione extends FDatabase{
     }
     public static function bind($stmt,ERecensione $recensione){
         $stmt->bindValue(':commento',$recensione->getCommento(),PDO::PARAM_STR);
-        $stmt->bindValue(':valutazione',$recensione->getValutazione(),PDO::PARAM_STR);
-        $stmt->bindValue(':idRecensione',null,PDO::PARAM_INT);
+        $stmt->bindValue(':valutazione',$recensione->getValutazione(),PDO::PARAM_INT);
+        $stmt->bindValue(':idRecensione',$recensione->getIdRecensione(),PDO::PARAM_INT);
         $stmt->bindValue(':idAnnuncio',$recensione->getIdAnnuncio(),PDO::PARAM_INT);
         $stmt->bindValue(':dataPubblicazione',$recensione->getDataPubb(),PDO::PARAM_STR);
         $stmt->bindValue(':autore',$recensione->getAutore(),PDO::PARAM_INT); //id utente

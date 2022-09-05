@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="FCategoria.php">
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/chi_siamo.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/chi_siamo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/login.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/logomarket.png" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/logomarket.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/neonmarket.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/neonmarket.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/profilo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +73,7 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/smarty/libs/css" />
       <recent name="$PROJECT_DIR$/smarty/libs/images" />
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
@@ -146,14 +139,7 @@
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
       <workItem from="1662045909098" duration="10085000" />
-      <workItem from="1662408427739" duration="2610000" />
-    </task>
-    <task id="LOCAL-00042" summary="Creazione USession.php">
-      <created>1657216156484</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1657216156484</updated>
+      <workItem from="1662408427739" duration="3419000" />
     </task>
     <task id="LOCAL-00043" summary="Creazione ECategoria.php">
       <created>1657274527273</created>
@@ -491,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662410497936</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="FCategoria.php">
+      <created>1662411320061</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1662411320061</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
