@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="FCategoria.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzioni in FRecensione.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,14 +139,7 @@
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
       <workItem from="1662045909098" duration="10085000" />
-      <workItem from="1662408427739" duration="3419000" />
-    </task>
-    <task id="LOCAL-00043" summary="Creazione ECategoria.php">
-      <created>1657274527273</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1657274527273</updated>
+      <workItem from="1662408427739" duration="4101000" />
     </task>
     <task id="LOCAL-00044" summary="Modifica id -&gt; idCate">
       <created>1657274856856</created>
@@ -484,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662411320061</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Correzioni in FRecensione.php">
+      <created>1662411860931</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1662411860931</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +515,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php" />
     <MESSAGE value="Aggiustamenti EFoto.php" />
     <MESSAGE value="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php" />
     <MESSAGE value="Aggiunta categoria a EAnnuncio.php" />
@@ -540,7 +539,8 @@
     <MESSAGE value="Modifiche login2.html" />
     <MESSAGE value="Messo apposto DB e foto" />
     <MESSAGE value="FCategoria.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="FCategoria.php" />
+    <MESSAGE value="Correzioni in FRecensione.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzioni in FRecensione.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
