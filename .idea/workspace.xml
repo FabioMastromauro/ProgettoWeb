@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Messo apposto DB e foto">
-      <change beforePath="$PROJECT_DIR$/Foundation/FCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FCategoria.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="FCategoria.php">
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/chi_siamo.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/chi_siamo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/logomarket.png" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/logomarket.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/neonmarket.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/images/images/neonmarket.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/profilo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +80,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/smarty/libs/html" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/smarty/libs/images" />
+      <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.home.html">
     <configuration name="home.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/home.html" useBuiltInWebServerPort="true">
@@ -133,14 +146,7 @@
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
       <workItem from="1662045909098" duration="10085000" />
-      <workItem from="1662408427739" duration="2028000" />
-    </task>
-    <task id="LOCAL-00041" summary="Correzione FRecensione.php">
-      <created>1657214759187</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1657214759187</updated>
+      <workItem from="1662408427739" duration="2610000" />
     </task>
     <task id="LOCAL-00042" summary="Creazione USession.php">
       <created>1657216156484</created>
@@ -478,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662410106357</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="FCategoria.php">
+      <created>1662410497936</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1662410497936</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta CUtente.php" />
     <MESSAGE value="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php" />
     <MESSAGE value="Aggiustamenti EFoto.php" />
     <MESSAGE value="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php" />
@@ -534,7 +546,8 @@
     <MESSAGE value="Creata login2.html" />
     <MESSAGE value="Modifiche login2.html" />
     <MESSAGE value="Messo apposto DB e foto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messo apposto DB e foto" />
+    <MESSAGE value="FCategoria.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="FCategoria.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
