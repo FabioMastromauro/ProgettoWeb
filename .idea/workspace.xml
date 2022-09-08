@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Eliminata home.tpl">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/register.html" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creato register.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login2.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,14 +141,7 @@
       <workItem from="1662045909098" duration="10085000" />
       <workItem from="1662408427739" duration="4126000" />
       <workItem from="1662412730009" duration="1298000" />
-      <workItem from="1662658233563" duration="1893000" />
-    </task>
-    <task id="LOCAL-00046" summary="Quasi finito FCategoria.php">
-      <created>1657278021185</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1657278021185</updated>
+      <workItem from="1662658233563" duration="3963000" />
     </task>
     <task id="LOCAL-00047" summary="Correzione FDatabase.php">
       <created>1657292698805</created>
@@ -488,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662413420064</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Creato register.html">
+      <created>1662660847647</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1662660847648</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta categoria a EAnnuncio.php" />
     <MESSAGE value="Modifiche FAnnuncio.php" />
     <MESSAGE value="Finito CFrontController.php, manca un ultimo pezzo da fare insieme" />
     <MESSAGE value="Download Smarty e creazione classe da richiamare" />
@@ -544,7 +541,8 @@
     <MESSAGE value="Correzioni in FRecensione.php" />
     <MESSAGE value="Correzioni in FUtente.php" />
     <MESSAGE value="Eliminata home.tpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminata home.tpl" />
+    <MESSAGE value="Creato register.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creato register.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
