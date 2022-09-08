@@ -13,3 +13,12 @@ div.card-header
     width: auto;
 }
 
+img.same {
+    float: left;
+    width:  300px;
+    height: 300px;
+    object-fit: cover;
+}
+body{
+    background-image: url("../images/background.png");
+}
