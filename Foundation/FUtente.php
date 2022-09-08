@@ -20,7 +20,7 @@ class FUtente extends FDatabase
  */
     public static function bind($stmt, EUtente $user)
     {
-        $stmt->bindValue(':idUser', NULL, PDO::PARAM_INT);
+        $stmt->bindValue(':idUser', $user->getIdUser(), PDO::PARAM_INT);
         $stmt->bindValue(':nome', $user->getNome(), PDO::PARAM_STR);
         $stmt->bindValue(':cognome', $user->getCognome(), PDO::PARAM_STR);
         $stmt->bindValue(':idImmagine', $user->getIdImmagine(), PDO::PARAM_INT);
@@ -28,10 +28,8 @@ class FUtente extends FDatabase
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
         $stmt->bindValue(':dataIscrizione', $user->getDataIscrizione()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
         $stmt->bindValue(':dataFineBan', $user->getDataFineBan()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
-        $stmt->bindValue(':ban', $user->getBan(), PDO::PARAM_STR);
+        $stmt->bindValue(':ban', $user->getBan(), PDO::PARAM_BOOL);
         $stmt->bindValue(':admin', $user->getAdmin(), PDO::PARAM_BOOL);
-
-
     }
     /** Questo metodo restituisce il nome della tabella per la costruzione della Query
      *@return string $table nome della tabella
