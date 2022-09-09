@@ -4,7 +4,7 @@ class FFotoAnnuncio extends FDatabase{
 
     private static $table = "fotoAnnuncio";
     private static $class = "FFotoAnnuncio";
-    private static $values = "(:idFoto, :nomeFoto, :altezza, :larghezza, :tipo, :data, :idAnn)";
+    private static $values = "(:idFoto, :nomeFoto, :size, :tipo, :foto)";
 
     public function __construct() {}
 
@@ -44,11 +44,10 @@ class FFotoAnnuncio extends FDatabase{
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
         $stmt->bindValue(':idFoto', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nomeFoto', $fotoAnnuncio->getNomeFoto(), PDO::PARAM_STR);
-        $stmt->bindValue(':altezza', $fotoAnnuncio->getAltezza(), PDO::PARAM_INT);
-        $stmt->bindValue(':larghezza', $fotoAnnuncio->getLarghezza(), PDO::PARAM_INT);
+        $stmt->bindValue(':size', $fotoAnnuncio->getSize(), PDO::PARAM_STR);
         $stmt->bindValue(':tipo', $fotoAnnuncio->getTipo(), PDO::PARAM_STR);
         $stmt->bindValue(':data', fread($file, filesize($path)), PDO::PARAM_LOB);
-        $stmt->bindValue(':idAnn', $fotoAnnuncio->getIdAnn(), PDO::PARAM_INT);
+        // $stmt->bindValue(':idAnn', $fotoAnnuncio->getIdAnn(), PDO::PARAM_INT);
         unset($file);
         unlink($path);
     }
@@ -78,13 +77,13 @@ class FFotoAnnuncio extends FDatabase{
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
         if (($result != null) && ($rows_number = 1)) {
-            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['altezza'], $result['larghezza'], $result['tipo'], $result['data'], $result['idAnn']);
+            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['data'], $result['idAnn']);
         }
         else {
             if (($result != null) && ($rows_number > 1)) {
                 $foto = array();
                 for ($i = 0; $i < count($result); $i++) {
-                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['altezza'], $result[$i]['larghezza'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idAnn']);
+                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idAnn']);
                 }
             }
         }

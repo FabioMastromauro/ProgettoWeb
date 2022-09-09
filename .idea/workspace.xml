@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creata login2.html">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creato register.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,6 +71,11 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/smarty/libs/html" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/smarty/libs/css" />
+      <recent name="$PROJECT_DIR$/smarty/libs/images" />
+      <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.home.html">
@@ -133,70 +138,10 @@
       <workItem from="1661693288515" duration="3653000" />
       <workItem from="1661780956787" duration="13016000" />
       <workItem from="1661951650272" duration="8402000" />
-      <workItem from="1662045909098" duration="9474000" />
-    </task>
-    <task id="LOCAL-00038" summary="Aggiunte search e getRows in FPersistantManager.php">
-      <created>1657211017893</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1657211017893</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Creazione UCookie.php">
-      <created>1657211962694</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1657211962694</updated>
-    </task>
-    <task id="LOCAL-00040" summary="connection -&gt; db">
-      <created>1657214359775</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1657214359775</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Correzione FRecensione.php">
-      <created>1657214759187</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1657214759187</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Creazione USession.php">
-      <created>1657216156484</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1657216156484</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Creazione ECategoria.php">
-      <created>1657274527273</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1657274527273</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Modifica id -&gt; idCate">
-      <created>1657274856856</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1657274856856</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Tolti i set">
-      <created>1657275566021</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1657275566021</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Quasi finito FCategoria.php">
-      <created>1657278021185</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1657278021185</updated>
+      <workItem from="1662045909098" duration="10085000" />
+      <workItem from="1662408427739" duration="4126000" />
+      <workItem from="1662412730009" duration="1298000" />
+      <workItem from="1662658233563" duration="3963000" />
     </task>
     <task id="LOCAL-00047" summary="Correzione FDatabase.php">
       <created>1657292698805</created>
@@ -478,7 +423,70 @@
       <option name="project" value="LOCAL" />
       <updated>1662062881184</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Modifiche login2.html">
+      <created>1662064186043</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1662064186043</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Messo apposto DB e foto">
+      <created>1662409962665</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1662409962665</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Messo apposto DB e foto">
+      <created>1662410106357</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1662410106357</updated>
+    </task>
+    <task id="LOCAL-00090" summary="FCategoria.php">
+      <created>1662410497936</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1662410497936</updated>
+    </task>
+    <task id="LOCAL-00091" summary="FCategoria.php">
+      <created>1662411320061</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1662411320061</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Correzioni in FRecensione.php">
+      <created>1662411860931</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1662411860931</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Correzioni in FUtente.php">
+      <created>1662412544457</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1662412544457</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Eliminata home.tpl">
+      <created>1662413420064</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1662413420064</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Creato register.html">
+      <created>1662660847647</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1662660847648</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,13 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzione EAnnuncio.php" />
-    <MESSAGE value="Aggiunta admin in EUtente.php" />
-    <MESSAGE value="Aggiunta CUtente.php" />
-    <MESSAGE value="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php" />
-    <MESSAGE value="Aggiustamenti EFoto.php" />
-    <MESSAGE value="Aggiustamenti FFotoAnnuncio.php e FFotoUtente.php" />
-    <MESSAGE value="Aggiunta categoria a EAnnuncio.php" />
     <MESSAGE value="Modifiche FAnnuncio.php" />
     <MESSAGE value="Finito CFrontController.php, manca un ultimo pezzo da fare insieme" />
     <MESSAGE value="Download Smarty e creazione classe da richiamare" />
@@ -534,7 +535,14 @@
     <MESSAGE value="Aggiunti VAdmin.php e VAnnunci.php" />
     <MESSAGE value="Modifiche style.css" />
     <MESSAGE value="Creata login2.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creata login2.html" />
+    <MESSAGE value="Modifiche login2.html" />
+    <MESSAGE value="Messo apposto DB e foto" />
+    <MESSAGE value="FCategoria.php" />
+    <MESSAGE value="Correzioni in FRecensione.php" />
+    <MESSAGE value="Correzioni in FUtente.php" />
+    <MESSAGE value="Eliminata home.tpl" />
+    <MESSAGE value="Creato register.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creato register.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
