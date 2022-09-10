@@ -1,6 +1,6 @@
 <?php
 
-class FPersistantManager
+class FPersistentManager
 {
 
     /* Metodo che permette di salvare un oggetto sul db */

@@ -5,7 +5,7 @@ class CRicerca
     public static function blogHome(){
         $vSearch = new VRicerca();
 
-        $pm = USingleton::getInstance('FPersistantManager'); //da modificare gli input
+        $pm = USingleton::getInstance('FPersistentManager'); //da modificare gli input
 
         $annuncio = $pm::load($parametri = array(),$attr = array(),$ordinamento = '',$limite = '','FAnnuncio'); //da modificare
 
