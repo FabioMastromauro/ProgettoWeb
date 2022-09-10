@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta CAdmin.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiustamenti vari">
+      <change beforePath="$PROJECT_DIR$/Control/CAcquisto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAcquisto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FPersistentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,14 +143,7 @@
       <workItem from="1662408427739" duration="4126000" />
       <workItem from="1662412730009" duration="1298000" />
       <workItem from="1662658233563" duration="5837000" />
-      <workItem from="1662804947605" duration="8808000" />
-    </task>
-    <task id="LOCAL-00051" summary="Un po' di cose">
-      <created>1657304066179</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1657304066179</updated>
+      <workItem from="1662804947605" duration="11043000" />
     </task>
     <task id="LOCAL-00052" summary="Implementazione search e getRows">
       <created>1657308924545</created>
@@ -493,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662808298715</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Aggiustamenti vari">
+      <created>1662829585974</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1662829585975</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Download Smarty e creazione classe da richiamare" />
     <MESSAGE value="Modifiche StartSmarty.php" />
     <MESSAGE value="Aggiunta index.php" />
     <MESSAGE value="Aggiunta autoload.php" />
@@ -549,7 +543,8 @@
     <MESSAGE value="Creato register.html" />
     <MESSAGE value="Link login.html-&gt; register.html" />
     <MESSAGE value="Aggiunta CAdmin.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta CAdmin.php" />
+    <MESSAGE value="Aggiustamenti vari" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiustamenti vari" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
