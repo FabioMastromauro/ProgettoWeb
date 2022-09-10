@@ -75,7 +75,7 @@ class CAdmin
         $admin = unserialize($session->readValue('utente'));
         if ($admin != null && $admin->getAdmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
-            $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $id])); // inutile
+            // $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $id])); è inutile
             $date = $view->getDate();
             date_default_timezone_set('Europe/Rome');
             $timezone = date_default_timezone_get();
