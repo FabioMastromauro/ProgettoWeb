@@ -40,12 +40,13 @@ class CAdmin
             $date = $view->getDate();
             date_default_timezone_set('Europe/Rome');
             $timezone = date_default_timezone_get();
+            try {
             if (strtotime($date) > strtotime($timezone)) {
                 $pm::update('data_fine_bar', $date, 'id', $id, 'FUtente');
                 $pm::update('ban', 1, 'id', $id, 'FUtente');
                 header('Location: /localmp/Admin/profiloUtente/$id');
-            } else {
-
+            }} catch (Exception $e) {
+                echo ('Data antecedente a quella corrente: '. $e->getMessage());
                 header('Location: /localmp/Admin/profiloUtente/$id');
             }
         }
