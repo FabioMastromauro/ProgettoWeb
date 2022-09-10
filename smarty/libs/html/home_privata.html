@@ -13,16 +13,44 @@
 </head>
 <body>
 
-<div id="searchbar"></div>
+<nav id="privatenavbar" class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
+    <div class="container-fluid">
+        <img src="../images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
+        <a class="navbar-brand" href="#">LOCAL MARKETPLACE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="chi_siamo.html">Chi siamo?</a>
+                </li>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                    <button class="btn btn-dark" type="submit" >Search</button>
+                </form>
+            </ul>
+            <img src="../images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="index.html">Logout</a>
 
 
+            <!--<img src="../images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="login.html">Login/Registrati</a> -->
+
+        </div>
+    </div>
+</nav>
 
 <div class="container my-15 text-center">
     <h1 class="header_top">BENVENUTO SU LOCAL MARKETPLACE</h1>
     <p class="lead"> Il tuo mercato locale </p>
     <!--<button type="button" class="btn btn-dark">News</button> -->
     <button onclick="document.location='#annunci'" type="button" class="btn btn-dark">Annunci</button>
-    <!--<button type="button" class="btn btn-dark">Tendenze</button> -->
+    <button onclick="document.location='profilo_privato.html'" type="button" class="btn btn-dark">Profilo</button>
     <!--<button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
     </button>
@@ -205,7 +233,7 @@
                         <div class="col-md-3">
                             <div class="inror_box">
                                 <h3>ACCOUNT </h3>
-                                <p>Per registrarsi o loggarsi basta cliccare sulla voce <a href="#searchbar">Login/Registrati</a> in alto a destra. </p>
+                                <p>Per tornare all'area pubblica basta cliccare sulla voce <a href="#privatenavbar">Logout</a> in alto a destra. </p>
                             </div>
                         </div>
                         <div class="col-md-3">
