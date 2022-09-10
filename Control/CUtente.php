@@ -61,7 +61,7 @@ class CUtente
         $session = USingleton::getInstance("USession");
         $session->unsetSession();
         $session->destroySession();
-        setcookie("PHPSESSID", ""); // da capire perché
+        setcookie("PHPSESSID", "");
         header("Location: /localmp/login");
     }
 

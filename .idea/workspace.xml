@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creato register.html">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Link login.html-&gt; register.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FPersistantManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,21 +145,8 @@
       <workItem from="1662045909098" duration="10085000" />
       <workItem from="1662408427739" duration="4126000" />
       <workItem from="1662412730009" duration="1298000" />
-      <workItem from="1662658233563" duration="3963000" />
-    </task>
-    <task id="LOCAL-00047" summary="Correzione FDatabase.php">
-      <created>1657292698805</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1657292698805</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Creazione FFoto.php e correzione FDatabase.php">
-      <created>1657296270652</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1657296270652</updated>
+      <workItem from="1662658233563" duration="5837000" />
+      <workItem from="1662804947605" duration="2882000" />
     </task>
     <task id="LOCAL-00049" summary="Un po' di cose">
       <created>1657298749927</created>
@@ -486,7 +477,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662660847648</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Link login.html-&gt; register.html">
+      <created>1662665687192</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1662665687192</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Link login.html-&gt; register.html">
+      <created>1662665780991</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1662665780991</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Modifiche FAnnuncio.php" />
     <MESSAGE value="Finito CFrontController.php, manca un ultimo pezzo da fare insieme" />
     <MESSAGE value="Download Smarty e creazione classe da richiamare" />
     <MESSAGE value="Modifiche StartSmarty.php" />
@@ -542,7 +546,8 @@
     <MESSAGE value="Correzioni in FUtente.php" />
     <MESSAGE value="Eliminata home.tpl" />
     <MESSAGE value="Creato register.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creato register.html" />
+    <MESSAGE value="Link login.html-&gt; register.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Link login.html-&gt; register.html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
