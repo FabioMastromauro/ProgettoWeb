@@ -7,10 +7,12 @@ class EAnnuncio implements JsonSerializable
     private  $prezzo;
     private int $idFoto;
     private DateTime $data;
-    private  $idAnnuncio;
+    private $idAnnuncio;
     private int $idVenditore;
     private int $idCompratore;
     private string $categoria;
+    private bool $ban;
+    private DateTime $dataFineBan;
 
     /**
      * @param string $titolo
@@ -22,8 +24,11 @@ class EAnnuncio implements JsonSerializable
      * @param int $idVenditore
      * @param int $idCompratore
      * @param string $categoria
+     * @param bool $ban
+     * @param DateTime $dataFineBan
+
      */
-    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore, int $idCompratore, string $categoria)
+    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore, int $idCompratore, string $categoria, bool $ban, DateTime $dataFineBan)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -33,6 +38,8 @@ class EAnnuncio implements JsonSerializable
         $this->idVenditore = $idVenditore;
         $this->idCompratore = $idCompratore;
         $this->categoria = $categoria;
+        $this->ban = $ban;
+        $this->dataFineBan = $dataFineBan;
     }
 
     /**
@@ -194,6 +201,38 @@ class EAnnuncio implements JsonSerializable
     {
         $this->categoria = $categoria;
     }
+
+    /**
+     * @return bool
+     */
+    public function isBan(): bool
+    {
+        return $this->ban;
+    }
+
+    /**
+     * @param bool $ban
+     */
+    public function setBan(bool $ban): void
+    {
+        $this->ban = $ban;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDataFineBan(): DateTime
+    {
+        return $this->dataFineBan;
+    }
+
+    /**
+     * @param DateTime $dataFineBan
+     */
+    public function setDataFineBan(DateTime $dataFineBan): void
+    {
+        $this->dataFineBan = $dataFineBan;
+    }
     /**
     public function addFoto($id): void{
         array_push($this->arrayFoto);
@@ -221,7 +260,9 @@ class EAnnuncio implements JsonSerializable
                 'idAnnuncio'   => $this->getIdAnnuncio(),
                 'idVenditore'   => $this->getIdVenditore(),
                 'idCompratore'   => $this->getIdCompratore(),
-                'categoria'   => $this->getCategoria()
+                'categoria'   => $this->getCategoria(),
+                'ban'   => $this->isBan(),
+                'dataFineBan'   => $this->getDataFineBan()
             ];
 
     }

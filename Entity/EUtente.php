@@ -7,7 +7,7 @@ class EUtente implements JsonSerializable
     private  $idUser;
     private string $email;
     private string $password;
-    private $idImmagine;
+    private $idFoto;
     private DateTime $dataIscrizione;
     private DateTime $dataFineBan;
     private $ban;
@@ -31,7 +31,7 @@ class EUtente implements JsonSerializable
         $this->cognome = $cognome;
         $this->email = $email;
         $this->password = $password;
-        $this->idImmagine = $idImmagine;
+        $this->idFoto = $idImmagine;
         $this->dataIscrizione = $dataIscrizione;
         $this->dataFineBan = $dataFineBan;
         $this->ban = $ban;
@@ -121,17 +121,17 @@ class EUtente implements JsonSerializable
     /**
      * @return int
      */
-    public function getIdImmagine(): int
+    public function getIdFoto(): int
     {
-        return $this->idImmagine;
+        return $this->idFoto;
     }
 
     /**
-     * @param int $idImmagine
+     * @param int $idFoto
      */
-    public function setIdImmagine(int $idImmagine): void
+    public function setIdFoto(int $idFoto): void
     {
-        $this->idImmagine = $idImmagine;
+        $this->idFoto = $idFoto;
     }
 
     /**
@@ -168,7 +168,7 @@ class EUtente implements JsonSerializable
     /**
      * @return  mixed $ban
      */
-    public function getBan(): bool
+    public function isBan(): bool
     {
         return $this->ban;
     }
@@ -207,10 +207,10 @@ class EUtente implements JsonSerializable
                 'idUser'   => $this->getIdUser(),
                 'email'   => $this->getEmail(),
                 'password'   => $this->getPassword(),
-                'idImmagine'   => $this->getIdImmagine(),
+                'idImmagine'   => $this->getIdFoto(),
                 'dataIscrizione'   => $this->getDataIscrizione(),
                 'dataFineBan'   => $this->getDataFineBan(),
-                'ban'   => $this->getBan(),
+                'ban'   => $this->isBan(),
                 'admin' => $this->getAdmin()
             ];
     }

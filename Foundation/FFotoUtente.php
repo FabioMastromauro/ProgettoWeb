@@ -66,9 +66,9 @@ class FFotoUtente extends FDatabase
     public static function bind($stmt, EFotoUtente $fotoUtente, $nome_file){
         $path = $_FILES[$nome_file]['tmp_name'];
         $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
-        $stmt->bindValue(':id', NULL, PDO::PARAM_INT);
+        $stmt->bindValue(':idFoto', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nomeFoto', $fotoUtente->getNomeFoto(), PDO::PARAM_STR);
-        $stmt->bindValue(':altezza', $fotoUtente->getSize(), PDO::PARAM_STR);
+        $stmt->bindValue(':size', $fotoUtente->getSize(), PDO::PARAM_STR);
         $stmt->bindValue(':tipo', $fotoUtente->getTipo(), PDO::PARAM_STR);
         $stmt->bindValue(':data', fread($file, filesize($path)), PDO::PARAM_LOB);
         // $stmt->bindValue(':idUser', $fotoUtente->getIdUser(), PDO::PARAM_INT);

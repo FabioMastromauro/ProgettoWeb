@@ -18,8 +18,8 @@ class FPersistentManager
     }
 
     /* Metodo che permette di caricare il valore di un campo come parametro */
-    public static function load($parametri = array(),$attr = array(),$ordinamento = '',$limite = '', $Fclass) {
-        $ris = FUtente::loadByField($parametri = array(),$attr = array(),$ordinamento = '',$limite = '');
+    public static function load($Fclass, $parametri = array(),$attr = array(),$ordinamento = '',$limite = '') {
+        $ris = $Fclass::loadByField($parametri = array(),$attr = array(),$ordinamento = '',$limite = '');
         return $ris;
     }
 
