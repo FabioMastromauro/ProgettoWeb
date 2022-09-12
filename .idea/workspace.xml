@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiustamenti vari">
-      <change beforePath="$PROJECT_DIR$/Control/CAcquisto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAcquisto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FPersistentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,14 +144,8 @@
       <workItem from="1662408427739" duration="4126000" />
       <workItem from="1662412730009" duration="1298000" />
       <workItem from="1662658233563" duration="5837000" />
-      <workItem from="1662804947605" duration="11043000" />
-    </task>
-    <task id="LOCAL-00052" summary="Implementazione search e getRows">
-      <created>1657308924545</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1657308924545</updated>
+      <workItem from="1662804947605" duration="11449000" />
+      <workItem from="1662976852330" duration="2995000" />
     </task>
     <task id="LOCAL-00053" summary="FUtente.php bind">
       <created>1657309329943</created>
@@ -488,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662829585975</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Aggiustamenti vari">
+      <created>1662831821994</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1662831821995</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

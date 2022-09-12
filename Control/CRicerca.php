@@ -7,14 +7,14 @@ class CRicerca
 
         $pm = USingleton::getInstance('FPersistentManager'); //da modificare gli input
 
-        $annuncio = $pm::load($parametri = array(),$attr = array(),$ordinamento = '',$limite = '','FAnnuncio'); //da modificare
+        $annunci = $pm::load('FAnnuncio', $parametri = array(),$attr = array(), 'data', '3');
 
-        $num_post = $pm::getRows('FAnnuncio');
+        $numAnnunci = $pm::getRows('FAnnuncio');
 
-        for($i = 0; $i < $num_post; $i++){ // passo tre annuncio nel carosello
-            $annunci_home[$i] = $annuncio[$i];
-            $autore_annuncio[$i] = $pm::load('id',$annuncio[$i]->getAutore(),'FUtente');
-            $immagini[$i] = $pm::load('id',$annuncio[$i]->getId_immagine(),'FImmagine');
+        for($i = 0; $i < $numAnnunci; $i++) { // passo tre annunci nel carosello
+            $annunci_home[$i] = $annunci[$i];
+            $autore_annuncio[$i] = $pm::load('FUtente', 'id', $annunci[$i]->getIdVenditore());
+            $immagini[$i] = $pm::load('FFotoAnnuncio', 'id',$annunci[$i]->getIdFoto());
         }
 
         //Funzione che sceglie casualmente gli annunci da far vedere sulla home
@@ -24,22 +24,22 @@ class CRicerca
         for ($i = 0; $i < 5; $i++){
             while($check != 1){
                 $check=0; // aggiunto
-                $new_num = rand(0, $num_post - 1);
+                $new_num = rand(0, $numAnnunci - 1);
                 if (!in_array($new_num, $ran_num)){
-                    array_push($ran_num,$new_num); //  $ran_num[] = $new_num;
+                    $ran_num[] = $new_num;
                     $check = 1;
                 }
             }
 
-            $post_id = $pm::loadDefCol('FPost', array('id'));
-            $post_home[] = $pm::load(array('id'), array($post_id[$ran_num[$i]]['id']), 'FAnnuncio');          // $post_home[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));
-            $post_author[] = $pm::load(array('id'), array($post_home[$i]->getIdVenditore(), 'FUtente'));      //'FUtente', array(['id', '=', $post_home[$i]->getAutore()]));
-            $post_immagini[] = $pm::load(array('id'), array($post_home[$i]->getIdFoto()),'FFotoAnnuncio');   //'FImmagine', array(['id', '=', $post_home[$i]->getId_immagine()]));
-            $immagini_autori[] = $pm::load(array('id'), array($post_author[$i]->getIdFoto(), 'FFotoUtente'));         //('FImmagine', array(['id', '=', $post_author[$i]->getid_immagine()]));
+            $post_id = $pm::loadDefCol('FAnnuncio', array('id'));
+            $annnunciHome[] = $pm::load('FAnnuncio', array('id'), array($post_id[$ran_num[$i]]['id']));          // $annnunciHome[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));
+            $annunciVenditore[] = $pm::load('FUtente', array('id'), array($annnunciHome[$i]->getIdVenditore()));      //'FUtente', array(['id', '=', $annnunciHome[$i]->getAutore()]));
+            $annunciFoto[] = $pm::load('FFotoAnnuncio', array('id'), array($annnunciHome[$i]->getIdFoto()));   //'FImmagine', array(['id', '=', $annnunciHome[$i]->getId_immagine()]));
+            $venditoreFoto[] = $pm::load('FFotoUtente', array('id'), array($annunciVenditore[$i]->getIdFoto()));         //('FImmagine', array(['id', '=', $annunciVenditore[$i]->getid_immagine()]));
 
             $check = 0;
         }
 
-        $vSearch->showHome($annunci_home, $autore_annuncio, $immagini, $post_home, $post_author);//, $post_immagini);// $immagini_autori); //??
+        $vSearch->showHome($annunci_home, $autore_annuncio, $immagini, $annnunciHome, $annunciVenditore);//, $annunciFoto);// $venditoreFoto); //??
     }
 }
