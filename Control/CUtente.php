@@ -85,13 +85,13 @@ class CUtente
             $view->registrationError("email");
         }
         else {
-            $utente = new EUtente(VUtente::getNome, VUtente::getCognome, VUtente::getUsername, VUtente::getPassword, VUtente::getEmail, VUtente::getIdUser, 0);
+            $utente = new EUtente(VUtente::getNome(), VUtente::getCognome(), VUtente::getUsername(), VUtente::getPassword(), VUtente::getEmail(), VUtente::getIdUser(), 0);
             $pm::store($utente);
             header("Location: /localmp/Utente/login");
         }
     }
 
-    static function profile() {
+    static function profilo() {
         $view = new VUtente();
         $session = USingleton::getInstance("USession");
         $pm = USingleton::getInstance("FPersistantManager");
@@ -143,5 +143,70 @@ class CUtente
         return $ris;
     }
 
+    static function cancellaAnnuncio($id, $idFoto) {
+        $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        $utente = unserialize($session->readValue("utente"));
+        if ($utente != null) {
+            $annuncio = $pm::load("FAnnuncio", array('idAnnuncio'), array($id));
+            if ($annuncio->getIdVenditore() == $utente->getIdUser()){
+                $pm::delete('idAnnuncio', $id, "FAnnuncio");
+                $pm::delete('idAnnuncio', $id, "FRecensione");
+                $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
 
+                header("Location: /localmp/");
+            } else {
+                header("Location: /localmp/");
+            }
+        } else {
+            header("Location: /localmp/");
+        }
+    }
+
+    static function cancellaRecensione($id) {
+        $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        $utente = unserialize($session->readValue("utente"));
+        if ($utente != null) {
+            $recensione = $pm::load("FRecensione", array('id'), array($id));
+            if ($recensione != null && $recensione->getAutore() == $utente->getIdUser) {
+                $pm::delete('idRecensione', $id, "FRecensione");
+                header("Location: /localmp/Utente/{$utente->getIdUser()}");
+            }
+        }
+
+    }
+
+    static function confermaModifiche() {
+        $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        if(CUtente::isLogged()) {
+            $idFoto = self::upload();
+            $utente = unserialize($session->readValue('utente'));
+            $nomeUtente = VUtente::getNome();
+            $cognomeUtente = VUtente::getCognome();
+
+            $pm::update('nome', $nomeUtente, 'id', $utente->getIdUser(), "FUtente");
+            $pm::update('cognome', $cognomeUtente, 'id', $utente->getIdUser(), "FUtente");
+
+            $utente->setNome($nomeUtente);
+            $utente->setCognome($cognomeUtente);
+            $session->destroyValue('utente');
+
+            if ($idFoto != false) {
+                // if ((int) $utente->getIdFoto())
+                $pm::update('idFoto', $idFoto, 'idUser', $utente->getIdUser(), "FUtente");
+                $utente->setIdFoto($idFoto);
+                $session->setValue('utente', serialize($utente));
+
+                header("Location: /localmp/Utente/profilo");
+            } else {
+                $session->setValue('utente', serialize($utente));
+
+                header("Location: /localmp/Utente/profilo");
+            }
+        } else {
+            header("Location: /localmp/Utente/profilo");
+        }
+    }
 }

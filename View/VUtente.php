@@ -31,7 +31,7 @@ class VUtente
         $this->smarty->display('.smarty/libs/templates/index.tpl');
     }
 
-    public function loginErr($ban=0, $error='', $fine_ban=''){
+    public function loginError($ban=0, $error='', $fine_ban=''){
         $this->smarty->assign('ban', $ban);
         $this->smarty->assign('fine_ban', $fine_ban);
         $this->smarty->assign('error', $error);
