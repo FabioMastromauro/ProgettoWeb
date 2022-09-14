@@ -91,7 +91,11 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <button type="button" class="btn btn-primary btn-lg">Modifica</button>
+                                </p>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifica">
+                                    Modifica
+                                </button>
+                                <p>
                             </div>
                         </div>
                     </div>
@@ -177,7 +181,65 @@
     </footer>
 </main>
 
+<!-- modifica -->
+        <div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="modificaLabel" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modificaLabel">Modifica profilo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-mb-4">
+                                <label for="validationCustom01" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="validationCustom02" style="background-color: whitesmoke" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-mb-4">
+                                <label for="validationCustom01" class="form-label">Cognome</label>
+                                <input type="text" color class="form-control" id="validationCustom03" style="background-color: whitesmoke" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-mb-4">
+                                <label for="validationCustom01" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="validationCustom04" style="background-color: whitesmoke" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="col-mb-4">
+                                    <label for="validationCustom01" class="form-label">Instagram</label>
+                                    <input type="text" class="form-control" id="validationCustom05" style="background-color: whitesmoke" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-mb-2">
+                                    <label for="validationCustom01" class="form-label">Facebook</label>
+                                    <input type="text" class="form-control" id="validationCustom06" style="background-color: whitesmoke" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Applica modifiche</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+<!-- crea annuncio -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
