@@ -9,12 +9,12 @@ class CAnnuncio
 
         if ($id != null){
             $annunci = $pm::load('FAnnunci',array('id'),array($id),'id',1);
-            $array = self::homeAnnunci($ann); //da creare
-            $view->showAnnunci($ann, $array);
+            $array = self::homeAnnunci($annunci); //da creare
+            $view->showAnnunci($annunci, $array);
         } else {
             $annunci = $pm::load('FAnnunci',array('id'),array($id),'id',1);
-            $array = self::homeAnnunci($ricette);
-            $view->showAnnunci($ricette, $array);
+            $array = self::homeAnnunci($annunci);
+            $view->showAnnunci($annunci, $array);
         }
     }
 
@@ -33,8 +33,8 @@ class CAnnuncio
             else{
                 $annunci_home = $annunci;
                 $autori_annunci = $pm::load('FUtente', array('id'), array($annunci->getAutore()),'id',1);
-                $immagini_home = $pm::load('FImmagine',array('id'), array($annunci->getImmagine()),'id',1);
-                // $immagini_autore = $pm::load('FImmagine', array(['id', '=', $autori_ricette->getid_immagine()]));
+                $immagini_home = $pm::load('FFotoAnnuncio',array('id'), array($annunci->getIdFoto()),'id',1);
+                $immagini_autore = $pm::load('FFotoUtente', array('id'), array($annunci->getIdFoto()),'id',1);
             }
         }
         return array($annunci_home, $autori_annunci, $immagini_home, $immagini_autore);
