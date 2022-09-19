@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Annuncio privato</title>
+    <title>Annuncio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="../css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -11,37 +11,10 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
-    <div class="container-fluid">
-        <img src="../images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
-        <span class="navbar-brand">LOCAL MARKETPLACE</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home_privata.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="chi_siamo.html">Chi siamo?</a>
-                </li>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                    <button class="btn btn-dark" type="submit" >Search</button>
-                </form>
-            </ul>
-            <img src="../images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="index.html">Logout</a>
+<div id="searchbar"></div>
 
 
-            <!--<img src="../images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="login.html">Login/Registrati</a> -->
 
-        </div>
-    </div>
-</nav>
 <div class="container" >
     <section>
         <div class="container text-center" style="display: block;margin-left: 25%;">
@@ -61,17 +34,21 @@
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                         </div>
                                         <div class="carousel-inner">
+                                            {if is_array($foto_ann}
+                                            {for $i=0 to $n_img_ann}
+                                            <!-- replica il codice finchè per n argomenti array -->
+                                            {$i==0}
                                             <div class="carousel-item active">
-                                                <img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/23MY_Ninja_400_GY1_STU__1_.png" class="d-block w-100 same" alt="...">
+                                                <img src="data:{$typeA[0]};base64,{$pic64ann[0]}" class="d-block w-100 same" alt="...">
                                             </div>
-                                            <div class="carousel-item">
-                                                <img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/th_23MY_Ninja_400_GY1_STU__1_.jpg" class="d-block w-100 same" alt="..." style="">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/th_2020_Ninja_400_Performance_BK3_REAR.jpg" class="d-block w-100 same" alt="...">
+                                            {else}
+                                            <!-- fine codice -->
+                                            <div class="carousel-item active">
+                                                <img src="data:{$typeA[$i]};base64,{$pic64ann[$i]}" class="d-block w-100 same" alt="...">
                                             </div>
                                         </div>
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" >
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
                                         </button>
@@ -83,8 +60,8 @@
                                     <div class="card-body pb-0">
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                                <p><a href="#!" class="text-dark">Kawasaki 400 ninja</a></p>
-                                                <p class="small text-muted">Moto</p>
+                                                <p><a href="#!" class="text-dark">{$titolo}</a></p>
+                                                <p class="small text-muted">{$categoria}</p>
                                             </div>
                                             <div>
                                                 <div class="d-flex flex-row justify-content-end mt-1 mb-4 text-danger">
@@ -99,7 +76,7 @@
                                     <hr class="my-0" />
                                     <div class="card-body pb-0">
                                         <div class="d-flex justify-content-between">
-                                            <p><a href="#!" class="text-dark">6000€</a></p>
+                                            <p><a href="#!" class="text-dark">{$prezzo}</a></p>
                                         </div>
                                     </div>
                                     <hr class="my-0" >
@@ -107,14 +84,14 @@
                                         <div class="justify-content-between">
                                             <p><a href="#!" class="text-dark">Descrizione</a></p>
 
-                                            <p class="text-dark">5000km</p>
+                                            <p class="text-dark">{$descrizione}</p>
                                         </div>
                                     </div>
 
                                     <hr class="my-0" />
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
-                                            <button type="button" style="margin: auto; width: 50%" class="btn btn-primary">Modifica</button>
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#modifica" style="margin: auto; width: 50%" class="btn btn-primary">Modifica</button>
                                         </div>
                                     </div>
                                 </div>
@@ -123,12 +100,15 @@
 
                                 <!-- venditore -->
                                 <div class="card" style="width: 18rem;">
-                                    <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" class="rounded-circle mt-2" style="width: 45px;margin-left: 40%;">
                                     <div class="card-body">
-                                        <p class="card-text">Nome venditore</p>
+                                        <form class="form-inline" method="POST" action="/ProgettoWeb/smarty/libs/html/profilo_pubblico.html">
+                                            <input type="text" hidden name="email" value="?" />
+                                            <input type="image" src="data:{$type};base64,{$pic64}" style="border-radius: 50%;" width="90" height="90"/>
+                                        </form>
+                                        <p class="card-text">{$nome} {$cognome}</p>
                                         <p class="card-text">Contatti: </p>
-                                        <h6><img src="https://www.internetmatters.org/wp-content/uploads/2020/01/instagradientlogo-no-background.png" style="float: left;width: 25px;height: 25px;object-fit: cover; margin-right: 100%"> @nomeInstgram</h6>
-                                        <h6><img src="https://www.facebook.com/images/fb_icon_325x325.png" style="float: left;width:  25px;height: 25px;object-fit: cover; margin-right: 100%"> nome facebook</h6>
+                                        <h6><img src="https://www.internetmatters.org/wp-content/uploads/2020/01/instagradientlogo-no-background.png" style="float: left;width: 25px;height: 25px;object-fit: cover; margin-right: 100%"> {$instagram}</h6>
+                                        <h6><img src="https://www.facebook.com/images/fb_icon_325x325.png" style="float: left;width:  25px;height: 25px;object-fit: cover; margin-right: 100%">{$facebook}</h6>
 
                                     </div>
                                 </div>
@@ -141,6 +121,58 @@
 
     </section>
 </div>
+<!-- modal -->
+
+<div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="modificaLabel" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modificaLabel">Modifica profilo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-mb-4">
+                        <label for="validationCustom01" class="form-label">Titolo</label>
+                        <input type="text" class="form-control" id="validationCustom02" style="background-color: whitesmoke" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-mb-4">
+                        <label for="validationCustom02" class="form-label">Categoria</label>
+                        <input type="text" color class="form-control" id="validationCustom03" style="background-color: whitesmoke" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-mb-4">
+                        <label for="validationCustom03" class="form-label">Prezzo</label>
+                        <input type="text" class="form-control" id="validationCustom04" style="background-color: whitesmoke" value="" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="col-mb-4">
+                            <label for="validationCustom04" class="form-label">Descrizione</label>
+                            <input type="text" class="form-control" id="validationCustom05" style="background-color: whitesmoke" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Applica modifiche</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 
 <footer id="footer">
     <div class="footer">
@@ -156,7 +188,7 @@
                 <div class="col-md-3">
                     <div class="inror_box">
                         <h3>ACCOUNT </h3>
-                        <p>Per tornare all'area pubblica basta cliccare sulla voce <a href="#privatenavbar">Logout</a> in alto a destra. </p>
+                        <p>Per registrarsi o loggarsi basta cliccare sulla voce <a href="#searchbar">Login/Registrati</a> in alto a destra. </p>
                     </div>
                 </div>
                 <div class="col-md-3">
