@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#7FA7B8"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#33546D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nome" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        android:background="#F7EFED"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/comune"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Comune" />
+
+        <TextView
+            android:id="@+id/provincia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Provincia" />
+
+        <TextView
+            android:id="@+id/regione"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Regione" />
+
+        <TextView
+            android:id="@+id/longitudine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Longitudine" />
+
+        <TextView
+            android:id="@+id/latitudine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Latitudine" />
+
+        <TextView
+            android:id="@+id/anno_inserimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Anno di inserimento" />
+
+        <TextView
+            android:id="@+id/data_ora_inserimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="Data e ora di inserimento" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:textColor="#33546D"
+            android:textSize="16sp"
+            tools:text="ID" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
