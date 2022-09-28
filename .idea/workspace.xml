@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Completato CFrontController.php">
-      <change afterPath="$PROJECT_DIR$/localmp.sql" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto localmp.sql, finito CUtente.php">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FPersistentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,24 +58,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/civita/Scrivania/PhpProg/ProgettoWeb",
-    "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/civita/Scrivania/PhpProg/ProgettoWeb&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -153,14 +153,9 @@
       <workItem from="1662658233563" duration="5837000" />
       <workItem from="1662804947605" duration="11449000" />
       <workItem from="1662976852330" duration="3010000" />
-      <workItem from="1663163632357" duration="6160000" />
-    </task>
-    <task id="LOCAL-00055" summary="Creati CUtente.php e CFrontController.php">
-      <created>1657390345543</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1657390345544</updated>
+      <workItem from="1663163632357" duration="6377000" />
+      <workItem from="1664383632005" duration="1095000" />
+      <workItem from="1664384793066" duration="3250000" />
     </task>
     <task id="LOCAL-00056" summary="Correzione EAnnuncio.php">
       <created>1657446951904</created>
@@ -498,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663165508301</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Aggiunto localmp.sql, finito CUtente.php">
+      <created>1663169976762</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1663169976762</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +531,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta index.php" />
     <MESSAGE value="Aggiunta autoload.php" />
     <MESSAGE value="Aggiunto .htaccess" />
     <MESSAGE value="Aggiunta login.html" />
@@ -554,7 +555,8 @@
     <MESSAGE value="Aggiunta CAdmin.php" />
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="Completato CFrontController.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completato CFrontController.php" />
+    <MESSAGE value="Aggiunto localmp.sql, finito CUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto localmp.sql, finito CUtente.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

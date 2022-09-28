@@ -60,7 +60,7 @@ class FPersistentManager
         return $ris;
     }
 
-    /* Metooo */
+    /* Metodo che restituisce il numero di righe in cui è contenuta la ricerca */
     public static function getRows($class, $parametri = array(), string $ordinamento, string $limite) {
         $ris = $class::getRows($parametri, $ordinamento, $limite);
         return $ris;
