@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +153,7 @@
       <workItem from="1663163632357" duration="6377000" />
       <workItem from="1664383632005" duration="1095000" />
       <workItem from="1664384793066" duration="3273000" />
-      <workItem from="1664443080484" duration="17133000" />
-    </task>
-    <task id="LOCAL-00062" summary="Aggiunta CUtente.php">
-      <created>1657461139202</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1657461139203</updated>
+      <workItem from="1664443080484" duration="18206000" />
     </task>
     <task id="LOCAL-00063" summary="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php">
       <created>1657548667929</created>
@@ -503,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664468300366</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
+      <created>1664469104308</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1664469104308</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -59,6 +59,9 @@ class CAnnunci
         if ($numRicette % $ricettePagina != 0) {
             $numPagine = floor($numRicette / $ricettePagina + 1);
         }
+        else {
+            $numPagine = $numRicette / $ricettePagina;
+        }
     }
 
     static function homeAnnunci($annunci){
