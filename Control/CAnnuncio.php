@@ -18,6 +18,48 @@ class CAnnuncio
         }
     }
 
+    static function esploraAnnunci($cerca = null, $index = null) {
+
+        $ricettePagina = 12;
+
+     /* if ($cerca == null && isset($_COOKIE['searchOn'])) {
+            if ($_COOKIE['searchOn'] == 1) self::searchOff();
+        }
+
+        if ($index == null) {
+            $newIndex = 1;
+        }
+        else {
+            $newIndex = $index;
+        }           bisogna capire a che serve */
+
+        $pm = USingleton::getInstance('FPersistentManager');
+        if (isset($_COOKIE['annuncioRicerca'])) {
+            $data = unserialize($_COOKIE['annuncioRicerca']);
+        }
+
+        if (!isset($_COOKIE['annuncioRicerca']) || !is_array($data)) {
+            $numRicette = $pm::getRows('FAnnuncio');
+        }
+        elseif($data[0] == 'noCategoria' || $data[0] == 'noRicerca') {
+            $numRicette = $pm::getRows('FAnnuncio');
+        }
+        else {
+            if (isset($data['nomeAnnuncio']) || isset($data['id'])) {
+                $numRicette = 1;
+            }
+            elseif (is_array($data[0])) {
+                $numRicette = sizeof($data);
+            }
+        }
+
+        $foto = array();
+        $categorie = $pm::load('FCategoria');
+
+        if ($numRicette % $ricettePagina != 0) {
+            $numPagine = floor($numRicette / $ricettePagina + 1);
+        }
+    }
 
     static function homeAnnunci($annunci){
         $pm = USingleton::getInstance('FPersistantManager');
@@ -38,5 +80,78 @@ class CAnnuncio
             }
         }
         return array($annunci_home, $autori_annunci, $immagini_home, $immagini_autore);
+    }
+
+    static function creaAnnuncio() {
+        $view = new VAnnunci();
+        $view->showCreaAnnuncio();
+    }
+
+    static function pubblicaAnnuncio() {
+        $pm=USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        if (CUtente::isLogged()) {
+            $idFoto = self::upload();
+            if ($idFoto != false) {
+                $utente = unserialize($session->readValue('utente'));
+                $idVenditore = $utente->getIdUser();
+                $titolo = VAnnunci::getTitoloAnnuncio();
+                $descrizione = VAnnunci::getDescrizioneAnnuncio();
+                $prezzo = VAnnunci::getPrezzoAnnuncio();
+                $data = date('d-m-Y');
+                $categoria = VAnnunci::getCategoriaAnnuncio();
+
+                $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo, $data, $idVenditore, $categoria);
+                $pm::store($annuncio);
+                header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
+            }
+        }
+        else {
+            header('Location: /localmp/Utente/login');
+        }
+    }
+
+    static function upload() {
+        $pm = USingleton::getInstance('FPersistentManager');
+        $result = false;
+        $maxSize = 600000;
+        $result = is_uploaded_file($_FILES['file']['tmpName']);
+        if (!$result) {
+            return false;
+        }
+        else {
+            $size = $_FILES['file']['size'];
+            if ($size > $maxSize) {
+                return false;
+            }
+            $type = $_FILES['file']['type'];
+            $nome = $_FILES['file']['name'];
+            $foto = file_get_contents($_FILES['file']['tmpName']);
+            $foto = addslashes($foto);
+            $fotoCaricata = new EFotoAnnuncio($id=0, $nome, $size, $type, $foto);
+            $pm::storeMedia($fotoCaricata, 'file');
+            return $fotoCaricata->getIdFoto();
+        }
+
+    }
+
+    static function cancellaAnnuncio($id, $idFoto) {
+        $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        $utente = unserialize($session->readValue("utente"));
+        if ($utente != null) {
+            $annuncio = $pm::load("FAnnuncio", array('idAnnuncio'), array($id));
+            if ($annuncio->getIdVenditore() == $utente->getIdUser()){
+                $pm::delete('idAnnuncio', $id, "FAnnuncio");
+                $pm::delete('idAnnuncio', $id, "FRecensione");
+                $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
+
+                header("Location: /localmp/");
+            } else {
+                header("Location: /localmp/");
+            }
+        } else {
+            header("Location: /localmp/");
+        }
     }
 }

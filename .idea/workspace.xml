@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta FFotoAnnuncio.php di metodi mancanti">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Tolto getIdUser() a CUtente.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnuncio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,21 +156,7 @@
       <workItem from="1663163632357" duration="6377000" />
       <workItem from="1664383632005" duration="1095000" />
       <workItem from="1664384793066" duration="3273000" />
-      <workItem from="1664443080484" duration="6477000" />
-    </task>
-    <task id="LOCAL-00058" summary="Aggiunta admin in EUtente.php">
-      <created>1657448637099</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1657448637099</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Aggiunta admin in EUtente.php">
-      <created>1657449293889</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1657449293889</updated>
+      <workItem from="1664443080484" duration="15395000" />
     </task>
     <task id="LOCAL-00060" summary="Aggiunta admin in EUtente.php">
       <created>1657449927737</created>
@@ -502,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664445107072</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Aggiunta FFotoAnnuncio.php di metodi mancanti">
+      <created>1664449613195</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1664449613195</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Tolto getIdUser() a CUtente.php">
+      <created>1664449777769</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1664449777769</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +532,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunto .htaccess" />
     <MESSAGE value="Aggiunta login.html" />
     <MESSAGE value="modifiche login.html" />
     <MESSAGE value="Work email -&gt; email" />
@@ -558,7 +556,8 @@
     <MESSAGE value="Completato CFrontController.php" />
     <MESSAGE value="Aggiunto localmp.sql, finito CUtente.php" />
     <MESSAGE value="Aggiunta FFotoAnnuncio.php di metodi mancanti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta FFotoAnnuncio.php di metodi mancanti" />
+    <MESSAGE value="Tolto getIdUser() a CUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tolto getIdUser() a CUtente.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

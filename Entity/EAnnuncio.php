@@ -24,11 +24,8 @@ class EAnnuncio implements JsonSerializable
      * @param int $idVenditore
      * @param int $idCompratore
      * @param string $categoria
-     * @param bool $ban
-     * @param DateTime $dataFineBan
-
      */
-    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore, int $idCompratore, string $categoria, bool $ban, DateTime $dataFineBan)
+    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore,/* int $idCompratore,*/ string $categoria)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -36,10 +33,8 @@ class EAnnuncio implements JsonSerializable
         $this->idFoto = $idFoto;
         $this->data = $data;
         $this->idVenditore = $idVenditore;
-        $this->idCompratore = $idCompratore;
+        // $this->idCompratore = $idCompratore;
         $this->categoria = $categoria;
-        $this->ban = $ban;
-        $this->dataFineBan = $dataFineBan;
     }
 
     /**
@@ -203,37 +198,6 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return bool
-     */
-    public function isBan(): bool
-    {
-        return $this->ban;
-    }
-
-    /**
-     * @param bool $ban
-     */
-    public function setBan(bool $ban): void
-    {
-        $this->ban = $ban;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getDataFineBan(): DateTime
-    {
-        return $this->dataFineBan;
-    }
-
-    /**
-     * @param DateTime $dataFineBan
-     */
-    public function setDataFineBan(DateTime $dataFineBan): void
-    {
-        $this->dataFineBan = $dataFineBan;
-    }
-    /**
     public function addFoto($id): void{
         array_push($this->arrayFoto);
     }
@@ -260,9 +224,7 @@ class EAnnuncio implements JsonSerializable
                 'idAnnuncio'   => $this->getIdAnnuncio(),
                 'idVenditore'   => $this->getIdVenditore(),
                 'idCompratore'   => $this->getIdCompratore(),
-                'categoria'   => $this->getCategoria(),
-                'ban'   => $this->isBan(),
-                'dataFineBan'   => $this->getDataFineBan()
+                'categoria'   => $this->getCategoria()
             ];
 
     }

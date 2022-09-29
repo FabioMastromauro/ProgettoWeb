@@ -143,26 +143,6 @@ class CUtente
         return $ris;
     }
 
-    static function cancellaAnnuncio($id, $idFoto) {
-        $pm = USingleton::getInstance("FPersistentManager");
-        $session = USingleton::getInstance("USession");
-        $utente = unserialize($session->readValue("utente"));
-        if ($utente != null) {
-            $annuncio = $pm::load("FAnnuncio", array('idAnnuncio'), array($id));
-            if ($annuncio->getIdVenditore() == $utente->getIdUser()){
-                $pm::delete('idAnnuncio', $id, "FAnnuncio");
-                $pm::delete('idAnnuncio', $id, "FRecensione");
-                $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
-
-                header("Location: /localmp/");
-            } else {
-                header("Location: /localmp/");
-            }
-        } else {
-            header("Location: /localmp/");
-        }
-    }
-
     static function cancellaRecensione($id) {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
@@ -173,6 +153,12 @@ class CUtente
                 $pm::delete('idRecensione', $id, "FRecensione");
                 header("Location: /localmp/Utente/{$utente->getIdUser()}");
             }
+            else {
+                header("Location: /localmp/Utente/profilo");
+            }
+        }
+        else {
+            header("Location: /localmp/Utente/profilo");
         }
 
     }
