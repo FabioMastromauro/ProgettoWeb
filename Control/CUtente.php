@@ -137,8 +137,8 @@ class CUtente
         $foto = file_get_contents($_FILES["file"]["tmp_name"]);
         $foto = addslashes($foto);
         $utente = unserialize($session->readValue("utente"));
-        $newFoto = new EFotoUtente($idFoto = 0, $nomeFoto, $size, $tipo, $foto, $utente->getIdUser);
-        $pm::storeMedia($newFoto, "file");
+        $FotoCaricata = new EFotoUtente($idFoto = 0, $nomeFoto, $size, $tipo, $foto);
+        $pm::storeMedia($FotoCaricata, "file");
         $ris = true;
         return $ris;
     }

@@ -101,7 +101,7 @@ class CAnnuncio
                 $data = date('d-m-Y');
                 $categoria = VAnnunci::getCategoriaAnnuncio();
 
-                $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo, $data, $idVenditore, $categoria);
+                $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo,$idFoto, $data, $idVenditore, $categoria);
                 $pm::store($annuncio);
                 header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
             }
@@ -128,9 +128,9 @@ class CAnnuncio
             $nome = $_FILES['file']['name'];
             $foto = file_get_contents($_FILES['file']['tmpName']);
             $foto = addslashes($foto);
-            $fotoCaricata = new EFotoAnnuncio($id=0, $nome, $size, $type, $foto);
+            $fotoCaricata = new EFotoAnnuncio($idFoto=0, $nome, $size, $type, $foto);
             $pm::storeMedia($fotoCaricata, 'file');
-            return $fotoCaricata->getIdFoto();
+            return true;
         }
 
     }
