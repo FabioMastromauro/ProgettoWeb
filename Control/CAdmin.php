@@ -80,7 +80,7 @@ class CAdmin
             $timezone = date_default_timezone_get();
             try {
                 if (strtotime($date) > strtotime($timezone)) {
-                    $pm::update('dataFineBan', $date, 'idAnnuncio', $id, 'FAnnuncio');
+                    // $pm::update('dataFineBan', $date, 'idAnnuncio', $id, 'FAnnuncio');
                     $pm::update('ban', 1, 'idAnnuncio', $id, 'FAnnuncio');
                     header('Location: /localmp/Admin/annunci');
                 }
@@ -100,7 +100,7 @@ class CAdmin
         if ($admin != null && $admin->getAdmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
             $pm::update('ban', 0, 'idAnnuncio', $id, 'FAnnuncio');
-            $pm::update('dataFineBan', null, 'idAnnuncio', $id, 'FAnnuncio');
+            // $pm::update('dataFineBan', null, 'idAnnuncio', $id, 'FAnnuncio');
             header('Location: /localmp/Admin/annunci');
         } else {
             header('Location: /localmp/');

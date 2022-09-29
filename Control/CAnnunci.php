@@ -1,6 +1,6 @@
 <?php
 
-class CAnnuncio
+class CAnnunci
 {
 
     static function esplora($id=null){
@@ -101,7 +101,7 @@ class CAnnuncio
                 $data = date('d-m-Y');
                 $categoria = VAnnunci::getCategoriaAnnuncio();
 
-                $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo,$idFoto, $data, $idVenditore, $categoria);
+                $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo,$idFoto, $data, $idVenditore, $categoria, $ban = 0);
                 $pm::store($annuncio);
                 header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
             }

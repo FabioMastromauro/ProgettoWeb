@@ -12,7 +12,6 @@ class EAnnuncio implements JsonSerializable
     private int $idCompratore;
     private string $categoria;
     private bool $ban;
-    private DateTime $dataFineBan;
 
     /**
      * @param string $titolo
@@ -25,7 +24,7 @@ class EAnnuncio implements JsonSerializable
      * @param int $idCompratore
      * @param string $categoria
      */
-    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore,/* int $idCompratore,*/ string $categoria)
+    public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore,/* int $idCompratore,*/ string $categoria, bool $ban)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -35,6 +34,7 @@ class EAnnuncio implements JsonSerializable
         $this->idVenditore = $idVenditore;
         // $this->idCompratore = $idCompratore;
         $this->categoria = $categoria;
+        $this->ban = $ban;
     }
 
     /**
@@ -196,6 +196,24 @@ class EAnnuncio implements JsonSerializable
     {
         $this->categoria = $categoria;
     }
+
+    /**
+     * @return bool
+     */
+    public function isBan(): bool
+    {
+        return $this->ban;
+    }
+
+    /**
+     * @param bool $ban
+     */
+    public function setBan(bool $ban): void
+    {
+        $this->ban = $ban;
+    }
+
+
 
     /**
     public function addFoto($id): void{

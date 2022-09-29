@@ -44,7 +44,6 @@ public function __construct(){}
         $stmt->bindValue(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
         $stmt->bindValue(':categoria', $annuncio->getCategoria(), PDO::PARAM_STR);
         $stmt->bindValue(':ban', $annuncio->isBan(), PDO::PARAM_BOOL);
-        $stmt->bindValue(':dataFineBan', $annuncio->getDataFineBan()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
     }
     /** Metodo che salva una recensione nel DB */
     public static function store($object){
