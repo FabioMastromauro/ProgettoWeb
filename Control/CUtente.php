@@ -169,7 +169,7 @@ class CUtente
         $utente = unserialize($session->readValue("utente"));
         if ($utente != null) {
             $recensione = $pm::load("FRecensione", array('id'), array($id));
-            if ($recensione != null && $recensione->getAutore() == $utente->getIdUser) {
+            if ($recensione != null && $recensione->getAutore() == $utente->getIdUser()) {
                 $pm::delete('idRecensione', $id, "FRecensione");
                 header("Location: /localmp/Utente/{$utente->getIdUser()}");
             }

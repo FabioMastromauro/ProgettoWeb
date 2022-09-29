@@ -22,8 +22,8 @@ class CAdmin
         $session = USingleton::getInstance('USession');
         $admin = unserialize($session->readValue('utente'));
         if ($admin != null && $admin->getAdmin() == 1) {
-            $utente = $pm::load('FUtente', array('idUser'));
-            $immagine = $pm::load('FFotoUtente', array('idFoto'),array($utente->getIdFoto()));
+            $utente = $pm::load('FUtente', array('idUser'), array($id));
+            $immagine = $pm::load('FFotoUtente', array('idFoto'), array($utente->getIdFoto()));
             $view->profiloUtente($utente, $immagine);
         } else {
             header('Location: /localmp/');

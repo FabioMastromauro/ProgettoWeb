@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto localmp.sql, finito CUtente.php">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta FFotoAnnuncio.php di metodi mancanti">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,14 +157,7 @@
       <workItem from="1663163632357" duration="6377000" />
       <workItem from="1664383632005" duration="1095000" />
       <workItem from="1664384793066" duration="3273000" />
-      <workItem from="1664443080484" duration="1932000" />
-    </task>
-    <task id="LOCAL-00057" summary="Correzione EAnnuncio.php">
-      <created>1657447032664</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1657447032664</updated>
+      <workItem from="1664443080484" duration="6477000" />
     </task>
     <task id="LOCAL-00058" summary="Aggiunta admin in EUtente.php">
       <created>1657448637099</created>
@@ -501,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664394537195</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Aggiunta FFotoAnnuncio.php di metodi mancanti">
+      <created>1664445107071</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1664445107072</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta autoload.php" />
     <MESSAGE value="Aggiunto .htaccess" />
     <MESSAGE value="Aggiunta login.html" />
     <MESSAGE value="modifiche login.html" />
@@ -557,7 +557,8 @@
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="Completato CFrontController.php" />
     <MESSAGE value="Aggiunto localmp.sql, finito CUtente.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto localmp.sql, finito CUtente.php" />
+    <MESSAGE value="Aggiunta FFotoAnnuncio.php di metodi mancanti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta FFotoAnnuncio.php di metodi mancanti" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
