@@ -85,7 +85,7 @@ class CUtente
             $view->registrationError("email");
         }
         else {
-            $utente = new EUtente(VUtente::getNome(), VUtente::getCognome(), VUtente::getUsername(), VUtente::getPassword(), VUtente::getEmail(), VUtente::getIdUser(), 0);
+            $utente = new EUtente(VUtente::getNome(), VUtente::getCognome(), VUtente::getUsername(), VUtente::getPassword(), VUtente::getEmail(), 0);
             $pm::store($utente);
             header("Location: /localmp/Utente/login");
         }
