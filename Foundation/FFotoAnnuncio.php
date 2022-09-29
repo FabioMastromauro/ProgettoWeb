@@ -89,4 +89,16 @@ class FFotoAnnuncio extends FDatabase{
         }
         return $foto;
     }
+
+    public static function search($parametri = array(), string $ordinamento, string $limite) {
+        $db = parent::getInstance();
+        $result = $db->searchDB(self::getClass(), $parametri, $ordinamento, $limite);
+        return $result;
+    }
+
+    public static function getRows($parametri=array(), string $ordinamento, string $limite) {
+        $db = parent::getInstance();
+        $result = $db->getRowNum(self::getClass(), $parametri, $ordinamento, $limite);
+        return $result;
+    }
 }
