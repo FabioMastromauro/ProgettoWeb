@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,14 +153,8 @@
       <workItem from="1663163632357" duration="6377000" />
       <workItem from="1664383632005" duration="1095000" />
       <workItem from="1664384793066" duration="3273000" />
-      <workItem from="1664443080484" duration="18206000" />
-    </task>
-    <task id="LOCAL-00063" summary="Correzione data -&gt;datetime nel costruttore di EAnnuncio.php">
-      <created>1657548667929</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1657548667929</updated>
+      <workItem from="1664443080484" duration="18230000" />
+      <workItem from="1664898788707" duration="4481000" />
     </task>
     <task id="LOCAL-00064" summary="Aggiustamenti EFoto.php">
       <created>1657553371048</created>
@@ -498,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664469104308</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
+      <created>1664470175203</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1664470175203</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

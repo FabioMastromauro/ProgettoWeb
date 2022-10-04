@@ -64,25 +64,39 @@ class CAnnunci
         }
     }
 
+    static function infoAnnuncio(int $id) {
+        $view = new VAnnunci();
+        $pm = USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        $mod = unserialize($session->readValue('utente'));
+        $session->setValue('idRicetta', $id);
+        $annuncio = $pm::load('FAnnuncio', array('idAnnuncio'), array($id));
+        $autore = $pm::load('FUtente', array('idUser'), array($annuncio->getIdVenditore()));
+        $foto = $pm::load('FFotoAnnuncio', array('idFoto'), array($annuncio->getIdFoto()));
+        $fotoUtente = $pm::load('FFotoUtente', array('idFoto'), array($autore->getIdFoto()));
+
+        $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente);
+    }
+
     static function homeAnnunci($annunci){
         $pm = USingleton::getInstance('FPersistantManager');
         if($annunci!=null){
             if(is_array($annunci)){
                 for ($i = 0; $i < count($annunci); $i++){
-                    $annunci_home[$i] = $annunci[$i];
-                    $autori_annunci[$i] = $pm::load('FUtente', array('id'), array($annunci[$i]->getAutore()),'id',1);
-                    $immagini_home[$i] = $pm::load('FImmagine',array('id'), array($annunci[$i]->getImmagine()),'id',1);
-                   // $immagini_autore[$i] = $pm::load('FImmagine', array(['id', '=', $autori_ricette[$i]->getid_immagine()]));
+                    $annunciHome[$i] = $annunci[$i];
+                    $autoriAnnunci[$i] = $pm::load('FUtente', array('id'), array($annunci[$i]->getAutore()));
+                    $fotoHome[$i] = $pm::load('FFotoAnnuncio', array('id'), array($annunci[$i]->getImmagine()));
+                    $fotoAutore[$i] = $pm::load('FFotoUtente', array('id'), array($autoriAnnunci[$i]->getIdFoto()));
                 }
             }
             else{
-                $annunci_home = $annunci;
-                $autori_annunci = $pm::load('FUtente', array('id'), array($annunci->getAutore()),'id',1);
-                $immagini_home = $pm::load('FFotoAnnuncio',array('id'), array($annunci->getIdFoto()),'id',1);
-                $immagini_autore = $pm::load('FFotoUtente', array('id'), array($annunci->getIdFoto()),'id',1);
+                $annunciHome = $annunci;
+                $autoriAnnunci = $pm::load('FUtente', array('id'), array($annunci->getAutore()),'id',1);
+                $fotoHome = $pm::load('FFotoAnnuncio',array('id'), array($annunci->getIdFoto()),'id',1);
+                $fotoAutore = $pm::load('FFotoUtente', array('id'), array($annunci->getIdFoto()),'id',1);
             }
         }
-        return array($annunci_home, $autori_annunci, $immagini_home, $immagini_autore);
+        return array($annunciHome, $autoriAnnunci, $fotoHome, $fotoAutore);
     }
 
     static function creaAnnuncio() {
