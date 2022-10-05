@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Set 05, 2022 alle 23:13
+-- Creato il: Ott 05, 2022 alle 15:55
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.0.15
 
@@ -36,7 +36,8 @@ CREATE TABLE `annuncio` (
   `idCompratore` int(11) NOT NULL,
   `idFoto` int(11) NOT NULL,
   `idVenditore` int(11) NOT NULL,
-  `categoria` int(11) NOT NULL
+  `categoria` int(11) NOT NULL,
+  `ban` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -90,7 +91,7 @@ CREATE TABLE `recensione` (
   `data` date NOT NULL,
   `idProdotto` int(11) NOT NULL,
   `idRecensione` int(11) NOT NULL,
-  `idUser` int(11) NOT NULL
+  `autore` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -149,7 +150,7 @@ ALTER TABLE `fotoUtente`
 --
 ALTER TABLE `recensione`
   ADD PRIMARY KEY (`idRecensione`),
-  ADD KEY `utente_fk1` (`idUser`),
+  ADD KEY `utente_fk1` (`autore`),
   ADD KEY `annuncio_fk2` (`idProdotto`);
 
 --
@@ -216,7 +217,7 @@ ALTER TABLE `annuncio`
 --
 ALTER TABLE `recensione`
   ADD CONSTRAINT `annuncio_fk2` FOREIGN KEY (`idProdotto`) REFERENCES `annuncio` (`idAnnuncio`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `utente_fk1` FOREIGN KEY (`idUser`) REFERENCES `utente` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `utente_fk1` FOREIGN KEY (`autore`) REFERENCES `utente` (`idUser`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
