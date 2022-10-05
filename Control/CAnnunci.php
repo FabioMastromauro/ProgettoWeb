@@ -78,11 +78,11 @@ class CAnnunci
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente);
     }
 
-    static function homeAnnunci($annunci){
-        $pm = USingleton::getInstance('FPersistantManager');
-        if($annunci!=null){
-            if(is_array($annunci)){
-                for ($i = 0; $i < count($annunci); $i++){
+    static function homeAnnunci($annunci) {
+        $pm = USingleton::getInstance('FPersistentManager');
+        if($annunci!=null) {
+            if(is_array($annunci)) {
+                for ($i = 0; $i < count($annunci); $i++) {
                     $annunciHome[$i] = $annunci[$i];
                     $autoriAnnunci[$i] = $pm::load('FUtente', array('id'), array($annunci[$i]->getAutore()));
                     $fotoHome[$i] = $pm::load('FFotoAnnuncio', array('id'), array($annunci[$i]->getImmagine()));

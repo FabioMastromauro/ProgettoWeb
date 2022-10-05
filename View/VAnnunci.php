@@ -31,30 +31,31 @@ class VAnnunci
 
     // static function get
 
-    function showAnnunci($annunci, $array = null)
-    {
+    function showAnnunci($annunci, $array = null) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         if (is_array($annunci)) {
             $numero = rand(0, count($annunci) - 1);
+            $this->smarty->assign('ran_num', $numero);
         }
         $this->smarty->assign('annunci', $annunci);
         $this->smarty->assign('array', $array);
 
-        $this->smarty->display('annuncio.tpl');
+        $this->smarty->display('annunci.tpl');
     }
-    public function modificaAnnuncio($annuncio, $immagine, $descrizione, $categorie){
+    public function modificaAnnuncio($annuncio, $immagine, $descrizione, $categorie) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('annuncio', $annuncio);
         $this->smarty->assign('immagine', $immagine);
         $this->smarty->assign('descrizione', $descrizione);
         $this->smarty->assign('categorie', $categorie);
+
         $this->smarty->display('annuncio_privato.tpl'); //da aggiungere
     }
 
 
-    function showInfo(EAnnuncio $annuncio, $user,$mod, $immagine, $array, $immagine_autore, $valutato){
+    function showInfo(EAnnuncio $annuncio, $user,$mod, $immagine, $immagine_autore) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $descrizione = explode('.', $annuncio->getDescrizione());
@@ -64,10 +65,8 @@ class VAnnunci
         $this->smarty->assign('annuncio', $annuncio);
         $this->smarty->assign('immagine', $immagine);
         $this->smarty->assign('descrizione', $descrizione);
-        $this->smarty->assign('array', $array);
         $this->smarty->assign('immagine_autore', $immagine_autore);
-        $this->smarty->assign('valutato', $valutato);
 
-       // $this->smarty->display('ricetta_info.tpl'); bisogna creare il template
+        $this->smarty->display('annuncio_info.tpl'); // bisogna creare il template
     }
 }
