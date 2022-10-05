@@ -75,9 +75,11 @@
                             <hr>
 
                             </p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifica">
+                            <a href="mod-profilo.tpl">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" >
                                 Modifica
                             </button>
+                                </a>
                             <p>
                         </div>
                     </div>
