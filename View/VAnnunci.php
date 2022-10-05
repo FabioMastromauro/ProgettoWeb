@@ -57,12 +57,13 @@ class VAnnunci
     function showInfo(EAnnuncio $annuncio, $user,$mod, $immagine, $array, $immagine_autore, $valutato){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
-        $procedimento = explode('.', $ricetta->getProcedimento());
+        $Descrizione = explode('.', $annuncio->getDescrizione());
 
         $this->smarty->assign('mod', $mod);
         $this->smarty->assign('utente', $user);
         $this->smarty->assign('annuncio', $ricetta);
         $this->smarty->assign('immagine', $immagine);
+        $this->smarty->assign('descrizione', $descrizione);
         $this->smarty->assign('array', $array);
         $this->smarty->assign('immagine_autore', $immagine_autore);
         $this->smarty->assign('valutato', $valutato);
