@@ -1,5 +1,7 @@
 <?php
 
+require_once 'C:\xampp\htdocs\ProgettoWeb\StartSmarty.php';
+
 class VUtente
 {
     private $smarty;
@@ -48,17 +50,21 @@ class VUtente
         $this->smarty->display('.smarty/libs/templates/login.tpl');
     }
 
-    public function profilo($annunci, $utente, $immagini, $immagine_utente, $immagini_autori, $idutente){
+    public function profilo($annunci, $nome,$cognome,$email, $immagini, $immagine_utente, $immagini_autori, $idutente,$instagram,$facebook){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
-        $this->smarty->assign('utente', $utente);
-        $this->smarty->assign('ricette', $annunci);
+        $this->smarty->assign('nome', $nome);
+        $this->smarty->assign('cognome', $cognome);
+        $this->smarty->assign('email', $email);
+        $this->smarty->assign('annuncio', $annunci);
         $this->smarty->assign('immagini', $immagini);
         $this->smarty->assign('immagine_utente', $immagine_utente);
         $this->smarty->assign('immagini_autori', $immagini_autori);
+        $this->smarty->assign('facebook', $facebook);
+        $this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);
 
-        $this->smarty->display('profilo.tpl');
+        $this->smarty->display('profilo_privato.tpl');
     }
 
     public function modificaProfilo($utente, $immagine_utente){
