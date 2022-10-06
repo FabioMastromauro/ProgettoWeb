@@ -71,7 +71,9 @@ class CAnnunci
         } */
 
         if (is_array($annunciPagina)) {
-
+            for ($i = 0; $i < sizeof($annunciPagina); $i++) {
+                $foto[$i] = $pm::load('FFotoAnnuncio', array('idFoto'), array($annunciPagina->getIdFoto()));
+            }
         }
     }
 
