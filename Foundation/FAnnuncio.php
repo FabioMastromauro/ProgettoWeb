@@ -63,7 +63,7 @@ public function __construct(){}
         }
         if(($result != null) && ($rows_number == 1)) {
             $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
-                $result['idVenditore'], $result['idCompratore'], $result['categoria'], $result['ban'], $result['dataFineBan']);
+                $result['idCompratore'], $result['categoria'], $result['ban']);
             // $annuncio->setIdAnnuncio($result['idAnnuncio']);
         }
         else {
@@ -71,7 +71,7 @@ public function __construct(){}
                 $annuncio = array();
                 for($i = 0; $i < count($result); $i++){
                     $annuncio[] = new EAnnuncio($result[$i]['titolo'], $result[$i]['descrizione'], $result[$i]['prezzo'], $result[$i]['idFoto'], $result[$i]['data'],
-                        $result[$i]['idVenditore'], $result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban'], $result['dataFineBan']);
+                        $result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban']);
                     // $annuncio[$i]->setIdAnnuncio($result[$i]['idAnnuncio']);
                 }
             }

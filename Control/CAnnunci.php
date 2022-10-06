@@ -20,7 +20,7 @@ class CAnnunci
 
     static function esploraAnnunci($cerca = null, $index = null) {
 
-        $ricettePagina = 12;
+        $annunciPagina = 12;
 
      /* if ($cerca == null && isset($_COOKIE['searchOn'])) {
             if ($_COOKIE['searchOn'] == 1) self::searchOff();
@@ -39,28 +39,39 @@ class CAnnunci
         }
 
         if (!isset($_COOKIE['annuncioRicerca']) || !is_array($data)) {
-            $numRicette = $pm::getRows('FAnnuncio');
+            $numAnnunci = $pm::getRows('FAnnuncio');
         }
         elseif($data[0] == 'noCategoria' || $data[0] == 'noRicerca') {
-            $numRicette = $pm::getRows('FAnnuncio');
+            $numAnnunci = $pm::getRows('FAnnuncio');
         }
         else {
             if (isset($data['nomeAnnuncio']) || isset($data['id'])) {
-                $numRicette = 1;
+                $numAnnunci = 1;
             }
             elseif (is_array($data[0])) {
-                $numRicette = sizeof($data);
+                $numAnnunci = sizeof($data);
             }
         }
 
         $foto = array();
         $categorie = $pm::load('FCategoria');
 
-        if ($numRicette % $ricettePagina != 0) {
-            $numPagine = floor($numRicette / $ricettePagina + 1);
+        if ($numAnnunci % $annunciPagina != 0) {
+            $numPagine = floor($numAnnunci / $annunciPagina + 1);
         }
         else {
-            $numPagine = $numRicette / $ricettePagina;
+            $numPagine = $numAnnunci / $annunciPagina;
+        }
+  /*      if (!isset($_COOKIE['annuncioRicerca']) || $data[0] == 'noCategoria' || $data[0] == 'noRicerca') {
+          //  if ($newIndex * $annunciPagina <= $numAnnunci) {
+            //    $annunciPagina = $pm::load('FAnnuncio', array())
+          //  } else {
+            $limite = $numAnnunci % $annunciPagina;
+            $annunciPagina = $pm::load();
+        } */
+
+        if (is_array($annunciPagina)) {
+
         }
     }
 
@@ -115,7 +126,7 @@ class CAnnunci
                 $titolo = VAnnunci::getTitoloAnnuncio();
                 $descrizione = VAnnunci::getDescrizioneAnnuncio();
                 $prezzo = VAnnunci::getPrezzoAnnuncio();
-                $data = date('d-m-Y');
+                $data = new DateTime('now');
                 $categoria = VAnnunci::getCategoriaAnnuncio();
 
                 $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo,$idFoto, $data, $idVenditore, $categoria, $ban = 0);
