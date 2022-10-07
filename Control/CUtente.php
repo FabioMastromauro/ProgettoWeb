@@ -91,25 +91,26 @@ class CUtente
         }
     }
 
-    static function profilo() {
+    static function profilo($id = null) {
         $view = new VUtente();
         $session = USingleton::getInstance("USession");
         $pm = USingleton::getInstance("FPersistantManager");
-        if ($_SERVER['REQUEST_METHOD'] == "GET") {
-            if (CUtente::isLogged()) {
-                $utente = unserialize($session->readValue("utente")); // $foto = unserialize($session->readValue("fotoUtente"));
-                $foto = $pm::load($utente->getIdFoto, "FFotoUtente"); // $fotoUtente = $pm::load($foto->getIdUser, "FFotoUtente");
-                $annunci = $pm::load($utente->get);
+        if ($id == null) {
+            $utente = unserialize($session->readValue('utente'));
+        } else {
+            $utente = $pm::load('FUtente', array('idUser'), array($id));
+        }
+        if (CUtente::isLogged() || $id != null) {
+            $foto = $pm::load("FFotoUtente", array('idFoto'), array($utente->getIdFoto()));
+            $annunci = $pm::load("FAnnuncio", array('autore'), array());
             }
         }
 
-    }
 
     static function modificaProfilo() {
         $pm = USingleton::getInstance("FPersistantManager");
         $view = new VUtente();
         $session = USingleton::getInstance("USession");
-        // if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (CUtente::isLogged()) {
                 $utente = unserialize($session->readValue("utente"));
                 $foto = $pm::load($utente->getIdFoto, "FFotoUtente");
@@ -117,7 +118,7 @@ class CUtente
             }
             else {
                 header("Location: /localmp/Utente/login");
-        /* }*/}
+            }
     }
 
     static function upload() {
