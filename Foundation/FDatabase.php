@@ -227,6 +227,47 @@ class FDatabase
         try {
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
+                $filtro .= ' '  . $attr[$i]  . ' = ' . "'" . $parametri[$i] . "'" . ' ';
+            }
+            $query = 'SELECT * ' .
+                'FROM `' . $class::getTable() . '` ';
+            if ($filtro != '')
+                $query .= 'WHERE ' . $filtro . ' ';
+            if ($ordinamento != '')
+                $query .= 'ORDER BY ' . $ordinamento . ' ' . 'DESC ';
+            if ($limite != '')
+                $query .= 'LIMIT ' . $limite . ' ';
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $numRow = $stmt->rowCount();
+            if ($numRow == 0){
+                $result = null;
+            } elseif ($numRow == 1) {
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            } else {
+                $result = array();
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                while ($row = $stmt->fetch()) $result[] = $row;
+            }
+            return $result;
+        } catch (PDOException $e){
+            echo "Attenzione errore: " . $e->getMessage();
+            $this->db->rollBack();
+            return null;
+        }
+    }
+    /**
+     * Cerca all'interno del database
+     * @param array $parametri
+     * @param string $ordinamento
+     * @param string $limite
+     * @return array|false
+     */
+    public function searchLikeDB ($class, $parametri = array(), $attr = array(), $ordinamento = '', $limite = ''){
+        $filtro = '';
+        try {
+            for ($i = 0; $i < sizeof($parametri); $i++) {
+                if ($i > 0) $filtro .= ' AND';
                 $filtro .= ' '  . $attr[$i]  . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
             }
             $query = 'SELECT * ' .
