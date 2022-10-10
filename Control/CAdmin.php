@@ -10,7 +10,7 @@ class CAdmin
         if ($utente != null && $utente->getadmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
             $list = $pm::load('FUtente');
-            $immagine = $pm::load('FFotoUtente', array('idFoto'), array($utente->getIdFoto()));
+            $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getidImmagine()]));
             $view->homeAdmin($utente, $list, $immagine);
         } else {
             header('Location: /localmp/'); // da definire!
@@ -23,7 +23,7 @@ class CAdmin
         $admin = unserialize($session->readValue('utente'));
         if ($admin != null && $admin->getAdmin() == 1) {
             $utente = $pm::load('FUtente', array('idUser'), array($id));
-            $immagine = $pm::load('FFotoUtente', array('idFoto'), array($utente->getIdFoto()));
+            $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getidImmagine()]));
             $view->profiloUtente($utente, $immagine);
         } else {
             header('Location: /localmp/');

@@ -13,8 +13,8 @@ class CRicerca
 
         for($i = 0; $i < $numAnnunci; $i++) { // passo tre annunci nel carosello
             $annunci_home[$i] = $annunci[$i];
-            $autore_annuncio[$i] = $pm::load('FUtente', 'id', $annunci[$i]->getIdVenditore());
-            $immagini[$i] = $pm::load('FFotoAnnuncio', 'id',$annunci[$i]->getIdFoto());
+            $autore_annuncio[$i] = $pm::load('FUtente', array(['id','=', $annunci[$i]->getIdVenditore()]));
+            $immagini[$i] = $pm::load('FFotoAnnuncio', array(['id','=',$annunci[$i]->getIdFoto()]);
         }
 
         //Funzione che sceglie casualmente gli annunci da far vedere sulla home
@@ -31,11 +31,11 @@ class CRicerca
                 }
             }
 
-            $post_id = $pm::loadDefCol('FAnnuncio', array('id'));
-            $annnunciHome[] = $pm::load('FAnnuncio', array('id'), array($post_id[$ran_num[$i]]['id']));          // $annnunciHome[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));
-            $annunciVenditore[] = $pm::load('FUtente', array('id'), array($annnunciHome[$i]->getIdVenditore()));      //'FUtente', array(['id', '=', $annnunciHome[$i]->getAutore()]));
-            $annunciFoto[] = $pm::load('FFotoAnnuncio', array('id'), array($annnunciHome[$i]->getIdFoto()));   //'FImmagine', array(['id', '=', $annnunciHome[$i]->getId_immagine()]));
-            $venditoreFoto[] = $pm::load('FFotoUtente', array('id'), array($annunciVenditore[$i]->getIdFoto()));         //('FImmagine', array(['id', '=', $annunciVenditore[$i]->getid_immagine()]));
+            // $post_id = $pm::loadDefCol('FAnnuncio', array('id'));
+            $annnunciHome[] = $pm::load('FAnnuncio', array(['id','=',$post_id[$ran_num[$i]]['id']]));          // $annnunciHome[] = $pm::load('FPost', array(['id', '=', $post_id[$ran_num[$i]]['id']]));
+            $annunciVenditore[] = $pm::load('FUtente', array(['id','=',$annnunciHome[$i]->getIdVenditore()]));      //'FUtente', array(['id', '=', $annnunciHome[$i]->getAutore()]));
+            $annunciFoto[] = $pm::load('FFotoAnnuncio', array(['id','=',$annnunciHome[$i]->getIdFoto()]));   //'FImmagine', array(['id', '=', $annnunciHome[$i]->getId_immagine()]));
+            $venditoreFoto[] = $pm::load('FFotoUtente', array(['id','=',$annunciVenditore[$i]->getIdFoto()]));         //('FImmagine', array(['id', '=', $annunciVenditore[$i]->getid_immagine()]));
 
             $check = 0;
         }

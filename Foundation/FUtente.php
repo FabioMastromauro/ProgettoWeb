@@ -89,9 +89,9 @@ class FUtente extends FDatabase
         else return false;
     }
     /** Metodo che cerca un determinato oggetto nel DB */
-    public static function search($attr = array(),$parametri=array(),$ordinamento='',$limite=''){
+    public static function search($parametri=array(),$ordinamento='',$limite=''){
         $db = parent::getInstance();
-        $result = $db->searchDB(self::$class,$parametri,$attr,$ordinamento,$limite);
+        $result = $db->searchDB(self::$class,$parametri,$ordinamento,$limite);
         return $result;
     }
     /** Metodo che permette il caricamento del login di un utente, passati la sua email e password
@@ -116,12 +116,12 @@ class FUtente extends FDatabase
     /** Metodo che permette la load su db
      * @return object $utente utente loggato
      */
-    public static function loadByField($parametri = array(),$attr = array(),$ordinamento = '',$limite = ''){
+    public static function loadByField($parametri = array(),$ordinamento = '',$limite = ''){
         $utente = null;
         $db = parent::getInstance();
-        $result = $db->searchDB(static::getClass(),$parametri,$attr, $ordinamento,$limite);
+        $result = $db->searchDB(static::getClass(),$parametri, $ordinamento,$limite);
         if(count($parametri)>0){
-             $rows_number = $db->getRowNum(static::getClass(), $parametri,$attr,$ordinamento,$limite);
+             $rows_number = $db->getRowNum(static::getClass(), $parametri,$ordinamento,$limite);
         } else{
             $rows_number = $db->getRowNum(static::getClass());
         }

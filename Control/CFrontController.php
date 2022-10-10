@@ -13,7 +13,7 @@ class CFrontController
 
         if ($resource[0] != "api") {
             $controller = "C" . $resource[0];
-            $dir = "Controller";
+            $dir = "Control";
             $eledir = scandir($dir);
 
             if (in_array($controller . ".php", $eledir)) {

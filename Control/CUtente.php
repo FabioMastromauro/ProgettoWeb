@@ -91,20 +91,35 @@ class CUtente
         }
     }
 
-    static function profilo($id = null) {
+    static function profilo($id=null){
         $view = new VUtente();
-        $session = USingleton::getInstance("USession");
-        $pm = USingleton::getInstance("FPersistantManager");
-        if ($id == null) {
+        $session = USingleton::getInstance('USession');
+        $pm = USingleton::getInstance('FPersistantManager');
+        if($id == null){
             $utente = unserialize($session->readValue('utente'));
+        } else $utente = $pm::load('FUtente', array(['id', '=', $id]));
+        if (CUtente::isLogged() || $id!=null){
+            $immagini_utente = $pm::load('FFotoUtente', array(['id', '=', $utente->getidImmagine()]));
+            $annuncio = $pm::load('FAnnuncio', array(['autore', '=', $utente->getId()]));
+            if ($annuncio != null) {
+                if (is_array($annuncio)) {
+                    for ($i = 0; $i < sizeof($annuncio); $i++) {
+                        $immagine[$i] = $pm::load('FFotoAnnuncio', array(['id', '=', $annuncio[$i]->getIdImmagine()]));
+                        $autori_annunci[$i] = $pm::load('FUtente', array(['id', '=', $annuncio[$i]->getNome()]));
+                        $immagini_autori[$i] = $pm::load('FFotoUtente', array(['id', '=', $autori_annunci[$i]->getidImmagine()]));
+                    }
+                } else {
+                    $immagine = $pm::load('FFotoAnnuncio', array(['id', '=', $annuncio->getIdImmagine()]));
+                    $autori_annunci = $pm::load('FUtente', array(['id', '=', $annuncio->getNome()]));
+                    $immagini_autori = $pm::load('FFotoUtente', array(['id', '=', $autori_annunci->getidImmagine()]));
+                }
+                }
+                $view->profilo($annuncio, $utente, $immagine, $immagini_utente, $immagini_autori, $id);
+            } else $view->profilo($annuncio, $utente, $immagine = null, $immagini_utente, $immagini_autori = null, $id);
         } else {
-            $utente = $pm::load('FUtente', array('idUser'), array($id));
+            //header('Location: /chefskiss/Utente/login');
         }
-        if (CUtente::isLogged() || $id != null) {
-            $foto = $pm::load("FFotoUtente", array('idFoto'), array($utente->getIdFoto()));
-            $annunci = $pm::load("FAnnuncio", array('autore'), array());
-            }
-        }
+    }
 
 
     static function modificaProfilo() {

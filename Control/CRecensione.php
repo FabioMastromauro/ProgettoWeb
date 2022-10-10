@@ -45,7 +45,7 @@ class CRecensione
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
         if ($utente != null) {
-            $recensione = $pm::load("FRecensione", array('id'), array($id));
+            $recensione = $pm::load("FRecensione", array(['id','=',$id]);
             if ($recensione != null && $recensione->getAutore() == $utente->getIdUser()) {
                 $pm::delete('idRecensione', $id, "FRecensione");
                 header("Location: /localmp/Utente/{$utente->getIdUser()}");

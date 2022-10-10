@@ -222,12 +222,12 @@ class FDatabase
      * @param string $limite
      * @return array|false
      */
-    public function searchDB ($class, $parametri = array(), $attr = array(), $ordinamento = '', $limite = ''){
+    public function searchDb($class, $parametri = array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' '  . $attr[$i]  . ' = ' . "'" . $parametri[$i] . "'" . ' ';
+                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
             }
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
@@ -263,40 +263,7 @@ class FDatabase
      * @param string $limite
      * @return array|false
      */
-    public function searchLikeDB ($class, $parametri = array(), $attr = array(), $ordinamento = '', $limite = ''){
-        $filtro = '';
-        try {
-            for ($i = 0; $i < sizeof($parametri); $i++) {
-                if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' '  . $attr[$i]  . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
-            }
-            $query = 'SELECT * ' .
-                'FROM `' . $class::getTable() . '` ';
-            if ($filtro != '')
-                $query .= 'WHERE ' . $filtro . ' ';
-            if ($ordinamento != '')
-                $query .= 'ORDER BY ' . $ordinamento . ' ' . 'DESC ';
-            if ($limite != '')
-                $query .= 'LIMIT ' . $limite . ' ';
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-              $numRow = $stmt->rowCount();
-            if ($numRow == 0){
-                $result = null;
-            } elseif ($numRow == 1) {
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            } else {
-                $result = array();
-                $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                while ($row = $stmt->fetch()) $result[] = $row;
-            }
-            return $result;
-        } catch (PDOException $e){
-            echo "Attenzione errore: " . $e->getMessage();
-            $this->db->rollBack();
-            return null;
-        }
-    }
+
     /**
      * Questo metodo verifica quante righe sono state prodotte da una determinata query
      * @param $class
@@ -304,12 +271,12 @@ class FDatabase
      * @param $id
      * @return int|null
      */
-    public function getRowNum($class, $parametri = array(),$attr=array(), $ordinamento = '', $limite = ''){
+    public function getRowNum($class, $parametri = array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
             for ($i = 0; $i < sizeof($parametri); $i++) {
                 if ($i > 0) $filtro .= ' AND';
-                $filtro .= ' '  . $attr[$i] . ' like ' . "'" . $parametri[$i] . '%' . "'" . ' ';
+                $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
             }
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
