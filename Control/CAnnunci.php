@@ -84,7 +84,7 @@ class CAnnunci
         $mod = unserialize($session->readValue('utente'));
         $session->setValue('idRicetta', $id);
         $annuncio = $pm::load('FAnnuncio', array('idAnnuncio'), array($id));
-        $autore = $pm::load('FUtente', array(['idUser','=',array($annuncio->getIdVenditore())]);
+        $autore = $pm::load('FUtente', array(['idUser','=',array($annuncio->getIdVenditore())]));
         $foto = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annuncio->getIdFoto()]));
         $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
 
