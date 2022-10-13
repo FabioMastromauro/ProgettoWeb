@@ -14,7 +14,7 @@ class CRicerca
         for($i = 0; $i < $numAnnunci; $i++) { // passo tre annunci nel carosello
             $annunci_home[$i] = $annunci[$i];
             $autore_annuncio[$i] = $pm::load('FUtente', array(['id','=', $annunci[$i]->getIdVenditore()]));
-            $immagini[$i] = $pm::load('FFotoAnnuncio', array(['id','=',$annunci[$i]->getIdFoto()]);
+            $immagini[$i] = $pm::load('FFotoAnnuncio', array(['id','=',$annunci[$i]->getIdFoto()]));
         }
 
         //Funzione che sceglie casualmente gli annunci da far vedere sulla home

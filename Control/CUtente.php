@@ -6,7 +6,7 @@ class CUtente
     static function login () {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (static::isLogged()) {
-                $pm = USingleton::getInstance("FPersistantManager"); // da verificare
+                $pm = USingleton::getInstance("FPersistentManager"); // da verificare
                 $view = new VUtente();
                 $view->loginOk();
             }
@@ -22,25 +22,28 @@ class CUtente
 
     static function verifica() {
         $view = new VUtente();
-        $pm = USingleton::getInstance("FPersistantManager");
+        $pm = USingleton::getInstance("FPersistentManager");
         $utente = $pm->loadLogin($_POST["email"], $_POST["password"]);
         if ($utente != null) {
-            if (USession::sessionStatus() == PHP_SESSION_NONE) {
-                $session = USingleton::getInstance("USession");
-                $salvare = serialize($utente);
-                $admin = $utente->isAdmin();
-                $session->setValue("admin", $admin);
-                $session->setValue("utente", $salvare);
-                if ($admin == 1) {
-                    header("Location: /localmp/Admin/homepage");
+            if ($utente->isBan() != 1) {
+                if (USession::sessionStatus() == PHP_SESSION_NONE) {
+                    $session = USingleton::getInstance("USession");
+                    $dati = serialize($utente);
+                    $admin = $utente->isAdmin();
+                    $session->setValue("admin", $admin);
+                    $session->setValue("utente", $dati);
+                    if ($admin == 1) {
+                        header("Location: /localmp/Admin/home");
+                    } else {
+                        header("Location: /localmp/");
+                    }
                 }
-                else {
-                    header("Location: /localmp");
-                }
+            } else {
+                $view->loginError(1, 'bannato', $utente->getDataFineBan());
             }
         }
         else {
-            $view->loginError();
+            $view->loginError(0, 'errore');
         }
     }
 
@@ -78,14 +81,14 @@ class CUtente
     }
 
     static function verifyRegistration() {
-        $pm = USingleton::getInstance("FPersistantManager");
+        $pm = USingleton::getInstance("FPersistentManager");
         $verifyEmail = $pm::exist("email", VUtente::getEmail(), "FUtente");
         $view = new VUtente();
         if ($verifyEmail) {
             $view->registrationError("email");
         }
         else {
-            $utente = new EUtente(VUtente::getNome(), VUtente::getCognome(), VUtente::getUsername(), VUtente::getPassword(), VUtente::getEmail(), 0);
+            $utente = new EUtente(VUtente::getNome(), VUtente::getCognome(), VUtente::getEmail(), VUtente::getPassword(),null, date('d/m/y'), 0, 0);
             $pm::store($utente);
             header("Location: /localmp/Utente/login");
         }
@@ -94,41 +97,43 @@ class CUtente
     static function profilo($id=null){
         $view = new VUtente();
         $session = USingleton::getInstance('USession');
-        $pm = USingleton::getInstance('FPersistantManager');
+        $pm = USingleton::getInstance('FPersistentManager');
         if($id == null){
             $utente = unserialize($session->readValue('utente'));
-        } else $utente = $pm::load('FUtente', array(['id', '=', $id]));
+        } else $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
         if (CUtente::isLogged() || $id!=null){
-            $immagini_utente = $pm::load('FFotoUtente', array(['id', '=', $utente->getidImmagine()]));
-            $annuncio = $pm::load('FAnnuncio', array(['autore', '=', $utente->getId()]));
+            $fotoUtente = $pm::load('FFotoUtente', array(['idFoto', '=', $utente->getidFoto()]));
+            $annuncio = $pm::load('FAnnuncio', array(['autore', '=', $utente->getIdUser()]));
             if ($annuncio != null) {
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
-                        $immagine[$i] = $pm::load('FFotoAnnuncio', array(['id', '=', $annuncio[$i]->getIdImmagine()]));
-                        $autori_annunci[$i] = $pm::load('FUtente', array(['id', '=', $annuncio[$i]->getNome()]));
-                        $immagini_autori[$i] = $pm::load('FFotoUtente', array(['id', '=', $autori_annunci[$i]->getidImmagine()]));
+                        $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio[$i]->getIdFoto()]));
+                        $autoriAnnunci[$i] = $pm::load('FUtente', array(['idUser', '=', $annuncio[$i]->getAutore()]));
+                        $fotoAutori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autoriAnnunci[$i]->getidFoto()]));
                     }
                 } else {
-                    $immagine = $pm::load('FFotoAnnuncio', array(['id', '=', $annuncio->getIdImmagine()]));
-                    $autori_annunci = $pm::load('FUtente', array(['id', '=', $annuncio->getNome()]));
-                    $immagini_autori = $pm::load('FFotoUtente', array(['id', '=', $autori_annunci->getidImmagine()]));
+                    $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio->getIdFoto()]));
+                    $autoriAnnunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getAutore()]));
+                    $fotoAutori = $pm::load('FFotoUtente', array(['idFoto', '=', $autoriAnnunci->getidFoto()]));
                 }
-                }
-                $view->profilo($annuncio, $utente, $immagine, $immagini_utente, $immagini_autori, $id);
-            } else $view->profilo($annuncio, $utente, $immagine = null, $immagini_utente, $immagini_autori = null, $id);
+                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto, $fotoUtente, $fotoAutori, $id);
+            }
+            else {
+                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto = null, $fotoUtente, $fotoAutori = null, $id);
+            }
         } else {
-            //header('Location: /chefskiss/Utente/login');
+            header('Location: /chefskiss/Utente/login');
         }
     }
 
 
     static function modificaProfilo() {
-        $pm = USingleton::getInstance("FPersistantManager");
+        $pm = USingleton::getInstance("FPersistentManager");
         $view = new VUtente();
         $session = USingleton::getInstance("USession");
-            if (CUtente::isLogged()) {
-                $utente = unserialize($session->readValue("utente"));
-                $foto = $pm::load($utente->getIdFoto, "FFotoUtente");
+        $utente = unserialize($session->readValue("utente"));
+        if (CUtente::isLogged()) {
+                $foto = $pm::load("FFotoUtente", array(['idFoto', '=', $utente->getIdFoto()]));
                 $view->modificaProfilo($utente, $foto);
             }
             else {
@@ -137,7 +142,7 @@ class CUtente
     }
 
     static function upload() {
-        $pm = USingleton::getInstance("FPersistantManager");
+        $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
         $ris = false;
         $maxSize = 300000;
@@ -152,9 +157,8 @@ class CUtente
         }
         $foto = file_get_contents($_FILES["file"]["tmp_name"]);
         $foto = addslashes($foto);
-        $utente = unserialize($session->readValue("utente"));
-        $FotoCaricata = new EFotoUtente($idFoto = 0, $nomeFoto, $size, $tipo, $foto);
-        $pm::storeMedia($FotoCaricata, "file");
+        $fotoCaricata = new EFotoUtente($idFoto = 0, $nomeFoto, $size, $tipo, $foto);
+        $pm::storeMedia($fotoCaricata, "file");
         $ris = true;
         return $ris;
     }

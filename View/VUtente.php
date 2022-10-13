@@ -50,7 +50,7 @@ class VUtente
         $this->smarty->display('.smarty/libs/templates/login.tpl');
     }
 
-    public function profilo($annunci, $nome,$cognome,$email, $immagini, $immagine_utente, $immagini_autori, $idutente,$instagram,$facebook){
+    public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente, $instagram, $facebook){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('nome', $nome);
@@ -58,8 +58,8 @@ class VUtente
         $this->smarty->assign('email', $email);
         $this->smarty->assign('annuncio', $annunci);
         $this->smarty->assign('immagini', $immagini);
-        $this->smarty->assign('immagine_utente', $immagine_utente);
-        $this->smarty->assign('immagini_autori', $immagini_autori);
+        $this->smarty->assign('foto_utente', $fotoUtente);
+        $this->smarty->assign('foto_autori', $fotoAutori);
         $this->smarty->assign('facebook', $facebook);
         $this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);

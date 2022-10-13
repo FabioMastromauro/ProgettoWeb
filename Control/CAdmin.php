@@ -3,7 +3,7 @@
 class CAdmin
 {
     //verifica l'admin e visualizza la sua home page
-    static function homeAdmin() {
+    static function home() {
         $view = new VAdmin();
         $session = USingleton::getInstance('USession');
         $utente = unserialize($session->readValue('utente'));

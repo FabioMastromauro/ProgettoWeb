@@ -5,7 +5,7 @@ class CAnnunci
 
     static function esplora($id=null){
         $view = new VAnnunci();
-        $pm = USingleton::getInstance('FPersistantManager');
+        $pm = USingleton::getInstance('FPersistentManager');
 
         if ($id != null){
             $annunci = $pm::load('FAnnuncio',array(['id','=',$id]));
