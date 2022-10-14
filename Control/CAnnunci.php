@@ -97,16 +97,16 @@ class CAnnunci
             if(is_array($annunci)) {
                 for ($i = 0; $i < count($annunci); $i++) {
                     $annunciHome[$i] = $annunci[$i];
-                    $autoriAnnunci[$i] = $pm::load('FUtente', array(['id','=',$annunci[$i]->getAutore()]));
-                    $fotoHome[$i] = $pm::load('FFotoAnnuncio', array(['id','=',$annunci[$i]->getImmagine()]));
-                    $fotoAutore[$i] = $pm::load('FFotoUtente', array(['id','=',$autoriAnnunci[$i]->getIdFoto()]));
+                    $autoriAnnunci[$i] = $pm::load('FUtente', array(['idUser','=',$annunci[$i]->getAutore()]));
+                    $fotoHome[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci[$i]->getIdFoto()]));
+                    $fotoAutore[$i] = $pm::load('FFotoUtente', array(['idFoto','=',$autoriAnnunci[$i]->getIdFoto()]));
                 }
             }
             else{
                 $annunciHome = $annunci;
-                $autoriAnnunci = $pm::load('FUtente', array(['id','=',$annunci->getAutore()]));
-                $fotoHome = $pm::load('FFotoAnnuncio', array(['id','=',$annunci->getImmagine()]));
-                $fotoAutore = $pm::load('FFotoUtente', array(['id','=',$autoriAnnunci->getIdFoto()]));
+                $autoriAnnunci = $pm::load('FUtente', array(['idUser','=',$annunci->getAutore()]));
+                $fotoHome = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci->getIdFoto()]));
+                $fotoAutore = $pm::load('FFotoUtente', array(['idFoto','=',$autoriAnnunci->getIdFoto()]));
             }
         }
         return array($annunciHome, $autoriAnnunci, $fotoHome, $fotoAutore);
@@ -138,6 +138,33 @@ class CAnnunci
         }
         else {
             header('Location: /localmp/Utente/login');
+        }
+    }
+
+    static function modificaAnnuncio($idAnnuncio) {
+        $pm = USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        $utente = unserialize($session->readValue('utente'));
+        $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
+        if (CUtente::isLogged() && $utente->getIdUser() == $annuncio->getIdVenditore()) {
+            $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio->getIdFoto()]));
+            $categoria = $pm::load('FCategoria', array(['idCate', '=', $annuncio->getCategoria()]));
+            $view = new VAnnunci();
+            $view->modificaAnnuncio($annuncio, $foto, $annuncio->getDescrizione(), $categoria, $annuncio->getPrezzo());
+        }
+        else {
+            header('Location: /localmp/Utente/login');
+        }
+    }
+
+    static function confermaModifiche($idAnnuncio, $idFoto) {
+        $pm=USingleton::getInstance('FPersistentManager');
+        if (CUtente::isLogged()) {
+            $titolo = VAnnunci::getTitoloAnnuncio();
+            $descrizione = VAnnunci::getDescrizioneAnnuncio();
+            $categoria = VAnnunci::getCategoriaAnnuncio();
+            $prezzo = VAnnunci::getPrezzoAnnuncio();
+
         }
     }
 

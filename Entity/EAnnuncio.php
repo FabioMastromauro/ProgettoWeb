@@ -182,9 +182,9 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getCategoria(): string
+    public function getCategoria(): int
     {
         return $this->categoria;
     }

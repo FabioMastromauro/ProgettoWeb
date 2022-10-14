@@ -43,19 +43,20 @@ class VAnnunci
 
         $this->smarty->display('annunci.tpl');
     }
-    public function modificaAnnuncio($annuncio, $immagine, $descrizione, $categorie) {
+    public function modificaAnnuncio($annuncio, $foto, $descrizione, $categoria, $prezzo) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('annuncio', $annuncio);
-        $this->smarty->assign('immagine', $immagine);
+        $this->smarty->assign('foto', $foto);
         $this->smarty->assign('descrizione', $descrizione);
-        $this->smarty->assign('categorie', $categorie);
+        $this->smarty->assign('categoria', $categoria);
+        $this->smarty->assign('prezzo', $prezzo);
 
         $this->smarty->display('annuncio_privato.tpl'); //da aggiungere
     }
 
 
-    function showInfo(EAnnuncio $annuncio, $user,$mod, $immagine, $immagine_autore) {
+    function showInfo(EAnnuncio $annuncio, $user, $mod, $foto, $immagine_autore) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $descrizione = explode('.', $annuncio->getDescrizione());
@@ -63,7 +64,7 @@ class VAnnunci
         $this->smarty->assign('mod', $mod);
         $this->smarty->assign('utente', $user);
         $this->smarty->assign('annuncio', $annuncio);
-        $this->smarty->assign('immagine', $immagine);
+        $this->smarty->assign('foto', $foto);
         $this->smarty->assign('descrizione', $descrizione);
         $this->smarty->assign('immagine_autore', $immagine_autore);
 

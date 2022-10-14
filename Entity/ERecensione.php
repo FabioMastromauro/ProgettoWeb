@@ -62,7 +62,7 @@ class ERecensione implements JsonSerializable
      */
     public function getDataPubb()
     {
-        return $this->dataPubblicazione->format('Y-m-d H:i:s');
+        return $this->dataPubblicazione;
     }
 
     /**

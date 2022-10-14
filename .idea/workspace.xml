@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione CRecensione.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzioni varie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,14 +163,7 @@
       <workItem from="1664976682952" duration="6165000" />
       <workItem from="1665067382327" duration="6639000" />
       <workItem from="1665677142227" duration="6053000" />
-      <workItem from="1665755086363" duration="2099000" />
-    </task>
-    <task id="LOCAL-00075" summary="Aggiunta login.html">
-      <created>1661886930914</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1661886930914</updated>
+      <workItem from="1665755086363" duration="5044000" />
     </task>
     <task id="LOCAL-00076" summary="modifiche login.html">
       <created>1661954173398</created>
@@ -506,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665755842491</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Correzioni varie">
+      <created>1665757195755</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1665757195755</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,11 +560,11 @@
     <MESSAGE value="Aggiornato DB" />
     <MESSAGE value="Correzioni FAnnuncio.php" />
     <MESSAGE value="Correzioni CUtente.php" />
-    <MESSAGE value="Correzioni varie" />
     <MESSAGE value="Parentesi mancante CAnnunci.php" />
     <MESSAGE value="Aggiunta parametri get in VRecensione.php" />
     <MESSAGE value="Correzione CRecensione.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correzione CRecensione.php" />
+    <MESSAGE value="Correzioni varie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzioni varie" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
