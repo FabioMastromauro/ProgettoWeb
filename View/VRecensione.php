@@ -14,6 +14,16 @@ class VRecensione
 
     }
 
+    static function getCommento()
+    {
+        return strtoupper($_POST['commento']);
+    }
+
+    static function getValutazione()
+    {
+        return strtoupper($_POST['valutazione']);
+    }
+
     /**
      * Metodo per recuperare i filtri inseriti dall'amministratore
      * @return array con i filtri
