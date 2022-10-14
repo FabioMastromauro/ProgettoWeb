@@ -157,14 +157,25 @@ class CAnnunci
         }
     }
 
-    static function confermaModifiche($idAnnuncio, $idFoto) {
+    static function confermaModifiche($idAnnuncio, $idFotoVecchia) {
         $pm=USingleton::getInstance('FPersistentManager');
         if (CUtente::isLogged()) {
             $titolo = VAnnunci::getTitoloAnnuncio();
             $descrizione = VAnnunci::getDescrizioneAnnuncio();
             $categoria = VAnnunci::getCategoriaAnnuncio();
             $prezzo = VAnnunci::getPrezzoAnnuncio();
-
+            $idFoto = self::upload();
+            if ($idFoto != false) {
+                $pm::update('idFoto', $idFoto, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
+                $pm::delete('idFoto', $idFotoVecchia, 'FFotoAnnuncio');
+            }
+            $pm::update('titolo', $titolo, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
+            $pm::update('descrizione', $descrizione, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
+            $pm::update('categoria', $categoria, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
+            $pm::update('prezzo', $prezzo, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
+            header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
+        } else {
+            header('Location: /localmp/Utente/login');
         }
     }
 
@@ -196,19 +207,19 @@ class CAnnunci
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
-        if ($utente != null) {
+        if (CUtente::isLogged()) {
             $annuncio = $pm::load("FAnnuncio", array('idAnnuncio'), array($id));
             if ($annuncio->getIdVenditore() == $utente->getIdUser()){
                 $pm::delete('idAnnuncio', $id, "FAnnuncio");
                 $pm::delete('idAnnuncio', $id, "FRecensione");
                 $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
 
-                header("Location: /localmp/");
+                header("Location: /localmp/Annunci/esploraAnnunci");
             } else {
-                header("Location: /localmp/");
+                header("Location: /localmp/Annunci/esploraAnnunci");
             }
         } else {
-            header("Location: /localmp/");
+            header("Location: /localmp/Utente/login");
         }
     }
 }
