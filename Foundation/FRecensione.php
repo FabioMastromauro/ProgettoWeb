@@ -86,7 +86,7 @@ class FRecensione extends FDatabase{
      */
     public static function search($parametri=array(), $ordinamento='', $limite=''){
         $db = parent::getInstance();
-        $result = $db->searchDb(self::$class, $parametri, $ordinamento, $limite);
+        $result = $db->searchDB(self::$class, $parametri, $ordinamento, $limite);
         return $result;
     }
     /** metodo che può aggiornare i campi di una recensione

@@ -13,7 +13,8 @@ class CRecensione
         $session = USingleton::getInstance('USession');
         if (CUtente::isLogged()) {
             $utente = unserialize($session->readValue("utente"));
-            $annuncio = $pm::load("FAnnuncio", array('idAnnuncio'), array($id));
+            $idAnnuncio = unserialize($session->readValue('id_annuncio'));
+            $annuncio = $pm::load("FAnnuncio", array(['idAnnuncio', '=', $idAnnuncio]));
 
             if ($utente != null && $utente->getIdUser() == $annuncio->getIdCompratore()) {
 
@@ -26,6 +27,9 @@ class CRecensione
 
                 $recensione = new ERecensione($commento, $valutazione, $idAnnuncio, $dataPubblicazione, $autore);
                 $pm->store($recensione);
+
+                $session->destroyValue('id_annuncio');
+                setcookie('id_annuncio', '');
 
                 header('Location: /localmp/Utente/profilo');
             }

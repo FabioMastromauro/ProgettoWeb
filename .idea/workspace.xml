@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Parentesi mancante CAnnunci.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzione CRecensione.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,21 +161,7 @@
       <workItem from="1664976682952" duration="6165000" />
       <workItem from="1665067382327" duration="6639000" />
       <workItem from="1665677142227" duration="6053000" />
-      <workItem from="1665755086363" duration="567000" />
-    </task>
-    <task id="LOCAL-00073" summary="Aggiunto .htaccess">
-      <created>1661870646158</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1661870646158</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Aggiunta login.html">
-      <created>1661876089678</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1661876089678</updated>
+      <workItem from="1665755086363" duration="2099000" />
     </task>
     <task id="LOCAL-00075" summary="Aggiunta login.html">
       <created>1661886930914</created>
@@ -503,7 +492,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665682388706</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Aggiunta parametri get in VRecensione.php">
+      <created>1665755672902</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1665755672903</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Correzione CRecensione.php">
+      <created>1665755842491</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1665755842491</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,8 +537,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzioni VUtente.php" />
-    <MESSAGE value="Aggiunti VAdmin.php e VAnnunci.php" />
     <MESSAGE value="Modifiche style.css" />
     <MESSAGE value="Creata login2.html" />
     <MESSAGE value="Modifiche login2.html" />
@@ -559,7 +560,9 @@
     <MESSAGE value="Correzioni CUtente.php" />
     <MESSAGE value="Correzioni varie" />
     <MESSAGE value="Parentesi mancante CAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parentesi mancante CAnnunci.php" />
+    <MESSAGE value="Aggiunta parametri get in VRecensione.php" />
+    <MESSAGE value="Correzione CRecensione.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione CRecensione.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

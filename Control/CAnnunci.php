@@ -8,11 +8,11 @@ class CAnnunci
         $pm = USingleton::getInstance('FPersistentManager');
 
         if ($id != null){
-            $annunci = $pm::load('FAnnuncio',array(['id','=',$id]));
+            $annunci = $pm::load('FAnnuncio',array(['idAnnuncio','=',$id]));
             $array = self::homeAnnunci($annunci); //da creare
             $view->showAnnunci($annunci, $array);
         } else {
-            $annunci = $pm::load('FAnnuncio',array('idAnnuncio'),array($id),'id',1);
+            $annunci = $pm::load('FAnnuncio',array(), '', 3);
             $array = self::homeAnnunci($annunci);
             $view->showAnnunci($annunci, $array);
         }

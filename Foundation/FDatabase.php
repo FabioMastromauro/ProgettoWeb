@@ -222,7 +222,7 @@ class FDatabase
      * @param string $limite
      * @return array|false
      */
-    public function searchDb($class, $parametri = array(), $ordinamento = '', $limite = ''){
+    public function searchDB($class, $parametri = array(), $ordinamento = '', $limite = ''){
         $filtro = '';
         try {
             for ($i = 0; $i < sizeof($parametri); $i++) {
