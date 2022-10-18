@@ -37,13 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3">
-                <aside>
-                    <div class="side-bar">
-                        <img src="/chefskiss/smarty/libs/assets/bg-heading-02.jpg" alt="...">
-                    </div>
-                </aside>
-            </div>
+
         </div>
 
 
