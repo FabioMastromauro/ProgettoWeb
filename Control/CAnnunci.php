@@ -8,7 +8,7 @@ class CAnnunci
         $pm = USingleton::getInstance('FPersistentManager');
 
         if ($id != null){
-            $annunci = $pm::load('FAnnuncio',array(['idAnnuncio','=',$id]));
+            $annunci = $pm::load('FAnnuncio',array(['idAnnuncio', '=', $id]));
             $array = self::homeAnnunci($annunci);
             $view->showAnnunci($annunci, $array);
         } else {
@@ -22,7 +22,7 @@ class CAnnunci
 
         $annunciPagina = 12;
 
-     /* if ($cerca == null && isset($_COOKIE['searchOn'])) {
+         if ($cerca == null && isset($_COOKIE['searchOn'])) {
             if ($_COOKIE['searchOn'] == 1) self::searchOff();
         }
 
@@ -31,7 +31,7 @@ class CAnnunci
         }
         else {
             $newIndex = $index;
-        }           bisogna capire a che serve */
+        }
 
         $pm = USingleton::getInstance('FPersistentManager');
         if (isset($_COOKIE['annuncioRicerca'])) {
@@ -62,19 +62,59 @@ class CAnnunci
         else {
             $numPagine = $numAnnunci / $annunciPagina;
         }
-  /*      if (!isset($_COOKIE['annuncioRicerca']) || $data[0] == 'noCategoria' || $data[0] == 'noRicerca') {
-          //  if ($newIndex * $annunciPagina <= $numAnnunci) {
-            //    $annunciPagina = $pm::load('FAnnuncio', array())
-          //  } else {
+        if (!isset($_COOKIE['annuncioRicerca']) || $data[0] == 'noCategoria' || $data[0] == 'noRicerca') {
+            if ($newIndex * $annunciPagina <= $numAnnunci) {
+                $annunciPagina = $pm::load('FAnnuncio', array(['idAnnuncio', '>', ($newIndex - 1) * $annunciPagina]), '', $annunciPagina);
+            } else {
             $limite = $numAnnunci % $annunciPagina;
-            $annunciPagina = $pm::load();
-        } */
+            $annunciPagina = $pm::load('FAnnunci', array(['idAnnuncio', '>', $newIndex * $annunciPagina - $annunciPagina]), '', $limite);
+        }
 
         if (is_array($annunciPagina)) {
             for ($i = 0; $i < sizeof($annunciPagina); $i++) {
-                $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunciPagina->getIdFoto()]));
+                $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunciPagina[$i]->getIdFoto()]));
+            }
+        } else {
+            $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annunciPagina->getIdFoto()]));
+            }
+        } else {
+            if ($newIndex * 12 <= $numAnnunci) {
+                for ($i = 0; $i < 12; $i++) {
+                    $annunciPagina[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['idAnnuncio']]));
+                }
+            } else {
+                if (isset($data['nome_annuncio'])) {
+                    $annunciPagina = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data['idAnnuncio']]));
+                } elseif (is_array($data[0])) {
+                    for ($i = 0; $i < count($data); $i++) {
+                        $annunciPagina[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['idAnnuncio']]));
+                    }
+                }
+            }
+            if (is_array($annunciPagina)) {
+                for ($i = 0; $i < sizeof($annunciPagina); $i++) {
+                    $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annunciPagina[$i]->getIdFoto()]));
+                }
+            } else {
+                $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annunciPagina->getIdFoto()]));
             }
         }
+
+        $view = new VAnnunci();
+
+        $cerca = 'cerca';
+
+        if (isset($data)) {
+            if ($data[0] == 'no_categoria' || $data[0] == 'no_ricerca') $view->showAllErr($annunciPagina, $numPagine, $newIndex, $numAnnunci, $foto, $cerca, $data[0], $data[1], $categorie);
+            else $view->showAll($annunciPagina, $numPagine, $newIndex, $numAnnunci, $foto, $cerca, $categorie);
+        }
+        else $view->showAll($annunciPagina, $numPagine, $newIndex, $numAnnunci, $foto, $cerca, $categorie);
+    }
+
+    static function searchOff() {
+        setcookie('seatchOn', 0);
+        setcookie('annuncio_ricerca', '');
+        header('Location: / localmp/Annunci/esploraAnnunci');
     }
 
     static function infoAnnuncio(int $id) {
