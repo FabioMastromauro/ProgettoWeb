@@ -24,6 +24,10 @@ class VAnnunci
         return $_POST['prezzo'];
     }
 
+    static function getRicerca(){
+        return $_POST['text'];
+    }
+
     static function getCategoriaAnnuncio()
     {
         return $_POST['categoria'];
