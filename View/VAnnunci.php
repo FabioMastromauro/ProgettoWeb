@@ -24,6 +24,10 @@ class VAnnunci
         return $_POST['prezzo'];
     }
 
+    static function getRicerca(){
+        return $_POST['ricerca'];
+    }
+
     static function getCategoriaAnnuncio()
     {
         return $_POST['categoria'];
@@ -55,6 +59,9 @@ class VAnnunci
         $this->smarty->display('annuncio_privato.tpl'); //da aggiungere
     }
 
+    function showCreaAnnuncio(){
+        $this->smarty->display('crea_annuncio.tpl');
+    }
 
     function showInfo(EAnnuncio $annuncio, $user, $mod, $foto, $immagine_autore) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
@@ -68,6 +75,6 @@ class VAnnunci
         $this->smarty->assign('descrizione', $descrizione);
         $this->smarty->assign('immagine_autore', $immagine_autore);
 
-        $this->smarty->display('annuncio_info.tpl'); // bisogna creare il template
+        $this->smarty->display('annuncio_pubblico.tpl'); // bisogna creare il template
     }
 }
