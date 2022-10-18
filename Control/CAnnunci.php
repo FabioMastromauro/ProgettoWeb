@@ -143,7 +143,28 @@ class CAnnunci
             $array = null;
             $parametro = VAnnunci::getRicerca();
             $parametro = strtoupper($parametro);
-
+            $tuttiAnnunciTitoloId = $pm::loadDefCol('FAnnuncio', array(['nome_annuncio', 'id_annuncio']));
+            if (isset($tuttiAnnunciTitoloId[0]) && is_array($tuttiAnnunciTitoloId[0])) {
+                for ($i = 0; $i < sizeof($tuttiAnnunciTitoloId); $i++) {
+                    if (is_int(strpos($tuttiAnnunciTitoloId[$i]['nome_annuncio'], $parametro))) {
+                        $array[$c]['nome_annuncio'] = $tuttiAnnunciTitoloId[$i]['nome_annuncio'];
+                        $array[$c]['id_annuncio'] = $tuttiAnnunciTitoloId[$i]['id_annuncio'];
+                        $c += 1;
+                    }
+                }
+            }
+            elseif (isset($tuttiAnnunciTitoloId['nome_annuncio'])) {
+                if (is_int(strpos($tuttiAnnunciTitoloId['nome_annuncio'], $parametro))) {
+                    $array = $tuttiAnnunciTitoloId;
+                }
+            }
+            $data = serialize($array);
+            if ($array == null) {
+                $data = serialize(['no_ricerca', $parametro]);
+            }
+            setcookie('annuncio_ricerca', $data);
+            setcookie('searchOn', 1);
+            header('Location: /localmp/Annunci/esploraAnnunci/cerca');
         }
     }
 
