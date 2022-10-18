@@ -25,7 +25,7 @@ class VAnnunci
     }
 
     static function getRicerca(){
-        return $_POST['text'];
+        return $_POST['ricerca'];
     }
 
     static function getCategoriaAnnuncio()
