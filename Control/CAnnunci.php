@@ -9,7 +9,7 @@ class CAnnunci
 
         if ($id != null){
             $annunci = $pm::load('FAnnuncio',array(['idAnnuncio','=',$id]));
-            $array = self::homeAnnunci($annunci); //da creare
+            $array = self::homeAnnunci($annunci);
             $view->showAnnunci($annunci, $array);
         } else {
             $annunci = $pm::load('FAnnuncio',array(), '', 3);
@@ -82,7 +82,7 @@ class CAnnunci
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
         $mod = unserialize($session->readValue('utente'));
-        $session->setValue('idRicetta', $id);
+        $session->setValue($id, 'id_ricetta');
         $annuncio = $pm::load('FAnnuncio', array('idAnnuncio'), array($id));
         $autore = $pm::load('FUtente', array(['idUser','=',array($annuncio->getIdVenditore())]));
         $foto = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annuncio->getIdFoto()]));
@@ -111,6 +111,42 @@ class CAnnunci
         }
         return array($annunciHome, $autoriAnnunci, $fotoHome, $fotoAutore);
     }
+
+    static function cerca($categoria = null) {
+        $pm = USingleton::getInstance('FPersistentManager');
+        if ($categoria != null) {
+            $annunci = $pm::load('FAnnuncio', array(['idCate', '=', $categoria]));
+            if ($annunci != null) {
+                if (is_array($annunci)) {
+                    for ($i = 0; $i < sizeof($annunci); $i++) {
+                        $array[$i]['nome_annuncio'] = $annunci[$i]->getTitolo();
+                        $array[$i]['id_annuncio'] = $annunci[$i]->getIdAnnuncio();
+                    }
+                }
+                else {
+                    $array['nome_annuncio'] = $annunci->getTitolo();
+                    $array['id_annuncio'] = $annunci->getIdAnnuncio();
+                }
+                $data = serialize($array);
+                setcookie('annuncio_ricerca', $data);
+                setcookie('searchOn', 1);
+            }
+            else {
+                $data = serialize(['no_categoria', $categoria]);
+                setcookie('annuncio_ricerca', $data);
+                setcookie('searchOn', 1);
+            }
+            header('Location: /localmp/Annunci/EsploraAnnunci/cerca');
+        }
+        else {
+            $c = 0;
+            $array = null;
+            $parametro = VAnnunci::getRicerca();
+            $parametro = strtoupper($parametro);
+
+        }
+    }
+
 
     static function creaAnnuncio() {
         $view = new VAnnunci();
