@@ -77,4 +77,32 @@ class VAnnunci
 
         $this->smarty->display('annuncio_pubblico.tpl'); // bisogna creare il template
     }
+
+    function showAllRev($annunci, $num_annunci, $index, $immagini, $cerca, $tipoerr, $input, $categorie){
+        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');//?
+
+        $this->smarty->assign('immagini', $immagini);
+        $this->smarty->assign('annunci', $annunci);
+        $this->smarty->assign('index', $index);
+        $this->smarty->assign('num_annunci', $num_annunci);
+        $this->smarty->assign('tipoerr', $tipoerr);
+        $this->smarty->assign('input', $input);
+        $this->smarty->assign('categorie', $categorie);
+
+        $this->smarty->display('tutte_annunci_err.tpl');
+    }
+
+    function showAll($annunci,  $index, $num_annunci, $immagini, $cerca, $categorie){
+        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');
+
+        $this->smarty->assign('immagini', $immagini);
+        $this->smarty->assign('annunci', $annunci);
+        $this->smarty->assign('index', $index);
+        $this->smarty->assign('num_annunci', $num_annunci);
+        $this->smarty->assign('categorie', $categorie);
+
+        $this->smarty->display('tutte_annunci.tpl');
+    }
 }
