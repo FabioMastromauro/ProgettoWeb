@@ -56,7 +56,7 @@ class VAnnunci
         $this->smarty->assign('categoria', $categoria);
         $this->smarty->assign('prezzo', $prezzo);
 
-        $this->smarty->display('annuncio_privato.tpl'); //da aggiungere
+        $this->smarty->display('annuncio_privato.tpl');
     }
 
     function showCreaAnnuncio(){
@@ -75,6 +75,6 @@ class VAnnunci
         $this->smarty->assign('descrizione', $descrizione);
         $this->smarty->assign('immagine_autore', $immagine_autore);
 
-        $this->smarty->display('annuncio_pubblico.tpl'); // bisogna creare il template
+        $this->smarty->display('annuncio.tpl');
     }
 }

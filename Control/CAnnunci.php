@@ -136,20 +136,20 @@ class CAnnunci
         if($annunci!=null) {
             if(is_array($annunci)) {
                 for ($i = 0; $i < count($annunci); $i++) {
-                    $annunciHome[$i] = $annunci[$i];
-                    $autoriAnnunci[$i] = $pm::load('FUtente', array(['idUser','=',$annunci[$i]->getAutore()]));
-                    $fotoHome[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci[$i]->getIdFoto()]));
-                    $fotoAutore[$i] = $pm::load('FFotoUtente', array(['idFoto','=',$autoriAnnunci[$i]->getIdFoto()]));
+                    $annunci_home[$i] = $annunci[$i];
+                    $autori_annunci[$i] = $pm::load('FUtente', array(['idUser','=',$annunci[$i]->getAutore()]));
+                    $foto_home[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci[$i]->getIdFoto()]));
+                    $foto_autore[$i] = $pm::load('FFotoUtente', array(['idFoto','=',$autori_annunci[$i]->getIdFoto()]));
                 }
             }
             else{
-                $annunciHome = $annunci;
-                $autoriAnnunci = $pm::load('FUtente', array(['idUser','=',$annunci->getAutore()]));
-                $fotoHome = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci->getIdFoto()]));
-                $fotoAutore = $pm::load('FFotoUtente', array(['idFoto','=',$autoriAnnunci->getIdFoto()]));
+                $annunci_home = $annunci;
+                $autori_annunci = $pm::load('FUtente', array(['idUser','=',$annunci->getAutore()]));
+                $foto_home = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci->getIdFoto()]));
+                $foto_autore = $pm::load('FFotoUtente', array(['idFoto','=',$autori_annunci->getIdFoto()]));
             }
         }
-        return array($annunciHome, $autoriAnnunci, $fotoHome, $fotoAutore);
+        return array($annunci_home, $autori_annunci, $foto_home, $foto_autore);
     }
 
     static function cerca($categoria = null) {
