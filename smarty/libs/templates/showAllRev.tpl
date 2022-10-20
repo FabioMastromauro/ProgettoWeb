@@ -46,14 +46,13 @@
         </div>
       </div>
       {else}
-      {for $i=0; $i<count($annunci);i++{
+      {for $i=0; $i<count($annunci);i++}
       <div class="card mb-4">
         <a href="/ProgettoWeb/Annunci/InfoAnnunci/{$annunci->getId()}"><img class="card-img-top" src="data:{$immagini->getTipo()};base64, {$immagini->getImmagine()}" width=900 height=400 alt="..." /></a>
         <div class="card-body">
           <h2 class="card-title">{$annunci[$i]->getTitolo()}</h2>
           <p class="card-text">{$annunci[$i]->getDescrizione()}...</p>
           <div class="small text-muted">{$annunci[$i]->getPrezzo()}
-            {/if}
           </div>
         </div>
       </div>
@@ -150,7 +149,7 @@
                 {$value = sizeof($categorie)/2}
                 {if $categorie != null}
                 {if is_array($categorie)}
-                {for $i = 0; $i < (int)$value; $i++}
+                {for $i = 0; $i < (int) $value; $i++}
                 <li><a href="/ProgettoWeb/Annunci/cerca?categoria={$categorie[$i]->getCategoria()}">{$categorie[$i]->getCategoria()}</a></li>
                 {/for}
               </ul>

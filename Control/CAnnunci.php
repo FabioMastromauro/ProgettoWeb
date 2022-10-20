@@ -114,7 +114,7 @@ class CAnnunci
     static function searchOff() {
         setcookie('seatchOn', 0);
         setcookie('annuncio_ricerca', '');
-        header('Location: / localmp/Annunci/esploraAnnunci');
+        header('Location: /localmp/Annunci/esploraAnnunci');
     }
 
     static function infoAnnuncio(int $id) {
