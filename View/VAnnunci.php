@@ -78,7 +78,7 @@ class VAnnunci
         $this->smarty->display('annuncio.tpl');
     }
 
-    function showAllRev($annunci, $num_annunci, $num_pagine, $index, $immagini, $cerca, $tipoerr, $input, $categorie){
+    function showAllErr($annunci, $num_annunci, $num_pagine, $index, $immagini, $cerca, $tipoerr, $input, $categorie){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
         if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');//?
 

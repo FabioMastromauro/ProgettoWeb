@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Completato CAnnunci.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
-    </list>
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modificato nome variabili Smarty in modo che combacino" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,14 +157,7 @@
       <workItem from="1665677142227" duration="6053000" />
       <workItem from="1665755086363" duration="6611000" />
       <workItem from="1666082509802" duration="13239000" />
-      <workItem from="1666254284868" duration="1797000" />
-    </task>
-    <task id="LOCAL-00081" summary="barra rimane in alto">
-      <created>1661963883219</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1661963883219</updated>
+      <workItem from="1666254284868" duration="2208000" />
     </task>
     <task id="LOCAL-00082" summary="Aggiunto style.css">
       <created>1661965748405</created>
@@ -507,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666107098165</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Modificato nome variabili Smarty in modo che combacino">
+      <created>1666256705379</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1666256705380</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Messo apposto DB e foto" />
     <MESSAGE value="FCategoria.php" />
     <MESSAGE value="Correzioni in FRecensione.php" />
     <MESSAGE value="Correzioni in FUtente.php" />
@@ -563,7 +557,8 @@
     <MESSAGE value="cerca in CAnnunci.php" />
     <MESSAGE value="Implementato metodo cerca in CAnnunci.php" />
     <MESSAGE value="Completato CAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completato CAnnunci.php" />
+    <MESSAGE value="Modificato nome variabili Smarty in modo che combacino" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificato nome variabili Smarty in modo che combacino" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
