@@ -38,7 +38,7 @@ class VUtente
         $this->smarty->assign('fine_ban', $fine_ban);
         $this->smarty->assign('error', $error);
 
-        $this->smarty->display('./smarty/libs/templates/login_registration_form.tpl');
+        $this->smarty->display('./smarty/libs/templates/login.tpl');
     }
 
     public function registrationError($error){
@@ -50,7 +50,7 @@ class VUtente
         $this->smarty->display('.smarty/libs/templates/login.tpl');
     }
 
-    public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente, $instagram, $facebook){
+    public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('nome', $nome);
@@ -60,8 +60,8 @@ class VUtente
         $this->smarty->assign('immagini', $immagini);
         $this->smarty->assign('foto_utente', $fotoUtente);
         $this->smarty->assign('foto_autori', $fotoAutori);
-        $this->smarty->assign('facebook', $facebook);
-        $this->smarty->assign('instagram', $instagram);
+        //$this->smarty->assign('facebook', $facebook);
+        //$this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);
 
         $this->smarty->display('profilo_privato.tpl');
