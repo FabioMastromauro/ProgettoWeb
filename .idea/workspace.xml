@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modificato showAllRev in showAllErr">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__09_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__09_52__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__11_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_05_22__11_31__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_33__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_33__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_05_22__11_50__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_22__11_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_22__11_07__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_22__13_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_07_22__13_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/searchbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/searchbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/templates/showAllRev.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/showAllRev.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +96,11 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.home.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="home.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/home.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
@@ -102,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="PHP Script.prova.php" />
         <item itemvalue="JavaScript Debug.prova.php" />
         <item itemvalue="PHP Script.prova.php" />
@@ -161,7 +176,14 @@
       <workItem from="1665677142227" duration="6053000" />
       <workItem from="1665755086363" duration="6611000" />
       <workItem from="1666082509802" duration="13239000" />
-      <workItem from="1666254284868" duration="4978000" />
+      <workItem from="1666254284868" duration="2208000" />
+    </task>
+    <task id="LOCAL-00082" summary="Aggiunto style.css">
+      <created>1661965748405</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1661965748405</updated>
     </task>
     <task id="LOCAL-00083" summary="Correzioni VUtente.php">
       <created>1662047918407</created>
@@ -499,14 +521,7 @@
       <option name="project" value="LOCAL" />
       <updated>1666256705380</updated>
     </task>
-    <task id="LOCAL-00131" summary="Modificato showAllRev in showAllErr">
-      <created>1666257038667</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1666257038667</updated>
-    </task>
-    <option name="localTasksCounter" value="132" />
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,6 +552,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="FCategoria.php" />
     <MESSAGE value="Correzioni in FRecensione.php" />
     <MESSAGE value="Correzioni in FUtente.php" />
     <MESSAGE value="Eliminata home.tpl" />
@@ -561,8 +577,7 @@
     <MESSAGE value="Implementato metodo cerca in CAnnunci.php" />
     <MESSAGE value="Completato CAnnunci.php" />
     <MESSAGE value="Modificato nome variabili Smarty in modo che combacino" />
-    <MESSAGE value="Modificato showAllRev in showAllErr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificato showAllRev in showAllErr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificato nome variabili Smarty in modo che combacino" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

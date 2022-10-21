@@ -14,20 +14,17 @@
         <li class="nav-item">
           <a class="nav-link active" href="chi_siamo.html">Chi siamo?</a>
         </li>
-        {if $userlogged!='nouser'}
         <li class="nav-item">
           <a class="nav-link active" href="profilo.html">Profilo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="">Disconnetti</a>
         </li>
-        {else}
         <img src="../images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
         <a class="nav-link" href="login.html">Login/Registrati</a>
-        {/if}
 
 
-        <form class="d-flex" role="search">
+       <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
           <button class="btn btn-dark" type="submit" >Search</button>
         </form>
