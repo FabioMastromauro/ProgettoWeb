@@ -327,5 +327,41 @@ class FDatabase
         }
     }
 
+    public function loadDefColDB($class, $columns, $order = '', $limite = '') {
+        $cols  = '';
+        try {
+            for ($i = 0; $i < count($columns); $i++) {
+                if ($i > 0) $cols .= ', ';
+                $cols .= $columns[$i];
+            }
+
+            $query = 'SELECT ' . $cols . 'FROM ' . $class::getTable();
+            if ($order != '') {
+                $query .= ' ORDER BY ' . $order . 'DESC';
+            }
+
+            if ($limite != '') {
+                $query .= ' LIMIT ' . $limite;
+            }
+
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $numRow = $stmt->rowCount();
+
+            if ($numRow == 0) {
+                $result = null;
+            } elseif ($numRow == 1) {
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            } else {
+                $result = array();
+                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                while ($row = $stmt->fetch()) $result[] = $row;
+            }
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
 
 }

@@ -114,6 +114,11 @@ public function __construct(){}
         return $result;
     }
 
+    public static function loadDefCol($columns, $ordinamento = '', $limite = '') {
+        $db = parent::getInstance();
+        $result = $db->loadDefColDB(self::$class, $columns, $ordinamento, $limite);
+        return $result;
+    }
 
 
 

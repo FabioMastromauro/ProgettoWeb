@@ -18,8 +18,8 @@ class FPersistentManager
     }
 
     /* Metodo che permette di caricare il valore di un campo come parametro */
-    public static function load($Fclass, $parametri = array(),$attr = array(), $ordinamento = '',$limite = '') {
-        $ris = $Fclass::loadByField($parametri = array(),$attr = array(), $ordinamento = '',$limite = '');
+    public static function load($Fclass, $parametri = array(), $ordinamento = '', $limite = '') {
+        $ris = $Fclass::loadByField($parametri = array(), $ordinamento = '', $limite = '');
         return $ris;
     }
 
@@ -63,6 +63,11 @@ class FPersistentManager
     /* Metodo che restituisce il numero di righe in cui è contenuta la ricerca */
     public static function getRows($class, $parametri = array(), string $ordinamento, string $limite) {
         $ris = $class::getRows($parametri, $ordinamento, $limite);
+        return $ris;
+    }
+
+    public static function loadDefCol($class, $columns = array(), $order = '', $limite = '') {
+        $ris = $class::loadDefCol($columns, $order, $limite);
         return $ris;
     }
 

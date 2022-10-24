@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modificato showAllRev in showAllErr">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CFrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FPersistentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,14 +171,7 @@
       <workItem from="1665755086363" duration="6611000" />
       <workItem from="1666082509802" duration="13239000" />
       <workItem from="1666254284868" duration="2208000" />
-      <workItem from="1666618519117" duration="1681000" />
-    </task>
-    <task id="LOCAL-00082" summary="Aggiunto style.css">
-      <created>1661965748405</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1661965748405</updated>
+      <workItem from="1666618519117" duration="5520000" />
     </task>
     <task id="LOCAL-00083" summary="Correzioni VUtente.php">
       <created>1662047918407</created>
@@ -511,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666256705380</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php">
+      <created>1666621423670</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1666621423671</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="FCategoria.php" />
     <MESSAGE value="Correzioni in FRecensione.php" />
     <MESSAGE value="Correzioni in FUtente.php" />
     <MESSAGE value="Eliminata home.tpl" />
@@ -567,7 +571,8 @@
     <MESSAGE value="Implementato metodo cerca in CAnnunci.php" />
     <MESSAGE value="Completato CAnnunci.php" />
     <MESSAGE value="Modificato nome variabili Smarty in modo che combacino" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificato nome variabili Smarty in modo che combacino" />
+    <MESSAGE value="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

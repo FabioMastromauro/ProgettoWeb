@@ -30,22 +30,32 @@ class CFrontController
 
                         $param = array();
 
-                        for ($i =2; $i < count($resource); $i++) {
-                            $param[] = $resource[$i];
-                            $a = $i - 2; //non so a cosa serva
-                        }
-                        $num = count($param);
+                        if (isset($url[1])) {
+                            for ($i = 0; $i < count($params); $i++) {
+                                $array = explode('=', $params[$i]);
+                                $param = $array[1];
+                            }
+                            $controller::$function($param);
+                        } else {
+                            for ($i =2; $i < count($resource); $i++) {
+                                $param[] = $resource[$i];
+                            }
+                            $num = count($param);
 
-                        if ($num == 0) {
-                            $controller::$function();
+                            if ($num == 0) {
+                                $controller::$function();
+                            }
+                            elseif ($num == 1) {
+                                $controller::$function($param[0]);
+                            }
+                            elseif ($num == 2) {
+                                $controller::$function($param[0], $param[1]);
+                            }
                         }
-                        elseif ($num == 1) {
-                            $controller::$function($param[0]);
-                        }
-                        elseif ($num == 2) {
-                            $controller::$function($param[0], $param[1]);
-                        }
-                } else {
+                    }
+
+
+                         else {
                     if (CUtente::isLogged()) {
                         CRicerca::blogHome();
                     } else {

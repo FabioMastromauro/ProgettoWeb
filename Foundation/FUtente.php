@@ -116,7 +116,7 @@ class FUtente extends FDatabase
     /** Metodo che permette la load su db
      * @return object $utente utente loggato
      */
-    public static function loadByField($parametri = array(),$ordinamento = '',$limite = ''){
+    public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
         $utente = null;
         $db = parent::getInstance();
         $result = $db->searchDB(static::getClass(),$parametri, $ordinamento,$limite);
