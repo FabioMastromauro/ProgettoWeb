@@ -30,7 +30,7 @@ class VUtente
     }
 
     public function loginOk(){
-        $this->smarty->display('.smarty/libs/templates/index.tpl');
+        $this->smarty->display('./smarty/libs/templates/index.tpl');
     }
 
     public function loginError($ban=0, $error='', $fine_ban=''){

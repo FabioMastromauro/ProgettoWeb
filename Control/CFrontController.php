@@ -4,9 +4,16 @@ class CFrontController
 {
 
     public function run ($path) {
+
         $method = $_SERVER['REQUEST_METHOD'];
-        // loro ci hanno aggiunto qualocsa
-        $resource = explode("/", $path);
+
+        if (strpos($path, '?')) {
+            $url = explode('?', $path);
+            $resource = explode('/', $url[0]);
+            $params = explode('&', $url[1]);
+        } else {
+            $resource = explode("/", $path);
+        }
 
         array_shift($resource);
         array_shift($resource);
