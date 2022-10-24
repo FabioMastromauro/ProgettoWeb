@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CFrontController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FPersistentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,14 +166,7 @@
       <workItem from="1665755086363" duration="6611000" />
       <workItem from="1666082509802" duration="13239000" />
       <workItem from="1666254284868" duration="2208000" />
-      <workItem from="1666618519117" duration="5520000" />
-    </task>
-    <task id="LOCAL-00083" summary="Correzioni VUtente.php">
-      <created>1662047918407</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1662047918408</updated>
+      <workItem from="1666618519117" duration="6696000" />
     </task>
     <task id="LOCAL-00084" summary="Aggiunti VAdmin.php e VAnnunci.php">
       <created>1662050090024</created>
@@ -516,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666621423671</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php">
+      <created>1666625257201</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1666625257201</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzioni in FRecensione.php" />
     <MESSAGE value="Correzioni in FUtente.php" />
     <MESSAGE value="Eliminata home.tpl" />
     <MESSAGE value="Creato register.html" />
@@ -572,7 +566,8 @@
     <MESSAGE value="Completato CAnnunci.php" />
     <MESSAGE value="Modificato nome variabili Smarty in modo che combacino" />
     <MESSAGE value="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php" />
+    <MESSAGE value="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
