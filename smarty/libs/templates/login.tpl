@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-{assign var='error' value=$error|default:'ok'}
-<html lang="en">
+{assign var="ban" value=$ban|default:0}
+{assign var="error" value=$error|default:''}
+{assign var="fine_ban" value=$fine_ban|default:''}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,11 +16,10 @@
 
     <script>
         function ready(){
-            if (!navigator.cookieEnabled) {
+            if(!navigator.cookieEnabled){
                 alert('Attenzione! Attivare i cookie per proseguire correttamente la navigazione');
             }
         }
-        document.addEventListener("DOMContentLoaded", ready);
     </script>
 
 
@@ -95,37 +96,36 @@
         </div>
     </div>
 </div>
+{if $ban == 1 && $fine_ban != ''}
+    <script>alert("Sei stato bannato fino al {$fine_ban}")</script>
+{/if}
 
-
-
+{if $error == 'errore'}
+    <script>alert("Riprova l'accesso")</script>
+{/if}
 
 
 <main>
-    <div class="row">
+    <form method="POST" action="../localmp/Utente/login">
+        <div class="row">
+            <div class="colm-form">
+                <div class="form-container">
+                    <input type="text" placeholder="Email address">
+                    <i class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show()">
+                    </i>
+                    <input type="password" id="psw" name="password" placeholder="Password" value="">
+                    <button  id="index" class="btn-login">Login</button>
 
-        <div class="colm-form">
-            <div class="form-container">
-                <input type="text" placeholder="Email address">
-                <i class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show()">
-                </i>
-                <input type="password" id="psw" name="password" placeholder="Password" value="">
-                {if $error!='ok'}
-                    <div style="color: red;">
-                        <p align="center">Attenzione! Username e/o password errati! </p>
-                    </div>
-                {/if}
-                <button  id="index" class="btn-login">Login</button>
-                <a href="#">Forgotten password?</a>
-                <!--  <button class="btn-new" onclick="location.href='./register.html'">Create new Account</button> -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Create new Account
-                </button>
-
+                    <a href="#">Forgotten password?</a>
+                    <button class="btn-new" onclick="location.href='./register.html'">Create new Account</button>
+                    <!-- Button trigger modal -->
+                    <!--<button type="button" class="btn btn-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                       Create new Account
+                    </button> -->
+                </div>
             </div>
-
         </div>
-    </div>
+    </form>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="../javascript/showpsw.js"></script>
