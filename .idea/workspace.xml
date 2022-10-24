@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
-    </list>
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Corretto CRicerca.php e VRicerca.php" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,14 +162,7 @@
       <workItem from="1665755086363" duration="6611000" />
       <workItem from="1666082509802" duration="13239000" />
       <workItem from="1666254284868" duration="2208000" />
-      <workItem from="1666618519117" duration="6696000" />
-    </task>
-    <task id="LOCAL-00084" summary="Aggiunti VAdmin.php e VAnnunci.php">
-      <created>1662050090024</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1662050090024</updated>
+      <workItem from="1666618519117" duration="7416000" />
     </task>
     <task id="LOCAL-00085" summary="Modifiche style.css">
       <created>1662061103638</created>
@@ -511,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666625257201</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Corretto CRicerca.php e VRicerca.php">
+      <created>1666626671757</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1666626671757</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +538,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzioni in FUtente.php" />
     <MESSAGE value="Eliminata home.tpl" />
     <MESSAGE value="Creato register.html" />
     <MESSAGE value="Link login.html-&gt; register.html" />
@@ -567,7 +562,8 @@
     <MESSAGE value="Modificato nome variabili Smarty in modo che combacino" />
     <MESSAGE value="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php" />
     <MESSAGE value="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php" />
+    <MESSAGE value="Corretto CRicerca.php e VRicerca.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corretto CRicerca.php e VRicerca.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

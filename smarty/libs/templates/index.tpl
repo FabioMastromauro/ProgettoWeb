@@ -104,7 +104,7 @@
     <div id = "annunci" class="row">
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="data:{$immagini[0]->getTipo()},base64,{$immagini[0]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                <img src="data:{$annunci_foto[0]->getTipo()},base64,{$annunci_foto[0]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[0]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[0]->getDescrizione()}</p>
@@ -115,7 +115,7 @@
         </div>
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="data:{$immagini[1]->getTipo()},base64,{$immagini[1]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                <img src="data:{$annunci_foto[1]->getTipo()},base64,{$annunci_foto[1]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[1]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[1]->getDescrizione()}</p>
@@ -126,7 +126,7 @@
         </div>
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="data:{$immagini[2]->getTipo()},base64,{$immagini[2]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                <img src="data:{$annunci_foto[2]->getTipo()},base64,{$annunci_foto[2]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[2]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[2]->getDescrizione()}</p>
@@ -137,7 +137,7 @@
         </div>
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="data:{$immagini[3]->getTipo()},base64,{$immagini[3]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                <img src="data:{$annunci_foto[3]->getTipo()},base64,{$annunci_foto[3]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[3]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[3]->getDescrizione()}</p>
@@ -148,7 +148,7 @@
         </div>
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="data:{$immagini[4]->getTipo()},base64,{$immagini[4]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                <img src="data:{$annunci_foto[4]->getTipo()},base64,{$annunci_foto[4]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[4]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[4]->getDescrizione()}</p>
@@ -159,7 +159,7 @@
         </div>
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="data:{$immagini[5]->getTipo()},base64,{$immagini[5]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                <img src="data:{$annunci_foto[5]->getTipo()},base64,{$annunci_foto[5]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[5]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[5]->getDescrizione()}</p>
@@ -173,7 +173,7 @@
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:{$immagini[6]->getTipo()},base64,{$immagini[6]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                    <img src="data:{$annunci_foto[6]->getTipo()},base64,{$annunci_foto[6]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[6]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[6]->getDescrizione()}</p>
@@ -184,7 +184,7 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:{$immagini[7]->getTipo()},base64,{$immagini[7]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                    <img src="data:{$annunci_foto[7]->getTipo()},base64,{$annunci_foto[7]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[7]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[7]->getDescrizione()}</p>
@@ -195,7 +195,7 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:{$immagini[8]->getTipo()},base64,{$immagini[8]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                    <img src="data:{$annunci_foto[8]->getTipo()},base64,{$annunci_foto[8]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[8]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[8]->getDescrizione()}</p>
@@ -206,7 +206,7 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:{$immagini[9]->getTipo()},base64,{$immagini[9]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                    <img src="data:{$annunci_foto[9]->getTipo()},base64,{$annunci_foto[9]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[9]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[9]->getDescrizione()}</p>
@@ -217,7 +217,7 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:{$immagini[10]->getTipo()},base64,{$immagini[10]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                    <img src="data:{$annunci_foto[10]->getTipo()},base64,{$annunci_foto[10]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[10]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[10]->getDescrizione()}</p>
@@ -228,7 +228,7 @@
             </div>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="data:{$immagini[11]->getTipo()},base64,{$immagini[11]->getImmagine()}" width=900 height=500 class="card-img-top" alt="...">
+                    <img src="data:{$annunci_foto[11]->getTipo()},base64,{$annunci_foto[11]->getFoto()}" width=900 height=500 class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[11]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[11]->getDescrizione()}</p>
