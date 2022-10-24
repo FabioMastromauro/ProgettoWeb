@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="../css/style.css" rel="stylesheet">
+
+    <script>
+        function ready(){
+            if(!navigator.cookieEnabled){
+                alert('Attenzione! Attivare i cookie per proseguire correttamente la navigazione');
+            }
+        }
+    </script>
 
 
 </head>
@@ -24,10 +32,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3 needs-validation" novalidate>
+                    <form action="/localmp/Utente/registrazione" method="POST" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-4">
                             <label for="validationCustom01" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <input type="text" class="form-control" id="validationCustom01" name="nome" value="" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -92,21 +100,21 @@
 
 <main>
     <div class="row">
-
         <div class="colm-form">
             <div class="form-container">
+                <form action="/localmp/Utente/login" method="POST">
                 <input type="text" placeholder="Email address">
                 <i class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show()">
                 </i>
                 <input type="password" id="psw" name="password" placeholder="Password" value="">
                 <button  id="index" class="btn-login">Login</button>
+                </form>
                 <a href="#">Forgotten password?</a>
-              <!--  <button class="btn-new" onclick="location.href='./register.html'">Create new Account</button> -->
+                <!--<button class="btn-new" onclick="location.href='./register.html'">Create new Account</button> -->
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
                    Create new Account
                 </button>
-
             </div>
         </div>
     </div>
