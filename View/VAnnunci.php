@@ -80,7 +80,7 @@ class VAnnunci
 
     function showAllErr($annunci, $num_annunci, $num_pagine, $index, $immagini, $cerca, $tipoerr, $input, $categorie){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
-        if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');//?
+        if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');
 
         $this->smarty->assign('immagini', $immagini);
         $this->smarty->assign('annunci', $annunci);
@@ -106,5 +106,11 @@ class VAnnunci
         $this->smarty->assign('categorie', $categorie);
 
         $this->smarty->display('showAllRev.tpl');
+    }
+
+    function schermataAcquisto() {
+        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+
+        $this->smarty->display('purchase.tpl');
     }
 }
