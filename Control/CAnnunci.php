@@ -300,15 +300,15 @@ class CAnnunci
 
     }
 
-    static function cancellaAnnuncio($id, $idFoto) {
+    static function cancellaAnnuncio($idAnnuncio, $idFoto) {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
         if (CUtente::isLogged()) {
-            $annuncio = $pm::load("FAnnuncio", array('idAnnuncio'), array($id));
+            $annuncio = $pm::load("FAnnuncio", array(['idAnnuncio', '=', $idAnnuncio]));
             if ($annuncio->getIdVenditore() == $utente->getIdUser()){
-                $pm::delete('idAnnuncio', $id, "FAnnuncio");
-                $pm::delete('idAnnuncio', $id, "FRecensione");
+                $pm::delete('idAnnuncio', $idAnnuncio, "FAnnuncio");
+                $pm::delete('idAnnuncio', $idAnnuncio, "FRecensione");
                 $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
 
                 header("Location: /localmp/Annunci/esploraAnnunci");
@@ -317,6 +317,17 @@ class CAnnunci
             }
         } else {
             header("Location: /localmp/Utente/login");
+        }
+    }
+
+    static function schermataAcquisto($idAnnuncio) {
+        $pm = USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        $utente = unserialize($session->readValue('utente'));
+        $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
+        if (CUtente::isLogged() && $utente->getIdUser() != $annuncio->getIdVenditore()) {
+            $view = new VAnnunci();
+            $view->schermataAcquisto();
         }
     }
 }
