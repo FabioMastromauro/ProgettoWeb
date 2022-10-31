@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto ban in EAnnuncio e FAnnuncio">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,20 +170,6 @@
       <workItem from="1666876718588" duration="6450000" />
       <workItem from="1667140903662" duration="6335000" />
       <workItem from="1667207246795" duration="6865000" />
-    </task>
-    <task id="LOCAL-00092" summary="Correzioni in FRecensione.php">
-      <created>1662411860931</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1662411860931</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Correzioni in FUtente.php">
-      <created>1662412544457</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1662412544457</updated>
     </task>
     <task id="LOCAL-00094" summary="Eliminata home.tpl">
       <created>1662413420064</created>
@@ -514,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667144910581</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Aggiunto ban in EAnnuncio e FAnnuncio">
+      <created>1667231690071</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1667231690071</updated>
+    </task>
+    <task id="LOCAL-00142" summary="Aggiunto ban in EAnnuncio e FAnnuncio">
+      <created>1667231847004</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1667231847005</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,6 +523,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="871f0425-1a86-45cf-9e08-c798b0236b87">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/home/civita/Scrivania/PhpProg/ProgettoWeb" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -540,6 +565,11 @@
             </State>
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="871f0425-1a86-45cf-9e08-c798b0236b87" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
