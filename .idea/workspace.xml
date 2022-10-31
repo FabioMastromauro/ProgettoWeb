@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto metodo acquisto in VAnnunci.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Modificato con Ctrl+R foto e immagine">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +166,21 @@
       <workItem from="1666082509802" duration="13239000" />
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
-      <workItem from="1666704409349" duration="3454000" />
+      <workItem from="1666704409349" duration="2798000" />
+    </task>
+    <task id="LOCAL-00086" summary="Creata login2.html">
+      <created>1662062881183</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1662062881184</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Modifiche login2.html">
+      <created>1662064186043</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1662064186043</updated>
     </task>
     <task id="LOCAL-00088" summary="Messo apposto DB e foto">
       <created>1662409962665</created>
@@ -496,21 +511,7 @@
       <option name="project" value="LOCAL" />
       <updated>1666627354551</updated>
     </task>
-    <task id="LOCAL-00135" summary="Aggiunto metodo acquisto in CAnnunci.php">
-      <created>1666709398979</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1666709398979</updated>
-    </task>
-    <task id="LOCAL-00136" summary="Aggiunto metodo acquisto in VAnnunci.php">
-      <created>1666709559257</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1666709559257</updated>
-    </task>
-    <option name="localTasksCounter" value="137" />
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,6 +542,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Creato register.html" />
+    <MESSAGE value="Link login.html-&gt; register.html" />
     <MESSAGE value="Aggiunta CAdmin.php" />
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="Completato CFrontController.php" />
@@ -564,9 +567,7 @@
     <MESSAGE value="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php" />
     <MESSAGE value="Corretto CRicerca.php e VRicerca.php" />
     <MESSAGE value="Modificato con Ctrl+R foto e immagine" />
-    <MESSAGE value="Aggiunto metodo acquisto in CAnnunci.php" />
-    <MESSAGE value="Aggiunto metodo acquisto in VAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto metodo acquisto in VAnnunci.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificato con Ctrl+R foto e immagine" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

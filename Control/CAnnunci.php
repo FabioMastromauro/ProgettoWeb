@@ -324,16 +324,10 @@ class CAnnunci
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
         $utente = unserialize($session->readValue('utente'));
-        if (CUtente::isLogged()) {
-            $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
-            if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
+        $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
+        if (CUtente::isLogged() && $utente->getIdUser() != $annuncio->getIdVenditore()) {
             $view = new VAnnunci();
             $view->schermataAcquisto();
-            } else {
-                header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
-            }
-        } else {
-            header("Location: /localmp/Utente/login");
         }
     }
 }
