@@ -1,21 +1,37 @@
 <?php
 
+/**
+ * La classe ECategoria contiene tutti gli attributi e i metodi relativi alle categorie di annunci
+ * Gli attributi sono:
+ * categoria: nome Categoria
+ * idCate: id Categoria
+ * @access public
+ * @author Gruppo 7
+ * @package Entity
+ */
+
 class ECategoria implements JsonSerializable
 {
-    private $categoria;
-    private $idCate;
-
     /**
-     * @param $categoria
-     * @param $id
+     * @var string nome Categoria
      */
+    private string $categoria;
+    /**
+     * @var int id Categoria
+     */
+    private int $idCate;
+
+    //-----------------------------COSTRUTTORE--------------------------
+
     public function __construct($categoria)
     {
         $this->categoria = $categoria;
     }
 
+    //--------------METODI GET E SET------------------------------------
+
     /**
-     * @return mixed
+     * @return string nome categoria
      */
     public function getCategoria()
     {
@@ -23,7 +39,7 @@ class ECategoria implements JsonSerializable
     }
 
     /**
-     * @param mixed $categoria
+     * @param string $categoria nome categoria
      */
     public function setCategoria($categoria): void
     {
@@ -31,7 +47,7 @@ class ECategoria implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return int id Categoria
      */
     public function getIdCate()
     {
@@ -39,7 +55,7 @@ class ECategoria implements JsonSerializable
     }
 
     /**
-     * @param mixed $idCate
+     * @param int id Categoria
      */
     public function setIdCate($idCate): void
     {
