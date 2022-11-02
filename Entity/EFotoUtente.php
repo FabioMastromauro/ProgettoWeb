@@ -51,6 +51,6 @@ class EFotoUtente extends EFoto implements JsonSerializable
             ];
     }
 
-// forse il toString
+
 
 }

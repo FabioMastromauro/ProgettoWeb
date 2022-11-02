@@ -27,21 +27,22 @@ class EFotoAnnuncio extends EFoto implements JsonSerializable
     //-------------------------METODI GET E SET-----------------------------------------------
 
     /**
- * @return int id annuncio
- */
-public function getIdAnn()
-{
-    return $this->idAnn;
-}/**
- * @param int $idAnn id annuncio
- */
-public function setIdAnn($idAnn): void
-{
-    $this->idAnn = $idAnn;
-}
+     * @return int id annuncio
+     */
+    public function getIdAnn()
+    {
+        return $this->idAnn;
+    }
+    /**
+     * @param int $idAnn id annuncio
+     */
+    public function setIdAnn($idAnn): void
+    {
+        $this->idAnn = $idAnn;
+    }
 
-public function jsonSerialize()
-{
+    public function jsonSerialize()
+    {
     return
         [
             'id'   => $this->getIdFoto(),
@@ -50,6 +51,5 @@ public function jsonSerialize()
             'tipo'  =>  $this->getTipo(),
             'foto'  =>  $this->getFoto(),
         ];
-
-}
+    }
 }
