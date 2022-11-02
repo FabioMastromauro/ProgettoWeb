@@ -1,29 +1,78 @@
 <?php
 
+/**
+ * La classe EAnnuncio contiene tutti gli attributi e i metodi relativi agli annunci
+ * Gli attributi sono:
+ * titolo: titolo Annuncio
+ * descrizione: descrizione Annuncio
+ * prezzo: prezzo Annuncio
+ * idFoto: id foto Annuncio
+ * data: data pubblicazione Annuncio
+ * idAnnuncio: id univoco Annuncio
+ * idVenditore: id di chi pubblica l'Annuncio
+ * idCompratore: id di chi compra l'Annuncio
+ * categoria: categoria Annuncio
+ * ban: ban Annuncio
+ * @access public
+ * @author Gruppo 7
+ * @package Entity
+ */
+
 class EAnnuncio implements JsonSerializable
 {
+    /**
+     * titolo Annuncio
+     * @var string
+     */
     private string $titolo;
+    /**
+     * descrizione Annuncio
+     * @var string
+     */
     private string $descrizione;
+    /**
+     * prezzo Annuncio
+     * @var float
+     */
     private  $prezzo;
+    /**
+     * id foto Annuncio
+     * @var int
+     */
     private int $idFoto;
+    /**
+     * data pubblicazione Annuncio
+     * @var DateTime
+     */
     private DateTime $data;
-    private $idAnnuncio;
+    /**
+     * id univoco Annuncio
+     * @var int
+     */
+    private int $idAnnuncio;
+    /**
+     * id venditore Annuncio
+     * @var int
+     */
     private int $idVenditore;
+    /**
+     * id compratore Annuncio
+     * @var int
+     */
     private int $idCompratore;
+    /**
+     * categoria Annuncio
+     * @var string
+     */
     private string $categoria;
+    /**
+     * ban Annuncio
+     * @var bool
+     */
     private bool $ban;
 
-    /**
-     * @param string $titolo
-     * @param string $descrizione
-     * @param float $prezzo
-     * @param int $idFoto
-     * @param DateTime $data
-     * @param int $idAnnuncio
-     * @param int $idVenditore
-     * @param int $idCompratore
-     * @param string $categoria
-     */
+    //---------------------------------------------------------------------------------COSTRUTTORE---------------------------------------------------------------------------------------------
+
     public function __construct(string $titolo, string $descrizione,  $prezzo, int $idFoto, DateTime $data,  int $idVenditore,/* int $idCompratore,*/ string $categoria, bool $ban)
     {
         $this->titolo = $titolo;
@@ -37,8 +86,10 @@ class EAnnuncio implements JsonSerializable
         $this->ban = $ban;
     }
 
+    //-----------------------------------------------------------------------METODI GET E SET-------------------------------------------------------------------------------------------
+
     /**
-     * @return int
+     * @return int id foto Annuncio
      */
     public function getIdFoto(): int
     {
@@ -46,7 +97,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param int $idFoto
+     * @param int $idFoto id foto Annuncio
      */
     public function setIdFoto(int $idFoto): void
     {
@@ -54,24 +105,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return array
-     */
-    public function getArrayFoto(): array
-    {
-        return $this->arrayFoto;
-    }
-
-    /**
-     * @param array $arrayFoto
-     */
-    public function setArrayFoto(array $arrayFoto): void
-    {
-        $this->arrayFoto = $arrayFoto;
-    }
-
-
-    /**
-     * @return int
+     * @return int id venditore Annuncio
      */
     public function getIdVenditore(): int
     {
@@ -79,7 +113,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param int $idVenditore
+     * @param int $idVenditore id venditore Annuncio
      */
     public function setIdVenditore(int $idVenditore): void
     {
@@ -87,7 +121,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return int
+     * @return int id compratore Annuncio
      */
     public function getIdCompratore(): int
     {
@@ -95,7 +129,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param int $idCompratore
+     * @param int $idCompratore id compratore Annuncio
      */
     public function setIdCompratore(int $idCompratore): void
     {
@@ -103,7 +137,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return string
+     * @return string descrizione Annuncio
      */
     public function getDescrizione(): string
     {
@@ -111,7 +145,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param string $descrizione
+     * @param string $descrizione descrizione Annuncio
      */
     public function setDescrizione(string $descrizione): void
     {
@@ -119,7 +153,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return float
+     * @return float prezzo Annuncio
      */
     public function getPrezzo()
     {
@@ -127,14 +161,14 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param float $prezzo
+     * @param float $prezzo prezzo Annuncio
      */
     public function setPrezzo($prezzo): void
     {
         $this->prezzo = $prezzo;
     }
     /**
-     * @return DateTime
+     * @return DateTime data pubblicazione Annuncio
      */
     public function getData(): DateTime
     {
@@ -142,7 +176,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param DateTime $data
+     * @param DateTime $data data pubblicazione Annuncio
      */
     public function setData(DateTime $data): void
     {
@@ -150,7 +184,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return string
+     * @return string titolo Annuncio
      */
     public function getTitolo(): string
     {
@@ -158,7 +192,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param string $titolo
+     * @param string $titolo titolo Annuncio
      */
     public function setTitolo(string $titolo): void
     {
@@ -166,7 +200,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return int
+     * @return int id Annuncio
      */
     public function getIdAnnuncio()
     {
@@ -174,7 +208,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param int $idAnnuncio
+     * @param int $idAnnuncio id Annuncio
      */
     public function setIdAnnuncio($idAnnuncio): void
     {
@@ -182,15 +216,15 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return int
+     * @return string categoria Annuncio
      */
-    public function getCategoria(): int
+    public function getCategoria(): string
     {
         return $this->categoria;
     }
 
     /**
-     * @param string $categoria
+     * @param string $categoria categoria Annuncio
      */
     public function setCategoria(string $categoria): void
     {
@@ -198,7 +232,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return bool
+     * @return bool ban Annuncio
      */
     public function isBan(): bool
     {
@@ -206,7 +240,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param bool $ban
+     * @param bool $ban ban Annuncio
      */
     public function setBan(bool $ban): void
     {
