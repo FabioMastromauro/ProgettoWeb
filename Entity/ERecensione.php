@@ -1,21 +1,54 @@
 <?php
 
+/**
+ * La classe ERecensione contiene tutti gli attributi e i metodi relativi alle recensioni
+ * Gli attributi sono:
+ * commento: contenuto testuale Recensione
+ * valutazione: valutazione annuncio
+ * idRecensione: id univoco Recensione
+ * idAnnuncio: id Annuncio recensito
+ * dataPubblicazione: data pubblicazione Recensione
+ * autore: autore Recensione
+ * @access public
+ * @author Gruppo 7
+ * @package Entity
+ */
+
 class ERecensione implements JsonSerializable
 {
-    private string $commento; /* contenuto della recensione*/
-    private $valutazione;
-    private  $idRecensione; /* identificativo della recensione */
-    private $idAnnuncio;
-    private  $dataPubblicazione; /* data di pubblicazione della recensione */
-    private $autore;
     /**
-     * @param $commento
-     * @param $valutazione
-     * @param $idRecensione
-     * @param $idAnnuncio
-     * @param $dataPubblicazione
-     * @param $autore
+     * commento Recensione
+     * @var string|mixed|null
      */
+    private string $commento;
+    /**
+     * valutazione annuncio
+     * @var int|mixed|null
+     */
+    private int $valutazione;
+    /**
+     * id Recensione
+     * @var int
+     */
+    private int  $idRecensione;
+    /**
+     * id annuncio recensito
+     * @var int|mixed|null
+     */
+    private int $idAnnuncio;
+    /**
+     * data pubblicazione Recensione
+     * @var DateTime|mixed|null
+     */
+    private DateTime  $dataPubblicazione;
+    /**
+     * autore Recensione
+     * @var int|mixed|null
+     */
+    private int $autore;
+
+    //---------------------------------------------------------------------------COSTRUTTORE----------------------------------------------------
+
     public function __construct($commento=null, $valutazione=null, $idAnnuncio=null,  $dataPubblicazione=null, $autore=null)
     {
         $this->commento = $commento;
@@ -25,8 +58,10 @@ class ERecensione implements JsonSerializable
         $this->autore = $autore;
     }
 
+    //----------------------------------------------------------------METODI GET E SET-----------------------------------------------------
+
     /**
-     * @return string
+     * @return string commento Recensione
      */
     public function getCommento() :string
     {
@@ -34,7 +69,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return string
+     * @return string id Recensione
      */
     public function getIdRecensione()
     {
@@ -42,7 +77,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param string $idRecensione
+     * @param string $idRecensione id Recensione
      */
     public function setIdRecensione($idRecensione): void
     {
@@ -50,7 +85,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param string $commento
+     * @param string $commento commento Recensione
      */
     public function setCommento(string $commento): void
     {
@@ -58,7 +93,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return DateTime|string
+     * @return DateTime|string data pubblicazione Recensione
      */
     public function getDataPubb()
     {
@@ -66,7 +101,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param DateTime $data
+     * @param DateTime $data data pubblicazione Recensione
      */
     public function setDataPubb(DateTime $dataPubblicazione): void
     {
@@ -74,7 +109,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return int id annuncio recensito
      */
     public function getIdAnnuncio() : mixed
     {
@@ -82,7 +117,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param string $idAnnuncio
+     * @param string $idAnnuncio id annuncio recensito
      */
     public function setIdAnnuncio(string $idAnnuncio): void
     {
@@ -90,14 +125,14 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return int valutazione annuncio
      */
     public function getValutazione(){
         return $this->valutazione;
     }
 
     /**
-     * @param mixed $valutazione
+     * @param mixed $valutazione valutazione annuncio
      */
     public function setValutazione($valutazione): void
     {
@@ -105,7 +140,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return int autore Recensione
      */
     public function getAutore()
     {
@@ -113,7 +148,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param mixed $autore
+     * @param int $autore autore recensione
      */
     public function setAutore($autore): void
     {
