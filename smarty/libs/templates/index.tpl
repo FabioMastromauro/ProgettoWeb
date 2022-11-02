@@ -56,6 +56,7 @@
 
                 {/if}
 
+
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
                 <button class="btn btn-dark" type="submit" >Search</button>
@@ -79,7 +80,7 @@
             <li><a class="dropdown-item" href="#">Categoria 2</a></li>
             <li><a class="dropdown-item" href="#">Categoria 3</a></li>
     </ul> -->
-    <button onclick="document.location='#footer'" type="button" class="btn btn-secondary">Contattaci</button>
+   <button onclick="document.location='#footer'" type="button" class="btn btn-secondary">Contattaci</button>
 </div>
 <section class="banner_main" >
     <div class="container">
@@ -108,7 +109,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[0]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[0]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[0]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[0]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                 </div>
             </div>
             <p></p>
@@ -119,7 +120,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[1]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[1]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[1]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[1]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                 </div>
             </div>
             <p></p>
@@ -130,7 +131,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[2]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[2]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[2]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[2]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                 </div>
             </div>
             <p></p>
@@ -141,7 +142,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[3]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[3]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[3]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[3]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                 </div>
             </div>
             <p></p>
@@ -152,7 +153,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[4]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[4]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[4]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[4]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                 </div>
             </div>
             <p></p>
@@ -163,7 +164,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{$annunci_home[5]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[5]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[5]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[5]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                 </div>
             </div>
             <p></p>
@@ -177,7 +178,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[6]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[6]->getDescrizione()}</p>
-                        <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[6]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                        <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[6]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                     </div>
                 </div>
                 <p></p>
@@ -188,7 +189,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[7]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[7]->getDescrizione()}</p>
-                        <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[7]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                        <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[7]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                     </div>
                 </div>
                 <p></p>
@@ -199,7 +200,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[8]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[8]->getDescrizione()}</p>
-                        <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[8]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                        <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[8]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                     </div>
                 </div>
                 <p></p>
@@ -210,7 +211,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[9]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[9]->getDescrizione()}</p>
-                        <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[9]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                        <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[9]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                     </div>
                 </div>
                 <p></p>
@@ -221,7 +222,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[10]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[10]->getDescrizione()}</p>
-                        <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[10]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                        <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[10]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                     </div>
                 </div>
                 <p></p>
@@ -232,7 +233,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{$annunci_home[11]->getTitolo()}</h5>
                         <p class="card-text">{$annunci_home[11]->getDescrizione()}</p>
-                        <a href="/localmp/Annunci/InfoAnnuncio/{$annunci_home[11]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                        <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[11]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                     </div>
                 </div>
                 <p></p>
