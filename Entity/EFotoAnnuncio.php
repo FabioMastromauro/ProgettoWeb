@@ -1,9 +1,22 @@
 <?php
 
+/**
+ * La classe EFotoAnnuncio è un'estensione della classe EFoto, e associa le foto all'annuncio
+ * Gli attributi sono:
+ * idAnn: id annuncio Foto
+ * @access public
+ * @author Gruppo 7
+ * @package Entity
+ */
+
 class EFotoAnnuncio extends EFoto implements JsonSerializable
 {
+    /**
+     * @var int id Annuncio
+     */
+   private int $idAnn;
 
-   private $idAnn;
+   //-----------------------------COSTRUTTORE------------------------------------------------
 
     public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
     {
@@ -11,14 +24,16 @@ class EFotoAnnuncio extends EFoto implements JsonSerializable
         // $this->idAnn = $idAnn;
     }
 
+    //-------------------------METODI GET E SET-----------------------------------------------
+
     /**
- * @return mixed
+ * @return int id annuncio
  */
 public function getIdAnn()
 {
     return $this->idAnn;
 }/**
- * @param mixed $idAnn
+ * @param int $idAnn id annuncio
  */
 public function setIdAnn($idAnn): void
 {
@@ -37,9 +52,4 @@ public function jsonSerialize()
         ];
 
 }
-
-// forse il toString
-
-
-
 }

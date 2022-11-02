@@ -1,25 +1,30 @@
 <?php
 
+/**
+ * La classe EFotoUtente è un estensione della classe EFoto, e associa le foto agli utenti
+ * Gli attributi sono:
+ * idUser: id utente Foto
+ */
+
 class EFotoUtente extends EFoto implements JsonSerializable
 {
     /**
-     * id dell'utente
-     * @AttributeType string
+     * @var int id utente
      */
+    private int $idUser;
 
-    protected $idUser;
+    //--------------------------------COSTRUTTORE----------------------------------------------
 
-    /**
-     * @param $idUser
-     */
     public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
     {
         parent::__construct($idFoto, $nomeFoto, $size, $tipo, $foto);
         // $this->idUser = $idUser;
     }
 
+    //-------------------------------METODI GET E SET-------------------------------------------
+
     /**
-     * @return mixed
+     * @return int id utente
      */
     public function getIdUser()
     {
@@ -27,7 +32,7 @@ class EFotoUtente extends EFoto implements JsonSerializable
     }
 
     /**
-     * @param mixed $idUser
+     * @param int $idUser id utente
      */
     public function setIdUser($idUser): void
     {
