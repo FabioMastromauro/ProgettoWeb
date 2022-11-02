@@ -19,19 +19,19 @@ class EUtente implements JsonSerializable
      * @param int $idUser
      * @param string $email
      * @param string $password
-     * @param $idImmagine
+     * @param $idFoto
      * @param $dataIscrizione
      * @param $dataFineBan
      * @param $ban
      * @param bool $admin
      */
-    public function __construct(string $nome = null, string $cognome=null, string $email=null, $idImmagine=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null, bool $admin=null)
+    public function __construct(string $nome = null, string $cognome=null, string $email=null, $idFoto=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null, bool $admin=null)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
         $this->email = $email;
         $this->password = $password;
-        $this->idFoto = $idImmagine;
+        $this->idFoto = $idFoto;
         $this->dataIscrizione = $dataIscrizione;
         $this->dataFineBan = $dataFineBan;
         $this->ban = $ban;
@@ -207,7 +207,7 @@ class EUtente implements JsonSerializable
                 'idUser'   => $this->getIdUser(),
                 'email'   => $this->getEmail(),
                 'password'   => $this->getPassword(),
-                'idImmagine'   => $this->getIdFoto(),
+                'idFoto'   => $this->getIdFoto(),
                 'dataIscrizione'   => $this->getDataIscrizione(),
                 'dataFineBan'   => $this->getDataFineBan(),
                 'ban'   => $this->isBan(),
