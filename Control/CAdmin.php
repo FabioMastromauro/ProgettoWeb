@@ -21,7 +21,7 @@ class CAdmin
             $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getidFoto()]));
             $view->homeAdmin($utente, $list, $immagine);
         } else {
-            header('Location: /localmp/'); // da definire!
+            header('Location: /localmp/');
         }
     }
 
