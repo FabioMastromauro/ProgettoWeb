@@ -1,11 +1,27 @@
 <?php
 
+/**
+ * La classe FCategoria fornisce query per gli oggetti ECategoria
+ * @package Foundation
+ */
 class FCategoria extends FDatabase
 {
+    /**
+     * @var string
+     */
     private static $table = "categoria";
+    /**
+     * @var string
+     */
     private static $class = "FCategoria";
+    /**
+     * @var string
+     */
     private static $values = "(:categoria, :idCate)";
 
+    /**
+     * Costruttore
+     */
     public function __construct() {}
 
     /**
@@ -32,17 +48,36 @@ class FCategoria extends FDatabase
         return self::$values;
     }
 
+    /**
+     * Metodo che lega gli attributi della categoria da inserire con i parametri della insert
+     * @param $stmt
+     * @param ECategoria $categoria
+     * @return void
+     */
     public static function bind($stmt, ECategoria $categoria) {
         $stmt->bindValue(":categoria", $categoria->getCategoria(), PDO::PARAM_STR);
         $stmt->bindValue(":idCate", $categoria->getIdCate(), PDO::PARAM_INT);
     }
 
+    /**
+     * Metodo che salva una categoria sul DB
+     * @param $categoria
+     * @return void
+     */
     public static function store($categoria) {
         $db = parent::getInstance();
         $id = $db->storeDB(self::getClass(), $categoria);
         $categoria->setIdCate($id);
     }
 
+    /**
+     * Metodo che aggiorna un determinato campo di una categoria nel DB
+     * @param $field
+     * @param $newvalue
+     * @param $pk
+     * @param $val
+     * @return bool|null
+     */
     public static function update($field, $newvalue, $pk, $val) {
         $db = parent::getInstance();
         $id = $db->updateDB(self::getClass(), $field, $newvalue, $pk, $val);
@@ -52,6 +87,12 @@ class FCategoria extends FDatabase
             return null;
     }
 
+    /**
+     * Metodo che elimina una categoria dato il suo id
+     * @param $field
+     * @param $id
+     * @return bool|null
+     */
     public static function delete($field, $id) {
         $db = parent::getInstance();
         $id = $db->deleteDB(self::getClass(), $field, $id);
@@ -61,6 +102,12 @@ class FCategoria extends FDatabase
             return null;
     }
 
+    /**
+     * Metodo che verifica se esiste una determinata categoria dati il campo e l'id
+     * @param $field
+     * @param $id
+     * @return bool|null
+     */
     public static function exist($field, $id) {
         $db = parent::getInstance();
         $id = $db->existDB(self::getClass(), $field, $id);
@@ -70,6 +117,12 @@ class FCategoria extends FDatabase
             return null;
     }
 
+    /**
+     * Metodo che cerca una determinata categoria nel DB
+     * @param $field
+     * @param $id
+     * @return array|null
+     */
     public static function search($field, $id) {
         $db = parent::getInstance();
         $id = $db->searchDB(self::getClass(), $field, $id);
@@ -79,6 +132,13 @@ class FCategoria extends FDatabase
             return null;
     }
 
+    /**
+     * Metodo che carica una categoria dal DB sulla base di un dato attributo
+     * @param $parametri
+     * @param string $ordinamento
+     * @param string $limite
+     * @return array|ECategoria
+     */
     public static function loadByField($parametri = array(), string $ordinamento, string $limite) {
         $categoria = null;
         $db = parent::getInstance();
