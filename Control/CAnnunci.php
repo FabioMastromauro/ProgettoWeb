@@ -1,8 +1,19 @@
 <?php
 
+/**
+ * La classe CAnnunci viene utilizzata per eseguire tutte le operazioni
+ * CRUD (create/read/delete/update) sugli annunci
+ * @package Control
+ */
 class CAnnunci
 {
 
+    /**
+     * Metodo che permette la visualizzazione di un annuncio in base all'id e, se non presente,
+     * permette la visualizzazione di 12 annunci caricati direttamente dal DB
+     * @param $id
+     * @return void
+     */
     static function esplora($id=null){
         $view = new VAnnunci();
         $pm = USingleton::getInstance('FPersistentManager');
@@ -12,17 +23,26 @@ class CAnnunci
             $array = self::homeAnnunci($annunci);
             $view->showAnnunci($annunci, $array);
         } else {
-            $annunci = $pm::load('FAnnuncio',array(), '', 3);
+            $annunci = $pm::load('FAnnuncio',array(), '', 12);
             $array = self::homeAnnunci($annunci);
             $view->showAnnunci($annunci, $array);
         }
     }
 
+    /**
+     * Metodo che permette la visualizzazione di/degli annuncio/annunci trovato/i
+     * in base ai parametri di ricerca e, se non sono presenti annunci nella
+     * categoria cercata o non sono stati trovati annunci inerenti la ricerca,
+     * viene mostrata una pagina con degli annunci casuali
+     * @param $cerca
+     * @param $index
+     * @return void
+     */
     static function esploraAnnunci($cerca = null, $index = null) {
 
         $annunciPagina = 12;
 
-         if ($cerca == null && isset($_COOKIE['searchOn'])) {
+        if ($cerca == null && isset($_COOKIE['searchOn'])) {
             if ($_COOKIE['searchOn'] == 1) self::searchOff();
         }
 
@@ -66,16 +86,16 @@ class CAnnunci
             if ($newIndex * $annunciPagina <= $numAnnunci) {
                 $annunciPagina = $pm::load('FAnnuncio', array(['idAnnuncio', '>', ($newIndex - 1) * $annunciPagina]), '', $annunciPagina);
             } else {
-            $limite = $numAnnunci % $annunciPagina;
-            $annunciPagina = $pm::load('FAnnunci', array(['idAnnuncio', '>', $newIndex * $annunciPagina - $annunciPagina]), '', $limite);
-        }
-
-        if (is_array($annunciPagina)) {
-            for ($i = 0; $i < sizeof($annunciPagina); $i++) {
-                $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunciPagina[$i]->getIdFoto()]));
+                $limite = $numAnnunci % $annunciPagina;
+                $annunciPagina = $pm::load('FAnnunci', array(['idAnnuncio', '>', $newIndex * $annunciPagina - $annunciPagina]), '', $limite);
             }
-        } else {
-            $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annunciPagina->getIdFoto()]));
+
+            if (is_array($annunciPagina)) {
+                for ($i = 0; $i < sizeof($annunciPagina); $i++) {
+                    $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunciPagina[$i]->getIdFoto()]));
+                }
+            } else {
+                $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annunciPagina->getIdFoto()]));
             }
         } else {
             if ($newIndex * 12 <= $numAnnunci) {
@@ -111,12 +131,23 @@ class CAnnunci
         else $view->showAll($annunciPagina, $numPagine, $newIndex, $numAnnunci, $foto, $cerca, $categorie);
     }
 
+    /**
+     * Metodo che svuota il cookie che viene attivato nel momento in cui viene fatta una ricerca
+     * @return void
+     */
     static function searchOff() {
         setcookie('seatchOn', 0);
         setcookie('annuncio_ricerca', '');
         header('Location: /localmp/Annunci/esploraAnnunci');
     }
 
+    /**
+     * Metodo che permette la visualizzazione della pagina
+     * che contiene più informazioni riguardanti l'annuncio
+     * in questione
+     * @param int $id
+     * @return void
+     */
     static function infoAnnuncio(int $id) {
         $view = new VAnnunci();
         $pm = USingleton::getInstance('FPersistentManager');
@@ -131,6 +162,12 @@ class CAnnunci
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente);
     }
 
+    /**
+     * Metodo che permette la raccolta di tutti gli autori, annunci e foto che
+     * saranno poi usati in altri metodi
+     * @param $annunci
+     * @return array
+     */
     static function homeAnnunci($annunci) {
         $pm = USingleton::getInstance('FPersistentManager');
         if($annunci!=null) {
@@ -152,6 +189,11 @@ class CAnnunci
         return array($annunci_home, $autori_annunci, $foto_home, $foto_autore);
     }
 
+    /**
+     * Metodo che gestisce la ricerca di un annuncio da parte di un utente
+     * @param $categoria
+     * @return void
+     */
     static function cerca($categoria = null) {
         $pm = USingleton::getInstance('FPersistentManager');
         if ($categoria != null) {
@@ -209,11 +251,19 @@ class CAnnunci
     }
 
 
+    /**
+     * Metodo che reindirizza alla view che permette la creazione di un nuovo annuncio
+     * @return void
+     */
     static function creaAnnuncio() {
         $view = new VAnnunci();
         $view->showCreaAnnuncio();
     }
 
+    /**
+     * Metodo che permette la pubblicazione di un annuncio
+     * @return void
+     */
     static function pubblicaAnnuncio() {
         $pm=USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
@@ -238,6 +288,11 @@ class CAnnunci
         }
     }
 
+    /**
+     * Metodo che rimanda alla view che permette la modifica di un annuncio
+     * @param $idAnnuncio
+     * @return void
+     */
     static function modificaAnnuncio($idAnnuncio) {
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
@@ -254,6 +309,13 @@ class CAnnunci
         }
     }
 
+    /**
+     * Metodso che invia al DB i dati aggiornati in seguito alla
+     * modifica di un annuncio
+     * @param $idAnnuncio
+     * @param $idFotoVecchia
+     * @return void
+     */
     static function confermaModifiche($idAnnuncio, $idFotoVecchia) {
         $pm=USingleton::getInstance('FPersistentManager');
         if (CUtente::isLogged()) {
@@ -276,6 +338,11 @@ class CAnnunci
         }
     }
 
+    /**
+     * Metodo che permette il caricamento di una foto durante
+     * la creazione o modifica di un annuncio
+     * @return bool
+     */
     static function upload() {
         $pm = USingleton::getInstance('FPersistentManager');
         $result = false;
@@ -300,6 +367,12 @@ class CAnnunci
 
     }
 
+    /**
+     * Metodo che permette la cancellazione di un annuncio
+     * @param $idAnnuncio
+     * @param $idFoto
+     * @return void
+     */
     static function cancellaAnnuncio($idAnnuncio, $idFoto) {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
@@ -320,6 +393,11 @@ class CAnnunci
         }
     }
 
+    /**
+     * Metodo che rimanda alla schermata di acquisto di un annuncio
+     * @param $idAnnuncio
+     * @return void
+     */
     static function schermataAcquisto($idAnnuncio) {
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
@@ -327,8 +405,8 @@ class CAnnunci
         if (CUtente::isLogged()) {
             $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
             if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
-            $view = new VAnnunci();
-            $view->schermataAcquisto();
+                $view = new VAnnunci();
+                $view->schermataAcquisto();
             } else {
                 header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
             }
