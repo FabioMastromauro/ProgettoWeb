@@ -310,7 +310,7 @@ class CAnnunci
     }
 
     /**
-     * Metodso che invia al DB i dati aggiornati in seguito alla
+     * Metodo che invia al DB i dati aggiornati in seguito alla
      * modifica di un annuncio
      * @param $idAnnuncio
      * @param $idFotoVecchia
