@@ -1,21 +1,35 @@
 <?php
 
+/**
+ * La classe CAdmin permette all'admin di effettuare delle operazioni di ban/riattivazione
+ * su utenti e annunci
+ * @package Control
+ */
 class CAdmin
 {
-    //verifica l'admin e visualizza la sua home page
-    static function home() {
+    /**
+     * Metodo che mostra la schermata con tutti gli utenti all'admin
+     * @return void
+     */
+    static function homeAdmin() {
         $view = new VAdmin();
         $session = USingleton::getInstance('USession');
         $utente = unserialize($session->readValue('utente'));
         if ($utente != null && $utente->getadmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
             $list = $pm::load('FUtente');
-            $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getIdFoto()]));
+            $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getidFoto()]));
             $view->homeAdmin($utente, $list, $immagine);
         } else {
             header('Location: /localmp/'); // da definire!
         }
     }
+
+    /**
+     * Metodo che visualizza il profilo di un utente strutturato per l'admin
+     * @param $id
+     * @return void
+     */
     static function profiloUtente($id) {
         $view = new VAdmin();
         $pm = USingleton::getInstance('FPersistentManager');
@@ -23,13 +37,18 @@ class CAdmin
         $admin = unserialize($session->readValue('utente'));
         if ($admin != null && $admin->getAdmin() == 1) {
             $utente = $pm::load('FUtente', array('idUser'), array($id));
-            $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getIdFoto()]));
+            $immagine = $pm::load('FFotoUtente',  array(['id', '=', $utente->getidFoto()]));
             $view->profiloUtente($utente, $immagine);
         } else {
             header('Location: /localmp/');
         }
     }
 
+    /**
+     * Metodo che permette il ban di un untente da parte dell'admin
+     * @param $id
+     * @return void
+     */
     static function bannaUtente($id) {
         $view = new VAdmin();
         $session = USingleton::getInstance('USession');
@@ -55,6 +74,11 @@ class CAdmin
         }
     }
 
+    /**
+     * Metodo che permette la riattivazione di un utente da parte dell'admin
+     * @param $id
+     * @return void
+     */
     static function ripristinaUtente($id) {
         $session = USingleton::getInstance('USession');
         $admin = unserialize($session->readValue('utente'));
@@ -68,6 +92,11 @@ class CAdmin
         }
     }
 
+    /**
+     * Metodo che permette il ban di un annuncio da parte dell'admin
+     * @param $id
+     * @return void
+     */
     static function bannaAnnuncio($id) {
         $view = new VAdmin();
         $session = USingleton::getInstance('USession');
@@ -94,6 +123,11 @@ class CAdmin
         }
     }
 
+    /**
+     * Metodo che permette la riattivazione di un annuncio da parte dell'admin
+     * @param $id
+     * @return void
+     */
     static function ripristinaAnnuncio($id) {
         $session = USingleton::getInstance('USession');
         $admin = unserialize($session->readValue('utente'));
