@@ -136,7 +136,7 @@ class CAnnunci
      * @return void
      */
     static function searchOff() {
-        setcookie('seatchOn', 0);
+        setcookie('searchOn', 0);
         setcookie('annuncio_ricerca', '');
         header('Location: /localmp/Annunci/esploraAnnunci');
     }
