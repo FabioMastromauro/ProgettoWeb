@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunto metodo acquisto in VAnnunci.php">
-      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,69 +168,6 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-    </task>
-    <task id="LOCAL-00088" summary="Messo apposto DB e foto">
-      <created>1662409962665</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1662409962665</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Messo apposto DB e foto">
-      <created>1662410106357</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1662410106357</updated>
-    </task>
-    <task id="LOCAL-00090" summary="FCategoria.php">
-      <created>1662410497936</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1662410497936</updated>
-    </task>
-    <task id="LOCAL-00091" summary="FCategoria.php">
-      <created>1662411320061</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1662411320061</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Correzioni in FRecensione.php">
-      <created>1662411860931</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1662411860931</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Correzioni in FUtente.php">
-      <created>1662412544457</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1662412544457</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Eliminata home.tpl">
-      <created>1662413420064</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1662413420064</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Creato register.html">
-      <created>1662660847647</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1662660847648</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Link login.html-&gt; register.html">
-      <created>1662665687192</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1662665687192</updated>
     </task>
     <task id="LOCAL-00097" summary="Link login.html-&gt; register.html">
       <created>1662665780991</created>
@@ -510,7 +449,70 @@
       <option name="project" value="LOCAL" />
       <updated>1666709559257</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="correzione percorsi file index.tpl">
+      <created>1667385424912</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385424918</updated>
+    </task>
+    <task id="LOCAL-00138" summary="correzione percorsi file index.tpl">
+      <created>1667385802845</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385802846</updated>
+    </task>
+    <task id="LOCAL-00139" summary="correzione percorsi file index.tpl">
+      <created>1667391214293</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1667391214293</updated>
+    </task>
+    <task id="LOCAL-00140" summary="aggiunto php DocBlock EUtente.php">
+      <created>1667401333970</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1667401333970</updated>
+    </task>
+    <task id="LOCAL-00141" summary="aggiunto php blockDoc a EAnnuncio.php">
+      <created>1667402678007</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1667402678007</updated>
+    </task>
+    <task id="LOCAL-00142" summary="aggiunto php docBlock ERecensione.php">
+      <created>1667403346124</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1667403346124</updated>
+    </task>
+    <task id="LOCAL-00143" summary="aggiunto php docBlock ECategoria.php">
+      <created>1667403670684</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1667403670684</updated>
+    </task>
+    <task id="LOCAL-00144" summary="aggiunto php docBlock EFoto.php">
+      <created>1667404360440</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1667404360440</updated>
+    </task>
+    <task id="LOCAL-00145" summary="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php">
+      <created>1667404826005</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1667404826005</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,13 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta CAdmin.php" />
-    <MESSAGE value="Aggiustamenti vari" />
-    <MESSAGE value="Completato CFrontController.php" />
-    <MESSAGE value="Aggiunto localmp.sql, finito CUtente.php" />
-    <MESSAGE value="Aggiunta FFotoAnnuncio.php di metodi mancanti" />
-    <MESSAGE value="Tolto getIdUser() a CUtente.php" />
-    <MESSAGE value="Corretto EAnnuncio.php e ampliato CAnnuncio.php" />
     <MESSAGE value="Corretto CAnnunci.php e VAnnunci.php" />
     <MESSAGE value="Aggiornato DB" />
     <MESSAGE value="Correzioni FAnnuncio.php" />
@@ -566,7 +561,14 @@
     <MESSAGE value="Modificato con Ctrl+R foto e immagine" />
     <MESSAGE value="Aggiunto metodo acquisto in CAnnunci.php" />
     <MESSAGE value="Aggiunto metodo acquisto in VAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto metodo acquisto in VAnnunci.php" />
+    <MESSAGE value="correzione percorsi file index.tpl" />
+    <MESSAGE value="aggiunto php DocBlock EUtente.php" />
+    <MESSAGE value="aggiunto php blockDoc a EAnnuncio.php" />
+    <MESSAGE value="aggiunto php docBlock ERecensione.php" />
+    <MESSAGE value="aggiunto php docBlock ECategoria.php" />
+    <MESSAGE value="aggiunto php docBlock EFoto.php" />
+    <MESSAGE value="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

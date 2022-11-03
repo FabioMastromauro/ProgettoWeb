@@ -1,12 +1,29 @@
 <?php
 
+/**
+ * La classe FAnnuncio fornisce query per gli oggetti EAnnuncio
+ * @package Foundation
+ *
+ */
 class FAnnuncio extends FDatabase{
 
+    /**
+     * @var string
+     */
     private static $table = 'annuncio';
+    /**
+     * @var string
+     */
     private static $class = 'FAnnuncio';
-    private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore, :categoria)';
+    /**
+     * @var string
+     */
+    private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore, :categoria, :ban)';
 
-public function __construct(){}
+    /**
+     * Costruttore
+     */
+    public function __construct(){}
 
     /**
      * @return string
@@ -32,6 +49,12 @@ public function __construct(){}
         return self::$values;
     }
 
+    /**
+     * Metodo che lega gli attributi dell'annuncio da inserire con i parametri della insert
+     * @param $stmt
+     * @param EAnnuncio $annuncio
+     * @return void
+     */
     public static function bind($stmt, EAnnuncio $annuncio)
     {
         $stmt->bindValue(':titolo', $annuncio->getTitolo(), PDO::PARAM_STR);
@@ -45,13 +68,25 @@ public function __construct(){}
         $stmt->bindValue(':categoria', $annuncio->getCategoria(), PDO::PARAM_INT);
         $stmt->bindValue(':ban', $annuncio->isBan(), PDO::PARAM_BOOL);
     }
-    /** Metodo che salva una recensione nel DB */
+
+    /**
+     * Metodo che salva un annuncio nel DB
+     * @param $object
+     * @return void
+     */
     public static function store($object){
         $db = parent::getInstance();
         $id = $db->storeDB(self::$class, $object);
         $object->setIdAnnuncio($id);
     }
 
+    /**
+     * Metodo che carica un annuncio dal DB sulla base di un dato attributo
+     * @param $parametri
+     * @param $ordinamento
+     * @param $limite
+     * @return array|EAnnuncio
+     */
     public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
         $annuncio = null;
         $db = parent::getInstance();
@@ -78,14 +113,28 @@ public function __construct(){}
         }
         return $annuncio;
     }
-    /** Metodo che aggiorna un determinato campo di un annuncio nel DB */
+
+    /**
+     * Metodo che aggiorna un determinato campo di un annuncio nel DB
+     * @param $field
+     * @param $newvalue
+     * @param $pk
+     * @param $val
+     * @return true|false
+     */
     public static function update($field, $newvalue, $pk, $val){
         $db = parent::getInstance();
         $result = $db->updateDB(self::getClass(), $field, $newvalue, $pk, $val);
         if ($result) return true;
         else return false;
     }
-    /** Metodo che elimina un annuncio dato il suo id */
+
+    /**
+     * Metodo che elimina un annuncio dato il suo id
+     * @param $field
+     * @param $id
+     * @return true|false
+     */
     public static function delete($field, $id){
         $db = parent::getInstance();
         $result = $db->deleteDB(self::getClass(), $field, $id);;
@@ -93,7 +142,12 @@ public function __construct(){}
         else return false;
     }
 
-    /** Metodo che verifica se esiste un determinato annuncio dati il campo e l'id */
+    /**
+     * Metodo che verifica se esiste un determinato annuncio dati il campo e l'id
+     * @param $field
+     * @param $id
+     * @return true|false
+     */
     public static function exist($field, $id){
         $db = parent::getInstance();
         $result = $db->existDB(self::getClass(), $field, $id);
@@ -101,29 +155,41 @@ public function __construct(){}
         else return false;
     }
 
-    /** Metodo che cerca un determinato annuncio nel DB */
+    /**
+     * Metodo che cerca un determinato annuncio nel DB
+     * @param array $parametri
+     * @param string $ordinamento
+     * @param string $limite
+     */
     public static function search($parametri=array(), $ordinamento='', $limite=''){
         $db = parent::getInstance();
         $result = $db->searchDB(self::$class, $parametri, $ordinamento, $limite);
         return $result;
     }
 
+    /**
+     * Metodo che restituisce il numero di tuple risultanti di una query
+     * @param $parametri
+     * @param $ordinamento
+     * @param $limite
+     * @return int|null
+     */
     public static function getRows($parametri = array(), $ordinamento = '', $limite = ''){
         $db = parent::getInstance();
         $result = $db->getRowNum(self::$class, $parametri, $ordinamento, $limite);
         return $result;
     }
 
+    /**
+     * Metodo che carica tutti i valori di un determinato attributo della tabella annuncio
+     * @param $columns
+     * @param $ordinamento
+     * @param $limite
+     * @return array|mixed|null
+     */
     public static function loadDefCol($columns, $ordinamento = '', $limite = '') {
         $db = parent::getInstance();
         $result = $db->loadDefColDB(self::$class, $columns, $ordinamento, $limite);
         return $result;
     }
-
-
-
-
-
-
-
 }
