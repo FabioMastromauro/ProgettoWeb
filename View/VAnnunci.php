@@ -115,7 +115,8 @@ class VAnnunci
         $this->smarty->display('crea_annuncio.tpl');
     }
 
-    /** Metodo che permette di vedere i dettagli/info di un annuncio
+    /**
+     * Metodo che permette di vedere i dettagli/info di un annuncio
      * @param EAnnuncio $annuncio annuncio in questione
      * @param $user autore dell'annuncio
      * @param $mod utente eventualmente caricato
@@ -169,7 +170,8 @@ class VAnnunci
         $this->smarty->display('showAllRev.tpl');
     }
 
-    /** Metodo che richiama la schermata di annunci nel caso la ricerca andasse a buon fine
+    /**
+     * Metodo che richiama la schermata di annunci nel caso la ricerca andasse a buon fine
      * @param $annunci annunci
      * @param $num_pagine numero pagine
      * @param $index indice che gestisce gli annunci per pagina
