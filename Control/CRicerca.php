@@ -1,21 +1,31 @@
 <?php
 
+/**
+ * La classe CRicerca viene utilizzata nella home page per la generazione
+ * casuale di annunci
+ * @package Control
+ */
 class CRicerca
 {
+    /**
+     * Metodo che carica nella home page 12 annunci grazie all'utilizzo
+     * della funzione rand che genera casualmente dei numeri
+     * @return void
+     */
     public static function blogHome(){
         $vSearch = new VRicerca();
 
         $pm = USingleton::getInstance('FPersistentManager');
 
-    //    $annunci = $pm::load('FAnnuncio', array(), 'data', '3');
+        //    $annunci = $pm::load('FAnnuncio', array(), 'data', '3');
 
-        $numAnnunci = $pm::getRows('FAnnuncio');
+        $numAnnunci = $pm::getRows('FAnnuncio', array(), '', '');
 
-    /*    for($i = 0; $i < $numAnnunci; $i++) { // passo tre annunci nel carosello
-            $annunci_home[$i] = $annunci[$i];
-            $autore_annuncio[$i] = $pm::load('FUtente', array(['idFoto','=', $annunci[$i]->getIdVenditore()]));
-            $immagini[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci[$i]->getIdFoto()]));
-        } */
+        /*    for($i = 0; $i < $numAnnunci; $i++) { // passo tre annunci nel carosello
+                $annunci_home[$i] = $annunci[$i];
+                $autore_annuncio[$i] = $pm::load('FUtente', array(['idFoto','=', $annunci[$i]->getIdVenditore()]));
+                $immagini[$i] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annunci[$i]->getIdFoto()]));
+            } */
 
         //Funzione che sceglie casualmente gli annunci da far vedere sulla home
         $ran_num = array();
