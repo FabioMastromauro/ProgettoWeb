@@ -1,11 +1,27 @@
 <?php
 
+/**
+ * La classe FRecensione fornisce query per gli oggetti ERecensione
+ * @package Foundation
+ */
 class FRecensione extends FDatabase{
 
+    /**
+     * @var string
+     */
     private static $table = "recensione";
+    /**
+     * @var string
+     */
     private static $class = "FRecensione";
+    /**
+     * @var string
+     */
     private static $values = "(:commento, :valutazione, :idRecensione, :idAnnuncio, :dataPubblicazione, :autore)";
 
+    /**
+     * Costruttore
+     */
     public function __construct() {}
 
     /**
@@ -31,7 +47,14 @@ class FRecensione extends FDatabase{
     {
         return self::$values;
     }
-    public static function bind($stmt,ERecensione $recensione){
+
+    /**
+     * Metodo che lega gli attributi dell'annuncio da inserire con i parametri della insert
+     * @param $stmt
+     * @param ERecensione $recensione
+     * @return void
+     */
+    public static function bind($stmt, ERecensione $recensione){
         $stmt->bindValue(':commento',$recensione->getCommento(), PDO::PARAM_STR);
         $stmt->bindValue(':valutazione',$recensione->getValutazione(), PDO::PARAM_INT);
         $stmt->bindValue(':idRecensione',$recensione->getIdRecensione(), PDO::PARAM_INT);
@@ -68,6 +91,7 @@ class FRecensione extends FDatabase{
             $ris = true;
         return $ris;
     }
+
     /**
      * Permette la delete sul DB in base all'id
      * @param int l'id dell'oggetto da eliminare dal db
@@ -81,17 +105,22 @@ class FRecensione extends FDatabase{
         else
             return false;
     }
+
     /** metodo che cerca una recensione nel DB
-     * @param
+     * @param array $parametri
+     * @param string $ordinamento
+     * @param string $limite
+     * @return mixed|false
      */
     public static function search($parametri=array(), $ordinamento='', $limite=''){
         $db = parent::getInstance();
         $result = $db->searchDB(self::$class, $parametri, $ordinamento, $limite);
         return $result;
     }
-    /** metodo che può aggiornare i campi di una recensione
-     *@param $field campo da aggiornare
-     *@param  $primkey primary key
+    /**
+     * Metodo che può aggiornare i campi di una recensione
+     * @param $field campo da aggiornare
+     * @param  $primkey primary key
      * @param $newvalue nuovo valore da assegnare
      * @return true se esiste il mezzo, altrimenti false
      */
@@ -125,7 +154,7 @@ class FRecensione extends FDatabase{
         }
         return $rec;
     }
-    /** Metodo che permette la load su db
+    /** Metodo che permette la load su DB
      * @return object $recensione recensione da caricare
      */
     public static function loadByField($parametri = array(), $ordinamento = '', $limite = ''){
@@ -153,14 +182,23 @@ class FRecensione extends FDatabase{
         }
         return $recensione;
     }
-    /** Metodo che prende determinate righe dal DB */
+    /**
+     * Metodo che prende determinate righe dal DB
+     * @param array $parametri
+     * @param string $ordinamento
+     * @param string $limite
+     * @return mixed
+     */
     public static function getRows($parametri = array(), $ordinamento = '', $limite = ''){
         $db = parent::getInstance();
         $result = $db->getRowNum(self::$class, $parametri, $ordinamento, $limite);
         return $result;
     }
 
-    /** Metodo che carica tutte le recensioni */
+    /**
+     * Metodo che carica tutte le recensioni
+     * @return mixed
+     */
     public static function loadAll() {
         $rec = null;
         $db = FDatabase::getInstance();
