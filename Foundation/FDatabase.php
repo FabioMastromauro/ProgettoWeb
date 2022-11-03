@@ -1,17 +1,26 @@
 <?php
-if(file_exists('config.inc.php')) require_once 'config.inc.php';
+if(file_exists('Config.inc.php')) require_once 'Config.inc.php';
 
+/**
+ * La classe FDatabase viene utilizzata per la connessione al DB
+ * @package Foundation
+ */
 class FDatabase
 {
-    /** @var $db PDO variabile che stabilisce ls connessione con il db */
+    /**
+     * Variabile che stabilisce ls connessione con il db
+     * @var $db PDO
+     */
     private $db;
-    /** @var string classe foundation */
+    /**
+     * Classe foundation
+     * @var string
+     */
     private static $class = "FDatabase";
-    /** unica istanza della classe */
-    private static $instance; // se usiamo singleton non serve
 
-
-    /** Costruttore privato, accessibile solo con il metodo getInstance() */
+    /**
+     * Costruttore privato, accessibile solo con il metodo getInstance()
+     */
     public function __construct()
     {
         if (!$this->existConn()) {
@@ -22,6 +31,7 @@ class FDatabase
             }
         }
     }
+
     /**
      * Metodo che restituisce l'unica istanza dell'oggetto.
      * @return FDataBase l'istanza dell'oggetto.
@@ -32,6 +42,7 @@ class FDatabase
         }
         return USingleton::getInstance(self::$class);
     }
+
     /**
      * Verifica l'esistenza della connessione con il database
      * @return bool
@@ -42,12 +53,15 @@ class FDatabase
         } else
             return false;
     }
+
     /**
      * Chiude la connessione con il database
+     * @return void
      */
     public function closeConn(){
         USingleton::stopInstance(self::$class);
     }
+
     /**
      * Questa funzione carica in $result il risultato di una query. Può produrre sia risultati singoli
      * che array di risultati (se le righe prodotte sono maggiori di una)
@@ -86,6 +100,7 @@ class FDatabase
             return null;
         }
     }
+
     /**
      * Verifica l'accesso di un utente, controllando le email e password siano presenti nel DB
      * @param $email
@@ -111,7 +126,9 @@ class FDatabase
             return null;
         }
     }
+
     /**
+     * Metodo utilizzato per salvare una nuova tupla sul DB
      * @param $object
      * @param $class
      * @return bool|mixed
@@ -134,7 +151,15 @@ class FDatabase
             return null;
         }
     }
-    public function storeMediaDB($class , $obj,$nome_file) {
+
+    /**
+     * Metodo utilizzato per salvare una foto di un utente o annuncio sul DB
+     * @param $class
+     * @param $obj
+     * @param $nome_file
+     * @return false|string|null
+     */
+    public function storeMediaDB($class , $obj, $nome_file) {
         try {
             $this->db->beginTransaction();
             $query = "INSERT INTO `" . $class::getTable() . "` " . str_replace(array(':', ',', ')'), array('`', '`,', '`)'), $class::getValues()) . " VALUES " . $class::getValues();
@@ -151,6 +176,16 @@ class FDatabase
             return null;
         }
     }
+
+    /**
+     * Metodo utilizzato per aggiornare dei valori sul DB
+     * @param $class
+     * @param $field
+     * @param $newvalue
+     * @param $pk
+     * @param $id
+     * @return bool
+     */
     public function updateDB ($class, $field, $newvalue, $pk, $id)
     {
         try {
@@ -168,8 +203,9 @@ class FDatabase
             return false;
         }
     }
+
     /**
-     * Questa funzione serve a rimuovere i dati di una determinata istanza di un oggetto dal database
+     * Questa funzione serve a rimuovere i dati di una determinata istanza di un oggetto dal DB
      * @param $object
      * @return bool
      */
@@ -194,11 +230,14 @@ class FDatabase
         }
         return $result;
     }
-    /**
-     * Funzione che esegue la query precedentemente istanziata
-     * @return bool
-     */
 
+    /**
+     * Metodo utilizzato per verificare l'esistenza di una tupla sul DB
+     * @param $class
+     * @param $field
+     * @param $id
+     * @return array|false|mixed|void|null
+     */
     public function existDB ($class, $field, $id)
     {
         try {
@@ -215,8 +254,9 @@ class FDatabase
             return null;
         }
     }
+
     /**
-     * Cerca all'interno del database
+     * Cerca all'interno del DB
      * @param array $parametri
      * @param string $ordinamento
      * @param string $limite
@@ -256,13 +296,6 @@ class FDatabase
             return null;
         }
     }
-    /**
-     * Cerca all'interno del database
-     * @param array $parametri
-     * @param string $ordinamento
-     * @param string $limite
-     * @return array|false
-     */
 
     /**
      * Questo metodo verifica quante righe sono state prodotte da una determinata query
@@ -285,12 +318,12 @@ class FDatabase
             if ($ordinamento != '')
                 $query .= 'ORDER BY ' . $ordinamento . ' ' ;
             if ($limite != '')
-                   $query .= 'LIMIT ' . $limite . ' ';
+                $query .= 'LIMIT ' . $limite . ' ';
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $num = $stmt->rowCount();
             $this->closeConn();
-             return $num;
+            return $num;
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             $this->db->rollBack();
@@ -298,9 +331,10 @@ class FDatabase
         }
     }
     /**
-     * Funzione utilizzata per ritornare tutte le recensioni presenti sul database
-     * Utilizzata nella pagina admin
+     * Funzione utilizzata per ritornare tutte le recensioni presenti sul DB,
+     * utilizzata nella pagina admin
      * @param $query query da eseguire
+     * @return array|null
      */
     public function getAllRev ()
     {
@@ -327,6 +361,14 @@ class FDatabase
         }
     }
 
+    /**
+     * Metodo che carica tutti i valori di un determinato attributo di una tabella dal DB
+     * @param $class
+     * @param $columns
+     * @param $order
+     * @param $limite
+     * @return array|mixed|null
+     */
     public function loadDefColDB($class, $columns, $order = '', $limite = '') {
         $cols  = '';
         try {
