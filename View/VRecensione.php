@@ -1,9 +1,17 @@
 <?php
 
+/**
+ * Classe che si occupa dell'input-output dei contenuti riguardanti le recensioni
+ * @author Gruppo 7
+ * @package View
+ */
 class VRecensione
 {
     private $smarty;
 
+    /**
+     * Costruttore che configura/inizializza smarty
+     */
     public function __construct()
     {
         $this->smarty = new Smarty();
@@ -14,11 +22,21 @@ class VRecensione
 
     }
 
+    /**
+     * Metodo che restituisce il commento della recensione che si vuole scrivere
+     * Inviato con metodd POST
+     * @return string
+     */
     static function getCommento()
     {
         return strtoupper($_POST['commento']);
     }
 
+    /**
+     * Metodo che restituisce la valutazione della recensione che si vuole valutare
+     * Inviato con metodo POST
+     * @return string
+     */
     static function getValutazione()
     {
         return strtoupper($_POST['valutazione']);
@@ -57,8 +75,8 @@ class VRecensione
     }
 
     /**
-     * Funzione per mostrare i recensioni recuperati secondo i filtri
-     * @param $recensione da mostrare
+     * Funzione per mostrare le recensioni recuperati secondo i filtri
+     * @param $recensione recensione da mostrare
      */
     public function mostraRecensione($rec, $arrrecensioni){
         //comunico a smarty di mostrare le recensioni
