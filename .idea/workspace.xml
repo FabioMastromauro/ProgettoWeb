@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock FRecensione.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock CRecensione.php" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,27 +164,6 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-    </task>
-    <task id="LOCAL-00104" summary="Aggiunto localmp.sql, finito CUtente.php">
-      <created>1663169976762</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1663169976762</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Aggiunto localmp.sql, finito CUtente.php">
-      <created>1664394537195</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1664394537195</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Aggiunta FFotoAnnuncio.php di metodi mancanti">
-      <created>1664445107071</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1664445107072</updated>
     </task>
     <task id="LOCAL-00107" summary="Aggiunta FFotoAnnuncio.php di metodi mancanti">
       <created>1664449613195</created>
@@ -510,7 +487,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667477588646</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="aggiunto php docBlock CUtente.php">
+      <created>1667478116910</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1667478116910</updated>
+    </task>
+    <task id="LOCAL-00154" summary="aggiunto php docBlock CRicerca.php">
+      <created>1667478246246</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1667478246246</updated>
+    </task>
+    <task id="LOCAL-00155" summary="aggiunto php docBlock CRecensione.php">
+      <created>1667478353875</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1667478353875</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,9 +539,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzioni varie" />
-    <MESSAGE value="cerca in CAnnunci.php" />
-    <MESSAGE value="Implementato metodo cerca in CAnnunci.php" />
     <MESSAGE value="Completato CAnnunci.php" />
     <MESSAGE value="Modificato nome variabili Smarty in modo che combacino" />
     <MESSAGE value="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php" />
@@ -566,7 +561,10 @@
     <MESSAGE value="aggiunto php docBlock FFotoAnnuncio.php e FFotoUtente.php" />
     <MESSAGE value="aggiunto php docBlock FPersistentManager.php" />
     <MESSAGE value="aggiunto php docBlock FRecensione.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock FRecensione.php" />
+    <MESSAGE value="aggiunto php docBlock CUtente.php" />
+    <MESSAGE value="aggiunto php docBlock CRicerca.php" />
+    <MESSAGE value="aggiunto php docBlock CRecensione.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock CRecensione.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
