@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock CAdmin.php e VAdmin.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock VAnnunci.php e CAnnunci.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRecensione.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,13 +167,6 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-    </task>
-    <task id="LOCAL-00111" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
-      <created>1664469104308</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1664469104308</updated>
     </task>
     <task id="LOCAL-00112" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
       <created>1664470175203</created>
@@ -512,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667491262165</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="aggiunto php docBlock VAnnunci.php e CAnnunci.php">
+      <created>1667495727862</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1667495727862</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Corretto CRicerca.php e VRicerca.php" />
     <MESSAGE value="Modificato con Ctrl+R foto e immagine" />
     <MESSAGE value="Aggiunto metodo acquisto in CAnnunci.php" />
     <MESSAGE value="Aggiunto metodo acquisto in VAnnunci.php" />
@@ -568,7 +566,8 @@
     <MESSAGE value="aggiunto php docBlock CAnnunci.php" />
     <MESSAGE value="aggiunto php docBlock CAdmin.php" />
     <MESSAGE value="aggiunto php docBlock CAdmin.php e VAdmin.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock CAdmin.php e VAdmin.php" />
+    <MESSAGE value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
