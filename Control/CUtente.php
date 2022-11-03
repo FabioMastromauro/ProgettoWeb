@@ -1,12 +1,21 @@
 <?php
 
+/**
+ * La classe CUtente gestisce le interazioni dell'utente con la web app
+ * e permette la personalizzazione dei dati personali
+ * @package Control
+ */
 class CUtente
 {
 
+    /**
+     * Metodo che gestisce il login da parte di un utente
+     * @return void
+     */
     static function login () {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (static::isLogged()) {
-                $pm = USingleton::getInstance("FPersistentManager"); // da verificare
+                $pm = USingleton::getInstance("FPersistentManager");
                 $view = new VUtente();
                 $view->loginOk();
             }
@@ -20,6 +29,10 @@ class CUtente
         }
     }
 
+    /**
+     * Metodo che verifica se un utente è bannato oppure è un admin
+     * @return void
+     */
     static function verifica() {
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");
@@ -47,6 +60,10 @@ class CUtente
         }
     }
 
+    /**
+     * Metodo che verifica se un utente è loggato
+     * @return bool
+     */
     static function isLogged() {
         $identified = false;
         if (isset($_COOKIE['PHPSESSID'])) {
@@ -60,6 +77,11 @@ class CUtente
         return $identified;
     }
 
+    /**
+     * Metodo cbe distrugge tutti i cookie o sessID legati ad un utente
+     * al momento del logout
+     * @return void
+     */
     static function logout() {
         $session = USingleton::getInstance("USession");
         $session->unsetSession();
@@ -68,6 +90,10 @@ class CUtente
         header("Location: /localmp/login");
     }
 
+    /**
+     * Metodo che gestisce la registrazione di un utente
+     * @return void
+     */
     static function registration() {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $view = new VUtente();
@@ -80,6 +106,11 @@ class CUtente
         }
     }
 
+    /**
+     * Metodo che, dopo aver verificato l'esistenza da parte di un utente,
+     * registra i suoi dati sul DB
+     * @return void
+     */
     static function verifyRegistration() {
         $pm = USingleton::getInstance("FPersistentManager");
         $verifyEmail = $pm::exist("email", VUtente::getEmail(), "FUtente");
@@ -94,6 +125,12 @@ class CUtente
         }
     }
 
+    /**
+     * Metodo che rimanda alla view col template riguardante il profilo
+     * dell'utente e la modifica dei suoi dati
+     * @param $id
+     * @return void
+     */
     static function profilo($id=null){
         $view = new VUtente();
         $session = USingleton::getInstance('USession');
@@ -127,20 +164,30 @@ class CUtente
     }
 
 
+    /**
+     * Metodo che rimanda alla view che permette la modifica
+     * dei dati personali dell'utente
+     * @return void
+     */
     static function modificaProfilo() {
         $pm = USingleton::getInstance("FPersistentManager");
         $view = new VUtente();
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
         if (CUtente::isLogged()) {
-                $foto = $pm::load("FFotoUtente", array(['idFoto', '=', $utente->getIdFoto()]));
-                $view->modificaProfilo($utente, $foto);
-            }
-            else {
-                header("Location: /localmp/Utente/login");
-            }
+            $foto = $pm::load("FFotoUtente", array(['idFoto', '=', $utente->getIdFoto()]));
+            $view->modificaProfilo($utente, $foto);
+        }
+        else {
+            header("Location: /localmp/Utente/login");
+        }
     }
 
+    /**
+     * Metodo che permette l'upload di una foto al momento della
+     * creazione dell'utente o modifica del profilo
+     * @return bool
+     */
     static function upload() {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
@@ -163,6 +210,11 @@ class CUtente
         return $ris;
     }
 
+    /**
+     * Metodo che aggiorna il DB con i nuovi dati dell'utente
+     * forniti a seguito delle modifiche
+     * @return void
+     */
     static function confermaModifiche() {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
