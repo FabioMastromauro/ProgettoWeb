@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * La classe CRecensione permette la scrittura o cancellazione di recensioni riguardo
+ * un annuncio da parte dell'utente che ha acquistato il prodotto
+ * @package Control
+ */
 class CRecensione
 {
 
