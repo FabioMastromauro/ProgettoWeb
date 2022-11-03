@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock FAnnuncio.php" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock FCategoria.php">
+      <change beforePath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoAnnuncio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FFotoUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFotoUtente.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,13 +167,6 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-    </task>
-    <task id="LOCAL-00100" summary="Aggiustamenti vari">
-      <created>1662829585974</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1662829585975</updated>
     </task>
     <task id="LOCAL-00101" summary="Aggiustamenti vari">
       <created>1662831821994</created>
@@ -508,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667476993393</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="aggiunto php docBlock FCategoria.php">
+      <created>1667477139086</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1667477139086</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Correzioni CUtente.php" />
     <MESSAGE value="Parentesi mancante CAnnunci.php" />
     <MESSAGE value="Aggiunta parametri get in VRecensione.php" />
     <MESSAGE value="Correzione CRecensione.php" />
@@ -564,7 +566,8 @@
     <MESSAGE value="aggiunto php docBlock FDatabase.php" />
     <MESSAGE value="aggiunto php docBlock FUtente.php" />
     <MESSAGE value="aggiunto php docBlock FAnnuncio.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock FAnnuncio.php" />
+    <MESSAGE value="aggiunto php docBlock FCategoria.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock FCategoria.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
