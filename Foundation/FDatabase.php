@@ -74,7 +74,7 @@ class FDatabase
     {
         try {
             if ($field == '' || $id == '' || $criterio == ''){
-                $query = "SELECT * FROM `" . $class::getTable() . '` ';
+                $query = "SELECT * FROM " . $class::getTable() . ";";
             } else {
                 $query = "SELECT * FROM " . $class::getTable() . " WHERE " . $field . $criterio . "'" . $id . "';";
             }

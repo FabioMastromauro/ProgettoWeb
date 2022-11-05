@@ -20,6 +20,7 @@ class VAdmin
         $this->smarty = StartSmarty::configuration();
     }
 
+
     /**
      * Metodo che restituisce la data di iscrizione dell'annuncio da bannare/riattivare
      * @return mixed data di iscrizione utente
