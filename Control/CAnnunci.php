@@ -384,9 +384,9 @@ class CAnnunci
                 $pm::delete('idAnnuncio', $idAnnuncio, "FRecensione");
                 $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
 
-                header("Location: /localmp/Annunci/esploraAnnunci");
+                header("Location: /localmp/Utente/profilo");
             } else {
-                header("Location: /localmp/Annunci/esploraAnnunci");
+                header("Location: /localmp/Utente/profilo");
             }
         } else {
             header("Location: /localmp/Utente/login");
