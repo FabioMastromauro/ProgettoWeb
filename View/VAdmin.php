@@ -22,7 +22,7 @@ class VAdmin
 
 
     /**
-     * Metodo che restituisce la data di iscrizione dell'annuncio da bannare/riattivare
+     * Metodo che restituisce la data fino a quando bannare l'utente
      * @return mixed data di iscrizione utente
      */
     function getDate() {
