@@ -20,6 +20,6 @@ img.same {
     object-fit: cover;
 }
 body{
-    background-image: url("../images/background.png");
+    background-image: url("/smarty/libs/images/background.png");
     margin-top: 100px;
 }

@@ -112,19 +112,19 @@ class FFotoAnnuncio extends FDatabase{
      * @param string $limite
      * @return array|EFotoAnnuncio
      */
-    public static function loadByField($parametri = array(), string $ordinamento, string $limite) {
+    public static function loadByField($parametri = array(),  $ordinamento='',  $limite='') {
         $foto = null;
         $db = parent::getInstance();
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
         if (($result != null) && ($rows_number = 1)) {
-            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['data'], $result['idAnn']);
+            $foto = new EFotoAnnuncio($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['foto']);
         }
         else {
             if (($result != null) && ($rows_number > 1)) {
                 $foto = array();
                 for ($i = 0; $i < count($result); $i++) {
-                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idAnn']);
+                    $foto[] = new EFotoAnnuncio($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['foto']);
                 }
             }
         }

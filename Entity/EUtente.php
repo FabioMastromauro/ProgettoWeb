@@ -49,17 +49,17 @@ class EUtente implements JsonSerializable
      * id Foto Utente
      * @var int|null
      */
-    private int $idFoto;
+    private $idFoto;
     /**
      * data iscrizione Utente
-     * @var DateTime|mixed|null
+     * @var |mixed|null
      */
-    private DateTime $dataIscrizione;
+    private  $dataIscrizione;
     /**
      * data fine ban Utente
-     * @var DateTime|mixed|null
+     * @var |mixed|null
      */
-    private DateTime $dataFineBan;
+    private  $dataFineBan;
     /**
      * ban Utente
      * @var mixed|null
@@ -171,47 +171,47 @@ class EUtente implements JsonSerializable
     /**
      * @return int id foto Utente
      */
-    public function getIdFoto(): int
+    public function getIdFoto()
     {
         return $this->idFoto;
     }
 
     /**
-     * @param int $idFoto id foto Utente
+     * @param $idFoto id foto Utente
      */
-    public function setIdFoto(int $idFoto): void
+    public function setIdFoto($idFoto): void
     {
         $this->idFoto = $idFoto;
     }
 
     /**
-     * @return DateTime data iscrizione Utente
+     * @return  data iscrizione Utente
      */
-    public function getDataIscrizione(): DateTime
+    public function getDataIscrizione()
     {
         return $this->dataIscrizione;
     }
 
     /**
-     * @param DateTime $dataIscrizione data iscrizione Utente
+     * @param  $dataIscrizione data iscrizione Utente
      */
-    public function setDataIscrizione(DateTime $dataIscrizione): void
+    public function setDataIscrizione( $dataIscrizione): void
     {
         $this->dataIscrizione = $dataIscrizione;
     }
 
     /**
-     * @return DateTime data fine ban Utente
+     * @return  data fine ban Utente
      */
-    public function getDataFineBan(): DateTime
+    public function getDataFineBan()
     {
         return $this->dataFineBan;
     }
 
     /**
-     * @param DateTime $dataFineBan data fine ban Utente
+     * @param  $dataFineBan data fine ban Utente
      */
-    public function setDataFineBan(DateTime $dataFineBan): void
+    public function setDataFineBan( $dataFineBan): void
     {
         $this->dataFineBan = $dataFineBan;
     }

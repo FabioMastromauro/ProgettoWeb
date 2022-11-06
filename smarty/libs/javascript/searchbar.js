@@ -1,3 +1,3 @@
 $(function(){
-    $("#searchbar").load("searchbar.html");
+    $("#searchbar").load("searchbar.tpl");
 });

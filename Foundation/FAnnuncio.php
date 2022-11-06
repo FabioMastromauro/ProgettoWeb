@@ -93,21 +93,23 @@ class FAnnuncio extends FDatabase{
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         if (sizeof($parametri) > 0) {
             $rows_number = $db->getRowNum(static::getClass(), $parametri);
+
         } else {
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number == 1)) {
             $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
-                $result['idVenditore'], $result['idCompratore'], $result['categoria'], $result['ban'], $result['dataFineBan']);
-            // $annuncio->setIdAnnuncio($result['idAnnuncio']);
+                $result['idVenditore'], $result['categoria'], $result['ban']);
+             //$annuncio->setIdAnnuncio($result['idAnnuncio']);
         }
         else {
             if(($result != null) && ($rows_number > 1)){
                 $annuncio = array();
                 for($i = 0; $i < count($result); $i++){
                     $annuncio[] = new EAnnuncio($result[$i]['titolo'], $result[$i]['descrizione'], $result[$i]['prezzo'], $result[$i]['idFoto'], $result[$i]['data'],
-                        $result[$i]['idVenditore'], $result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban'], $result['dataFineBan']);
-                    // $annuncio[$i]->setIdAnnuncio($result[$i]['idAnnuncio']);
+                        $result[$i]['idVenditore'], $result[$i]['categoria'], $result[$i]['ban']);
+                    //$annuncio[$i]->setIdAnnuncio($result[$i]['idAnnuncio']);
+
                 }
             }
         }
@@ -187,7 +189,7 @@ class FAnnuncio extends FDatabase{
      * @param $limite
      * @return array|mixed|null
      */
-    public static function loadDefCol($columns, $ordinamento = '', $limite = '') {
+    public static function loadDefCol($columns=array(), $ordinamento = '', $limite = '') {
         $db = parent::getInstance();
         $result = $db->loadDefColDB(self::$class, $columns, $ordinamento, $limite);
         return $result;

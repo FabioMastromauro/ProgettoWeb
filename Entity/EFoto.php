@@ -118,7 +118,7 @@ class EFoto implements JsonSerializable
      */
     public function getFoto()
     {
-        return $this->foto;
+        return base64_encode($this->foto);
     }
 
     /**

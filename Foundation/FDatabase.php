@@ -269,6 +269,7 @@ class FDatabase
                 if ($i > 0) $filtro .= ' AND';
                 $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
             }
+
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
             if ($filtro != '')
@@ -284,6 +285,7 @@ class FDatabase
                 $result = null;
             } elseif ($numRow == 1) {
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
             } else {
                 $result = array();
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -324,6 +326,7 @@ class FDatabase
             $num = $stmt->rowCount();
             $this->closeConn();
             return $num;
+
         } catch (PDOException $e) {
             echo "Attenzione errore: " . $e->getMessage();
             $this->db->rollBack();
@@ -376,8 +379,7 @@ class FDatabase
                 if ($i > 0) $cols .= ', ';
                 $cols .= $columns[$i];
             }
-
-            $query = 'SELECT ' . $cols . 'FROM ' . $class::getTable();
+            $query = 'SELECT ' . $cols . ' FROM ' . $class::getTable();
             if ($order != '') {
                 $query .= ' ORDER BY ' . $order . 'DESC';
             }
@@ -400,6 +402,7 @@ class FDatabase
                 while ($row = $stmt->fetch()) $result[] = $row;
             }
             return $result;
+
         } catch (PDOException $e) {
             echo $e->getMessage();
             return null;

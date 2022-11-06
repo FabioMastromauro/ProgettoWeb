@@ -39,7 +39,7 @@ class FPersistentManager
      * @return mixed
      */
     public static function load($Fclass, $parametri = array(), $ordinamento = '', $limite = '') {
-        $ris = $Fclass::loadByField($parametri = array(), $ordinamento = '', $limite = '');
+        $ris = $Fclass::loadByField($parametri , $ordinamento = '', $limite = '');
         return $ris;
     }
 
@@ -113,8 +113,8 @@ class FPersistentManager
      * @param string $limite
      * @return mixed
      */
-    public static function search($Fclass, $parametri = array(), string $ordinamento, string $limite) {
-        $ris = $Fclass::search($parametri, $ordinamento, $limite);
+    public static function search($Fclass, $parametri = array(),  $ordinamento='',  $limite='') {
+        $ris = $Fclass::search($parametri = array(), $ordinamento='', $limite='');
         return $ris;
     }
 
@@ -126,7 +126,7 @@ class FPersistentManager
      * @param string $limite
      * @return mixed
      */
-    public static function getRows($class, $parametri = array(), string $ordinamento, string $limite) {
+    public static function getRows($class, $parametri = array(),  $ordinamento='',  $limite='') {
         $ris = $class::getRows($parametri, $ordinamento, $limite);
         return $ris;
     }
@@ -139,8 +139,8 @@ class FPersistentManager
      * @param $limite
      * @return mixed
      */
-    public static function loadDefCol($class, $columns = array(), $order = '', $limite = '') {
-        $ris = $class::loadDefCol($columns, $order, $limite);
+    public static function loadDefCol($class, $columns =array(), $order = '', $limite = '') {
+        $ris = $class::loadDefCol($columns, $order='', $limite='');
         return $ris;
     }
 }
