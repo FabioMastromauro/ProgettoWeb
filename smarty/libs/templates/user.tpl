@@ -65,15 +65,18 @@
             <h3 class="m-b-0">{$utente->getNome()} {$utente->getCognome()}</h3>
             {if $utente->isAdmin() == false & $utente->isBan() == false}
                 <p class="text-muted">Membro</p>
+                {if $utente->getBan() == true}
+                    <p class="text-muted">Utente bannato fino al {$utente->getDataFineBan()}</p>
+                    <a class="nav-link" href="/localmp/Admin/rimuoviBan/{$utente->getId()}"> Rimuovi Ban</a>
+                    {else}
+                    <p>Banna Utente</p>
+                    <a class="nav-link" href="/localmp/Admin/bannaUtente/{$utente->getId()}"> Imposta Ban</a>
+                {/if}
             {/if}
             {if $utente->isAdmin() == true}
                 <p class="text-muted">Amministratore</p>
             {/if}
         </div>
-        {if $utente->getBan() == true}
-            <p class="text-muted">Utente bannato fino al {$utente->getDataFineBan()}</p>
-            <a class="nav-link" href="/chefskiss/Admin/rimuoviBan/{$utente->getId()}"> Rimuovi Ban</a>
-        {/if}
     </div>
 </div>
 </div>

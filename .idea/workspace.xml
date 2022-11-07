@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="admin.html e admin.tpl creati">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="user.html e user.tpl creati">
       <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,14 +175,7 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-      <workItem from="1667816167402" duration="4875000" />
-    </task>
-    <task id="LOCAL-00115" summary="Aggiornato DB">
-      <created>1664978481344</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1664978481344</updated>
+      <workItem from="1667816167402" duration="5580000" />
     </task>
     <task id="LOCAL-00116" summary="Aggiornato DB">
       <created>1664981032710</created>
@@ -522,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667819378614</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="user.html e user.tpl creati">
+      <created>1667821581390</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1667821581390</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +551,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="correzione percorsi file index.tpl" />
     <MESSAGE value="aggiunto php DocBlock EUtente.php" />
     <MESSAGE value="aggiunto php blockDoc a EAnnuncio.php" />
     <MESSAGE value="aggiunto php docBlock ERecensione.php" />
@@ -578,7 +575,8 @@
     <MESSAGE value="aggiunto php docBlock VRecensione.php" />
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="admin.html e admin.tpl creati" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin.html e admin.tpl creati" />
+    <MESSAGE value="user.html e user.tpl creati" />
+    <option name="LAST_COMMIT_MESSAGE" value="user.html e user.tpl creati" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
