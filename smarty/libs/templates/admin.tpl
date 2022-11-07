@@ -56,6 +56,7 @@
         </div>
     </div>
 </nav>
+
 <div class="container-fluid">
     <h3 class="text-center">AMMINISTRATORE</h3>
     <h5 class=text-center>{$utente->getNome()} {$utente->getCognome()}</h5>
@@ -82,7 +83,7 @@
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
                                 <div class="card-body p-4">
-                                    <a href="/chefskiss/Admin/profiloUtente/{$list[$i]->getId()}" >{$list[$i]->getNome()} {$list[$i]->getCognome()}</a>
+                                    <a href="/localmp/Admin/profiloUtente/{$list[$i]->getId()}" >{$list[$i]->getNome()} {$list[$i]->getCognome()}</a>
                                 </div>
                             </div>
                         </div>
