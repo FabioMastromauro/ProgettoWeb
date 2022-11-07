@@ -15,7 +15,7 @@ class CRicerca
         $ran_num = array();
         $check = 0;
 
-        for ($i = 0; $i < 2; $i++){
+        for ($i = 0; $i <10 ; $i++){
             $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
 
             while($check!=1) {
@@ -26,6 +26,7 @@ class CRicerca
                 }
 
             }
+            $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
             $annnunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio','=', $annunci_id[$ran_num[$i]]['idAnnuncio']]));
             $venditore_annuncio[] = $pm::load('FUtente', array(['idUser','=',$annnunci_home[$i]->getIdVenditore()]));
             $annunci_foto[] = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annnunci_home[$i]->getIdFoto()]));
