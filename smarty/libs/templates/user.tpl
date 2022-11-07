@@ -1,0 +1,83 @@
+<!doctype html>
+{assign var = 'userlogged' value=$userlogged|default:'nouser'}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Marketplace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="/smarty/libs/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--<script src="../javascript/searchbar.js"></script> -->
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
+    <div class="container-fluid">
+        <img src="/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
+        <span class="navbar-brand" >LOCAL MARKETPLACE</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
+                </li>
+                {if $userlogged != 'nouser'}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
+                </li>
+
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+
+            {else}
+
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
+
+            {/if}
+
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                <button class="btn btn-dark" type="submit" >Search</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+<div class="padding">
+    <div class="col-md-8">
+        <!-- Column -->
+        <div class="pro-img"><img src="data:{$immagine->getTipo()};base64,{$immagine->getImmagine()}" alt="user"></div><!--./smarty/libs/assets/background_profilo.jpg-->
+        <div class="ms-3">
+            <h3 class="m-b-0">{$utente->getNome()} {$utente->getCognome()}</h3>
+            {if $utente->isAdmin() == false & $utente->isBan() == false}
+                <p class="text-muted">Membro</p>
+            {/if}
+            {if $utente->isAdmin() == true}
+                <p class="text-muted">Amministratore</p>
+            {/if}
+        </div>
+        {if $utente->getBan() == true}
+            <p class="text-muted">Utente bannato fino al {$utente->getDataFineBan()}</p>
+            <a class="nav-link" href="/chefskiss/Admin/rimuoviBan/{$utente->getId()}"> Rimuovi Ban</a>
+        {/if}
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

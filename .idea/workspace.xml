@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiustamenti vari">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/html/admin.html" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="admin.html e admin.tpl creati">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +88,7 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.admin.html">
+  <component name="RunManager" selected="JavaScript Debug.user.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -100,7 +101,7 @@
     <configuration name="prov.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/prov.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
+    <configuration name="user.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/user.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="prova.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/prova.php">
@@ -113,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.user.html" />
         <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.prov.html" />
         <item itemvalue="PHP Script.prova.php" />
-        <item itemvalue="JavaScript Debug.prova.php" />
       </list>
     </recent_temporary>
   </component>
@@ -176,14 +177,7 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-      <workItem from="1667816167402" duration="2955000" />
-    </task>
-    <task id="LOCAL-00114" summary="Corretto CAnnunci.php e VAnnunci.php">
-      <created>1664977594709</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1664977594710</updated>
+      <workItem from="1667816167402" duration="4875000" />
     </task>
     <task id="LOCAL-00115" summary="Aggiornato DB">
       <created>1664978481344</created>
@@ -521,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667663700463</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="admin.html e admin.tpl creati">
+      <created>1667819378614</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1667819378614</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunto metodo acquisto in VAnnunci.php" />
     <MESSAGE value="correzione percorsi file index.tpl" />
     <MESSAGE value="aggiunto php DocBlock EUtente.php" />
     <MESSAGE value="aggiunto php blockDoc a EAnnuncio.php" />
@@ -577,7 +577,8 @@
     <MESSAGE value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
     <MESSAGE value="aggiunto php docBlock VRecensione.php" />
     <MESSAGE value="Aggiustamenti vari" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiustamenti vari" />
+    <MESSAGE value="admin.html e admin.tpl creati" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin.html e admin.tpl creati" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
