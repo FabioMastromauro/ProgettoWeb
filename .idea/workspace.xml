@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="user.html e user.tpl creati">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="admin.tpl modificato">
       <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/html/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,24 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/luciano/PhpstormProjects/ProgettoWeb",
-    "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/luciano/PhpstormProjects/ProgettoWeb&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -175,21 +174,8 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-      <workItem from="1667816167402" duration="5580000" />
-    </task>
-    <task id="LOCAL-00116" summary="Aggiornato DB">
-      <created>1664981032710</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1664981032710</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Aggiornato DB">
-      <created>1664989577733</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1664989577733</updated>
+      <workItem from="1667816167402" duration="5896000" />
+      <workItem from="1667828307497" duration="919000" />
     </task>
     <task id="LOCAL-00118" summary="Correzioni FAnnuncio.php">
       <created>1665071142661</created>
@@ -520,7 +506,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667821581390</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="user.html e user.tpl modificati">
+      <created>1667822267114</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1667822267114</updated>
+    </task>
+    <task id="LOCAL-00166" summary="admin.tpl modificato">
+      <created>1667822368160</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1667822368160</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,9 +551,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php DocBlock EUtente.php" />
-    <MESSAGE value="aggiunto php blockDoc a EAnnuncio.php" />
-    <MESSAGE value="aggiunto php docBlock ERecensione.php" />
     <MESSAGE value="aggiunto php docBlock ECategoria.php" />
     <MESSAGE value="aggiunto php docBlock EFoto.php" />
     <MESSAGE value="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php" />
@@ -576,7 +573,10 @@
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="admin.html e admin.tpl creati" />
     <MESSAGE value="user.html e user.tpl creati" />
-    <option name="LAST_COMMIT_MESSAGE" value="user.html e user.tpl creati" />
+    <MESSAGE value="user.html e user.tpl modificati" />
+    <MESSAGE value="admi.tpl modificato" />
+    <MESSAGE value="admin.tpl modificato" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin.tpl modificato" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
