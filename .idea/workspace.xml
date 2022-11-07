@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock VAnnunci.php e CAnnunci.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiustamenti vari">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/html/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +42,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
@@ -55,24 +58,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/civita/Scrivania/PhpProg/ProgettoWeb&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/luciano/PhpstormProjects/ProgettoWeb",
+    "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -84,11 +87,17 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.admin.html">
+    <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/admin.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="home.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/home.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="prov.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/prov.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
@@ -104,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="PHP Script.prova.php" />
-        <item itemvalue="JavaScript Debug.prova.php" />
+        <item itemvalue="JavaScript Debug.prov.html" />
         <item itemvalue="PHP Script.prova.php" />
         <item itemvalue="JavaScript Debug.prova.php" />
       </list>
@@ -167,20 +176,7 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-    </task>
-    <task id="LOCAL-00112" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
-      <created>1664470175203</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1664470175203</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
-      <created>1664906391825</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1664906391826</updated>
+      <workItem from="1667816167402" duration="2955000" />
     </task>
     <task id="LOCAL-00114" summary="Corretto CAnnunci.php e VAnnunci.php">
       <created>1664977594709</created>
@@ -511,7 +507,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667495727862</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="aggiunto php docBlock VRecensione.php">
+      <created>1667497910999</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1667497910999</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Aggiustamenti vari">
+      <created>1667663700463</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1667663700463</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,8 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Modificato con Ctrl+R foto e immagine" />
-    <MESSAGE value="Aggiunto metodo acquisto in CAnnunci.php" />
     <MESSAGE value="Aggiunto metodo acquisto in VAnnunci.php" />
     <MESSAGE value="correzione percorsi file index.tpl" />
     <MESSAGE value="aggiunto php DocBlock EUtente.php" />
@@ -567,7 +575,9 @@
     <MESSAGE value="aggiunto php docBlock CAdmin.php" />
     <MESSAGE value="aggiunto php docBlock CAdmin.php e VAdmin.php" />
     <MESSAGE value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
+    <MESSAGE value="aggiunto php docBlock VRecensione.php" />
+    <MESSAGE value="Aggiustamenti vari" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiustamenti vari" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
