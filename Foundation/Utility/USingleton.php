@@ -20,7 +20,8 @@ final class USingleton
     private function __construct() {}
 
     /**
-     * Metodo che richiama l'unica
+     * Metodo che richiama l'unica istanza della classe e,
+     * se non esiste, la crea
      * @param string $class_name
      * @return mixed
      */
@@ -39,6 +40,7 @@ final class USingleton
     }
 
     /**
+     * Metodo che distrugge l'istanziazione della classe
      * @param string $class_name
      * @return mixed|null
      */
