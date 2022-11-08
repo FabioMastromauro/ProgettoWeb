@@ -1,12 +1,29 @@
 <?php
 
+/**
+ * Classe che viene usata per richiamare l'unica istanza delle classi, senza
+ * stare a crearne un nuovo oggetto ogni volta
+ * @author Gruppo7
+ * @package Foundation/Utility
+ */
 final class USingleton
 {
 
+    /**
+     * @var array
+     */
     private static $instances = array();
 
+    /**
+     * Costruttore privato della classe
+     */
     private function __construct() {}
 
+    /**
+     * Metodo che richiama l'unica
+     * @param string $class_name
+     * @return mixed
+     */
     public static function getInstance(string $class_name) {
         /* Genera un errore sull'interfaccia utente */
         if (!class_exists($class_name)) {
@@ -21,6 +38,10 @@ final class USingleton
         return self::$instances[$class_name];
     }
 
+    /**
+     * @param string $class_name
+     * @return mixed|null
+     */
     public static function stopInstance(string $class_name) {
 
         if (!class_exists($class_name)) {

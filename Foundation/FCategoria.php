@@ -2,6 +2,7 @@
 
 /**
  * La classe FCategoria fornisce query per gli oggetti ECategoria
+ * @author Gruppo7
  * @package Foundation
  */
 class FCategoria extends FDatabase

@@ -3,6 +3,7 @@ if(file_exists('Config.inc.php')) require_once 'Config.inc.php';
 
 /**
  * La classe FDatabase viene utilizzata per la connessione al DB
+ * @author Gruppo7
  * @package Foundation
  */
 class FDatabase

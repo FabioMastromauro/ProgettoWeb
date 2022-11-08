@@ -2,6 +2,7 @@
 
 /**
  * La classe FRecensione fornisce query per gli oggetti ERecensione
+ * @author Gruppo7
  * @package Foundation
  */
 class FRecensione extends FDatabase{
