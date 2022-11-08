@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunto php docBlock VAnnunci.php e CAnnunci.php">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="admin.tpl modificato">
+      <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRecensione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
@@ -62,9 +63,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/civita/Scrivania/PhpProg/ProgettoWeb&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/luciano/PhpstormProjects/ProgettoWeb&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -84,14 +85,20 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.user.html">
+    <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/admin.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="home.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/home.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="prova.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/prova.php" useBuiltInWebServerPort="true">
+    <configuration name="prov.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/prov.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="user.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/user.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="prova.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/prova.php">
@@ -104,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.user.html" />
+        <item itemvalue="JavaScript Debug.admin.html" />
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.prov.html" />
         <item itemvalue="PHP Script.prova.php" />
-        <item itemvalue="JavaScript Debug.prova.php" />
-        <item itemvalue="PHP Script.prova.php" />
-        <item itemvalue="JavaScript Debug.prova.php" />
       </list>
     </recent_temporary>
   </component>
@@ -167,48 +174,8 @@
       <workItem from="1666254284868" duration="2208000" />
       <workItem from="1666618519117" duration="7824000" />
       <workItem from="1666704409349" duration="3454000" />
-    </task>
-    <task id="LOCAL-00112" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
-      <created>1664470175203</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1664470175203</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Corretto EAnnuncio.php e ampliato CAnnuncio.php">
-      <created>1664906391825</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1664906391826</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Corretto CAnnunci.php e VAnnunci.php">
-      <created>1664977594709</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1664977594710</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Aggiornato DB">
-      <created>1664978481344</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1664978481344</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Aggiornato DB">
-      <created>1664981032710</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1664981032710</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Aggiornato DB">
-      <created>1664989577733</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1664989577733</updated>
+      <workItem from="1667816167402" duration="5896000" />
+      <workItem from="1667828307497" duration="919000" />
     </task>
     <task id="LOCAL-00118" summary="Correzioni FAnnuncio.php">
       <created>1665071142661</created>
@@ -511,7 +478,49 @@
       <option name="project" value="LOCAL" />
       <updated>1667495727862</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="aggiunto php docBlock VRecensione.php">
+      <created>1667497910999</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1667497910999</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Aggiustamenti vari">
+      <created>1667663700463</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1667663700463</updated>
+    </task>
+    <task id="LOCAL-00163" summary="admin.html e admin.tpl creati">
+      <created>1667819378614</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1667819378614</updated>
+    </task>
+    <task id="LOCAL-00164" summary="user.html e user.tpl creati">
+      <created>1667821581390</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1667821581390</updated>
+    </task>
+    <task id="LOCAL-00165" summary="user.html e user.tpl modificati">
+      <created>1667822267114</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1667822267114</updated>
+    </task>
+    <task id="LOCAL-00166" summary="admin.tpl modificato">
+      <created>1667822368160</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1667822368160</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,13 +551,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Modificato con Ctrl+R foto e immagine" />
-    <MESSAGE value="Aggiunto metodo acquisto in CAnnunci.php" />
-    <MESSAGE value="Aggiunto metodo acquisto in VAnnunci.php" />
-    <MESSAGE value="correzione percorsi file index.tpl" />
-    <MESSAGE value="aggiunto php DocBlock EUtente.php" />
-    <MESSAGE value="aggiunto php blockDoc a EAnnuncio.php" />
-    <MESSAGE value="aggiunto php docBlock ERecensione.php" />
     <MESSAGE value="aggiunto php docBlock ECategoria.php" />
     <MESSAGE value="aggiunto php docBlock EFoto.php" />
     <MESSAGE value="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php" />
@@ -567,7 +569,14 @@
     <MESSAGE value="aggiunto php docBlock CAdmin.php" />
     <MESSAGE value="aggiunto php docBlock CAdmin.php e VAdmin.php" />
     <MESSAGE value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
+    <MESSAGE value="aggiunto php docBlock VRecensione.php" />
+    <MESSAGE value="Aggiustamenti vari" />
+    <MESSAGE value="admin.html e admin.tpl creati" />
+    <MESSAGE value="user.html e user.tpl creati" />
+    <MESSAGE value="user.html e user.tpl modificati" />
+    <MESSAGE value="admi.tpl modificato" />
+    <MESSAGE value="admin.tpl modificato" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin.tpl modificato" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
