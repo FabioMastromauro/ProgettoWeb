@@ -140,4 +140,8 @@ class CAdmin
             header('Location: /localmp/');
         }
     }
+
+    static function eliminaRecensione($id) {
+        $session = USingleton::getInstance('USession');
+    }
 }

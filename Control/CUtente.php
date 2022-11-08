@@ -78,7 +78,7 @@ class CUtente
     }
 
     /**
-     * Metodo cbe distrugge tutti i cookie o sessID legati ad un utente
+     * Metodo cbe distrugge tutti i cookie e SESSID legati ad un utente
      * al momento del logout
      * @return void
      */
@@ -86,7 +86,7 @@ class CUtente
         $session = USingleton::getInstance("USession");
         $session->unsetSession();
         $session->destroySession();
-        setcookie("PHPSESSID", "");
+        setcookie("PHPSESSID", ""); //elimina il cookie lato client
         header("Location: /localmp/login");
     }
 
