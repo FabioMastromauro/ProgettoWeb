@@ -1,7 +1,8 @@
 <?php
 
 /**
- * La classe USession gestisce tutte le operazioni legate alla gestione delle sessioni
+ * La classe USession gestisce tutte le operazioni legate alla gestione delle sessioni,
+ * viene creata con Singleton in modo tale da poter essere raggiunta senza PersistentManager
  * @author Gruppo7
  * @package Foundation/Utility
  */
