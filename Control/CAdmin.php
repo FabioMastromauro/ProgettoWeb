@@ -105,19 +105,19 @@ class CAdmin
         if ($admin != null && $admin->getAdmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
             // $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $id])); è inutile
-            $date = $view->getDate();
-            date_default_timezone_set('Europe/Rome');
-            $timezone = date_default_timezone_get();
-            try {
-                if (strtotime($date) > strtotime($timezone)) {
+            // $date = $view->getDate();
+            // date_default_timezone_set('Europe/Rome');
+            // $timezone = date_default_timezone_get();
+            // try {
+            //    if (strtotime($date) > strtotime($timezone)) {
                     // $pm::update('dataFineBan', $date, 'idAnnuncio', $id, 'FAnnuncio');
                     $pm::update('ban', 1, 'idAnnuncio', $id, 'FAnnuncio');
-                    header('Location: /localmp/Admin/annunci');
-                }
-            } catch(Exception $e) {
-                echo ('Data antecedente a quella corrente: '. $e->getMessage());
-                header('Location: /localmp/Admin/annunci');
-            }
+                    header('Location: /localmp/Admin/profiloUtente/$id');
+            //    }
+         //   } catch(Exception $e) {
+         //       echo ('Data antecedente a quella corrente: '. $e->getMessage());
+                header('Location: /localmp/Admin/homeAdmin');
+         //   }
         }
         else {
             header('Location: /localmp/');
@@ -136,7 +136,7 @@ class CAdmin
             $pm = USingleton::getInstance('FPersistentManager');
             $pm::update('ban', 0, 'idAnnuncio', $id, 'FAnnuncio');
             // $pm::update('dataFineBan', null, 'idAnnuncio', $id, 'FAnnuncio');
-            header('Location: /localmp/Admin/annunci');
+            header('Location: /localmp/Admin/homeAdmin');
         } else {
             header('Location: /localmp/');
         }
@@ -144,5 +144,13 @@ class CAdmin
 
     static function eliminaRecensione($id) {
         $session = USingleton::getInstance('USession');
+        $admin = unserialize($session->readValue('utente'));
+        if ($admin != null && $admin->getAdmin() == 1) {
+            $pm = USingleton::getInstance('FPersistentManager');
+            $pm::delete("idRecensione", $id, "FRecensione");
+            header("Location: /localmp/Admin/homeAdmin");
+        } else {
+            header('Location: /localmp/');
+        }
     }
 }
