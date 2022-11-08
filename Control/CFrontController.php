@@ -2,6 +2,7 @@
 
 /**
  * Classe che gestisce le richieste HTTP in arrivo al server
+ * @author Gruppo7
  * @package Control
  */
 class CFrontController

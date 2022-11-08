@@ -2,7 +2,8 @@
 
 /**
  * La classe CAdmin permette all'admin di effettuare delle operazioni di ban/riattivazione
- * su utenti e annunci
+ * su utenti e annunci e di eliminare le recensioni
+ * @author Gruppo7
  * @package Control
  */
 class CAdmin
