@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Local Marketplace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="/smarty/libs/css/style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="../javascript/searchbar.js"></script>
+    <!--<script src="/smarty/libs/javascript/searchbar.js"></script> -->
 
     <script>
         function ready(){
@@ -24,7 +24,7 @@
 
 <div id="searchbar"></div>
 
-<!--
+
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -67,7 +67,7 @@
 
         </div>
     </div>
-</nav> -->
+</nav>
 
 <div class="container my-15 text-center">
     <h1 class="header_top">BENVENUTO SU LOCAL MARKETPLACE</h1>
