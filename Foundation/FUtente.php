@@ -31,14 +31,14 @@ class FUtente extends FDatabase
      */
     public static function bind($stmt, EUtente $user)
     {
-        $stmt->bindValue(':idUser', $user->getIdUser(), PDO::PARAM_INT);
+        $stmt->bindValue(':idUser',null, PDO::PARAM_INT);
         $stmt->bindValue(':nome', $user->getNome(), PDO::PARAM_STR);
         $stmt->bindValue(':cognome', $user->getCognome(), PDO::PARAM_STR);
         $stmt->bindValue(':idFoto', $user->getIdFoto(), PDO::PARAM_INT);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
-        $stmt->bindValue(':dataIscrizione', $user->getDataIscrizione()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
-        $stmt->bindValue(':dataFineBan', $user->getDataFineBan()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $stmt->bindValue(':dataIscrizione', $user->getDataIscrizione(), PDO::PARAM_STR);
+        $stmt->bindValue(':dataFineBan', $user->getDataFineBan(), PDO::PARAM_STR);
         $stmt->bindValue(':ban', $user->isBan(), PDO::PARAM_BOOL);
         $stmt->bindValue(':admin', $user->getAdmin(), PDO::PARAM_BOOL);
     }

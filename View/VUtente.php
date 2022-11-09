@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\xampp\htdocs\ProgettoWeb\StartSmarty.php';
+require_once 'StartSmarty.php';
 
 class VUtente
 {

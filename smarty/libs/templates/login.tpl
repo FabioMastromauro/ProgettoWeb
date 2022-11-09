@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Local Market Place-Login or Sign up</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/localmp/smarty/libs/css/login.css">
     <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
 
     <script>
         function ready(){
@@ -28,6 +28,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+    <form action="/localmp/Utente/registration" method="POST">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,21 +39,21 @@
                 <form class="row g-3 needs-validation" novalidate>
                     <div class="col-md-4">
                         <label for="validationCustom01" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="validationCustom01" value="" required>
+                        <input type="text" class="form-control" name="nome" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label for="validationCustom02" class="form-label">Cognome</label>
-                        <input type="text" class="form-control" id="validationCustom02" value="" required>
+                        <input type="text" class="form-control" name="cognome" value="" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label for="validationCustom02" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="validationCustom03" value="" required>
+                        <input type="text" class="form-control" name="email" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -62,14 +63,7 @@
                         <label for="validationCustom03" class="form-label">Password</label>
                         <i class="far fa-eye" id="togglePassword1" style="position: relative; left: 80%;bottom: -40px;cursor: pointer;" onclick="show2()">
                         </i>
-                        <input type="password" class="form-control" id="validationCustom04" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid city.
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Città</label>
-                        <input type="text" class="form-control" id="validationCustom05" required>
+                        <input type="password" class="form-control" name="password" required>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
@@ -94,6 +88,7 @@
 
             </div>
         </div>
+    </form>
     </div>
 </div>
 {if $ban == 1 && $fine_ban != ''}
@@ -117,17 +112,17 @@
                     <button  id="index" class="btn-login">Login</button>
 
                     <a href="#">Forgotten password?</a>
-                    <button class="btn-new" onclick="location.href='./register.html'">Create new Account</button>
+                    <!--<button class="btn-new" onclick="location.href='./register.html'">Create new Account</button>-->
                     <!-- Button trigger modal -->
-                    <!--<button type="button" class="btn btn-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                   <button type="button" class="btn btn-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        Create new Account
-                    </button> -->
+                    </button>
                 </div>
             </div>
         </div>
     </form>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="../javascript/showpsw.js"></script>
+<script src="/localmp/smarty/libs/javascript/showpsw.js"></script>
 </body>
 </html>
