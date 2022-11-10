@@ -142,6 +142,11 @@ class CAdmin
         }
     }
 
+    /**
+     * Metodo che permette l'eliminazione di una recensione scurrile da parte dell'admin
+     * @param $id
+     * @return void
+     */
     static function eliminaRecensione($id) {
         $session = USingleton::getInstance('USession');
         $admin = unserialize($session->readValue('utente'));
