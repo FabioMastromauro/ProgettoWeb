@@ -89,14 +89,11 @@ class USession
      * @return void
      */
     public function destroySession() {
+        session_destroy();
         if (isset($_SESSION['user_id'])) {  // Da verificare se è giusto
-            session_destroy();
             $_SESSION = array();
-            header("Location: " . "https://" . $_SERVER['HTTP_HOST'] . "/");
-            exit();
-        } else {
-            session_destroy();
-            exit();
+            header("Location: /localmp/");
         }
+        exit();
     }
 }
