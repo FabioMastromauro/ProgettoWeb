@@ -23,6 +23,7 @@ class USession
         }
     }
 
+
     public function valueExist(string $key) {
         if (isset($_SESSION[$key])) {
             return true;
@@ -41,14 +42,6 @@ class USession
     }
 
     public function destroySession() {
-        if (isset($_SESSION['user_id'])) {  // Da verificare se è giusto
-            session_destroy();
-            $_SESSION = array();
-            header("Location: " . "https://" . $_SERVER['HTTP_HOST'] . "/");
-            exit();
-        } else {
-            session_destroy();
-            exit();
-        }
+       session_destroy();
     }
 }

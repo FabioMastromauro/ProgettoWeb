@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {assign var="ban" value=$ban|default:0}
 {assign var="error" value=$error|default:''}
+{assign var="vemail" value=$vemail|default:null}
 {assign var="fine_ban" value=$fine_ban|default:''}
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -101,16 +102,15 @@
 
 
 <main>
-    <form method="POST" action="../localmp/Utente/login">
+    <form method="POST" action="/localmp/Utente/login">
         <div class="row">
             <div class="colm-form">
                 <div class="form-container">
-                    <input type="text" placeholder="Email address">
+                    <input type="text" name="email" placeholder="Email address">
                     <i class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show()">
                     </i>
-                    <input type="password" id="psw" name="password" placeholder="Password" value="">
+                    <input type="password" name="password" id="psw" placeholder="Password" value="">
                     <button  id="index" class="btn-login">Login</button>
-
                     <a href="#">Forgotten password?</a>
                     <!--<button class="btn-new" onclick="location.href='./register.html'">Create new Account</button>-->
                     <!-- Button trigger modal -->
@@ -121,6 +121,10 @@
             </div>
         </div>
     </form>
+
+
+
+
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="/localmp/smarty/libs/javascript/showpsw.js"></script>

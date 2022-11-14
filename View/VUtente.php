@@ -1,13 +1,16 @@
 <?php
 
 require_once 'StartSmarty.php';
+require_once 'PhpMailerStart.php';
 
 class VUtente
 {
     private $smarty;
+    private $phpmailer;
 
     public function __construct() {
         $this->smarty = StartSmarty::configuration();
+        $this->phpmailer=PhpMailerStart::configuration();
     }
     static function getEmail(){
         return $_POST['email'];
@@ -21,12 +24,15 @@ class VUtente
     static function getCognome(){
         return $_POST['cognome'];
     }
-    static function getUsername(){
-        return $_POST['username'];
-    }
+
+
 
     public function showFormLogin(){
         $this->smarty->display('./smarty/libs/templates/login.tpl');
+    }
+
+    public function verifyPage(){
+        $this->smarty->display('./smarty/libs/templates/verify.tpl');
     }
 
     public function loginOk(){
@@ -50,7 +56,7 @@ class VUtente
         $this->smarty->display('.smarty/libs/templates/login.tpl');
     }
 
-    public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente){
+    public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente,$vemail){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('nome', $nome);
@@ -60,6 +66,7 @@ class VUtente
         $this->smarty->assign('immagini', $immagini);
         $this->smarty->assign('foto_utente', $fotoUtente);
         $this->smarty->assign('foto_autori', $fotoAutori);
+        $this->smarty->assign('vemail',$vemail);
         //$this->smarty->assign('facebook', $facebook);
         //$this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);
@@ -67,12 +74,19 @@ class VUtente
         $this->smarty->display('profilo_privato.tpl');
     }
 
-    public function modificaProfilo($utente, $immagine_utente){
+    public function modificaProfilo($utente){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('utente', $utente);
-        $this->smarty->assign('immagine_utente', $immagine_utente);
-        $this->smarty->display('edit-profile.tpl');
+        $this->smarty->assign('nome', $utente->getNome());
+        $this->smarty->assign('cognome', $utente->getCognome());
+        $this->smarty->assign('password', $utente->getPassword());
+        $this->smarty->assign('email', $utente->getEmail());
+
+        //  $this->smarty->assign('immagine_utente', $foto);
+
+
+        $this->smarty->display('profilo_privato.tpl');
     }
 
 }

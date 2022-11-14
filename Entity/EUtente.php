@@ -18,33 +18,33 @@
  * @package Entity
  */
 
-class EUtente implements JsonSerializable
+class EUtente
 {
     /**
      * Nome Utente
      * @var string|null
      */
-    private string $nome;
+    private  $nome;
     /**
      * Cognome Utente
      * @var string|null
      */
-    private string $cognome;
+    private  $cognome;
     /**
      * id Utente univoco
      * @var int
      */
-    private int $idUser;
+    private  $idUser;
     /**
      * email Utente
      * @var string|null
      */
-    private string $email;
+    private  $email;
     /**
      * password Utente
      * @var string|null
      */
-    private string $password;
+    private  $password;
     /**
      * id Foto Utente
      * @var int|null
@@ -69,11 +69,15 @@ class EUtente implements JsonSerializable
      * admin Utente
      * @var bool|null
      */
-    private bool $admin;
+    private  $admin;
+
+    private $vemail;
+
+    private $codice;
 
     //--------------------------------------------COSTRUTTORE---------------------------------------------------------------------------------------------------------------------------------------------
 
-    public function __construct(string $nome = null, string $cognome=null, string $email=null, $idFoto=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null, bool $admin=null)
+    public function __construct( $nome = null, string $cognome=null, string $email=null, $idFoto=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null,  $admin=null,$idUser=null, $vemail=null, $codice=null)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
@@ -84,15 +88,53 @@ class EUtente implements JsonSerializable
         $this->dataFineBan = $dataFineBan;
         $this->ban = $ban;
         $this->admin = $admin;
+        $this->idUser=$idUser;
+        $this->vemail=$vemail;
+        $this->codice=$codice;
     }
+
+
 
     // --------------------------------------------METODI GET E SET---------------------------------------------------------------------------------------------------------------------------------------------
 
 
     /**
+     * @return mixed|null
+     */
+    public function getCodice()
+    {
+        return $this->codice;
+    }
+
+    /**
+     * @param mixed|null $codice
+     */
+    public function setCodice($codice): void
+    {
+        $this->codice = $codice;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getVemail()
+    {
+        return $this->vemail;
+    }
+
+    /**
+     * @param mixed|null $vemail
+     */
+    public function setVemail(mixed $vemail): void
+    {
+        $this->vemail = $vemail;
+    }
+
+
+    /**
      * @return int id Utente
      */
-    public function getIdUser(): int
+    public function getIdUser()
     {
         return $this->idUser;
     }
@@ -100,14 +142,15 @@ class EUtente implements JsonSerializable
     /**
      * @param int $idUser id Utente
      */
-    public function setIdUser( $idUser): void
+    public function setIdUser($idUser): void
     {
         $this->idUser = $idUser;
     }
+
     /**
      * @return string nome Utente
      */
-    public function getNome(): string
+    public function getNome()
     {
         return $this->nome;
     }
@@ -115,7 +158,7 @@ class EUtente implements JsonSerializable
     /**
      * @param string $nome nome Utente
      */
-    public function setNome(string $nome): void
+    public function setNome( $nome): void
     {
         $this->nome = $nome;
     }
@@ -123,7 +166,7 @@ class EUtente implements JsonSerializable
     /**
      * @return string cognome Utente
      */
-    public function getCognome(): string
+    public function getCognome()
     {
         return $this->cognome;
     }
@@ -131,7 +174,7 @@ class EUtente implements JsonSerializable
     /**
      * @param string $cognome cognome Utente
      */
-    public function setCognome(string $cognome): void
+    public function setCognome( $cognome): void
     {
         $this->cognome = $cognome;
     }
@@ -139,7 +182,7 @@ class EUtente implements JsonSerializable
     /**
      * @return string password Utente
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->password;
     }
@@ -155,7 +198,7 @@ class EUtente implements JsonSerializable
     /**
      * @return string email Utente
      */
-    public function getEmail(): string
+    public function getEmail()
     {
         return $this->email;
     }
@@ -233,7 +276,7 @@ class EUtente implements JsonSerializable
     /**
      * @return bool admin Utente
      */
-    public function getAdmin(): bool
+    public function getAdmin()
     {
         return $this->admin;
     }
@@ -248,20 +291,4 @@ class EUtente implements JsonSerializable
 
 
 
-    public function jsonSerialize()
-    {
-        return
-            [
-                'nome'   => $this->getNome(),
-                'cognome' => $this->getCognome(),
-                'idUser'   => $this->getIdUser(),
-                'email'   => $this->getEmail(),
-                'password'   => $this->getPassword(),
-                'idFoto'   => $this->getIdFoto(),
-                'dataIscrizione'   => $this->getDataIscrizione(),
-                'dataFineBan'   => $this->getDataFineBan(),
-                'ban'   => $this->isBan(),
-                'admin' => $this->getAdmin()
-            ];
-    }
 }

@@ -15,7 +15,7 @@ class CRicerca
         $ran_num = array();
         $check = 0;
 
-        for ($i = 0; $i <10 ; $i++){
+        for ($i = 0; $i <2 ; $i++){
             $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
 
             while($check!=1) {

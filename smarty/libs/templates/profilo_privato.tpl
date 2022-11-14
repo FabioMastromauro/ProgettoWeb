@@ -1,18 +1,21 @@
 <!doctype html>
-<html lang="en">
+{assign var = 'facebook' value=$facebook|default:''}
+{assign var = 'instagram' value=$instagram|default:''}
+{assign var = 'luogo' value=$luogo|default:''}
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profilo utente privato</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="../javascript/searchbar.js"></script>
 </head>
 <body>
-<div id="searchbar"></div>
 
-<div class="container my-3 text-center">
+
+
     <div class="container">
         <div class="main-body">
             <!-- /Breadcrumb -->
@@ -38,7 +41,7 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
                                 <span class="text-secondary">{$facebook}</span>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -74,12 +77,12 @@
                             </div>
                             <hr>
 
-                            </p>
-                            <a href="mod-profilo.tpl">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" >
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                                 Modifica
                             </button>
-                                </a>
+
+
                             <p>
                         </div>
                     </div>
@@ -167,10 +170,12 @@
             </div>
         </div>
     </footer>
-    </main>
+</main>
 
-    <!-- modifica -->
-    <div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="modificaLabel" role="dialog" aria-hidden="true">
+<!-- modifica -->
+
+<div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form action="/localmp/Utente/modificaP"  method="post" enctype="multipart/form-data">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
@@ -180,40 +185,25 @@
                 <div class="modal-body">
                     <form class="row g-3 needs-validation" novalidate>
                         <div class="col-mb-4">
-                            <label for="validationCustom01" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="validationCustom02" style="background-color: whitesmoke" value="" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="validationCustom01"  class="form-label">Nome</label>
+                            <input  type="text" class="form-control" name="nome" id="nome" style="background-color: whitesmoke" value="" >
+
                         </div>
                         <div class="col-mb-4">
-                            <label for="validationCustom02" class="form-label">Cognome</label>
-                            <input type="text" color class="form-control" id="validationCustom03" style="background-color: whitesmoke" value="" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="validationCustom02"  class="form-label">Cognome</label>
+                            <input type="text"  class="form-control" name="cognome" id="cognome" style="background-color: whitesmoke" value="" >
+
                         </div>
                         <div class="col-mb-4">
                             <label for="validationCustom03" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="validationCustom04" style="background-color: whitesmoke" value="" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="col-mb-4">
-                                <label for="validationCustom04" class="form-label">Instagram</label>
-                                <input type="text" class="form-control" id="validationCustom05" style="background-color: whitesmoke" value="" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-mb-2">
-                                <label for="validationCustom05" class="form-label">Facebook</label>
-                                <input type="text" class="form-control" id="validationCustom06" style="background-color: whitesmoke" value="" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
+                            <input type="text" class="form-control" name="email" id="email" style="background-color: whitesmoke" value="" >
                         </div>
+
+                        <div class="col-mb-4">
+                            <label for="validationCustom03" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" style="background-color: whitesmoke" value="" >
+                        </div>
+
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Applica modifiche</button>
                         </div>
@@ -222,9 +212,11 @@
                 <div class="modal-footer">
                 </div>
             </div>
+
         </div>
-    </div>
-</div>
+        </form>
+
+
 
 
 <!-- crea annuncio -->
@@ -262,11 +254,7 @@
         </div>
     </div>
 </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

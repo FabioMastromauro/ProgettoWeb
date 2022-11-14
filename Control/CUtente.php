@@ -1,10 +1,12 @@
 <?php
-
 /**
  * La classe CUtente gestisce le interazioni dell'utente con la web app
  * e permette la personalizzazione dei dati personali
  * @package Control
  */
+
+
+
 class CUtente
 {
 
@@ -12,22 +14,45 @@ class CUtente
      * Metodo che gestisce il login da parte di un utente
      * @return void
      */
-    static function login () {
+
+    static function confermaMail(){
+        $view = new VUtente();
+        $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        $utente = $pm->load('FUtente',array(['idUser','=',$_GET['idUser']]));
+
+        if($utente->getCodice() == $_POST['codice']){
+
+            $pm->update('vemail', date('Y-m-d'), 'idUSer', $utente->getIdUser(), 'FUtente');
+            $session->setValue('vemail', $utente->getVemail());
+            header('Location: /localmp/Utente/login');
+
+        } else {$view->loginError(0, 'Codice errato');}
+
+    }
+
+
+    static function login() {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             if (static::isLogged()) {
                 $pm = USingleton::getInstance("FPersistentManager");
                 $view = new VUtente();
                 $view->loginOk();
+
             }
             else {
                 $view = new VUtente();
                 $view->showFormLogin();
+
             }
         }
         elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
             static::verifica();
+
         }
     }
+
+
 
     /**
      * Metodo che verifica se un utente è bannato oppure è un admin
@@ -36,29 +61,41 @@ class CUtente
     static function verifica() {
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");
-        $utente = $pm->loadLogin($_POST["email"], $_POST["password"]);
-        if ($utente != null) {
-            if ($utente->isBan() != 1) {
-                if (USession::sessionStatus() == PHP_SESSION_NONE) {
-                    $session = USingleton::getInstance("USession");
-                    $dati = serialize($utente);
-                    $admin = $utente->isAdmin();
-                    $session->setValue("admin", $admin);
-                    $session->setValue("utente", $dati);
-                    if ($admin == 1) {
-                        header("Location: /localmp/Admin/home");
-                    } else {
-                        header("Location: /localmp/");
-                    }
+        $utente = $pm->loadLogin(VUtente::getEmail(), VUtente::getPassword());
+        $_POST['idUser']=$utente->getIdUser();
+        if($utente->getVemail()!=null) {
+            if ($utente != null) {
+                if ($utente->isBan() != 1) {
+                        if (USession::sessionStatus() == PHP_SESSION_NONE) {
+                            $session = USingleton::getInstance("USession");
+                          //  $pm->update('vemail', date('Y-m-d'), 'idUSer', $utente->getIdUser(), 'FUtente');
+                            $dati = serialize($utente);
+                            $admin = $utente->getAdmin();
+                            $session->setValue("admin", $admin);
+                            $session->setValue("utente", $dati);
+                          //  $session->setValue('vemail', $utente->getVemail());
+                            if ($admin == 1) {
+                                header("Location: /localmp/Admin/home");
+                            } else {
+                                header("Location: /localmp/");
+                            }
+                        }
+
+
+                } else {
+                    $view->loginError(1, 'bannato', $utente->getDataFineBan());
                 }
+
             } else {
-                $view->loginError(1, 'bannato', $utente->getDataFineBan());
+                $view->loginError(0, 'errore');
             }
-        }
-        else {
-            $view->loginError(0, 'errore');
+
+        } else{
+                $view->verifyPage();
         }
     }
+
+
 
     /**
      * Metodo che verifica se un utente è loggato
@@ -74,6 +111,7 @@ class CUtente
         if (isset($_SESSION['utente'])) {
             $identified = true;
         }
+
         return $identified;
     }
 
@@ -86,8 +124,8 @@ class CUtente
         $session = USingleton::getInstance("USession");
         $session->unsetSession();
         $session->destroySession();
-        setcookie("PHPSESSID", "");
-        header("Location: /localmp/login");
+        setcookie('PHPSESSID', '');
+        header('Location: /localmp/');
     }
 
     /**
@@ -113,17 +151,63 @@ class CUtente
      */
     static function verifyRegistration() {
         $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        $utente = unserialize($session->readValue('utente'));
         $verifyEmail = $pm::exist("email", VUtente::getEmail(), "FUtente");
         $view = new VUtente();
         if ($verifyEmail) {
             $view->registrationError("email");
         }
         else {
-            $utente = new EUtente(VUtente::getNome(),VUtente::getCognome(),VUtente::getEmail(),null,date("Y/m/d"),null,0,VUtente::getPassword(),0);
-            $pm::store($utente);
-            header("Location: /localmp/Utente/index.php");
+            $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+                //Enable verbose debug output
+                $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
+
+                //Send using SMTP
+                $mail->isSMTP();
+
+                //Set the SMTP server to send through
+                $mail->Host = 'smtp.gmail.com';
+
+                //Enable SMTP authentication
+                $mail->SMTPAuth = true;
+
+                //SMTP username
+                $mail->Username = 'Spacco280@gmail.com';
+
+                //SMTP password
+                $mail->Password = 'usnguuwlyasusgnz';
+
+                //Enable TLS encryption;
+                $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+
+                //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                $mail->Port = 587;
+
+                //Recipients
+                $mail->setFrom('Spacco280@gmail.com', 'localmp');
+
+                //Add a recipient
+                $mail->addAddress($_POST['email'], $_POST['nome']);
+                //Set email format to HTML
+                $mail->isHTML(true);
+
+                $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+
+                $mail->Subject = 'Email verification';
+                $mail->Body    = '<p>Your verification code is: <b style="font-size: 30px;">' . $verification_code . '</b></p>';
+
+                $mail->send();
+
+                $utente = new EUtente(VUtente::getNome(),VUtente::getCognome(),VUtente::getEmail(),null,date("Y/m/d"),null,0,VUtente::getPassword(),0,null,null,$verification_code);
+                $pm::store($utente);
+                header("Location: /localmp/Utente/login");
+            }
+
         }
-    }
+
+
 
     /**
      * Metodo che rimanda alla view col template riguardante il profilo
@@ -136,11 +220,13 @@ class CUtente
         $session = USingleton::getInstance('USession');
         $pm = USingleton::getInstance('FPersistentManager');
         if($id == null){
-            $utente = unserialize($session->readValue('utente'));
-        } else $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
+                $utente = unserialize($session->readValue('utente'));
+            } else {
+                $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
+            }
         if (CUtente::isLogged() || $id!=null){
             $fotoUtente = $pm::load('FFotoUtente', array(['idFoto', '=', $utente->getidFoto()]));
-            $annuncio = $pm::load('FAnnuncio', array(['autore', '=', $utente->getIdUser()]));
+            $annuncio = $pm::load('FAnnuncio', array(['idVenditore', '=', $utente->getIdUser()]));
             if ($annuncio != null) {
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
@@ -153,13 +239,13 @@ class CUtente
                     $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getAutore()]));
                     $foto_autori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()]));
                 }
-                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto, $fotoUtente, $foto_autori, $id);
+                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto, $fotoUtente, $foto_autori, $id,$utente->getVemail());
             }
             else {
-                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto = null, $fotoUtente, $foto_autori = null, $id);
+                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto = null, $fotoUtente, $foto_autori = null, $id,$utente->getVemail());
             }
         } else {
-            header('Location: /chefskiss/Utente/login');
+            header('Location: /localmp/Utente/login');
         }
     }
 
@@ -175,8 +261,7 @@ class CUtente
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
         if (CUtente::isLogged()) {
-            $foto = $pm::load("FFotoUtente", array(['idFoto', '=', $utente->getIdFoto()]));
-            $view->modificaProfilo($utente, $foto);
+        $view->modificaProfilo($utente);
         }
         else {
             header("Location: /localmp/Utente/login");
@@ -215,23 +300,40 @@ class CUtente
      * forniti a seguito delle modifiche
      * @return void
      */
-    static function confermaModifiche() {
+    static function modificaP() {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
         if(CUtente::isLogged()) {
             $idFoto = self::upload();
             $utente = unserialize($session->readValue('utente'));
-            $nomeUtente = VUtente::getNome();
-            $cognomeUtente = VUtente::getCognome();
+            $nome = VUtente::getNome();
+            $cognome = VUtente::getCognome();
+            $email = VUtente::getEmail();
+            $password = VUtente::getPassword();
 
-            $pm::update('nome', $nomeUtente, 'id', $utente->getIdUser(), "FUtente");
-            $pm::update('cognome', $cognomeUtente, 'id', $utente->getIdUser(), "FUtente");
+            if($nome !=''){
+                $pm::update('nome', $nome, 'idUser', $utente->getIdUser(), "FUtente");
+                $utente->setNome($nome);
+            }
 
-            $utente->setNome($nomeUtente);
-            $utente->setCognome($cognomeUtente);
+            if($cognome!=''){
+                $pm::update('cognome', $cognome, 'idUser', $utente->getIdUser(), "FUtente");
+                $utente->setCognome($cognome);
+            }
+
+            if($email!=''){
+                $pm::update('email', $email, 'idUser', $utente->getIdUser(), "FUtente");
+                $utente->setEmail($email);
+                }
+            if($password!=''){
+                $pm::update('password', $password, 'idUser', $utente->getIdUser(), "FUtente");
+                $utente->setPassword($password);
+             }
+
+
             $session->destroyValue('utente');
 
-            if ($idFoto != false) {
+          if ($idFoto != false) {
                 // if ((int) $utente->getIdFoto())
                 $pm::update('idFoto', $idFoto, 'idUser', $utente->getIdUser(), "FUtente");
                 $utente->setIdFoto($idFoto);
@@ -247,4 +349,9 @@ class CUtente
             header("Location: /localmp/Utente/profilo");
         }
     }
+
+
+
+
+
 }

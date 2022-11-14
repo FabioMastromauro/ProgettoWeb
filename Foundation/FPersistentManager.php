@@ -16,6 +16,7 @@ class FPersistentManager
         $Eclass = get_class($obj);
         $Fclass = str_replace("E", "F", $Eclass);
         $Fclass::store($obj);
+
     }
 
     /**
@@ -104,6 +105,8 @@ class FPersistentManager
         }
         return $ris;
     }
+
+
 
     /**
      * Metodo che permette la ricerca secondo determinati parametri

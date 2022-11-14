@@ -1,6 +1,7 @@
 <!doctype html>
 {assign var = 'userlogged' value=$userlogged|default:'nouser'}
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<html lang="en" xmlns="http://www.w3.org/1999/html"
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 
     <script>
         function ready(){
@@ -24,7 +26,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
-        <img src="/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
+        <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
         <span class="navbar-brand" >LOCAL MARKETPLACE</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -94,7 +96,7 @@
             </div>
             <div class="col-md-4">
                 <div class="ban_img">
-                    <picture><img href="#" src="/smarty/libs/images/neonmarket.jpg" alt="#"/></picture>
+                    <picture><img href="#" src="/localmp/smarty/libs/images/neonmarket.jpg" alt="#"/></picture>
                 </div>
             </div>
         </div>
