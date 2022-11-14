@@ -219,7 +219,7 @@ class CAnnunci
                 setcookie('annuncio_ricerca', $data);
                 setcookie('searchOn', 1);
             }
-            header('Location: /localmp/Annunci/EsploraAnnunci/cerca');
+            header('Location: /localmp/Annunci/esploraAnnunci/cerca');
         }
         else {
             $c = 0;
@@ -229,7 +229,7 @@ class CAnnunci
             $tuttiAnnunciTitoloId = $pm::loadDefCol('FAnnuncio', array(['nome_annuncio', 'id_annuncio']));
             if (isset($tuttiAnnunciTitoloId[0]) && is_array($tuttiAnnunciTitoloId[0])) {
                 for ($i = 0; $i < sizeof($tuttiAnnunciTitoloId); $i++) {
-                    if (is_int(strpos($tuttiAnnunciTitoloId[$i]['nome_annuncio'], $parametro))) {
+                    if (is_int(strpos($tuttiAnnunciTitoloId[$i]['nome_annuncio'], $parametro))) { //come regex in cui abbiamo "LIKE" . "%" . "$parametro" . "%"
                         $array[$c]['nome_annuncio'] = $tuttiAnnunciTitoloId[$i]['nome_annuncio'];
                         $array[$c]['id_annuncio'] = $tuttiAnnunciTitoloId[$i]['id_annuncio'];
                         $c += 1;
