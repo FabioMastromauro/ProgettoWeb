@@ -1,9 +1,20 @@
 <?php
 
-
+/**
+ * Classe che gestisce le richieste HTTP in arrivo al server
+ * @author Gruppo7
+ * @package Control
+ */
 class CFrontController
 {
 
+    /**
+     * Metodo che gestisce lo spacchettamento della URL e reindirizza l'utente
+     * ad un metodo di un controllore e successivamente ad una view che genererà
+     * un template lato client
+     * @param $path
+     * @return void
+     */
     public function run($path){
 
         $method = $_SERVER['REQUEST_METHOD'];

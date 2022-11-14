@@ -1,12 +1,11 @@
 <?php
+
 /**
  * La classe CUtente gestisce le interazioni dell'utente con la web app
  * e permette la personalizzazione dei dati personali
+ * @author Gruppo7
  * @package Control
  */
-
-
-
 class CUtente
 {
 
