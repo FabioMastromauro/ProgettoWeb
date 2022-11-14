@@ -57,44 +57,29 @@
     </div>
 </nav>
 
-<div class="container-fluid">
-    <h3 class="text-center">AMMINISTRATORE</h3>
-    <h5 class=text-center>{$utente->getNome()} {$utente->getCognome()}</h5>
-    <h2 class="fw-bolder fs-5 mb-4 padding text-center">Lista membri
-        <input type="text" id="SearchTxt" /><input type="button" id="SearchBtn" value="Cerca" onclick="doSearch(document.getElementById('SearchTxt').value)" />
-    </h2>
-</div>
-
-<section class="py-5">
-    <div class="container px-5">
-        <script>
-            function doSearch(text) {
-                if (window.find(text)) {
-                    console.log(window.find(text));
-                }
-            }
-        </script>
-
-        <div class="row gx-5" id="list">
-
-            {if $list}
-                {if is_array($list)}
-                    {for $i = 0; $i < sizeof($list); $i++}
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <div class="card-body p-4">
-                                    <a href="/localmp/Admin/profiloUtente/{$list[$i]->getId()}" >{$list[$i]->getNome()} {$list[$i]->getCognome()}</a>
-                                </div>
-                            </div>
-                        </div>
-                    {/for}
+<div class="padding">
+    <div class="col-md-8">
+        <!-- Column -->
+        <div class="pro-img"><img src="data:{$immagine->getTipo()};base64,{$immagine->getImmagine()}" alt="user"></div><!--./smarty/libs/assets/background_profilo.jpg-->
+        <div class="ms-3">
+            <h3 class="m-b-0">{$utente->getNome()} {$utente->getCognome()}</h3>
+            {if $utente->isAdmin() == false & $utente->isBan() == false}
+                <p class="text-muted">Membro</p>
+                {if $utente->getBan() == true}
+                    <p class="text-muted">Utente bannato fino al {$utente->getDataFineBan()}</p>
+                    <a class="nav-link" href="/localmp/Admin/rimuoviBan/{$utente->getId()}"> Rimuovi Ban</a>
+                    {else}
+                    <p>Banna Utente</p>
+                    <a class="nav-link" href="/localmp/Admin/bannaUtente/{$utente->getId()}"> Imposta Ban</a>
                 {/if}
-            {else}
-                <h2> Non ci sono membri iscritti </h2>
+            {/if}
+            {if $utente->isAdmin() == true}
+                <p class="text-muted">Amministratore</p>
             {/if}
         </div>
     </div>
-</section>
+</div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

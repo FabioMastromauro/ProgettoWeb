@@ -2,6 +2,7 @@
 
 /**
  * La classe FFotoUtente fornisce query per gli oggetti EFotoUtente
+ * @author Gruppo7
  * @package Foundation
  */
 class FFotoUtente extends FDatabase

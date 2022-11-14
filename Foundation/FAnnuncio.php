@@ -2,8 +2,8 @@
 
 /**
  * La classe FAnnuncio fornisce query per gli oggetti EAnnuncio
+ * @author Gruppo7
  * @package Foundation
- *
  */
 class FAnnuncio extends FDatabase{
 

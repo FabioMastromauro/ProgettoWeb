@@ -2,6 +2,7 @@
 
 /**
  * La classe FFotoAnnuncio fornisce query per gli oggetti EFotoAnnuncio
+ * @author Gruppo7
  * @package Foundation
  */
 class FFotoAnnuncio extends FDatabase{

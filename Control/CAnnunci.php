@@ -3,6 +3,7 @@
 /**
  * La classe CAnnunci viene utilizzata per eseguire tutte le operazioni
  * CRUD (create/read/delete/update) sugli annunci
+ * @author Gruppo7
  * @package Control
  */
 class CAnnunci

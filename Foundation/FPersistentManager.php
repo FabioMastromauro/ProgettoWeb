@@ -2,6 +2,7 @@
 
 /**
  * La classe FPersistentManager viene utilizzata da tramite nelle classi Control per accedere a Foundation
+ * @author Gruppo7
  * @package Foundation
  */
 class FPersistentManager

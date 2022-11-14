@@ -1,7 +1,17 @@
 <?php
 
+/**
+ * La classe CRicerca si occupa del caricamento degli annunci nella homepage
+ * @author Gruppo7
+ * @package Control
+ */
 class CRicerca
 {
+    /**
+     * Metodo utilizzato per il caricamento degli annunci nella home che implementa
+     * un sistema di refresh degli annunci ad ogni caricamento della pagina
+     * @return void
+     */
     public static function blogHome(){
         $vSearch = new VRicerca();
 
