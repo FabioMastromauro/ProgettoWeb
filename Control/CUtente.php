@@ -13,7 +13,6 @@ class CUtente
      * Metodo che gestisce il login da parte di un utente
      * @return void
      */
-
     static function confermaMail(){
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");

@@ -7,6 +7,7 @@
  */
 class USession
 {
+
     /**
      * Costruttore
      */
@@ -49,7 +50,6 @@ class USession
             return false;
         }
     }
-
 
     /**
      * Metodo che, passando la chiave identificativa(key), restituisce 0
