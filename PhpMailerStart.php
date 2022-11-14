@@ -13,5 +13,6 @@ class PhpMailerStart
 
     static function configuration(){
 
+
     }
 }

@@ -30,9 +30,12 @@
 
                     <input  type="text" name="email" id="email" placeholder="Email address" value="{$email}" readonly>
                     <input  type="password" name="password" id="password" placeholder="Password" value="{$password}" readonly>
-                    <input type="text" name="codice" id="codice" placeholder="Codice di verifica" value="" required>
+                    <input type="text" name="codice" id="codice" placeholder="Codice di verifica" value="" >
                     <input type="submit"   class="btn btn-login" value="Verifica">
                 </div>
+                <form action="/localmp/Utente/Ricerca">
+                    <input type="submit" value="Indietro" class="btn btn-new">
+                </form>
             </div>
         </div>
 </form>

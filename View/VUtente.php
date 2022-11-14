@@ -12,6 +12,7 @@ class VUtente
         $this->smarty = StartSmarty::configuration();
         $this->phpmailer=PhpMailerStart::configuration();
     }
+
     static function getEmail(){
         return $_POST['email'];
     }
@@ -57,6 +58,48 @@ class VUtente
         }
         $this->smarty->display('.smarty/libs/templates/login.tpl');
     }
+
+    static function mailer($email, $nome, $verification_code){
+          $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+                //Enable verbose debug output
+                $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
+
+                //Send using SMTP
+                $mail->isSMTP();
+
+                //Set the SMTP server to send through
+                $mail->Host = 'smtp.gmail.com';
+
+                //Enable SMTP authentication
+                $mail->SMTPAuth = true;
+
+                //SMTP username
+                $mail->Username = 'Spacco280@gmail.com';
+
+                //SMTP password
+                $mail->Password = 'usnguuwlyasusgnz';
+
+                //Enable TLS encryption;
+                $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+
+                //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                $mail->Port = 587;
+
+                //Recipients
+                $mail->setFrom('Spacco280@gmail.com', 'localmp');
+
+                //Add a recipient
+                $mail->addAddress($email, $nome);
+                //Set email format to HTML
+                $mail->isHTML(true);
+
+
+                $mail->Subject = 'Email verification';
+                $mail->Body    = '<p>Your verification code is: <b style="font-size: 30px;">' . $verification_code . '</b></p>';
+
+                $mail->send();
+}
 
     public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente,$vemail){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
