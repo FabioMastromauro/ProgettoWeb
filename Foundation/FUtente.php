@@ -192,7 +192,6 @@ class FUtente extends FDatabase
                 }
             }
         }
-
         return $utente;
     }
 }

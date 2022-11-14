@@ -106,7 +106,7 @@
         <div class="row">
             <div class="colm-form">
                 <div class="form-container">
-                    <input type="text" name="email" placeholder="Email address">
+                    <input type="text" name="email" placeholder="Email address" value="">
                     <i class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show()">
                     </i>
                     <input type="password" name="password" id="psw" placeholder="Password" value="">

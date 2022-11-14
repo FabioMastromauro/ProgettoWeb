@@ -31,7 +31,9 @@ class VUtente
         $this->smarty->display('./smarty/libs/templates/login.tpl');
     }
 
-    public function verifyPage(){
+    public function verifyPage($email,$password){
+        $this->smarty->assign('email',$email);
+        $this->smarty->assign('password',$password);
         $this->smarty->display('./smarty/libs/templates/verify.tpl');
     }
 

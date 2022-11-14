@@ -22,17 +22,21 @@
 
 </head>
 <body style="margin:0">
+<form method="POST" action="/localmp/Utente/confermaMail" enctype="multipart/form-data">
 
-    <form method="POST" action="/localmp/Utente/confermaMail">
         <div class="row">
             <div class="colm-form">
                 <div class="form-container">
-                    <input type="text" name="codice" id="codice" placeholder="Codice di verifica"> </i>
-                    <button type="button" id="index"  class="btn btn-login">Verifica</button>
+
+                    <input  type="text" name="email" id="email" placeholder="Email address" value="{$email}" readonly>
+                    <input  type="password" name="password" id="password" placeholder="Password" value="{$password}" readonly>
+                    <input type="text" name="codice" id="codice" placeholder="Codice di verifica" value="" required>
+                    <input type="submit"   class="btn btn-login" value="Verifica">
                 </div>
             </div>
         </div>
-    </form>
+</form>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="/localmp/smarty/libs/javascript/showpsw.js"></script>
 </body>

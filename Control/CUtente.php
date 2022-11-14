@@ -16,10 +16,12 @@ class CUtente
     static function confermaMail(){
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");
-        $session = USingleton::getInstance("USession");
-        $utente = $pm->load('FUtente',array(['idUser','=',$_GET['idUser']]));
+        $utente = $pm->loadLogin($_POST['email'], $_POST['password']);
 
         if($utente->getCodice() == $_POST['codice']){
+            $session = USingleton::getInstance("USession");
+            $dati = serialize($utente);
+
 
             $pm->update('vemail', date('Y-m-d'), 'idUSer', $utente->getIdUser(), 'FUtente');
             $session->setValue('vemail', $utente->getVemail());
@@ -60,9 +62,8 @@ class CUtente
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");
         $utente = $pm->loadLogin(VUtente::getEmail(), VUtente::getPassword());
-        $_POST['idUser']=$utente->getIdUser();
-        if($utente->getVemail()!=null) {
-            if ($utente != null) {
+        if ($utente != null) {
+            if($utente->getVemail()!=null) {
                 if ($utente->isBan() != 1) {
                         if (USession::sessionStatus() == PHP_SESSION_NONE) {
                             $session = USingleton::getInstance("USession");
@@ -84,12 +85,12 @@ class CUtente
                     $view->loginError(1, 'bannato', $utente->getDataFineBan());
                 }
 
-            } else {
-                $view->loginError(0, 'errore');
+            } else{
+                $view->verifyPage(VUtente::getEmail(), VUtente::getPassword());
             }
 
-        } else{
-                $view->verifyPage();
+        } else {
+            $view->loginError(0, 'errore');
         }
     }
 
