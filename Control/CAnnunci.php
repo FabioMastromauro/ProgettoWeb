@@ -149,18 +149,18 @@ class CAnnunci
      * @param int $id
      * @return void
      */
-    static function infoAnnuncio(int $id) {
+    static function infoAnnuncio($id) {
         $view = new VAnnunci();
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
         $mod = unserialize($session->readValue('utente'));
-        $session->setValue($id, 'id_ricetta');
-        $annuncio = $pm::load('FAnnuncio', array('idAnnuncio'), array($id));
-        $autore = $pm::load('FUtente', array(['idUser','=',array($annuncio->getIdVenditore())]));
+        $session->setValue('idAnnuncio', $id);
+        $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio','=',$id]));
+        $autore = $pm::load('FUtente', array(['idUser','=',$annuncio->getIdVenditore()]));
         $foto = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annuncio->getIdFoto()]));
         $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
-
-        $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente);
+        $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
+        $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria);
     }
 
     /**

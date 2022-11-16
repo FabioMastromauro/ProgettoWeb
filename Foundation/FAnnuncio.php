@@ -99,7 +99,7 @@ class FAnnuncio extends FDatabase{
         }
         if(($result != null) && ($rows_number == 1)) {
             $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
-                $result['idVenditore'], $result['categoria'], $result['ban']);
+                $result['idVenditore'],$result['idCompratore'], $result['categoria'], $result['ban'],$result['idAnnuncio']);
              //$annuncio->setIdAnnuncio($result['idAnnuncio']);
         }
         else {
@@ -107,7 +107,7 @@ class FAnnuncio extends FDatabase{
                 $annuncio = array();
                 for($i = 0; $i < count($result); $i++){
                     $annuncio[] = new EAnnuncio($result[$i]['titolo'], $result[$i]['descrizione'], $result[$i]['prezzo'], $result[$i]['idFoto'], $result[$i]['data'],
-                        $result[$i]['idVenditore'], $result[$i]['categoria'], $result[$i]['ban']);
+                        $result[$i]['idVenditore'],$result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban'],$result[$i]['idAnnuncio']);
                     //$annuncio[$i]->setIdAnnuncio($result[$i]['idAnnuncio']);
 
                 }

@@ -116,13 +116,13 @@ class FFotoUtente extends FDatabase
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
         if (($result != null) && ($rows_number = 1)) {
-            $foto = new EFotoUtente($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['data'], $result['idUser']);
+            $foto = new EFotoUtente($result['idFoto'], $result['nomeFoto'], $result['size'], $result['tipo'], $result['foto']);
         }
         else {
             if (($result != null) && ($rows_number > 1)) {
                 $foto = array();
                 for ($i = 0; $i < count($result); $i++) {
-                    $foto[] = new EFotoUtente($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['data'], $result[$i]['idUser']);
+                    $foto[] = new EFotoUtente($result[$i]['idFoto'], $result[$i]['nomeFoto'], $result[$i]['size'], $result[$i]['tipo'], $result[$i]['foto']);
                 }
             }
         }

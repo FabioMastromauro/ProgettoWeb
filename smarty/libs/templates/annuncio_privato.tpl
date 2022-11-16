@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Annuncio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="../javascript/searchbar.js"></script>
+   <!-- <script src="../javascript/searchbar.js"></script> -->
 
 </head>
 <body>
 
-<div id="searchbar"></div>
 
 
 
@@ -34,22 +33,35 @@
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                         </div>
-                                        <div class="carousel-inner">
-                                            {if is_array($foto_ann}
-                                            {for $i=0 to $n_img_ann}
+
+
+                                        {if is_array($foto)}
+                                            {for $i = 0; $i < 1; $i++}
                                             <!-- replica il codice finchè per n argomenti array -->
-                                            {$i==0}
-                                            <div class="carousel-item active">
-                                                <img src="data:{$typeA[0]};base64,{$pic64ann[0]}" class="d-block w-100 same" alt="...">
+                                                <div class="carousel-inner">
+
+                                                <div class="carousel-item active">
+                                                <img  class="card-img-top same" src="data:{$foto[$i]->getTipo()};base64,{$foto[$i]->getFoto()}" style="width: 200px; height: 100px" alt="pizza margherita"  />
                                             </div>
-                                            {else}
-                                            <!-- fine codice -->
-                                            <div class="carousel-item active">
-                                                <img src="data:{$typeA[$i]};base64,{$pic64ann[$i]}" class="d-block w-100 same" alt="...">
+
+
+                                        </div>
+
+                                            {/for}
+                                        {else}
+                                        <div class="carousel-inner">
+
+                                                <div class="carousel-item active">
+                                                <img  class="card-img-top same" src="data:{$foto->getTipo()};base64,{$foto->getFoto()}"  alt="pizza margherita"  />
                                             </div>
                                         </div>
 
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" >
+                                            {/if}
+
+
+
+
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" >
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
                                         </button>
@@ -61,8 +73,8 @@
                                     <div class="card-body pb-0">
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                                <p><a href="#!" class="text-dark">{$titolo}</a></p>
-                                                <p class="small text-muted">{$categoria}</p>
+                                                <p><a href="#!" class="text-dark">{$annuncio->getTitolo()}</a></p>
+                                                <p class="small text-muted">{$categoria->getCategoria()}</p>
                                             </div>
                                             <div>
                                                 <div class="d-flex flex-row justify-content-end mt-1 mb-4 text-danger">
@@ -77,7 +89,7 @@
                                     <hr class="my-0" />
                                     <div class="card-body pb-0">
                                         <div class="d-flex justify-content-between">
-                                            <p><a href="#!" class="text-dark">{$prezzo}</a></p>
+                                            <p><a href="#!" class="text-dark">Prezzo {$annuncio->getPrezzo()}€</a></p>
                                         </div>
                                     </div>
                                     <hr class="my-0" >
@@ -85,15 +97,22 @@
                                         <div class="justify-content-between">
                                             <p><a href="#!" class="text-dark">Descrizione</a></p>
 
-                                            <p class="text-dark">{$descrizione}</p>
+                                            <p class="text-dark">{$annuncio->getDescrizione()}</p>
                                         </div>
                                     </div>
 
                                     <hr class="my-0" />
                                     <div class="card-body">
+                                        {if $mod->getIdUser() == $annuncio->getIdVenditore()}
                                         <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
                                             <button type="button" data-bs-toggle="modal" data-bs-target="#modifica" style="margin: auto; width: 50%" class="btn btn-primary">Modifica</button>
                                         </div>
+                                        {else}
+                                        <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="" style="margin: auto; width: 50%" class="btn btn-primary">Acquista</button>
+                                        </div>
+                                        {/if}
+
                                     </div>
                                 </div>
                             </div>
@@ -102,14 +121,20 @@
                                 <!-- venditore -->
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <form class="form-inline" method="POST" action="/ProgettoWeb/smarty/libs/html/profilo_pubblico.html">
+                                        <form class="form-inline" method="POST" action="/localmp/smarty/libs/html/profilo_pubblico.html">
                                             <input type="text" hidden name="email" value="?" />
-                                            <input type="image" src="data:{$type};base64,{$pic64}" style="border-radius: 50%;" width="90" height="90"/>
+                                            {if $utente->getIdFoto()!=null}
+                                            <input type="image" src="data:{$utente->getTipo()};base64,{$utente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>
+                                            {else}
+                                                <input type="image" src="/localmp/smarty/libs/images/login.png" style="border-radius: 50%;" width="90" height="90"/>
+                                            {/if}
                                         </form>
-                                        <p class="card-text">{$nome} {$cognome}</p>
-                                        <p class="card-text">Contatti: </p>
-                                        <h6><img src="https://www.internetmatters.org/wp-content/uploads/2020/01/instagradientlogo-no-background.png" style="float: left;width: 25px;height: 25px;object-fit: cover; margin-right: 100%"> {$instagram}</h6>
-                                        <h6><img src="https://www.facebook.com/images/fb_icon_325x325.png" style="float: left;width:  25px;height: 25px;object-fit: cover; margin-right: 100%">{$facebook}</h6>
+
+                                        <p class="card-text">{$utente->getNome()} {$utente->getCognome()}</p>
+
+                                        <p class="card-text">Contatti: {$utente->getEmail()}</p>
+                                      <!--  <h6><img src="https://www.internetmatters.org/wp-content/uploads/2020/01/instagradientlogo-no-background.png" style="float: left;width: 25px;height: 25px;object-fit: cover; margin-right: 100%"> {$instagram}</h6>
+                                        <h6><img src="https://www.facebook.com/images/fb_icon_325x325.png" style="float: left;width:  25px;height: 25px;object-fit: cover; margin-right: 100%">{$facebook}</h6>-->
 
                                     </div>
                                 </div>

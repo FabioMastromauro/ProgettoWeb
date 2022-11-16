@@ -112,7 +112,7 @@ class VAnnunci
      * @throws SmartyException
      */
     function showCreaAnnuncio(){
-        $this->smarty->display('crea_annuncio.tpl');
+        $this->smarty->display('./smarty/libs/templates/crea_annuncio.tpl');
     }
 
     /**
@@ -125,7 +125,7 @@ class VAnnunci
      * @return void
      * @throws SmartyException
      */
-    function showInfo(EAnnuncio $annuncio, $user, $mod, $foto, $immagine_autore) {
+    function showInfo($annuncio, $user, $mod, $foto, $immagine_autore,$categoria) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $descrizione = explode('.', $annuncio->getDescrizione());
@@ -135,9 +135,10 @@ class VAnnunci
         $this->smarty->assign('annuncio', $annuncio);
         $this->smarty->assign('foto', $foto);
         $this->smarty->assign('descrizione', $descrizione);
-        $this->smarty->assign('immagine_autore', $immagine_autore);
+        $this->smarty->assign('fotoUtente', $immagine_autore);
+        $this->smarty->assign('categoria',$categoria);
 
-        $this->smarty->display('annuncio.tpl');
+        $this->smarty->display('annuncio_privato.tpl');
     }
 
     /**

@@ -146,13 +146,13 @@ class FCategoria extends FDatabase
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
         if (($result != null) && ($rows_number = 1)) {
-            $categoria = new ECategoria($result['cate'], $result['idCate']);
+            $categoria = new ECategoria($result['idCate'], $result['categoria']);
         }
         else {
             if (($result != null) && ($rows_number > 1)) {
                 $categoria = array();
                 for ($i = 0; $i < count($result); $i++) {
-                    $categoria[] = new ECategoria($result[$i]['cate'], $result[$i]['idCate']);
+                    $categoria[] = new ECategoria($result[$i]['idCate'], $result[$i]['categoria']);
                 }
             }
         }

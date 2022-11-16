@@ -13,33 +13,38 @@
 class ECategoria implements JsonSerializable
 {
     /**
-     * @var string nome Categoria
+     * @var mixed nome Categoria
      */
-    private string $categoria;
+    private mixed $categoria;
     /**
-     * @var int id Categoria
+     * @var mixed id Categoria
      */
-    private int $idCate;
+    private mixed $idCate;
 
     //-----------------------------COSTRUTTORE--------------------------
 
-    public function __construct($categoria)
+    public function __construct($idCate=null,$categoria=null)
     {
+        $this->idCate = $idCate;
         $this->categoria = $categoria;
     }
 
     //--------------METODI GET E SET------------------------------------
 
     /**
-     * @return string nome categoria
+     * @return mixed nome categoria
      */
+
+
+
+
     public function getCategoria()
     {
         return $this->categoria;
     }
 
     /**
-     * @param string $categoria nome categoria
+     * @param mixed $categoria nome categoria
      */
     public function setCategoria($categoria): void
     {
@@ -47,7 +52,7 @@ class ECategoria implements JsonSerializable
     }
 
     /**
-     * @return int id Categoria
+     * @return mixed id Categoria
      */
     public function getIdCate()
     {
@@ -55,7 +60,7 @@ class ECategoria implements JsonSerializable
     }
 
     /**
-     * @param int id Categoria
+     * @param mixed id Categoria
      */
     public function setIdCate($idCate): void
     {
