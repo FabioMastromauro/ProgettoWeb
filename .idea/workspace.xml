@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="gg">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProgettoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/localmp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CFrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/html/profilo_privato.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/profilo_privato.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,8 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/smarty/smarty" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -86,37 +89,32 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.user.html">
+  <component name="RunManager" selected="JavaScript Debug.profilo_privato.html">
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/admin.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="annuncio.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/localmp/smarty/libs/html/annuncio.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="home.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/home.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/index.html" useBuiltInWebServerPort="true">
+    <configuration name="profilo_privato.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/localmp/smarty/libs/html/profilo_privato.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="prov.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/prov.html" useBuiltInWebServerPort="true">
+    <configuration name="profilo_pubblico.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/localmp/smarty/libs/html/profilo_pubblico.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="user.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ProgettoWeb/smarty/libs/html/user.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="prova.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/prova.php">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.profilo_privato.html" />
+        <item itemvalue="JavaScript Debug.profilo_pubblico.html" />
+        <item itemvalue="JavaScript Debug.annuncio.html" />
         <item itemvalue="JavaScript Debug.user.html" />
         <item itemvalue="JavaScript Debug.admin.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.prov.html" />
-        <item itemvalue="PHP Script.prova.php" />
       </list>
     </recent_temporary>
   </component>
@@ -178,14 +176,11 @@
       <workItem from="1667816167402" duration="5896000" />
       <workItem from="1667828307497" duration="8262000" />
       <workItem from="1667915488207" duration="2998000" />
-      <workItem from="1668008377272" duration="709000" />
-    </task>
-    <task id="LOCAL-00119" summary="Correzioni CUtente.php">
-      <created>1665074262921</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1665074262921</updated>
+      <workItem from="1668008377272" duration="2563000" />
+      <workItem from="1668087426601" duration="1073000" />
+      <workItem from="1668436588549" duration="4500000" />
+      <workItem from="1668521737550" duration="2783000" />
+      <workItem from="1668696237056" duration="758000" />
     </task>
     <task id="LOCAL-00120" summary="Correzioni varie">
       <created>1665682350193</created>
@@ -523,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667830352922</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="gg">
+      <created>1668009135661</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1668009135662</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
