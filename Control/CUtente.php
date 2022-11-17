@@ -194,12 +194,12 @@ class CUtente
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
                         $foto[$i] = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio[$i]->getIdFoto()]));
-                        $autori_annunci[$i] = $pm::load('FUtente', array(['idUser', '=', $annuncio[$i]->getAutore()]));
+                        $autori_annunci[$i] = $pm::load('FUtente', array(['idUser', '=', $annuncio[$i]->getIdVenditore()]));
                         $foto_autori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci[$i]->getidFoto()]));
                     }
                 } else {
                     $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio->getIdFoto()]));
-                    $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getAutore()]));
+                    $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getIdVenditore()]));
                     $foto_autori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()]));
                 }
                 $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto, $fotoUtente, $foto_autori, $id,$utente->getVemail());
