@@ -95,7 +95,7 @@
                 {if $annuncio}
                     <h1>Annunci online</h1>
                     {if is_array($annuncio)}
-                        {foreach from=$annuncio  item=ann}
+                        {foreach from=$annuncio  item=$ann}
                             <div class="row">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
@@ -110,6 +110,20 @@
                                 </div>
                             </div>
                         {/foreach}
+                    {else}
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="logo.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{$annuncio->getTitolo()}</h5>
+                                        <p class="card-text">{$annuncio->getDescrizione()}</p>
+                                        <a href="#" class="btn btn-primary">Visita annuncio</a>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </div>
                     {/if}
                 {/if}
             </div>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="creazione annuncio in profilo_privato.tpl">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,14 +177,7 @@
       <workItem from="1668087426601" duration="1073000" />
       <workItem from="1668436588549" duration="4500000" />
       <workItem from="1668521737550" duration="2783000" />
-      <workItem from="1668696237056" duration="3059000" />
-    </task>
-    <task id="LOCAL-00121" summary="Parentesi mancante CAnnunci.php">
-      <created>1665682388706</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1665682388706</updated>
+      <workItem from="1668696237056" duration="4047000" />
     </task>
     <task id="LOCAL-00122" summary="Aggiunta parametri get in VRecensione.php">
       <created>1665755672902</created>
@@ -521,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668697068896</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)">
+      <created>1668701626383</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1668701626383</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php" />
     <MESSAGE value="aggiunto php docBlock FDatabase.php" />
     <MESSAGE value="aggiunto php docBlock FUtente.php" />
     <MESSAGE value="aggiunto php docBlock FAnnuncio.php" />
@@ -577,7 +577,8 @@
     <MESSAGE value="admin.tpl modificato" />
     <MESSAGE value="gg" />
     <MESSAGE value="creazione annuncio in profilo_privato.tpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazione annuncio in profilo_privato.tpl" />
+    <MESSAGE value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
+    <option name="LAST_COMMIT_MESSAGE" value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
