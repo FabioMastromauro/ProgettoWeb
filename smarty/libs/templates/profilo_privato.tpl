@@ -15,6 +15,52 @@
 <body>
 
 
+<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
+    <div class="container-fluid">
+        <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
+        <span class="navbar-brand" >LOCAL MARKETPLACE</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
+                </li>
+                {if $userlogged != 'nouser'}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
+                </li>
+
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+
+            {else}
+
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
+
+            {/if}
+
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                <button class="btn btn-dark" type="submit" >Search</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+
+
 
 <div class="container">
     <div class="main-body">
@@ -24,26 +70,19 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" alt="Admin" class="rounded-circle" width="140">
+                            {if $utente->getIdFoto() == null}
+                            <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+                            {else}
+                            <img src="data:{$fotoUtente->getTipo()};base64, {$fotoUtente->getFoto()}"> <!-- TODO -->
+                            {/if}
                             <div class="mt-3">
-                                <h4>{$nome}</h4>
+                                <h4>{$utente->getNome()}</h4>
                                 <p class="text-muted font-size-sm">{$luogo}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card mt-3">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
-                            <span class="text-secondary">{$instagram}</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
-                            <span class="text-secondary">{$facebook}</span>
 
-                    </ul>
-                </div>
             </div>
 
             <div class="col-md-8">
@@ -54,7 +93,7 @@
                                 <h6 class="mb-0">Nome</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                {$nome}
+                                {$utente->getNome()}
                             </div>
                         </div>
                         <hr>
@@ -63,7 +102,7 @@
                                 <h6 class="mb-0">Cognome</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                {$cognome}
+                                {$utente->getCognome()}
                             </div>
                         </div>
                         <hr>
@@ -72,7 +111,7 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                {$email}
+                                {$utente->getEmail()}
                             </div>
                         </div>
                         <hr>
@@ -91,45 +130,52 @@
 
             </p>
             <!--Annunci-->
-            <div class="container">
-                {if $annuncio}
-                    <h1>Annunci online</h1>
-                    {if is_array($annuncio)}
-                        {foreach from=$annuncio  item=$ann}
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="logo.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{$ann->getTitolo()}</h5>
-                                            <p class="card-text">{$ann->getDescrizione()}</p>
-                                            <a href="#" class="btn btn-primary">Visita annuncio</a>
-                                        </div>
-                                    </div>
-                                    <p></p>
-                                </div>
+            <h1>Annunci online</h1>
+
+          <div class="container" style="display: flex; flex-flow: row wrap">
+                        {if isset($annuncio)}
+                        {if is_array($annuncio)}
+                        {for $i=0; $i<sizeof($annuncio);$i++}
+                            <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
+                        <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
+                            <div class="card-body">
+                                <img  class="card-img-top same" src="data:{$immagini[$i]->getTipo()};base64,{$immagini[$i]->getFoto()}" style="width: 200px; height: 100px" alt="{$immagini[$i]->getNomeFoto()}">
+                                <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
+                                <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
+                                <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                             </div>
-                        {/foreach}
-                    {else}
-                        <div class="row">
+                        </div>
+                        <p></p>
+                            </div>
+                        {/for}
+          </div>
+
+
+
+                        {else}
+                   <div class="container">
+                        <div class="col">
                             <div class="col">
                                 <div class="card" style="width: 18rem;">
-                                    <img src="logo.png" class="card-img-top" alt="...">
                                     <div class="card-body">
+                                        <img  class="card-img-top same" src="data:{$immagini->getTipo()};base64,{$immagini->getFoto()}" style="width: 100%;height: 100%; object-fit: contain">
                                         <h5 class="card-title">{$annuncio->getTitolo()}</h5>
                                         <p class="card-text">{$annuncio->getDescrizione()}</p>
-                                        <a href="#" class="btn btn-primary">Visita annuncio</a>
+                                        <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                                     </div>
                                 </div>
                                 <p></p>
                             </div>
                         </div>
+                   </div>
+
                     {/if}
-                {/if}
+                    {/if}
             </div>
         </div>
     </div>
 </div>
+
 <!-- About, Information, Contacts -->
 <footer id="footer">
     <div class="footer">
@@ -181,9 +227,9 @@
 </main>
 
 <!-- crea annuncio -->
+<form action="/localmp/Annunci/pubblicaAnnuncio" method="POST" enctype="multipart/form-data">
 
 <div class="modal fade" id="creaAnnuncio" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
-    <form action="/localmp/Utente/pubblicaAnnuncio"  method="post" enctype="multipart/form-data">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
@@ -191,49 +237,48 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3 needs-validation" novalidate>
-                        <div class="col-md-4">
-                            <label for="title" class="form-label">Titolo</label>
-                            <input type="text" class="form-control" id="title" name="title" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                         <div class="col-md-4">
+                            <label for="titolo" class="form-label">Titolo</label>
+                            <input type="text" class="form-control" id="titolo" name="titolo" required>
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Descrizione</label>
-                            <textarea class="form-control" id="description" rows="3"></textarea>
+                            <label for="descrizione" class="form-label">Descrizione</label>
+                            <textarea class="form-control" id="descrizione" name="descrizione" rows="3"></textarea>
+                        </div>
+                        <div class="col-md-1">
+                            <label for="prezzo" class="form-label">Prezzo €</label>
+                            <input type="text" class="form-control" id="prezzo" name="prezzo" required>
+
                         </div>
                         <div class="mb-3">
-                            <label for="price" class="form-label">Prezzo</label>
-                            <input type="text" class="form-control" id="price" name="price" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
+                            <label for="file" class="form-label">Aggiungi una o più foto</label>
+                            <input type="file" class="form-control"  id="file" name="file" multiple>
                         </div>
-                        <div class="mb-3">
-                            <label for="upload-image" class="form-label">Aggiungi una o più foto</label>
-                            <input class="form-control" type="file" id="upload-image" multiple>
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="category">Categoria</label>
-                            <select class="form-select">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                        <div class="col-1">
+                            <label for="categoria">Categoria</label>
+                            <select name="categoria" id="categoria" class="form-select">
+                                <option value="--Seleziona--">--Seleziona--</option>
+
+                                {if is_array($categoria)}
+                                {foreach from=$categoria item=cate}
+                                <option id="categoria" name="categoria" value="{$cate.idCate}">{$cate.categoria}</option>
+                                {/foreach}
+                                {/if}
+
                             </select>
                         </div>
                         <p>
                         </p>
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Crea annuncio</button>
-                        </div>
-                    </form>
+
+                            <input class="btn btn-primary" type="submit" value="Crea annuncio">
+
                 </div>
                 <div class="modal-footer">
                 </div>
             </div>
         </div>
+
+
 </div>
 </form>
 

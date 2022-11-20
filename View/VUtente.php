@@ -101,20 +101,18 @@ class VUtente
                 $mail->send();
 }
 
-    public function profilo($annunci, $nome, $cognome, $email, $immagini, $fotoUtente, $fotoAutori, $idutente,$vemail){
+    public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria){
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
-        $this->smarty->assign('nome', $nome);
-        $this->smarty->assign('cognome', $cognome);
-        $this->smarty->assign('email', $email);
+        $this->smarty->assign('utente',$utente);
         $this->smarty->assign('annuncio', $annunci);
         $this->smarty->assign('immagini', $immagini);
         $this->smarty->assign('foto_utente', $fotoUtente);
-        $this->smarty->assign('foto_autori', $fotoAutori);
-        $this->smarty->assign('vemail',$vemail);
+        $this->smarty->assign('fotoUtente', $fotoAutori);
         //$this->smarty->assign('facebook', $facebook);
         //$this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);
+        $this->smarty->assign('categoria',$categoria);
 
         $this->smarty->display('profilo_privato.tpl');
     }

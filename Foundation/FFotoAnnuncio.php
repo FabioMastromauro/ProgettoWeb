@@ -58,13 +58,12 @@ class FFotoAnnuncio extends FDatabase{
      */
     public static function bind($stmt, EFotoAnnuncio $fotoAnnuncio, $nome_file){
         $path = $_FILES[$nome_file]['tmp_name'];
-        $file = fopen($path, 'r') or die ("Attenzione! Impossibile da aprire!");
+        $file = fopen($path, 'rb') or die ("Attenzione! Impossibile da aprire!");
         $stmt->bindValue(':idFoto', NULL, PDO::PARAM_INT);
         $stmt->bindValue(':nomeFoto', $fotoAnnuncio->getNomeFoto(), PDO::PARAM_STR);
         $stmt->bindValue(':size', $fotoAnnuncio->getSize(), PDO::PARAM_STR);
         $stmt->bindValue(':tipo', $fotoAnnuncio->getTipo(), PDO::PARAM_STR);
-        $stmt->bindValue(':data', fread($file, filesize($path)), PDO::PARAM_LOB);
-        // $stmt->bindValue(':idAnn', $fotoAnnuncio->getIdAnn(), PDO::PARAM_INT);
+        $stmt->bindValue(':foto', fread($file, filesize($path)), PDO::PARAM_LOB);
         unset($file);
         unlink($path);
     }
@@ -75,9 +74,10 @@ class FFotoAnnuncio extends FDatabase{
      * @param $nome_file
      * @return void
      */
-    public static function store(EFotoAnnuncio $fotoAnnuncio, $nome_file){
+    public static function storeMedia(EFotoAnnuncio $fotoAnnuncio, $nome_file){
         $db = parent::getInstance();
-        $db->storeMediaDB(static::getClass(), $fotoAnnuncio, $nome_file);
+        $id=$db->storeMediaDB(static::getClass(), $fotoAnnuncio, $nome_file);
+        $fotoAnnuncio->setIdFoto($id);
     }
 
     /**

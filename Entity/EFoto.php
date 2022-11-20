@@ -16,13 +16,13 @@
 class EFoto implements JsonSerializable
 {
     /**
-     * @var int id Foto
+     * @var  id Foto
      */
-    protected int $idFoto;
+    protected  $idFoto;
     /**
-     * @var string nome Foto
+     * @var  nome Foto
      */
-    protected string $nomeFoto;
+    protected  $nomeFoto;
     /**
      * @var mixed dimensione Foto
      */
@@ -38,45 +38,45 @@ class EFoto implements JsonSerializable
 
     //----------------------------------------COSTRUTTORE-----------------------------------------
 
-    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
+    public function __construct( $idFoto,  $nomeFoto,  $size, $tipo, $foto)
     {
         $this->idFoto = $idFoto;
         $this->nomeFoto = $nomeFoto;
         $this->size = $size;
         $this->tipo = $tipo;
-        $this->foto = $foto;
+        $this->foto = base64_encode($foto);
     }
 
     //-------------------------------------METODI GET E SET----------------------------------------
 
     /**
-     * @return int id Foto
+     * @return  id Foto
      */
-    public function getIdFoto(): int
+    public function getIdFoto()
     {
         return $this->idFoto;
     }
 
     /**
-     * @param int $idFoto id Foto
+     * @param  $idFoto id Foto
      */
-    public function setIdFoto(int $idFoto): void
+    public function setIdFoto( $idFoto): void
     {
         $this->idFoto = $idFoto;
     }
 
     /**
-     * @return string nome Foto
+     * @return  nome Foto
      */
-    public function getNomeFoto(): string
+    public function getNomeFoto()
     {
         return $this->nomeFoto;
     }
 
     /**
-     * @param string $nomeFoto nome Foto
+     * @param  $nomeFoto nome Foto
      */
-    public function setNomeFoto(string $nomeFoto): void
+    public function setNomeFoto( $nomeFoto): void
     {
         $this->nomeFoto = $nomeFoto;
     }
@@ -84,7 +84,7 @@ class EFoto implements JsonSerializable
     /**
      * @return mixed dimensione Foto
      */
-    public function getSize(): mixed
+    public function getSize()
     {
         return $this->size;
     }
@@ -92,7 +92,7 @@ class EFoto implements JsonSerializable
     /**
      * @param mixed $size dimensione Foto
      */
-    public function setSize(string $size): void
+    public function setSize( $size): void
     {
         $this->size = $size;
     }
@@ -118,7 +118,7 @@ class EFoto implements JsonSerializable
      */
     public function getFoto()
     {
-        return base64_encode($this->foto);
+        return $this->foto;
     }
 
     /**

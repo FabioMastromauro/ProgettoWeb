@@ -26,7 +26,7 @@ class VAnnunci
      */
     static function getTitoloAnnuncio()
     {
-        return strtoupper($_POST['title']);
+        return strtoupper($_POST['titolo']);
     }
 
     /**

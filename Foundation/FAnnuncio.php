@@ -18,7 +18,7 @@ class FAnnuncio extends FDatabase{
     /**
      * @var string
      */
-    private static $values = '(:titolo, :descrizione, :prezzo, idFoto, :data, :idAnnuncio, :idVenditore, :idCompratore, :categoria, :ban)';
+    private static $values = '(:titolo, :descrizione, :prezzo, :idFoto, :data, :idVenditore, :idCompratore, :categoria, :ban, :idAnnuncio)';
 
     /**
      * Costruttore
@@ -61,8 +61,8 @@ class FAnnuncio extends FDatabase{
         $stmt->bindValue(':descrizione', $annuncio->getDescrizione(), PDO::PARAM_STR);
         $stmt->bindValue(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_STR);
         $stmt->bindValue(':idFoto', $annuncio->getIdFoto(), PDO::PARAM_INT);
-        $stmt->bindValue(':data', $annuncio->getData()->format('Y-m-d H:i:s'), PDO::PARAM_STR);
-        $stmt->bindValue(':idAnnuncio', null, PDO::PARAM_INT);
+        $stmt->bindValue(':data', $annuncio->getData(), PDO::PARAM_STR);
+        $stmt->bindValue(':idAnnuncio', $annuncio->getIdAnnuncio(), PDO::PARAM_INT);
         $stmt->bindValue(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
         $stmt->bindValue(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
         $stmt->bindValue(':categoria', $annuncio->getCategoria(), PDO::PARAM_INT);

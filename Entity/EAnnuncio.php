@@ -2,29 +2,29 @@
 
 class EAnnuncio implements JsonSerializable
 {
-    private mixed $titolo;
-    private mixed $descrizione;
+    private  $titolo;
+    private  $descrizione;
     private  $prezzo;
-    private mixed $idFoto;
+    private  $idFoto;
     private  $data;
     private $idAnnuncio;
-    private mixed $idVenditore;
-    private mixed $idCompratore;
-    private mixed $categoria;
-    private mixed $ban;
+    private  $idVenditore;
+    private  $idCompratore;
+    private  $categoria;
+    private  $ban;
 
     /**
-     * @param mixed $titolo
-     * @param mixed $descrizione
+     * @param  $titolo
+     * @param  $descrizione
      * @param float $prezzo
-     * @param mixed $idFoto
+     * @param  $idFoto
      * @param  $data
-     * @param mixed $idAnnuncio
-     * @param mixed $idVenditore
-     * @param mixed $idCompratore
-     * @param mixed $categoria
+     * @param  $idAnnuncio
+     * @param  $idVenditore
+     * @param  $idCompratore
+     * @param  $categoria
      */
-    public function __construct(mixed $titolo, mixed $descrizione,  $prezzo, mixed $idFoto,  $data,  mixed $idVenditore, mixed $idCompratore, mixed $categoria, mixed $ban,$idAnnuncio=null)
+    public function __construct( $titolo,  $descrizione,  $prezzo,  $idFoto,  $data,   $idVenditore,  $idCompratore,  $categoria,  $ban,$idAnnuncio=null)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -39,17 +39,17 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function getIdFoto(): mixed
+    public function getIdFoto()
     {
         return $this->idFoto;
     }
 
     /**
-     * @param mixed $idFoto
+     * @param  $idFoto
      */
-    public function setIdFoto(mixed $idFoto): void
+    public function setIdFoto( $idFoto): void
     {
         $this->idFoto = $idFoto;
     }
@@ -72,49 +72,49 @@ class EAnnuncio implements JsonSerializable
 
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function getIdVenditore(): mixed
+    public function getIdVenditore()
     {
         return $this->idVenditore;
     }
 
     /**
-     * @param mixed $idVenditore
+     * @param  $idVenditore
      */
-    public function setIdVenditore(mixed $idVenditore): void
+    public function setIdVenditore( $idVenditore): void
     {
         $this->idVenditore = $idVenditore;
     }
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function getIdCompratore(): mixed
+    public function getIdCompratore()
     {
         return $this->idCompratore;
     }
 
     /**
-     * @param mixed $idCompratore
+     * @param  $idCompratore
      */
-    public function setIdCompratore(mixed $idCompratore): void
+    public function setIdCompratore( $idCompratore): void
     {
         $this->idCompratore = $idCompratore;
     }
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function getDescrizione(): mixed
+    public function getDescrizione()
     {
         return $this->descrizione;
     }
 
     /**
-     * @param mixed $descrizione
+     * @param  $descrizione
      */
-    public function setDescrizione(mixed $descrizione): void
+    public function setDescrizione( $descrizione): void
     {
         $this->descrizione = $descrizione;
     }
@@ -151,23 +151,23 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function getTitolo(): mixed
+    public function getTitolo()
     {
         return $this->titolo;
     }
 
     /**
-     * @param mixed $titolo
+     * @param  $titolo
      */
-    public function setTitolo(mixed $titolo): void
+    public function setTitolo( $titolo): void
     {
         $this->titolo = $titolo;
     }
 
     /**
-     * @return mixed
+     * @return 
      */
     public function getIdAnnuncio()
     {
@@ -175,7 +175,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @param mixed $idAnnuncio
+     * @param  $idAnnuncio
      */
     public function setIdAnnuncio($idAnnuncio): void
     {
@@ -183,33 +183,33 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function getCategoria(): mixed
+    public function getCategoria()
     {
         return $this->categoria;
     }
 
     /**
-     * @param mixed $categoria
+     * @param  $categoria
      */
-    public function setCategoria(mixed $categoria): void
+    public function setCategoria( $categoria): void
     {
         $this->categoria = $categoria;
     }
 
     /**
-     * @return mixed
+     * @return 
      */
-    public function isBan(): mixed
+    public function isBan()
     {
         return $this->ban;
     }
 
     /**
-     * @param mixed $ban
+     * @param  $ban
      */
-    public function setBan(mixed $ban): void
+    public function setBan( $ban): void
     {
         $this->ban = $ban;
     }

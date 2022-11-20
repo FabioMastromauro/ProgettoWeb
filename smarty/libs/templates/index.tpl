@@ -1,7 +1,7 @@
 <!doctype html>
 {assign var = 'userlogged' value=$userlogged|default:'nouser'}
 
-<html lang="en" xmlns="http://www.w3.org/1999/html"
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"/>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,6 +68,8 @@
     </div>
 </nav>
 
+
+
 <div class="container my-15 text-center">
     <h1 class="header_top">BENVENUTO SU LOCAL MARKETPLACE</h1>
     <p class="lead"> Il tuo mercato locale </p>
@@ -115,7 +117,6 @@
 <div class=" row gx-2 ">
     {if is_array($annunci_home) && is_array($annunci_foto)}
         {for $i = 0; $i < sizeof($annunci_home); $i++}
-
     <div id = "annunci" class="col-lg-4 mb-5">
         <div class="row" style="width: 18rem">
             <div class="card  h-100 shadow border-0"  >
@@ -124,7 +125,7 @@
                 <div class="card-body p-4">
                     <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
                     <p class="card-text">{$annunci_home[$i]->getDescrizione()}</p>
-                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                    <a methods="POST" class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
 
                 </div>
             </div>

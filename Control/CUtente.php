@@ -190,6 +190,9 @@ class CUtente
         if (CUtente::isLogged() || $id!=null){
             $fotoUtente = $pm::load('FFotoUtente', array(['idFoto', '=', $utente->getidFoto()]));
             $annuncio = $pm::load('FAnnuncio', array(['idVenditore', '=', $utente->getIdUser()]));
+            $categoria = $pm::loadAll('FCategoria');
+
+
             if ($annuncio != null) {
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
@@ -198,14 +201,16 @@ class CUtente
                         $foto_autori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci[$i]->getidFoto()]));
                     }
                 } else {
-                    $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio->getIdFoto()]));
+                   $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio->getIdFoto()]));
+
                     $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getIdVenditore()]));
                     $foto_autori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()]));
                 }
-                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto, $fotoUtente, $foto_autori, $id,$utente->getVemail());
+                $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria);
             }
             else {
-                $view->profilo($annuncio, $utente->getNome(), $utente->getCognome(), $utente->getEmail(), $foto = null, $fotoUtente, $foto_autori = null, $id,$utente->getVemail());
+
+                $view->profilo($annuncio,$utente, $foto=null, $fotoUtente, $foto_autori=null, $id,$categoria);
             }
         } else {
             header('Location: /localmp/Utente/login');

@@ -256,6 +256,8 @@ class CAnnunci
      * Metodo che reindirizza alla view che permette la creazione di un nuovo annuncio
      * @return void
      */
+
+    //Inutile, usiamo il modal che esiste sul profilo
     static function creaAnnuncio() {
         $view = new VAnnunci();
         $view->showCreaAnnuncio();
@@ -272,16 +274,9 @@ class CAnnunci
             $idFoto = self::upload();
             if ($idFoto != false) {
                 $utente = unserialize($session->readValue('utente'));
-                $idVenditore = $utente->getIdUser();
-                $titolo = VAnnunci::getTitoloAnnuncio();
-                $descrizione = VAnnunci::getDescrizioneAnnuncio();
-                $prezzo = VAnnunci::getPrezzoAnnuncio();
-                $data = new DateTime('now');
-                $categoria = VAnnunci::getCategoriaAnnuncio();
-
-                $annuncio = new EAnnuncio($titolo, $descrizione, $prezzo,$idFoto, $data, $idVenditore, $categoria, $ban = 0);
+                $annuncio = new EAnnuncio(VAnnunci::getTitoloAnnuncio(),  VAnnunci::getDescrizioneAnnuncio(),  VAnnunci::getPrezzoAnnuncio(),  $idFoto, date('Y/m/d'),$utente->getIdUser(),  null,  VAnnunci::getCategoriaAnnuncio(),  0,null);
                 $pm::store($annuncio);
-                header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
+                header('Location: /localmp/Annunci/infoAnnuncio/'.$annuncio->getIdAnnuncio());
             }
         }
         else {
@@ -342,31 +337,31 @@ class CAnnunci
     /**
      * Metodo che permette il caricamento di una foto durante
      * la creazione o modifica di un annuncio
-     * @return bool
+     *
      */
     static function upload() {
         $pm = USingleton::getInstance('FPersistentManager');
-        $result = false;
-        $maxSize = 600000;
-        $result = is_uploaded_file($_FILES['file']['tmpName']);
-        if (!$result) {
-            return false;
-        }
-        else {
-            $size = $_FILES['file']['size'];
-            if ($size > $maxSize) {
+            $result = false;
+            $maxSize = 600000;
+            $result = is_uploaded_file($_FILES['file']['tmp_name']);
+            if (!$result) {
                 return false;
+            } else {
+                $size = $_FILES['file']['size'];
+                if ($size > $maxSize) {
+                    return false;
+                }
+                $type = $_FILES['file']['type'];
+                $nome = $_FILES['file']['name'];
+                $foto = file_get_contents($_FILES['file']['tmp_name']);
+                $foto = addslashes($foto);
+                $fotoCaricata = new EFotoAnnuncio($idFoto = null, $nome, $size, $type, $foto);
+                $pm::storeMedia($fotoCaricata, 'file');
+                return $fotoCaricata->getIdFoto();
             }
-            $type = $_FILES['file']['type'];
-            $nome = $_FILES['file']['name'];
-            $foto = file_get_contents($_FILES['file']['tmpName']);
-            $foto = addslashes($foto);
-            $fotoCaricata = new EFotoAnnuncio($idFoto=0, $nome, $size, $type, $foto);
-            $pm::storeMedia($fotoCaricata, 'file');
-            return true;
         }
 
-    }
+
 
     /**
      * Metodo che permette la cancellazione di un annuncio

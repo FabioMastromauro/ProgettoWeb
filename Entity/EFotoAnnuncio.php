@@ -12,13 +12,13 @@
 class EFotoAnnuncio extends EFoto implements JsonSerializable
 {
     /**
-     * @var int id Annuncio
+     * @var  id Annuncio
      */
-   private int $idAnn;
+   private  $idAnn;
 
    //-----------------------------COSTRUTTORE------------------------------------------------
 
-    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
+    public function __construct( $idFoto, string $nomeFoto, string $size, $tipo, $foto)
     {
         parent::__construct($idFoto, $nomeFoto, $size, $tipo, $foto);
         // $this->idAnn = $idAnn;
@@ -27,14 +27,14 @@ class EFotoAnnuncio extends EFoto implements JsonSerializable
     //-------------------------METODI GET E SET-----------------------------------------------
 
     /**
-     * @return int id annuncio
+     * @return  id annuncio
      */
     public function getIdAnn()
     {
         return $this->idAnn;
     }
     /**
-     * @param int $idAnn id annuncio
+     * @param  $idAnn id annuncio
      */
     public function setIdAnn($idAnn): void
     {
