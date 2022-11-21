@@ -129,7 +129,7 @@
             <p>
 
             </p>
-            <!--Annunci-->
+            <!--Annunci online-->
             <h1>Annunci online</h1>
 
           <div class="container" style="display: flex; flex-flow: row wrap">
@@ -138,8 +138,9 @@
                         {for $i=0; $i<sizeof($annuncio);$i++}
                             <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
                         <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
+                            <img  class="card-img-top same" src="data:{$immagini[0]->getTipo()};base64,{$immagini[0]->getFoto()}" style="width: 100%;height: 100%; object-fit: contain">
+
                             <div class="card-body">
-                                <img  class="card-img-top same" src="data:{$immagini[$i]->getTipo()};base64,{$immagini[$i]->getFoto()}" style="width: 200px; height: 100px" alt="{$immagini[$i]->getNomeFoto()}">
                                 <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
                                 <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
                                 <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
@@ -158,7 +159,7 @@
                             <div class="col">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <img  class="card-img-top same" src="data:{$immagini->getTipo()};base64,{$immagini->getFoto()}" style="width: 100%;height: 100%; object-fit: contain">
+                                        <img  class="card-img-top same" src="data:{$immagini[0]->getTipo()};base64,{$immagini[0]->getFoto()}" style="width: 100%;height: 100%; object-fit: contain">
                                         <h5 class="card-title">{$annuncio->getTitolo()}</h5>
                                         <p class="card-text">{$annuncio->getDescrizione()}</p>
                                         <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
@@ -252,7 +253,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="file" class="form-label">Aggiungi una o più foto</label>
-                            <input type="file" class="form-control"  id="file" name="file" multiple>
+                            <input type="file" class="form-control"  id="file" name="file[]" multiple>
                         </div>
                         <div class="col-1">
                             <label for="categoria">Categoria</label>

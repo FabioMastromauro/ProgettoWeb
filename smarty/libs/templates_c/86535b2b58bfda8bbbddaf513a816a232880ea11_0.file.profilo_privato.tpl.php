@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-11-12 14:06:36
+/* Smarty version 4.2.0, created on 2022-11-21 16:27:58
   from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\profilo_privato.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_636f9a5ca00103_74340780',
+  'unifunc' => 'content_637b98fee57541_72395863',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86535b2b58bfda8bbbddaf513a816a232880ea11' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\profilo_privato.tpl',
-      1 => 1668258394,
+      1 => 1669044465,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_636f9a5ca00103_74340780 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637b98fee57541_72395863 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <?php $_smarty_tpl->_assignInScope('facebook', (($tmp = $_smarty_tpl->tpl_vars['facebook']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
 $_smarty_tpl->_assignInScope('instagram', (($tmp = $_smarty_tpl->tpl_vars['instagram']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
@@ -40,183 +40,311 @@ $_smarty_tpl->_assignInScope('luogo', (($tmp = $_smarty_tpl->tpl_vars['luogo']->
 <body>
 
 
+<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
+    <div class="container-fluid">
+        <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
+        <span class="navbar-brand" >LOCAL MARKETPLACE</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
+                </li>
+                <?php if ($_smarty_tpl->tpl_vars['userlogged']->value != 'nouser') {?>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
+                </li>
 
-    <div class="container">
-        <div class="main-body">
-            <!-- /Breadcrumb -->
-            <div class="row gutters-sm">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" alt="Admin" class="rounded-circle" width="140">
-                                <div class="mt-3">
-                                    <h4><?php echo $_smarty_tpl->tpl_vars['nome']->value;?>
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+
+            <?php } else { ?>
+
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
+
+            <?php }?>
+
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                <button class="btn btn-dark" type="submit" >Search</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div class="container">
+    <div class="main-body">
+        <!-- /Breadcrumb -->
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <?php if ($_smarty_tpl->tpl_vars['utente']->value->getIdFoto() == null) {?>
+                            <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+                            <?php } else { ?>
+                            <img src="data:<?php echo $_smarty_tpl->tpl_vars['fotoUtente']->value->getTipo();?>
+;base64, <?php echo $_smarty_tpl->tpl_vars['fotoUtente']->value->getFoto();?>
+"> <!-- TODO -->
+                            <?php }?>
+                            <div class="mt-3">
+                                <h4><?php echo $_smarty_tpl->tpl_vars['utente']->value->getNome();?>
 </h4>
-                                    <p class="text-muted font-size-sm"><?php echo $_smarty_tpl->tpl_vars['luogo']->value;?>
+                                <p class="text-muted font-size-sm"><?php echo $_smarty_tpl->tpl_vars['luogo']->value;?>
 </p>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mt-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
-                                <span class="text-secondary"><?php echo $_smarty_tpl->tpl_vars['instagram']->value;?>
-</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
-                                <span class="text-secondary"><?php echo $_smarty_tpl->tpl_vars['facebook']->value;?>
-</span>
-
-                        </ul>
-                    </div>
                 </div>
 
-                <div class="col-md-8">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Nome</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <?php echo $_smarty_tpl->tpl_vars['nome']->value;?>
+            </div>
 
-                                </div>
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Nome</h6>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Cognome</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <?php echo $_smarty_tpl->tpl_vars['cognome']->value;?>
+                            <div class="col-sm-9 text-secondary">
+                                <?php echo $_smarty_tpl->tpl_vars['utente']->value->getNome();?>
 
-                                </div>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Email</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <?php echo $_smarty_tpl->tpl_vars['email']->value;?>
-
-                                </div>
-                            </div>
-                            <hr>
-
-
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
-                                Modifica
-                            </button>
-
-
-                            <p>
                         </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Cognome</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <?php echo $_smarty_tpl->tpl_vars['utente']->value->getCognome();?>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <?php echo $_smarty_tpl->tpl_vars['utente']->value->getEmail();?>
+
+                            </div>
+                        </div>
+                        <hr>
+
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
+                            Modifica
+                        </button>
                     </div>
                 </div>
-                <p>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creaAnnuncio">
+                Crea nuovo annuncio
+            </button>
+            <p>
 
-                </p>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Crea nuovo annuncio
-                </button>
-                <p>
+            </p>
+            <!--Annunci online-->
+            <h1>Annunci online</h1>
 
-                </p>
-                <!--Annunci-->
-                <div class="container">
-                    <h1>Annunci online</h1>
-                    <?php if ($_smarty_tpl->tpl_vars['annuncio']->value) {?>
-                    <?php if (is_array($_smarty_tpl->tpl_vars['annuncio']->value)) {?>
-                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['annuncio']->value, 'ann');
-$_smarty_tpl->tpl_vars['ann']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['ann']->value) {
-$_smarty_tpl->tpl_vars['ann']->do_else = false;
+          <div class="container" style="display: flex; flex-flow: row wrap">
+                        <?php if ((isset($_smarty_tpl->tpl_vars['annuncio']->value))) {?>
+                        <?php if (is_array($_smarty_tpl->tpl_vars['annuncio']->value)) {?>
+                        <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);
+$_smarty_tpl->tpl_vars['i']->value = 0;
+if ($_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_vars['annuncio']->value)) {
+for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_vars['annuncio']->value); $_smarty_tpl->tpl_vars['i']->value++) {
 ?>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="logo.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['ann']->value->getTitolo();?>
+                            <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
+                        <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
+                            <img  class="card-img-top same" src="data:<?php echo $_smarty_tpl->tpl_vars['immagini']->value[0]->getTipo();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['immagini']->value[0]->getFoto();?>
+" style="width: 100%;height: 100%; object-fit: contain">
+
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getTitolo();?>
 </h5>
-                                    <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['ann']->value->getDescrizione();?>
+                                <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getDescrizione();?>
 </p>
-                                    <a href="#" class="btn btn-primary">Visita annuncio</a>
-                                </div>
+                                <a  href="/localmp/Annunci/infoAnnuncio/<?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getIdAnnuncio();?>
+" class="btn btn-primary">Visita annuncio</a>
                             </div>
-                            <p></p>
                         </div>
-                    </div>
-                    <?php
+                        <p></p>
+                            </div>
+                        <?php }
 }
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+?>
+          </div>
+
+
+
+                        <?php } else { ?>
+                   <div class="container">
+                        <div class="col">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <img  class="card-img-top same" src="data:<?php echo $_smarty_tpl->tpl_vars['immagini']->value[0]->getTipo();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['immagini']->value[0]->getFoto();?>
+" style="width: 100%;height: 100%; object-fit: contain">
+                                        <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value->getTitolo();?>
+</h5>
+                                        <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value->getDescrizione();?>
+</p>
+                                        <a  href="/localmp/Annunci/infoAnnuncio/<?php echo $_smarty_tpl->tpl_vars['annuncio']->value->getIdAnnuncio();?>
+" class="btn btn-primary">Visita annuncio</a>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </div>
+                   </div>
+
                     <?php }?>
                     <?php }?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About, Information, Contacts -->
+<footer id="footer">
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="inror_box">
+                        <h3>INFORMAZIONI </h3>
+                        <p>Questo è un sito per la compravendita di oggetti di ogni tipo, è necessario registrarsi per pubblicare annunci mentre non è necessario registrarsi per acquistare oggetti. <a href="#shopnow">Shop now</a> </p>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inror_box">
+                        <h3>ACCOUNT </h3>
+                        <p>Per tornare all'area pubblica basta cliccare sulla voce <a href="#privatenavbar">Logout</a> in alto a destra. </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inror_box">
+                        <h3>ABOUT US  </h3>
+                        <p>Federico Civitareale  cellulare: <a href="tel:+39 3450792613">+39 3450792613</a>  email: <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> </p>
+                        <p>Fabio Mastromauro  cellulare: <a href="tel:+39 3890262673">+39 3890262673</a> email: <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> </p>
+                        <p>Giorgio Tarquini cellulare: <a href="tel:+39 3339154764">+39 3339154764</a> email: <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inror_box">
+                        <h3>SOCIAL CONTACTS  </h3>
+                        <p>Facebook:</p>
+                        <p><a href="https://m.facebook.com/federico.civitareale">Federico Civitareale</a></p>
+                        <p><a href="https://www.facebook.com/fabio.mastromauro.7">Fabio Mastromauro</a></p>
+                        <p><a href="https://www.facebook.com/giorgio.tarquini.5">Giorgio Tarquini</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>© 2022 All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About, Information, Contacts -->
-    <footer id="footer">
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="inror_box">
-                            <h3>INFORMAZIONI </h3>
-                            <p>Questo è un sito per la compravendita di oggetti di ogni tipo, è necessario registrarsi per pubblicare annunci mentre non è necessario registrarsi per acquistare oggetti. <a href="#shopnow">Shop now</a> </p>
+</footer>
+</main>
+
+<!-- crea annuncio -->
+<form action="/localmp/Annunci/pubblicaAnnuncio" method="POST" enctype="multipart/form-data">
+
+<div class="modal fade" id="creaAnnuncio" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crea annuncio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                         <div class="col-md-4">
+                            <label for="titolo" class="form-label">Titolo</label>
+                            <input type="text" class="form-control" id="titolo" name="titolo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descrizione" class="form-label">Descrizione</label>
+                            <textarea class="form-control" id="descrizione" name="descrizione" rows="3"></textarea>
+                        </div>
+                        <div class="col-md-1">
+                            <label for="prezzo" class="form-label">Prezzo €</label>
+                            <input type="text" class="form-control" id="prezzo" name="prezzo" required>
 
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inror_box">
-                            <h3>ACCOUNT </h3>
-                            <p>Per tornare all'area pubblica basta cliccare sulla voce <a href="#privatenavbar">Logout</a> in alto a destra. </p>
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Aggiungi una o più foto</label>
+                            <input type="file" class="form-control"  id="file" name="file[]" multiple>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inror_box">
-                            <h3>ABOUT US  </h3>
-                            <p>Federico Civitareale  cellulare: <a href="tel:+39 3450792613">+39 3450792613</a>  email: <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> </p>
-                            <p>Fabio Mastromauro  cellulare: <a href="tel:+39 3890262673">+39 3890262673</a> email: <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> </p>
-                            <p>Giorgio Tarquini cellulare: <a href="tel:+39 3339154764">+39 3339154764</a> email: <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> </p>
+                        <div class="col-1">
+                            <label for="categoria">Categoria</label>
+                            <select name="categoria" id="categoria" class="form-select">
+                                <option value="--Seleziona--">--Seleziona--</option>
+
+                                <?php if (is_array($_smarty_tpl->tpl_vars['categoria']->value)) {?>
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categoria']->value, 'cate');
+$_smarty_tpl->tpl_vars['cate']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['cate']->value) {
+$_smarty_tpl->tpl_vars['cate']->do_else = false;
+?>
+                                <option id="categoria" name="categoria" value="<?php echo $_smarty_tpl->tpl_vars['cate']->value['idCate'];?>
+"><?php echo $_smarty_tpl->tpl_vars['cate']->value['categoria'];?>
+</option>
+                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                <?php }?>
+
+                            </select>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inror_box">
-                            <h3>SOCIAL CONTACTS  </h3>
-                            <p>Facebook:</p>
-                            <p><a href="https://m.facebook.com/federico.civitareale">Federico Civitareale</a></p>
-                            <p><a href="https://www.facebook.com/fabio.mastromauro.7">Fabio Mastromauro</a></p>
-                            <p><a href="https://www.facebook.com/giorgio.tarquini.5">Giorgio Tarquini</a> </p>
-                        </div>
-                    </div>
+                        <p>
+                        </p>
+
+                            <input class="btn btn-primary" type="submit" value="Crea annuncio">
+
                 </div>
-            </div>
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>© 2022 All Rights Reserved.</p>
-                        </div>
-                    </div>
+                <div class="modal-footer">
                 </div>
             </div>
         </div>
-    </footer>
-</main>
+
+
+</div>
+</form>
 
 <!-- modifica -->
 
 <div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form action="/localmp/Utente/modificaP"  method="post" enctype="multipart/form-data">
+    <form action="/localmp/Utente/modificaP"  method="post" enctype="multipart/form-data">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
@@ -253,50 +381,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="modal-footer">
                 </div>
             </div>
-
         </div>
-        </form>
+    </form>
 
-
-
-
-<!-- crea annuncio -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Crea annuncio</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-4">
-                        <label for="validationCustom01" class="form-label">Titolo</label>
-                        <input type="text" class="form-control" id="validationCustom01" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Aggiungi una o più foto</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Descrizione</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Crea annuncio</button>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div>
-
-<?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"><?php echo '</script'; ?>
 >
 </body>
