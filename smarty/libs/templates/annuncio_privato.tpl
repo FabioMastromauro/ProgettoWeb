@@ -78,19 +78,41 @@
                                         </div>
 
 
-                                        {if is_array($foto)}
-                                            {for $i = 0; $i < sizeof($foto); $i++}
+
                                             <!-- replica il codice finchè per n argomenti array -->
-                                                <div class="carousel-inner">
+                                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
 
-                                                <div class="carousel-item active">
-                                                <img  class="card-img-top same" src="data:{$foto[$i]->getTipo()};base64,{$foto[$i]->getFoto()}" style="width: 100%;height: 100%;object-fit: contain"   />
-                                            </div>
+                                                    {if is_array($foto)}
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-indicators">
 
+                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                        {for $i = 1; $i < sizeof($foto); $i++}
+                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{$i}" aria-label="Slide {$i}"></button>
+                                                        {/for}
+                                                        </div>
+                                                        <div class="carousel-item active">
+                                                            <img  class="card-img-top " src="data:{$foto[0]->getTipo()};base64,{$foto[0]->getFoto()}" style="width: 300px;height: 300px;object-fit: contain"   />
 
-                                        </div>
+                                                        </div>
+                                                        {for $i = 1; $i < sizeof($foto); $i++}
+                                                        <div class="carousel-item ">
+                                                            <img  class="card-img-top " src="data:{$foto[$i]->getTipo()};base64,{$foto[$i]->getFoto()}" style="width: 300px;height: 300px;object-fit: contain"   />
 
-                                            {/for}
+                                                        </div>
+                                                        {/for}
+
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                </div>
+
                                         {else}
                                         <div class="carousel-inner">
 

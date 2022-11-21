@@ -129,7 +129,6 @@ class VAnnunci
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $descrizione = explode('.', $annuncio->getDescrizione());
-
         $this->smarty->assign('mod', $mod);
         $this->smarty->assign('utente', $user);
         $this->smarty->assign('annuncio', $annuncio);

@@ -117,10 +117,14 @@
                    <button type="button" class="btn btn-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        Create new Account
                     </button>
+              </form>
+                    <form action="/localmp/Utente/Ricerca">
+                        <input type="submit" value="Indietro" class="btn btn-new">
+                    </form>
                 </div>
             </div>
         </div>
-    </form>
+
 
 
 

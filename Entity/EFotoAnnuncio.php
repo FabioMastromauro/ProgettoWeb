@@ -14,14 +14,14 @@ class EFotoAnnuncio extends EFoto implements JsonSerializable
     /**
      * @var  id Annuncio
      */
-   private  $idAnn;
+   private  $idAnnuncio;
 
    //-----------------------------COSTRUTTORE------------------------------------------------
 
-    public function __construct( $idFoto, string $nomeFoto, string $size, $tipo, $foto)
+    public function __construct( $idFoto,  $nomeFoto,  $size, $tipo, $foto,$idAnnuncio)
     {
         parent::__construct($idFoto, $nomeFoto, $size, $tipo, $foto);
-        // $this->idAnn = $idAnn;
+        $this->idAnnuncio = $idAnnuncio;
     }
 
     //-------------------------METODI GET E SET-----------------------------------------------
@@ -29,16 +29,16 @@ class EFotoAnnuncio extends EFoto implements JsonSerializable
     /**
      * @return  id annuncio
      */
-    public function getIdAnn()
+    public function getIdAnnuncio()
     {
-        return $this->idAnn;
+        return $this->idAnnuncio;
     }
     /**
-     * @param  $idAnn id annuncio
+     * @param  $idAnnuncio id annuncio
      */
-    public function setIdAnn($idAnn): void
+    public function setIdAnn($idAnnuncio): void
     {
-        $this->idAnn = $idAnn;
+        $this->idAnnuncio = $idAnnuncio;
     }
 
     public function jsonSerialize()

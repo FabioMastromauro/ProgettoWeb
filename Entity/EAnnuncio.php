@@ -24,12 +24,11 @@ class EAnnuncio implements JsonSerializable
      * @param  $idCompratore
      * @param  $categoria
      */
-    public function __construct( $titolo,  $descrizione,  $prezzo,  $idFoto,  $data,   $idVenditore,  $idCompratore,  $categoria,  $ban,$idAnnuncio=null)
+    public function __construct( $titolo,  $descrizione,  $prezzo,  $data,   $idVenditore,  $idCompratore,  $categoria,  $ban,$idAnnuncio=null)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
         $this->prezzo = $prezzo;
-        $this->idFoto = $idFoto;
         $this->data = $data;
         $this->idVenditore = $idVenditore;
         $this->idCompratore = $idCompratore;
@@ -38,37 +37,6 @@ class EAnnuncio implements JsonSerializable
         $this->idAnnuncio=$idAnnuncio;
     }
 
-    /**
-     * @return 
-     */
-    public function getIdFoto()
-    {
-        return $this->idFoto;
-    }
-
-    /**
-     * @param  $idFoto
-     */
-    public function setIdFoto( $idFoto): void
-    {
-        $this->idFoto = $idFoto;
-    }
-
-    /**
-     * @return array
-     */
-    public function getArrayFoto(): array
-    {
-        return $this->arrayFoto;
-    }
-
-    /**
-     * @param array $arrayFoto
-     */
-    public function setArrayFoto(array $arrayFoto): void
-    {
-        $this->arrayFoto = $arrayFoto;
-    }
 
 
     /**

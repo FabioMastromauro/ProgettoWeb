@@ -18,7 +18,7 @@ class FAnnuncio extends FDatabase{
     /**
      * @var string
      */
-    private static $values = '(:titolo, :descrizione, :prezzo, :idFoto, :data, :idVenditore, :idCompratore, :categoria, :ban, :idAnnuncio)';
+    private static $values = '(:titolo, :descrizione, :prezzo, :data, :idVenditore, :idCompratore, :categoria, :ban, :idAnnuncio)';
 
     /**
      * Costruttore
@@ -60,7 +60,6 @@ class FAnnuncio extends FDatabase{
         $stmt->bindValue(':titolo', $annuncio->getTitolo(), PDO::PARAM_STR);
         $stmt->bindValue(':descrizione', $annuncio->getDescrizione(), PDO::PARAM_STR);
         $stmt->bindValue(':prezzo', $annuncio->getPrezzo(), PDO::PARAM_STR);
-        $stmt->bindValue(':idFoto', $annuncio->getIdFoto(), PDO::PARAM_INT);
         $stmt->bindValue(':data', $annuncio->getData(), PDO::PARAM_STR);
         $stmt->bindValue(':idAnnuncio', $annuncio->getIdAnnuncio(), PDO::PARAM_INT);
         $stmt->bindValue(':idVenditore', $annuncio->getIdVenditore(), PDO::PARAM_INT);
@@ -98,7 +97,7 @@ class FAnnuncio extends FDatabase{
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number == 1)) {
-            $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['idFoto'], $result['data'],
+            $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['data'],
                 $result['idVenditore'],$result['idCompratore'], $result['categoria'], $result['ban'],$result['idAnnuncio']);
              //$annuncio->setIdAnnuncio($result['idAnnuncio']);
         }
@@ -106,7 +105,7 @@ class FAnnuncio extends FDatabase{
             if(($result != null) && ($rows_number > 1)){
                 $annuncio = array();
                 for($i = 0; $i < count($result); $i++){
-                    $annuncio[] = new EAnnuncio($result[$i]['titolo'], $result[$i]['descrizione'], $result[$i]['prezzo'], $result[$i]['idFoto'], $result[$i]['data'],
+                    $annuncio[] = new EAnnuncio($result[$i]['titolo'], $result[$i]['descrizione'], $result[$i]['prezzo'],  $result[$i]['data'],
                         $result[$i]['idVenditore'],$result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban'],$result[$i]['idAnnuncio']);
                     //$annuncio[$i]->setIdAnnuncio($result[$i]['idAnnuncio']);
 

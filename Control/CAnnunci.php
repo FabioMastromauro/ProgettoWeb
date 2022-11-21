@@ -157,7 +157,7 @@ class CAnnunci
         $session->setValue('idAnnuncio', $id);
         $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio','=',$id]));
         $autore = $pm::load('FUtente', array(['idUser','=',$annuncio->getIdVenditore()]));
-        $foto = $pm::load('FFotoAnnuncio', array(['idFoto','=',$annuncio->getIdFoto()]));
+        $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio','=',$id]));
         $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
         $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria);
@@ -264,27 +264,6 @@ class CAnnunci
     }
 
     /**
-     * Metodo che permette la pubblicazione di un annuncio
-     * @return void
-     */
-    static function pubblicaAnnuncio() {
-        $pm=USingleton::getInstance('FPersistentManager');
-        $session = USingleton::getInstance('USession');
-        if (CUtente::isLogged()) {
-            $idFoto = self::upload();
-            if ($idFoto != false) {
-                $utente = unserialize($session->readValue('utente'));
-                $annuncio = new EAnnuncio(VAnnunci::getTitoloAnnuncio(),  VAnnunci::getDescrizioneAnnuncio(),  VAnnunci::getPrezzoAnnuncio(),  $idFoto, date('Y/m/d'),$utente->getIdUser(),  null,  VAnnunci::getCategoriaAnnuncio(),  0,null);
-                $pm::store($annuncio);
-                header('Location: /localmp/Annunci/infoAnnuncio/'.$annuncio->getIdAnnuncio());
-            }
-        }
-        else {
-            header('Location: /localmp/Utente/login');
-        }
-    }
-
-    /**
      * Metodo che rimanda alla view che permette la modifica di un annuncio
      * @param $idAnnuncio
      * @return void
@@ -334,32 +313,55 @@ class CAnnunci
         }
     }
 
+
+    /**
+     * Metodo che permette la pubblicazione di un annuncio
+     * @return void
+     */
+    static function pubblicaAnnuncio() {
+        $pm=USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        if (CUtente::isLogged()) {
+
+                $utente = unserialize($session->readValue('utente'));
+                $annuncio = new EAnnuncio(VAnnunci::getTitoloAnnuncio(),  VAnnunci::getDescrizioneAnnuncio(),  VAnnunci::getPrezzoAnnuncio(), date('Y/m/d'),$utente->getIdUser(),  null,  VAnnunci::getCategoriaAnnuncio(),  0,null);
+                $pm::store($annuncio);
+                self::upload($annuncio->getIdAnnuncio());
+                header('Location: /localmp/Annunci/infoAnnuncio/'.$annuncio->getIdAnnuncio());
+        }
+        else {
+            header('Location: /localmp/Utente/login');
+        }
+    }
+
+
     /**
      * Metodo che permette il caricamento di una foto durante
      * la creazione o modifica di un annuncio
      *
      */
-    static function upload() {
+    static function upload($idAnnuncio) {
         $pm = USingleton::getInstance('FPersistentManager');
+        for($i=0;$i<count($_FILES['file']['name']);$i++) {
             $result = false;
             $maxSize = 600000;
-            $result = is_uploaded_file($_FILES['file']['tmp_name']);
+            $result = is_uploaded_file($_FILES['file']['tmp_name'][$i]);
             if (!$result) {
                 return false;
             } else {
-                $size = $_FILES['file']['size'];
+                $size = $_FILES['file']['size'][$i];
                 if ($size > $maxSize) {
                     return false;
                 }
-                $type = $_FILES['file']['type'];
-                $nome = $_FILES['file']['name'];
-                $foto = file_get_contents($_FILES['file']['tmp_name']);
+                $type = $_FILES['file']['type'][$i];
+                $nome = $_FILES['file']['name'][$i];
+                $foto = file_get_contents($_FILES['file']['tmp_name'][$i]);
                 $foto = addslashes($foto);
-                $fotoCaricata = new EFotoAnnuncio($idFoto = null, $nome, $size, $type, $foto);
-                $pm::storeMedia($fotoCaricata, 'file');
-                return $fotoCaricata->getIdFoto();
+                $fotoCaricata = new EFotoAnnuncio($idFoto = null, $nome, $size, $type, $foto, $idAnnuncio);
+                $pm::storeMedia($fotoCaricata, $_FILES['file']['tmp_name'][$i]);
             }
         }
+    }
 
 
 
