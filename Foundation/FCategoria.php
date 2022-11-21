@@ -140,6 +140,12 @@ class FCategoria extends FDatabase
      * @param string $limite
      * @return array|ECategoria
      */
+    public static function load($field='', $criterio='', $id=''){
+        $Fclass= self::class;
+        $db=parent::getInstance();
+        $result= $db->loadDB($Fclass,$field='', $criterio='', $id='');
+        return $result;
+    }
     public static function loadByField($parametri = array(), string $ordinamento, string $limite) {
         $categoria = null;
         $db = parent::getInstance();
