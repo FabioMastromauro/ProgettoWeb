@@ -134,6 +134,10 @@ class FPersistentManager
         $ris = $class::getRows($parametri, $ordinamento, $limite);
         return $ris;
     }
+    public static function loadAll($class, $field='', $criterio='', $id=''){
+       $ris = $class::load($field='', $criterio='', $id='');
+       return $ris;
+    }
 
     /**
      * Metodo che carica tutti i valori di un determinato attributo di una tabella
