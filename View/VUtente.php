@@ -52,8 +52,14 @@ class VUtente
 
     public function registrationError($error){
         switch ($error){
-            case 'email':
-                $this->smarty->assign('emailError', "errore");
+            case 'emailEsistente':
+                $this->smarty->assign('emailExist', "errorExist");
+                break;
+            case 'emailRegex':
+                $this->smarty->assign('emailRegex', "errorRegex");
+                break;
+            case 'password':
+                $this->smarty->assign('password', "errorPassword");
                 break;
         }
         $this->smarty->display('.smarty/libs/templates/login.tpl');
