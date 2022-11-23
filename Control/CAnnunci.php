@@ -150,14 +150,17 @@ class CAnnunci
      * @return void
      */
     static function infoAnnuncio($id) {
+
         $view = new VAnnunci();
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
         $mod = unserialize($session->readValue('utente'));
+        if(!isset($mod)) $mod=null;
         $session->setValue('idAnnuncio', $id);
         $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio','=',$id]));
         $autore = $pm::load('FUtente', array(['idUser','=',$annuncio->getIdVenditore()]));
         $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio','=',$id]));
+        if(!is_array($foto)) $foto= array($foto);
         $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
         $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria);

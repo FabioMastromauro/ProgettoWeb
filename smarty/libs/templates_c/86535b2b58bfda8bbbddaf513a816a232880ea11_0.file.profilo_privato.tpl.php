@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-11-21 16:27:58
+/* Smarty version 4.2.0, created on 2022-11-23 16:24:37
   from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\profilo_privato.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_637b98fee57541_72395863',
+  'unifunc' => 'content_637e3b354b5c47_56119323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86535b2b58bfda8bbbddaf513a816a232880ea11' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\profilo_privato.tpl',
-      1 => 1669044465,
+      1 => 1669217075,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637b98fee57541_72395863 (Smarty_Internal_Template $_smarty_tpl) {
+function content_637e3b354b5c47_56119323 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <?php $_smarty_tpl->_assignInScope('facebook', (($tmp = $_smarty_tpl->tpl_vars['facebook']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
 $_smarty_tpl->_assignInScope('instagram', (($tmp = $_smarty_tpl->tpl_vars['instagram']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
-$_smarty_tpl->_assignInScope('luogo', (($tmp = $_smarty_tpl->tpl_vars['luogo']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));?>
+$_smarty_tpl->_assignInScope('luogo', (($tmp = $_smarty_tpl->tpl_vars['luogo']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
+$_smarty_tpl->_assignInScope('userLogged', (($tmp = $_smarty_tpl->tpl_vars['userLogged']->value ?? null)===null||$tmp==='' ? 'nouser' ?? null : $tmp));?>
+
 
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -55,7 +57,7 @@ $_smarty_tpl->_assignInScope('luogo', (($tmp = $_smarty_tpl->tpl_vars['luogo']->
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
                 </li>
-                <?php if ($_smarty_tpl->tpl_vars['userlogged']->value != 'nouser') {?>
+                <?php if ($_smarty_tpl->tpl_vars['userLogged']->value != 'nouser') {?>
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
@@ -162,10 +164,12 @@ $_smarty_tpl->_assignInScope('luogo', (($tmp = $_smarty_tpl->tpl_vars['luogo']->
 
             </p>
             <!--Annunci online-->
-            <h1>Annunci online</h1>
 
-          <div class="container" style="display: flex; flex-flow: row wrap">
+
                         <?php if ((isset($_smarty_tpl->tpl_vars['annuncio']->value))) {?>
+                            <h1>Annunci online</h1>
+
+                            <div class="container" style="display: flex; flex-flow: row wrap">
                         <?php if (is_array($_smarty_tpl->tpl_vars['annuncio']->value)) {?>
                         <?php
 $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);
@@ -175,11 +179,10 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_va
 ?>
                             <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
                         <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
-                            <img  class="card-img-top same" src="data:<?php echo $_smarty_tpl->tpl_vars['immagini']->value[0]->getTipo();?>
-;base64,<?php echo $_smarty_tpl->tpl_vars['immagini']->value[0]->getFoto();?>
-" style="width: 100%;height: 100%; object-fit: contain">
-
                             <div class="card-body">
+                                <img  class="card-img-top same" src="data:<?php echo $_smarty_tpl->tpl_vars['immagini']->value[$_smarty_tpl->tpl_vars['i']->value][0]->getTipo();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['immagini']->value[$_smarty_tpl->tpl_vars['i']->value][0]->getFoto();?>
+" style="width: 200px; height: 100px" >
                                 <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getTitolo();?>
 </h5>
                                 <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getDescrizione();?>
@@ -220,7 +223,9 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_va
                    </div>
 
                     <?php }?>
-                    <?php }?>
+
+
+            <?php }?>
             </div>
         </div>
     </div>

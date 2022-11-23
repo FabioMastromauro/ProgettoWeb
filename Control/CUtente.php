@@ -197,6 +197,9 @@ class CUtente
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
                         $foto[$i] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annuncio[$i]->getIdAnnuncio()]));
+                       if(!is_array($foto[$i])){
+                         $foto[$i]= array($foto[$i]);
+                       }
                         $autori_annunci[$i] = $pm::load('FUtente', array(['idUser', '=', $annuncio[$i]->getIdVenditore()]));
                         $foto_autori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci[$i]->getidFoto()]));
                     }
@@ -206,11 +209,14 @@ class CUtente
                     $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getIdVenditore()]));
                     $foto_autori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()]));
                 }
+                if (!isset($foto)) $foto=null;
+                if(!isset($foto_autori)) $foto_autori=null;
                 $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria);
             }
             else {
-
-                $view->profilo($annuncio,$utente, $foto=null, $fotoUtente, $foto_autori=null, $id,$categoria);
+                if (!isset($foto)) $foto=null;
+                if(!isset($foto_autori)) $foto_autori=null;
+                $view->profilo($annuncio,$utente, $foto, $fotoUtente, $foto_autori, $id,$categoria);
             }
         } else {
             header('Location: /localmp/Utente/login');

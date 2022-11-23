@@ -126,7 +126,7 @@ class VAnnunci
      * @throws SmartyException
      */
     function showInfo($annuncio, $user, $mod, $foto, $immagine_autore,$categoria) {
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
 
         $descrizione = explode('.', $annuncio->getDescrizione());
         $this->smarty->assign('mod', $mod);
