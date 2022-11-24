@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2022-11-14 23:32:04
-  from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\verify.tpl' */
+  from 'C:\xampp2\htdocs\ProgettoProgWeb\smarty\libs\templates\verify.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '2f726970767275c586dd192bcdcae7470cf56993' => 
     array (
-      0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\verify.tpl',
+      0 => 'C:\\xampp2\\htdocs\\ProgettoProgWeb\\smarty\\libs\\templates\\verify.tpl',
       1 => 1668465122,
       2 => 'file',
     ),

@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 4.2.0, created on 2022-11-23 16:24:37
-  from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\profilo_privato.tpl' */
+  from 'C:\xampp2\htdocs\ProgettoProgWeb\smarty\libs\templates\profilo_privato.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '86535b2b58bfda8bbbddaf513a816a232880ea11' => 
     array (
-      0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\profilo_privato.tpl',
+      0 => 'C:\\xampp2\\htdocs\\ProgettoProgWeb\\smarty\\libs\\templates\\profilo_privato.tpl',
       1 => 1669217075,
       2 => 'file',
     ),

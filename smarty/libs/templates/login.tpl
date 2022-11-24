@@ -102,12 +102,15 @@
 {if $error == 'errore'}
     <script>alert("Riprova l'accesso")</script>
 {/if}
+
 {if $emailExist == 'errorExist'}
     <script>alert("Email già esistente")</script>
 {/if}
+
 {if $emailRegex == 'errorRegex'}
     <script>alert("Email non valida")</script>
 {/if}
+
 {if $password == 'errorPassword'}
     <script>alert("Password non valida")</script>
 {/if}
