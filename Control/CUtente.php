@@ -154,7 +154,7 @@ class CUtente
         $utente = unserialize($session->readValue('utente'));
         $regexEmail = preg_match("/^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$/", VUtente::getEmail());
         $verifyEmail = $pm::exist("email", VUtente::getEmail(), "FUtente");
-        $verifyPassword = preg_match("/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*(?=\S*[\W])$/", VUtente::getPassword());
+        $verifyPassword = preg_match("/^\S*(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=\S*[\W])[a-zA-Z\d]{8,}\S*$/", VUtente::getPassword());
         $view = new VUtente();
         if ($verifyEmail) {
             $view->registrationError("emailEsistente");
