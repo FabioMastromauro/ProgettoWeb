@@ -2,6 +2,8 @@
 {assign var = 'facebook' value=$facebook|default:''}
 {assign var = 'instagram' value=$instagram|default:''}
 {assign var = 'luogo' value=$luogo|default:''}
+{assign var = 'userLogged' value=$userLogged|default:'nouser'}
+
 
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -30,7 +32,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
                 </li>
-                {if $userlogged != 'nouser'}
+                {if $userLogged != 'nouser'}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
@@ -130,17 +132,18 @@
 
             </p>
             <!--Annunci online-->
-            <h1>Annunci online</h1>
 
-          <div class="container" style="display: flex; flex-flow: row wrap">
+
                         {if isset($annuncio)}
+                            <h1>Annunci online</h1>
+
+                            <div class="container" style="display: flex; flex-flow: row wrap">
                         {if is_array($annuncio)}
                         {for $i=0; $i<sizeof($annuncio);$i++}
                             <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
                         <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
-                            <img  class="card-img-top same" src="data:{$immagini[0]->getTipo()};base64,{$immagini[0]->getFoto()}" style="width: 100%;height: 100%; object-fit: contain">
-
                             <div class="card-body">
+                                <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 200px; height: 100px" >
                                 <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
                                 <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
                                 <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
@@ -171,7 +174,9 @@
                    </div>
 
                     {/if}
-                    {/if}
+
+
+            {/if}
             </div>
         </div>
     </div>

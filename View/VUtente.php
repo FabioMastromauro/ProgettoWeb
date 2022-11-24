@@ -108,7 +108,7 @@ class VUtente
 }
 
     public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria){
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
 
         $this->smarty->assign('utente',$utente);
         $this->smarty->assign('annuncio', $annunci);
@@ -119,8 +119,8 @@ class VUtente
         //$this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);
         $this->smarty->assign('categoria',$categoria);
-
         $this->smarty->display('profilo_privato.tpl');
+
     }
 
     public function modificaProfilo($utente){

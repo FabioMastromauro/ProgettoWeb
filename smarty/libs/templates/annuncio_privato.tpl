@@ -1,4 +1,6 @@
 <!doctype html>
+{assign var = 'userLogged' value=$userLogged|default:'nouser'}
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -28,7 +30,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
                 </li>
-                {if $userlogged != 'nouser'}
+                {if $userLogged!='nouser'}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
@@ -70,27 +72,12 @@
                         <div class="row justify-content-center">
                             <div class="col-md-8 col-lg-6 col-xl-4">
                                 <div class="card" style="border-radius: 15px;">
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                                        <div class="carousel-indicators">
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                        </div>
-
-
-
                                             <!-- replica il codice finchè per n argomenti array -->
                                                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
 
                                                     {if is_array($foto)}
                                                     <div class="carousel-inner">
-                                                        <div class="carousel-indicators">
 
-                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                        {for $i = 1; $i < sizeof($foto); $i++}
-                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{$i}" aria-label="Slide {$i}"></button>
-                                                        {/for}
-                                                        </div>
                                                         <div class="carousel-item active">
                                                             <img  class="card-img-top " src="data:{$foto[0]->getTipo()};base64,{$foto[0]->getFoto()}" style="width: 300px;height: 300px;object-fit: contain"   />
 
@@ -103,7 +90,7 @@
                                                         {/for}
 
                                                     </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                    <button class="carousel-control-prev"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                         <span class="visually-hidden">Previous</span>
                                                     </button>
@@ -113,13 +100,6 @@
                                                     </button>
                                                 </div>
 
-                                        {else}
-                                        <div class="carousel-inner">
-
-                                                <div class="carousel-item active">
-                                                <img  class="card-img-top same" src="data:{$foto->getTipo()};base64,{$foto->getFoto()}"  style="width: 100%;height: 100%;object-fit: contain" alt="{$foto->getNomeFoto()}"  />
-                                            </div>
-                                        </div>
 
                                             {/if}
 
@@ -134,7 +114,7 @@
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Next</span>
                                         </button>
-                                    </div>
+
                                     <div class="card-body pb-0">
                                         <div class="d-flex justify-content-between">
                                             <div>
@@ -168,14 +148,21 @@
 
                                     <hr class="my-0" />
                                     <div class="card-body">
-                                        {if $mod->getIdUser() == $annuncio->getIdVenditore()}
-                                        <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#modifica" style="margin: auto; width: 50%" class="btn btn-primary">Modifica</button>
-                                        </div>
-                                        {else}
+                                        {if $mod==null}
+
+                                            <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                                                <a  href="/localmp/Utente/login" class="btn btn-primary" style="margin: auto; width: 50%">Iscriviti</a>
+
+                                            </div>
+
+                                        {elseif $mod->getIdUser() != $annuncio->getIdVenditore()}
                                         <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
                                             <button type="button" data-bs-toggle="modal" data-bs-target="" style="margin: auto; width: 50%" class="btn btn-primary">Acquista</button>
                                         </div>
+                                            {else}
+                                            <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#modifica" style="margin: auto; width: 50%" class="btn btn-primary">Modifica</button>
+                                            </div>
                                         {/if}
 
                                     </div>
@@ -186,10 +173,11 @@
                                 <!-- venditore -->
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <form class="form-inline" method="POST" action="/localmp/smarty/libs/html/profilo_pubblico.html">
+                                        <form class="form-inline" method="POST" action="/localmp/Utente/profilo/{$utente->getIdUser()}">
                                             <input type="text" hidden name="email" value="?" />
                                             {if $utente->getIdFoto()!=null}
                                             <input type="image" src="data:{$utente->getTipo()};base64,{$utente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>
+                                                </form>
                                             {else}
                                                 <input type="image" src="/localmp/smarty/libs/images/login.png" style="border-radius: 50%;" width="90" height="90"/>
                                             {/if}

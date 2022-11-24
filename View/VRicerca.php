@@ -13,6 +13,7 @@ class VRicerca
     public function showHome($annunci_home, $venditore_annuncio, $annunci_foto, $venditore_foto)
     {
         if (CUtente::isLogged()) $utente = $this->smarty->assign('userlogged', 'loggato');
+        else $this->smarty->assign('userlogged', 'nouser');
 
       /*  $this->smarty->assign('annunci_home', $annunci_foto);
         $this->smarty->assign('autori_annuncio', $autore_annuncio);

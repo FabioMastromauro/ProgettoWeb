@@ -1,5 +1,5 @@
 <!doctype html>
-{assign var = 'userlogged' value=$userlogged|default:'nouser'}
+{assign var = 'userLogged' value=$userLogged|default:'nouser'}
 
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"/>
 <head>
@@ -71,8 +71,14 @@
 
 
 <div class="container my-15 text-center">
-    <h1 class="header_top">BENVENUTO SU LOCAL MARKETPLACE</h1>
-    <p class="lead"> Il tuo mercato locale </p>
+    <div class="container"  style="display: compact;align-items: center;" >
+        <img src="/localmp/smarty/libs/images/logomarket.png" style="margin-right: 20px;width: 100px;height: 100px">
+
+        <h1 class="header_top">BENVENUTO SU LOCAL MARKETPLACE</h1>
+</div>
+
+
+<p class="lead"> Il tuo mercato locale </p>
     <!--<button type="button" class="btn btn-dark">News</button> -->
     <button onclick="document.location='#annunci'" type="button" class="btn btn-dark">Annunci</button>
     <!--<button type="button" class="btn btn-dark">Tendenze</button> -->
@@ -91,16 +97,12 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="text-bg">
-                    <h1 style="font-family: 'Brush Script MT',cursive;font-size:75px"> <span class="blodark"> Local Marketplace</span> <br>Trends 2022</h1>
+                 
                     <p class="lead">Quello che cerchi a 1 click</p>
                     <button onclick="document.location='#annunci'" id = "shopnow" type="button" class="btn btn-dark">Shop Now</button>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="ban_img">
-                    <picture><img href="#" src="/localmp/smarty/libs/images/neonmarket.jpg" alt="#"/></picture>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -120,11 +122,10 @@
     <div id = "annunci" class="col-lg-4 mb-5">
         <div class="row" style="width: 18rem">
             <div class="card  h-100 shadow border-0"  >
-                <img  class="card-img-top same" src="data:{$annunci_foto[$i]->getTipo()};base64,{$annunci_foto[$i]->getFoto()}" style="width: 200px; height: 100px" alt="pizza margherita"  />
+                <img  class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 100px" alt="pizza margherita"  />
 
                 <div class="card-body p-4">
                     <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
-                    <p class="card-text">{$annunci_home[$i]->getDescrizione()}</p>
                     <a methods="POST" class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
 
                 </div>
