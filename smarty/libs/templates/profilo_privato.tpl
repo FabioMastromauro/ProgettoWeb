@@ -13,6 +13,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link href="/localmp/smarty/libs/css/recensione.css" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -122,6 +127,7 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                             Modifica
                         </button>
+                        <a href="/localmp/Recensione/showRecensioni" type="button" class="btn btn-primary">Recensisci</a>
                     </div>
                 </div>
             </div>
@@ -182,7 +188,68 @@
     </div>
 </div>
 
-<!-- About, Information, Contacts -->
+<!-- recensione -->
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-md-6 col-12 pb-4">
+                {if isset($recensione)}
+                    <h1>Recensioni</h1>
+                    {for $i=0; $i<sizeof($recensione);$i++}
+                        <div class="comment mt-4 text-justify float-left">
+                            {if !isset($immagine)}
+                                <!-- immagine non settata TODO-->
+                                <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
+
+                            {else}
+                                <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
+                            {/if}
+                            <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
+                            <span>{$recensione[$i]->getDataPubblicazione()}</span>
+                            <br>
+                            <p>{$recensione[$i]->getCommento()}</p>
+                        </div>
+                    {/for}
+                {/if}
+
+            </div>
+            <form  action="/localmp/Utente/scriviRecensione" method="POST">
+
+            <div >
+                <form id="algin-form">
+                    <div class="form-group">
+                        <input name="idUser" value="{$utente->getIdUser()}" hidden>
+                        <h4>Lascia una recensione</h4>
+                        <textarea name="commento" id="commento" cols="30" rows="5" class="form-control" style="background-color: whitesmoke;"></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit"  class="btn" value="pubblica">
+                    </div>
+                </form>
+            </div>
+            </form>
+
+        </div>
+    </div>
+
+</section>
+<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+<script type='text/javascript' src='#'></script>
+<script type='text/javascript' src='#'></script>
+<script type='text/javascript' src='#'></script>
+<script type='text/javascript'>#</script>
+<script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+    myLink.addEventListener('click', function(e) {
+        e.preventDefault();
+    });</script>
+
+
+<!-- About, Information, Contacts
 <footer id="footer">
     <div class="footer">
         <div class="container">
@@ -230,7 +297,10 @@
         </div>
     </div>
 </footer>
+-->
+
 </main>
+
 
 <!-- crea annuncio -->
 <form action="/localmp/Annunci/pubblicaAnnuncio" method="POST" enctype="multipart/form-data">

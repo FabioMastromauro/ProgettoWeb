@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {assign var="ban" value=$ban|default:0}
 {assign var="error" value=$error|default:''}
-{assign var="emailExist" value=$error|default:''}
-{assign var="emailRegex" value=$error|default:''}
-{assign var="password" value=$error|default:''}
+{assign var="emailExist" value=$emailExist|default:''}
+{assign var="emailRegex" value=$emailRegex|default:''}
+{assign var="password" value=$password|default:''}
 {assign var="vemail" value=$vemail|default:null}
 {assign var="fine_ban" value=$fine_ban|default:''}
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <input class="btn btn-primary" type="submit" value="Registrati">
                     </div>
                 </form>
             </div>
@@ -103,19 +103,16 @@
     <script>alert("Riprova l'accesso")</script>
 {/if}
 
-{if $emailExist == 'errorExist'}
-    <script>alert("Email già esistente")</script>
-{/if}
-
 {if $emailRegex == 'errorRegex'}
     <script>alert("Email non valida")</script>
 {/if}
-
 {if $password == 'errorPassword'}
     <script>alert("Password non valida")</script>
 {/if}
 
-
+{if $emailExist == 'errorExist'}
+    <script>alert("Email già esistente")</script>
+{/if}
 <main>
     <form method="POST" action="/localmp/Utente/login">
         <div class="row">

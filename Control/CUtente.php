@@ -157,7 +157,7 @@ class CUtente
         $verifyPassword = preg_match("/^\S*(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=\S*[\W])[a-zA-Z\d]{8,}\S*$/", VUtente::getPassword());
         $view = new VUtente();
         if ($verifyEmail) {
-            $view->registrationError("emailEsistente");
+         $view->registrationError("emailEsistente");
         } elseif (!$regexEmail) {
             $view->registrationError("emailRegex");
         } elseif (!$verifyPassword) {
@@ -172,6 +172,7 @@ class CUtente
             $utente = new EUtente(VUtente::getNome(),VUtente::getCognome(),VUtente::getEmail(),null,date("Y/m/d"),null,0,VUtente::getPassword(),0,null,null,$verification_code);
                 $pm::store($utente);
                 header("Location: /localmp/Utente/login");
+
             }
 
         }
@@ -184,6 +185,7 @@ class CUtente
      * @param $id
      * @return void
      */
+
     static function profilo($id=null){
         $view = new VUtente();
         $session = USingleton::getInstance('USession');
@@ -193,12 +195,29 @@ class CUtente
             } else {
                 $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
             }
+
         if (CUtente::isLogged() || $id!=null){
             $fotoUtente = $pm::load('FFotoUtente', array(['idFoto', '=', $utente->getidFoto()]));
             $annuncio = $pm::load('FAnnuncio', array(['idVenditore', '=', $utente->getIdUser()]));
             $categoria = $pm::loadAll('FCategoria');
+            $recensione =$pm::load('FRecensione', array(['idRecensito','=',$utente->getIdUser()]));
+            //recensione
+            if ($recensione != null) {
+                if(!is_array($recensione)) $recensione=array($recensione);
+                if (is_array($recensione)) {
+                    for ($i = 0; $i < sizeof($recensione); $i++) {
+                        $autori[$i] = $pm::load('FUtente', array(['idUser', '=', $recensione[$i]->getAutore()]));
+                        $foto_recensori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori[$i]->getIdFoto()]));
+                    }
+                } else {
+                    $autori= $pm::load('FUtente', array(['idUser', '=', $recensione->getAutore()]));
+                    $foto_recensori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori->getIdFoto()]));
+                }
+
+            }
 
 
+            //Annuncio
             if ($annuncio != null) {
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
@@ -208,21 +227,29 @@ class CUtente
                        }
                         $autori_annunci[$i] = $pm::load('FUtente', array(['idUser', '=', $annuncio[$i]->getIdVenditore()]));
                         $foto_autori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci[$i]->getidFoto()]));
+
                     }
+
                 } else {
                    $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annuncio->getIdAnnuncio()]));
 
                     $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getIdVenditore()]));
                     $foto_autori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()]));
+
                 }
                 if (!isset($foto)) $foto=null;
                 if(!isset($foto_autori)) $foto_autori=null;
-                $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria);
+                if(!isset($autori)) $autori=null;
+                if(!isset($foto_recensori)) $foto_recensori=null;
+
+                $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione);
             }
             else {
                 if (!isset($foto)) $foto=null;
                 if(!isset($foto_autori)) $foto_autori=null;
-                $view->profilo($annuncio,$utente, $foto, $fotoUtente, $foto_autori, $id,$categoria);
+                if(!isset($autori)) $autori=null;
+                if(!isset($foto_recensori)) $foto_recensori=null;
+                $view->profilo($annuncio,$utente, $foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione);
             }
         } else {
             header('Location: /localmp/Utente/login');
@@ -330,7 +357,62 @@ class CUtente
         }
     }
 
+//Recensione
 
+
+
+    /**
+     * Funzione invocata quando un utente scrive una recensione su un oggetto acquistato
+     * @param $id
+     * @return void
+     */
+    public static function scriviRecensione()
+    {
+        $pm = USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        if (CUtente::isLogged()) {
+            $utente_recensito = unserialize($session->readValue("utente"));
+        }//prende l'utente dell'annuncio
+
+        if ($utente_recensito != null) {
+
+           $commento = VUtente::getCommento();
+          //  $valutazione = VUtente::getValutazione();
+            $dataPubblicazione = date('Y-m-d');
+            $idRecensito= VUtente::getIdUser();
+            $autore = unserialize($_SESSION['utente']);
+            $recensione = new ERecensione($commento, 4, $dataPubblicazione, $autore->getIdUser(),null,$idRecensito);
+            $pm::store($recensione);
+                header('Location: /localmp/Utente/profilo/'.$idRecensito);
+            } else {
+            header('Location: /localmp/Utente/profilo/'.$idRecensito);
+        }
+    }
+
+
+    /**
+     * Funzione invocata quando un utente decide di cancellare la propria recensione
+     * @param $id
+     * @return void
+     */
+    static function cancellaRecensione($id) {
+        $pm = USingleton::getInstance("FPersistentManager");
+        $session = USingleton::getInstance("USession");
+        $utente = unserialize($session->readValue("utente"));
+        if ($utente != null) {
+            $recensione = $pm::load("FRecensione", array(['idRecensione','=',$id]));
+            if ($recensione != null && $recensione->getAutore() == $utente->getIdUser()) {
+                $pm::delete('idRecensione', $id, "FRecensione");
+                header("Location: /localmp/Utente/{$utente->getIdUser()}");
+            }
+            else {
+                header("Location: /localmp/Utente/profilo");
+            }
+        }
+        else {
+            header("Location: /localmp/Utente/profilo");
+        }
+    }
 
 
 
