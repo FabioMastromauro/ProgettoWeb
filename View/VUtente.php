@@ -110,8 +110,9 @@ class VUtente
                 $mail->send();
 }
 
-    public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria,$autori,$foto_recensori,$recensione){
+    public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo){
         if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        $this->smarty->assign('utentedp',$utente_del_profilo);
 
         $this->smarty->assign('utente',$utente);
         $this->smarty->assign('annuncio', $annunci);
@@ -166,7 +167,7 @@ class VUtente
      */
     static function getValutazione()
     {
-        return strtoupper($_POST['valutazione']);
+        return strtoupper($_POST['rate']);
     }
 
     public function paginaRecensione($autori,$immagine,$recensione,$utente){

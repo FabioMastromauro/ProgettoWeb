@@ -5,7 +5,7 @@
 {assign var = 'userLogged' value=$userLogged|default:'nouser'}
 
 
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,8 @@
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <link href="/localmp/smarty/libs/css/recensione.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 </head>
@@ -127,7 +129,24 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                             Modifica
                         </button>
-                        <a href="/localmp/Recensione/showRecensioni" type="button" class="btn btn-primary">Recensisci</a>
+                        {if isset($recensione)}
+                        <p>Voto medio utente
+                        {$sum =0}
+                            {for $j=0;$j<sizeof($recensione);$j++}
+                                {$sum = $sum + $recensione[$j]->getValutazione()}
+                            {/for}
+
+                        <div class="rate">
+                            {for $j=0; $j<5;$j++}
+                                {if $j<($sum/sizeof($recensione))}
+                                    <span class="fa fa-star checked" style="color: orange"></span>
+                                {else}
+                                    <span class="fa fa-star"></span>
+                                {/if}
+                            {/for}
+                        </div>
+                        {/if}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -190,15 +209,14 @@
 
 <!-- recensione -->
 
-
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-5 col-md-6 col-12 pb-4">
                 {if isset($recensione)}
                     <h1>Recensioni</h1>
                     {for $i=0; $i<sizeof($recensione);$i++}
-                        <div class="comment mt-4 text-justify float-left">
+
+            <div class="comment mt-4 text-justify float-left">
                             {if !isset($immagine)}
                                 <!-- immagine non settata TODO-->
                                 <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
@@ -209,17 +227,43 @@
                             <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
                             <span>{$recensione[$i]->getDataPubblicazione()}</span>
                             <br>
+                            <p></p>
+                    <div class="rate">
+                            {for $j=0; $j<5;$j++}
+                                {if $j<$recensione[$i]->getValutazione()}
+                                <span class="fa fa-star checked" style="color: orange"></span>
+                                {else}
+                                <span class="fa fa-star"></span>
+                                {/if}
+                                    {/for}
+                                </div>
+
+                            <br>
                             <p>{$recensione[$i]->getCommento()}</p>
                         </div>
                     {/for}
                 {/if}
 
             </div>
+            {if $utentedp->getIdUser() != $utente->getIdUser()}
+
             <form  action="/localmp/Utente/scriviRecensione" method="POST">
 
             <div >
                 <form id="algin-form">
                     <div class="form-group">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
                         <input name="idUser" value="{$utente->getIdUser()}" hidden>
                         <h4>Lascia una recensione</h4>
                         <textarea name="commento" id="commento" cols="30" rows="5" class="form-control" style="background-color: whitesmoke;"></textarea>
@@ -247,8 +291,11 @@
     myLink.addEventListener('click', function(e) {
         e.preventDefault();
     });</script>
-
-
+{else}
+</div>
+</div>
+</section>
+{/if}
 <!-- About, Information, Contacts
 <footer id="footer">
     <div class="footer">

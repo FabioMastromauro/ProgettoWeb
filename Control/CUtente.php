@@ -191,10 +191,12 @@ class CUtente
         $session = USingleton::getInstance('USession');
         $pm = USingleton::getInstance('FPersistentManager');
         if($id == null){
-                $utente = unserialize($session->readValue('utente'));
+            $utente = $utente = unserialize($session->readValue('utente'));
+
             } else {
                 $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
             }
+        $utente_del_profilo=unserialize($_SESSION['utente']);
 
         if (CUtente::isLogged() || $id!=null){
             $fotoUtente = $pm::load('FFotoUtente', array(['idFoto', '=', $utente->getidFoto()]));
@@ -215,7 +217,6 @@ class CUtente
                 }
 
             }
-
 
             //Annuncio
             if ($annuncio != null) {
@@ -242,14 +243,14 @@ class CUtente
                 if(!isset($autori)) $autori=null;
                 if(!isset($foto_recensori)) $foto_recensori=null;
 
-                $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione);
+                $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione, $utente_del_profilo);
             }
             else {
                 if (!isset($foto)) $foto=null;
                 if(!isset($foto_autori)) $foto_autori=null;
                 if(!isset($autori)) $autori=null;
                 if(!isset($foto_recensori)) $foto_recensori=null;
-                $view->profilo($annuncio,$utente, $foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione);
+                $view->profilo($annuncio,$utente, $foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo);
             }
         } else {
             header('Location: /localmp/Utente/login');
@@ -377,11 +378,11 @@ class CUtente
         if ($utente_recensito != null) {
 
            $commento = VUtente::getCommento();
-          //  $valutazione = VUtente::getValutazione();
+           $valutazione = VUtente::getValutazione();
             $dataPubblicazione = date('Y-m-d');
             $idRecensito= VUtente::getIdUser();
             $autore = unserialize($_SESSION['utente']);
-            $recensione = new ERecensione($commento, 4, $dataPubblicazione, $autore->getIdUser(),null,$idRecensito);
+            $recensione = new ERecensione($commento, $valutazione, $dataPubblicazione, $autore->getIdUser(),null,$idRecensito);
             $pm::store($recensione);
                 header('Location: /localmp/Utente/profilo/'.$idRecensito);
             } else {
