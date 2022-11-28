@@ -18,58 +18,69 @@ class ERecensione implements JsonSerializable
 {
     /**
      * commento Recensione
-     * @var string|mixed|null
+     * @var ||null
      */
-    private string $commento;
+    private  $commento;
     /**
      * valutazione annuncio
-     * @var int|mixed|null
+     * @var ||null
      */
-    private int $valutazione;
+    private  $valutazione;
     /**
      * id Recensione
-     * @var int
+     * @var 
      */
-    private int  $idRecensione;
+    private   $idRecensione;
     /**
      * id annuncio recensito
-     * @var int|mixed|null
+     * @var ||null
      */
-    private int $idAnnuncio;
+    private  $idAnnuncio;
     /**
      * data pubblicazione Recensione
-     * @var DateTime|mixed|null
+     * @var DateTime||null
      */
-    private DateTime  $dataPubblicazione;
+    private   $dataPubblicazione;
     /**
      * autore Recensione
-     * @var int|mixed|null
+     * @var ||null
      */
-    private int $autore;
+    private  $autore;
+    private  $idRecensito;
 
     //---------------------------------------------------------------------------COSTRUTTORE----------------------------------------------------
 
-    public function __construct($commento=null, $valutazione=null, $idAnnuncio=null,  $dataPubblicazione=null, $autore=null)
+    public function __construct($commento=null, $valutazione=null,  $dataPubblicazione=null,$autore, $idRecensione=null,$idRecensito=null)
     {
         $this->commento = $commento;
         $this->valutazione = $valutazione;
-        $this->idAnnuncio = $idAnnuncio;
         $this->dataPubblicazione = $dataPubblicazione;
         $this->autore = $autore;
+        $this->idRecensione=$idRecensione;
+        $this->idRecensito=$idRecensito;
     }
 
     //----------------------------------------------------------------METODI GET E SET-----------------------------------------------------
 
     /**
-     * @return string commento Recensione
+     * @return  commento Recensione
      */
-    public function getCommento() :string
+    public function getCommento()
     {
         return $this->commento;
     }
 
+
     /**
-     * @return string id Recensione
+     * @param  $commento commento Recensione
+     */
+    public function setCommento( $commento): void
+    {
+        $this->commento = $commento;
+    }
+
+    /**
+     * @return |null
      */
     public function getIdRecensione()
     {
@@ -77,23 +88,47 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param string $idRecensione id Recensione
+     * @param |null $idRecensione
      */
-    public function setIdRecensione($idRecensione): void
+    public function setIdRecensione( $idRecensione): void
     {
         $this->idRecensione = $idRecensione;
     }
 
     /**
-     * @param string $commento commento Recensione
+     * @return DateTime
      */
-    public function setCommento(string $commento): void
+    public function getDataPubblicazione()
     {
-        $this->commento = $commento;
+        return $this->dataPubblicazione;
     }
 
     /**
-     * @return DateTime|string data pubblicazione Recensione
+     * @param DateTime $dataPubblicazione
+     */
+    public function setDataPubblicazione($dataPubblicazione): void
+    {
+        $this->dataPubblicazione = $dataPubblicazione;
+    }
+
+    /**
+     * @return |null
+     */
+    public function getIdRecensito()
+    {
+        return $this->idRecensito;
+    }
+
+    /**
+     * @param |null $idRecensito
+     */
+    public function setIdRecensito( $idRecensito): void
+    {
+        $this->idRecensito = $idRecensito;
+    }
+
+    /**
+     * @return DateTime| data pubblicazione Recensione
      */
     public function getDataPubb()
     {
@@ -109,30 +144,30 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return int id annuncio recensito
+     * @return  id annuncio recensito
      */
-    public function getIdAnnuncio() : mixed
+    public function getIdUser()
     {
         return $this->idAnnuncio;
     }
 
     /**
-     * @param string $idAnnuncio id annuncio recensito
+     * @param  $idAnnuncio id annuncio recensito
      */
-    public function setIdAnnuncio(string $idAnnuncio): void
+    public function setIdAnnuncio( $idAnnuncio): void
     {
         $this->idAnnuncio = $idAnnuncio;
     }
 
     /**
-     * @return int valutazione annuncio
+     * @return  valutazione annuncio
      */
     public function getValutazione(){
         return $this->valutazione;
     }
 
     /**
-     * @param mixed $valutazione valutazione annuncio
+     * @param  $valutazione valutazione annuncio
      */
     public function setValutazione($valutazione): void
     {
@@ -140,7 +175,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return int autore Recensione
+     * @return  autore Recensione
      */
     public function getAutore()
     {
@@ -148,7 +183,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param int $autore autore recensione
+     * @param  $autore autore recensione
      */
     public function setAutore($autore): void
     {

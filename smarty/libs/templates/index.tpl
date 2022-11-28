@@ -41,7 +41,7 @@
                 </li>
                 {if $userlogged != 'nouser'}
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
 
             </ul>
