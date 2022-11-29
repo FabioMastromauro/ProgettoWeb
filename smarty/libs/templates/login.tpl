@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="validationCustom02" class="form-label">Email</label>
-                        <input type="text" class="form-control" name="email" required>
+                        <input type="text" class="form-control" name="email" {literal}pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"{/literal} title="Deve essere inclusa una chiocciola @ per l'email"/>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -67,7 +67,7 @@
                         <label for="validationCustom03" class="form-label">Password</label>
                         <i class="far fa-eye" id="togglePassword1" style="position: relative; left: 80%;bottom: -40px;cursor: pointer;" onclick="show2()">
                         </i>
-                        <input type="password" class="form-control" name="password" required>
+                        <input type="password" class="form-control" name="password" {literal}pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"{/literal} title="La password deve contenere almeno 8 caratteri, di cui almeno una lettera maiuscola"/>
                         <div class="invalid-feedback">
                             Please provide a valid city.
                         </div>
