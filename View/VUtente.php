@@ -17,7 +17,7 @@ class VUtente
         return $_POST['email'];
     }
     static function getPassword(){
-        return md5($_POST['password']);
+        return ($_POST['password']);
     }
     static function getNome(){
         return $_POST['nome'];

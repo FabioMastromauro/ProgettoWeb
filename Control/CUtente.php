@@ -169,7 +169,7 @@ class CUtente
             $view->mailer($_POST['email'],$_POST['nome'],$verification_code);
 
 
-            $utente = new EUtente(VUtente::getNome(),VUtente::getCognome(),VUtente::getEmail(),null,date("Y/m/d"),null,0,VUtente::getPassword(),0,null,null,$verification_code);
+            $utente = new EUtente(VUtente::getNome(),VUtente::getCognome(),VUtente::getEmail(),null,date("Y/m/d"),null,0, md5(VUtente::getPassword()),0,null,null,$verification_code);
                 $pm::store($utente);
                 header("Location: /localmp/Utente/login");
 
