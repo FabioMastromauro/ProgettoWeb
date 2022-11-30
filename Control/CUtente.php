@@ -386,7 +386,7 @@ class CUtente
             $pm::store($recensione);
                 header('Location: /localmp/Utente/profilo/'.$idRecensito);
             } else {
-            header('Location: /localmp/Utente/profilo/'.$idRecensito);
+            header('Location: /localmp/');
         }
     }
 
