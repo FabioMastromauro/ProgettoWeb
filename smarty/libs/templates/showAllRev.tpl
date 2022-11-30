@@ -20,10 +20,10 @@
     <div class="text-center my-5">
       <h1 class="fw-bolder">Sezione annunci</h1>
       {if $tipoerr == 'no_categoria'}
-      <p>Non è esiste alcun annuncio della categoria: {$input}</p>
+      <p>Non esiste alcun annuncio della categoria: {$input}</p>
       {/if}
       {if $tipoerr == 'no_ricerca'}
-      <p>Non è esiste alcun annuncio: {$input}</p>
+      <p>Non esiste alcun annuncio: {$input}</p>
       {/if}
     </div>
   </div>
