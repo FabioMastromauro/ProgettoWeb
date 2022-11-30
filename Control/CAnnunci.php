@@ -30,6 +30,7 @@ class CAnnunci
         }
     }
     static function annunciHome(){
+
         $view = new VAnnunci();
         $pm = USingleton::getInstance('FPersistentManager');
 
