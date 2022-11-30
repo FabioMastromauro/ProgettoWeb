@@ -74,7 +74,7 @@ class CUtente
                             $session->setValue("utente", $dati);
                           //  $session->setValue('vemail', $utente->getVemail());
                             if ($admin == 1) {
-                                header("Location: /localmp/Admin/home");
+                                header("Location: /localmp/Admin/homeAdmin");
                             } else {
                                 header("Location: /localmp/");
                             }
