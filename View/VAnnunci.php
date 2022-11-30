@@ -73,6 +73,7 @@ class VAnnunci
      */
     function showAnnunci($annunci,$foto,$categoria) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        else{ $this->smarty->assign('userlogged', 'nouser');}
 
         if (is_array($annunci)) {
             $numero = rand(0, count($annunci) - 1);
