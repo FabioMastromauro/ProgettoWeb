@@ -15,11 +15,11 @@ class ECategoria implements JsonSerializable
     /**
      * @var mixed nome Categoria
      */
-    private mixed $categoria;
+    private  $categoria;
     /**
      * @var mixed id Categoria
      */
-    private mixed $idCate;
+    private  $idCate;
 
     //-----------------------------COSTRUTTORE--------------------------
 

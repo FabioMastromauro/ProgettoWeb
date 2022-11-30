@@ -29,6 +29,18 @@ class CAnnunci
             $view->showAnnunci($annunci, $array);
         }
     }
+    static function annunciHome(){
+        $view = new VAnnunci();
+        $pm = USingleton::getInstance('FPersistentManager');
+
+            $annunci = $pm::load('FAnnuncio');
+            $foto=$pm::load('FFotoAnnuncio');
+            $categorie=$pm::load('FCategoria');
+
+
+            $view->showAnnunci($annunci,$foto,$categorie);
+
+    }
 
     /**
      * Metodo che permette la visualizzazione di/degli annuncio/annunci trovato/i

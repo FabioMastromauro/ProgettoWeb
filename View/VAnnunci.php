@@ -71,15 +71,16 @@ class VAnnunci
      * @return void
      * @throws SmartyException
      */
-    function showAnnunci($annunci, $array = null) {
+    function showAnnunci($annunci,$foto,$categoria) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         if (is_array($annunci)) {
             $numero = rand(0, count($annunci) - 1);
             $this->smarty->assign('ran_num', $numero);
         }
-        $this->smarty->assign('annunci', $annunci);
-        $this->smarty->assign('array', $array);
+        $this->smarty->assign('annuncio', $annunci);
+        $this->smarty->assign('foto',$foto);
+        $this->smarty->assign('categoria',$categoria);
 
         $this->smarty->display('annunci.tpl');
     }
@@ -193,7 +194,7 @@ class VAnnunci
         $this->smarty->assign('num_annunci', $num_annunci);
         $this->smarty->assign('categorie', $categorie);
 
-        $this->smarty->display('showAllRev.tpl');
+        $this->smarty->display('annunci.tpl');
     }
 
     /**

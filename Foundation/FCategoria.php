@@ -151,7 +151,7 @@ class FCategoria extends FDatabase
         $db = parent::getInstance();
         $result = $db->searchDB(static::getClass(), $parametri, $ordinamento, $limite);
         $rows_number = $db->getRowNum(static::getClass(), $parametri, $ordinamento, $limite);
-        if (($result != null) && ($rows_number = 1)) {
+        if (($result != null) && ($rows_number == 1)) {
             $categoria = new ECategoria($result['idCate'], $result['categoria']);
         }
         else {
