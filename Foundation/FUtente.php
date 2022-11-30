@@ -175,6 +175,7 @@ class FUtente extends FDatabase
         $utente = null;
         $db = parent::getInstance();
         $result = $db->searchDB(static::getClass(),$parametri, $ordinamento,$limite);
+
         if(count($parametri)>0){
             $rows_number = $db->getRowNum(static::getClass(), $parametri,$ordinamento,$limite);
         } else{
@@ -187,7 +188,7 @@ class FUtente extends FDatabase
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
                 for($i = 0; $i < count($result) ;$i++){
-                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'], $result[$i]['idFoto'], $result[$i]['dataIscrizione'], $result[$i]['dataFineBan'],$result[$i]['ban'],$result[$i]['password'],$result[$i]['admin'],$result[$i]['idUser'],$result[$i]['vemail'],$result[$i]['codice']);
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'], $result[$i]['email'], $result[$i]['idFoto'], $result[$i]['dataIscrizione'], $result[$i]['dataFineBan'],$result[$i]['ban'],$result[$i]['password'],$result[$i]['admin'],$result[$i]['idUser'],$result[$i]['vemail'],$result[$i]['codice']);
 
                 }
             }
