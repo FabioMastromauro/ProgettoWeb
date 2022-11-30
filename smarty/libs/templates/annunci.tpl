@@ -30,6 +30,7 @@
                                     {for $i=0;$i<sizeof($foto);$i++}
                                         {if $foto[$i]->getIdAnnuncio() == $annuncio[$ran_num]->getIdAnnuncio()}
                                             {$foto_singola=$foto[$i]}
+                                            {break}
                                         {/if}
                                     {/for}
                                         <a class="stretched-link text-decoration-none" href="/localmp/Annunci/InfoAnnuncio/{$annuncio[$ran_num]->getIdAnnuncio()}">
@@ -89,12 +90,14 @@
                                 {for $j=0;$j<count($foto);$j++}
                                     {if $foto[$j]->getIdAnnuncio() == $annuncio[$i]->getIdAnnuncio()}
                                         {$foto_s=$foto[$j]}
+                                        {break}
                                     {/if}
                                    {/for}
 
                                 {for $k=0;$k<count($categoria);$k++}
                                     {if $categoria[$k]->getIdCate()==$annuncio[$i]->getCategoria()}
                                         {$categoria_s = $categoria[$k]->getCategoria()}
+                                        {break}
                                     {/if}
                                 {/for}
 

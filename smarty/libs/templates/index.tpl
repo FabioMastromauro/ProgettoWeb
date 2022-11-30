@@ -99,7 +99,8 @@
                 <div class="text-bg">
                  
                     <p class="lead">Quello che cerchi a 1 click</p>
-                    <button onclick="document.location='#annunci'" id = "shopnow" type="button" class="btn btn-dark">Shop Now</button>
+                    <a href="/localmp/Annunci/annunciHome" type="button" class="btn btn-dark">Tutti gli annunci</a>
+
                 </div>
             </div>
 
