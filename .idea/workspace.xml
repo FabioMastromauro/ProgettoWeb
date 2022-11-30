@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunta regex registrazione">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="admin.tpl fatto buonn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,14 +183,7 @@
       <workItem from="1669644140720" duration="836000" />
       <workItem from="1669717675270" duration="1587000" />
       <workItem from="1669802245849" duration="133000" />
-      <workItem from="1669802851000" duration="1586000" />
-    </task>
-    <task id="LOCAL-00124" summary="Correzioni varie">
-      <created>1665757195755</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1665757195755</updated>
+      <workItem from="1669802851000" duration="3916000" />
     </task>
     <task id="LOCAL-00125" summary="Correzioni varie">
       <created>1665763139079</created>
@@ -528,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669725932642</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="admin.tpl fatto buonn">
+      <created>1669814762926</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1669814762942</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock FAnnuncio.php" />
     <MESSAGE value="aggiunto php docBlock FCategoria.php" />
     <MESSAGE value="aggiunto php docBlock FFotoAnnuncio.php e FFotoUtente.php" />
     <MESSAGE value="aggiunto php docBlock FPersistentManager.php" />
@@ -584,7 +583,8 @@
     <MESSAGE value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
     <MESSAGE value="adesso profilo_privato.tpl carica anche un singolo annuncio (prima no)" />
     <MESSAGE value="aggiunta regex registrazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta regex registrazione" />
+    <MESSAGE value="admin.tpl fatto buonn" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin.tpl fatto buonn" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
