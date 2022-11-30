@@ -61,7 +61,7 @@ class CUtente
     static function verifica() {
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");
-        $utente = $pm->loadLogin(VUtente::getEmail(), VUtente::getPassword());
+        $utente = $pm->loadLogin(VUtente::getEmail(), md5(VUtente::getPassword()));
         if ($utente != null) {
             if($utente->getVemail()!=null) {
                 if ($utente->isBan() != 1) {
