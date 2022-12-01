@@ -68,7 +68,27 @@
     </div>
 </nav>
 
-
+<div id="carouselHome" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/localmp/smarty/libs/images/home3.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/localmp/smarty/libs/images/home2.png"  class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/localmp/smarty/libs/images/home1.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 <div class="container my-15 text-center">
     <div class="container"  style="display: compact;align-items: center;" >
