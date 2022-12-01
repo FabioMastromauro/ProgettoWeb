@@ -5,7 +5,6 @@
  * @author Gruppo 7
  * @package View
  */
-
 class VAdmin
 {
     /**
@@ -82,5 +81,4 @@ class VAdmin
 
         $this->smarty->display('utente.tpl');
     }
-
 }

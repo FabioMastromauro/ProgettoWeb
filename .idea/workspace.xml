@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta navbar e altro testo">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creato PHPDOC di annunciHome in CAnnunci.php">
+      <change afterPath="$PROJECT_DIR$/View/VContatti.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,14 +186,8 @@
       <workItem from="1669717675270" duration="1587000" />
       <workItem from="1669802245849" duration="133000" />
       <workItem from="1669802851000" duration="6079000" />
-      <workItem from="1669887469650" duration="353000" />
-    </task>
-    <task id="LOCAL-00127" summary="cerca in CAnnunci.php">
-      <created>1666086852533</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1666086852533</updated>
+      <workItem from="1669887469650" duration="1007000" />
+      <workItem from="1669889585710" duration="562000" />
     </task>
     <task id="LOCAL-00128" summary="Implementato metodo cerca in CAnnunci.php">
       <created>1666090060594</created>
@@ -530,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669848564854</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="Creato PHPDOC di annunciHome in CAnnunci.php">
+      <created>1669887866940</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1669887866941</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock FPersistentManager.php" />
     <MESSAGE value="aggiunto php docBlock FRecensione.php" />
     <MESSAGE value="aggiunto php docBlock CUtente.php" />
     <MESSAGE value="aggiunto php docBlock CRicerca.php" />
@@ -586,7 +587,8 @@
     <MESSAGE value="admin.tpl fatto buonn" />
     <MESSAGE value="CAdmin.php assettato" />
     <MESSAGE value="Aggiunta navbar e altro testo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta navbar e altro testo" />
+    <MESSAGE value="Creato PHPDOC di annunciHome in CAnnunci.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creato PHPDOC di annunciHome in CAnnunci.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
