@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creata VContatti.php e aggiunti PHPDOC">
-      <change afterPath="$PROJECT_DIR$/Control/CContatti.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="CUtente.php assettato">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAdmin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +186,7 @@
       <workItem from="1669802851000" duration="6079000" />
       <workItem from="1669887469650" duration="1007000" />
       <workItem from="1669889585710" duration="899000" />
+      <workItem from="1669931785644" duration="1257000" />
     </task>
     <task id="LOCAL-00129" summary="Completato CAnnunci.php">
       <created>1666107098165</created>
