@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Tolto sfondo e altre minchiate">
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Aggiunta navbar e altro testo">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/AboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/html/AboutUs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,13 +185,7 @@
       <workItem from="1669717675270" duration="1587000" />
       <workItem from="1669802245849" duration="133000" />
       <workItem from="1669802851000" duration="6079000" />
-    </task>
-    <task id="LOCAL-00126" summary="Correzioni varie">
-      <created>1665764646953</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1665764646953</updated>
+      <workItem from="1669887469650" duration="353000" />
     </task>
     <task id="LOCAL-00127" summary="cerca in CAnnunci.php">
       <created>1666086852533</created>
@@ -528,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669821396967</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Aggiunta navbar e altro testo">
+      <created>1669848564854</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1669848564854</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock FFotoAnnuncio.php e FFotoUtente.php" />
     <MESSAGE value="aggiunto php docBlock FPersistentManager.php" />
     <MESSAGE value="aggiunto php docBlock FRecensione.php" />
     <MESSAGE value="aggiunto php docBlock CUtente.php" />
@@ -584,7 +585,8 @@
     <MESSAGE value="aggiunta regex registrazione" />
     <MESSAGE value="admin.tpl fatto buonn" />
     <MESSAGE value="CAdmin.php assettato" />
-    <option name="LAST_COMMIT_MESSAGE" value="CAdmin.php assettato" />
+    <MESSAGE value="Aggiunta navbar e altro testo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta navbar e altro testo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

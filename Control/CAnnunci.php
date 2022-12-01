@@ -29,8 +29,14 @@ class CAnnunci
             $view->showAnnunci($annunci, $array);
         }
     }
-    static function annunciHome(){
 
+    /**
+     * Metood che carica la schermata ricerca degli annunci dove si può impostare la ricerca
+     * in base ad una parola chiave o categoria
+     * @return void
+     * @throws SmartyException
+     */
+    static function annunciHome(){
         $view = new VAnnunci();
         $pm = USingleton::getInstance('FPersistentManager');
 
