@@ -9,6 +9,42 @@
 class CRecensione
 {
 
+
+    static function showRecensioni($id=null)
+    {
+        $view = new VRecensione();
+        $session = USingleton::getInstance('USession');
+        $pm = USingleton::getInstance('FPersistentManager');
+        if($id == null){
+            $utente = unserialize($session->readValue('utente'));
+        } else {
+            $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
+        }
+        if (CUtente::isLogged() || $id != null) {
+            $recensione =$pm::load('FRecensione', array(['idRecensito','=',$utente->getIdUser()]));
+            if(!is_array($recensione)) $recensione=array($recensione);
+        }
+
+        if ($recensione != null) {
+            if (is_array($recensione)) {
+                for ($i = 0; $i < sizeof($recensione); $i++) {
+                    $autori[$i] = $pm::load('FUtente', array(['idUser', '=', $recensione[$i]->getAutore()]));
+                    $foto[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori[$i]->getIdFoto()]));
+                }
+            } else {
+                $autori= $pm::load('FUtente', array(['idUser', '=', $recensione->getAutore()]));
+                $foto = $pm::load('FFotoUtente', array(['idFoto', '=', $autori->getIdFoto()]));
+            }
+            if (!isset($foto)) $foto=null;
+            $view->paginaRecensione($autori,$foto,$recensione,$utente);
+        }
+        else {
+            if (!isset($foto)) $foto=null;
+            $view->paginaRecensione($autori,$foto,$recensione,$utente);
+            }
+        }
+
+
     /**
      * Funzione invocata quando un utente scrive una recensione su un oggetto acquistato
      * @param $id
@@ -19,14 +55,14 @@ class CRecensione
         $session = USingleton::getInstance('USession');
         if (CUtente::isLogged()) {
             $utente = unserialize($session->readValue("utente"));
-            $idAnnuncio = unserialize($session->readValue('id_annuncio'));
-            $annuncio = $pm::load("FAnnuncio", array(['idAnnuncio', '=', $idAnnuncio]));
+            $idAnnuncio = unserialize($session->readValue('idUser'));
+            $recensione = $pm::load("FUtente", array(['idUser', '=', $idAnnuncio])); //prende l'utente dell'annuncio
 
-            if ($utente != null && $utente->getIdUser() == $annuncio->getIdCompratore()) {
+            if ($utente != null && $utente->getIdUser() == $recensione->getIdCompratore()) {
 
                 $commento = VRecensione::getCommento();
                 $valutazione = VRecensione::getValutazione();
-                $idAnnuncio = $annuncio->getIdAnnuncio();
+                $idAnnuncio = $recensione->getIdAnnuncio();
                 date_default_timezone_set('Europe/Rome');
                 $dataPubblicazione = (string)date("d-m-Y h:m:s");
                 $autore = $utente->getIdUser();

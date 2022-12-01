@@ -1,5 +1,28 @@
-<!DOCTYPE html>
-{assign var = 'userLogged' value=$userLogged|default:'nouser'}
+<?php
+/* Smarty version 4.2.0, created on 2022-12-01 15:42:48
+  from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\about_us.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.0',
+  'unifunc' => 'content_6388bd68c7f7b4_07373769',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '017516328ede0e06d29e69fdbf847500fd3f670d' => 
+    array (
+      0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\about_us.tpl',
+      1 => 1669905766,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6388bd68c7f7b4_07373769 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<?php $_smarty_tpl->_assignInScope('userLogged', (($tmp = $_smarty_tpl->tpl_vars['userLogged']->value ?? null)===null||$tmp==='' ? 'nouser' ?? null : $tmp));?>
 
 <html lang="en">
 <head>
@@ -28,7 +51,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
-                {if $userlogged != 'nouser'}
+                <?php if ($_smarty_tpl->tpl_vars['userlogged']->value != 'nouser') {?>
                 <li class="nav-item">
                     <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
@@ -38,14 +61,14 @@
             <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
-            {else}
+            <?php } else { ?>
 
             </ul>
 
             <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
-            {/if}
+            <?php }?>
 
 
             <form class="d-flex" role="search">
@@ -125,11 +148,26 @@
 
 
 <body>
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script>
-<script  src="/smarty/libs/javascript/AboutUs.js"></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</body>
+<?php echo '<script'; ?>
+ src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+  src="/smarty/libs/javascript/AboutUs.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+</body><?php }
+}

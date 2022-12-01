@@ -29,7 +29,7 @@
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
+                    <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
                 {if $userLogged!='nouser'}
                 <li class="nav-item">

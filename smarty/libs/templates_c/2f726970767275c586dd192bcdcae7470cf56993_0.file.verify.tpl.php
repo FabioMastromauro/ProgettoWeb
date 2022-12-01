@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-11-14 23:32:04
-  from 'C:\xampp2\htdocs\ProgettoProgWeb\smarty\libs\templates\verify.tpl' */
+/* Smarty version 4.2.0, created on 2022-11-25 17:10:11
+  from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\verify.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6372c1e45ff6b1_92018155',
+  'unifunc' => 'content_6380e8e34dfd80_19502517',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f726970767275c586dd192bcdcae7470cf56993' => 
     array (
-      0 => 'C:\\xampp2\\htdocs\\ProgettoProgWeb\\smarty\\libs\\templates\\verify.tpl',
-      1 => 1668465122,
+      0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\verify.tpl',
+      1 => 1669392569,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6372c1e45ff6b1_92018155 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6380e8e34dfd80_19502517 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -54,9 +54,9 @@ function content_6372c1e45ff6b1_92018155 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="form-container">
 
                     <input  type="text" name="email" id="email" placeholder="Email address" value="<?php echo $_smarty_tpl->tpl_vars['email']->value;?>
-" readonly>
+" hidden>
                     <input  type="password" name="password" id="password" placeholder="Password" value="<?php echo $_smarty_tpl->tpl_vars['password']->value;?>
-" readonly>
+" hidden>
                     <input type="text" name="codice" id="codice" placeholder="Codice di verifica" value="" >
                     <input type="submit"   class="btn btn-login" value="Verifica">
                 </div>

@@ -130,7 +130,7 @@
                        Create new Account
                     </button>
               </form>
-                    <form action="/localmp/Utente/Ricerca">
+                    <form style="color: #a94442" action="/localmp/Utente/Ricerca">
                         <input type="submit" value="Indietro" class="btn btn-new">
                     </form>
                 </div>

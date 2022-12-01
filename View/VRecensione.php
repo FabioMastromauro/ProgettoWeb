@@ -37,6 +37,16 @@ class VRecensione
         return strtoupper($_POST['valutazione']);
     }
 
+    public function paginaRecensione($autori,$immagine,$recensione,$utente){
+
+        $this->smarty->assign('autori',$autori);
+        $this->smarty->assign('immagine',$immagine);
+        $this->smarty->assign('recensione',$recensione);
+        $this->smarty->assign('utente',$utente);
+
+
+        $this->smarty->display('./smarty/libs/templates/recensione.tpl');
+    }
     /**
      * Metodo per recuperare i filtri inseriti dall'amministratore
      * @return array con i filtri
