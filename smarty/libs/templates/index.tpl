@@ -98,7 +98,7 @@
 </div>
 
 
-<p class="lead"> Il tuo mercato locale </p>
+<p class="lead" style="font-size: 30px"> Il tuo mercato locale </p>
     <!--<button type="button" class="btn btn-dark">News</button> -->
     <button onclick="document.location='#annunci'" type="button" class="btn btn-dark">Annunci</button>
     <!--<button type="button" class="btn btn-dark">Tendenze</button> -->
@@ -118,7 +118,7 @@
             <div class="col-md-8">
                 <div class="text-bg">
                  
-                    <p class="lead">Quello che cerchi a 1 click</p>
+                    <p class="lead" style="font-size: 30px">Lasciati ispirare...</p>
                     <a href="/localmp/Annunci/annunciHome" type="button" class="btn btn-dark">Tutti gli annunci</a>
 
                 </div>
@@ -130,7 +130,7 @@
 <p></p>
 <section class="py-5">
     <div class="container px-5 my-5">
-        <div class="row gx-5 justify-content-center">
+        <div class="row gx-5 justify-content-around">
             <div class="col-lg-8 col-xl-6">
                 <div class="text-center">
                     <h2 class="fw-bolder mb-5">Annunci</h2>
@@ -141,9 +141,9 @@
     {if is_array($annunci_home) && is_array($annunci_foto)}
         {for $i = 0; $i < sizeof($annunci_home); $i++}
     <div id = "annunci" class="col-lg-4 mb-5">
-        <div class="row" style="width: 18rem">
+        <div class="row" style="width: 15rem; height: 18rem">
             <div class="card  h-100 shadow border-0"  >
-                <img  class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 100px" alt="pizza margherita"  />
+                <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" alt="pizza margherita"  />
 
                 <div class="card-body p-4">
                     <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
@@ -159,7 +159,7 @@
     {/if}
 
 
-        <footer id="footer">
+        <footer id="footer" style="background-color: #f8f9fa">
             <div class="footer">
                 <div class="container">
                     <div class="row">

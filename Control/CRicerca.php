@@ -25,7 +25,7 @@ class CRicerca
         $ran_num = array();
         $check = 0;
 
-        for ($i = 0; $i <3 ; $i++){
+        for ($i = 0; $i <4 ; $i++){
 
             while($check!=1) {
                 $new_num = rand(0, $numAnnunci - 1);
