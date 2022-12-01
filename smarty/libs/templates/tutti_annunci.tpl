@@ -26,7 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
+                    <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
                 {if $userlogged != 'nouser'}
                 <li class="nav-item">
@@ -216,7 +216,7 @@
                                     {$value = sizeof($categorie)/2}
                                     {if $categorie != null}
                                         {if is_array($categorie)}
-                                            {for $i = 0; $i < (int)$value; $i++}
+                                            {for $i = 0; $i < $value; $i++}
                                                 <li><a href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getCategoria()}">{$categorie[$i]->getCategoria()}</a></li>
                                             {/for}
                                             </ul>

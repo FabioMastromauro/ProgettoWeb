@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-11-23 16:24:37
-  from 'C:\xampp2\htdocs\ProgettoProgWeb\smarty\libs\templates\profilo_privato.tpl' */
+/* Smarty version 4.2.0, created on 2022-11-25 18:24:47
+  from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\profilo_privato.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_637e3b354b5c47_56119323',
+  'unifunc' => 'content_6380fa5f5feb64_57710589',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86535b2b58bfda8bbbddaf513a816a232880ea11' => 
     array (
-      0 => 'C:\\xampp2\\htdocs\\ProgettoProgWeb\\smarty\\libs\\templates\\profilo_privato.tpl',
-      1 => 1669217075,
+      0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\profilo_privato.tpl',
+      1 => 1669397086,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637e3b354b5c47_56119323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6380fa5f5feb64_57710589 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <?php $_smarty_tpl->_assignInScope('facebook', (($tmp = $_smarty_tpl->tpl_vars['facebook']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
 $_smarty_tpl->_assignInScope('instagram', (($tmp = $_smarty_tpl->tpl_vars['instagram']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
@@ -28,7 +28,7 @@ $_smarty_tpl->_assignInScope('luogo', (($tmp = $_smarty_tpl->tpl_vars['luogo']->
 $_smarty_tpl->_assignInScope('userLogged', (($tmp = $_smarty_tpl->tpl_vars['userLogged']->value ?? null)===null||$tmp==='' ? 'nouser' ?? null : $tmp));?>
 
 
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,6 +38,15 @@ $_smarty_tpl->_assignInScope('userLogged', (($tmp = $_smarty_tpl->tpl_vars['user
     <?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-1.10.2.js"><?php echo '</script'; ?>
 >
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <?php echo '<script'; ?>
+ type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'><?php echo '</script'; ?>
+>
+    <link href="/localmp/smarty/libs/css/recensione.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
 </head>
 <body>
 
@@ -55,7 +64,7 @@ $_smarty_tpl->_assignInScope('userLogged', (($tmp = $_smarty_tpl->tpl_vars['user
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Contact/contattaci">Chi siamo?</a>
+                    <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
                 <?php if ($_smarty_tpl->tpl_vars['userLogged']->value != 'nouser') {?>
                 <li class="nav-item">
@@ -154,6 +163,38 @@ $_smarty_tpl->_assignInScope('userLogged', (($tmp = $_smarty_tpl->tpl_vars['user
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                             Modifica
                         </button>
+                        <?php if ((isset($_smarty_tpl->tpl_vars['recensione']->value))) {?>
+                        <p>Voto medio utente
+                        <?php $_smarty_tpl->_assignInScope('sum', 0);?>
+                            <?php
+$_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);
+$_smarty_tpl->tpl_vars['j']->value = 0;
+if ($_smarty_tpl->tpl_vars['j']->value < sizeof($_smarty_tpl->tpl_vars['recensione']->value)) {
+for ($_foo=true;$_smarty_tpl->tpl_vars['j']->value < sizeof($_smarty_tpl->tpl_vars['recensione']->value); $_smarty_tpl->tpl_vars['j']->value++) {
+?>
+                                <?php $_smarty_tpl->_assignInScope('sum', $_smarty_tpl->tpl_vars['sum']->value+$_smarty_tpl->tpl_vars['recensione']->value[$_smarty_tpl->tpl_vars['j']->value]->getValutazione());?>
+                            <?php }
+}
+?>
+
+                        <div class="rate">
+                            <?php
+$_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);
+$_smarty_tpl->tpl_vars['j']->value = 0;
+if ($_smarty_tpl->tpl_vars['j']->value < 5) {
+for ($_foo=true;$_smarty_tpl->tpl_vars['j']->value < 5; $_smarty_tpl->tpl_vars['j']->value++) {
+?>
+                                <?php if ($_smarty_tpl->tpl_vars['j']->value < ($_smarty_tpl->tpl_vars['sum']->value/sizeof($_smarty_tpl->tpl_vars['recensione']->value))) {?>
+                                    <span class="fa fa-star checked" style="color: orange"></span>
+                                <?php } else { ?>
+                                    <span class="fa fa-star"></span>
+                                <?php }?>
+                            <?php }
+}
+?>
+                        </div>
+                        <?php }?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -231,7 +272,127 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_va
     </div>
 </div>
 
-<!-- About, Information, Contacts -->
+<!-- recensione -->
+
+<section>
+    <div class="container">
+        <div class="row">
+                <?php if ((isset($_smarty_tpl->tpl_vars['recensione']->value))) {?>
+                    <h1>Recensioni</h1>
+                    <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);
+$_smarty_tpl->tpl_vars['i']->value = 0;
+if ($_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_vars['recensione']->value)) {
+for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_vars['recensione']->value); $_smarty_tpl->tpl_vars['i']->value++) {
+?>
+
+            <div class="comment mt-4 text-justify float-left">
+                            <?php if (!(isset($_smarty_tpl->tpl_vars['immagine']->value))) {?>
+                                <!-- immagine non settata TODO-->
+                                <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
+
+                            <?php } else { ?>
+                                <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
+                            <?php }?>
+                            <h4><?php echo $_smarty_tpl->tpl_vars['autori']->value[$_smarty_tpl->tpl_vars['i']->value]->getNome();?>
+ <?php echo $_smarty_tpl->tpl_vars['autori']->value[$_smarty_tpl->tpl_vars['i']->value]->getCognome();?>
+</h4>
+                            <span><?php echo $_smarty_tpl->tpl_vars['recensione']->value[$_smarty_tpl->tpl_vars['i']->value]->getDataPubblicazione();?>
+</span>
+                            <br>
+                            <p></p>
+                    <div class="rate">
+                            <?php
+$_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);
+$_smarty_tpl->tpl_vars['j']->value = 0;
+if ($_smarty_tpl->tpl_vars['j']->value < 5) {
+for ($_foo=true;$_smarty_tpl->tpl_vars['j']->value < 5; $_smarty_tpl->tpl_vars['j']->value++) {
+?>
+                                <?php if ($_smarty_tpl->tpl_vars['j']->value < $_smarty_tpl->tpl_vars['recensione']->value[$_smarty_tpl->tpl_vars['i']->value]->getValutazione()) {?>
+                                <span class="fa fa-star checked" style="color: orange"></span>
+                                <?php } else { ?>
+                                <span class="fa fa-star"></span>
+                                <?php }?>
+                                    <?php }
+}
+?>
+                                </div>
+
+                            <br>
+                            <p><?php echo $_smarty_tpl->tpl_vars['recensione']->value[$_smarty_tpl->tpl_vars['i']->value]->getCommento();?>
+</p>
+                        </div>
+                    <?php }
+}
+?>
+                <?php }?>
+
+            </div>
+            <?php if ($_smarty_tpl->tpl_vars['utentedp']->value->getIdUser() != $_smarty_tpl->tpl_vars['utente']->value->getIdUser()) {?>
+
+            <form  action="/localmp/Utente/scriviRecensione" method="POST">
+
+            <div >
+                <form id="algin-form">
+                    <div class="form-group">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+                        <input name="idUser" value="<?php echo $_smarty_tpl->tpl_vars['utente']->value->getIdUser();?>
+" hidden>
+                        <h4>Lascia una recensione</h4>
+                        <textarea name="commento" id="commento" cols="30" rows="5" class="form-control" style="background-color: whitesmoke;"></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit"  class="btn" value="pubblica">
+                    </div>
+                </form>
+            </div>
+            </form>
+
+        </div>
+    </div>
+
+</section>
+<?php echo '<script'; ?>
+ type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type='text/javascript' src='#'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type='text/javascript' src='#'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type='text/javascript' src='#'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type='text/javascript'>#<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+    myLink.addEventListener('click', function(e) {
+        e.preventDefault();
+    });<?php echo '</script'; ?>
+>
+<?php } else { ?>
+</div>
+</div>
+</section>
+<?php }?>
+<!-- About, Information, Contacts
 <footer id="footer">
     <div class="footer">
         <div class="container">
@@ -279,7 +440,10 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_va
         </div>
     </div>
 </footer>
+-->
+
 </main>
+
 
 <!-- crea annuncio -->
 <form action="/localmp/Annunci/pubblicaAnnuncio" method="POST" enctype="multipart/form-data">

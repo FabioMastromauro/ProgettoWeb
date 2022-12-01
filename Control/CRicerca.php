@@ -42,7 +42,9 @@ class CRicerca
             $venditore_foto[] = $pm::load('FFotoUtente', array(['idFoto','=',$venditore_annuncio[$i]->getIdFoto()]));
 
             $check = 0;
+
         }
+
         $vSearch->showHome($annunci_home, $venditore_annuncio, $annunci_foto, $venditore_foto);
     }
 }

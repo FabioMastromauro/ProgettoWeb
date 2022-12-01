@@ -273,12 +273,14 @@ class FDatabase
 
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
+
             if ($filtro != '')
                 $query .= 'WHERE ' . $filtro . ' ';
             if ($ordinamento != '')
                 $query .= 'ORDER BY ' . $ordinamento . ' ' . 'DESC ';
             if ($limite != '')
                 $query .= 'LIMIT ' . $limite . ' ';
+
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $numRow = $stmt->rowCount();
