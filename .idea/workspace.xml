@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="aggiunta regex registrazione">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Creata VContatti.php e aggiunti PHPDOC">
+      <change afterPath="$PROJECT_DIR$/Control/CContatti.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/smarty/smarty" />
@@ -50,7 +49,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="28IYY2HQdsY95Qc6neDvkUMvlyg" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -183,42 +182,9 @@
       <workItem from="1669644140720" duration="836000" />
       <workItem from="1669717675270" duration="1587000" />
       <workItem from="1669802245849" duration="133000" />
-      <workItem from="1669802851000" duration="1586000" />
-    </task>
-    <task id="LOCAL-00124" summary="Correzioni varie">
-      <created>1665757195755</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1665757195755</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Correzioni varie">
-      <created>1665763139079</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1665763139080</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Correzioni varie">
-      <created>1665764646953</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1665764646953</updated>
-    </task>
-    <task id="LOCAL-00127" summary="cerca in CAnnunci.php">
-      <created>1666086852533</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1666086852533</updated>
-    </task>
-    <task id="LOCAL-00128" summary="Implementato metodo cerca in CAnnunci.php">
-      <created>1666090060594</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1666090060594</updated>
+      <workItem from="1669802851000" duration="6079000" />
+      <workItem from="1669887469650" duration="1007000" />
+      <workItem from="1669889585710" duration="899000" />
     </task>
     <task id="LOCAL-00129" summary="Completato CAnnunci.php">
       <created>1666107098165</created>
@@ -528,7 +494,42 @@
       <option name="project" value="LOCAL" />
       <updated>1669725932642</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="admin.tpl fatto buonn">
+      <created>1669814762926</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1669814762942</updated>
+    </task>
+    <task id="LOCAL-00174" summary="CAdmin.php assettato">
+      <created>1669821396967</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821396967</updated>
+    </task>
+    <task id="LOCAL-00175" summary="Aggiunta navbar e altro testo">
+      <created>1669848564854</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1669848564854</updated>
+    </task>
+    <task id="LOCAL-00176" summary="Creato PHPDOC di annunciHome in CAnnunci.php">
+      <created>1669887866940</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1669887866941</updated>
+    </task>
+    <task id="LOCAL-00177" summary="Creata VContatti.php e aggiunti PHPDOC">
+      <created>1669890208200</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1669890208200</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,11 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock FAnnuncio.php" />
-    <MESSAGE value="aggiunto php docBlock FCategoria.php" />
-    <MESSAGE value="aggiunto php docBlock FFotoAnnuncio.php e FFotoUtente.php" />
-    <MESSAGE value="aggiunto php docBlock FPersistentManager.php" />
-    <MESSAGE value="aggiunto php docBlock FRecensione.php" />
     <MESSAGE value="aggiunto php docBlock CUtente.php" />
     <MESSAGE value="aggiunto php docBlock CRicerca.php" />
     <MESSAGE value="aggiunto php docBlock CRecensione.php" />
@@ -584,7 +580,12 @@
     <MESSAGE value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
     <MESSAGE value="adesso profilo_privato.tpl carica anche un singolo annuncio (prima no)" />
     <MESSAGE value="aggiunta regex registrazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta regex registrazione" />
+    <MESSAGE value="admin.tpl fatto buonn" />
+    <MESSAGE value="CAdmin.php assettato" />
+    <MESSAGE value="Aggiunta navbar e altro testo" />
+    <MESSAGE value="Creato PHPDOC di annunciHome in CAnnunci.php" />
+    <MESSAGE value="Creata VContatti.php e aggiunti PHPDOC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creata VContatti.php e aggiunti PHPDOC" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

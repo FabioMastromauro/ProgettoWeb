@@ -1,20 +1,21 @@
 <?php
 
+/**
+ * Classe che si occupa dell'input-output dei contenuti riguardanti gli annunci
+ * Inoltre fornisce a Smarty contenuti per popolare i template
+ * @author Gruppo 7
+ * @package View
+ */
 class VAnnunci
-
-    /**
-     * Classe che si occupa dell'input-output dei contenuti riguardanti gli annunci
-     * Inoltre fornisce a Smarty contenuti per popolare i template
-     * @author Gruppo 7
-     * @package View
-     */
 {
+    /**
+     * @var Smarty
+     */
     private $smarty;
 
     /**
      * Costruttore che configura/inizializza smarty
      */
-
     public function __construct()
     {
         $this->smarty = StartSmarty::configuration();

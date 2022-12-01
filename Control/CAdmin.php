@@ -16,7 +16,7 @@ class CAdmin
         $view = new VAdmin();
         $session = USingleton::getInstance('USession');
         $utente = unserialize($session->readValue('utente'));
-        if ($utente != null && $utente->getadmin() == 1) {
+        if ($utente != null && $utente->getAdmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
             $list = $pm::load('FUtente');
             $immagine = $pm::load('FFotoUtente',  array(['idFoto', '=', $utente->getidFoto()]));

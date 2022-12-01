@@ -82,7 +82,7 @@ ul li {
     transform: rotate(45deg) translateZ(0px);
 }
 #list li figure > div > div {
-    background: url('/localmp/smarty/libs/images/Figurini_team.png') no-repeat;
+    background: url('/smarty/libs/images/Figurini_team.png') no-repeat;
     background-size: cover;
     background-position: 0px 0px;
     position: absolute;
