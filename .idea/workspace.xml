@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="CUtente.php assettato">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/user.tpl" beforeDir="false" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="creato utente.tpl....">
+      <change beforePath="$PROJECT_DIR$/View/VAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAdmin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,20 +186,6 @@
       <workItem from="1669887469650" duration="1007000" />
       <workItem from="1669889585710" duration="899000" />
       <workItem from="1669931785644" duration="1257000" />
-    </task>
-    <task id="LOCAL-00129" summary="Completato CAnnunci.php">
-      <created>1666107098165</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1666107098165</updated>
-    </task>
-    <task id="LOCAL-00130" summary="Modificato nome variabili Smarty in modo che combacino">
-      <created>1666256705379</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1666256705380</updated>
     </task>
     <task id="LOCAL-00131" summary="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php">
       <created>1666621423670</created>
@@ -531,7 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669890208200</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="creato utente.tpl">
+      <created>1669934243904</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1669934243904</updated>
+    </task>
+    <task id="LOCAL-00179" summary="creato utente.tpl....">
+      <created>1669934295844</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1669934295844</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,8 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock CUtente.php" />
-    <MESSAGE value="aggiunto php docBlock CRicerca.php" />
     <MESSAGE value="aggiunto php docBlock CRecensione.php" />
     <MESSAGE value="aggiunto php docBlock CFrontController.php" />
     <MESSAGE value="aggiunto php docBlock CAnnunci.php" />
@@ -587,7 +584,9 @@
     <MESSAGE value="Aggiunta navbar e altro testo" />
     <MESSAGE value="Creato PHPDOC di annunciHome in CAnnunci.php" />
     <MESSAGE value="Creata VContatti.php e aggiunti PHPDOC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creata VContatti.php e aggiunti PHPDOC" />
+    <MESSAGE value="creato utente.tpl" />
+    <MESSAGE value="creato utente.tpl...." />
+    <option name="LAST_COMMIT_MESSAGE" value="creato utente.tpl...." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

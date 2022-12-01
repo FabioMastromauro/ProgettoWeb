@@ -75,10 +75,9 @@ class VAdmin
      * @return void
      * @throws SmartyException
      */
-    function profiloUtente($utente, $immagine) {
+    function profiloUtente($utente) {
         $this->smarty->assign('utente', $utente);
-        $this->smarty->assign('immagine', $immagine);
-
+        //$this->smarty->assign('immagine', $immagine);
         $this->smarty->display('utente.tpl');
     }
 }
