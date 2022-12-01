@@ -50,11 +50,6 @@
                     <p class="text-muted">Utente bannato fino al {$utente->getDataFineBan()}</p>
                     <a class="nav-link" href="/localmp/Admin/rimuoviBan/{$utente->getIdUser()}"> Rimuovi Ban</a>
                 {/if}
-
-
-
-
-
             </div>
         </div>
     </div>
