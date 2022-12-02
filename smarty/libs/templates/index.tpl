@@ -143,8 +143,7 @@
                     <div id = "annunci" class="col-lg-4 mb-5">
                         <div class="row" style="width: 15rem; height: 18rem">
                             <div class="card  h-100 shadow border-0"  >
-                                <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" alt="pizza margherita"  />
-
+                                <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" />
                                 <div class="card-body p-4">
                                     <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
                                     <a methods="POST" class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
@@ -159,53 +158,7 @@
             {/if}
 
 
-            <footer id="footer" style="background-color: #f8f9fa">
-                <div class="footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="inror_box">
-                                    <h3>INFORMAZIONI </h3>
-                                    <p>Questo è un sito per la compravendita di oggetti di ogni tipo, è necessario registrarsi per pubblicare annunci mentre non è necessario registrarsi per acquistare oggetti. <a href="#shopnow">Shop now</a> </p>
 
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="inror_box">
-                                    <h3>ACCOUNT </h3>
-                                    <p>Per registrarsi o loggarsi basta cliccare sulla voce <a href="#carouselHome">Login/Registrati</a> in alto a destra. </p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="inror_box">
-                                    <h3>ABOUT US  </h3>
-                                    <p>Federico Civitareale  cellulare: <a href="tel:+39 3450792613">+39 3450792613</a>  email: <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> </p>
-                                    <p>Fabio Mastromauro  cellulare: <a href="tel:+39 3890262673">+39 3890262673</a> email: <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> </p>
-                                    <p>Giorgio Tarquini cellulare: <a href="tel:+39 3339154764">+39 3339154764</a> email: <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> </p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="inror_box">
-                                    <h3>SOCIAL CONTACTS  </h3>
-                                    <p>Facebook:</p>
-                                    <p><a href="https://m.facebook.com/federico.civitareale">Federico Civitareale</a></p>
-                                    <p><a href="https://www.facebook.com/fabio.mastromauro.7">Fabio Mastromauro</a></p>
-                                    <p><a href="https://www.facebook.com/giorgio.tarquini.5">Giorgio Tarquini</a> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="copyright">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>© 2022 All Rights Reserved.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
 
         </div>
     </div>

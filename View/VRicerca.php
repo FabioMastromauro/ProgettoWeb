@@ -10,7 +10,7 @@ class VRicerca
         $this->smarty = StartSmarty::configuration();
     }
 
-    public function showHome($annunci_home, $venditore_annuncio, $annunci_foto, $venditore_foto)
+    public function showHome($annunci_home, $venditore_annuncio, $annunci_foto)
     {
         if (CUtente::isLogged()) $utente = $this->smarty->assign('userlogged', 'loggato');
         else $this->smarty->assign('userlogged', 'nouser');
@@ -22,7 +22,6 @@ class VRicerca
         $this->smarty->assign('annunci_home', $annunci_home);
         $this->smarty->assign('autore_annuncio', $venditore_annuncio);
         $this->smarty->assign('annunci_foto', $annunci_foto);
-        $this->smarty->assign('venditore_foto', $venditore_foto);
 
         $this->smarty->display('./smarty/libs/templates/index.tpl');
     }

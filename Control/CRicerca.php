@@ -19,20 +19,15 @@ class CRicerca
 
 
         $numAnnunci = $pm::getRows('FAnnuncio');
-        $ran_num = array(0,1,2);
 
-        for ($i = 0; $i <3 ; $i++){
+     for ($i = 0; $i <$numAnnunci ; $i++) {
 
-            $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
-            $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio','=', $annunci_id[$ran_num[$i]]['idAnnuncio']]));
-            $venditore_annuncio[] = $pm::load('FUtente', array(['idUser','=',$annunci_home[$i]->getIdVenditore()]));
-            $annunci_foto[] = $pm::load('FFotoAnnuncio', array(['idAnnuncio','=',$annunci_home[$i]->getIdAnnuncio()]));
-            $venditore_foto[] = $pm::load('FFotoUtente', array(['idFoto','=',$venditore_annuncio[$i]->getIdFoto()]));
-
-            $check = 0;
-
-        }
-
-        $vSearch->showHome($annunci_home, $venditore_annuncio, $annunci_foto, $venditore_foto);
+         $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
+         $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $annunci_id[$i]['idAnnuncio']]));
+         $venditore_annuncio[] = $pm::load('FUtente', array(['idUser', '=', $annunci_home[$i]->getIdVenditore()]));
+         $annunci_foto[] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_home[$i]->getIdAnnuncio()]));
+         if (!is_array($annunci_foto[$i])) $annunci_foto[$i]=array($annunci_foto[$i]);
+     }
+        $vSearch->showHome($annunci_home, $venditore_annuncio, $annunci_foto);
     }
 }
