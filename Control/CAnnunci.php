@@ -31,7 +31,7 @@ class CAnnunci
     }
 
     /**
-     * Metood che carica la schermata ricerca degli annunci dove si può impostare la ricerca
+     * Metodo che carica la schermata ricerca degli annunci dove si può impostare la ricerca
      * in base ad una parola chiave o categoria
      * @return void
      * @throws SmartyException

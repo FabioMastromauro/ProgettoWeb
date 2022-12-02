@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-11-25 18:24:47
+/* Smarty version 4.2.0, created on 2022-12-02 10:57:34
   from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\profilo_privato.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_6380fa5f5feb64_57710589',
+  'unifunc' => 'content_6389cc0e990328_40185818',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86535b2b58bfda8bbbddaf513a816a232880ea11' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\profilo_privato.tpl',
-      1 => 1669397086,
+      1 => 1669975050,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6380fa5f5feb64_57710589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6389cc0e990328_40185818 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <?php $_smarty_tpl->_assignInScope('facebook', (($tmp = $_smarty_tpl->tpl_vars['facebook']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
 $_smarty_tpl->_assignInScope('instagram', (($tmp = $_smarty_tpl->tpl_vars['instagram']->value ?? null)===null||$tmp==='' ? '' ?? null : $tmp));
@@ -219,12 +219,12 @@ if ($_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_vars['annuncio
 for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < sizeof($_smarty_tpl->tpl_vars['annuncio']->value); $_smarty_tpl->tpl_vars['i']->value++) {
 ?>
                             <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
-                        <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
-                            <div class="card-body">
+                        <div class="card" style="width: 15rem; height: 22rem; box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
+                            <div class="card-body" style="text-align: center">
                                 <img  class="card-img-top same" src="data:<?php echo $_smarty_tpl->tpl_vars['immagini']->value[$_smarty_tpl->tpl_vars['i']->value][0]->getTipo();?>
 ;base64,<?php echo $_smarty_tpl->tpl_vars['immagini']->value[$_smarty_tpl->tpl_vars['i']->value][0]->getFoto();?>
-" style="width: 200px; height: 100px" >
-                                <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getTitolo();?>
+" style="width: 350px; height: 200px;" > </div>
+                            <div>    <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getTitolo();?>
 </h5>
                                 <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['annuncio']->value[$_smarty_tpl->tpl_vars['i']->value]->getDescrizione();?>
 </p>

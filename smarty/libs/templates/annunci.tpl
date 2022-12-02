@@ -170,8 +170,8 @@
                 {/if}
 
                 <div class="text-end mb-5 mb-xl-0">
-                    <a class="text-decoration-none" href="/chefskiss/Ricette/EsploraLeRicette"> <!--TODO-->
-                        Tutte gli annunci
+                    <a class="text-decoration-none" href="/localmp/Annunci/esplora"> <!--TODO-->
+                        Tutti gli annunci
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>

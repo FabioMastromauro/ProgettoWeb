@@ -166,10 +166,10 @@
                         {if is_array($annuncio)}
                         {for $i=0; $i<sizeof($annuncio);$i++}
                             <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
-                        <div class="card" style="width: 18rem;box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
-                            <div class="card-body">
-                                <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 200px; height: 100px" >
-                                <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
+                        <div class="card" style="width: 15rem; height: 22rem; box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
+                            <div class="card-body" style="text-align: center">
+                                <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 350px; height: 200px;" > </div>
+                            <div>    <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
                                 <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
                                 <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
                             </div>

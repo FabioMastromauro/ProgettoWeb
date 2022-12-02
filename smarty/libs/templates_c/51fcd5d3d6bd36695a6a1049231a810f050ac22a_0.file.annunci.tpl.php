@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.0, created on 2022-11-30 16:55:42
+/* Smarty version 4.2.0, created on 2022-12-02 10:43:35
   from 'C:\xampp2\htdocs\localmp\smarty\libs\templates\annunci.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.0',
-  'unifunc' => 'content_63877cfe7c7cc8_59650618',
+  'unifunc' => 'content_6389c8c7a08825_06797023',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51fcd5d3d6bd36695a6a1049231a810f050ac22a' => 
     array (
       0 => 'C:\\xampp2\\htdocs\\localmp\\smarty\\libs\\templates\\annunci.tpl',
-      1 => 1669822778,
+      1 => 1669973768,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63877cfe7c7cc8_59650618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6389c8c7a08825_06797023 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -240,8 +240,8 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['k']->value < count($_smarty_tpl->tpl_var
                 <?php }?>
 
                 <div class="text-end mb-5 mb-xl-0">
-                    <a class="text-decoration-none" href="/chefskiss/Ricette/EsploraLeRicette"> <!--TODO-->
-                        Tutte gli annunci
+                    <a class="text-decoration-none" href="/localmp/Annunci/esplora"> <!--TODO-->
+                        Tutti gli annunci
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>

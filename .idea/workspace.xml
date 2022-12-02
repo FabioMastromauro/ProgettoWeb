@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="nuova homepage">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/templates_c/017516328ede0e06d29e69fdbf847500fd3f670d_0.file.about_us.tpl.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="Correzioni index.tpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/html/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annunci.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annunci.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates_c/51fcd5d3d6bd36695a6a1049231a810f050ac22a_0.file.annunci.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates_c/51fcd5d3d6bd36695a6a1049231a810f050ac22a_0.file.annunci.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates_c/86535b2b58bfda8bbbddaf513a816a232880ea11_0.file.profilo_privato.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates_c/86535b2b58bfda8bbbddaf513a816a232880ea11_0.file.profilo_privato.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,13 +192,6 @@
       <workItem from="1669717675270" duration="1587000" />
       <workItem from="1669802245849" duration="133000" />
       <workItem from="1669802851000" duration="1586000" />
-    </task>
-    <task id="LOCAL-00125" summary="Correzioni varie">
-      <created>1665763139079</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1665763139080</updated>
     </task>
     <task id="LOCAL-00126" summary="Correzioni varie">
       <created>1665764646953</created>
@@ -537,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669906122801</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Correzioni index.tpl">
+      <created>1669911616311</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1669911616311</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock FCategoria.php" />
     <MESSAGE value="aggiunto php docBlock FFotoAnnuncio.php e FFotoUtente.php" />
     <MESSAGE value="aggiunto php docBlock FPersistentManager.php" />
     <MESSAGE value="aggiunto php docBlock FRecensione.php" />
@@ -593,7 +591,8 @@
     <MESSAGE value="adesso profilo_privato.tpl carica anche un singolo annuncio (prima no)" />
     <MESSAGE value="aggiunta regex registrazione" />
     <MESSAGE value="nuova homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="nuova homepage" />
+    <MESSAGE value="Correzioni index.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzioni index.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
