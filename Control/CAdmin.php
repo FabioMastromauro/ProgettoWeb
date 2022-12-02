@@ -37,9 +37,9 @@ class CAdmin
         $session = USingleton::getInstance('USession');
         $admin = unserialize($session->readValue('utente'));
         if ($admin != null && $admin->getAdmin() == 1) {
-            $utente = $pm::load('FUtente', array('idUser'), array($id));
-            $immagine = $pm::load('FFotoUtente',  array(['idFoto', '=', $utente->getidFoto()]));
-            $view->profiloUtente($utente, $immagine);
+            $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
+            //$immagine = $pm::load('FFotoUtente',  array(['idFoto', '=', $utente->getidFoto()]));
+            $view->profiloUtente($utente);
         } else {
             header('Location: /localmp/');
         }
@@ -61,13 +61,13 @@ class CAdmin
             $timezone = date_default_timezone_get();
             try {
                 if (strtotime($date) > strtotime($timezone)) {
-                    $pm::update('dataFineBar', $date, 'idUser', $id, 'FUtente');
+                    $pm::update('dataFineBan', $date, 'idUser', $id, 'FUtente');
                     $pm::update('ban', 1, 'idUser', $id, 'FUtente');
-                    header('Location: /localmp/Admin/profiloUtente/$id');
+                    header('Location: /localmp/Admin/profiloUtente/'.$id);
                 }
             } catch (Exception $e) {
-                echo ('Data antecedente a quella corrente: '. $e->getMessage());
-                header('Location: /localmp/Admin/profiloUtente/$id');
+                echo ('Data antecedente a quella corrente: '.$e->getMessage());
+                header('Location: /localmp/Admin/profiloUtente/'.$id);
             }
         }
         else {
@@ -80,14 +80,14 @@ class CAdmin
      * @param $id
      * @return void
      */
-    static function ripristinaUtente($id) {
+    static function rimuoviBan($id) {
         $session = USingleton::getInstance('USession');
         $admin = unserialize($session->readValue('utente'));
         if ($admin != null && $admin->getAdmin() == 1) {
             $pm = USingleton::getInstance('FPersistentManager');
             $pm::update('ban', 0, 'idUser', $id, 'FUtente');
             $pm::update('dataFineBan', null, 'idUser', $id, 'FUtente');
-            header('Location: /localmp/Admin/profiloUtente/$id');
+            header('Location: /localmp/Admin/profiloUtente/'.$id);
         } else {
             header('Location: /localmp/');
         }
@@ -110,14 +110,14 @@ class CAdmin
             // $timezone = date_default_timezone_get();
             // try {
             //    if (strtotime($date) > strtotime($timezone)) {
-                    // $pm::update('dataFineBan', $date, 'idAnnuncio', $id, 'FAnnuncio');
-                    $pm::update('ban', 1, 'idAnnuncio', $id, 'FAnnuncio');
-                    header('Location: /localmp/Admin/profiloUtente/$id');
+            // $pm::update('dataFineBan', $date, 'idAnnuncio', $id, 'FAnnuncio');
+            $pm::update('ban', 1, 'idAnnuncio', $id, 'FAnnuncio');
+            header('Location: /localmp/Admin/profiloUtente/'.$id);
             //    }
-         //   } catch(Exception $e) {
-         //       echo ('Data antecedente a quella corrente: '. $e->getMessage());
-                header('Location: /localmp/Admin/homeAdmin');
-         //   }
+            //   } catch(Exception $e) {
+            //       echo ('Data antecedente a quella corrente: '. $e->getMessage());
+            header('Location: /localmp/Admin/homeAdmin');
+            //   }
         }
         else {
             header('Location: /localmp/');
