@@ -8,13 +8,13 @@
     <meta name="author" content="" />
     <title>Local Marketplace</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/chefskiss/smarty/libs/images/logomarket.png" />
+    <link rel="icon" type="image/x-icon" href="/localmp/smarty/libs/images/logomarket.png" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/chefskiss/smarty/libs/css/profile.css" rel="stylesheet" type="text/css"/>
-    <link href="/chefskiss/smarty/libs/css/boot_styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/localmp/smarty/libs/css/profile.css" rel="stylesheet" type="text/css"/>
+    <link href="/localmp/smarty/libs/css/boot_styles.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body class="d-flex flex-column">

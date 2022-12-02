@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="creato utente.tpl....">
-      <change beforePath="$PROJECT_DIR$/View/VAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAdmin.php" afterDir="false" />
+    <list default="true" id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="creato utente.tpl....">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/css/boot_styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates_c/75d2fc735e454ee4ac6d20f49d83620f3ab52266_0.file.admin.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates_c/eeba3600777b1cb6987e8618d37c4b2e37d1bfbe_0.file.tutti_annunci.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +39,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/index.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,6 +88,7 @@
       <recent name="$PROJECT_DIR$/smarty/libs/html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp2\htdocs\localmp\smarty\libs\css" />
       <recent name="$PROJECT_DIR$/smarty/libs/css" />
       <recent name="$PROJECT_DIR$/smarty/libs/images" />
       <recent name="$PROJECT_DIR$/smarty/libs/html/images" />
