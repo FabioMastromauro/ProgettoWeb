@@ -19,22 +19,10 @@ class CRicerca
 
 
         $numAnnunci = $pm::getRows('FAnnuncio');
+        $ran_num = array(0,1,2);
 
+        for ($i = 0; $i <3 ; $i++){
 
-        //Funzione che sceglie casualmente gli annunci da far vedere sulla home
-        $ran_num = array();
-        $check = 0;
-
-        for ($i = 0; $i <4 ; $i++){
-
-            while($check!=1) {
-                $new_num = rand(0, $numAnnunci - 1);
-                if (!in_array($new_num, $ran_num)) {
-                    $ran_num[] = $new_num;
-                    $check = 1;
-                }
-
-            }
             $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
             $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio','=', $annunci_id[$ran_num[$i]]['idAnnuncio']]));
             $venditore_annuncio[] = $pm::load('FUtente', array(['idUser','=',$annunci_home[$i]->getIdVenditore()]));

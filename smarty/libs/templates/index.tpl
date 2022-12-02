@@ -46,23 +46,23 @@
 
             </ul>
 
-                <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-                <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
-                {else}
+            {else}
 
             </ul>
 
             <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
-                {/if}
+            {/if}
 
 
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                <button class="btn btn-dark" type="submit" >Search</button>
-            </form>
+            <!-- <form class="d-flex" role="search">
+                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                 <button class="btn btn-dark" type="submit" >Search</button>
+             </form> -->
 
         </div>
     </div>
@@ -95,10 +95,10 @@
         <img src="/localmp/smarty/libs/images/logomarket.png" style="margin-right: 20px;width: 100px;height: 100px">
 
         <h1 class="header_top">BENVENUTO SU LOCAL MARKETPLACE</h1>
-</div>
+    </div>
 
 
-<p class="lead" style="font-size: 30px"> Il tuo mercato locale </p>
+    <p class="lead" style="font-size: 30px"> Il tuo mercato locale </p>
     <!--<button type="button" class="btn btn-dark">News</button> -->
     <button onclick="document.location='#annunci'" type="button" class="btn btn-dark">Annunci</button>
     <!--<button type="button" class="btn btn-dark">Tendenze</button> -->
@@ -110,14 +110,14 @@
             <li><a class="dropdown-item" href="#">Categoria 2</a></li>
             <li><a class="dropdown-item" href="#">Categoria 3</a></li>
     </ul> -->
-   <button onclick="document.location='#footer'" type="button" class="btn btn-secondary">Contattaci</button>
+    <button onclick="document.location='#footer'" type="button" class="btn btn-secondary">Contattaci</button>
 </div>
 <section class="banner_main" >
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="text-bg">
-                 
+
                     <p class="lead" style="font-size: 30px">Lasciati ispirare...</p>
                     <a href="/localmp/Annunci/annunciHome" type="button" class="btn btn-dark">Tutti gli annunci</a>
 
@@ -129,7 +129,7 @@
 </section>
 <p></p>
 <section class="py-5">
-    <div class="container px-5 my-5">
+    <div id="shopnow" class="container px-5 my-5">
         <div class="row gx-5 justify-content-around">
             <div class="col-lg-8 col-xl-6">
                 <div class="text-center">
@@ -137,78 +137,78 @@
                 </div>
             </div>
         </div>
-<div class=" row gx-2 ">
-    {if is_array($annunci_home) && is_array($annunci_foto)}
-        {for $i = 0; $i < sizeof($annunci_home); $i++}
-    <div id = "annunci" class="col-lg-4 mb-5">
-        <div class="row" style="width: 15rem; height: 18rem">
-            <div class="card  h-100 shadow border-0"  >
-                <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" alt="pizza margherita"  />
+        <div class=" row gx-2 ">
+            {if is_array($annunci_home) && is_array($annunci_foto)}
+                {for $i = 0; $i < sizeof($annunci_home); $i++}
+                    <div id = "annunci" class="col-lg-4 mb-5">
+                        <div class="row" style="width: 15rem; height: 18rem">
+                            <div class="card  h-100 shadow border-0"  >
+                                <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" alt="pizza margherita"  />
 
-                <div class="card-body p-4">
-                    <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
-                    <a methods="POST" class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
+                                <div class="card-body p-4">
+                                    <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
+                                    <a methods="POST" class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
 
+                                </div>
+                            </div>
+                            <p></p>
+
+                        </div>
+                    </div>
+                {/for}
+            {/if}
+
+
+            <footer id="footer" style="background-color: #f8f9fa">
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="inror_box">
+                                    <h3>INFORMAZIONI </h3>
+                                    <p>Questo è un sito per la compravendita di oggetti di ogni tipo, è necessario registrarsi per pubblicare annunci mentre non è necessario registrarsi per acquistare oggetti. <a href="#shopnow">Shop now</a> </p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="inror_box">
+                                    <h3>ACCOUNT </h3>
+                                    <p>Per registrarsi o loggarsi basta cliccare sulla voce <a href="#carouselHome">Login/Registrati</a> in alto a destra. </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="inror_box">
+                                    <h3>ABOUT US  </h3>
+                                    <p>Federico Civitareale  cellulare: <a href="tel:+39 3450792613">+39 3450792613</a>  email: <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> </p>
+                                    <p>Fabio Mastromauro  cellulare: <a href="tel:+39 3890262673">+39 3890262673</a> email: <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> </p>
+                                    <p>Giorgio Tarquini cellulare: <a href="tel:+39 3339154764">+39 3339154764</a> email: <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="inror_box">
+                                    <h3>SOCIAL CONTACTS  </h3>
+                                    <p>Facebook:</p>
+                                    <p><a href="https://m.facebook.com/federico.civitareale">Federico Civitareale</a></p>
+                                    <p><a href="https://www.facebook.com/fabio.mastromauro.7">Fabio Mastromauro</a></p>
+                                    <p><a href="https://www.facebook.com/giorgio.tarquini.5">Giorgio Tarquini</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>© 2022 All Rights Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-             <p></p>
+            </footer>
 
         </div>
     </div>
-        {/for}
-    {/if}
-
-
-        <footer id="footer" style="background-color: #f8f9fa">
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="inror_box">
-                                <h3>INFORMAZIONI </h3>
-                                <p>Questo è un sito per la compravendita di oggetti di ogni tipo, è necessario registrarsi per pubblicare annunci mentre non è necessario registrarsi per acquistare oggetti. <a href="#shopnow">Shop now</a> </p>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="inror_box">
-                                <h3>ACCOUNT </h3>
-                                <p>Per registrarsi o loggarsi basta cliccare sulla voce <a href="#searchbar">Login/Registrati</a> in alto a destra. </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="inror_box">
-                                <h3>ABOUT US  </h3>
-                                <p>Federico Civitareale  cellulare: <a href="tel:+39 3450792613">+39 3450792613</a>  email: <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> </p>
-                                <p>Fabio Mastromauro  cellulare: <a href="tel:+39 3890262673">+39 3890262673</a> email: <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> </p>
-                                <p>Giorgio Tarquini cellulare: <a href="tel:+39 3339154764">+39 3339154764</a> email: <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="inror_box">
-                                <h3>SOCIAL CONTACTS  </h3>
-                                <p>Facebook:</p>
-                                <p><a href="https://m.facebook.com/federico.civitareale">Federico Civitareale</a></p>
-                                <p><a href="https://www.facebook.com/fabio.mastromauro.7">Fabio Mastromauro</a></p>
-                                <p><a href="https://www.facebook.com/giorgio.tarquini.5">Giorgio Tarquini</a> </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="copyright">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>© 2022 All Rights Reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
