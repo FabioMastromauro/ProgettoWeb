@@ -229,6 +229,12 @@
                                 <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
                             {/if}
                             <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
+
+                {if $recensione[$i]->getAutore() == $udp->getIdUser()}
+                            <form action="/localmp/Utente/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
+                                <input type="submit" value="cancella">
+                            </form>
+                {/if}
                             <span>{$recensione[$i]->getDataPubblicazione()}</span>
                             <br>
                             <p></p>

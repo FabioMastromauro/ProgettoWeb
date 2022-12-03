@@ -126,6 +126,7 @@ class VUtente
         $this->smarty->assign('autori',$autori);
         $this->smarty->assign('foto_recensori',$foto_recensori);
         $this->smarty->assign('recensione',$recensione);
+        $this->smarty->assign('udp',$utente_del_profilo);
         $this->smarty->display('profilo_privato.tpl');
 
     }

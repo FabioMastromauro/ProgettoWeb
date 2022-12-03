@@ -396,7 +396,7 @@ class CUtente
      * @param $id
      * @return void
      */
-    static function cancellaRecensione($id) {
+    static function cancellaRecensione($id,$profilo) {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
@@ -404,7 +404,8 @@ class CUtente
             $recensione = $pm::load("FRecensione", array(['idRecensione','=',$id]));
             if ($recensione != null && $recensione->getAutore() == $utente->getIdUser()) {
                 $pm::delete('idRecensione', $id, "FRecensione");
-                header("Location: /localmp/Utente/{$utente->getIdUser()}");
+                header("Location: /localmp/Utente/profilo/".$profilo);
+
             }
             else {
                 header("Location: /localmp/Utente/profilo");
