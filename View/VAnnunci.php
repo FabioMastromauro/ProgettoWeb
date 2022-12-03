@@ -97,14 +97,14 @@ class VAnnunci
      * @return void
      * @throws SmartyException
      */
-    public function modificaAnnuncio($annuncio, $foto, $descrizione, $categoria, $prezzo) {
+    public function modificaAnnuncio($annuncio, $foto, $categoria) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
 
         $this->smarty->assign('annuncio', $annuncio);
         $this->smarty->assign('foto', $foto);
-        $this->smarty->assign('descrizione', $descrizione);
+        $this->smarty->assign('descrizione', $annuncio->getDescrizione());
         $this->smarty->assign('categoria', $categoria);
-        $this->smarty->assign('prezzo', $prezzo);
+        $this->smarty->assign('prezzo', $annuncio->getPrezzo());
 
         $this->smarty->display('annuncio_privato.tpl');
     }
@@ -128,7 +128,7 @@ class VAnnunci
      * @return void
      * @throws SmartyException
      */
-    function showInfo($annuncio, $user, $mod, $foto, $immagine_autore,$categoria) {
+    function showInfo($annuncio, $user, $mod, $foto, $immagine_autore,$categoria,$tutteCategoria) {
         if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
 
         $descrizione = explode('.', $annuncio->getDescrizione());
@@ -139,6 +139,7 @@ class VAnnunci
         $this->smarty->assign('descrizione', $descrizione);
         $this->smarty->assign('fotoUtente', $immagine_autore);
         $this->smarty->assign('categoria',$categoria);
+        $this->smarty->assign('tutteCategorie',$tutteCategoria);
 
         $this->smarty->display('annuncio_privato.tpl');
     }

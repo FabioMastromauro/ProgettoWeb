@@ -158,7 +158,10 @@
             </p>
             <!--Annunci online-->
 
+            {if $utente->isBan() == 1}
+                <p style="font-size: 40px">Utente bannato fino al {$utente->getDataFineBan()}</p>
 
+             {else}
                         {if isset($annuncio)}
                             <h1>Annunci online</h1>
 
@@ -198,10 +201,11 @@
                         </div>
                    </div>
 
-                    {/if}
+                        {/if}
+
+                        {/if}
 
 
-            {/if}
             </div>
         </div>
     </div>
@@ -345,7 +349,7 @@
     </div>
 </footer>
 -->
-
+{/if}
 </main>
 
 
@@ -447,7 +451,6 @@
             </div>
         </div>
     </form>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

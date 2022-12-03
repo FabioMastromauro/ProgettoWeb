@@ -19,14 +19,26 @@ class CRicerca
 
 
         $numAnnunci = $pm::getRows('FAnnuncio');
-
+        $ran_num = array();
+        $check = 0;
      for ($i = 0; $i <$numAnnunci ; $i++) {
 
+         while($check != 1){
+             $new_num = rand(0, $numAnnunci - 1);
+             if (!in_array($new_num, $ran_num)){
+                 $ran_num[] = $new_num;
+                 $check = 1;
+             }
+         }
+
+
          $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
-         $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $annunci_id[$i]['idAnnuncio']]));
+         $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $annunci_id[$ran_num[$i]]['idAnnuncio']]));
          $venditore_annuncio[] = $pm::load('FUtente', array(['idUser', '=', $annunci_home[$i]->getIdVenditore()]));
          $annunci_foto[] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_home[$i]->getIdAnnuncio()]));
          if (!is_array($annunci_foto[$i])) $annunci_foto[$i]=array($annunci_foto[$i]);
+         $check = 0;
+
      }
         $vSearch->showHome($annunci_home, $venditore_annuncio, $annunci_foto);
     }

@@ -27,7 +27,7 @@
         <!-- Column -->
         <div class="card"> <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap">
             <div class="card-body little-profile text-center">
-                <div class="pro-img"><img src="/localmp/smarty/libs/images/neonmarket.jpg" alt="user"></div><!--./smarty/libs/assets/background_profilo.jpg-->
+                <div class="pro-img"><img src="/localmp/smarty/libs/images/logomarket.png" alt="user"></div><!--./smarty/libs/assets/background_profilo.jpg-->
                 <div class="ms-3">
                     <h3 class="m-b-0">{$utente->getNome()} {$utente->getCognome()}</h3>
                     {if $utente->getAdmin() == 0 & $utente->isBan()==0}

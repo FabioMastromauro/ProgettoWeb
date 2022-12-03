@@ -1,7 +1,7 @@
 <!doctype html>
 {assign var = 'userLogged' value=$userLogged|default:'nouser'}
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -202,8 +202,9 @@
     </section>
 </div>
 <!-- modal -->
-
 <div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="modificaLabel" role="dialog" aria-hidden="true">
+    <form action="/localmp/Annunci/confermaModifiche?idAnnuncio={$annuncio->getIdAnnuncio()}" method="POST">
+
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
@@ -214,27 +215,34 @@
                 <form class="row g-3 needs-validation" novalidate>
                     <div class="col-mb-4">
                         <label for="validationCustom01" class="form-label">Titolo</label>
-                        <input type="text" class="form-control" id="validationCustom02" style="background-color: whitesmoke" value="" required>
+                        <input type="text" class="form-control" name="titolo" id="validationCustom02" style="background-color: whitesmoke" value="{$annuncio->getTitolo()}" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-mb-4">
-                        <label for="validationCustom02" class="form-label">Categoria</label>
-                        <input type="text" color class="form-control" id="validationCustom03" style="background-color: whitesmoke" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                    <div class="col-1">
+                        <label for="categoria">Categoria</label>
+                        <select name="categoria" id="categoria" class="form-select">
+                            <option value="--Seleziona--">--Seleziona--</option>
+
+                            {if is_array($tutteCategorie)}
+                                {foreach from=$tutteCategorie item=cate}
+                                    <option id="categoria" name="categoria" value="{$cate.idCate}">{$cate.categoria}</option>
+                                {/foreach}
+                            {/if}
+
+
+                        </select>
                     </div>
                     <div class="col-mb-4">
                         <label for="validationCustom03" class="form-label">Prezzo</label>
-                        <input type="text" class="form-control" id="validationCustom04" style="background-color: whitesmoke" value="" required>
+                        <input type="text" class="form-control" name="prezzo" id="validationCustom04" style="background-color: whitesmoke" value="{$annuncio->getPrezzo()}" required>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                         <div class="col-mb-4">
                             <label for="validationCustom04" class="form-label">Descrizione</label>
-                            <input type="text" class="form-control" id="validationCustom05" style="background-color: whitesmoke" value="" required>
+                            <input type="text" class="form-control" name="descrizione" id="validationCustom05" style="background-color: whitesmoke" value="{$annuncio->getDescrizione()}" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -242,7 +250,7 @@
 
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Applica modifiche</button>
+                        <input  class="btn btn-primary" type="submit" value="Applica modifica">
                     </div>
                 </form>
             </div>
@@ -250,6 +258,8 @@
             </div>
         </div>
     </div>
+    </form>
+
 </div>
 </div>
 

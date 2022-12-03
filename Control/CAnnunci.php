@@ -182,7 +182,8 @@ class CAnnunci
         if(!is_array($foto)) $foto= array($foto);
         $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
         $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
-        $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria);
+        $tutteCategorie = $pm::loadAll('FCategoria');
+        $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria,$tutteCategorie);
     }
 
     /**
@@ -296,10 +297,10 @@ class CAnnunci
         $utente = unserialize($session->readValue('utente'));
         $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
         if (CUtente::isLogged() && $utente->getIdUser() == $annuncio->getIdVenditore()) {
-            $foto = $pm::load('FFotoAnnuncio', array(['idFoto', '=', $annuncio->getIdFoto()]));
+            $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annuncio->getIdAnnuncio()]));
             $categoria = $pm::load('FCategoria', array(['idCate', '=', $annuncio->getCategoria()]));
             $view = new VAnnunci();
-            $view->modificaAnnuncio($annuncio, $foto, $annuncio->getDescrizione(), $categoria, $annuncio->getPrezzo());
+            $view->modificaAnnuncio($annuncio, $foto,$categoria);
         }
         else {
             header('Location: /localmp/Utente/login');
@@ -313,23 +314,19 @@ class CAnnunci
      * @param $idFotoVecchia
      * @return void
      */
-    static function confermaModifiche($idAnnuncio, $idFotoVecchia) {
+    static function confermaModifiche($idAnnuncio) {
         $pm=USingleton::getInstance('FPersistentManager');
         if (CUtente::isLogged()) {
             $titolo = VAnnunci::getTitoloAnnuncio();
             $descrizione = VAnnunci::getDescrizioneAnnuncio();
             $categoria = VAnnunci::getCategoriaAnnuncio();
             $prezzo = VAnnunci::getPrezzoAnnuncio();
-            $idFoto = self::upload();
-            if ($idFoto != false) {
-                $pm::update('idFoto', $idFoto, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
-                $pm::delete('idFoto', $idFotoVecchia, 'FFotoAnnuncio');
-            }
+
             $pm::update('titolo', $titolo, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
             $pm::update('descrizione', $descrizione, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
             $pm::update('categoria', $categoria, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
             $pm::update('prezzo', $prezzo, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
-            header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
+            header('Location: /localmp/Annunci/infoAnnuncio/'.$idAnnuncio);
         } else {
             header('Location: /localmp/Utente/login');
         }
