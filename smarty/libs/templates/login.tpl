@@ -64,13 +64,11 @@
                     </div>
                     <div class="col-md-6">
 
-                        <label for="validationCustom03" class="form-label">Password</label>
-                        <i class="far fa-eye" id="togglePassword1" style="position: relative; left: 80%;bottom: -40px;cursor: pointer;" onclick="show2()">
-                        </i>
-                        <input type="password" class="form-control" name="password" {literal}pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"{/literal} title="La password deve contenere almeno 8 caratteri, di cui almeno una lettera maiuscola"/>
-                        <div class="invalid-feedback">
-                            Please provide a valid city.
-                        </div>
+                        <label for="validationCustom03"  class="form-label">Password</label>
+
+                        <input type="password" class="form-control" id="pswq" name="password" {literal}pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"{/literal} title="La password deve contenere almeno 8 caratteri, di cui almeno una lettera maiuscola"/>
+                        <input type="checkbox" class="far fa-eye" id="togglePassword2" style="position: relative; left: 80%;bottom: -40px;cursor: pointer;" onclick="show('pswq')">
+
                     </div>
                     <div class="col-12">
                         <div class="form-check">
@@ -119,9 +117,10 @@
             <div class="colm-form">
                 <div class="form-container">
                     <input type="text" name="email" placeholder="Email address" value="">
-                    <i class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show()">
+                    <i type="checkbox" class="far fa-eye" id="togglePassword2" style="position: relative; left: 40%;bottom: -40px;cursor: pointer;" onclick="show('psw')">
                     </i>
                     <input type="password" name="password" id="psw" placeholder="Password" value="">
+
                     <button  id="index" class="btn-login">Login</button>
                     <a href="#">Forgotten password?</a>
                     <!--<button class="btn-new" onclick="location.href='./register.html'">Create new Account</button>-->

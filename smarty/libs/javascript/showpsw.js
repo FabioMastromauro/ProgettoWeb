@@ -1,16 +1,10 @@
-function show() {
-    let x = document.getElementById("psw");
+function show(targetID) {
+    var x = document.getElementById(targetID);
+
     if (x.type === "password") {
         x.type = "text";
     } else {
         x.type = "password";
     }
-}
-function show2() {
-    let x = document.getElementById("validationCustom04");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    }
+
 }

@@ -16,8 +16,8 @@ class CUtente
     static function confermaMail(){
         $view = new VUtente();
         $pm = USingleton::getInstance("FPersistentManager");
-        $utente = $pm->loadLogin($_POST['email'], $_POST['password']);
-
+        $utente = $pm->loadLogin($_POST['email'], md5($_POST['password']));
+print_r('ciao');
         if($utente->getCodice() == $_POST['codice']){
             $session = USingleton::getInstance("USession");
             $dati = serialize($utente);
@@ -206,7 +206,7 @@ class CUtente
             //recensione
             if ($recensione != null) {
                 if(!is_array($recensione)) $recensione=array($recensione);
-                if (is_array($recensione)) {
+                if(is_array($recensione)) {
                     for ($i = 0; $i < sizeof($recensione); $i++) {
                         $autori[$i] = $pm::load('FUtente', array(['idUser', '=', $recensione[$i]->getAutore()]));
                         $foto_recensori[$i] = $pm::load('FFotoUtente', array(['idFoto', '=', $autori[$i]->getIdFoto()]));
@@ -231,18 +231,21 @@ class CUtente
 
                     }
 
+
                 } else {
                    $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annuncio->getIdAnnuncio()]));
-
+                   if(!is_array($foto)) $foto=array(array($foto));
                     $autori_annunci = $pm::load('FUtente', array(['idUser', '=', $annuncio->getIdVenditore()]));
-                    $foto_autori = $pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()]));
+                    $foto_autori = array($pm::load('FFotoUtente', array(['idFoto', '=', $autori_annunci->getidFoto()])));
+
 
                 }
-                if (!isset($foto)) $foto=null;
+                if(!isset($foto)) $foto=null;
                 if(!isset($foto_autori)) $foto_autori=null;
                 if(!isset($autori)) $autori=null;
                 if(!isset($foto_recensori)) $foto_recensori=null;
-
+                if(!is_array($annuncio)&& isset($annuncio))$annuncio=array($annuncio);
+                if(!is_array($foto[0])) $foto=array($foto);
                 $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione, $utente_del_profilo);
             }
             else {
@@ -311,33 +314,40 @@ class CUtente
     static function modificaP() {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
+        $view=new VUtente();
         if(CUtente::isLogged()) {
             $idFoto = self::upload();
             $utente = unserialize($session->readValue('utente'));
             $nome = VUtente::getNome();
             $cognome = VUtente::getCognome();
             $email = VUtente::getEmail();
-            $password = VUtente::getPassword();
+            $password = md5(VUtente::getPassword());
 
-            if($nome !=''){
+            if($nome != $utente->getNome()){
                 $pm::update('nome', $nome, 'idUser', $utente->getIdUser(), "FUtente");
                 $utente->setNome($nome);
             }
 
-            if($cognome!=''){
+            if($cognome!=$utente->getCognome()){
                 $pm::update('cognome', $cognome, 'idUser', $utente->getIdUser(), "FUtente");
                 $utente->setCognome($cognome);
             }
 
-            if($email!=''){
+            if($email!=$utente->getEmail()){
                 $pm::update('email', $email, 'idUser', $utente->getIdUser(), "FUtente");
                 $utente->setEmail($email);
-                }
-            if($password!=''){
+                $pm::update('vemail', null, 'idUser', $utente->getIdUser(), "FUtente");
+                $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+                $pm::update('codice',$verification_code,'idUser',$utente->getIdUser(),"FUtente");
+                VUtente::mailer($email,$utente->getNome(),$verification_code);
+                CUtente::logout();
+
+            }
+            if($password!=md5($utente->getPassword())){
                 $pm::update('password', $password, 'idUser', $utente->getIdUser(), "FUtente");
                 $utente->setPassword($password);
              }
-
+print_r($utente->getPassword());
 
             $session->destroyValue('utente');
 
@@ -384,7 +394,7 @@ class CUtente
             $autore = unserialize($_SESSION['utente']);
             $recensione = new ERecensione($commento, $valutazione, $dataPubblicazione, $autore->getIdUser(),null,$idRecensito);
             $pm::store($recensione);
-                header('Location: /localmp/Utente/profilo/'.$idRecensito);
+                header('Location: /localmp/Utente/profilo?id='.$idRecensito);
             } else {
             header('Location: /localmp/');
         }

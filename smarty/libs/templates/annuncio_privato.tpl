@@ -174,7 +174,7 @@
                                 <!-- venditore -->
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <form class="form-inline" method="POST" action="/localmp/Utente/profilo/{$utente->getIdUser()}">
+                                        <form class="form-inline" method="POST" action="/localmp/Utente/profilo?id={$utente->getIdUser()}">
                                             <input type="text" hidden name="email" value="?" />
                                             {if $utente->getIdFoto()!=null}
                                             <input type="image" src="data:{$utente->getTipo()};base64,{$utente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>

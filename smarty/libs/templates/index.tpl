@@ -72,22 +72,9 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="/localmp/smarty/libs/images/home3.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="/localmp/smarty/libs/images/home2.png"  class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="/localmp/smarty/libs/images/home1.png" class="d-block w-100" alt="...">
-        </div>
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+
 </div>
 
 <div class="container my-15 text-center">
@@ -146,7 +133,7 @@
                                 <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" />
                                 <div class="card-body p-4">
                                     <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
-                                    <a methods="POST" class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio/{$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
+                                    <a methods="POST"  class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio?id={$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
 
                                 </div>
                             </div>

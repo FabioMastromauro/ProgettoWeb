@@ -390,16 +390,24 @@ class CAnnunci
      * @param $idFoto
      * @return void
      */
-    static function cancellaAnnuncio($idAnnuncio, $idFoto) {
+    static function cancellaAnnuncio($idAnnuncio) {
         $pm = USingleton::getInstance("FPersistentManager");
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
+        $foto=$pm::load('FFotoAnnuncio',array(['idAnnuncio','=',$idAnnuncio]));
         if (CUtente::isLogged()) {
             $annuncio = $pm::load("FAnnuncio", array(['idAnnuncio', '=', $idAnnuncio]));
             if ($annuncio->getIdVenditore() == $utente->getIdUser()){
                 $pm::delete('idAnnuncio', $idAnnuncio, "FAnnuncio");
                 $pm::delete('idAnnuncio', $idAnnuncio, "FRecensione");
-                $pm::delete('idFoto', $idFoto, "FFotoAnnuncio");
+                if(is_array($foto)) {
+                    for ($i = 0; $i < sizeof($foto); $i++) {
+                        $pm::delete('idAnnuncio', $foto[$i]->getIdAnnuncio(), "FFotoAnnuncio");
+                    }
+                }
+                else  $pm::delete('idAnnuncio', $foto->getIdAnnuncio(), "FFotoAnnuncio");
+
+
 
                 header("Location: /localmp/Utente/profilo");
             } else {

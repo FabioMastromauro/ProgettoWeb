@@ -174,8 +174,15 @@
                                 <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 350px; height: 200px;" > </div>
                             <div>    <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
                                 <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
-                                <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                                <a  href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
+                                {if $annuncio[$i]->getIdVenditore() == $udp->getIdUser()}
+                                <form action="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" method="post">
+                                    <input type="submit" value="cancella">
+                                </form>
+                                {/if}
                             </div>
+
+
                         </div>
                         <p></p>
                             </div>
@@ -183,23 +190,6 @@
           </div>
 
 
-
-                        {else}
-                   <div class="container">
-                        <div class="col">
-                            <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <img  class="card-img-top same" src="data:{$immagini[0]->getTipo()};base64,{$immagini[0]->getFoto()}" style="width: 100%;height: 100%; object-fit: contain">
-                                        <h5 class="card-title">{$annuncio->getTitolo()}</h5>
-                                        <p class="card-text">{$annuncio->getDescrizione()}</p>
-                                        <a  href="/localmp/Annunci/infoAnnuncio/{$annuncio->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
-                                    </div>
-                                </div>
-                                <p></p>
-                            </div>
-                        </div>
-                   </div>
 
                         {/if}
 
@@ -415,6 +405,7 @@
 </div>
 </form>
 
+
 <!-- modifica -->
 
 <div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -429,22 +420,22 @@
                     <form class="row g-3 needs-validation" novalidate>
                         <div class="col-mb-4">
                             <label for="validationCustom01"  class="form-label">Nome</label>
-                            <input  type="text" class="form-control" name="nome" id="nome" style="background-color: whitesmoke" value="" >
+                            <input  type="text" class="form-control" name="nome" id="nome" style="background-color: whitesmoke" value="{$utente->getNome()}" >
 
                         </div>
                         <div class="col-mb-4">
                             <label for="validationCustom02"  class="form-label">Cognome</label>
-                            <input type="text"  class="form-control" name="cognome" id="cognome" style="background-color: whitesmoke" value="" >
+                            <input type="text"  class="form-control" name="cognome" id="cognome" style="background-color: whitesmoke" value="{$utente->getCognome()}" >
 
                         </div>
                         <div class="col-mb-4">
                             <label for="validationCustom03" class="form-label">Email</label>
-                            <input type="text" class="form-control" name="email" id="email" style="background-color: whitesmoke" value="" >
+                            <input type="text" class="form-control" name="email" id="email" style="background-color: whitesmoke" value="{$utente->getEmail()}" >
                         </div>
 
                         <div class="col-mb-4">
                             <label for="validationCustom03" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" style="background-color: whitesmoke" value="" >
+                            <input type="password" class="form-control" name="password" id="password" style="background-color: whitesmoke" value="{$utente->getPassword()}" >
                         </div>
 
                         <div class="col-12">
