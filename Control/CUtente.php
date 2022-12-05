@@ -196,7 +196,7 @@ print_r('ciao');
             } else {
                 $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
             }
-        $utente_del_profilo=unserialize($_SESSION['utente']);
+if(isset($_SESSION['utente'])) $utente_del_profilo = unserialize($_SESSION['utente']);
 
         if (CUtente::isLogged() || $id!=null){
             $fotoUtente = $pm::load('FFotoUtente', array(['idFoto', '=', $utente->getidFoto()]));
@@ -246,6 +246,7 @@ print_r('ciao');
                 if(!isset($foto_recensori)) $foto_recensori=null;
                 if(!is_array($annuncio)&& isset($annuncio))$annuncio=array($annuncio);
                 if(!is_array($foto[0])) $foto=array($foto);
+                if(!isset($utente_del_profilo)) $utente_del_profilo=null;
                 $view->profilo($annuncio,$utente ,$foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione, $utente_del_profilo);
             }
             else {
@@ -253,6 +254,7 @@ print_r('ciao');
                 if(!isset($foto_autori)) $foto_autori=null;
                 if(!isset($autori)) $autori=null;
                 if(!isset($foto_recensori)) $foto_recensori=null;
+                if(!isset($utente_del_profilo)) $utente_del_profilo=null;
                 $view->profilo($annuncio,$utente, $foto, $fotoUtente, $foto_autori, $id,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo);
             }
         } else {
@@ -280,7 +282,7 @@ print_r('ciao');
     }
 
     /**
-     * Metodo che permette l'upload di una foto al momento della
+         * Metodo che permette l'upload di una foto al momento della
      * creazione dell'utente o modifica del profilo
      * @return bool
      */
@@ -347,7 +349,6 @@ print_r('ciao');
                 $pm::update('password', $password, 'idUser', $utente->getIdUser(), "FUtente");
                 $utente->setPassword($password);
              }
-print_r($utente->getPassword());
 
             $session->destroyValue('utente');
 

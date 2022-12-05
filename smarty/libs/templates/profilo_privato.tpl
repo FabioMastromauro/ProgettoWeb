@@ -124,11 +124,14 @@
                             </div>
                         </div>
                         <hr>
-
-
+                        {if $userLogged == 'logged'}
+                            {if $utente->getIdUser() == $udp->getIdUser()}
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                             Modifica
                         </button>
+                            {/if}
+                        {/if}
+
                         {if isset($recensione)}
                         <p>Voto medio utente
                         {$sum =0}
@@ -150,9 +153,13 @@
                     </div>
                 </div>
             </div>
+            {if $userLogged == 'logged'}
+            {if $utente->getIdUser() == $udp->getIdUser()}
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creaAnnuncio">
                 Crea nuovo annuncio
             </button>
+            {/if}
+            {/if}
             <p>
 
             </p>
@@ -175,10 +182,12 @@
                             <div>    <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
                                 <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
                                 <a  href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
-                                {if $annuncio[$i]->getIdVenditore() == $udp->getIdUser()}
+                               {if $userLogged=='logged'}
+                                {if $annuncio[$i]->getIdVenditore() == $udp->getIdUser() }
                                 <form action="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" method="post">
                                     <input type="submit" value="cancella">
                                 </form>
+                                {/if}
                                 {/if}
                             </div>
 
@@ -219,12 +228,13 @@
                                 <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
                             {/if}
                             <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
-
+{if $userLogged=='logged'}
                 {if $recensione[$i]->getAutore() == $udp->getIdUser()}
                             <form action="/localmp/Utente/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
                                 <input type="submit" value="cancella">
                             </form>
                 {/if}
+{/if}
                             <span>{$recensione[$i]->getDataPubblicazione()}</span>
                             <br>
                             <p></p>
@@ -245,6 +255,7 @@
                 {/if}
 
             </div>
+        {if $userLogged=='logged'}
             {if $utentedp->getIdUser() != $utente->getIdUser()}
 
             <form  action="/localmp/Utente/scriviRecensione" method="POST">
@@ -275,6 +286,7 @@
                         <input type="submit"  class="btn" value="pubblica">
                     </div>
                 </form>
+                {/if}
             </div>
             </form>
 
@@ -438,6 +450,10 @@
                             <input type="password" class="form-control" name="password" id="password" style="background-color: whitesmoke" value="{$utente->getPassword()}" >
                         </div>
 
+                        <div class="col-mb-4">
+                            <label for="file" class="form-label">Aggiungi una o più foto</label>
+                            <input type="file" class="form-control"  id="file" name="file" >
+                        </div>
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Applica modifiche</button>
                         </div>
