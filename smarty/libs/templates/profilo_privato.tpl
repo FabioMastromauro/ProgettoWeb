@@ -79,11 +79,15 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            {if $utente->getIdFoto() == null}
-                            <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+
+                            {if isset($foto_utente)}
+                            <img   src="data:{$foto_utente->getTipo()};;base64,{$foto_utente->getFoto()}"  alt="Admin" class="rounded-circle" width="140" >
+
+
                             {else}
-                            <img src="data:{$fotoUtente->getTipo()};base64, {$fotoUtente->getFoto()}"> <!-- TODO -->
-                            {/if}
+                        <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+
+                        {/if}
                             <div class="mt-3">
                                 <h4>{$utente->getNome()}</h4>
                                 <p class="text-muted font-size-sm">{$luogo}</p>
@@ -220,13 +224,14 @@
                     {for $i=0; $i<sizeof($recensione);$i++}
 
             <div class="comment mt-4 text-justify float-left">
-                            {if !isset($immagine)}
-                                <!-- immagine non settata TODO-->
-                                <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
+                {if isset($foto_recensori[$i])}
+                    <img   src="data:{$foto_recensori[$i]->getTipo()};base64,{$foto_recensori[$i]->getFoto()}"  alt="Admin" class="rounded-circle" width="40" >
 
-                            {else}
-                                <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                            {/if}
+
+                {else}
+                    <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
+
+                {/if}
                             <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
 {if $userLogged=='logged'}
                 {if $recensione[$i]->getAutore() == $udp->getIdUser()}
@@ -421,7 +426,7 @@
 <!-- modifica -->
 
 <div class="modal fade" id="modifica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form action="/localmp/Utente/modificaP"  method="post" enctype="multipart/form-data">
+    <form action="/localmp/Utente/modificaP?id={$utente->getIdUser()}"  method="post" enctype="multipart/form-data">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
@@ -451,7 +456,7 @@
                         </div>
 
                         <div class="col-mb-4">
-                            <label for="file" class="form-label">Aggiungi una o più foto</label>
+                            <label for="file" class="form-label">Carica una nuova foto</label>
                             <input type="file" class="form-control"  id="file" name="file" >
                         </div>
                         <div class="col-12">

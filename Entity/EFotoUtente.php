@@ -9,22 +9,22 @@
 class EFotoUtente extends EFoto implements JsonSerializable
 {
     /**
-     * @var int id utente
+     * @var  id utente
      */
-    private int $idUser;
+    private  $idUser;
 
     //--------------------------------COSTRUTTORE----------------------------------------------
 
-    public function __construct(int $idFoto, string $nomeFoto, string $size, $tipo, $foto)
+    public function __construct( $idFoto,  $nomeFoto,  $size, $tipo, $foto,$idUser)
     {
         parent::__construct($idFoto, $nomeFoto, $size, $tipo, $foto);
-        // $this->idUser = $idUser;
+         $this->idUser = $idUser;
     }
 
     //-------------------------------METODI GET E SET-------------------------------------------
 
     /**
-     * @return int id utente
+     * @return  id utente
      */
     public function getIdUser()
     {
@@ -32,7 +32,7 @@ class EFotoUtente extends EFoto implements JsonSerializable
     }
 
     /**
-     * @param int $idUser id utente
+     * @param  $idUser id utente
      */
     public function setIdUser($idUser): void
     {

@@ -270,7 +270,6 @@ class FDatabase
                 if ($i > 0) $filtro .= ' AND';
                 $filtro .= ' `' . $parametri[$i][0] . '` ' . $parametri[$i][1] . ' \'' . $parametri[$i][2] . '\'';
             }
-
             $query = 'SELECT * ' .
                 'FROM `' . $class::getTable() . '` ';
 
@@ -280,7 +279,6 @@ class FDatabase
                 $query .= 'ORDER BY ' . $ordinamento . ' ' . 'DESC ';
             if ($limite != '')
                 $query .= 'LIMIT ' . $limite . ' ';
-
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $numRow = $stmt->rowCount();

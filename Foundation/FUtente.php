@@ -17,7 +17,7 @@ class FUtente extends FDatabase
     /**
      * Valori della tabella
      */
-    private static $values = '(:nome, :cognome, :idUser, :email, :password, :idFoto, :dataIscrizione, :dataFineBan, :ban, :admin, :vemail, :codice)';
+    private static $values = '(:nome, :cognome, :idUser, :email, :password, :dataIscrizione, :dataFineBan, :ban, :admin, :vemail, :codice)';
     /**
      * Costruttore
      */
@@ -34,7 +34,6 @@ class FUtente extends FDatabase
         $stmt->bindValue(':idUser',$user->getIdUser(), PDO::PARAM_INT);
         $stmt->bindValue(':nome', $user->getNome(), PDO::PARAM_STR);
         $stmt->bindValue(':cognome', $user->getCognome(), PDO::PARAM_STR);
-        $stmt->bindValue(':idFoto', $user->getIdFoto(), PDO::PARAM_INT);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
         $stmt->bindValue(':dataIscrizione', $user->getDataIscrizione(), PDO::PARAM_STR);
@@ -182,13 +181,13 @@ class FUtente extends FDatabase
             $rows_number = $db->getRowNum(static::getClass());
         }
         if(($result != null) && ($rows_number == 1)){
-            $utente = new EUtente($result['nome'],$result['cognome'], $result['email'], $result['idFoto'], $result['dataIscrizione'], $result['dataFineBan'],$result['ban'],$result['password'],$result['admin'],$result['idUser'],$result['vemail'],$result['codice']);
+            $utente = new EUtente($result['nome'],$result['cognome'], $result['email'],  $result['dataIscrizione'], $result['dataFineBan'],$result['ban'],$result['password'],$result['admin'],$result['idUser'],$result['vemail'],$result['codice']);
          }
         else{
             if(($result != null) && ($rows_number > 1)){
                 $utente = array();
                 for($i = 0; $i < count($result) ;$i++){
-                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'], $result[$i]['email'], $result[$i]['idFoto'], $result[$i]['dataIscrizione'], $result[$i]['dataFineBan'],$result[$i]['ban'],$result[$i]['password'],$result[$i]['admin'],$result[$i]['idUser'],$result[$i]['vemail'],$result[$i]['codice']);
+                    $utente[] = new EUtente($result[$i]['nome'],$result[$i]['cognome'], $result[$i]['email'],  $result[$i]['dataIscrizione'], $result[$i]['dataFineBan'],$result[$i]['ban'],$result[$i]['password'],$result[$i]['admin'],$result[$i]['idUser'],$result[$i]['vemail'],$result[$i]['codice']);
 
                 }
             }

@@ -77,13 +77,12 @@ class EUtente
 
     //--------------------------------------------COSTRUTTORE---------------------------------------------------------------------------------------------------------------------------------------------
 
-    public function __construct( $nome = null, string $cognome=null, string $email=null, $idFoto=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null,  $admin=null,$idUser=null, $vemail=null, $codice=null)
+    public function __construct( $nome = null, string $cognome=null, string $email=null, $dataIscrizione=null, $dataFineBan=null, $ban=null, string $password=null,  $admin=null,$idUser=null, $vemail=null, $codice=null)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
         $this->email = $email;
         $this->password = $password;
-        $this->idFoto = $idFoto;
         $this->dataIscrizione = $dataIscrizione;
         $this->dataFineBan = $dataFineBan;
         $this->ban = $ban;
@@ -214,18 +213,6 @@ class EUtente
     /**
      * @return int id foto Utente
      */
-    public function getIdFoto()
-    {
-        return $this->idFoto;
-    }
-
-    /**
-     * @param $idFoto id foto Utente
-     */
-    public function setIdFoto($idFoto): void
-    {
-        $this->idFoto = $idFoto;
-    }
 
     /**
      * @return  data iscrizione Utente

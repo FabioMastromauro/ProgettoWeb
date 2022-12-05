@@ -118,7 +118,7 @@ class VUtente
         $this->smarty->assign('annuncio', $annunci);
         $this->smarty->assign('immagini', $immagini);
         $this->smarty->assign('foto_utente', $fotoUtente);
-        $this->smarty->assign('fotoUtente', $fotoAutori);
+        $this->smarty->assign('fotoAutori', $fotoAutori);
         //$this->smarty->assign('facebook', $facebook);
         //$this->smarty->assign('instagram', $instagram);
         $this->smarty->assign('idutente', $idutente);
