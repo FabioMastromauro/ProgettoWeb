@@ -82,7 +82,12 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <input class="btn btn-primary" type="submit" value="Registrati">
+                        <input class="btn btn-primary" type="submit" value="Registrati" onclick="avvisoNotifica()">
+                        <script>
+                            function avvisoNotifica() {
+                                alert("Si prega di controllare la mail e di fare il login con il codice di verifica");
+                            }
+                        </script>
                     </div>
                 </form>
             </div>
