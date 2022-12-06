@@ -111,14 +111,14 @@ class CAnnunci
         } else {
             if ($new_index * 5 <= $num_annunci){
                 for ($i = 0; $i < 5; $i++) {
-                    $annunci_pag[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['id_annuncio']]));
+                    $annunci_pag[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['idAnnuncio']]));
                 }
             } else {
                 if (isset($data['titolo'])){
-                    $annunci_pag = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data['id_annuncio']]));
+                    $annunci_pag = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data['idAnnuncio']]));
                 } else if (is_array($data[0])){
                     for ($i = 0; $i < count($data); $i++) {
-                        $annunci_pag[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['id_annuncio']]));
+                        $annunci_pag[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['idAnnuncio']]));
                     }
                 }
             }
@@ -171,7 +171,7 @@ class CAnnunci
         $autore = $pm::load('FUtente', array(['idUser','=',$annuncio->getIdVenditore()]));
         $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio','=',$id]));
         if(!is_array($foto)) $foto= array($foto);
-        $fotoUtente = $pm::load('FFotoUtente', array(['idUser','=',$autore->getIdUser()]));
+        $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
         $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
         $tutteCategorie = $pm::loadAll('FCategoria');
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria,$tutteCategorie);

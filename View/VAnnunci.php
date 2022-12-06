@@ -171,7 +171,7 @@ class VAnnunci
         $this->smarty->assign('input', $input);
         $this->smarty->assign('categorie', $categorie);
 
-        $this->smarty->display('prova2.tpl');
+        $this->smarty->display('tutti_annunci_err.tpl');
     }
 
     /**
@@ -197,7 +197,7 @@ class VAnnunci
         $this->smarty->assign('num_annunci', $num_annunci);
         $this->smarty->assign('categorie', $categorie);
 
-        $this->smarty->display('prova.tpl');
+        $this->smarty->display('tutti_annunci.tpl');
     }
 
     /**
