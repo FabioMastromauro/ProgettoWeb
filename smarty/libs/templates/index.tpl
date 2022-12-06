@@ -36,10 +36,19 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
+                {if $userLogged == 'admin'}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                </li>
+                {/if}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
-                {if $userlogged != 'nouser'}
+                {if $userLogged =='admin'}
+                <li class="nav-item">
+                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
+                </li>
+                {elseif $userLogged != 'nouser'}
                 <li class="nav-item">
                     <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
@@ -67,6 +76,7 @@
         </div>
     </div>
 </nav>
+
 
 <div id="carouselHome" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">

@@ -12,6 +12,7 @@ class CAdmin
      * @return void
      */
     static function homeAdmin() {
+
         $view = new VAdmin();
         $session = USingleton::getInstance('USession');
         $utente = unserialize($session->readValue('utente'));
@@ -43,7 +44,7 @@ class CAdmin
         }
         if (isset($_SESSION['utente'])) $utente_del_profilo = unserialize($_SESSION['utente']);
 
-        if (CUtente::isLogged() || $id != null) {
+        if (CAdmin::isLogged() || $id != null) {
             $fotoUtente = $pm::load('FFotoUtente', array(['idUser', '=', $utente->getIdUser()]));
             $annuncio = $pm::load('FAnnuncio', array(['idVenditore', '=', $utente->getIdUser()]));
             $categoria = $pm::loadAll('FCategoria');
@@ -96,14 +97,14 @@ class CAdmin
                 if (!is_array($foto[0])) $foto = array($foto);
                 if (!isset($utente_del_profilo)) $utente_del_profilo = null;
 
-                $view->profilo($annuncio, $utente, $foto, $fotoUtente, $foto_autori, $id, $categoria, $autori, $foto_recensori, $recensione, $utente_del_profilo);
+                $view->profiloAdmin($annuncio, $utente, $foto, $fotoUtente, $foto_autori, $id, $categoria, $autori, $foto_recensori, $recensione, $utente_del_profilo);
             } else {
                 if (!isset($foto)) $foto = null;
                 if (!isset($foto_autori)) $foto_autori = null;
                 if (!isset($autori)) $autori = null;
                 if (!isset($foto_recensori)) $foto_recensori = null;
                 if (!isset($utente_del_profilo)) $utente_del_profilo = null;
-                $view->profilo($annuncio, $utente, $foto, $fotoUtente, $foto_autori, $id, $categoria, $autori, $foto_recensori, $recensione, $utente_del_profilo);
+                $view->profiloAdmin($annuncio, $utente, $foto, $fotoUtente, $foto_autori, $id, $categoria, $autori, $foto_recensori, $recensione, $utente_del_profilo);
             }
 
         }
@@ -177,7 +178,7 @@ class CAdmin
         $session = USingleton::getInstance("USession");
         $utente = unserialize($session->readValue("utente"));
         $foto=$pm::load('FFotoAnnuncio',array(['idAnnuncio','=',$idAnnuncio]));
-        if (CUtente::isLogged()) {
+        if (CAdmin::isLogged()) {
             $annuncio = $pm::load("FAnnuncio", array(['idAnnuncio', '=', $idAnnuncio]));
             if (unserialize($_SESSION['utente'])->getAdmin()==1){
                 $pm::delete('idAnnuncio', $idAnnuncio, "FAnnuncio");
@@ -211,7 +212,7 @@ class CAdmin
     {
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
-        if (CUtente::isLogged()) {
+        if (CAdmin::isLogged()) {
             $utente_recensito = unserialize($session->readValue("utente"));
         }//prende l'utente dell'annuncio
 
@@ -230,7 +231,20 @@ class CAdmin
         }
     }
 
+    static function isLogged()
+    {
+        $identified = false;
+        if (isset($_COOKIE['PHPSESSID'])) {
+            if (USession::sessionStatus() == PHP_SESSION_NONE) {
+                USingleton::getInstance("USession");
+            }
+        }
+        if (isset($_SESSION['utente'])) {
+            if(unserialize($_SESSION['utente'])->getAdmin()==1) $identified = true;
+        }
 
+        return $identified;
+    }
     static function cancellaRecensione($id, $profilo)
     {
         $pm = USingleton::getInstance("FPersistentManager");

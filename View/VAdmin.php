@@ -61,6 +61,8 @@ class VAdmin
      * @throws SmartyException
      */
     function homeAdmin($utente, $list, $immagine) {
+        if (CAdmin::isLogged()) $this->smarty->assign('userLogged', 'admin');
+
         $this->smarty->assign('utente', $utente);
         $this->smarty->assign('list', $list);
         $this->smarty->assign('immagine', $immagine);
@@ -75,8 +77,8 @@ class VAdmin
      * @return void
      * @throws SmartyException
      */
-    public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo){
-        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+    public function profiloAdmin($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo){
+        if (CAdmin::isLogged()) $this->smarty->assign('userLogged', 'admin');
         $this->smarty->assign('utentedp',$utente_del_profilo);
 
         $this->smarty->assign('utente',$utente);

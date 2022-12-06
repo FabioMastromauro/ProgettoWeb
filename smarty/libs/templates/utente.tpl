@@ -24,7 +24,7 @@
 <body style="margin-top: 70px">
 
 
-<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px;">
+<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
         <span class="navbar-brand" >LOCAL MARKETPLACE</span>
@@ -36,12 +36,21 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
+                {if $userLogged == 'admin'}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                    </li>
+                {/if}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
-                {if $userLogged != 'nouser'}
+                {if $userLogged =='admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
+                </li>
+                {elseif $userLogged != 'nouser'}
+                <li class="nav-item">
+                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
 
             </ul>
@@ -59,17 +68,14 @@
             {/if}
 
 
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                <button class="btn btn-dark" type="submit" >Search</button>
-            </form>
+            <!-- <form class="d-flex" role="search">
+                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                 <button class="btn btn-dark" type="submit" >Search</button>
+             </form> -->
 
         </div>
     </div>
 </nav>
-
-
-
 
 <div class="container">
     <div class="main-body">
@@ -132,7 +138,7 @@
                             </div>
                         </div>
                         <hr>
-                        {if $userLogged == 'logged'}
+                        {if $userLogged == 'admin'}
                             {if $utente->getIdUser() == $udp->getIdUser()}
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                                     Modifica
@@ -161,7 +167,7 @@
                     </div>
                 </div>
             </div>
-            {if $userLogged == 'logged'}
+            {if $userLogged == 'admin'}
                 {if $utente->getIdUser() == $udp->getIdUser()}
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creaAnnuncio">
                         Crea nuovo annuncio
@@ -190,7 +196,7 @@
                                 <div>    <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
                                     <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
                                     <a  href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
-                                    {if $userLogged=='logged'}
+                                    {if $userLogged=='admin'}
                                             <form action="/localmp/Admin/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}&utente={$utente->getIdUser()}" method="post">
                                                 <input type="submit" value="cancella">
                                             </form>
@@ -234,7 +240,7 @@
 
                         {/if}
                         <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
-                        {if $userLogged=='logged'}
+                        {if $userLogged=='admin'}
                                 <form action="/localmp/Admin/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
                                     <input type="submit" value="cancella">
                                 </form>
@@ -259,7 +265,7 @@
             {/if}
 
         </div>
-        {if $userLogged=='logged'}
+        {if $userLogged=='admin'}
 
         <form  action="/localmp/Admin/scriviRecensione" method="POST">
 

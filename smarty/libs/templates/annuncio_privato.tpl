@@ -28,12 +28,21 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
+                {if $userLogged == 'admin'}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                    </li>
+                {/if}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
-                {if $userLogged!='nouser'}
+                {if $userLogged =='admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Utente/profilo">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
+                </li>
+                {elseif $userLogged != 'nouser'}
+                <li class="nav-item">
+                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
                 </li>
 
             </ul>
@@ -51,15 +60,14 @@
             {/if}
 
 
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                <button class="btn btn-dark" type="submit" >Search</button>
-            </form>
+            <!-- <form class="d-flex" role="search">
+                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                 <button class="btn btn-dark" type="submit" >Search</button>
+             </form> -->
 
         </div>
     </div>
 </nav>
-
 
 <div class="container" >
     <section>
