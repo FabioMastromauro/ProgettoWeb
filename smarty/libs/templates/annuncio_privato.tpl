@@ -176,8 +176,8 @@
                                     <div class="card-body">
                                         <form class="form-inline" method="POST" action="/localmp/Utente/profilo?id={$utente->getIdUser()}">
                                             <input type="text" hidden name="email" value="?" />
-                                            {if $utente->getIdFoto()!=null}
-                                            <input type="image" src="data:{$utente->getTipo()};base64,{$utente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>
+                                            {if $fotoUtente->getIdFoto()!=null}
+                                            <input type="image" src="data:{$fotoUtente->getTipo()};base64,{$fotoUtente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>
                                                 </form>
                                             {else}
                                                 <input type="image" src="/localmp/smarty/libs/images/login.png" style="border-radius: 50%;" width="90" height="90"/>

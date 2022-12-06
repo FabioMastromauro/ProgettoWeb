@@ -75,9 +75,24 @@ class VAdmin
      * @return void
      * @throws SmartyException
      */
-    function profiloUtente($utente) {
-        $this->smarty->assign('utente', $utente);
-        //$this->smarty->assign('immagine', $immagine);
+    public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo){
+        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        $this->smarty->assign('utentedp',$utente_del_profilo);
+
+        $this->smarty->assign('utente',$utente);
+        $this->smarty->assign('annuncio', $annunci);
+        $this->smarty->assign('immagini', $immagini);
+        $this->smarty->assign('foto_utente', $fotoUtente);
+        $this->smarty->assign('fotoAutori', $fotoAutori);
+        //$this->smarty->assign('facebook', $facebook);
+        //$this->smarty->assign('instagram', $instagram);
+        $this->smarty->assign('idutente', $idutente);
+        $this->smarty->assign('categoria',$categoria);
+        $this->smarty->assign('autori',$autori);
+        $this->smarty->assign('foto_recensori',$foto_recensori);
+        $this->smarty->assign('recensione',$recensione);
+        $this->smarty->assign('udp',$utente_del_profilo);
         $this->smarty->display('utente.tpl');
+
     }
 }

@@ -389,8 +389,7 @@ class CUtente
          * @param $id
          * @return void
          */
-        public
-        static function scriviRecensione()
+        public static function scriviRecensione()
         {
             $pm = USingleton::getInstance('FPersistentManager');
             $session = USingleton::getInstance('USession');

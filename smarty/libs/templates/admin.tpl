@@ -14,7 +14,7 @@
 <body>
 <div class="padding">
     <div class="d-flex">
-        <div class="flex-shrink-0"><img class="rounded-circle" src="/localmp/smarty/libs/images/neonmarket.jpg" width=100 height=100 alt="..." /></div>
+        <div class="flex-shrink-0"><img class="rounded-circle" src="/localmp/smarty/libs/images/neonmarket.png" width=100 height=100 alt="..." /></div>
         <div class="ms-3">
             <h3 class="m-b-0">{$utente->getNome()} {$utente->getCognome()}</h3>
             <p class="text-muted">Amministratore</p>
@@ -42,7 +42,7 @@
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
                                 <div class="card-body p-4">
-                                    <a href="/localmp/Admin/profiloUtente/{$list[$i]->getIdUser()}" >{$list[$i]->getNome()} {$list[$i]->getCognome()}</a>
+                                    <a href="/localmp/Admin/profiloUtente?id={$list[$i]->getIdUser()}" >{$list[$i]->getNome()} {$list[$i]->getCognome()}</a>
                                 </div>
                             </div>
                         </div>
