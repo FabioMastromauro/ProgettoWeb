@@ -171,7 +171,7 @@ class CAnnunci
         $autore = $pm::load('FUtente', array(['idUser','=',$annuncio->getIdVenditore()]));
         $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio','=',$id]));
         if(!is_array($foto)) $foto= array($foto);
-        $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
+        $fotoUtente = $pm::load('FFotoUtente', array(['idUser','=',$autore->getIdUser()]));
         $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
         $tutteCategorie = $pm::loadAll('FCategoria');
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria,$tutteCategorie);
