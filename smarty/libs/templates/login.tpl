@@ -93,6 +93,7 @@
     </form>
     </div>
 </div>
+
 {if $ban == 1 && $fine_ban != ''}
     <script>alert("Sei stato bannato fino al {$fine_ban}")</script>
 {/if}
@@ -112,9 +113,6 @@
     <script>alert("Email già esistente")</script>
 {/if}
 
-{if $emailExist != 'errorExist' && $password != 'errorPassword' && $emailRegex != 'errorRegex' && $error != 'errore'}
-    <script>alert("Si prega di controllare la mail e di fare il login con il codice di verifica")</script>
-{/if}
 <main>
     <form method="POST" action="/localmp/Utente/login">
         <div class="row">

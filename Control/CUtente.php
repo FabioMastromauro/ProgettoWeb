@@ -169,6 +169,7 @@ class CUtente
         } else {
             $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
 
+            echo'<script>alert("Si prega di controllare la mail e di fare il login con il codice di verifica")</script>';
             $view->mailer($_POST['email'], $_POST['nome'], $verification_code);
 
 
