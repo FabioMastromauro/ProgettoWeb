@@ -11,11 +11,9 @@
     <!-- Favicon-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Favicon-->
-    <!--link rel="icon" type="image/x-icon" href="/chefskiss/smarty/libs/assets/chef-hat.png" /> -->
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/localmp/smarty/libs/css/boot_styles.css" rel="stylesheet" />
 </head>
-
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -59,15 +57,19 @@
         </div>
     </div>
 </nav>
-
 <body>
-
 <!-- Page header with logo and tagline-->
 <header class="py-5 bg-light border-bottom mb-4">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder">Benvenuto negli annunci</h1>
+            <h1 class="fw-bolder">Benvenuto negli Annunci!</h1>
             <p class="lead mb-0">Esplora gli annunci che ti appassionano di più!</p>
+            {if $tipoerr == 'no_categoria'}
+                <p>Non è presente alcun annuncio della categoria: {$input}</p>
+            {/if}
+            {if $tipoerr == 'no_ricerca'}
+                <p>Non è presente alcun annuncio come: {$input}</p>
+            {/if}
         </div>
     </div>
 </header>

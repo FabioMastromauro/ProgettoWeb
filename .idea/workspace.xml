@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="creato utente.tpl....">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CRicerca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CAnnunci.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VAnnunci.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAnnunci.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +126,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7435d7af-3fa8-4789-acb4-79abebb53b5d" name="Changes" comment="" />
+      <changelist id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl" />
       <created>1650905617580</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -193,13 +195,8 @@
       <workItem from="1669887469650" duration="1007000" />
       <workItem from="1669889585710" duration="899000" />
       <workItem from="1669931785644" duration="1257000" />
-    </task>
-    <task id="LOCAL-00131" summary="Aggiunto controllo post in CFrontController.php e aggiunto / in VUtente.php">
-      <created>1666621423670</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1666621423671</updated>
+      <workItem from="1670246921807" duration="1269000" />
+      <workItem from="1670276022384" duration="2224000" />
     </task>
     <task id="LOCAL-00132" summary="Aggiunto metodo loadDefCol in FPersistentManager.php e FDatabase.php">
       <created>1666625257201</created>
@@ -537,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669934295844</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl">
+      <created>1669993014920</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1669993014920</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock CRecensione.php" />
     <MESSAGE value="aggiunto php docBlock CFrontController.php" />
     <MESSAGE value="aggiunto php docBlock CAnnunci.php" />
     <MESSAGE value="aggiunto php docBlock CAdmin.php" />
@@ -593,7 +596,8 @@
     <MESSAGE value="Creata VContatti.php e aggiunti PHPDOC" />
     <MESSAGE value="creato utente.tpl" />
     <MESSAGE value="creato utente.tpl...." />
-    <option name="LAST_COMMIT_MESSAGE" value="creato utente.tpl...." />
+    <MESSAGE value="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -52,8 +52,8 @@ class VAnnunci
      * Metodo che permette di acquisire i dati immessi nel campo input
      * @return mixed
      */
-    static function getRicerca(){
-        return $_POST['ricerca'];
+    static function getTestoRicerca(){
+        return $_POST['text'];
     }
 
     /**
@@ -171,7 +171,7 @@ class VAnnunci
         $this->smarty->assign('input', $input);
         $this->smarty->assign('categorie', $categorie);
 
-        $this->smarty->display('showAllRev.tpl');
+        $this->smarty->display('prova2.tpl');
     }
 
     /**
@@ -197,7 +197,7 @@ class VAnnunci
         $this->smarty->assign('num_annunci', $num_annunci);
         $this->smarty->assign('categorie', $categorie);
 
-        $this->smarty->display('annunci.tpl');
+        $this->smarty->display('prova.tpl');
     }
 
     /**

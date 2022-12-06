@@ -106,7 +106,7 @@
                 <div class="text-bg">
 
                     <p class="lead" style="font-size: 30px">Lasciati ispirare...</p>
-                    <a href="/localmp/Annunci/annunciHome" type="button" class="btn btn-dark">Tutti gli annunci</a>
+                    <a href="/localmp/Annunci/esploraAnnunci" type="button" class="btn btn-dark">Tutti gli annunci</a>
 
                 </div>
             </div>
