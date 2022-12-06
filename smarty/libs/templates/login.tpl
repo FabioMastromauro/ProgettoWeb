@@ -82,12 +82,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <input class="btn btn-primary" type="submit" value="Registrati" onclick="avvisoNotifica()">
-                        <script>
-                            function avvisoNotifica() {
-                                alert("Si prega di controllare la mail e di fare il login con il codice di verifica");
-                            }
-                        </script>
+                        <input class="btn btn-primary" type="submit" value="Registrati">
                     </div>
                 </form>
             </div>
@@ -115,6 +110,10 @@
 
 {if $emailExist == 'errorExist'}
     <script>alert("Email già esistente")</script>
+{/if}
+
+{if $emailExist != 'errorExist' && $password != 'errorPassword' && $emailRegex != 'errorRegex' && $error != 'errore'}
+    <script>alert("Si prega di controllare la mail e di fare il login con il codice di verifica")</script>
 {/if}
 <main>
     <form method="POST" action="/localmp/Utente/login">
