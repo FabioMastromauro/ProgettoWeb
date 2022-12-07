@@ -26,8 +26,11 @@ class VContatti
      * @throws SmartyException
      */
     public function contact(){
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
-        else{ $this->smarty->assign('userlogged', 'nouser');}
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        elseif (CUtente::isLogged())  $this->smarty->assign('userLogged', 'loggato');
+        else $this->smarty->assign('userLogged', 'nouser');
+
+
         $this->smarty->display('about_us.tpl');
     }
 }
