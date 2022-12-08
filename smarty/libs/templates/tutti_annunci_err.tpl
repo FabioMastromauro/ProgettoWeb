@@ -244,25 +244,18 @@
                         <div class="card-header">Categorie</div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        {$value = sizeof($categorie)/2}
+                                <div class="col-sm-6 dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</button>
+                                    <ul class="dropdown-menu">
                                         {if $categorie != null}
                                         {if is_array($categorie)}
-                                        {for $i = 0; $i < (int)$value; $i++}
-                                            <li><a href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getCategoria()}">{$categorie[$i]->getCategoria()}</a></li>
-                                        {/for}
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        {for $i = $value; $i < sizeof($categorie); $i++}
-                                            <li><a href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getCategoria()}">{$categorie[$i]->getCategoria()}</a></li>
+                                        {for $i = 0; $i < sizeof($categorie); $i++}
+                                            <li><a class="dropdown-item" href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getIdCate()}">{$categorie[$i]->getCategoria()}</a></li>
                                         {/for}
                                     </ul>
                                 </div>
                                 {else}
-                                <li><a href="/localmp/Annunci/cerca?categoria={$categorie->getCategoria()}">{$categorie->getCategoria()}</a></li>
+                                <li><a href="/localmp/Annunci/cerca?categoria={$categorie->getIdCate()}">{$categorie->getCategoria()}</a></li>
                                 </ul>
                             </div>
                             {/if}

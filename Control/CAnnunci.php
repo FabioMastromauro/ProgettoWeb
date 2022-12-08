@@ -233,9 +233,9 @@ class CAnnunci
                 setcookie('annuncio_ricerca', $data);
                 setcookie('searchOn', 1);
             }
-            header('Location: /localmp/Annunci/esploraAnnunci/cerca');
+            header('Location: /localmp/Annunci/esploraAnnunci?='.$array);
         }
-        else{
+        else {
             $j = 0;
             $array = null;
             $parametro = VAnnunci::getTestoRicerca();
