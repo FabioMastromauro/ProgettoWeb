@@ -16,50 +16,6 @@
     <link href="/localmp/smarty/libs/css/boot_styles.css" rel="stylesheet" />
 </head>
 
-<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
-    <div class="container-fluid">
-        <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
-        <span class="navbar-brand" >LOCAL MARKETPLACE</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
-                </li>
-                {if $userlogged != 'nouser'}
-                <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
-                </li>
-
-            </ul>
-
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
-
-            {else}
-
-            </ul>
-
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
-
-            {/if}
-
-
-            <!-- <form class="d-flex" role="search">
-                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                 <button class="btn btn-dark" type="submit" >Search</button>
-             </form> -->
-
-        </div>
-    </div>
-</nav>
-
 <body>
 
 <!-- Page header with logo and tagline-->
@@ -67,7 +23,19 @@
     <div class="container">
         <div class="text-center my-5">
             <h1 class="fw-bolder">Benvenuto negli annunci</h1>
-            <p class="lead mb-0">Esplora gli annunci che ti appassionano di più!</p>
+            <p class="lead mb-0">Esplora gli annunci che ti appassionano di più<!doctype html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport"
+                          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <title>Document</title>
+                </head>
+                <body>
+                
+                </body>
+                </html></p>
         </div>
     </div>
 </header>
@@ -133,7 +101,7 @@
                             <!-- Blog post-->
                             {if count($annunci) >= 4}
                                 <div class="card mb-4">
-                                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci[3]->getIdAnnuncio()}"><img class="card-img-top" src="data:{$immagini[3]->getTipo()};base64,{$immagini[3]->getFoto()}" width=900 height=400 alt="..." /></a>
+                                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci[3]->getIdAnnuncio()}"><img class="card-img-top" src="data:{$immagini[3][0]->getTipo()};base64,{$immagini[3][0]->getFoto()}" width=900 height=400 alt="..." /></a>
                                     <div class="card-body">
                                         <h2 class="card-title h4">{$annunci[3]->getTitolo()}</h2>
                                         <p class="card-text">{substr($annunci[3]->getDescrizione(), 0, 100)}...</p>
@@ -232,7 +200,6 @@
                             <form method="POST" action="/localmp/Annunci/cerca">
                                 <div class="input-group">
                                     <input class="form-control" name="text" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                    <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
                                 </div>
                             </form>
                         </div>

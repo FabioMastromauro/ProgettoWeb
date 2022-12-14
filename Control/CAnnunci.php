@@ -60,8 +60,8 @@ class CAnnunci
      */
     static function esploraAnnunci($cerca=null, $index=null){
 
-        $annunci_per_pagina = 5;
 
+        $annunci_per_pagina = 5;
         if ($cerca == null && isset($_COOKIE['searchOn'])) {
             if ($_COOKIE['searchOn'] == 1) self::searchOff();
         }
@@ -95,29 +95,49 @@ class CAnnunci
         }
         if (!isset($_COOKIE['annuncio_ricerca']) || $data[0] == 'no_categoria' || $data[0] == 'no_ricerca') {
             if ($new_index * $annunci_per_pagina <= $num_annunci) {
-                $annunci_pag = $pm::load('FAnnuncio', array(['idAnnuncio', '>', ($new_index - 1) * $annunci_per_pagina]), '', $annunci_per_pagina);
+                $annunci = $pm::load('FAnnuncio');
+                if ($annunci_per_pagina * $new_index > count($annunci)) $annPag = (count($annunci) % $annunci_per_pagina) + $annunci_per_pagina*($new_index-1);
+                else $annPag = $annunci_per_pagina * $new_index;
+                for ($i = ($new_index - 1) * $annunci_per_pagina; $i < $annPag; $i++) {
+                    $annunci_pag[] = $annunci[$i];
+
+
+                }
             } else {
-                $limite = $num_annunci % $annunci_per_pagina;
-                $annunci_pag = $pm::load('FAnnuncio', array(['idAnnuncio', '>', $new_index * $annunci_per_pagina - $annunci_per_pagina]), '', $limite);
+                $limite = $num_annunci % $annunci_per_pagina + ($new_index-1)  * $annunci_per_pagina;
+                $annunci = $pm::load('FAnnuncio');
+
+                for ($i = ($new_index - 1) * $annunci_per_pagina; $i < $limite; $i++) {
+                    $annunci_pag[] = $annunci[$i];
+
+
+                }
             }
 
             if (is_array($annunci_pag)) {
                 for ($i = 0; $i < sizeof($annunci_pag); $i++) {
                     $immagini[$i] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_pag[$i]->getIdAnnuncio()]));
+                    if(!is_array($immagini[$i])) $immagini[$i]=array($immagini[$i]);
+
                 }
             } else {
                 $immagini = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_pag->getIdAnnuncio()]));
+                if(!is_array($immagini)) $immagini=array($immagini);
+
             }
-        } else {
+        }
+        //con categori o ricerca
+        else {
             if ($new_index * 5 <= $num_annunci){
-                for ($i = 0; $i < 5; $i++) {
+                for ($i = ($new_index - 1)*$annunci_per_pagina; $i <$annunci_per_pagina * $new_index ; $i++) {
                     $annunci_pag[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['idAnnuncio']]));
                 }
             } else {
                 if (isset($data['titolo'])){
                     $annunci_pag = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data['idAnnuncio']]));
                 } else if (is_array($data[0])){
-                    for ($i = 0; $i < count($data); $i++) {
+                    $limite= (count($data) % $annunci_per_pagina) + $annunci_per_pagina * ($new_index-1);
+                    for ($i =($new_index - 1)*$annunci_per_pagina; $i <$limite ; $i++) {
                         $annunci_pag[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data[$i]['idAnnuncio']]));
                     }
                 }
@@ -125,15 +145,17 @@ class CAnnunci
             if (is_array($annunci_pag)) {
                 for ($i = 0; $i < sizeof($annunci_pag); $i++) {
                     $immagini[$i] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_pag[$i]->getIdAnnuncio()]));
+                    if(!is_array($immagini[$i])) $immagini[$i]=array($immagini[$i]);
                 }
             } else {
                 $immagini = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_pag->getIdAnnuncio()]));
+                if(!is_array($immagini)) $immagini=array($immagini);
+
             }
         }
         $view = new VAnnunci();
 
         $cerca = 'cerca';
-
         if(isset($data)){
             if($data[0] == 'no_categoria' || $data[0] == 'no_ricerca') $view->showAllErr($annunci_pag, $page_number, $new_index, $num_annunci, $immagini, $cerca, $data[0], $data[1], $categorie);
             else $view->showAll($annunci_pag, $page_number, $new_index, $num_annunci, $immagini, $cerca, $categorie);
@@ -171,11 +193,12 @@ class CAnnunci
         $autore = $pm::load('FUtente', array(['idUser','=',$annuncio->getIdVenditore()]));
         $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio','=',$id]));
         if(!is_array($foto)) $foto= array($foto);
-        $fotoUtente = $pm::load('FFotoUtente', array(['idFoto','=',$autore->getIdFoto()]));
+        $fotoUtente = $pm::load('FFotoUtente', array(['idUser','=',$autore->getIdUser()]));
         $categoria = $pm::load('FCategoria',array(['idCate','=',$annuncio->getCategoria()]));
         $tutteCategorie = $pm::loadAll('FCategoria');
         $view->showInfo($annuncio, $autore, $mod, $foto, $fotoUtente,$categoria,$tutteCategorie);
     }
+
 
     /**
      * Metodo che permette la raccolta di tutti gli autori, annunci e foto che
@@ -211,8 +234,9 @@ class CAnnunci
      */
     static function cerca($categoria=null){
         $pm = USingleton::getInstance('FPersistentManager');
+        if(isset($categoria)) $categoria=$pm::load('FCategoria',array(['idCate','=',$categoria]));
         if($categoria != null){
-            $annunci = $pm::load('FAnnuncio', array(['categoria', '=', $categoria]));
+            $annunci = $pm::load('FAnnuncio', array(['categoria', '=', $categoria->getIdCate()]));
             if($annunci != null){
                 if (is_array($annunci)){
                     for($i = 0; $i < sizeof($annunci); $i++){
@@ -229,11 +253,11 @@ class CAnnunci
                 setcookie('searchOn', 1);
             }
             else{
-                $data = serialize(['no_categoria', $categoria]);
+                $data = serialize(['no_categoria', $categoria->getCategoria()]);
                 setcookie('annuncio_ricerca', $data);
                 setcookie('searchOn', 1);
             }
-            header('Location: /localmp/Annunci/esploraAnnunci?='.$array);
+            header('Location: /localmp/Annunci/esploraAnnunci/cerca');
         }
         else {
             $j = 0;
