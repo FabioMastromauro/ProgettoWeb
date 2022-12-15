@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="../css/purchase.css" rel="stylesheet">
+    <link href="/localmp/smarty/libs/css/purchase.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 
             <div class="card">
                 <address>
-                    {$nome} {$cognome} <br /><br />
+                    {$utente->getNome()} {$utente->getCognome()} <br /><br />
                     <label for="città">città:</label>
                     <input type="text" style="background-color: #f3e9e9"  id="città" name="città"><br> <br />
                     <label for="indirizzo">indirizzo:</label>
@@ -68,14 +68,14 @@
                 <tfoot>
                 <tr>
                     <td>Total</td>
-                    <td align="right">{$prezzo}</td>
+                    <td align="right">{$annuncio->getPrezzo()}</td>
                 </tr>
                 </tfoot>
             </table>
         </div>
 
         <div>
-            <a href="/localmp/Annunci/acquistoCompletato?idAnnuncio={$annuncio->getIdAnnuncio}" class="button button--full" type="submit"><svg class="icon">
+            <a href="/localmp/Annunci/acquistoCompletato?idAnnuncio={$annuncio->getIdAnnuncio()}" class="button button--full" type="submit"><svg class="icon">
                     <use xlink:href="#icon-shopping-bag" />
                 </svg>Completa acquisto</a>
         </div>

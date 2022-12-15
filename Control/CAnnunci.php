@@ -444,7 +444,7 @@ class CAnnunci
             $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
             if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
                 $view = new VAnnunci();
-                $view->schermataAcquisto($utente->getNome(), $utente->getCognome(), $annuncio->getPrezzo());
+                $view->schermataAcquisto($utente, $annuncio);
             } else {
                 header('Location: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $idAnnuncio);
             }

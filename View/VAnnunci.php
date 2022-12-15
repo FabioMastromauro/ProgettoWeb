@@ -205,11 +205,10 @@ class VAnnunci
      * @return void
      * @throws SmartyException
      */
-    function schermataAcquisto($nome, $cognome, $prezzo) {
+    function schermataAcquisto($utente, $annuncio) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
-        $this->smarty->assign('nome', $nome);
-        $this->smarty->assign('cognome', $cognome);
-        $this->smarty->assign('prezzo', $prezzo);
+        $this->smarty->assign('annuncio', $annuncio);
+        $this->smarty->assign('utente', $utente);
 
         $this->smarty->display('purchase.tpl');
     }
