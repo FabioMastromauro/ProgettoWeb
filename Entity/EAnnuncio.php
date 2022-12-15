@@ -12,6 +12,7 @@ class EAnnuncio implements JsonSerializable
     private  $idCompratore;
     private  $categoria;
     private  $ban;
+    private $acquistato;
 
     /**
      * @param  $titolo
@@ -24,7 +25,7 @@ class EAnnuncio implements JsonSerializable
      * @param  $idCompratore
      * @param  $categoria
      */
-    public function __construct( $titolo,  $descrizione,  $prezzo,  $data,   $idVenditore,  $idCompratore,  $categoria,  $ban,$idAnnuncio=null)
+    public function __construct( $titolo,  $descrizione,  $prezzo,  $data,   $idVenditore,  $idCompratore,  $categoria,  $ban, $idAnnuncio=null, $acquistato)
     {
         $this->titolo = $titolo;
         $this->descrizione = $descrizione;
@@ -34,7 +35,8 @@ class EAnnuncio implements JsonSerializable
         $this->idCompratore = $idCompratore;
         $this->categoria = $categoria;
         $this->ban = $ban;
-        $this->idAnnuncio=$idAnnuncio;
+        $this->idAnnuncio = $idAnnuncio;
+        $this->acquistato = $acquistato;
     }
 
 
@@ -182,22 +184,21 @@ class EAnnuncio implements JsonSerializable
         $this->ban = $ban;
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getAcquistato()
+    {
+        return $this->acquistato;
+    }
 
     /**
-    public function addFoto($id): void{
-    array_push($this->arrayFoto);
-    }
-
-    public function remFoto($id): void{
-    foreach ($this->arrayFoto as $f => $foto){
-    if ($foto == $id){
-    unset($this->arrayFoto[$f]);
-    }
-    }
-    }
+     * @param mixed $acquistato
      */
-
+    public function setAcquistato($acquistato): void
+    {
+        $this->acquistato = $acquistato;
+    }
 
     public function jsonSerialize()
     {
