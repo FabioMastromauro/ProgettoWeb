@@ -210,4 +210,8 @@ class VAnnunci
 
         $this->smarty->display('purchase.tpl');
     }
+
+    function acquistoCompletato() {
+
+    }
 }

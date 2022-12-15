@@ -75,9 +75,9 @@
         </div>
 
         <div>
-            <button class="button button--full" type="submit"><svg class="icon">
+            <a href="/localmp/Annunci/acquistoCompletato?idAnnuncio={$annuncio->getIdAnnuncio}" class="button button--full" type="submit"><svg class="icon">
                     <use xlink:href="#icon-shopping-bag" />
-                </svg>completa acquisto</button>
+                </svg>Completa acquisto</a>
         </div>
     </form>
 </div>

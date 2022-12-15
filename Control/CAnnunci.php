@@ -446,7 +446,25 @@ class CAnnunci
                 $view = new VAnnunci();
                 $view->schermataAcquisto();
             } else {
-                header('Location: /localmp/Annunci/infoAnnuncio/$idAnnuncio');
+                header('Location: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $idAnnuncio);
+            }
+        } else {
+            header("Location: /localmp/Utente/login");
+        }
+    }
+
+    static function acquistoCompletato($idAnnuncio) {
+        $pm = USingleton::getInstance('FPersistentManager');
+        $session = USingleton::getInstance('USession');
+        $utente = unserialize($session->readValue('utente'));
+        if (CUtente::isLogged()) {
+            $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
+            if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
+                $pm::update('acquistato', 1, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
+                $view = new VAnnunci();
+                $view->acquistoCompletato();
+            } else {
+                header('Location to: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $idAnnuncio);
             }
         } else {
             header("Location: /localmp/Utente/login");
