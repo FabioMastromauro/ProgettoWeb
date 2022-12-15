@@ -461,7 +461,7 @@ class CAnnunci
             $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
             $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
             if (!is_array($foto)) $foto = array($foto);
-            $foto = $foto[0]->getFoto();
+            $foto = $foto[0];
             if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
                 $pm::update('acquistato', 1, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
                 $view = new VAnnunci();
