@@ -356,7 +356,7 @@ class CAnnunci
         if (CUtente::isLogged()) {
 
             $utente = unserialize($session->readValue('utente'));
-            $annuncio = new EAnnuncio(VAnnunci::getTitoloAnnuncio(),  VAnnunci::getDescrizioneAnnuncio(),  VAnnunci::getPrezzoAnnuncio(), date('Y/m/d'),$utente->getIdUser(),  null,  VAnnunci::getCategoriaAnnuncio(),  0,null);
+            $annuncio = new EAnnuncio(VAnnunci::getTitoloAnnuncio(),  VAnnunci::getDescrizioneAnnuncio(),  VAnnunci::getPrezzoAnnuncio(), date('Y/m/d'),$utente->getIdUser(),  null,  VAnnunci::getCategoriaAnnuncio(),  0,null, 0);
             $pm::store($annuncio);
             self::upload($annuncio->getIdAnnuncio());
             header('Location: /localmp/Annunci/infoAnnuncio/'.$annuncio->getIdAnnuncio());

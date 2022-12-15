@@ -18,7 +18,7 @@ class FAnnuncio extends FDatabase{
     /**
      * @var string
      */
-    private static $values = '(:titolo, :descrizione, :prezzo, :data, :idVenditore, :idCompratore, :categoria, :ban, :idAnnuncio)';
+    private static $values = '(:titolo, :descrizione, :prezzo, :data, :idVenditore, :idCompratore, :categoria, :ban, :idAnnuncio, :acquistato)';
 
     /**
      * Costruttore
@@ -66,6 +66,7 @@ class FAnnuncio extends FDatabase{
         $stmt->bindValue(':idCompratore', $annuncio->getIdCompratore(), PDO::PARAM_INT);
         $stmt->bindValue(':categoria', $annuncio->getCategoria(), PDO::PARAM_INT);
         $stmt->bindValue(':ban', $annuncio->isBan(), PDO::PARAM_BOOL);
+        $stmt->bindValue(':acquistato', $annuncio->isAcquistato(), PDO::PARAM_BOOL);
     }
 
     /**
@@ -98,7 +99,7 @@ class FAnnuncio extends FDatabase{
         }
         if(($result != null) && ($rows_number == 1)) {
             $annuncio = new EAnnuncio($result['titolo'], $result['descrizione'], $result['prezzo'], $result['data'],
-                $result['idVenditore'],$result['idCompratore'], $result['categoria'], $result['ban'],$result['idAnnuncio']);
+                $result['idVenditore'],$result['idCompratore'], $result['categoria'], $result['ban'], $result['idAnnuncio'], $result['acquistato']);
              //$annuncio->setIdAnnuncio($result['idAnnuncio']);
         }
         else {
@@ -106,7 +107,7 @@ class FAnnuncio extends FDatabase{
                 $annuncio = array();
                 for($i = 0; $i < count($result); $i++){
                     $annuncio[] = new EAnnuncio($result[$i]['titolo'], $result[$i]['descrizione'], $result[$i]['prezzo'],  $result[$i]['data'],
-                        $result[$i]['idVenditore'],$result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban'],$result[$i]['idAnnuncio']);
+                        $result[$i]['idVenditore'],$result[$i]['idCompratore'], $result[$i]['categoria'], $result[$i]['ban'], $result[$i]['idAnnuncio'], $result[$i]['acquistato']);
                     //$annuncio[$i]->setIdAnnuncio($result[$i]['idAnnuncio']);
 
                 }

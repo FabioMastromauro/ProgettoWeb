@@ -169,7 +169,7 @@ class EAnnuncio implements JsonSerializable
     }
 
     /**
-     * @return 
+     * @return mixed
      */
     public function isBan()
     {
@@ -187,7 +187,7 @@ class EAnnuncio implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getAcquistato()
+    public function isAcquistato()
     {
         return $this->acquistato;
     }
