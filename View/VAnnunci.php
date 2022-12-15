@@ -205,13 +205,21 @@ class VAnnunci
      * @return void
      * @throws SmartyException
      */
-    function schermataAcquisto() {
+    function schermataAcquisto($nome, $cognome, $prezzo) {
         if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        $this->smarty->assign('nome', $nome);
+        $this->smarty->assign('cognome', $cognome);
+        $this->smarty->assign('prezzo', $prezzo);
 
         $this->smarty->display('purchase.tpl');
     }
 
-    function acquistoCompletato() {
+    function acquistoCompletato($nome, $titolo, $foto) {
+        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        $this->smarty->assign('nome', $nome);
+        $this->smarty->assign('titolo', $titolo);
+        $this->smarty->assign('foto', $foto);
 
+        $this->smarty->display('purchase_completed.tpl');
     }
 }

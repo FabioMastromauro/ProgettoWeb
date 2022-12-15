@@ -339,7 +339,7 @@ class CAnnunci
             $pm::update('descrizione', $descrizione, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
             $pm::update('categoria', $categoria, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
             $pm::update('prezzo', $prezzo, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
-            header('Location: /localmp/Annunci/infoAnnuncio/'.$idAnnuncio);
+            header('Location: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $idAnnuncio);
         } else {
             header('Location: /localmp/Utente/login');
         }
@@ -359,7 +359,7 @@ class CAnnunci
             $annuncio = new EAnnuncio(VAnnunci::getTitoloAnnuncio(),  VAnnunci::getDescrizioneAnnuncio(),  VAnnunci::getPrezzoAnnuncio(), date('Y/m/d'),$utente->getIdUser(),  null,  VAnnunci::getCategoriaAnnuncio(),  0,null, 0);
             $pm::store($annuncio);
             self::upload($annuncio->getIdAnnuncio());
-            header('Location: /localmp/Annunci/infoAnnuncio/'.$annuncio->getIdAnnuncio());
+            header('Location: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $annuncio->getIdAnnuncio());
         }
         else {
             header('Location: /localmp/Utente/login');
@@ -444,7 +444,7 @@ class CAnnunci
             $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
             if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
                 $view = new VAnnunci();
-                $view->schermataAcquisto();
+                $view->schermataAcquisto($utente->getNome(), $utente->getCognome(), $annuncio->getPrezzo());
             } else {
                 header('Location: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $idAnnuncio);
             }
@@ -459,10 +459,13 @@ class CAnnunci
         $utente = unserialize($session->readValue('utente'));
         if (CUtente::isLogged()) {
             $annuncio = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
+            $foto = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $idAnnuncio]));
+            if (!is_array($foto)) $foto = array($foto);
+            $foto = $foto[0]->getFoto();
             if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
                 $pm::update('acquistato', 1, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
                 $view = new VAnnunci();
-                $view->acquistoCompletato();
+                $view->acquistoCompletato($utente->getNome(), $annuncio->getTitolo(), $foto);
             } else {
                 header('Location to: /localmp/Annunci/infoAnnuncio?idAnnuncio=' . $idAnnuncio);
             }

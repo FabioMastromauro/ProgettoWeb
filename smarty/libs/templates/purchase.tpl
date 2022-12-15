@@ -22,7 +22,7 @@
 
             <div class="card">
                 <address>
-                    {$nome} {cognome} <br /><br />
+                    {$nome} {$cognome} <br /><br />
                     <label for="città">città:</label>
                     <input type="text" style="background-color: #f3e9e9"  id="città" name="città"><br> <br />
                     <label for="indirizzo">indirizzo:</label>
