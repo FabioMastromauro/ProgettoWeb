@@ -2,7 +2,7 @@
 
 /**
  * Classe che viene usata per richiamare l'unica istanza delle classi, senza
- * stare a crearne un nuovo oggetto ogni volta
+ * starne a creare un nuovo oggetto ogni volta
  * @author Gruppo7
  * @package Foundation/Utility
  */
