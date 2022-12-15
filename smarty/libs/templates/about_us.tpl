@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-{assign var = 'userLogged' value=$userLogged|default:'nouser'}
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,11 +6,15 @@
     <title>Local Marketplace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/localmp/smarty/libs/css/AboutUs.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,800,400' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/localmp/smarty/libs/css/AboutUs.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,800,400' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+
 </head>
 
-<body>
+
+
+
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -25,13 +27,27 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
+                {if $userLogged == 'admin'}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                    </li>
+                {/if}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
-                {if $userlogged != 'nouser'}
+                {if $userLogged =='admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
                 </li>
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+
+            {elseif $userLogged != 'nouser'}
+            <li class="nav-item">
+                <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+            </li>
 
             </ul>
 
@@ -48,14 +64,16 @@
             {/if}
 
 
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-                <button class="btn btn-dark" type="submit" >Search</button>
-            </form>
+            <!-- <form class="d-flex" role="search">
+                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+                 <button class="btn btn-dark" type="submit" >Search</button>
+             </form> -->
 
         </div>
     </div>
 </nav>
+
+<body>
 <div class="slider--teams">
     <div class="slider--teams__team">
         <ul id="list" class="cf">
@@ -101,14 +119,10 @@
                     </figcaption>
                 </figure>
             </li>
-
-
-
-
-
         </ul>
     </div>
 </div>
+
 <div class="container" style="margin-top: 100px">
     <h1 style="font-size: 30px"><b>Scegli Localmp!</b></h1>
     <p style="font-size: 20px">
@@ -119,7 +133,6 @@
     </p>
 </div>
 <!-- partial -->
-
 </body>
 </html>
 

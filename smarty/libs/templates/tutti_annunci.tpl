@@ -16,6 +16,7 @@
     <link href="/localmp/smarty/libs/css/boot_styles.css" rel="stylesheet" />
 </head>
 
+
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -28,13 +29,27 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
+                {if $userLogged == 'admin'}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                    </li>
+                {/if}
                 <li class="nav-item">
                     <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
-                {if $userlogged != 'nouser'}
+                {if $userLogged =='admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
                 </li>
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+
+            {elseif $userLogged != 'nouser'}
+            <li class="nav-item">
+                <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+            </li>
 
             </ul>
 
@@ -59,7 +74,6 @@
         </div>
     </div>
 </nav>
-
 <body>
 
 <!-- Page header with logo and tagline-->
@@ -67,7 +81,19 @@
     <div class="container">
         <div class="text-center my-5">
             <h1 class="fw-bolder">Benvenuto negli annunci</h1>
-            <p class="lead mb-0">Esplora gli annunci che ti appassionano di più!</p>
+            <p class="lead mb-0">Esplora gli annunci che ti appassionano di più<!doctype html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport"
+                          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <title>Document</title>
+                </head>
+                <body>
+                
+                </body>
+                </html></p>
         </div>
     </div>
 </header>
@@ -133,7 +159,7 @@
                             <!-- Blog post-->
                             {if count($annunci) >= 4}
                                 <div class="card mb-4">
-                                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci[3]->getIdAnnuncio()}"><img class="card-img-top" src="data:{$immagini[3]->getTipo()};base64,{$immagini[3]->getFoto()}" width=900 height=400 alt="..." /></a>
+                                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci[3]->getIdAnnuncio()}"><img class="card-img-top" src="data:{$immagini[3][0]->getTipo()};base64,{$immagini[3][0]->getFoto()}" width=900 height=400 alt="..." /></a>
                                     <div class="card-body">
                                         <h2 class="card-title h4">{$annunci[3]->getTitolo()}</h2>
                                         <p class="card-text">{substr($annunci[3]->getDescrizione(), 0, 100)}...</p>
@@ -232,7 +258,6 @@
                             <form method="POST" action="/localmp/Annunci/cerca">
                                 <div class="input-group">
                                     <input class="form-control" name="text" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                    <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
                                 </div>
                             </form>
                         </div>
@@ -242,25 +267,18 @@
                         <div class="card-header">Categorie</div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        {$value = sizeof($categorie)/2}
+                                <div class="col-sm-6 dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</button>
+                                    <ul class="dropdown-menu">
                                         {if $categorie != null}
                                         {if is_array($categorie)}
-                                        {for $i = 0; $i < (int)$value; $i++}
-                                            <li><a href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getCategoria()}">{$categorie[$i]->getCategoria()}</a></li>
-                                        {/for}
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        {for $i = $value; $i < sizeof($categorie); $i++}
-                                            <li><a href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getCategoria()}">{$categorie[$i]->getCategoria()}</a></li>
+                                        {for $i = 0; $i < sizeof($categorie); $i++}
+                                            <li><a class="dropdown-item" href="/localmp/Annunci/cerca?categoria={$categorie[$i]->getIdCate()}">{$categorie[$i]->getCategoria()}</a></li>
                                         {/for}
                                     </ul>
                                 </div>
                                 {else}
-                                <li><a href="/localmp/Annunci/cerca?categoria={$categorie->getCategoria()}">{$categorie->getCategoria()}</a></li>
+                                <li><a href="/localmp/Annunci/cerca?categoria={$categorie->getIdCate()}">{$categorie->getCategoria()}</a></li>
                                 </ul>
                             </div>
                             {/if}

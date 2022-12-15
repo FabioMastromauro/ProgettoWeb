@@ -24,6 +24,8 @@
 <body style="margin-top: 70px">
 
 
+
+
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -48,10 +50,15 @@
                 <li class="nav-item">
                     <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
                 </li>
-                {elseif $userLogged != 'nouser'}
-                <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
-                </li>
+            </ul>
+
+            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+
+            {elseif $userLogged != 'nouser'}
+            <li class="nav-item">
+                <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+            </li>
 
             </ul>
 

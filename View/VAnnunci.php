@@ -159,7 +159,7 @@ class VAnnunci
      * @throws SmartyException
      */
     function showAllErr($annunci, $num_annunci, $num_pagine, $index, $immagini, $cerca, $tipoerr, $input, $categorie){
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
         if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');
 
         $this->smarty->assign('immagini', $immagini);
@@ -187,7 +187,7 @@ class VAnnunci
      * @throws SmartyException
      */
     function showAll($annunci, $num_pagine,$index, $num_annunci, $immagini, $cerca, $categorie){
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
         if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');
 
         $this->smarty->assign('immagini', $immagini);
