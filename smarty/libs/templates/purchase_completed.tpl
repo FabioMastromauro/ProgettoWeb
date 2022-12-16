@@ -9,10 +9,10 @@
     <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <h4 class="text-center">Grazie per aver scelto Local Marketplace!</h4>
-    <p class="text-center">Il tuo acquisto è andato a buon fine</p>
-    <a class="text-center" href="/localmp/Ricerca/blogHome">Torna alla homepage</a>
+<div class="container text-center">
+    <h4>Grazie per aver scelto Local Marketplace!</h4>
+    <p>Il tuo acquisto è andato a buon fine</p>
+    <a href="/localmp/Ricerca/blogHome">Torna alla homepage</a>
 </div>
 
 </body>

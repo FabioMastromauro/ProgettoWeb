@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="aggiustato purchase.tpl">
-      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="creato purchase_completed.tpl">
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +197,7 @@
       <workItem from="1670429200294" duration="1635000" />
       <workItem from="1670939056246" duration="95000" />
       <workItem from="1671123568017" duration="1830000" />
-      <workItem from="1671177949794" duration="1590000" />
-    </task>
-    <task id="LOCAL-00137" summary="correzione percorsi file index.tpl">
-      <created>1667385424912</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1667385424918</updated>
+      <workItem from="1671177949794" duration="1741000" />
     </task>
     <task id="LOCAL-00138" summary="correzione percorsi file index.tpl">
       <created>1667385802845</created>
@@ -543,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671180122735</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="creato purchase_completed.tpl">
+      <created>1671181828726</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1671181828726</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock VRecensione.php" />
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="admin.html e admin.tpl creati" />
     <MESSAGE value="user.html e user.tpl creati" />
@@ -599,7 +597,8 @@
     <MESSAGE value="funziona anche la riceca per categorie" />
     <MESSAGE value="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl" />
     <MESSAGE value="aggiustato purchase.tpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiustato purchase.tpl" />
+    <MESSAGE value="creato purchase_completed.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="creato purchase_completed.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
