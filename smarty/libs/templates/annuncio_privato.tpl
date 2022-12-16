@@ -172,7 +172,7 @@
 
                                         {elseif $mod->getIdUser() != $annuncio->getIdVenditore()}
                                         <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="" style="margin: auto; width: 50%" class="btn btn-primary">Acquista</button>
+                                            <a href="/localmp/Annunci/schermataAcquisto?idAnnuncio={$annuncio->getIdAnnuncio()}" type="button" style="margin: auto; width: 50%" class="btn btn-primary">Acquista</a>
                                         </div>
                                             {else}
                                             <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
