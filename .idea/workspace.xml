@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="aggiustato purchase.tpl">
+      <change afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +198,7 @@
       <workItem from="1670429200294" duration="1635000" />
       <workItem from="1670939056246" duration="95000" />
       <workItem from="1671123568017" duration="1830000" />
-      <workItem from="1671177949794" duration="899000" />
-    </task>
-    <task id="LOCAL-00136" summary="Aggiunto metodo acquisto in VAnnunci.php">
-      <created>1666709559257</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1666709559257</updated>
+      <workItem from="1671177949794" duration="1590000" />
     </task>
     <task id="LOCAL-00137" summary="correzione percorsi file index.tpl">
       <created>1667385424912</created>
@@ -543,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671179950424</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="aggiustato purchase.tpl">
+      <created>1671180122735</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1671180122735</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
     <MESSAGE value="aggiunto php docBlock VRecensione.php" />
     <MESSAGE value="Aggiustamenti vari" />
     <MESSAGE value="admin.html e admin.tpl creati" />
@@ -599,7 +598,8 @@
     <MESSAGE value="la ricerca funziona manca la ricerca per categoria" />
     <MESSAGE value="funziona anche la riceca per categorie" />
     <MESSAGE value="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl" />
+    <MESSAGE value="aggiustato purchase.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiustato purchase.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
