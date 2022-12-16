@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="funziona anche la riceca per categorie">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +198,7 @@
       <workItem from="1670429200294" duration="1635000" />
       <workItem from="1670939056246" duration="95000" />
       <workItem from="1671123568017" duration="1830000" />
-      <workItem from="1671177949794" duration="689000" />
-    </task>
-    <task id="LOCAL-00135" summary="Aggiunto metodo acquisto in CAnnunci.php">
-      <created>1666709398979</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1666709398979</updated>
+      <workItem from="1671177949794" duration="899000" />
     </task>
     <task id="LOCAL-00136" summary="Aggiunto metodo acquisto in VAnnunci.php">
       <created>1666709559257</created>
@@ -543,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670498571382</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl">
+      <created>1671179950408</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1671179950424</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="aggiunto php docBlock CAdmin.php e VAdmin.php" />
     <MESSAGE value="aggiunto php docBlock VAnnunci.php e CAnnunci.php" />
     <MESSAGE value="aggiunto php docBlock VRecensione.php" />
     <MESSAGE value="Aggiustamenti vari" />
@@ -599,7 +598,8 @@
     <MESSAGE value="c'è qualche problema nell'algoritmo di ricerca ma il resto è ok" />
     <MESSAGE value="la ricerca funziona manca la ricerca per categoria" />
     <MESSAGE value="funziona anche la riceca per categorie" />
-    <option name="LAST_COMMIT_MESSAGE" value="funziona anche la riceca per categorie" />
+    <MESSAGE value="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto path per schermata acquisto sul tasto acquista in annuncio_privato.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
