@@ -7,12 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Local Marketplace</title>
-    <!-- Favicon-->
+    <title>Local Marketplace - Annunci</title>
+    <link rel="icon" type="image/x-icon" href="/localmp/smarty/libs/images/logomarket.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Favicon-->
-    <!--link rel="icon" type="image/x-icon" href="/chefskiss/smarty/libs/assets/chef-hat.png" /> -->
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/localmp/smarty/libs/css/boot_styles.css" rel="stylesheet" />
 </head>
 

@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="sorry!">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/verify.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/verify.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,14 +209,8 @@
       <workItem from="1670939056246" duration="95000" />
       <workItem from="1671123568017" duration="1830000" />
       <workItem from="1671177949794" duration="1805000" />
-      <workItem from="1671182366101" duration="176000" />
-    </task>
-    <task id="LOCAL-00139" summary="correzione percorsi file index.tpl">
-      <created>1667391214293</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1667391214293</updated>
+      <workItem from="1671182366101" duration="244000" />
+      <workItem from="1671195796464" duration="836000" />
     </task>
     <task id="LOCAL-00140" summary="aggiunto php DocBlock EUtente.php">
       <created>1667401333970</created>
@@ -544,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671181989597</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl">
+      <created>1671182585836</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1671182585836</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="admin.html e admin.tpl creati" />
     <MESSAGE value="user.html e user.tpl creati" />
     <MESSAGE value="user.html e user.tpl modificati" />
     <MESSAGE value="admi.tpl modificato" />
@@ -600,7 +610,8 @@
     <MESSAGE value="aggiustato purchase.tpl" />
     <MESSAGE value="creato purchase_completed.tpl" />
     <MESSAGE value="sorry!" />
-    <option name="LAST_COMMIT_MESSAGE" value="sorry!" />
+    <MESSAGE value="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
