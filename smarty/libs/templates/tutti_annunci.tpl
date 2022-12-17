@@ -168,7 +168,7 @@
                             <!-- Blog post-->
                             {if count($annunci) == 5}
                                 <div class="card mb-4">
-                                    <a href="/localmp/infoAnnuncio/{$annunci[4]->getIdAnnuncio()}"><img class="card-img-top" src="data:{$immagini[4][0]->getTipo()};base64,{$immagini[4][0]->getFoto()}" width=900 height=400 alt="..." /></a>
+                                    <a href="/localmp/Annunci/infoAnnuncio/{$annunci[4]->getIdAnnuncio()}"><img class="card-img-top" src="data:{$immagini[4][0]->getTipo()};base64,{$immagini[4][0]->getFoto()}" width=900 height=400 alt="..." /></a>
                                     <div class="card-body">
                                         <h2 class="card-title h4">{$annunci[4]->getTitolo()}</h2>
                                         <p class="card-text">{substr($annunci[4]->getDescrizione(), 0, 100)}...</p>

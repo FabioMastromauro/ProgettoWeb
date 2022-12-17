@@ -149,6 +149,9 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                             Modifica
                         </button>
+                                <a type="button" href="/localmp/Utente/storico" class="btn btn-primary">
+                                    Storico
+                                </a>
                             {/if}
                         {/if}
 

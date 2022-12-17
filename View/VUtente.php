@@ -225,5 +225,13 @@ class VUtente
         $this->smarty->display('BannaRecensione.tpl');
 
     }
+    public function storico($annuncio,$utente,$immagini){
+        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+
+        $this->smarty->assign('annuncio',$annuncio);
+        $this->smarty->assign('utente',$utente);
+        $this->smarty->assign('immagini',$immagini);
+        $this->smarty->display('storico.tpl');
+    }
 
 }
