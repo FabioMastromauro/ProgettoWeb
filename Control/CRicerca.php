@@ -19,6 +19,7 @@ class CRicerca
 
 
         $numAnnunci = $pm::getRows('FAnnuncio');
+        if($numAnnunci>6) $numAnnunci=6;
         $ran_num = array();
         $check = 0;
 if($numAnnunci!=0) {
