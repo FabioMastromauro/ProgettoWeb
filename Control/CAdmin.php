@@ -64,7 +64,7 @@ class CAdmin
 
             }
 
-            //Annuncio
+
             if ($annuncio != null) {
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {

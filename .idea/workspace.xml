@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="defeve">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="stronzate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EVerifica.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +201,7 @@
       <workItem from="1671177949794" duration="1805000" />
       <workItem from="1671182366101" duration="244000" />
       <workItem from="1671195796464" duration="1008000" />
-      <workItem from="1671461254402" duration="246000" />
-    </task>
-    <task id="LOCAL-00142" summary="aggiunto php docBlock ERecensione.php">
-      <created>1667403346124</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1667403346124</updated>
+      <workItem from="1671461254402" duration="834000" />
     </task>
     <task id="LOCAL-00143" summary="aggiunto php docBlock ECategoria.php">
       <created>1667403670684</created>
@@ -547,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671196784485</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="stronzate">
+      <created>1671461769614</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1671461769614</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="admi.tpl modificato" />
     <MESSAGE value="admin.tpl modificato" />
     <MESSAGE value="gg" />
     <MESSAGE value="creazione annuncio in profilo_privato.tpl" />
@@ -603,7 +601,8 @@
     <MESSAGE value="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl" />
     <MESSAGE value="titoli e logo aggiunti (o modificati) ai template" />
     <MESSAGE value="defeve" />
-    <option name="LAST_COMMIT_MESSAGE" value="defeve" />
+    <MESSAGE value="stronzate" />
+    <option name="LAST_COMMIT_MESSAGE" value="stronzate" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
