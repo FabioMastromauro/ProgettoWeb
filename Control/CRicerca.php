@@ -19,6 +19,7 @@ class CRicerca
 
 
         $numAnnunci = $pm::getRows('FAnnuncio');
+        if($numAnnunci>6) $numAnnunci=6;
         $ran_num = array();
         $check = 0;
 if($numAnnunci!=0) {
@@ -33,8 +34,7 @@ if($numAnnunci!=0) {
 
         $annunci_id = $pm::loadDefCol('FAnnuncio', array('idAnnuncio'));
         if ($numAnnunci == 1) $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $annunci_id['idAnnuncio']]));
-        else $annunci_home[] = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $annunci_id[$ran_num[$i]]['idAnnuncio']]));
-
+        else $annunci_home[] = $pm::load('FAnnuncio',array(['idAnnuncio', '=', $annunci_id[$ran_num[$i]]['idAnnuncio']]));
         $venditore_annuncio[] = $pm::load('FUtente', array(['idUser', '=', $annunci_home[$i]->getIdVenditore()]));
         $annunci_foto[] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci_home[$i]->getIdAnnuncio()]));
         if (!is_array($annunci_foto[$i])) $annunci_foto[$i] = array($annunci_foto[$i]);

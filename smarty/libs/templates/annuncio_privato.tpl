@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Local Marketplace - Annuncio</title>
-    <link rel="icon" type="image/x-icon" href="/localmp/smarty/libs/images/logomarket.png" />
+    <title>Annuncio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -170,10 +169,13 @@
                                                 <a  href="/localmp/Utente/login" class="btn btn-primary" style="margin: auto; width: 50%">Iscriviti</a>
 
                                             </div>
-
+                                        {else if $annuncio->isAcquistato()==1}
+                                            <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                                                <a type="button" style="margin: auto; width: 50%" class="btn btn-primary">Venduto</a>
+                                            </div>
                                         {elseif $mod->getIdUser() != $annuncio->getIdVenditore()}
                                         <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
-                                            <a href="/localmp/Annunci/schermataAcquisto?idAnnuncio={$annuncio->getIdAnnuncio()}" type="button" style="margin: auto; width: 50%" class="btn btn-primary">Acquista</a>
+                                            <a type="button"  href="/localmp/Annunci/schermataAcquisto?={$annuncio->getIdAnnuncio()}"   style="margin: auto; width: 50%" class="btn btn-primary">Acquista</a>
                                         </div>
                                             {else}
                                             <div class="d-flex justify-content-between align-items-center pb-2 mb-1">

@@ -437,6 +437,29 @@ class CUtente
             }
         }
 
+        public static function storico(){
+            $pm = USingleton::getInstance("FPersistentManager");
+            $session = USingleton::getInstance("USession");
+            $view = new VUtente();
+            if(CUtente::isLogged()){
+                $utente = unserialize($session->readValue("utente"));
+                $annunci= $pm::load('FAnnuncio',array(['idCompratore','=',$utente->getIdUser()]));
+                if(isset($annunci)) {
 
+                    if (!is_array($annunci)) $annunci = array($annunci);
+                    for ($i = 0; $i < count($annunci); $i++) {
+                        $immagini[] = $pm::load('FFotoAnnuncio', array(['idAnnuncio', '=', $annunci[$i]->getIdAnnuncio()]));
+                        if (!is_array($immagini[$i])) $immagini[$i] = array($immagini[$i]);
+                    }
+                    $view->storico($annunci,$utente,$immagini);
+                }
+           else  $view->storico($annunci=null,$utente,$immagini=null);
+
+
+
+            }
+            else header("Location: /localmp/");
+
+        }
 
 }
