@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="stronzate parte 2">
-      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/crea_annuncio.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/mod-profilo.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_pubblico.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/recensione.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/showAllRev.tpl" beforeDir="false" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="clean">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,14 +209,9 @@
       <workItem from="1671177949794" duration="1805000" />
       <workItem from="1671182366101" duration="244000" />
       <workItem from="1671195796464" duration="1008000" />
-      <workItem from="1671461254402" duration="1221000" />
-    </task>
-    <task id="LOCAL-00144" summary="aggiunto php docBlock EFoto.php">
-      <created>1667404360440</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1667404360440</updated>
+      <workItem from="1671461254402" duration="2125000" />
+      <workItem from="1671464039703" duration="67000" />
+      <workItem from="1671464795194" duration="675000" />
     </task>
     <task id="LOCAL-00145" summary="aggiunto php docBlock EFotoAnnuncio.php e EFotoUtente.php">
       <created>1667404826005</created>
@@ -551,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671462280063</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <task id="LOCAL-00193" summary="clean">
+      <created>1671462527641</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1671462527641</updated>
+    </task>
+    <option name="localTasksCounter" value="194" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +587,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="gg" />
     <MESSAGE value="creazione annuncio in profilo_privato.tpl" />
     <MESSAGE value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
     <MESSAGE value="adesso profilo_privato.tpl carica anche un singolo annuncio (prima no)" />
@@ -607,7 +611,8 @@
     <MESSAGE value="defeve" />
     <MESSAGE value="stronzate" />
     <MESSAGE value="stronzate parte 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="stronzate parte 2" />
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
