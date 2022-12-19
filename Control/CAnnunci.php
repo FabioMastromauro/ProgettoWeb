@@ -464,7 +464,7 @@ class CAnnunci
             $foto = $foto[0];
             if ($utente->getIdUser() != $annuncio->getIdVenditore()) {
                 $pm::update('acquistato', 1, 'idAnnuncio', $idAnnuncio, 'FAnnuncio');
-                $pm::update('idCompratore',$idCompratore,'idAnnuncio',$idAnnuncio,'FAnnuncio');
+                $pm::update('idCompratore', $idCompratore,'idAnnuncio', $idAnnuncio,'FAnnuncio');
                 $view = new VAnnunci();
                 $view->acquistoCompletato($utente->getNome(), $annuncio->getTitolo(), $foto);
             } else {
