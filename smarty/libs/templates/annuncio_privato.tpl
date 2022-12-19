@@ -276,59 +276,17 @@
         </div>
     </div>
     </form>
-
 </div>
-</div>
-
-
-<footer id="footer">
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="inror_box">
-                        <h3>INFORMAZIONI </h3>
-                        <p>Questo è un sito per la compravendita di oggetti di ogni tipo, è necessario registrarsi per pubblicare annunci mentre non è necessario registrarsi per acquistare oggetti. <a href="#shopnow">Shop now</a> </p>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="inror_box">
-                        <h3>ACCOUNT </h3>
-                        <p>Per registrarsi o loggarsi basta cliccare sulla voce <a href="#searchbar">Login/Registrati</a> in alto a destra. </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="inror_box">
-                        <h3>ABOUT US  </h3>
-                        <p>Federico Civitareale  cellulare: <a href="tel:+39 3450792613">+39 3450792613</a>  email: <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> </p>
-                        <p>Fabio Mastromauro  cellulare: <a href="tel:+39 3890262673">+39 3890262673</a> email: <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> </p>
-                        <p>Giorgio Tarquini cellulare: <a href="tel:+39 3339154764">+39 3339154764</a> email: <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="inror_box">
-                        <h3>SOCIAL CONTACTS  </h3>
-                        <p>Facebook:</p>
-                        <p><a href="https://m.facebook.com/federico.civitareale">Federico Civitareale</a></p>
-                        <p><a href="https://www.facebook.com/fabio.mastromauro.7">Fabio Mastromauro</a></p>
-                        <p><a href="https://www.facebook.com/giorgio.tarquini.5">Giorgio Tarquini</a> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>© 2022 All Rights Reserved.</p>
-                    </div>
-                </div>
+<footer class="bg-light py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0">Copyright &copy; Local Marketplace 2022</div></div>
+            <div class="col-auto">
+                <a class="small" href="Contatti/chiSiamo">Contact</a>
             </div>
         </div>
     </div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -86,7 +86,7 @@
                     <figcaption style="height: 300px">
                         <h2>Fabio</h2>
                         <p>CTO Localmp</p>
-                        <a href="mail to:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> <br>
+                        <a href="mailto:fabio.mastromauro@student.univaq.it">fabio.mastromauro@student.univaq.it</a> <br>
                         <a href="https://www.facebook.com/fabio.mastromauro.7">Facebook</a>
                     </figcaption>
                 </figure>
@@ -100,7 +100,7 @@
                     <figcaption style="height: 300px">
                         <h2>Federico</h2>
                         <p>CEO Localmp</p>
-                        <a href="mail to:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> <br>
+                        <a href="mailto:federico.civitareale@student.univaq.it">federico.civitareale@student.univaq.it</a> <br>
                         <a href="https://www.facebook.com/federico.civitareale">Facebook</a>
                     </figcaption>
                 </figure>
@@ -114,7 +114,7 @@
                     <figcaption style="height: 300px">
                         <h2>Giorgio</h2>
                         <p>Employer Localmp</p>
-                        <a href="mail to:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> <br>
+                        <a href="mailto:giorgio.tarquini1@student.univaq.it">giorgio.tarquini1@student.univaq.it</a> <br>
                         <a href="https://www.facebook.com/giorgio.tarquini.5">Facebook</a>
                     </figcaption>
                 </figure>
@@ -132,7 +132,16 @@
         qualcosa che ti piaccia e viceversa è più probabile che qualcuno acquisti i tuoi oggetti.
     </p>
 </div>
-<!-- partial -->
+<footer class="bg-light py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0">Copyright &copy; Local Marketplace 2022</div></div>
+            <div class="col-auto">
+                <a class="small" href="Contatti/chiSiamo">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
 
