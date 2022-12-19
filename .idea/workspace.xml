@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="stronzate">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Control/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Control/CUtente.php" afterDir="false" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="stronzate parte 2">
+      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/crea_annuncio.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/mod-profilo.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_pubblico.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/recensione.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/showAllRev.tpl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +206,7 @@
       <workItem from="1671177949794" duration="1805000" />
       <workItem from="1671182366101" duration="244000" />
       <workItem from="1671195796464" duration="1008000" />
-      <workItem from="1671461254402" duration="834000" />
-    </task>
-    <task id="LOCAL-00143" summary="aggiunto php docBlock ECategoria.php">
-      <created>1667403670684</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1667403670684</updated>
+      <workItem from="1671461254402" duration="1221000" />
     </task>
     <task id="LOCAL-00144" summary="aggiunto php docBlock EFoto.php">
       <created>1667404360440</created>
@@ -546,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671461769614</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="stronzate parte 2">
+      <created>1671462280063</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1671462280063</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="admin.tpl modificato" />
     <MESSAGE value="gg" />
     <MESSAGE value="creazione annuncio in profilo_privato.tpl" />
     <MESSAGE value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
@@ -602,7 +606,8 @@
     <MESSAGE value="titoli e logo aggiunti (o modificati) ai template" />
     <MESSAGE value="defeve" />
     <MESSAGE value="stronzate" />
-    <option name="LAST_COMMIT_MESSAGE" value="stronzate" />
+    <MESSAGE value="stronzate parte 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="stronzate parte 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
