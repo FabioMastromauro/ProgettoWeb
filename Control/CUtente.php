@@ -271,25 +271,6 @@ class CUtente
         }
     }
 
-
-    /**
-     * Metodo che rimanda alla view che permette la modifica
-     * dei dati personali dell'utente
-     * @return void
-     */
-    static function modificaProfilo()
-    {
-        $pm = USingleton::getInstance("FPersistentManager");
-        $view = new VUtente();
-        $session = USingleton::getInstance("USession");
-        $utente = unserialize($session->readValue("utente"));
-        if (CUtente::isLogged()) {
-            $view->modificaProfilo($utente);
-        } else {
-            header("Location: /localmp/Utente/login");
-        }
-    }
-
     /**
      * Metodo che permette l'upload di una foto al momento della
      * creazione dell'utente o modifica del profilo
@@ -395,7 +376,7 @@ class CUtente
             $session = USingleton::getInstance('USession');
             if (CUtente::isLogged()) {
                 $utente_recensito = unserialize($session->readValue("utente"));
-            }//prende l'utente dell'annuncio
+            }
 
             if ($utente_recensito != null) {
 

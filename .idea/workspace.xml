@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/login.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/verify.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/verify.tpl" afterDir="false" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="stronzate parte 2">
+      <change beforePath="$PROJECT_DIR$/View/VRecensione.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/crea_annuncio.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/mod-profilo.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_pubblico.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/recensione.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/showAllRev.tpl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,35 +205,8 @@
       <workItem from="1671123568017" duration="1830000" />
       <workItem from="1671177949794" duration="1805000" />
       <workItem from="1671182366101" duration="244000" />
-      <workItem from="1671195796464" duration="836000" />
-    </task>
-    <task id="LOCAL-00140" summary="aggiunto php DocBlock EUtente.php">
-      <created>1667401333970</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1667401333970</updated>
-    </task>
-    <task id="LOCAL-00141" summary="aggiunto php blockDoc a EAnnuncio.php">
-      <created>1667402678007</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1667402678007</updated>
-    </task>
-    <task id="LOCAL-00142" summary="aggiunto php docBlock ERecensione.php">
-      <created>1667403346124</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1667403346124</updated>
-    </task>
-    <task id="LOCAL-00143" summary="aggiunto php docBlock ECategoria.php">
-      <created>1667403670684</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1667403670684</updated>
+      <workItem from="1671195796464" duration="1008000" />
+      <workItem from="1671461254402" duration="1221000" />
     </task>
     <task id="LOCAL-00144" summary="aggiunto php docBlock EFoto.php">
       <created>1667404360440</created>
@@ -555,7 +523,35 @@
       <option name="project" value="LOCAL" />
       <updated>1671182585836</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="titoli e logo aggiunti (o modificati) ai template">
+      <created>1671196742776</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1671196742776</updated>
+    </task>
+    <task id="LOCAL-00190" summary="defeve">
+      <created>1671196784485</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1671196784485</updated>
+    </task>
+    <task id="LOCAL-00191" summary="stronzate">
+      <created>1671461769614</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1671461769614</updated>
+    </task>
+    <task id="LOCAL-00192" summary="stronzate parte 2">
+      <created>1671462280063</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1671462280063</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,10 +582,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="user.html e user.tpl creati" />
-    <MESSAGE value="user.html e user.tpl modificati" />
-    <MESSAGE value="admi.tpl modificato" />
-    <MESSAGE value="admin.tpl modificato" />
     <MESSAGE value="gg" />
     <MESSAGE value="creazione annuncio in profilo_privato.tpl" />
     <MESSAGE value="corretto metodo da getAutore a getIdVenditore richiamato in CUtente.php dal metodo profilo (chi si è inventato il metodo getAutore??????)" />
@@ -611,7 +603,11 @@
     <MESSAGE value="creato purchase_completed.tpl" />
     <MESSAGE value="sorry!" />
     <MESSAGE value="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="pusho gli aggiustamenti css di civita sugli annunci in profilo_privato.tpl" />
+    <MESSAGE value="titoli e logo aggiunti (o modificati) ai template" />
+    <MESSAGE value="defeve" />
+    <MESSAGE value="stronzate" />
+    <MESSAGE value="stronzate parte 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="stronzate parte 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
