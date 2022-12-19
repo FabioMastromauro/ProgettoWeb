@@ -26,7 +26,6 @@
 
 
 
-
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -147,11 +146,10 @@
                         </div>
                         <hr>
                         {if $userLogged == 'admin'}
-                            {if $utente->getIdUser() == $udp->getIdUser()}
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
-                                    Modifica
-                                </button>
-                            {/if}
+
+                                <a type="button" href="/localmp/Admin/storico?id={$utente->getIdUser()}" class="btn btn-primary">
+                                    Storico
+                                </a>
                         {/if}
 
                         {if isset($recensione)}

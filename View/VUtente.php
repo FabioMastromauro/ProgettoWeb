@@ -111,7 +111,9 @@ class VUtente
 }
 
     public function profilo($annunci,$utente,$immagini, $fotoUtente, $fotoAutori, $idutente,$categoria,$autori,$foto_recensori,$recensione,$utente_del_profilo){
-        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         $this->smarty->assign('utentedp',$utente_del_profilo);
 
         $this->smarty->assign('utente',$utente);
@@ -132,8 +134,9 @@ class VUtente
     }
 
     public function modificaProfilo($utente){
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
-
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         $this->smarty->assign('utente', $utente);
         $this->smarty->assign('nome', $utente->getNome());
         $this->smarty->assign('cognome', $utente->getCognome());
@@ -226,7 +229,9 @@ class VUtente
 
     }
     public function storico($annuncio,$utente,$immagini){
-        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+       else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+       else $this->smarty->assign('userLogged', 'nouser');
 
         $this->smarty->assign('annuncio',$annuncio);
         $this->smarty->assign('utente',$utente);

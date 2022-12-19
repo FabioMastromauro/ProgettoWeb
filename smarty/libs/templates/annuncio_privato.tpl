@@ -191,7 +191,13 @@
                                 <!-- venditore -->
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
+                                        {$userLogged}
+                                        {if $userLogged!='admin'}
                                         <form class="form-inline" method="POST" action="/localmp/Utente/profilo?id={$utente->getIdUser()}">
+                                            {else}
+                                            <form class="form-inline" method="POST" action="/localmp/Admin/profiloUtente?id={$utente->getIdUser()}">
+
+                                            {/if}
                                             <input type="text" hidden name="email" value="?" />
                                             {if $fotoUtente->getIdFoto()!=null}
                                             <input type="image" src="data:{$fotoUtente->getTipo()};base64,{$fotoUtente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>

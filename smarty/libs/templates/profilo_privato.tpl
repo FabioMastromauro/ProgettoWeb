@@ -145,7 +145,7 @@
                         </div>
                         <hr>
                         {if $userLogged == 'logged'}
-                            {if $utente->getIdUser() == $udp->getIdUser()}
+                            {if $utente->getIdUser() == $udp->getIdUser() || $userLogged=='admin'}
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
                             Modifica
                         </button>

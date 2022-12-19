@@ -73,8 +73,9 @@ class VAnnunci
      * @throws SmartyException
      */
     function showAnnunci($annunci,$foto,$categoria) {
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
-        else{ $this->smarty->assign('userlogged', 'nouser');}
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
 
         if (is_array($annunci)) {
             $numero = rand(0, count($annunci) - 1);
@@ -98,8 +99,9 @@ class VAnnunci
      * @throws SmartyException
      */
     public function modificaAnnuncio($annuncio, $foto, $categoria) {
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
-
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         $this->smarty->assign('annuncio', $annuncio);
         $this->smarty->assign('foto', $foto);
         $this->smarty->assign('descrizione', $annuncio->getDescrizione());
@@ -129,8 +131,9 @@ class VAnnunci
      * @throws SmartyException
      */
     function showInfo($annuncio, $user, $mod, $foto, $immagine_autore,$categoria,$tutteCategoria) {
-        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
-
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         $descrizione = explode('.', $annuncio->getDescrizione());
         $this->smarty->assign('mod', $mod);
         $this->smarty->assign('utente', $user);
@@ -159,7 +162,9 @@ class VAnnunci
      * @throws SmartyException
      */
     function showAllErr($annunci, $num_annunci, $num_pagine, $index, $immagini, $cerca, $tipoerr, $input, $categorie){
-        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');
 
         $this->smarty->assign('immagini', $immagini);
@@ -187,7 +192,9 @@ class VAnnunci
      * @throws SmartyException
      */
     function showAll($annunci, $num_pagine,$index, $num_annunci, $immagini, $cerca, $categorie){
-        if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         if ($cerca != null) $this->smarty->assign('searchMod', 'searchOn');
 
         $this->smarty->assign('immagini', $immagini);
@@ -206,7 +213,9 @@ class VAnnunci
      * @throws SmartyException
      */
     function schermataAcquisto($utente, $annuncio) {
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+        else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+        else $this->smarty->assign('userLogged', 'nouser');
         $this->smarty->assign('annuncio', $annuncio);
         $this->smarty->assign('utente', $utente);
 
@@ -214,7 +223,9 @@ class VAnnunci
     }
 
     function acquistoCompletato($nome, $titolo, $foto) {
-        if (CUtente::isLogged()) $this->smarty->assign('userlogged', 'logged');
+        if(CAdmin::isLogged())$this->smarty->assign('userLogged', 'admin');
+       else if (CUtente::isLogged()) $this->smarty->assign('userLogged', 'logged');
+       else $this->smarty->assign('userLogged', 'nouser');
         $this->smarty->assign('nome', $nome);
         $this->smarty->assign('titolo', $titolo);
         $this->smarty->assign('foto', $foto);
