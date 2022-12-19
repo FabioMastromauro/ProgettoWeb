@@ -70,9 +70,15 @@ class EUtente
      * @var bool|null
      */
     private  $admin;
-
+    /**
+     * Data di verifica di conferma mail
+     * @var DateTime|null
+     */
     private $vemail;
-
+    /**
+     * Codice di verifica email
+     * @var mixed|null
+     */
     private $codice;
 
     //--------------------------------------------COSTRUTTORE---------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,7 +104,7 @@ class EUtente
 
 
     /**
-     * @return mixed|null
+     * @return mixed|null codice di verifica
      */
     public function getCodice()
     {
@@ -106,7 +112,7 @@ class EUtente
     }
 
     /**
-     * @param mixed|null $codice
+     * @param mixed|null $codice codice di verifica
      */
     public function setCodice($codice): void
     {
@@ -114,7 +120,7 @@ class EUtente
     }
 
     /**
-     * @return mixed|null
+     * @return mixed|null data conferma email di verifica
      */
     public function getVemail()
     {
@@ -122,7 +128,7 @@ class EUtente
     }
 
     /**
-     * @param mixed|null $vemail
+     * @param mixed|null $vemail data conferma email di verifica
      */
     public function setVemail(mixed $vemail): void
     {

@@ -24,6 +24,7 @@ class EAnnuncio implements JsonSerializable
      * @param  $idVenditore
      * @param  $idCompratore
      * @param  $categoria
+     * @param $acquistato
      */
     public function __construct( $titolo,  $descrizione,  $prezzo,  $data,   $idVenditore,  $idCompratore,  $categoria,  $ban, $idAnnuncio=null, $acquistato)
     {

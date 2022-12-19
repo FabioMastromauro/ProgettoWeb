@@ -46,6 +46,10 @@ class ERecensione implements JsonSerializable
      * @var ||null
      */
     private  $autore;
+    /**
+     * id dell'utente recensito
+     * @var mixed|null
+     */
     private  $idRecensito;
 
     //---------------------------------------------------------------------------COSTRUTTORE----------------------------------------------------
@@ -112,7 +116,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @return |null
+     * @return int|null $idRecensito
      */
     public function getIdRecensito()
     {
@@ -120,7 +124,7 @@ class ERecensione implements JsonSerializable
     }
 
     /**
-     * @param |null $idRecensito
+     * @param int|null $idRecensito
      */
     public function setIdRecensito( $idRecensito): void
     {
