@@ -453,7 +453,7 @@ class CAnnunci
         }
     }
 
-    static function acquistoCompletato($idAnnuncio,$idCompratore) {
+    static function acquistoCompletato($idAnnuncio, $idCompratore) {
         $pm = USingleton::getInstance('FPersistentManager');
         $session = USingleton::getInstance('USession');
         $utente = unserialize($session->readValue('utente'));
