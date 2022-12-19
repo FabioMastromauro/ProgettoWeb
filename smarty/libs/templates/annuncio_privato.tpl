@@ -191,8 +191,7 @@
                                 <!-- venditore -->
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        {$userLogged}
-                                        {if $userLogged!='admin'}
+                                         {if $userLogged!='admin'}
                                         <form class="form-inline" method="POST" action="/localmp/Utente/profilo?id={$utente->getIdUser()}">
                                             {else}
                                             <form class="form-inline" method="POST" action="/localmp/Admin/profiloUtente?id={$utente->getIdUser()}">
