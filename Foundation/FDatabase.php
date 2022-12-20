@@ -388,11 +388,10 @@ class FDatabase
             if ($limite != '') {
                 $query .= ' LIMIT ' . $limite;
             }
-
             $stmt = $this->db->prepare($query);
             $stmt->execute();
             $numRow = $stmt->rowCount();
-
+print($query);
             if ($numRow == 0) {
                 $result = null;
             } elseif ($numRow == 1) {

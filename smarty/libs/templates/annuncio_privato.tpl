@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Annuncio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="/localmp/smarty/libs/css/style.css" rel="stylesheet">
+    <link href="localmp/smarty/libs/css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 
@@ -19,7 +19,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
     <div class="container-fluid">
-        <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
+        <img src="smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
         <span class="navbar-brand" >LOCAL MARKETPLACE</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
                 </li>
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {elseif $userLogged != 'nouser'}
@@ -53,14 +53,14 @@
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {else}
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
             {/if}
@@ -169,7 +169,7 @@
                                                 <a  href="/localmp/Utente/login" class="btn btn-primary" style="margin: auto; width: 50%">Iscriviti</a>
 
                                             </div>
-                                        {else if $annuncio->isAcquistato()==1}
+                                        {elseif $annuncio->isAcquistato()==1}
                                             <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
                                                 <a type="button" style="margin: auto; width: 50%" class="btn btn-primary">Venduto</a>
                                             </div>
@@ -202,7 +202,7 @@
                                             <input type="image" src="data:{$fotoUtente->getTipo()};base64,{$fotoUtente->getFoto()}" style="border-radius: 50%;" width="90" height="90"/>
                                                 </form>
                                             {else}
-                                                <input type="image" src="/localmp/smarty/libs/images/login.png" style="border-radius: 50%;" width="90" height="90"/>
+                                                <input type="image" src="localmp/smarty/libs/images/login.png" style="border-radius: 50%;" width="90" height="90"/>
                                             {/if}
                                         </form>
 

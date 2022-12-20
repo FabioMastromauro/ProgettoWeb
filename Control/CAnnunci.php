@@ -106,7 +106,7 @@ class CAnnunci
             } else {
                 $limite = $num_annunci % $annunci_per_pagina + ($new_index-1)  * $annunci_per_pagina;
                 $annunci = $pm::load('FAnnuncio');
-
+                if(!is_array($annunci)) $annunci=array($annunci);
                 for ($i = ($new_index - 1) * $annunci_per_pagina; $i < $limite; $i++) {
                     $annunci_pag[] = $annunci[$i];
 

@@ -52,7 +52,7 @@
                 </li>
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {elseif $userLogged != 'nouser'}
@@ -62,14 +62,14 @@
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {else}
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
             {/if}

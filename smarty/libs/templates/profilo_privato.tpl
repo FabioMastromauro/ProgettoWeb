@@ -101,7 +101,7 @@
 
 
                             {else}
-                        <img src="/localmp/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+                        <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
 
                         {/if}
                             <div class="mt-3">
@@ -222,10 +222,10 @@
                                 width:46%;
                                 ">cancella</a>
 
+                                        </div>
+                                {/if}
+                                {/if}
 
-                                {/if}
-                                {/if}
-                            </div>
                             </div>
 
 

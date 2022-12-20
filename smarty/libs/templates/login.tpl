@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {assign var="ban" value=$ban|default:0}
 {assign var="error" value=$error|default:''}
 {assign var="emailExist" value=$emailExist|default:''}

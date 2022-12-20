@@ -35,41 +35,41 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="">Home</a>
                 </li>
                 {if $userLogged == 'admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                    <a class="nav-link active" aria-current="page" href="Admin/homeAdmin">Admin page</a>
                 </li>
                 {/if}
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
+                    <a class="nav-link active" href="Contatti/chiSiamo">Chi siamo?</a>
                 </li>
                 {if $userLogged =='admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="Admin/profiloUtente">Profilo</a>
                 </li>
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="Utente/logout">Disconnetti</a>
 
             {elseif $userLogged != 'nouser'}
                 <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+                    <a class="nav-link active" methods="POST" href="Utente/profilo">Profilo</a>
                 </li>
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="Utente/logout">Disconnetti</a>
 
             {else}
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <a class="nav-link" href="Utente/login">Login/Registrati</a>
 
             {/if}
 
@@ -120,10 +120,10 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="text-bg">
-
+{if isset($annunci_home)}
                     <p class="lead" style="font-size: 30px">Lasciati ispirare...</p>
-                    <a href="/localmp/Annunci/esploraAnnunci" type="button" class="btn btn-dark">Tutti gli annunci</a>
-
+                    <a href="Annunci/esploraAnnunci" type="button" class="btn btn-dark">Tutti gli annunci</a>
+{/if}
                 </div>
             </div>
 
@@ -149,7 +149,7 @@
                                 <img class="card-img-top same" src="data:{$annunci_foto[$i][0]->getTipo()};base64,{$annunci_foto[$i][0]->getFoto()}" style="width: 200px; height: 150px; align-content: center" />
                                 <div class="card-body p-4">
                                     <h5 class="card-title">{$annunci_home[$i]->getTitolo()}</h5>
-                                    <a methods="POST"  class="text-decoration-none link-dark stretched-link btn btn-button" href="/localmp/Annunci/infoAnnuncio?id={$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
+                                    <a methods="POST"  class="text-decoration-none link-dark stretched-link btn btn-button" href="Annunci/infoAnnuncio?id={$annunci_home[$i]->getIdAnnuncio()}" >Visita annuncio</a>
 
                                 </div>
                             </div>
