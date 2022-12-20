@@ -53,7 +53,7 @@
                 </li>
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {elseif $userLogged != 'nouser'}
@@ -63,14 +63,14 @@
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {else}
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
             {/if}
@@ -101,7 +101,7 @@
 
 
                             {else}
-                        <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+                        <img src="/localmp/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
 
                         {/if}
                             <div class="mt-3">
@@ -422,21 +422,20 @@
                         </div>
                         <div class="col-md-1">
                             <label for="prezzo" class="form-label">Prezzo €</label>
-                            <input type="text" class="form-control" id="prezzo" name="prezzo" required>
+                            <input type="number" step="0.01" class="form-control" id="prezzo" name="prezzo" required>
 
                         </div>
                         <div class="mb-3">
                             <label for="file" class="form-label">Aggiungi una o più foto</label>
-                            <input type="file" class="form-control"  id="file" name="file[]" multiple>
+                            <input type="file" class="form-control"  id="file" name="file[]" multiple required>
                         </div>
                         <div class="col-1">
                             <label for="categoria">Categoria</label>
-                            <select name="categoria" id="categoria" class="form-select">
-                                <option value="--Seleziona--">--Seleziona--</option>
+                            <select name="categoria" id="categoria" class="form-select" required>
 
                                 {if is_array($categoria)}
                                 {foreach from=$categoria item=cate}
-                                <option id="categoria" name="categoria" value="{$cate.idCate}">{$cate.categoria}</option>
+                                <option id="categoria" name="categoria" value="{$cate.idCate}" >{$cate.categoria}</option>
                                 {/foreach}
                                 {/if}
 
