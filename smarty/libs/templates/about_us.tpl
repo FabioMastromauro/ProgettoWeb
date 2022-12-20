@@ -41,7 +41,7 @@
                 </li>
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {elseif $userLogged != 'nouser'}
@@ -51,14 +51,14 @@
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {else}
 
             </ul>
 
-            <img src="/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
+            <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
             <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
             {/if}
@@ -81,6 +81,8 @@
             <li>
                 <figure class="active" >
                     <div>
+                        <img src="/localmp/smarty/libs/images/fabio.png">
+
                         <div></div>
                     </div>
                     <figcaption style="height: 300px">
@@ -95,6 +97,8 @@
             <li>
                 <figure>
                     <div>
+                        <img src="/localmp/smarty/libs/images/federico.png">
+
                         <div></div>
                     </div>
                     <figcaption style="height: 300px">
@@ -109,7 +113,10 @@
             <li>
                 <figure>
                     <div>
-                        <div></div>
+
+                        <div>
+                            <img src="/localmp/smarty/libs/images/giorgio.png">
+                        </div>
                     </div>
                     <figcaption style="height: 300px">
                         <h2>Giorgio</h2>
@@ -150,7 +157,7 @@
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script>
-<script  src="/smarty/libs/javascript/AboutUs.js"></script>
+<script  src="/localmp/smarty/libs/javascript/AboutUs.js"></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
