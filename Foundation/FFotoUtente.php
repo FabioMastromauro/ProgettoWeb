@@ -10,7 +10,7 @@ class FFotoUtente extends FDatabase
     /**
      * @var string
      */
-    private static $table = "fotoUtente";
+    private static $table = "fotoutente";
     /**
      * @var string
      */
