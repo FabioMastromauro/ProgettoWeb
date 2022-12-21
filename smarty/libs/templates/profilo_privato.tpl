@@ -219,16 +219,13 @@
                                         <a href="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-danger" style="
                                 font-size:0.875em;
                                 float:left;
-                                left:-60px;
-                                width:46%">
+                                left:-60px;">
                                             Cancella
                                         </a>
                                         </div>
+                                    </div>
                                 {/if}
                                 {/if}
-
-                            </div>
-
 
 
                         </div>
