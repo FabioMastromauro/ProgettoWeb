@@ -13,7 +13,7 @@
 <div class="container text-center">
     <h4>Grazie per aver scelto Local Marketplace!</h4>
     <p>Il tuo acquisto è andato a buon fine</p>
-    <a href="/localmp/Ricerca/blogHome">Torna alla homepage</a>
+    <a href="/localmp/">Torna alla homepage</a>
 </div>
 
 </body>
