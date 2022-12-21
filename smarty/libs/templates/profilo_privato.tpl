@@ -209,8 +209,9 @@
                                 font-size:0.875em;
                                 float:left;
                                 left:-60px;
-                                width:46%;
-                                ">Visita</a>
+                                width:46%;">
+                                            Visita
+                                        </a>
                                {if $userLogged=='logged'}
                                 {if $annuncio[$i]->getIdVenditore() == $udp->getIdUser() }
                                         <div style=" margin-left: 200px;padding-bottom: 100px">
@@ -218,8 +219,10 @@
                                         <a href="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-danger" style="
                                 font-size:0.875em;
                                 float:left;
-                                left:-60px">cancella</a>
-
+                                left:-60px;
+                                width:46%">
+                                            Cancella
+                                        </a>
                                         </div>
                                 {/if}
                                 {/if}
