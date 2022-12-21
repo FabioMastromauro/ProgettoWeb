@@ -57,7 +57,7 @@ CREATE TABLE `categoria` (
 -- Struttura della tabella `fotoannuncio`
 --
 
-CREATE TABLE `fotoannuncio` (
+CREATE TABLE `fotoAnnuncio` (
   `idFoto` int(11) NOT NULL,
   `nomeFoto` varchar(20) NOT NULL,
   `size` varchar(11) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE `fotoannuncio` (
 -- Struttura della tabella `fotoutente`
 --
 
-CREATE TABLE `fotoutente` (
+CREATE TABLE `fotoUtente` (
   `idFoto` int(11) NOT NULL,
   `nomeFoto` varchar(20) NOT NULL,
   `size` varchar(11) NOT NULL,
