@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Local Marketplace - Storico</title>
+    <link rel="icon" type="image/x-icon" href="/localmp/smarty/libs/images/logomarket.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="/localmp/smarty/libs/css/style.css">
 </head>
@@ -111,7 +112,7 @@
                 </div> <!-- fine annuncio-->
 
 
-        <a href="/localmp/Ricerca/blogHome">torno alla home</a>
+        <a href="/localmp/">torno alla home</a>
             </div>
         </div>
     </div>
