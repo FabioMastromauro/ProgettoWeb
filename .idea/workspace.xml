@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="pushatina leggera">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="Pushatina ultra leggera">
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/purchase_completed.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,14 +204,7 @@
       <workItem from="1671464039703" duration="67000" />
       <workItem from="1671464795194" duration="791000" />
       <workItem from="1671465973971" duration="57000" />
-      <workItem from="1671628943967" duration="2721000" />
-    </task>
-    <task id="LOCAL-00147" summary="aggiunto php docBlock FUtente.php">
-      <created>1667476900084</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1667476900084</updated>
+      <workItem from="1671628943967" duration="3356000" />
     </task>
     <task id="LOCAL-00148" summary="aggiunto php docBlock FAnnuncio.php">
       <created>1667476993393</created>
@@ -550,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671630360781</updated>
     </task>
-    <option name="localTasksCounter" value="196" />
+    <task id="LOCAL-00196" summary="Pushatina ultra leggera">
+      <created>1671632665400</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1671632665400</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="adesso profilo_privato.tpl carica anche un singolo annuncio (prima no)" />
     <MESSAGE value="aggiunta regex registrazione" />
     <MESSAGE value="admin.tpl fatto buonn" />
     <MESSAGE value="CAdmin.php assettato" />
@@ -606,7 +604,8 @@
     <MESSAGE value="clean" />
     <MESSAGE value="aggiunto footer everywhere" />
     <MESSAGE value="pushatina leggera" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushatina leggera" />
+    <MESSAGE value="Pushatina ultra leggera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushatina ultra leggera" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
