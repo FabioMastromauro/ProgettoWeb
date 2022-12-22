@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="so hot">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="very good verify.tpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/verify.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/verify.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,14 +208,7 @@
       <workItem from="1671628943967" duration="5644000" />
       <workItem from="1671638368080" duration="254000" />
       <workItem from="1671640614315" duration="661000" />
-      <workItem from="1671712582820" duration="4660000" />
-    </task>
-    <task id="LOCAL-00156" summary="aggiunto php docBlock CFrontController.php">
-      <created>1667478423672</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1667478423672</updated>
+      <workItem from="1671712582820" duration="5972000" />
     </task>
     <task id="LOCAL-00157" summary="aggiunto php docBlock CAnnunci.php">
       <created>1667478539414</created>
@@ -553,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671716460904</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <task id="LOCAL-00205" summary="very good verify.tpl">
+      <created>1671718967928</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1671718967928</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl" />
     <MESSAGE value="c'è qualche problema nell'algoritmo di ricerca ma il resto è ok" />
     <MESSAGE value="la ricerca funziona manca la ricerca per categoria" />
     <MESSAGE value="funziona anche la riceca per categorie" />
@@ -609,7 +608,8 @@
     <MESSAGE value="navbar more responsive :)" />
     <MESSAGE value="-50" />
     <MESSAGE value="so hot" />
-    <option name="LAST_COMMIT_MESSAGE" value="so hot" />
+    <MESSAGE value="very good verify.tpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="very good verify.tpl" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

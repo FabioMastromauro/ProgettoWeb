@@ -198,50 +198,26 @@
                             <div class="container" style="display: flex; flex-flow: row wrap">
                         {if is_array($annuncio)}
                         {for $i=0; $i<sizeof($annuncio);$i++}
-                            <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px; max-width: 100%">
-                            <div class="card" style="width: 15rem; height: 22rem; box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%; padding:10px ">
-                                <div class="card-body" style="text-align: center; margin:0px  ; padding:10px  ">
-                                    <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 19rem; height: 13rem; max-width: 100%" > </div>
-                                <div>    <h5 class="card-title" style="padding-left: 10px; max-width: 100%">{$annuncio[$i]->getTitolo()}</h5>
-                                    <p class="card-text" style="padding-left: 10px; max-width: 100%">{$annuncio[$i]->getDescrizione()}</p>
-                                    <div style=" padding-left: 10px; padding-right: 10px; padding-bottom: 100px;">
-                                        <a href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary" style="
-                                font-size:0.875em;
-                                float:left;
-                                left:-60px;
-                                width:46%;">
-                                            Visita
-                                        </a>
-                               {if $userLogged=='logged'}
-                                {if $annuncio[$i]->getIdVenditore() == $udp->getIdUser() }
-                                        <div style=" margin-left: 200px;padding-bottom: 100px">
+                            <div class="card-wrap" style="flex:0 0 33.333%;display: flex;padding: 10px max-width:100%">
+                                <div class="card" style="width: 15rem;height: 22rem padding:10px">
+                                    <div class="card-body" style="text-align: center; padding:10px;">
+                                        <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 19rem; height: 13rem; max-width: 100%" >
+                                        <h5 class="card-title" style="padding-left: 10px; max-width: 100%">{$annuncio[$i]->getTitolo()}</h5>
+                                        <p class="card-text" style="padding-left: 10px; max-width: 100%">{substr($annuncio[$i]->getDescrizione(),0,40)}...</p>
+                                        <a href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita</a>
 
-                                        <a href="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-danger" style="
-                                font-size:0.875em;
-                                float:left;
-                                left:-60px;">
-                                            Cancella
-                                        </a>
-                                        </div>
+                                        {if $userLogged=='logged'}
+                                            {if $annuncio[$i]->getIdVenditore() == $udp->getIdUser() }
+                                                <a href="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-danger">Cancella</a>
+                                            {/if}
+                                        {/if}
                                     </div>
-                                {/if}
-                                {/if}
-
-
-                        </div>
-                        <p></p>
+                                </div>
                             </div>
-                            </div>
-
                         {/for}
-
-
-
                         {/if}
-
+                            </div>
                         {/if}
-
-
             </div>
         </div>
     </div>
