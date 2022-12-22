@@ -28,7 +28,7 @@
         <div class="row">
             <div class="colm-form">
                 <div class="form-container">
-
+                    <p>Controlla il codice di verifica sulla tua email!</p>
                     <input  type="text" name="email" id="email" placeholder="Email address" value="{$email}" hidden>
                     <input  type="password" name="password" id="password" placeholder="Password" value="{$password}" hidden>
                     <input type="text" name="codice" id="codice" placeholder="Codice di verifica" value="" >
