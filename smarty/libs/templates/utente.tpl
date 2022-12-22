@@ -147,9 +147,9 @@
                         <hr>
                         {if $userLogged == 'admin'}
 
-                                <a type="button" href="/localmp/Admin/storico?id={$utente->getIdUser()}" class="btn btn-primary">
-                                    Storico
-                                </a>
+                            <a type="button" href="/localmp/Admin/storico?id={$utente->getIdUser()}" class="btn btn-primary">
+                                Storico
+                            </a>
                         {/if}
 
                         {if isset($recensione)}
@@ -193,35 +193,25 @@
                 <h1>Annunci online</h1>
 
                 <div class="container" style="display: flex; flex-flow: row wrap">
-                {if is_array($annuncio)}
-                    {for $i=0; $i<sizeof($annuncio);$i++}
-                        <div class="card-wrap" style="flex: 0 0 33.333%;display: flex;padding: 10px">
-                            <div class="card" style="width: 15rem; height: 22rem; box-shadow: 0 0 4px rgba(0,0,0,0.4);flex: 0 0 100%;">
-                                <div class="card-body" style="text-align: center">
-                                    <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 350px; height: 200px;" > </div>
-                                <div>    <h5 class="card-title">{$annuncio[$i]->getTitolo()}</h5>
-                                    <p class="card-text">{$annuncio[$i]->getDescrizione()}</p>
-                                    <a  href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita annuncio</a>
-                                    {if $userLogged=='admin'}
-                                            <form action="/localmp/Admin/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}&utente={$utente->getIdUser()}" method="post">
-                                                <input type="submit" value="cancella">
-                                            </form>
-                                    {/if}
+                    {if is_array($annuncio)}
+                        {for $i=0; $i<sizeof($annuncio);$i++}
+                            <div class="card-wrap" style="flex:0 0 33.333%;display: flex;padding: 10px max-width:100%">
+                                <div class="card" style="width: 15rem;height: 22rem padding:10px">
+                                    <div class="card-body" style="text-align: center; padding:10px;">
+                                        <img  class="card-img-top same" src="data:{$immagini[$i][0]->getTipo()};base64,{$immagini[$i][0]->getFoto()}" style="width: 19rem; height: 13rem; max-width: 100%" >
+                                        <h5 class="card-title" style="padding-left: 10px; max-width: 100%">{$annuncio[$i]->getTitolo()}</h5>
+                                        <p class="card-text" style="padding-left: 10px; max-width: 100%">{substr($annuncio[$i]->getDescrizione(),0,40)}...</p>
+                                        <a href="/localmp/Annunci/infoAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-primary">Visita</a>
+                                        {if $userLogged=='admin'}
+                                            <a href="/localmp/Annunci/cancellaAnnuncio?idAnnuncio={$annuncio[$i]->getIdAnnuncio()}" class="btn btn-danger">Cancella</a>
+                                        {/if}
+                                    </div>
                                 </div>
-
                             </div>
-                            <p></p>
-                        </div>
-                    {/for}
-                    </div>
-
-
-
-                {/if}
-
+                        {/for}
+                    {/if}
+                </div>
             {/if}
-
-
         </div>
     </div>
 </div>
@@ -247,9 +237,9 @@
                         {/if}
                         <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
                         {if $userLogged=='admin'}
-                                <form action="/localmp/Admin/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
-                                    <input type="submit" value="cancella">
-                                </form>
+                            <form action="/localmp/Admin/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
+                                <input type="submit" value="cancella">
+                            </form>
                         {/if}
                         <span>{$recensione[$i]->getDataPubblicazione()}</span>
                         <br>
