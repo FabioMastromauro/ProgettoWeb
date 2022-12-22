@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="sambucone molinari ultra-curativo" />
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="titi">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/storico.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/storico.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,13 +214,9 @@
       <workItem from="1671464795194" duration="791000" />
       <workItem from="1671465973971" duration="57000" />
       <workItem from="1671628943967" duration="5644000" />
-    </task>
-    <task id="LOCAL-00152" summary="aggiunto php docBlock FRecensione.php">
-      <created>1667477588646</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1667477588646</updated>
+      <workItem from="1671638368080" duration="254000" />
+      <workItem from="1671640614315" duration="661000" />
+      <workItem from="1671712582820" duration="897000" />
     </task>
     <task id="LOCAL-00153" summary="aggiunto php docBlock CUtente.php">
       <created>1667478116910</created>
@@ -547,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671636558137</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="titi">
+      <created>1671638606871</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1671638606871</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creato PHPDOC di annunciHome in CAnnunci.php" />
     <MESSAGE value="Creata VContatti.php e aggiunti PHPDOC" />
     <MESSAGE value="creato utente.tpl" />
     <MESSAGE value="creato utente.tpl...." />
@@ -603,7 +616,8 @@
     <MESSAGE value="Pushatina iper ultra ultra leggera" />
     <MESSAGE value="sambucone molinari curativo" />
     <MESSAGE value="sambucone molinari ultra-curativo" />
-    <option name="LAST_COMMIT_MESSAGE" value="sambucone molinari ultra-curativo" />
+    <MESSAGE value="titi" />
+    <option name="LAST_COMMIT_MESSAGE" value="titi" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

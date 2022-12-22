@@ -14,7 +14,7 @@
 </head>
 
 
-<nav class="navbar navbar-expand-lg bg-light  fixed-top " style="height: 45px">
+<nav class="navbar navbar-expand-lg bg-light  fixed-top ">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
         <span class="navbar-brand" >LOCAL MARKETPLACE</span>
