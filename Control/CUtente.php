@@ -204,7 +204,7 @@ class CUtente
 
         if (CUtente::isLogged() || $id != null) {
             $fotoUtente = $pm::load('FFotoUtente', array(['idUser', '=', $utente->getIdUser()]));
-            $annuncio = $pm::load('FAnnuncio', array(['idVenditore', '=', $utente->getIdUser()]));
+            $annuncio = $pm::load('FAnnuncio', array(['idVenditore', '=', $utente->getIdUser()],['acquistato','=','0']));
             $categoria = $pm::loadAll('FCategoria');
             $recensione = $pm::load('FRecensione', array(['idRecensito', '=', $utente->getIdUser()]));
             //recensione
