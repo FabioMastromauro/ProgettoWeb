@@ -84,7 +84,7 @@
 </nav>
 
 
-<div id="carouselHome" class="carousel slide carousel-fade" data-bs-ride="carousel" style="margin-top: -60px">
+<div id="carouselHome" class="carousel slide carousel-fade" data-bs-ride="carousel" style="margin-top: -50px">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="/localmp/smarty/libs/images/home3.png" class="d-block w-100" alt="...">
