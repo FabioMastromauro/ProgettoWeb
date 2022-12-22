@@ -69,8 +69,8 @@
                         <label for="validationCustom03"  class="form-label">Password</label>
 
                         <input type="password" class="form-control" id="pswq" name="password" {literal}pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"{/literal} title="La password deve contenere almeno 8 caratteri, di cui almeno una lettera maiuscola"/>
-                        <input type="checkbox" class="far fa-eye" id="togglePassword2" style="position: relative; left: 80%;bottom: -40px;cursor: pointer;" onclick="show('pswq')">
-
+                        <i type="checkbox" class="far fa-eye" id="togglePassword2" style="position: relative; left: 95%;bottom: 30px;cursor: pointer;" onclick="show('pswq')">
+                        </i>
                     </div>
                     <div class="col-12">
                         <div class="form-check">
@@ -116,6 +116,7 @@
 {/if}
 
 <main>
+
     <form method="POST" action="/localmp/Utente/login">
         <div class="row">
             <div class="colm-form">
