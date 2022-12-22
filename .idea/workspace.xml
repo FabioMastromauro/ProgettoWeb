@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="titi">
+    <list default="true" id="5bfc3944-36f5-4fb4-b2c5-2ebf828cd75e" name="Changes" comment="-50">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/about_us.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/admin.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/annuncio_privato.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/index.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/profilo_privato.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/storico.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/storico.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/tutti_annunci_err.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/smarty/libs/templates/utente.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,21 +209,7 @@
       <workItem from="1671628943967" duration="5644000" />
       <workItem from="1671638368080" duration="254000" />
       <workItem from="1671640614315" duration="661000" />
-      <workItem from="1671712582820" duration="897000" />
-    </task>
-    <task id="LOCAL-00153" summary="aggiunto php docBlock CUtente.php">
-      <created>1667478116910</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1667478116910</updated>
-    </task>
-    <task id="LOCAL-00154" summary="aggiunto php docBlock CRicerca.php">
-      <created>1667478246246</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1667478246246</updated>
+      <workItem from="1671712582820" duration="2384000" />
     </task>
     <task id="LOCAL-00155" summary="aggiunto php docBlock CRecensione.php">
       <created>1667478353875</created>
@@ -561,7 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671638606871</updated>
     </task>
-    <option name="localTasksCounter" value="202" />
+    <task id="LOCAL-00202" summary="navbar more responsive :)">
+      <created>1671714522544</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1671714522544</updated>
+    </task>
+    <task id="LOCAL-00203" summary="-50">
+      <created>1671714660877</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1671714660877</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,8 +585,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creata VContatti.php e aggiunti PHPDOC" />
-    <MESSAGE value="creato utente.tpl" />
     <MESSAGE value="creato utente.tpl...." />
     <MESSAGE value="tolto il generstore random di annunci, aggiornati CRicerca.php VRicerca.php e index.tpl" />
     <MESSAGE value="c'è qualche problema nell'algoritmo di ricerca ma il resto è ok" />
@@ -617,7 +608,9 @@
     <MESSAGE value="sambucone molinari curativo" />
     <MESSAGE value="sambucone molinari ultra-curativo" />
     <MESSAGE value="titi" />
-    <option name="LAST_COMMIT_MESSAGE" value="titi" />
+    <MESSAGE value="navbar more responsive :)" />
+    <MESSAGE value="-50" />
+    <option name="LAST_COMMIT_MESSAGE" value="-50" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

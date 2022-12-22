@@ -13,7 +13,6 @@
     <link href="/localmp/smarty/libs/css/boot_styles.css" rel="stylesheet" />
 </head>
 
-
 <nav class="navbar navbar-expand-lg bg-light  fixed-top ">
     <div class="container-fluid">
         <img src="/localmp/smarty/libs/images/logomarket.png" alt="" style="width: 50px" class="d-inline-block align-text-top">
@@ -24,41 +23,41 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/localmp/">Home</a>
+                    <a style="color: black;" class="nav-link active" aria-current="page" href="/localmp/">Home</a>
                 </li>
                 {if $userLogged == 'admin'}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
+                        <a style="color: black;" class="nav-link active" aria-current="page" href="/localmp/Admin/homeAdmin">Admin page</a>
                     </li>
                 {/if}
                 <li class="nav-item">
-                    <a class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
+                    <a style="color: black;" class="nav-link active" href="/localmp/Contatti/chiSiamo">Chi siamo?</a>
                 </li>
                 {if $userLogged =='admin'}
                 <li class="nav-item">
-                    <a class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
+                    <a style="color: black;" class="nav-link active" methods="POST" href="/localmp/Admin/profiloUtente">Profilo</a>
                 </li>
             </ul>
 
             <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+            <a style="color: black;" class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {elseif $userLogged != 'nouser'}
             <li class="nav-item">
-                <a class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
+                <a style="color: black;" class="nav-link active" methods="POST" href="/localmp/Utente/profilo">Profilo</a>
             </li>
 
             </ul>
 
             <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
+            <a style="color: black;" class="nav-link" href="/localmp/Utente/logout">Disconnetti</a>
 
             {else}
 
             </ul>
 
             <img src="/localmp/smarty/libs/images/login.png" alt="" style="width: 30px; margin-right: 6px" class="d-inline-block align-text-right">
-            <a class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
+            <a style="color: black;" class="nav-link" href="/localmp/Utente/login">Login/Registrati</a>
 
             {/if}
 
@@ -71,6 +70,7 @@
         </div>
     </div>
 </nav>
+
 <body>
 
 <!-- Page header with logo and tagline-->
@@ -250,11 +250,12 @@
                 <div class="col-lg-4">
                     <!-- Search widget-->
                     <div class="card mb-4">
-                        <div class="card-header">Search</div>
+                        <div class="card-header">Cerca</div>
                         <div class="card-body">
                             <form method="POST" action="/localmp/Annunci/cerca">
                                 <div class="input-group">
-                                    <input class="form-control" name="text" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                    <input class="form-control" name="text" type="text" placeholder="Inserisci termine di ricerca..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                    <button class="btn btn-primary" id="button-search" type="submit">Cerca</button>
                                 </div>
                             </form>
                         </div>
