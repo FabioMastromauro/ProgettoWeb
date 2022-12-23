@@ -97,11 +97,11 @@
                         <div class="d-flex flex-column align-items-center text-center">
 
                             {if isset($foto_utente)}
-                                <img   src="data:{$foto_utente->getTipo()};;base64,{$foto_utente->getFoto()}"  alt="Admin" class="rounded-circle" width="140" >
+                                <img   src="data:{$foto_utente->getTipo()};;base64,{$foto_utente->getFoto()}"  alt="Admin" class="rounded-circle" width="140" height="140">
 
 
                             {else}
-                                <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+                                <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140" height="140">
 
                             {/if}
                             <div class="mt-3">
