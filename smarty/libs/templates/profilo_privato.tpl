@@ -97,13 +97,13 @@
                         <div class="d-flex flex-column align-items-center text-center">
 
                             {if isset($foto_utente)}
-                            <img   src="data:{$foto_utente->getTipo()};;base64,{$foto_utente->getFoto()}"  alt="Admin" class="rounded-circle" width="140" >
+                                <img   src="data:{$foto_utente->getTipo()};;base64,{$foto_utente->getFoto()}"  alt="Admin" class="rounded-circle" width="140" >
 
 
                             {else}
-                        <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
+                                <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="140">
 
-                        {/if}
+                            {/if}
                             <div class="mt-3">
                                 <h4>{$utente->getNome()}</h4>
                                 <p class="text-muted font-size-sm">{$luogo}</p>
@@ -146,9 +146,9 @@
                         <hr>
                         {if $userLogged == 'logged'}
                             {if $utente->getIdUser() == $udp->getIdUser()}
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
-                            Modifica
-                        </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#modifica">
+                                    Modifica
+                                </button>
                                 <a type="button" href="/localmp/Utente/storico" class="btn btn-primary">
                                     Storico
                                 </a>
@@ -156,32 +156,32 @@
                         {/if}
 
                         {if isset($recensione)}
-                        <p>Voto medio utente
-                        {$sum =0}
-                            {for $j=0;$j<sizeof($recensione);$j++}
-                                {$sum = $sum + $recensione[$j]->getValutazione()}
-                            {/for}
+                            <p>Voto medio utente
+                                {$sum =0}
+                                {for $j=0;$j<sizeof($recensione);$j++}
+                                    {$sum = $sum + $recensione[$j]->getValutazione()}
+                                {/for}
 
-                        <div class="rate">
-                            {for $j=0; $j<5;$j++}
-                                {if $j<($sum/sizeof($recensione))}
-                                    <span class="fa fa-star checked" style="color: orange"></span>
-                                {else}
-                                    <span class="fa fa-star"></span>
-                                {/if}
-                            {/for}
-                        </div>
+                            <div class="rate">
+                                {for $j=0; $j<5;$j++}
+                                    {if $j<($sum/sizeof($recensione))}
+                                        <span class="fa fa-star checked" style="color: orange"></span>
+                                    {else}
+                                        <span class="fa fa-star"></span>
+                                    {/if}
+                                {/for}
+                            </div>
                         {/if}
                         </p>
                     </div>
                 </div>
             </div>
             {if $userLogged == 'logged'}
-            {if $utente->getIdUser() == $udp->getIdUser()}
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creaAnnuncio">
-                Crea nuovo annuncio
-            </button>
-            {/if}
+                {if $utente->getIdUser() == $udp->getIdUser()}
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#creaAnnuncio">
+                        Crea nuovo annuncio
+                    </button>
+                {/if}
             {/if}
             <p>
 
@@ -189,14 +189,14 @@
             <!--Annunci online-->
 
             {if $utente->isBan() == 1}
-                <p style="font-size: 40px">Utente bannato fino al {$utente->getDataFineBan()}</p>
+            <p style="font-size: 40px">Utente bannato fino al {$utente->getDataFineBan()}</p>
 
-             {else}
-                        {if isset($annuncio)}
-                            <h1>Annunci online</h1>
+            {else}
+            {if isset($annuncio)}
+                <h1>Annunci online</h1>
 
-                            <div class="container" style="display: flex; flex-flow: row wrap">
-                        {if is_array($annuncio)}
+                <div class="container" style="display: flex; flex-flow: row wrap">
+                    {if is_array($annuncio)}
                         {for $i=0; $i<sizeof($annuncio);$i++}
                             <div class="card-wrap" style="flex:0 0 33.333%;display: flex;padding: 10px max-width:100%">
                                 <div class="card" style="width: 15rem;height: 22rem padding:10px">
@@ -215,12 +215,12 @@
                                 </div>
                             </div>
                         {/for}
-                        {/if}
-                            </div>
-                        {/if}
-            </div>
+                    {/if}
+                </div>
+            {/if}
         </div>
     </div>
+</div>
 </div>
 
 <!-- recensione -->
@@ -228,51 +228,56 @@
 <section>
     <div class="container">
         <div class="row">
-                {if isset($recensione)}
-                    <h1>Recensioni</h1>
-                    {for $i=0; $i<sizeof($recensione);$i++}
+            {if isset($recensione)}
+                <h1>Recensioni</h1>
+                {for $i=0; $i<sizeof($recensione);$i++}
 
-            <div class="comment mt-4 text-justify float-left">
-                {if isset($foto_recensori[$i])}
-                    <img   src="data:{$foto_recensori[$i]->getTipo()};base64,{$foto_recensori[$i]->getFoto()}"  alt="Admin" class="rounded-circle" width="40" >
+                    <div class="comment mt-4 text-justify float-left">
+                        {if isset($foto_recensori[$i])}
+                            <img   src="data:{$foto_recensori[$i]->getTipo()};base64,{$foto_recensori[$i]->getFoto()}"  alt="Admin" class="rounded-circle" width="40" >
 
 
-                {else}
-                    <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
+                        {else}
+                            <img src="/localmp/smarty/libs/images/login.png" alt="Admin" class="rounded-circle" width="40">
 
-                {/if}
-                            <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
-{if $userLogged=='logged'}
-                {if $recensione[$i]->getAutore() == $udp->getIdUser()}
-                            <form action="/localmp/Utente/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
-                                <input type="submit" value="cancella">
-                            </form>
-                {/if}
-{/if}
-                            <span>{$recensione[$i]->getDataPubblicazione()}</span>
-                            <br>
-                            <p></p>
-                    <div class="rate">
+                        {/if}
+                        <h4>{$autori[$i]->getNome()} {$autori[$i]->getCognome()}</h4>
+                        {if $userLogged=='logged'}
+
+                        {/if}
+                        <span>{$recensione[$i]->getDataPubblicazione()}</span>
+                        <br>
+                        <p></p>
+                        <div class="rate">
                             {for $j=0; $j<5;$j++}
                                 {if $j<$recensione[$i]->getValutazione()}
-                                <span class="fa fa-star checked" style="color: orange"></span>
+                                    <span class="fa fa-star checked" style="color: orange"></span>
                                 {else}
-                                <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
                                 {/if}
-                                    {/for}
-                                </div>
-
-                            <br>
-                            <p>{$recensione[$i]->getCommento()}</p>
+                            {/for}
                         </div>
-                    {/for}
-                {/if}
 
-            </div>
+                        <br>
+                        <p>{$recensione[$i]->getCommento()}</p>
+                        {if $recensione[$i]->getAutore() == $udp->getIdUser()}
+                            <form action="/localmp/Utente/cancellaRecensione?id={$recensione[$i]->getIdRecensione()}&profilo={$utente->getIdUser()}" method="post">
+                                <div class="form-group">
+                                    <input type="submit" class="btn" value="cancella">
+                                </div>
+                                <br>
+                            </form>
+                        {/if}
+                    </div>
+                    <br>
+                {/for}
+            {/if}
+
+        </div>
         {if $userLogged=='logged'}
-            {if $utentedp->getIdUser() != $utente->getIdUser()}
+        {if $utentedp->getIdUser() != $utente->getIdUser()}
 
-            <form  action="/localmp/Utente/scriviRecensione" method="POST">
+        <form  action="/localmp/Utente/scriviRecensione" method="POST">
 
             <div >
                 <form id="algin-form">
@@ -295,19 +300,30 @@
 
                     </div>
 
-
+                    <br>
                     <div class="form-group">
                         <input type="submit"  class="btn" value="pubblica">
                     </div>
                 </form>
                 {/if}
             </div>
-            </form>
+        </form>
 
-        </div>
+    </div>
     </div>
 
 </section>
+<br><br>
+<footer class="bg-light py-4 mt-auto" style="width:100%">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0">Copyright &copy; Local Marketplace 2022</div></div>
+            <div class="col-auto">
+                <a class="small" href="/localmp/Contatti/chiSiamo" style="color:black">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
 <script type='text/javascript' src='#'></script>
 <script type='text/javascript' src='#'></script>
@@ -330,7 +346,7 @@
 <!-- crea annuncio -->
 <form action="/localmp/Annunci/pubblicaAnnuncio" method="POST" enctype="multipart/form-data">
 
-<div class="modal fade" id="creaAnnuncio" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="creaAnnuncio" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
@@ -338,39 +354,39 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                         <div class="col-md-4">
-                            <label for="titolo" class="form-label">Titolo</label>
-                            <input type="text" class="form-control" id="titolo" name="titolo" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="descrizione" class="form-label">Descrizione</label>
-                            <textarea class="form-control" id="descrizione" name="descrizione" rows="3"></textarea>
-                        </div>
-                        <div class="col-md-1">
-                            <label for="prezzo" class="form-label">Prezzo €</label>
-                            <input type="number" step="0.01" class="form-control" id="prezzo" name="prezzo" required>
+                    <div class="col-md-4">
+                        <label for="titolo" class="form-label">Titolo</label>
+                        <input type="text" class="form-control" id="titolo" name="titolo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descrizione" class="form-label">Descrizione</label>
+                        <textarea class="form-control" id="descrizione" name="descrizione" rows="3"></textarea>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="prezzo" class="form-label">Prezzo €</label>
+                        <input type="number" step="0.01" class="form-control" id="prezzo" name="prezzo" required>
 
-                        </div>
-                        <div class="mb-3">
-                            <label for="file" class="form-label">Aggiungi una o più foto</label>
-                            <input type="file" class="form-control"  id="file" name="file[]" multiple required>
-                        </div>
-                        <div class="col-1">
-                            <label for="categoria">Categoria</label>
-                            <select name="categoria" id="categoria" class="form-select" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Aggiungi una o più foto</label>
+                        <input type="file" class="form-control"  id="file" name="file[]" multiple required>
+                    </div>
+                    <div class="col-1">
+                        <label for="categoria">Categoria</label>
+                        <select name="categoria" id="categoria" class="form-select" required>
 
-                                {if is_array($categoria)}
+                            {if is_array($categoria)}
                                 {foreach from=$categoria item=cate}
-                                <option id="categoria" name="categoria" value="{$cate.idCate}" >{$cate.categoria}</option>
+                                    <option id="categoria" name="categoria" value="{$cate.idCate}" >{$cate.categoria}</option>
                                 {/foreach}
-                                {/if}
+                            {/if}
 
-                            </select>
-                        </div>
-                        <p>
-                        </p>
+                        </select>
+                    </div>
+                    <p>
+                    </p>
 
-                            <input class="btn btn-primary" type="submit" value="Crea annuncio">
+                    <input class="btn btn-primary" type="submit" value="Crea annuncio">
 
                 </div>
                 <div class="modal-footer">
@@ -379,7 +395,7 @@
         </div>
 
 
-</div>
+    </div>
 </form>
 
 
@@ -429,16 +445,6 @@
             </div>
         </div>
     </form>
-    <footer class="bg-light py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><div class="small m-0">Copyright &copy; Local Marketplace 2022</div></div>
-                <div class="col-auto">
-                    <a class="small" href="Contatti/chiSiamo">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
