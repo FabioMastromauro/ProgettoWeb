@@ -195,8 +195,7 @@ class CUtente
         $session = USingleton::getInstance('USession');
         $pm = USingleton::getInstance('FPersistentManager');
         if ($id == null) {
-            $utente = $utente = unserialize($session->readValue('utente'));
-
+            $utente = unserialize($session->readValue('utente'));
         } else {
             $utente = $pm::load('FUtente', array(['idUser', '=', $id]));
         }
