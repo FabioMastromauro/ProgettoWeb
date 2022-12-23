@@ -22,7 +22,7 @@ class CAdmin
             $immagine = $pm::load('FFotoUtente',  array(['idUser', '=', $utente->getIdUser()]));
             $view->homeAdmin($utente, $list, $immagine);
         } else {
-            header('Location: /localmp/');
+            header('Location: /');
         }
     }
 
@@ -139,7 +139,7 @@ class CAdmin
             }
         }
         else {
-            header('Location: /localmp/');
+            header('Location: /');
         }
     }
 
@@ -157,7 +157,7 @@ class CAdmin
             $pm::update('dataFineBan', null, 'idUser', $id, 'FUtente');
             header('Location: /localmp/Admin/profiloUtente/'.$id);
         } else {
-            header('Location: /localmp/');
+            header('Location: /');
         }
     }
 
@@ -191,9 +191,9 @@ class CAdmin
 
 
 
-                header("Location: /localmp/Admin/profiloUtente?id=".$idUtente);
+                header("Location: /Admin/profiloUtente?id=".$idUtente);
             } else {
-                header("Location: /localmp/Admin/profiloUtente?id=".$idUtente);
+                header("Location: /Admin/profiloUtente?id=".$idUtente);
             }
         }
     }
@@ -225,9 +225,9 @@ class CAdmin
             $autore = unserialize($_SESSION['utente']);
             $recensione = new ERecensione($commento, $valutazione, $dataPubblicazione, $autore->getIdUser(), null, $idRecensito);
             $pm::store($recensione);
-            header('Location: /localmp/Admin/profiloUtente?id=' . $idRecensito);
+            header('Location: /Admin/profiloUtente?id=' . $idRecensito);
         } else {
-            header('Location: /localmp/');
+            header('Location: /');
         }
     }
 
@@ -278,7 +278,7 @@ class CAdmin
             $recensione = $pm::load("FRecensione", array(['idRecensione', '=', $id]));
             if ($recensione != null && $recensione->getAutore() == $utente->getIdUser()) {
                 $pm::delete('idRecensione', $id, "FRecensione");
-                header("Location: /localmp/Admin/profiloUtente?id=" . $profilo);
+                header("Location: /Admin/profiloUtente?id=" . $profilo);
 
             } else {
                 header("Location: /localmp/Admin/profiloUtente");

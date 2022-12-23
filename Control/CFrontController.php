@@ -16,7 +16,6 @@ class CFrontController
      * @return void
      */
     public function run($path){
-
         $method = $_SERVER['REQUEST_METHOD'];
 
         if (strpos($path, '?') != false){
@@ -29,6 +28,7 @@ class CFrontController
 
         array_shift($resource);
         array_shift($resource);
+        
 
         if ($resource[0] != 'api'){
 

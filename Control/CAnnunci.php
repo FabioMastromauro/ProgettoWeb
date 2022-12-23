@@ -50,7 +50,7 @@ class CAnnunci
     }
 
     /**
-     * Metodo che permette la visualizzazione di/degli annuncio/annunci trovato/i
+     * Metodo che permette la visualizzazione di/degli annuncio/localmp/Annunci trovato/i
      * in base ai parametri di ricerca e, se non sono presenti annunci nella
      * categoria cercata o non sono stati trovati annunci inerenti la ricerca,
      * viene mostrata una pagina con degli annunci casuali
@@ -71,10 +71,9 @@ class CAnnunci
 
         $pm = USingleton::getInstance('FPersistentManager');
         if (isset($_COOKIE['annuncio_ricerca'])) $data = unserialize($_COOKIE['annuncio_ricerca']);
-
         if (!isset($_COOKIE['annuncio_ricerca']) || !is_array($data)) {
             $num_annunci = $pm::getRows('FAnnuncio');
-        } elseif($data[0] == 'no_categoria' || $data[0] == 'no_ricerca'){
+        } elseif(@$data[0] == 'no_categoria' || @$data[0] == 'no_ricerca'){
             $num_annunci = $pm::getRows('FAnnuncio');
         } else {
             if (isset($data['titolo']) || isset($data['idAnnuncio'])){
@@ -93,7 +92,7 @@ class CAnnunci
         } else {
             $page_number = $num_annunci / $annunci_per_pagina;
         }
-        if (!isset($_COOKIE['annuncio_ricerca']) || $data[0] == 'no_categoria' || $data[0] == 'no_ricerca') {
+        if (@!isset($_COOKIE['annuncio_ricerca']) || @$data[0] == 'no_categoria' || @$data[0] == 'no_ricerca') {
             if ($new_index * $annunci_per_pagina <= $num_annunci) {
                 $annunci = $pm::load('FAnnuncio');
                 if ($annunci_per_pagina * $new_index > count($annunci)) $annPag = (count($annunci) % $annunci_per_pagina) + $annunci_per_pagina*($new_index-1);
@@ -126,7 +125,7 @@ class CAnnunci
 
             }
         }
-        //con categori o ricerca
+        //con categoria o ricerca
         else {
             if ($new_index * 5 <= $num_annunci){
                 for ($i = ($new_index - 1)*$annunci_per_pagina; $i <$annunci_per_pagina * $new_index ; $i++) {
@@ -135,6 +134,7 @@ class CAnnunci
             } else {
                 if (isset($data['titolo'])){
                     $annunci_pag = $pm::load('FAnnuncio', array(['idAnnuncio', '=', $data['idAnnuncio']]));
+if(!is_array($annunci_pag)) $annunci_pag = array($annunci_pag);
                 } else if (is_array($data[0])){
                     $limite= (count($data) % $annunci_per_pagina) + $annunci_per_pagina * ($new_index-1);
                     for ($i =($new_index - 1)*$annunci_per_pagina; $i <$limite ; $i++) {
@@ -157,7 +157,7 @@ class CAnnunci
 
         $cerca = 'cerca';
         if(isset($data)){
-            if($data[0] == 'no_categoria' || $data[0] == 'no_ricerca') $view->showAllErr($annunci_pag, $page_number, $new_index, $num_annunci, $immagini, $cerca, $data[0], $data[1], $categorie);
+            if(@$data[0] == 'no_categoria' || @$data[0] == 'no_ricerca') $view->showAllErr($annunci_pag,$num_annunci , $page_number, $new_index, $immagini, $cerca, $data[0], $data[1], $categorie);
             else $view->showAll($annunci_pag, $page_number, $new_index, $num_annunci, $immagini, $cerca, $categorie);
         }
         else $view->showAll($annunci_pag, $page_number, $new_index, $num_annunci, $immagini, $cerca, $categorie);

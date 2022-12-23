@@ -127,7 +127,7 @@ class CUtente
         $session->unsetSession();
         $session->destroySession();
         setcookie('PHPSESSID', ''); //elimina il cookie lato client
-        header('Location: /localmp/');
+        header('Location: //localmp/');
     }
 
     /**
@@ -175,7 +175,9 @@ class CUtente
 
             $utente = new EUtente(VUtente::getNome(), VUtente::getCognome(), VUtente::getEmail(),  date("Y/m/d"), null, 0, md5(VUtente::getPassword()), 0, null, null, $verification_code);
             $pm::store($utente);
-            header("Location: /localmp/Utente/login");
+echo'<script>alert("Il codice di verifica mail è stato inviato alla casella postale");
+                    window.location.href="/localmp/Utente/login";
+                           </script>';
 
         }
 
@@ -222,7 +224,7 @@ class CUtente
 
             }
 
-            //Annuncio
+            //localmp/Annuncio
             if ($annuncio != null) {
                 if (is_array($annuncio)) {
                     for ($i = 0; $i < sizeof($annuncio); $i++) {
@@ -283,8 +285,8 @@ class CUtente
         $result = false;
         $max_size = 600000;
         $result = is_uploaded_file($_FILES['file']['tmp_name']);
-        $fotoVecchia = $pm::load('FFotoUtente',array(['idUser','=',$idUser]));
-        if(isset($fotoVecchia)) $pm::delete('idUser',$idUser, 'FFotoUtente');
+     
+        
         if (!$result) {
             //echo "Impossibile eseguire l'upload.";
             return false;
@@ -294,12 +296,15 @@ class CUtente
                 //echo "Il file è troppo grande.";
                 return false;
             }
+               $fotoVecchia = $pm::load('FFotoUtente',array(['idUser','=',$idUser]));
+        if(isset($fotoVecchia)) $pm::delete('idUser',$idUser, 'FFotoUtente');
             $type = $_FILES['file']['type'];
             $nome = $_FILES['file']['name'];
             $immagine = file_get_contents($_FILES['file']['tmp_name']);
             $immagine = addslashes($immagine);
             $image = new EFotoUtente($id = 0, $nome, $size, $type, $immagine,$idUser);
             $pm::storeMedia($image, $_FILES['file']['tmp_name']);
+            return true;
         }
     }
 
