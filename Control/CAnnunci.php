@@ -126,7 +126,7 @@ class CAnnunci
 
             }
         }
-        //con categori o ricerca
+        //con categoria o ricerca
         else {
             if ($new_index * 5 <= $num_annunci){
                 for ($i = ($new_index - 1)*$annunci_per_pagina; $i <$annunci_per_pagina * $new_index ; $i++) {
@@ -286,17 +286,6 @@ class CAnnunci
             setcookie('searchOn', 1);
             header('Location: /localmp/Annunci/esploraAnnunci/cerca');
         }
-    }
-
-    /**
-     * Metodo che reindirizza alla view che permette la creazione di un nuovo annuncio
-     * @return void
-     */
-
-    //Inutile, usiamo il modal che esiste sul profilo
-    static function creaAnnuncio() {
-        $view = new VAnnunci();
-        $view->showCreaAnnuncio();
     }
 
     /**

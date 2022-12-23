@@ -361,9 +361,6 @@ class CUtente
             }
         }
 
-//Recensione
-
-
         /**
          * Funzione invocata quando un utente scrive una recensione su un oggetto acquistato
          * @param $id
