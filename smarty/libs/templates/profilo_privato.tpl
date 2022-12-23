@@ -293,7 +293,7 @@
                             <label for="star2" title="text">2 stars</label>
                             <input type="radio" id="star1" name="rate" value="1" />
                             <label for="star1" title="text">1 star</label>
-                        </div>
+                        </div><br>
                         <input name="idUser" value="{$utente->getIdUser()}" hidden>
                         <h4>Lascia una recensione</h4>
                         <textarea name="commento" id="commento" cols="30" rows="5" class="form-control" style="background-color: whitesmoke;"></textarea>
