@@ -7,10 +7,11 @@ Prerequisiti:
 
 Modalità di installazione:
   1) Scaricare la cartella ZIP da questa repository di GitHub
-  2) Spostare la cartella localmp in xampp/htdocs(opt/lampp/htdocs per sistemi Unix-like)
-  3) Aprire xampp e, dalla dashboard, avviare Apache Server e MySQL Server
-  4) Una volta fatto l'accesso in phpMyAdmin importare il database tramite il file (già presente in cartella) "localmp.sql"
-  5) Si apra l'applicazione web tramite browser all'indirizzo localhost/localmp
+  2) Estrarre il contenuto e rinominare la cartella "localmp"
+  3) Spostare la cartella localmp in xampp/htdocs(opt/lampp/htdocs per sistemi Unix-like)
+  4) Aprire xampp e, dalla dashboard, avviare Apache Server e MySQL Server
+  5) Una volta fatto l'accesso in phpMyAdmin importare il database tramite il file (già presente in cartella) "localmp.sql"
+  6) Si apra l'applicazione web tramite browser all'indirizzo localhost/localmp
   
 N.B.: Se viene visualizzato l'errore 500 su sistemi Unix-like, eseguire questi comandi:
   1) sudo chown -R nome_utente_sistema:daemon /opt/lampp/htdocs(al posto di nome_utente_sistema va messo il proprio nome sul sistema in uso)
